@@ -2,10 +2,10 @@
 {
     using DiscordRpcDemo;
     using FNAF_Engine_Reborn.bin;
+    using FNAF_Engine_Reborn.Object_Editors;
     using System;
     using System.Drawing;
     using System.IO;
-    using System.Threading;
     using System.Windows.Forms;
 
     public partial class reborn : Form
@@ -2140,6 +2140,7 @@
             }
             else
             {
+                Menu_Editor asa = new Menu_Editor(this);
                 Directory.CreateDirectory(projecto + "/menus/" + text_ID_MenuEditor_Create);
             }
         }
