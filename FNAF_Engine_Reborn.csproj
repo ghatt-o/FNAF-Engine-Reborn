@@ -109,11 +109,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ScriptEditor.cs" />
-    <Compile Include="Compiler.cs">
+    <Compile Include="Object Editors\ScriptEditor.cs" />
+    <Compile Include="Game Compiler\Compiler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compiler.Designer.cs">
+    <Compile Include="Game Compiler\Compiler.Designer.cs">
       <DependentUpon>Compiler.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Deleteproject.cs">
@@ -128,10 +128,10 @@
     <Compile Include="UI\DiscordRPCSettings.Designer.cs">
       <DependentUpon>DiscordRPCSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\extensionCreator.cs">
+    <Compile Include="UI\Editors\extensionCreator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\extensionCreator.Designer.cs">
+    <Compile Include="UI\Editors\extensionCreator.Designer.cs">
       <DependentUpon>extensionCreator.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\manual.cs">
@@ -140,16 +140,16 @@
     <Compile Include="UI\manual.Designer.cs">
       <DependentUpon>manual.cs</DependentUpon>
     </Compile>
-    <Compile Include="MinigameMaker.cs">
+    <Compile Include="UI\Editors\MinigameMaker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MinigameMaker.Designer.cs">
+    <Compile Include="UI\Editors\MinigameMaker.Designer.cs">
       <DependentUpon>MinigameMaker.cs</DependentUpon>
     </Compile>
-    <Compile Include="changelogs.cs">
+    <Compile Include="UI\changelogs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="changelogs.Designer.cs">
+    <Compile Include="UI\changelogs.Designer.cs">
       <DependentUpon>changelogs.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\createProject.cs">
@@ -159,10 +159,10 @@
       <DependentUpon>createProject.cs</DependentUpon>
     </Compile>
     <Compile Include="DiscordRpcDemo\DiscordRpc.cs" />
-    <Compile Include="FNAF Engine Game.cs">
+    <Compile Include="Game Compiler\FNAF Engine Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FNAF Engine Game.Designer.cs">
+    <Compile Include="Game Compiler\FNAF Engine Game.Designer.cs">
       <DependentUpon>FNAF Engine Game.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\loadFERproject.cs">
@@ -176,19 +176,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="sprite.cs" />
+    <Compile Include="Object Editors\sprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\reborn.cs">
+    <Compile Include="reborn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\reborn.Designer.cs">
+    <Compile Include="reborn.Designer.cs">
       <DependentUpon>reborn.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReleaseOrDebug.cs">
+    <Compile Include="Game Compiler\ReleaseOrDebug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReleaseOrDebug.Designer.cs">
+    <Compile Include="Game Compiler\ReleaseOrDebug.Designer.cs">
       <DependentUpon>ReleaseOrDebug.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\templateCreator.cs">
@@ -203,7 +203,7 @@
     <Compile Include="UI\virtualStarboard.Designer.cs">
       <DependentUpon>virtualStarboard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Compiler.resx">
+    <EmbeddedResource Include="Game Compiler\Compiler.resx">
       <DependentUpon>Compiler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Deleteproject.resx">
@@ -212,22 +212,22 @@
     <EmbeddedResource Include="UI\DiscordRPCSettings.resx">
       <DependentUpon>DiscordRPCSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\extensionCreator.resx">
+    <EmbeddedResource Include="UI\Editors\extensionCreator.resx">
       <DependentUpon>extensionCreator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\manual.resx">
       <DependentUpon>manual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MinigameMaker.resx">
+    <EmbeddedResource Include="UI\Editors\MinigameMaker.resx">
       <DependentUpon>MinigameMaker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="changelogs.resx">
+    <EmbeddedResource Include="UI\changelogs.resx">
       <DependentUpon>changelogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\createProject.resx">
       <DependentUpon>createProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FNAF Engine Game.resx">
+    <EmbeddedResource Include="Game Compiler\FNAF Engine Game.resx">
       <DependentUpon>FNAF Engine Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\loadFERproject.resx">
@@ -238,10 +238,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\reborn.resx">
+    <EmbeddedResource Include="reborn.resx">
       <DependentUpon>reborn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReleaseOrDebug.resx">
+    <EmbeddedResource Include="Game Compiler\ReleaseOrDebug.resx">
       <DependentUpon>ReleaseOrDebug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\templateCreator.resx">
