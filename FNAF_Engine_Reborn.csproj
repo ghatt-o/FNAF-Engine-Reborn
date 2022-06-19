@@ -109,6 +109,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main Stuff\cloudcenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Stuff\cloudcenter.Designer.cs">
+      <DependentUpon>cloudcenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Stuff\CodeblockSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Stuff\CodeblockSelector.Designer.cs">
+      <DependentUpon>CodeblockSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Object Editors\Menu_Editor.cs" />
     <Compile Include="Object Editors\ScriptEditor.cs" />
     <Compile Include="Game Compiler\Compiler.cs">
       <SubType>Form</SubType>
@@ -116,6 +129,7 @@
     <Compile Include="Game Compiler\Compiler.Designer.cs">
       <DependentUpon>Compiler.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object Editors\TextElement.cs" />
     <Compile Include="UI\Deleteproject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +219,12 @@
     </Compile>
     <EmbeddedResource Include="Game Compiler\Compiler.resx">
       <DependentUpon>Compiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Stuff\cloudcenter.resx">
+      <DependentUpon>cloudcenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Stuff\CodeblockSelector.resx">
+      <DependentUpon>CodeblockSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Deleteproject.resx">
       <DependentUpon>Deleteproject.cs</DependentUpon>

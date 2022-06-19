@@ -812,7 +812,7 @@
             {
                 comboBox36.Items.Clear();
                 comboBox36.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
-                pname.Text = pname.Text + projecto;
+                pname.Text = "Project Location:" + projecto;
             }
             else
             {
@@ -2058,6 +2058,90 @@
         private void staticeffecteditor_VisibleChanged(object sender, EventArgs e)
         {
             AnimationList_StaticEffectEditor.Items.AddRange(Directory.GetDirectories(projecto + "/animations"));
+        }
+
+        private void panel4_VisibleChanged(object sender, EventArgs e)
+        {
+            string path = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+        }
+
+        private void button52_Click(object sender, EventArgs e)
+        {
+            PanelCreatingNewScript.Show();
+        }
+
+        private void CreateScript_Click(object sender, EventArgs e)
+        {
+            string Name = ScriptEditor_TextBoxname.Text;
+            ScriptEditor scriptEditor = new ScriptEditor();
+            scriptEditor.Project = projecto;
+            scriptEditor.CreateScript(Name);
+            ScriptEditor_Scripts_ComboBox.Items.Clear();
+            ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
+            PanelCreatingNewScript.Hide();
+        }
+
+        private void ScriptEditorPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            ScriptEditor_Scripts_ComboBox.Items.Clear();
+            ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+            ScriptEditor scripteditor = new ScriptEditor();
+            panel4.Show();
+            if (scripteditor.HasEvent(script))
+            {
+                string event_ = scripteditor.ToEvent(script);
+                button25.Show();
+                button25.Text = event_;
+                button26.Show();
+            }
+            else
+            {
+                button25.Hide();
+                button26.Hide();
+                button10.Show();
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+            ScriptEditor scripteditor = new ScriptEditor();
+            scripteditor.AddEvent(script, "On Engine Loop");
+            button10.Hide();
+            string event_ = scripteditor.ToEvent(script);
+            button25.Show();
+            button25.Text = event_;
+            button26.Show();
+        }
+
+        private void button25_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            textCreate_MenuEditor.Show();
+        }
+
+        private void create_text_menuEditorBTN_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
+            {
+                MessageBox.Show("Unable to create new text element: Error 1");
+            }
+            else
+            {
+                Directory.CreateDirectory(projecto + "/menus/" + text_ID_MenuEditor_Create);
+            }
         }
     }
 }

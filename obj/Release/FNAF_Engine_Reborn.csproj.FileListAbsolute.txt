@@ -25,3 +25,5 @@ C:\Users\lily_\Desktop\fer\obj\Release\FNAF_Engine_Reborn.csproj.CopyComplete
 C:\Users\lily_\Desktop\fer\obj\Release\FNAF_Engine_Reborn.exe
 C:\Users\lily_\Desktop\fer\obj\Release\FNAF_Engine_Reborn.pdb
 C:\Users\lily_\Desktop\fer\obj\Release\FNAF_Engine_Reborn.DiscordRPCSettings.resources
+C:\Users\lily_\Desktop\fer\obj\Release\FNAF_Engine_Reborn.Main_Stuff.cloudcenter.resources
+C:\Users\lily_\Desktop\fer\obj\Release\FNAF_Engine_Reborn.Main_Stuff.CodeblockSelector.resources
