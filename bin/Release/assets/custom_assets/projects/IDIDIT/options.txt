@@ -1,0 +1,1 @@
+fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false

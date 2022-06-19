@@ -1,0 +1,1 @@
+power=false,toxic=false,mask=false,camera=false,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,
