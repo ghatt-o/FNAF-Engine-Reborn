@@ -22,7 +22,7 @@ namespace FNAF_Engine_Reborn
             }
             base.Dispose(disposing);
         }
-       
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -2230,7 +2230,7 @@ namespace FNAF_Engine_Reborn
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(598, 454);
+            this.label11.Location = new System.Drawing.Point(594, 454);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 17);
             this.label11.TabIndex = 103;
@@ -6550,11 +6550,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.buildSettingsPanelMoment);
-            this.Controls.Add(this.AssetManagerPanel);
-            this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
             this.Controls.Add(this.SoundEditorPanel);
@@ -6565,6 +6560,11 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.AssetManagerPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;

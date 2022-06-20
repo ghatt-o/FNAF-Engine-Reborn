@@ -25,8 +25,8 @@ namespace FNAF_Engine_Reborn.Object_Editors
             Label Text = new Label();
             Text.BackColor = Color.Transparent;
             Text.FlatStyle = FlatStyle.Flat;
-            Text.Font = new Font(TextElement.Font, TextElement.FontSize);
-            Text.Font.Size = new Size(1);
+            //Text.Font = new Font(TextElement.Font, TextElement.FontSize);
+            //Text.Font.Size = new Size(1);
         }
         public void RefreshText(string Project, string Menu)
         {

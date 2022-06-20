@@ -12,9 +12,20 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 {
     public partial class CodeblockSelector : Form
     {
-        public CodeblockSelector()
+        public string Path;
+        public CodeblockSelector(reborn reborn)
         {
             InitializeComponent();
+        }
+
+        private void CodeblockSelector_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            
         }
     }
 }

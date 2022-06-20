@@ -2,6 +2,7 @@
 {
     using DiscordRpcDemo;
     using FNAF_Engine_Reborn.bin;
+    using FNAF_Engine_Reborn.Main_Stuff;
     using FNAF_Engine_Reborn.Object_Editors;
     using System;
     using System.Drawing;
@@ -25,7 +26,6 @@
         public reborn()
         {
             InitializeComponent();
-            DiscordRpc.UpdatePresence(ref this.presence);
         }
         private void createFolder(string folder)
         {
@@ -2123,7 +2123,9 @@
         {
             if (e.Button == MouseButtons.Right)
             {
-
+                CodeblockSelector codeblockselector = new CodeblockSelector(this);
+                codeblockselector.Path = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+                codeblockselector.ShowDialog();
             }
         }
 
