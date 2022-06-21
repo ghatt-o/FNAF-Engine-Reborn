@@ -99,10 +99,20 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Office", new System.Windows.Forms.TreeNode[] {
             treeNode36,
             treeNode37});
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Actions Here");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Compare general values");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Set [] to []");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Special Conditions", new System.Windows.Forms.TreeNode[] {
+            treeNode39,
+            treeNode40});
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Engine");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Sound");
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Game Control");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Keyboard and Mouse");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Player");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Office");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeblockSelector));
             this.Events = new System.Windows.Forms.TreeView();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.Actions = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // Events
@@ -200,21 +210,43 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.Events.Size = new System.Drawing.Size(461, 477);
             this.Events.TabIndex = 42;
             // 
-            // treeView1
+            // Actions
             // 
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.treeView1.Font = new System.Drawing.Font("Segoe UI", 11.5F);
-            this.treeView1.ForeColor = System.Drawing.SystemColors.Window;
-            this.treeView1.ItemHeight = 35;
-            this.treeView1.LineColor = System.Drawing.Color.Red;
-            this.treeView1.Location = new System.Drawing.Point(12, 10);
-            this.treeView1.Name = "treeView1";
-            treeNode39.Name = "Actions Here";
-            treeNode39.Text = "Actions Here";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode39});
-            this.treeView1.Size = new System.Drawing.Size(461, 477);
-            this.treeView1.TabIndex = 43;
+            this.Actions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Actions.Font = new System.Drawing.Font("Segoe UI", 11.5F);
+            this.Actions.ForeColor = System.Drawing.SystemColors.Window;
+            this.Actions.ItemHeight = 35;
+            this.Actions.LineColor = System.Drawing.Color.Red;
+            this.Actions.Location = new System.Drawing.Point(12, 10);
+            this.Actions.Name = "Actions";
+            treeNode39.Name = "Compare general values";
+            treeNode39.Text = "Compare general values";
+            treeNode40.Name = "Set [] to []";
+            treeNode40.Text = "Set [] to []";
+            treeNode41.Name = "Special Conditions";
+            treeNode41.Text = "Special Conditions";
+            treeNode42.Name = "Engine";
+            treeNode42.Text = "Engine";
+            treeNode43.Name = "Sound";
+            treeNode43.Text = "Sound";
+            treeNode44.Name = "Game Control";
+            treeNode44.Text = "Game Control";
+            treeNode45.Name = "Keyboard and Mouse";
+            treeNode45.Text = "Keyboard and Mouse";
+            treeNode46.Name = "Player";
+            treeNode46.Text = "Player";
+            treeNode47.Name = "Office";
+            treeNode47.Text = "Office";
+            this.Actions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode41,
+            treeNode42,
+            treeNode43,
+            treeNode44,
+            treeNode45,
+            treeNode46,
+            treeNode47});
+            this.Actions.Size = new System.Drawing.Size(461, 477);
+            this.Actions.TabIndex = 43;
             // 
             // CodeblockSelector
             // 
@@ -222,7 +254,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(485, 501);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.Actions);
             this.Controls.Add(this.Events);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.Control;
@@ -237,6 +269,6 @@ namespace FNAF_Engine_Reborn.Main_Stuff
         #endregion
 
         private System.Windows.Forms.TreeView Events;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView Actions;
     }
 }
