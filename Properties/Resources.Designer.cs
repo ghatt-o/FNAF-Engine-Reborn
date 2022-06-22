@@ -73,6 +73,16 @@ namespace FNAF_Engine_Reborn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Diamond_Cat {
+            get {
+                object obj = ResourceManager.GetObject("Diamond_Cat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap funnyPlus {
             get {
                 object obj = ResourceManager.GetObject("funnyPlus", resourceCulture);

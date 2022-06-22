@@ -15,5 +15,8 @@ namespace FNAF_Engine_Reborn.Object_Editors
         public float FontSize { get; set; }
         public Font Font { get; set; }
         public bool Hidden { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public bool args { get; set; }
     }
 }

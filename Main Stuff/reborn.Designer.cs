@@ -32,7 +32,7 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -369,6 +369,7 @@ namespace FNAF_Engine_Reborn
             this.button52 = new System.Windows.Forms.Button();
             this.button50 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button26 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -519,6 +520,7 @@ namespace FNAF_Engine_Reborn
             this.DeleteFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AddFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AnimationList_StaticEffectEditor = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.allEditorsPNL.SuspendLayout();
             this.panel5.SuspendLayout();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -539,6 +541,7 @@ namespace FNAF_Engine_Reborn
             this.ScriptEditorPanel.SuspendLayout();
             this.PanelCreatingNewScript.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.buildSettingsPanelMoment.SuspendLayout();
             this.animationEditorPanel.SuspendLayout();
             this.AnimAdd.SuspendLayout();
@@ -548,6 +551,7 @@ namespace FNAF_Engine_Reborn
             this.template.SuspendLayout();
             this.staticeffecteditor.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // allEditorsPNL
@@ -565,6 +569,8 @@ namespace FNAF_Engine_Reborn
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label72);
+            this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.label92);
             this.panel5.Controls.Add(this.label143);
             this.panel5.Controls.Add(this.label94);
@@ -572,7 +578,6 @@ namespace FNAF_Engine_Reborn
             this.panel5.Controls.Add(this.label83);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.label119);
-            this.panel5.Controls.Add(this.label72);
             this.panel5.Controls.Add(this.label165);
             this.panel5.Controls.Add(this.label29);
             this.panel5.Controls.Add(this.label124);
@@ -4672,12 +4677,23 @@ namespace FNAF_Engine_Reborn
             this.panel4.Visible = false;
             this.panel4.VisibleChanged += new System.EventHandler(this.panel4_VisibleChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Diamond_Cat;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 460);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(147, 130);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // button26
             // 
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button26.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.button26.ForeColor = System.Drawing.SystemColors.Control;
-            this.button26.Location = new System.Drawing.Point(66, 87);
+            this.button26.Location = new System.Drawing.Point(66, 86);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(435, 75);
             this.button26.TabIndex = 2;
@@ -5028,7 +5044,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView1.Location = new System.Drawing.Point(125, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -5915,6 +5931,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.menu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menu.Controls.Add(this.pictureBox2);
             this.menu.Controls.Add(this.label176);
             this.menu.Controls.Add(this.funTools);
             this.menu.Controls.Add(this.label175);
@@ -6539,6 +6556,17 @@ namespace FNAF_Engine_Reborn
             this.AnimationList_StaticEffectEditor.TabIndex = 11;
             this.AnimationList_StaticEffectEditor.Text = "Animation List";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pictureBox2.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Diamond_Cat;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(-52, 440);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(231, 205);
+            this.pictureBox2.TabIndex = 150;
+            this.pictureBox2.TabStop = false;
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -6546,10 +6574,16 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
+            this.Controls.Add(this.menu);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.AssetManagerPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
             this.Controls.Add(this.SoundEditorPanel);
@@ -6559,12 +6593,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
-            this.Controls.Add(this.menu);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.AssetManagerPanel);
-            this.Controls.Add(this.animatronicEditorPNL2);
-            this.Controls.Add(this.buildSettingsPanelMoment);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -6611,6 +6639,7 @@ namespace FNAF_Engine_Reborn
             this.PanelCreatingNewScript.ResumeLayout(false);
             this.PanelCreatingNewScript.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.buildSettingsPanelMoment.ResumeLayout(false);
             this.buildSettingsPanelMoment.PerformLayout();
             this.animationEditorPanel.ResumeLayout(false);
@@ -6628,6 +6657,7 @@ namespace FNAF_Engine_Reborn
             this.staticeffecteditor.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7124,5 +7154,7 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Label label141;
         private System.Windows.Forms.Button button53;
         public System.Windows.Forms.Panel MenuPreview;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

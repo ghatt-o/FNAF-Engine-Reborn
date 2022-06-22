@@ -16,7 +16,7 @@
         public string Build_Version = "rpv2.1.4.2";
         public bool bringToFront;
         public bool isopen = false;
-        internal bool usableEngine = true;
+        internal bool usableEngine = false;
         public Control control;
         private DiscordRpc.EventHandlers handlers;
         private DiscordRpc.RichPresence presence;
@@ -2046,7 +2046,7 @@
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            MessageBox.Show("Hehehaw");
+            //MessageBox.Show("Hehehaw");
         }
 
         private void label119_Click(object sender, EventArgs e)
@@ -2072,13 +2072,16 @@
 
         private void CreateScript_Click(object sender, EventArgs e)
         {
-            string Name = ScriptEditor_TextBoxname.Text;
-            ScriptEditor scriptEditor = new ScriptEditor();
-            scriptEditor.Project = projecto;
-            scriptEditor.CreateScript(Name);
-            ScriptEditor_Scripts_ComboBox.Items.Clear();
-            ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
-            PanelCreatingNewScript.Hide();
+            if (usableEngine == true)
+            {
+                string Name = ScriptEditor_TextBoxname.Text;
+                ScriptEditor scriptEditor = new ScriptEditor();
+                scriptEditor.Project = projecto;
+                scriptEditor.CreateScript(Name);
+                ScriptEditor_Scripts_ComboBox.Items.Clear();
+                ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
+                PanelCreatingNewScript.Hide();
+            }
         }
 
         private void ScriptEditorPanel_VisibleChanged(object sender, EventArgs e)
@@ -2086,46 +2089,58 @@
             ScriptEditor_Scripts_ComboBox.Items.Clear();
             ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
         }
+        private void GetEvent()
+        {
 
+        }
         private void button9_Click(object sender, EventArgs e)
         {
-            string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
-            ScriptEditor scripteditor = new ScriptEditor();
-            panel4.Show();
-            if (scripteditor.HasEvent(script))
+            if (usableEngine == true)
             {
-                string event_ = scripteditor.ToEvent(script);
-                button25.Show();
-                button25.Text = event_;
-                button26.Show();
-            }
-            else
-            {
-                button25.Hide();
-                button26.Hide();
-                button10.Show();
+                string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+                ScriptEditor scripteditor = new ScriptEditor();
+                panel4.Show();
+                if (scripteditor.HasEvent(script))
+                {
+                    string event_ = scripteditor.ToEvent(script);
+                    button25.Show();
+                    button25.Text = event_;
+                    button26.Show();
+                }
+                else
+                {
+                    button25.Hide();
+                    button26.Hide();
+                    button10.Show();
+                }
             }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
-            ScriptEditor scripteditor = new ScriptEditor();
-            scripteditor.AddEvent(script, "On Engine Loop");
-            button10.Hide();
-            string event_ = scripteditor.ToEvent(script);
-            button25.Show();
-            button25.Text = event_;
-            button26.Show();
+            if (usableEngine == true)
+            {
+                string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+                ScriptEditor scripteditor = new ScriptEditor();
+                scripteditor.AddEvent(script, "On Engine Loop");
+                button10.Hide();
+                string event_ = scripteditor.ToEvent(script);
+                button25.Show();
+                button25.Text = event_;
+                button26.Show();
+            }
         }
 
         private void button25_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (usableEngine == true)
             {
-                CodeblockSelector codeblockselector = new CodeblockSelector(this);
-                codeblockselector.Path = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
-                codeblockselector.ShowDialog();
+                if (e.Button == MouseButtons.Right)
+                {
+                    CodeblockSelector codeblockselector = new CodeblockSelector(this);
+                    codeblockselector.Path = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+                    codeblockselector.ShowDialog();
+                }
             }
         }
 
@@ -2143,7 +2158,8 @@
             else
             {
                 Menu_Editor asa = new Menu_Editor(this);
-                Directory.CreateDirectory(projecto + "/menus/" + text_ID_MenuEditor_Create);
+                //Directory.CreateDirectory(projecto + "/menus/" + text_ID_MenuEditor_Create);
+                textCreate_MenuEditor.Hide();
             }
         }
     }

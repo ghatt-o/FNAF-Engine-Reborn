@@ -310,6 +310,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             treeNode47});
             this.Events.Size = new System.Drawing.Size(461, 477);
             this.Events.TabIndex = 42;
+            this.Events.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Events_AfterSelect);
             // 
             // Actions
             // 
@@ -435,8 +436,8 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(485, 501);
-            this.Controls.Add(this.Actions);
             this.Controls.Add(this.Events);
+            this.Controls.Add(this.Actions);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

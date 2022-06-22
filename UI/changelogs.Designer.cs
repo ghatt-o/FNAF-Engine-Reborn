@@ -39,6 +39,8 @@ namespace FNAF_Engine_Reborn
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -57,8 +59,10 @@ namespace FNAF_Engine_Reborn
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.releases.SuspendLayout();
             this.SuspendLayout();
@@ -143,6 +147,10 @@ namespace FNAF_Engine_Reborn
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.label27);
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.label22);
@@ -164,6 +172,24 @@ namespace FNAF_Engine_Reborn
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 455);
             this.panel1.TabIndex = 8;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(164, 35);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(69, 15);
+            this.label24.TabIndex = 21;
+            this.label24.Text = "-Fixed Bugs";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(161, 6);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(133, 15);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "Patch 5 (0.1.1) Released!";
             // 
             // label22
             // 
@@ -339,23 +365,41 @@ namespace FNAF_Engine_Reborn
             this.label13.Text = "-And more...";
             this.label13.Visible = false;
             // 
-            // label24
+            // label26
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(164, 35);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(69, 15);
-            this.label24.TabIndex = 21;
-            this.label24.Text = "-Fixed Bugs";
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(164, 100);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(69, 15);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "-Fixed Bugs";
             // 
-            // label25
+            // label27
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(161, 6);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(133, 15);
-            this.label25.TabIndex = 20;
-            this.label25.Text = "Patch 5 (0.1.1) Released!";
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(161, 71);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(133, 15);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Patch 6 (0.1.2) Released!";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(164, 115);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(114, 15);
+            this.label28.TabIndex = 24;
+            this.label28.Text = "-Added new mascot";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(164, 130);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(60, 15);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "-Cleant UI";
             // 
             // changelogs
             // 
@@ -413,5 +457,9 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
     }
 }

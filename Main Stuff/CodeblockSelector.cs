@@ -25,7 +25,12 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            
+
+        }
+
+        private void Events_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            string selectedevent = Events.SelectedNode.ToString();
         }
     }
 }
