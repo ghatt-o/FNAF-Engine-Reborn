@@ -435,8 +435,8 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(485, 501);
-            this.Controls.Add(this.Events);
             this.Controls.Add(this.Actions);
+            this.Controls.Add(this.Events);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
