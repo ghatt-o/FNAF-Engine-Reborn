@@ -47,7 +47,14 @@ namespace FNAF_Engine_Reborn
             {
                 try
                 {
-                    label3.Text = comboBox1.SelectedItem.ToString();
+                    try
+                    {
+                        label3.Text = comboBox1.SelectedItem.ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
                 catch (Exception ex)
                 {

@@ -195,6 +195,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeblockSelector));
             this.Events = new System.Windows.Forms.TreeView();
             this.Actions = new System.Windows.Forms.TreeView();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Events
@@ -430,12 +431,24 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.Actions.Size = new System.Drawing.Size(461, 477);
             this.Actions.TabIndex = 43;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(290, 372);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 104);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CodeblockSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(485, 501);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Events);
             this.Controls.Add(this.Actions);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -452,5 +465,6 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 
         private new System.Windows.Forms.TreeView Events;
         private System.Windows.Forms.TreeView Actions;
+        private System.Windows.Forms.Button button1;
     }
 }

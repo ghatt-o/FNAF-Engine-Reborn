@@ -35,7 +35,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -121,6 +121,7 @@
     <Compile Include="Main Stuff\CodeblockSelector.Designer.cs">
       <DependentUpon>CodeblockSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object Editors\Import_Sprites.cs" />
     <Compile Include="Object Editors\Menu_Editor.cs" />
     <Compile Include="Object Editors\ScriptEditor.cs" />
     <Compile Include="Game Compiler\Compiler.cs">

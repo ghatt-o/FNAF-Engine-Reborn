@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FNAF_Engine_Reborn.Main_Stuff
 {
     public partial class CodeblockSelector : Form
     {
+        string all = "";
+        private reborn reborn;
         public string Path;
         public CodeblockSelector(reborn reborn)
         {
             InitializeComponent();
+            this.reborn = reborn;
         }
 
         private void CodeblockSelector_Load(object sender, EventArgs e)
@@ -30,7 +26,35 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 
         private void Events_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            string selectedevent = Events.SelectedNode.ToString();
+            if (Events.SelectedNode.ToString() == "TreeNode: Game Loop")
+            {
+
+            }
+            else
+            {
+                Console.WriteLine(Events.SelectedNode.ToString());
+                var separated = Events.SelectedNode.ToString().Split(' ');
+                separated.SetValue("", 0);
+                int slenght = separated.Length;
+                foreach (string text in separated)
+                {
+                    all = all + " " + text;
+                }
+                ScriptEditor scripteditor = new ScriptEditor();
+                scripteditor.AddEvent(reborn.script, all);
+                reborn.button10.Hide();
+                string event_ = scripteditor.ToEvent(reborn.script);
+                reborn.button25.Show();
+                reborn.button25.Text = event_;
+                Console.WriteLine("event isss: " + event_);
+                reborn.button26.Show();
+                this.Hide();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

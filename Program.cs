@@ -19,6 +19,7 @@ namespace FNAF_Engine_Reborn
             else
             {
                 Directory.CreateDirectory(@"assets");
+                Directory.CreateDirectory(@"assets/files/");
                 Directory.CreateDirectory(@"assets/extensions");
                 Directory.CreateDirectory(@"assets/images");
                 Directory.CreateDirectory(@"assets/music");

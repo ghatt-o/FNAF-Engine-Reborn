@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace FNAF_Engine_Reborn
 {
@@ -35,34 +30,7 @@ namespace FNAF_Engine_Reborn
         public void AddEvent(string Name, string Token)
         {
             string ScriptPath = Name;
-            if (Token == "On Engine Start")
-            {
-                File.WriteAllText(ScriptPath + "/event.txt", "On Engine Start");
-            }
-            if (Token == "On Engine Loop")
-            {
-                File.WriteAllText(ScriptPath + "/event.txt", "On Engine Loop");
-            }
-            if (Token == "On Engine End")
-            {
-                File.WriteAllText(ScriptPath + "/event.txt", "On Engine End");
-            }
-            if (Token == "On Night Start")
-            {
-                File.WriteAllText(ScriptPath + "/event.txt", "On Night Start");
-            }
-            if (Token == "On Night End")
-            {
-                File.WriteAllText(ScriptPath + "/event.txt", "On Night End");
-            }
-            if (Token == "On Night Loop")
-            {
-                File.WriteAllText(ScriptPath + "/event.txt", "On Night Loop");
-            }
-            if (Token == "On Night Break")
-            {
-                File.WriteAllText(ScriptPath + "/event.txt", "On Night Break");
-            }
+            File.WriteAllText(ScriptPath + "/event.txt", Token);
         }
     }
 }

@@ -7,10 +7,11 @@ namespace FNAF_Engine_Reborn
 {
     public partial class ReleaseOrDebug : Form
     {
-        public bool testmode; // bool to check if its testing not compiling because this form is used for both compile and test
-        public bool compilemode; // same thing as above but compile instead
-        public ReleaseOrDebug()
+        private reborn reborn;
+
+        public ReleaseOrDebug(reborn reborn)
         {
+            this.reborn = reborn;
             InitializeComponent();
         }
 
@@ -26,21 +27,15 @@ namespace FNAF_Engine_Reborn
 
         private void ReleaseOrDebug_Load(object sender, EventArgs e)
         {
-            if (!testmode)
-            {
-                compilemode = false; //if its test mode, then turn compile mode off because if you click on one of these it'll compile instead of test!
-            }
-            if (!compilemode)
-            {
-                testmode = false; // same thing, just turn off test mode
-            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             label1.Show();
             Thread.Sleep(1000);
-            this.Hide();
+            FNAF_Engine_Game fnaf_Engine_Game = new FNAF_Engine_Game(reborn);
+            fnaf_Engine_Game.ShowDialog();
         }
     }
 }

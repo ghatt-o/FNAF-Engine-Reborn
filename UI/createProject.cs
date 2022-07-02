@@ -42,6 +42,10 @@ namespace FNAF_Engine_Reborn
                     Directory.CreateDirectory(projectPath + "/animatronics/phantom/");
                     Directory.CreateDirectory(projectPath + "/sounds");
                     Directory.CreateDirectory(projectPath + "/menus");
+                    CreateMenu(projectPath, "GameOver");
+                    CreateMenu(projectPath, "Main");
+                    CreateMenu(projectPath, "Warning");
+                    CreateMenu(projectPath, "6AM");
                     Directory.CreateDirectory(projectPath + "/scripts");
                     Directory.CreateDirectory(projectPath + "/scripts/visual");
                     Directory.CreateDirectory(projectPath + "/scripts/csharp");
@@ -60,6 +64,7 @@ namespace FNAF_Engine_Reborn
                     File.WriteAllText(projectPath + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=false,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,");
                     File.WriteAllText(projectPath + "/offices/default/misc.txt", "camera=,mask=,powerout=");
                     File.WriteAllText(projectPath + "/offices/default/sprites.txt", "");
+                    File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
                     MessageBox.Show("Project created succesfully!");
                     this.Hide();
                     if (comboBox1.SelectedItem.Equals("Premade Assets"))
@@ -92,14 +97,11 @@ namespace FNAF_Engine_Reborn
         private void premadeAssets()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            Directory.CreateDirectory(projectPath + "/menus/" + "Main");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Warning");
-            Directory.CreateDirectory(projectPath + "/menus/" + "CustomNight");
-            Directory.CreateDirectory(projectPath + "/menus/" + "GameOver");
-            Directory.CreateDirectory(projectPath + "/menus/" + "News");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending5");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending6");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending7");
+            CreateMenu(projectPath, "CustomNight");
+            CreateMenu(projectPath, "News");
+            CreateMenu(projectPath, "Ending5");
+            CreateMenu(projectPath, "Ending6");
+            CreateMenu(projectPath, "Ending7");
             Directory.CreateDirectory(projectPath + "/animations/" + "Camera");
             Directory.CreateDirectory(projectPath + "/animations/" + "Mask");
             Directory.CreateDirectory(projectPath + "/scripts/visual/Endings");
@@ -111,17 +113,13 @@ namespace FNAF_Engine_Reborn
         private void JamesTemplate()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            Directory.CreateDirectory(projectPath + "/menus/" + "Main");
-            Directory.CreateDirectory(projectPath + "/menus/" + "6AM");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Warning");
-            Directory.CreateDirectory(projectPath + "/menus/" + "CustomNight");
-            Directory.CreateDirectory(projectPath + "/menus/" + "GameOver");
-            Directory.CreateDirectory(projectPath + "/menus/" + "News");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending5");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending6");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending7");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Placeholder");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Placeholder2");
+            CreateMenu(projectPath, "CustomNight");
+            CreateMenu(projectPath, "News");
+            CreateMenu(projectPath, "Ending5");
+            CreateMenu(projectPath, "Ending6");
+            CreateMenu(projectPath, "Ending7");
+            CreateMenu(projectPath, "My_Menu");
+            CreateMenu(projectPath, "My_Menu2");
             Directory.CreateDirectory(projectPath + "/animations/" + "Placeholder1");
             Directory.CreateDirectory(projectPath + "/animations/" + "Placeholder2");
             Directory.CreateDirectory(projectPath + "/scripts/visual/Endings");
@@ -138,16 +136,13 @@ namespace FNAF_Engine_Reborn
         private void JohnsTemplate()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            Directory.CreateDirectory(projectPath + "/menus/" + "Main");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Warning");
-            Directory.CreateDirectory(projectPath + "/menus/" + "CustomNight");
-            Directory.CreateDirectory(projectPath + "/menus/" + "GameOver");
-            Directory.CreateDirectory(projectPath + "/menus/" + "News");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending5");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending6");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Ending7");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Placeholder");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Placeholder2");
+            CreateMenu(projectPath, "CustomNight");
+            CreateMenu(projectPath, "News");
+            CreateMenu(projectPath, "Ending5");
+            CreateMenu(projectPath, "Ending6");
+            CreateMenu(projectPath, "Ending7");
+            CreateMenu(projectPath, "My_Menu");
+            CreateMenu(projectPath, "My_Menu2");
             Directory.CreateDirectory(projectPath + "/animations/" + "Camera");
             Directory.CreateDirectory(projectPath + "/animations/" + "Mask");
             Directory.CreateDirectory(projectPath + "/animations/" + "Placeholder1");
@@ -166,18 +161,16 @@ namespace FNAF_Engine_Reborn
         private void premadeMenus()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            Directory.CreateDirectory(projectPath + "/menus/" + "Main");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Warning");
-            Directory.CreateDirectory(projectPath + "/menus/" + "CustomNight");
-            Directory.CreateDirectory(projectPath + "/menus/" + "GameOver");
-            Directory.CreateDirectory(projectPath + "/menus/" + "News");
+            CreateMenu(projectPath, "CustomNight");
+            CreateMenu(projectPath, "News");
+            CreateMenu(projectPath, "Ending5");
+            CreateMenu(projectPath, "Ending6");
+            CreateMenu(projectPath, "Ending7");
             this.Hide();
         }
         private void rMenus()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            Directory.CreateDirectory(projectPath + "/menus/" + "Main");
-            Directory.CreateDirectory(projectPath + "/menus/" + "Warning");
             this.Hide();
         }
 
@@ -204,6 +197,12 @@ namespace FNAF_Engine_Reborn
             {
                 pictureBox1.Hide();
             }
+        }
+        private void CreateMenu(string projectPath, string Name)
+        {
+            Directory.CreateDirectory(projectPath + "/menus/" + Name);
+            Directory.CreateDirectory(projectPath + "/menus/" + Name + "/text_elements");
+            File.WriteAllText(projectPath + "/menus/" + Name + "/name.txt", Name);
         }
     }
 }

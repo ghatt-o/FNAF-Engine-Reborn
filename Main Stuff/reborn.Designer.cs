@@ -36,6 +36,7 @@ namespace FNAF_Engine_Reborn
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label72 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.label143 = new System.Windows.Forms.Label();
             this.label94 = new System.Windows.Forms.Label();
@@ -43,11 +44,11 @@ namespace FNAF_Engine_Reborn
             this.label83 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label119 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
             this.label165 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label124 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label156 = new System.Windows.Forms.Label();
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
@@ -128,6 +129,39 @@ namespace FNAF_Engine_Reborn
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.menuEditorPanel = new System.Windows.Forms.Panel();
+            this.Menu_Elements_Create = new System.Windows.Forms.Panel();
+            this.Element_Color_MenuEditor = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.Element_ID_MenuEditor = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Element_Font_MenuEditor = new System.Windows.Forms.TextBox();
+            this.Element_Y_MenuEditor = new System.Windows.Forms.Label();
+            this.label210 = new System.Windows.Forms.Label();
+            this.Element_X_MenuEditor = new System.Windows.Forms.Label();
+            this.Element_HiddenCheck_MenuEditor = new System.Windows.Forms.CheckBox();
+            this.Element_FontSize_MenuEditor = new System.Windows.Forms.TextBox();
+            this.Element_Text_MenuEditor = new System.Windows.Forms.TextBox();
+            this.Element_Image_MenuEditor = new System.Windows.Forms.ComboBox();
+            this.Element_Animatronic_MenuEditor = new System.Windows.Forms.ComboBox();
+            this.label212 = new System.Windows.Forms.Label();
+            this.label213 = new System.Windows.Forms.Label();
+            this.label214 = new System.Windows.Forms.Label();
+            this.label215 = new System.Windows.Forms.Label();
+            this.label216 = new System.Windows.Forms.Label();
+            this.label217 = new System.Windows.Forms.Label();
+            this.button124 = new System.Windows.Forms.Button();
+            this.button125 = new System.Windows.Forms.Button();
+            this.button126 = new System.Windows.Forms.Button();
+            this.button127 = new System.Windows.Forms.Button();
+            this.label218 = new System.Windows.Forms.Label();
+            this.BackgroundAudio_MenuEditor = new System.Windows.Forms.ComboBox();
+            this.label219 = new System.Windows.Forms.Label();
+            this.label220 = new System.Windows.Forms.Label();
+            this.comboBox73 = new System.Windows.Forms.ComboBox();
+            this.button129 = new System.Windows.Forms.Button();
+            this.label222 = new System.Windows.Forms.Label();
+            this.label223 = new System.Windows.Forms.Label();
             this.textCreate_MenuEditor = new System.Windows.Forms.Panel();
             this.create_text_menuEditorBTN = new System.Windows.Forms.Button();
             this.text_ID_MenuEditor_Create = new System.Windows.Forms.TextBox();
@@ -165,11 +199,7 @@ namespace FNAF_Engine_Reborn
             this.label139 = new System.Windows.Forms.Label();
             this.label141 = new System.Windows.Forms.Label();
             this.button53 = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
             this.Menus = new System.Windows.Forms.TreeView();
-            this.button116 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.createShit = new System.Windows.Forms.Panel();
             this.button88 = new System.Windows.Forms.Button();
             this.menuName = new System.Windows.Forms.TextBox();
@@ -208,36 +238,8 @@ namespace FNAF_Engine_Reborn
             this.label152 = new System.Windows.Forms.Label();
             this.button90 = new System.Windows.Forms.Button();
             this.MenuPreview = new System.Windows.Forms.Panel();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.bgImage = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.button21 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.SoundEditorPanel = new System.Windows.Forms.Panel();
             this.comboBox49 = new System.Windows.Forms.ComboBox();
@@ -364,15 +366,14 @@ namespace FNAF_Engine_Reborn
             this.PanelCreatingNewScript = new System.Windows.Forms.Panel();
             this.ScriptEditor_TextBoxname = new System.Windows.Forms.TextBox();
             this.CreateScript = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button54 = new System.Windows.Forms.Button();
             this.button52 = new System.Windows.Forms.Button();
             this.button50 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.label77 = new System.Windows.Forms.Label();
             this.ScriptEditor_Scripts_ComboBox = new System.Windows.Forms.ComboBox();
             this.buildSettingsPanelMoment = new System.Windows.Forms.Panel();
@@ -471,6 +472,7 @@ namespace FNAF_Engine_Reborn
             this.label84 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label176 = new System.Windows.Forms.Label();
             this.label175 = new System.Windows.Forms.Label();
             this.label174 = new System.Windows.Forms.Label();
@@ -520,15 +522,18 @@ namespace FNAF_Engine_Reborn
             this.DeleteFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AddFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AnimationList_StaticEffectEditor = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.MenuEditor_ScriptEditor = new System.Windows.Forms.Label();
             this.allEditorsPNL.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.cameraEditorPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.menuEditorPanel.SuspendLayout();
+            this.Menu_Elements_Create.SuspendLayout();
             this.textCreate_MenuEditor.SuspendLayout();
             this.createShit.SuspendLayout();
             this.SoundEditorPanel.SuspendLayout();
@@ -541,17 +546,16 @@ namespace FNAF_Engine_Reborn
             this.ScriptEditorPanel.SuspendLayout();
             this.PanelCreatingNewScript.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.buildSettingsPanelMoment.SuspendLayout();
             this.animationEditorPanel.SuspendLayout();
             this.AnimAdd.SuspendLayout();
             this.cutsceneMoment.SuspendLayout();
             this.cutsceneEditorPanel.SuspendLayout();
             this.menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.template.SuspendLayout();
             this.staticeffecteditor.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // allEditorsPNL
@@ -570,7 +574,6 @@ namespace FNAF_Engine_Reborn
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.label72);
-            this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.label92);
             this.panel5.Controls.Add(this.label143);
             this.panel5.Controls.Add(this.label94);
@@ -587,6 +590,15 @@ namespace FNAF_Engine_Reborn
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(190, 628);
             this.panel5.TabIndex = 120;
+            // 
+            // label72
+            // 
+            this.label72.Location = new System.Drawing.Point(-9, 581);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(186, 25);
+            this.label72.TabIndex = 124;
+            this.label72.Text = "FE:R Build Version: ";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label92
             // 
@@ -651,6 +663,7 @@ namespace FNAF_Engine_Reborn
             // label119
             // 
             this.label119.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label119.Enabled = false;
             this.label119.Location = new System.Drawing.Point(37, 44);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(143, 24);
@@ -658,15 +671,6 @@ namespace FNAF_Engine_Reborn
             this.label119.Text = "Debug Game";
             this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label119.Click += new System.EventHandler(this.label119_Click);
-            // 
-            // label72
-            // 
-            this.label72.Location = new System.Drawing.Point(-9, 581);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(186, 25);
-            this.label72.TabIndex = 124;
-            this.label72.Text = "FE:R Build Version: ";
-            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label165
             // 
@@ -691,9 +695,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label124
             // 
+            this.label124.Enabled = false;
             this.label124.Image = ((System.Drawing.Image)(resources.GetObject("label124.Image")));
             this.label124.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label124.Location = new System.Drawing.Point(-7, 29);
+            this.label124.Location = new System.Drawing.Point(-5, 29);
             this.label124.Name = "label124";
             this.label124.Size = new System.Drawing.Size(42, 48);
             this.label124.TabIndex = 127;
@@ -707,6 +712,17 @@ namespace FNAF_Engine_Reborn
             this.label110.TabIndex = 125;
             this.label110.Text = "@Kubo_Bubo,@_lily 2022";
             this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Diamond_Cat;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(650, 499);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 90);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // label156
             // 
@@ -1694,43 +1710,13 @@ namespace FNAF_Engine_Reborn
             this.menuEditorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.menuEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.menuEditorPanel.Controls.Add(this.textCreate_MenuEditor);
-            this.menuEditorPanel.Controls.Add(this.textBox19);
+            this.menuEditorPanel.Controls.Add(this.MenuEditor_ScriptEditor);
+            this.menuEditorPanel.Controls.Add(this.Menu_Elements_Create);
             this.menuEditorPanel.Controls.Add(this.Menus);
-            this.menuEditorPanel.Controls.Add(this.button116);
-            this.menuEditorPanel.Controls.Add(this.label11);
-            this.menuEditorPanel.Controls.Add(this.label27);
             this.menuEditorPanel.Controls.Add(this.createShit);
             this.menuEditorPanel.Controls.Add(this.MenuPreview);
-            this.menuEditorPanel.Controls.Add(this.label82);
-            this.menuEditorPanel.Controls.Add(this.label26);
-            this.menuEditorPanel.Controls.Add(this.checkBox5);
-            this.menuEditorPanel.Controls.Add(this.textBox3);
-            this.menuEditorPanel.Controls.Add(this.textBox2);
-            this.menuEditorPanel.Controls.Add(this.comboBox12);
-            this.menuEditorPanel.Controls.Add(this.comboBox11);
-            this.menuEditorPanel.Controls.Add(this.label28);
-            this.menuEditorPanel.Controls.Add(this.label25);
-            this.menuEditorPanel.Controls.Add(this.label24);
-            this.menuEditorPanel.Controls.Add(this.label23);
-            this.menuEditorPanel.Controls.Add(this.label22);
-            this.menuEditorPanel.Controls.Add(this.label17);
-            this.menuEditorPanel.Controls.Add(this.button17);
-            this.menuEditorPanel.Controls.Add(this.button16);
-            this.menuEditorPanel.Controls.Add(this.button15);
-            this.menuEditorPanel.Controls.Add(this.button14);
-            this.menuEditorPanel.Controls.Add(this.button13);
-            this.menuEditorPanel.Controls.Add(this.label16);
-            this.menuEditorPanel.Controls.Add(this.comboBox10);
-            this.menuEditorPanel.Controls.Add(this.label15);
-            this.menuEditorPanel.Controls.Add(this.bgImage);
-            this.menuEditorPanel.Controls.Add(this.comboBox7);
-            this.menuEditorPanel.Controls.Add(this.comboBox8);
-            this.menuEditorPanel.Controls.Add(this.button21);
-            this.menuEditorPanel.Controls.Add(this.label20);
             this.menuEditorPanel.Controls.Add(this.button23);
             this.menuEditorPanel.Controls.Add(this.button24);
-            this.menuEditorPanel.Controls.Add(this.label44);
-            this.menuEditorPanel.Controls.Add(this.label13);
             this.menuEditorPanel.Location = new System.Drawing.Point(194, 61);
             this.menuEditorPanel.Name = "menuEditorPanel";
             this.menuEditorPanel.Size = new System.Drawing.Size(766, 644);
@@ -1738,10 +1724,412 @@ namespace FNAF_Engine_Reborn
             this.menuEditorPanel.Visible = false;
             this.menuEditorPanel.VisibleChanged += new System.EventHandler(this.menuEditorPanel_VisibleChanged);
             // 
+            // Menu_Elements_Create
+            // 
+            this.Menu_Elements_Create.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Menu_Elements_Create.Controls.Add(this.Element_Color_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.label13);
+            this.Menu_Elements_Create.Controls.Add(this.button13);
+            this.Menu_Elements_Create.Controls.Add(this.Element_ID_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.label11);
+            this.Menu_Elements_Create.Controls.Add(this.Element_Font_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.Element_Y_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.label210);
+            this.Menu_Elements_Create.Controls.Add(this.Element_X_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.Element_HiddenCheck_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.Element_FontSize_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.Element_Text_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.Element_Image_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.Element_Animatronic_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.label212);
+            this.Menu_Elements_Create.Controls.Add(this.label213);
+            this.Menu_Elements_Create.Controls.Add(this.label214);
+            this.Menu_Elements_Create.Controls.Add(this.label215);
+            this.Menu_Elements_Create.Controls.Add(this.label216);
+            this.Menu_Elements_Create.Controls.Add(this.label217);
+            this.Menu_Elements_Create.Controls.Add(this.button124);
+            this.Menu_Elements_Create.Controls.Add(this.button125);
+            this.Menu_Elements_Create.Controls.Add(this.button126);
+            this.Menu_Elements_Create.Controls.Add(this.button127);
+            this.Menu_Elements_Create.Controls.Add(this.label218);
+            this.Menu_Elements_Create.Controls.Add(this.BackgroundAudio_MenuEditor);
+            this.Menu_Elements_Create.Controls.Add(this.label219);
+            this.Menu_Elements_Create.Controls.Add(this.label220);
+            this.Menu_Elements_Create.Controls.Add(this.comboBox73);
+            this.Menu_Elements_Create.Controls.Add(this.button129);
+            this.Menu_Elements_Create.Controls.Add(this.label222);
+            this.Menu_Elements_Create.Controls.Add(this.label223);
+            this.Menu_Elements_Create.Location = new System.Drawing.Point(5, 371);
+            this.Menu_Elements_Create.Name = "Menu_Elements_Create";
+            this.Menu_Elements_Create.Size = new System.Drawing.Size(749, 254);
+            this.Menu_Elements_Create.TabIndex = 131;
+            this.Menu_Elements_Create.Visible = false;
+            // 
+            // Element_Color_MenuEditor
+            // 
+            this.Element_Color_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_Color_MenuEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.Element_Color_MenuEditor.Location = new System.Drawing.Point(39, 91);
+            this.Element_Color_MenuEditor.Name = "Element_Color_MenuEditor";
+            this.Element_Color_MenuEditor.Size = new System.Drawing.Size(84, 23);
+            this.Element_Color_MenuEditor.TabIndex = 165;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(1, 93);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 15);
+            this.label13.TabIndex = 164;
+            this.label13.Text = "Color";
+            // 
+            // button13
+            // 
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button13.ForeColor = System.Drawing.SystemColors.Control;
+            this.button13.Location = new System.Drawing.Point(372, 7);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(95, 25);
+            this.button13.TabIndex = 162;
+            this.button13.Text = "Change";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // Element_ID_MenuEditor
+            // 
+            this.Element_ID_MenuEditor.AutoSize = true;
+            this.Element_ID_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_ID_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
+            this.Element_ID_MenuEditor.Location = new System.Drawing.Point(164, 47);
+            this.Element_ID_MenuEditor.Name = "Element_ID_MenuEditor";
+            this.Element_ID_MenuEditor.Size = new System.Drawing.Size(65, 15);
+            this.Element_ID_MenuEditor.TabIndex = 161;
+            this.Element_ID_MenuEditor.Text = "element_id";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(148, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(21, 15);
+            this.label11.TabIndex = 160;
+            this.label11.Text = "ID:";
+            // 
+            // Element_Font_MenuEditor
+            // 
+            this.Element_Font_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_Font_MenuEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.Element_Font_MenuEditor.Location = new System.Drawing.Point(32, 42);
+            this.Element_Font_MenuEditor.Name = "Element_Font_MenuEditor";
+            this.Element_Font_MenuEditor.Size = new System.Drawing.Size(105, 23);
+            this.Element_Font_MenuEditor.TabIndex = 159;
+            this.Element_Font_MenuEditor.Text = "Consolas";
+            // 
+            // Element_Y_MenuEditor
+            // 
+            this.Element_Y_MenuEditor.AutoSize = true;
+            this.Element_Y_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_Y_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
+            this.Element_Y_MenuEditor.Location = new System.Drawing.Point(148, 31);
+            this.Element_Y_MenuEditor.Name = "Element_Y_MenuEditor";
+            this.Element_Y_MenuEditor.Size = new System.Drawing.Size(91, 15);
+            this.Element_Y_MenuEditor.TabIndex = 155;
+            this.Element_Y_MenuEditor.Text = "Y: Indetermined";
+            // 
+            // label210
+            // 
+            this.label210.AutoSize = true;
+            this.label210.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label210.ForeColor = System.Drawing.SystemColors.Control;
+            this.label210.Location = new System.Drawing.Point(2, 162);
+            this.label210.Name = "label210";
+            this.label210.Size = new System.Drawing.Size(37, 15);
+            this.label210.TabIndex = 156;
+            this.label210.Text = "Sprite";
+            // 
+            // Element_X_MenuEditor
+            // 
+            this.Element_X_MenuEditor.AutoSize = true;
+            this.Element_X_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_X_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
+            this.Element_X_MenuEditor.Location = new System.Drawing.Point(149, 14);
+            this.Element_X_MenuEditor.Name = "Element_X_MenuEditor";
+            this.Element_X_MenuEditor.Size = new System.Drawing.Size(91, 15);
+            this.Element_X_MenuEditor.TabIndex = 154;
+            this.Element_X_MenuEditor.Text = "X: Indetermined";
+            // 
+            // Element_HiddenCheck_MenuEditor
+            // 
+            this.Element_HiddenCheck_MenuEditor.AutoSize = true;
+            this.Element_HiddenCheck_MenuEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Element_HiddenCheck_MenuEditor.Location = new System.Drawing.Point(47, 119);
+            this.Element_HiddenCheck_MenuEditor.Name = "Element_HiddenCheck_MenuEditor";
+            this.Element_HiddenCheck_MenuEditor.Size = new System.Drawing.Size(12, 11);
+            this.Element_HiddenCheck_MenuEditor.TabIndex = 153;
+            this.Element_HiddenCheck_MenuEditor.UseVisualStyleBackColor = true;
+            // 
+            // Element_FontSize_MenuEditor
+            // 
+            this.Element_FontSize_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_FontSize_MenuEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.Element_FontSize_MenuEditor.Location = new System.Drawing.Point(54, 65);
+            this.Element_FontSize_MenuEditor.Name = "Element_FontSize_MenuEditor";
+            this.Element_FontSize_MenuEditor.Size = new System.Drawing.Size(84, 23);
+            this.Element_FontSize_MenuEditor.TabIndex = 152;
+            // 
+            // Element_Text_MenuEditor
+            // 
+            this.Element_Text_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_Text_MenuEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.Element_Text_MenuEditor.Location = new System.Drawing.Point(31, 12);
+            this.Element_Text_MenuEditor.Name = "Element_Text_MenuEditor";
+            this.Element_Text_MenuEditor.Size = new System.Drawing.Size(105, 23);
+            this.Element_Text_MenuEditor.TabIndex = 151;
+            // 
+            // Element_Image_MenuEditor
+            // 
+            this.Element_Image_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_Image_MenuEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Element_Image_MenuEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.Element_Image_MenuEditor.FormattingEnabled = true;
+            this.Element_Image_MenuEditor.Location = new System.Drawing.Point(40, 159);
+            this.Element_Image_MenuEditor.Name = "Element_Image_MenuEditor";
+            this.Element_Image_MenuEditor.Size = new System.Drawing.Size(97, 23);
+            this.Element_Image_MenuEditor.TabIndex = 150;
+            this.Element_Image_MenuEditor.Text = "Images";
+            // 
+            // Element_Animatronic_MenuEditor
+            // 
+            this.Element_Animatronic_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Element_Animatronic_MenuEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Element_Animatronic_MenuEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.Element_Animatronic_MenuEditor.FormattingEnabled = true;
+            this.Element_Animatronic_MenuEditor.Location = new System.Drawing.Point(74, 136);
+            this.Element_Animatronic_MenuEditor.Name = "Element_Animatronic_MenuEditor";
+            this.Element_Animatronic_MenuEditor.Size = new System.Drawing.Size(97, 23);
+            this.Element_Animatronic_MenuEditor.TabIndex = 149;
+            this.Element_Animatronic_MenuEditor.Text = "Animatronics";
+            // 
+            // label212
+            // 
+            this.label212.AutoSize = true;
+            this.label212.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label212.ForeColor = System.Drawing.SystemColors.Control;
+            this.label212.Location = new System.Drawing.Point(2, 138);
+            this.label212.Name = "label212";
+            this.label212.Size = new System.Drawing.Size(73, 15);
+            this.label212.TabIndex = 148;
+            this.label212.Text = "Animatronic";
+            // 
+            // label213
+            // 
+            this.label213.AutoSize = true;
+            this.label213.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label213.ForeColor = System.Drawing.SystemColors.Control;
+            this.label213.Location = new System.Drawing.Point(2, 116);
+            this.label213.Name = "label213";
+            this.label213.Size = new System.Drawing.Size(46, 15);
+            this.label213.TabIndex = 147;
+            this.label213.Text = "Hidden";
+            // 
+            // label214
+            // 
+            this.label214.AutoSize = true;
+            this.label214.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label214.ForeColor = System.Drawing.SystemColors.Control;
+            this.label214.Location = new System.Drawing.Point(1, 70);
+            this.label214.Name = "label214";
+            this.label214.Size = new System.Drawing.Size(51, 15);
+            this.label214.TabIndex = 146;
+            this.label214.Text = "FontSize";
+            // 
+            // label215
+            // 
+            this.label215.AutoSize = true;
+            this.label215.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label215.ForeColor = System.Drawing.SystemColors.Control;
+            this.label215.Location = new System.Drawing.Point(3, 44);
+            this.label215.Name = "label215";
+            this.label215.Size = new System.Drawing.Size(31, 15);
+            this.label215.TabIndex = 145;
+            this.label215.Text = "Font";
+            // 
+            // label216
+            // 
+            this.label216.AutoSize = true;
+            this.label216.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label216.ForeColor = System.Drawing.SystemColors.Control;
+            this.label216.Location = new System.Drawing.Point(3, 14);
+            this.label216.Name = "label216";
+            this.label216.Size = new System.Drawing.Size(28, 15);
+            this.label216.TabIndex = 144;
+            this.label216.Text = "Text";
+            // 
+            // label217
+            // 
+            this.label217.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label217.Image = ((System.Drawing.Image)(resources.GetObject("label217.Image")));
+            this.label217.Location = new System.Drawing.Point(132, -11);
+            this.label217.Name = "label217";
+            this.label217.Size = new System.Drawing.Size(133, 302);
+            this.label217.TabIndex = 143;
+            // 
+            // button124
+            // 
+            this.button124.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button124.FlatAppearance.BorderSize = 0;
+            this.button124.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button124.ForeColor = System.Drawing.SystemColors.Control;
+            this.button124.Location = new System.Drawing.Point(473, 61);
+            this.button124.Name = "button124";
+            this.button124.Size = new System.Drawing.Size(274, 25);
+            this.button124.TabIndex = 142;
+            this.button124.Text = "Add Panel";
+            this.button124.UseVisualStyleBackColor = true;
+            // 
+            // button125
+            // 
+            this.button125.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button125.FlatAppearance.BorderSize = 0;
+            this.button125.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button125.ForeColor = System.Drawing.SystemColors.Control;
+            this.button125.Location = new System.Drawing.Point(473, 34);
+            this.button125.Name = "button125";
+            this.button125.Size = new System.Drawing.Size(87, 25);
+            this.button125.TabIndex = 141;
+            this.button125.Text = "Add Element";
+            this.button125.UseVisualStyleBackColor = true;
+            this.button125.Click += new System.EventHandler(this.button125_Click);
+            // 
+            // button126
+            // 
+            this.button126.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button126.FlatAppearance.BorderSize = 0;
+            this.button126.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button126.ForeColor = System.Drawing.SystemColors.Control;
+            this.button126.Location = new System.Drawing.Point(563, 34);
+            this.button126.Name = "button126";
+            this.button126.Size = new System.Drawing.Size(184, 25);
+            this.button126.TabIndex = 140;
+            this.button126.Text = "Add Animation";
+            this.button126.UseVisualStyleBackColor = true;
+            // 
+            // button127
+            // 
+            this.button127.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button127.FlatAppearance.BorderSize = 0;
+            this.button127.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button127.ForeColor = System.Drawing.SystemColors.Control;
+            this.button127.Location = new System.Drawing.Point(563, 6);
+            this.button127.Name = "button127";
+            this.button127.Size = new System.Drawing.Size(184, 27);
+            this.button127.TabIndex = 139;
+            this.button127.Text = "Add Custom Night Icon";
+            this.button127.UseVisualStyleBackColor = true;
+            // 
+            // label218
+            // 
+            this.label218.AutoSize = true;
+            this.label218.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label218.ForeColor = System.Drawing.SystemColors.Control;
+            this.label218.Location = new System.Drawing.Point(266, 67);
+            this.label218.Name = "label218";
+            this.label218.Size = new System.Drawing.Size(69, 15);
+            this.label218.TabIndex = 137;
+            this.label218.Text = "Static Effect";
+            // 
+            // BackgroundAudio_MenuEditor
+            // 
+            this.BackgroundAudio_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BackgroundAudio_MenuEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackgroundAudio_MenuEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.BackgroundAudio_MenuEditor.FormattingEnabled = true;
+            this.BackgroundAudio_MenuEditor.Location = new System.Drawing.Point(372, 37);
+            this.BackgroundAudio_MenuEditor.Name = "BackgroundAudio_MenuEditor";
+            this.BackgroundAudio_MenuEditor.Size = new System.Drawing.Size(94, 23);
+            this.BackgroundAudio_MenuEditor.TabIndex = 136;
+            this.BackgroundAudio_MenuEditor.Text = "Audio List";
+            // 
+            // label219
+            // 
+            this.label219.AutoSize = true;
+            this.label219.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label219.ForeColor = System.Drawing.SystemColors.Control;
+            this.label219.Location = new System.Drawing.Point(265, 40);
+            this.label219.Name = "label219";
+            this.label219.Size = new System.Drawing.Size(103, 15);
+            this.label219.TabIndex = 135;
+            this.label219.Text = "BackgroundAudio";
+            // 
+            // label220
+            // 
+            this.label220.AutoSize = true;
+            this.label220.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label220.ForeColor = System.Drawing.SystemColors.Control;
+            this.label220.Location = new System.Drawing.Point(264, 12);
+            this.label220.Name = "label220";
+            this.label220.Size = new System.Drawing.Size(104, 15);
+            this.label220.TabIndex = 134;
+            this.label220.Text = "BackgroundImage";
+            // 
+            // comboBox73
+            // 
+            this.comboBox73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.comboBox73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox73.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox73.FormattingEnabled = true;
+            this.comboBox73.Items.AddRange(new object[] {
+            "Default"});
+            this.comboBox73.Location = new System.Drawing.Point(372, 64);
+            this.comboBox73.Name = "comboBox73";
+            this.comboBox73.Size = new System.Drawing.Size(94, 23);
+            this.comboBox73.TabIndex = 133;
+            this.comboBox73.Text = "Statics";
+            // 
+            // button129
+            // 
+            this.button129.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button129.FlatAppearance.BorderSize = 0;
+            this.button129.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button129.ForeColor = System.Drawing.SystemColors.Control;
+            this.button129.Location = new System.Drawing.Point(473, 6);
+            this.button129.Name = "button129";
+            this.button129.Size = new System.Drawing.Size(87, 27);
+            this.button129.TabIndex = 131;
+            this.button129.Text = "Add Image";
+            this.button129.UseVisualStyleBackColor = true;
+            // 
+            // label222
+            // 
+            this.label222.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label222.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label222.ForeColor = System.Drawing.SystemColors.Control;
+            this.label222.Location = new System.Drawing.Point(677, -369);
+            this.label222.Name = "label222";
+            this.label222.Size = new System.Drawing.Size(81, 638);
+            this.label222.TabIndex = 157;
+            // 
+            // label223
+            // 
+            this.label223.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label223.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label223.ForeColor = System.Drawing.SystemColors.Control;
+            this.label223.Location = new System.Drawing.Point(596, -366);
+            this.label223.Name = "label223";
+            this.label223.Size = new System.Drawing.Size(81, 637);
+            this.label223.TabIndex = 158;
+            // 
             // textCreate_MenuEditor
             // 
             this.textCreate_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textCreate_MenuEditor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.textCreate_MenuEditor.Controls.Add(this.label15);
             this.textCreate_MenuEditor.Controls.Add(this.create_text_menuEditorBTN);
             this.textCreate_MenuEditor.Controls.Add(this.text_ID_MenuEditor_Create);
             this.textCreate_MenuEditor.Controls.Add(this.label47);
@@ -1780,7 +2168,7 @@ namespace FNAF_Engine_Reborn
             this.textCreate_MenuEditor.Controls.Add(this.button53);
             this.textCreate_MenuEditor.Location = new System.Drawing.Point(6, 7);
             this.textCreate_MenuEditor.Name = "textCreate_MenuEditor";
-            this.textCreate_MenuEditor.Size = new System.Drawing.Size(202, 71);
+            this.textCreate_MenuEditor.Size = new System.Drawing.Size(195, 93);
             this.textCreate_MenuEditor.TabIndex = 103;
             this.textCreate_MenuEditor.Visible = false;
             // 
@@ -1788,7 +2176,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.create_text_menuEditorBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.create_text_menuEditorBTN.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_text_menuEditorBTN.Location = new System.Drawing.Point(25, 26);
+            this.create_text_menuEditorBTN.Location = new System.Drawing.Point(11, 47);
             this.create_text_menuEditorBTN.Name = "create_text_menuEditorBTN";
             this.create_text_menuEditorBTN.Size = new System.Drawing.Size(162, 33);
             this.create_text_menuEditorBTN.TabIndex = 102;
@@ -1800,7 +2188,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.text_ID_MenuEditor_Create.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.text_ID_MenuEditor_Create.ForeColor = System.Drawing.SystemColors.Window;
-            this.text_ID_MenuEditor_Create.Location = new System.Drawing.Point(18, 1);
+            this.text_ID_MenuEditor_Create.Location = new System.Drawing.Point(7, 19);
             this.text_ID_MenuEditor_Create.Name = "text_ID_MenuEditor_Create";
             this.text_ID_MenuEditor_Create.Size = new System.Drawing.Size(171, 23);
             this.text_ID_MenuEditor_Create.TabIndex = 101;
@@ -2197,62 +2585,15 @@ namespace FNAF_Engine_Reborn
             this.button53.UseVisualStyleBackColor = true;
             this.button53.Visible = false;
             // 
-            // textBox19
-            // 
-            this.textBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.textBox19.Location = new System.Drawing.Point(32, 409);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(105, 23);
-            this.textBox19.TabIndex = 129;
-            this.textBox19.Visible = false;
-            // 
             // Menus
             // 
             this.Menus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.Menus.ForeColor = System.Drawing.SystemColors.Window;
             this.Menus.Location = new System.Drawing.Point(8, 39);
             this.Menus.Name = "Menus";
             this.Menus.Size = new System.Drawing.Size(171, 332);
             this.Menus.TabIndex = 105;
             this.Menus.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
-            // button116
-            // 
-            this.button116.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button116.FlatAppearance.BorderSize = 0;
-            this.button116.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button116.ForeColor = System.Drawing.SystemColors.Control;
-            this.button116.Location = new System.Drawing.Point(516, 474);
-            this.button116.Name = "button116";
-            this.button116.Size = new System.Drawing.Size(142, 25);
-            this.button116.TabIndex = 104;
-            this.button116.Text = "Extension Placeholder";
-            this.button116.UseVisualStyleBackColor = true;
-            this.button116.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(594, 454);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 17);
-            this.label11.TabIndex = 103;
-            this.label11.Text = "EXTENSIONS";
-            this.label11.Visible = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label27.ForeColor = System.Drawing.SystemColors.Control;
-            this.label27.Location = new System.Drawing.Point(156, 399);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(91, 15);
-            this.label27.TabIndex = 98;
-            this.label27.Text = "Y: Indetermined";
-            this.label27.Visible = false;
             // 
             // createShit
             // 
@@ -2716,328 +3057,11 @@ namespace FNAF_Engine_Reborn
             // MenuPreview
             // 
             this.MenuPreview.BackColor = System.Drawing.Color.Black;
+            this.MenuPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuPreview.Location = new System.Drawing.Point(186, 40);
             this.MenuPreview.Name = "MenuPreview";
             this.MenuPreview.Size = new System.Drawing.Size(570, 331);
             this.MenuPreview.TabIndex = 101;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label82.ForeColor = System.Drawing.SystemColors.Control;
-            this.label82.Location = new System.Drawing.Point(2, 507);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(37, 15);
-            this.label82.TabIndex = 100;
-            this.label82.Text = "Sprite";
-            this.label82.Visible = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label26.ForeColor = System.Drawing.SystemColors.Control;
-            this.label26.Location = new System.Drawing.Point(156, 381);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(91, 15);
-            this.label26.TabIndex = 97;
-            this.label26.Text = "X: Indetermined";
-            this.label26.Visible = false;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(47, 463);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 95;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.textBox3.Location = new System.Drawing.Point(54, 432);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(84, 23);
-            this.textBox3.TabIndex = 94;
-            this.textBox3.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.textBox2.Location = new System.Drawing.Point(31, 379);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(105, 23);
-            this.textBox2.TabIndex = 93;
-            this.textBox2.Visible = false;
-            // 
-            // comboBox12
-            // 
-            this.comboBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox12.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(40, 503);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(97, 23);
-            this.comboBox12.TabIndex = 91;
-            this.comboBox12.Text = "Images";
-            this.comboBox12.Visible = false;
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox11.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(74, 481);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(97, 23);
-            this.comboBox11.TabIndex = 90;
-            this.comboBox11.Text = "Animatronics";
-            this.comboBox11.Visible = false;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label28.ForeColor = System.Drawing.SystemColors.Control;
-            this.label28.Location = new System.Drawing.Point(2, 483);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(73, 15);
-            this.label28.TabIndex = 87;
-            this.label28.Text = "Animatronic";
-            this.label28.Visible = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label25.ForeColor = System.Drawing.SystemColors.Control;
-            this.label25.Location = new System.Drawing.Point(2, 461);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(46, 15);
-            this.label25.TabIndex = 84;
-            this.label25.Text = "Hidden";
-            this.label25.Visible = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label24.ForeColor = System.Drawing.SystemColors.Control;
-            this.label24.Location = new System.Drawing.Point(2, 437);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(51, 15);
-            this.label24.TabIndex = 83;
-            this.label24.Text = "FontSize";
-            this.label24.Visible = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label23.ForeColor = System.Drawing.SystemColors.Control;
-            this.label23.Location = new System.Drawing.Point(3, 411);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(31, 15);
-            this.label23.TabIndex = 82;
-            this.label23.Text = "Font";
-            this.label23.Visible = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label22.ForeColor = System.Drawing.SystemColors.Control;
-            this.label22.Location = new System.Drawing.Point(3, 381);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(28, 15);
-            this.label22.TabIndex = 81;
-            this.label22.Text = "Text";
-            this.label22.Visible = false;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
-            this.label17.Location = new System.Drawing.Point(147, 356);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(133, 302);
-            this.label17.TabIndex = 79;
-            // 
-            // button17
-            // 
-            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button17.ForeColor = System.Drawing.SystemColors.Control;
-            this.button17.Location = new System.Drawing.Point(605, 428);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(149, 25);
-            this.button17.TabIndex = 78;
-            this.button17.Text = "Add Panel";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Visible = false;
-            // 
-            // button16
-            // 
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button16.ForeColor = System.Drawing.SystemColors.Control;
-            this.button16.Location = new System.Drawing.Point(515, 428);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(87, 25);
-            this.button16.TabIndex = 77;
-            this.button16.Text = "Add Text";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Visible = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button15
-            // 
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button15.ForeColor = System.Drawing.SystemColors.Control;
-            this.button15.Location = new System.Drawing.Point(605, 401);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(149, 25);
-            this.button15.TabIndex = 76;
-            this.button15.Text = "Add Animation";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Visible = false;
-            // 
-            // button14
-            // 
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button14.ForeColor = System.Drawing.SystemColors.Control;
-            this.button14.Location = new System.Drawing.Point(605, 373);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(149, 27);
-            this.button14.TabIndex = 75;
-            this.button14.Text = "Add Custom Night Icon";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Visible = false;
-            // 
-            // button13
-            // 
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button13.ForeColor = System.Drawing.SystemColors.Control;
-            this.button13.Location = new System.Drawing.Point(515, 402);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(87, 24);
-            this.button13.TabIndex = 74;
-            this.button13.Text = "Add Button";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(278, 432);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 15);
-            this.label16.TabIndex = 73;
-            this.label16.Text = "Static Effect";
-            this.label16.Visible = false;
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox10.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(384, 404);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(94, 23);
-            this.comboBox10.TabIndex = 72;
-            this.comboBox10.Text = "Audio List";
-            this.comboBox10.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(277, 407);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(103, 15);
-            this.label15.TabIndex = 71;
-            this.label15.Text = "BackgroundAudio";
-            this.label15.Visible = false;
-            // 
-            // bgImage
-            // 
-            this.bgImage.AutoSize = true;
-            this.bgImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.bgImage.ForeColor = System.Drawing.SystemColors.Control;
-            this.bgImage.Location = new System.Drawing.Point(276, 379);
-            this.bgImage.Name = "bgImage";
-            this.bgImage.Size = new System.Drawing.Size(104, 15);
-            this.bgImage.TabIndex = 70;
-            this.bgImage.Text = "BackgroundImage";
-            this.bgImage.Visible = false;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox7.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
-            "Default"});
-            this.comboBox7.Location = new System.Drawing.Point(384, 431);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(95, 23);
-            this.comboBox7.TabIndex = 69;
-            this.comboBox7.Text = "Statics";
-            this.comboBox7.Visible = false;
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox8.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(384, 377);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(94, 23);
-            this.comboBox8.TabIndex = 67;
-            this.comboBox8.Text = "Image List";
-            this.comboBox8.Visible = false;
-            // 
-            // button21
-            // 
-            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button21.FlatAppearance.BorderSize = 0;
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button21.ForeColor = System.Drawing.SystemColors.Control;
-            this.button21.Location = new System.Drawing.Point(515, 373);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(87, 27);
-            this.button21.TabIndex = 59;
-            this.button21.Text = "Add Image";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Visible = false;
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label20.Image = ((System.Drawing.Image)(resources.GetObject("label20.Image")));
-            this.label20.Location = new System.Drawing.Point(378, 365);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(152, 259);
-            this.label20.TabIndex = 54;
             // 
             // button23
             // 
@@ -3064,26 +3088,6 @@ namespace FNAF_Engine_Reborn
             this.button24.TabIndex = 2;
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // label44
-            // 
-            this.label44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label44.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label44.ForeColor = System.Drawing.SystemColors.Control;
-            this.label44.Location = new System.Drawing.Point(677, -2);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(81, 638);
-            this.label44.TabIndex = 127;
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(596, 1);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 637);
-            this.label13.TabIndex = 128;
             // 
             // label30
             // 
@@ -4569,11 +4573,11 @@ namespace FNAF_Engine_Reborn
             this.ScriptEditorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ScriptEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ScriptEditorPanel.Controls.Add(this.PanelCreatingNewScript);
+            this.ScriptEditorPanel.Controls.Add(this.panel4);
             this.ScriptEditorPanel.Controls.Add(this.button9);
             this.ScriptEditorPanel.Controls.Add(this.button54);
             this.ScriptEditorPanel.Controls.Add(this.button52);
             this.ScriptEditorPanel.Controls.Add(this.button50);
-            this.ScriptEditorPanel.Controls.Add(this.panel4);
             this.ScriptEditorPanel.Controls.Add(this.label77);
             this.ScriptEditorPanel.Controls.Add(this.ScriptEditor_Scripts_ComboBox);
             this.ScriptEditorPanel.Location = new System.Drawing.Point(196, 61);
@@ -4614,6 +4618,63 @@ namespace FNAF_Engine_Reborn
             this.CreateScript.Text = "Create";
             this.CreateScript.UseVisualStyleBackColor = true;
             this.CreateScript.Click += new System.EventHandler(this.CreateScript_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(35)))));
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.button26);
+            this.panel4.Controls.Add(this.button25);
+            this.panel4.Controls.Add(this.button10);
+            this.panel4.Location = new System.Drawing.Point(6, 33);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(746, 588);
+            this.panel4.TabIndex = 54;
+            this.panel4.Visible = false;
+            this.panel4.VisibleChanged += new System.EventHandler(this.panel4_VisibleChanged);
+            // 
+            // button26
+            // 
+            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button26.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.button26.ForeColor = System.Drawing.SystemColors.Control;
+            this.button26.Location = new System.Drawing.Point(66, 86);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(435, 75);
+            this.button26.TabIndex = 2;
+            this.button26.Text = "Add Action";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Visible = false;
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.Red;
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button25.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.button25.ForeColor = System.Drawing.SystemColors.Control;
+            this.button25.Location = new System.Drawing.Point(14, 12);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(487, 75);
+            this.button25.TabIndex = 1;
+            this.button25.Text = "Event";
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Visible = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            this.button25.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button25_MouseClick);
+            // 
+            // button10
+            // 
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.button10.ForeColor = System.Drawing.SystemColors.Control;
+            this.button10.Location = new System.Drawing.Point(7, 6);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(227, 75);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Add Event";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Visible = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -4663,72 +4724,6 @@ namespace FNAF_Engine_Reborn
             this.button50.TabIndex = 0;
             this.button50.Text = "Open Directory";
             this.button50.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(35)))));
-            this.panel4.Controls.Add(this.button26);
-            this.panel4.Controls.Add(this.button25);
-            this.panel4.Controls.Add(this.button10);
-            this.panel4.Location = new System.Drawing.Point(6, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(746, 588);
-            this.panel4.TabIndex = 54;
-            this.panel4.Visible = false;
-            this.panel4.VisibleChanged += new System.EventHandler(this.panel4_VisibleChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Diamond_Cat;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 460);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 130);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button26
-            // 
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.button26.ForeColor = System.Drawing.SystemColors.Control;
-            this.button26.Location = new System.Drawing.Point(66, 86);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(435, 75);
-            this.button26.TabIndex = 2;
-            this.button26.Text = "Add Action";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Visible = false;
-            // 
-            // button25
-            // 
-            this.button25.BackColor = System.Drawing.Color.Red;
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.button25.ForeColor = System.Drawing.SystemColors.Control;
-            this.button25.Location = new System.Drawing.Point(14, 12);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(487, 75);
-            this.button25.TabIndex = 1;
-            this.button25.Text = "Event";
-            this.button25.UseVisualStyleBackColor = false;
-            this.button25.Visible = false;
-            this.button25.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button25_MouseClick);
-            // 
-            // button10
-            // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.button10.ForeColor = System.Drawing.SystemColors.Control;
-            this.button10.Location = new System.Drawing.Point(7, 6);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(227, 75);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Add Event";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Visible = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label77
             // 
@@ -5970,6 +5965,17 @@ namespace FNAF_Engine_Reborn
             this.menu.TabIndex = 104;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pictureBox2.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Diamond_Cat;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(-52, 440);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(231, 205);
+            this.pictureBox2.TabIndex = 150;
+            this.pictureBox2.TabStop = false;
+            // 
             // label176
             // 
             this.label176.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
@@ -6556,16 +6562,27 @@ namespace FNAF_Engine_Reborn
             this.AnimationList_StaticEffectEditor.TabIndex = 11;
             this.AnimationList_StaticEffectEditor.Text = "Animation List";
             // 
-            // pictureBox2
+            // label15
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.pictureBox2.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Diamond_Cat;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(-52, 440);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(231, 205);
-            this.pictureBox2.TabIndex = 150;
-            this.pictureBox2.TabStop = false;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label15.ForeColor = System.Drawing.SystemColors.Control;
+            this.label15.Location = new System.Drawing.Point(1, 2);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(188, 15);
+            this.label15.TabIndex = 155;
+            this.label15.Text = "Your text\'s ID (not the text) will be:";
+            // 
+            // MenuEditor_ScriptEditor
+            // 
+            this.MenuEditor_ScriptEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.MenuEditor_ScriptEditor.ForeColor = System.Drawing.SystemColors.Control;
+            this.MenuEditor_ScriptEditor.Image = global::FNAF_Engine_Reborn.Properties.Resources.selectme;
+            this.MenuEditor_ScriptEditor.Location = new System.Drawing.Point(65, 7);
+            this.MenuEditor_ScriptEditor.Name = "MenuEditor_ScriptEditor";
+            this.MenuEditor_ScriptEditor.Size = new System.Drawing.Size(41, 32);
+            this.MenuEditor_ScriptEditor.TabIndex = 166;
+            this.MenuEditor_ScriptEditor.Click += new System.EventHandler(this.MenuEditor_ScriptEditor_Click);
             // 
             // reborn
             // 
@@ -6574,7 +6591,6 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
-            this.Controls.Add(this.menu);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
@@ -6583,16 +6599,17 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
-            this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
-            this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.template);
             this.Controls.Add(this.officeEditorPanel);
+            this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
+            this.Controls.Add(this.menu);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -6604,6 +6621,7 @@ namespace FNAF_Engine_Reborn
             this.Click += new System.EventHandler(this.reborn_Click);
             this.allEditorsPNL.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.animatronicEditorPNL2.ResumeLayout(false);
             this.animatronicEditorPNL2.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -6615,7 +6633,8 @@ namespace FNAF_Engine_Reborn
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.menuEditorPanel.ResumeLayout(false);
-            this.menuEditorPanel.PerformLayout();
+            this.Menu_Elements_Create.ResumeLayout(false);
+            this.Menu_Elements_Create.PerformLayout();
             this.textCreate_MenuEditor.ResumeLayout(false);
             this.textCreate_MenuEditor.PerformLayout();
             this.createShit.ResumeLayout(false);
@@ -6639,7 +6658,6 @@ namespace FNAF_Engine_Reborn
             this.PanelCreatingNewScript.ResumeLayout(false);
             this.PanelCreatingNewScript.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.buildSettingsPanelMoment.ResumeLayout(false);
             this.buildSettingsPanelMoment.PerformLayout();
             this.animationEditorPanel.ResumeLayout(false);
@@ -6651,13 +6669,13 @@ namespace FNAF_Engine_Reborn
             this.cutsceneEditorPanel.ResumeLayout(false);
             this.cutsceneEditorPanel.PerformLayout();
             this.menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.template.ResumeLayout(false);
             this.template.PerformLayout();
             this.staticeffecteditor.ResumeLayout(false);
             this.staticeffecteditor.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6669,492 +6687,495 @@ namespace FNAF_Engine_Reborn
         }
 
         #endregion
-        private System.Windows.Forms.Panel animatronicEditorPNL2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button funnyPath;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button funnyScrollForward;
-        private System.Windows.Forms.Button funnyScrollBack;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel cameraEditorPanel;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label lblInfoCameraEditorStaticEffect;
-        private System.Windows.Forms.ComboBox StaticEffect_CameraEditor;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel menuEditorPanel;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label bgImage;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.ComboBox PowerOutAnim_ComboBox;
-        private System.Windows.Forms.ComboBox MaskAnim_ComboBox;
-        private System.Windows.Forms.ComboBox CameraAnim_ComboBox;
-        private System.Windows.Forms.Label powerOut_label;
-        private System.Windows.Forms.Label mask_label;
-        private System.Windows.Forms.Label camera_label;
-        private System.Windows.Forms.ComboBox comboBox14;
-        private System.Windows.Forms.Label displayOfficeEditorInfoAnimatronicKill;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.Button CreatePanel_OfficeEditor;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button CreateDoorButton_OfficeEditor;
-        private System.Windows.Forms.Button CreateLightButton_OfficeEditor;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Button button36;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Panel SoundEditorPanel;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.ComboBox comboBox29;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.ComboBox comboBox28;
-        private System.Windows.Forms.ComboBox comboBox27;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.ComboBox comboBox26;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.ComboBox comboBox25;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.ComboBox comboBox24;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.ComboBox comboBox23;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.ComboBox comboBox22;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.ComboBox comboBox21;
-        private System.Windows.Forms.ComboBox comboBox20;
-        private System.Windows.Forms.ComboBox comboBox19;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.ComboBox comboBox33;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.ComboBox comboBox32;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.ComboBox comboBox31;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.ComboBox comboBox30;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Panel AssetManagerPanel;
-        private System.Windows.Forms.ComboBox comboBox49;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.Button button46;
-        private System.Windows.Forms.Button button45;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel ProjectStuffs;
-        private System.Windows.Forms.Label pname;
-        private System.Windows.Forms.Label pauthor;
-        private System.Windows.Forms.Label ptemplate;
-        private System.Windows.Forms.Button button39;
-        private System.Windows.Forms.ComboBox comboBox38;
-        private System.Windows.Forms.Button button40;
-        private System.Windows.Forms.ComboBox comboBox39;
-        private System.Windows.Forms.ComboBox comboBox36;
-        private System.Windows.Forms.ComboBox comboBox35;
-        private System.Windows.Forms.ComboBox comboBox34;
-        private System.Windows.Forms.Button button48;
-        private System.Windows.Forms.Panel ExtensionsPanel;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.ComboBox comboBox41;
-        private System.Windows.Forms.Button button49;
-        private System.Windows.Forms.Panel ScriptEditorPanel;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button50;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.ComboBox ScriptEditor_Scripts_ComboBox;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckBox checkBox21;
-        private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Button button54;
-        private System.Windows.Forms.Label powerPercentage_label;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Label label33;
         public System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.CheckBox checkBox7;
         public System.Windows.Forms.Panel buildSettingsPanelMoment;
-        private System.Windows.Forms.Panel animationEditorPanel;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Panel AnimAdd;
-        private System.Windows.Forms.TextBox spriteName;
-        private System.Windows.Forms.Button createSpritebtn;
-        private System.Windows.Forms.Button button63;
-        private System.Windows.Forms.Button button62;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button60;
-        private System.Windows.Forms.Button button59;
-        private System.Windows.Forms.Button button61;
-        private System.Windows.Forms.ComboBox comboBox43;
-        private System.Windows.Forms.Button button65;
-        private System.Windows.Forms.Button button64;
-        private System.Windows.Forms.Panel cutsceneMoment;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label fermoment;
-        private System.Windows.Forms.Button button75;
-        private System.Windows.Forms.Panel cutsceneEditorPanel;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button77;
-        private System.Windows.Forms.Button button71;
-        private System.Windows.Forms.Button button73;
-        private System.Windows.Forms.Button button72;
-        private System.Windows.Forms.ComboBox comboBox44;
-        private System.Windows.Forms.Button button70;
-        private System.Windows.Forms.Button button69;
-        private System.Windows.Forms.Button button68;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Button button83;
-        private System.Windows.Forms.Button button82;
-        private System.Windows.Forms.Button button78;
-        private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.Label label105;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Button button81;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button80;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button76;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button79;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button74;
-        private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Button createProjectBTN;
-        private System.Windows.Forms.Button loadProjectBTN;
-        private System.Windows.Forms.Button deleteProjectBTN;
-        private System.Windows.Forms.Button toolC;
-        private System.Windows.Forms.Label bigProjectICON;
-        private System.Windows.Forms.Button changelogsBtn;
-        private System.Windows.Forms.Label funTools;
-        private System.Windows.Forms.Label bigFolderICON;
-        private System.Windows.Forms.Label bigExcludeICON;
-        private System.Windows.Forms.Button button66;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label87;
         public System.Windows.Forms.Panel menu;
         public System.Windows.Forms.Panel allEditorsPNL;
-        private System.Windows.Forms.Label label123;
-        private System.Windows.Forms.Label label125;
-        private System.Windows.Forms.Label label126;
-        private System.Windows.Forms.Label label120;
-        private System.Windows.Forms.Label label122;
-        private System.Windows.Forms.Label label117;
-        private System.Windows.Forms.Label label116;
-        private System.Windows.Forms.Label label114;
-        private System.Windows.Forms.Label label113;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Label label142;
-        private System.Windows.Forms.Label label146;
-        private System.Windows.Forms.Label label129;
-        private System.Windows.Forms.Label label130;
-        private System.Windows.Forms.Label label131;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.CheckBox checkBox22;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.ComboBox comboBox45;
-        private System.Windows.Forms.ComboBox comboBox46;
-        private System.Windows.Forms.ComboBox comboBox48;
-        private System.Windows.Forms.Label label132;
-        private System.Windows.Forms.Label label133;
-        private System.Windows.Forms.Label label134;
-        private System.Windows.Forms.Label label135;
-        private System.Windows.Forms.Label label136;
-        private System.Windows.Forms.Label label137;
-        private System.Windows.Forms.Label label138;
-        private System.Windows.Forms.Label label140;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button47;
-        private System.Windows.Forms.Button button84;
-        private System.Windows.Forms.Button button85;
-        private System.Windows.Forms.Button button86;
-        private System.Windows.Forms.Label label147;
-        private System.Windows.Forms.ComboBox comboBox50;
-        private System.Windows.Forms.Label label148;
-        private System.Windows.Forms.Label label149;
-        private System.Windows.Forms.ComboBox comboBox51;
-        private System.Windows.Forms.ComboBox comboBox52;
-        private System.Windows.Forms.Button button87;
-        private System.Windows.Forms.Label label150;
-        private System.Windows.Forms.Label label151;
-        private System.Windows.Forms.Label label152;
-        private System.Windows.Forms.Button button90;
-        public System.Windows.Forms.Panel createShit;
-        public System.Windows.Forms.TextBox menuName;
-        public System.Windows.Forms.Button button88;
-        private System.Windows.Forms.Button button92;
-        private System.Windows.Forms.Button button91;
-        private System.Windows.Forms.Button button89;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button93;
-        private System.Windows.Forms.Button button94;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.Label label83;
         public System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.Label label156;
-        private System.Windows.Forms.Label label157;
-        private System.Windows.Forms.Label label158;
-        private System.Windows.Forms.Label label159;
-        private System.Windows.Forms.Label label160;
-        private System.Windows.Forms.Label label161;
-        private System.Windows.Forms.Label label162;
-        private System.Windows.Forms.Label label163;
-        private System.Windows.Forms.Label label164;
-        private System.Windows.Forms.Label label165;
-        private System.Windows.Forms.Label label166;
         public System.Windows.Forms.Button button38;
         public System.Windows.Forms.Label REBORNtitle;
-        private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.Button button58;
         public System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.Button button95;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Button button57;
-        private System.Windows.Forms.Button button98;
-        private System.Windows.Forms.Button button97;
-        private System.Windows.Forms.Button button52;
-        private System.Windows.Forms.Button button99;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.CheckBox checkBox24;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.ComboBox comboBox55;
-        private System.Windows.Forms.ComboBox comboBox54;
-        private System.Windows.Forms.Panel template;
-        private System.Windows.Forms.Panel staticeffecteditor;
-        private System.Windows.Forms.Button StaticEffectEditor_FrameList;
         public System.Windows.Forms.Label DeleteFrameInfo_StaticEffectEditor;
         public System.Windows.Forms.Label StaticEffectEditor_addFrameInfo;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.Button button112;
-        private System.Windows.Forms.Button button110;
-        private System.Windows.Forms.Button button111;
-        private System.Windows.Forms.ComboBox comboBox57;
-        private System.Windows.Forms.CheckBox checkBox25;
         public System.Windows.Forms.Label FPS_Info_StaticEffectEditor;
-        private System.Windows.Forms.TextBox FPS_StaticEffectEditor;
-        private System.Windows.Forms.Button button103;
-        private System.Windows.Forms.Button button107;
-        private System.Windows.Forms.Button DeleteFrame_StaticEffectEditor;
-        private System.Windows.Forms.Button AddFrame_StaticEffectEditor;
-        private System.Windows.Forms.ComboBox AnimationList_StaticEffectEditor;
-        private System.Windows.Forms.Button button102;
-        private System.Windows.Forms.Button button101;
         public System.Windows.Forms.Label project;
-        private System.Windows.Forms.Button button100;
-        private System.Windows.Forms.Button button105;
-        private System.Windows.Forms.Button button106;
-        private System.Windows.Forms.ComboBox comboBox61;
-        private System.Windows.Forms.Button button113;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button114;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.CheckBox checkBox26;
-        private System.Windows.Forms.Button button115;
-        private System.Windows.Forms.TextBox textbox_BorderRGBcamera;
-        private System.Windows.Forms.Label lblInfoCameraEditorBorderRGB;
-        private System.Windows.Forms.CheckBox checkBox27;
-        private System.Windows.Forms.Label label115;
-        private System.Windows.Forms.CheckBox checkBox28;
-        private System.Windows.Forms.ComboBox AllCamerasStaticEffect_Combobox;
-        private System.Windows.Forms.CheckBox checkBox30;
-        private System.Windows.Forms.TextBox AllCamerasBorderRGB_TextBox;
-        private System.Windows.Forms.Label lblInfoCameraEditorAllBorderRGB;
-        private System.Windows.Forms.Label lblInfoCameraEditorAllStaticEffect;
-        private System.Windows.Forms.Button button116;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.Button button117;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox58;
-        private System.Windows.Forms.Label label143;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label124;
-        private System.Windows.Forms.ComboBox comboBox59;
-        private System.Windows.Forms.ComboBox comboBox62;
-        private System.Windows.Forms.ComboBox comboBox60;
-        private System.Windows.Forms.ComboBox comboBox63;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.ComboBox Offices_ComboBox;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label144;
-        private System.Windows.Forms.Label label172;
-        private System.Windows.Forms.Label label173;
-        private System.Windows.Forms.Label label168;
-        private System.Windows.Forms.Label label169;
-        private System.Windows.Forms.Label label170;
-        private System.Windows.Forms.Label label171;
-        private System.Windows.Forms.Label label153;
-        private System.Windows.Forms.Label label154;
-        private System.Windows.Forms.Label label155;
-        private System.Windows.Forms.Label label174;
-        private System.Windows.Forms.Label label176;
-        private System.Windows.Forms.Label label175;
-        private System.Windows.Forms.Label label167;
-        private System.Windows.Forms.Label label97;
-        private System.Windows.Forms.Label label177;
-        private System.Windows.Forms.ComboBox comboBox65;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button29;
         public System.Windows.Forms.ComboBox comboBox17;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label121;
         public System.Windows.Forms.Panel officeEditorPanel;
         public System.Windows.Forms.Panel officePreview;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TreeView Menus;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Button CreateInput_OfficeEditor;
-        private System.Windows.Forms.Button RightScroll_CameraEditor;
-        private System.Windows.Forms.Button LeftScroll_CameraEditor;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Panel PanelCreatingNewScript;
-        private System.Windows.Forms.TextBox ScriptEditor_TextBoxname;
-        private System.Windows.Forms.Button CreateScript;
+        public System.Windows.Forms.Panel MenuPreview;
+        public System.Windows.Forms.Button button26;
+        public System.Windows.Forms.Button button25;
+        public System.Windows.Forms.Button button10;
         public System.Windows.Forms.Panel textCreate_MenuEditor;
         public System.Windows.Forms.Button create_text_menuEditorBTN;
         public System.Windows.Forms.TextBox text_ID_MenuEditor_Create;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button41;
-        private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Button button44;
-        private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.Label label127;
-        private System.Windows.Forms.ComboBox comboBox15;
-        private System.Windows.Forms.ComboBox comboBox16;
-        private System.Windows.Forms.Button button51;
-        private System.Windows.Forms.Label label128;
-        private System.Windows.Forms.Label label139;
-        private System.Windows.Forms.Label label141;
-        private System.Windows.Forms.Button button53;
-        public System.Windows.Forms.Panel MenuPreview;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.Panel createShit;
+        public System.Windows.Forms.Button button88;
+        public System.Windows.Forms.TextBox menuName;
+        public System.Windows.Forms.Label Element_ID_MenuEditor;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Panel animatronicEditorPNL2;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.Button funnyPath;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Button funnyScrollForward;
+        public System.Windows.Forms.Button funnyScrollBack;
+        public System.Windows.Forms.CheckBox checkBox3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Panel cameraEditorPanel;
+        public System.Windows.Forms.Button button6;
+        public System.Windows.Forms.Button button12;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Label lblInfoCameraEditorStaticEffect;
+        public System.Windows.Forms.ComboBox StaticEffect_CameraEditor;
+        public System.Windows.Forms.Button button11;
+        public System.Windows.Forms.CheckBox checkBox6;
+        public System.Windows.Forms.Button button8;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Button button7;
+        public System.Windows.Forms.Button button5;
+        public System.Windows.Forms.CheckBox checkBox4;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Panel menuEditorPanel;
+        public System.Windows.Forms.Button button23;
+        public System.Windows.Forms.Button button24;
+        public System.Windows.Forms.Label label30;
+        public System.Windows.Forms.Button button27;
+        public System.Windows.Forms.CheckBox checkBox11;
+        public System.Windows.Forms.Label label37;
+        public System.Windows.Forms.CheckBox checkBox12;
+        public System.Windows.Forms.Label label40;
+        public System.Windows.Forms.Label label42;
+        public System.Windows.Forms.Label label45;
+        public System.Windows.Forms.ComboBox PowerOutAnim_ComboBox;
+        public System.Windows.Forms.ComboBox MaskAnim_ComboBox;
+        public System.Windows.Forms.ComboBox CameraAnim_ComboBox;
+        public System.Windows.Forms.Label powerOut_label;
+        public System.Windows.Forms.Label mask_label;
+        public System.Windows.Forms.Label camera_label;
+        public System.Windows.Forms.ComboBox comboBox14;
+        public System.Windows.Forms.Label displayOfficeEditorInfoAnimatronicKill;
+        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.CheckBox checkBox17;
+        public System.Windows.Forms.CheckBox checkBox16;
+        public System.Windows.Forms.CheckBox checkBox15;
+        public System.Windows.Forms.CheckBox checkBox14;
+        public System.Windows.Forms.Button CreatePanel_OfficeEditor;
+        public System.Windows.Forms.Button button33;
+        public System.Windows.Forms.Button button32;
+        public System.Windows.Forms.Button button30;
+        public System.Windows.Forms.Button CreateDoorButton_OfficeEditor;
+        public System.Windows.Forms.Button CreateLightButton_OfficeEditor;
+        public System.Windows.Forms.Button button22;
+        public System.Windows.Forms.Label label46;
+        public System.Windows.Forms.Label label48;
+        public System.Windows.Forms.Button button36;
+        public System.Windows.Forms.Button button34;
+        public System.Windows.Forms.Panel SoundEditorPanel;
+        public System.Windows.Forms.Label label63;
+        public System.Windows.Forms.Label label62;
+        public System.Windows.Forms.Label label61;
+        public System.Windows.Forms.ComboBox comboBox29;
+        public System.Windows.Forms.Label label60;
+        public System.Windows.Forms.ComboBox comboBox28;
+        public System.Windows.Forms.ComboBox comboBox27;
+        public System.Windows.Forms.Label label59;
+        public System.Windows.Forms.Label label58;
+        public System.Windows.Forms.ComboBox comboBox26;
+        public System.Windows.Forms.Label label57;
+        public System.Windows.Forms.ComboBox comboBox25;
+        public System.Windows.Forms.Label label56;
+        public System.Windows.Forms.ComboBox comboBox24;
+        public System.Windows.Forms.Label label55;
+        public System.Windows.Forms.ComboBox comboBox23;
+        public System.Windows.Forms.Label label54;
+        public System.Windows.Forms.ComboBox comboBox22;
+        public System.Windows.Forms.Label label53;
+        public System.Windows.Forms.Label label50;
+        public System.Windows.Forms.ComboBox comboBox21;
+        public System.Windows.Forms.ComboBox comboBox20;
+        public System.Windows.Forms.ComboBox comboBox19;
+        public System.Windows.Forms.Label label52;
+        public System.Windows.Forms.Label label51;
+        public System.Windows.Forms.Label label41;
+        public System.Windows.Forms.ComboBox comboBox33;
+        public System.Windows.Forms.Label label68;
+        public System.Windows.Forms.ComboBox comboBox32;
+        public System.Windows.Forms.Label label67;
+        public System.Windows.Forms.ComboBox comboBox31;
+        public System.Windows.Forms.Label label66;
+        public System.Windows.Forms.Label label65;
+        public System.Windows.Forms.ComboBox comboBox30;
+        public System.Windows.Forms.Label label64;
+        public System.Windows.Forms.Panel AssetManagerPanel;
+        public System.Windows.Forms.ComboBox comboBox49;
+        public System.Windows.Forms.Label label89;
+        public System.Windows.Forms.Button button46;
+        public System.Windows.Forms.Button button45;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel ProjectStuffs;
+        public System.Windows.Forms.Label pname;
+        public System.Windows.Forms.Label pauthor;
+        public System.Windows.Forms.Label ptemplate;
+        public System.Windows.Forms.Button button39;
+        public System.Windows.Forms.ComboBox comboBox38;
+        public System.Windows.Forms.Button button40;
+        public System.Windows.Forms.ComboBox comboBox39;
+        public System.Windows.Forms.ComboBox comboBox36;
+        public System.Windows.Forms.ComboBox comboBox35;
+        public System.Windows.Forms.ComboBox comboBox34;
+        public System.Windows.Forms.Button button48;
+        public System.Windows.Forms.Panel ExtensionsPanel;
+        public System.Windows.Forms.Label label78;
+        public System.Windows.Forms.ComboBox comboBox41;
+        public System.Windows.Forms.Button button49;
+        public System.Windows.Forms.Panel ScriptEditorPanel;
+        public System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Button button50;
+        public System.Windows.Forms.Label label77;
+        public System.Windows.Forms.ComboBox ScriptEditor_Scripts_ComboBox;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.CheckBox checkBox21;
+        public System.Windows.Forms.CheckBox checkBox20;
+        public System.Windows.Forms.CheckBox checkBox19;
+        public System.Windows.Forms.Label label74;
+        public System.Windows.Forms.Label label73;
+        public System.Windows.Forms.Button button54;
+        public System.Windows.Forms.Label powerPercentage_label;
+        public System.Windows.Forms.Label label80;
+        public System.Windows.Forms.Label label79;
+        public System.Windows.Forms.CheckBox checkBox10;
+        public System.Windows.Forms.CheckBox checkBox9;
+        public System.Windows.Forms.CheckBox checkBox8;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.Label label31;
+        public System.Windows.Forms.Label label32;
+        public System.Windows.Forms.Button button18;
+        public System.Windows.Forms.Label label33;
+        public System.Windows.Forms.Label label34;
+        public System.Windows.Forms.CheckBox checkBox7;
+        public System.Windows.Forms.Panel animationEditorPanel;
+        public System.Windows.Forms.Panel AnimAdd;
+        public System.Windows.Forms.TextBox spriteName;
+        public System.Windows.Forms.Button createSpritebtn;
+        public System.Windows.Forms.Button button63;
+        public System.Windows.Forms.Button button62;
+        public System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.Button button60;
+        public System.Windows.Forms.Button button59;
+        public System.Windows.Forms.Button button61;
+        public System.Windows.Forms.ComboBox comboBox43;
+        public System.Windows.Forms.Button button65;
+        public System.Windows.Forms.Button button64;
+        public System.Windows.Forms.Panel cutsceneMoment;
+        public System.Windows.Forms.Label label88;
+        public System.Windows.Forms.Label fermoment;
+        public System.Windows.Forms.Button button75;
+        public System.Windows.Forms.Panel cutsceneEditorPanel;
+        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.Button button77;
+        public System.Windows.Forms.Button button71;
+        public System.Windows.Forms.Button button73;
+        public System.Windows.Forms.Button button72;
+        public System.Windows.Forms.ComboBox comboBox44;
+        public System.Windows.Forms.Button button70;
+        public System.Windows.Forms.Button button69;
+        public System.Windows.Forms.Button button68;
+        public System.Windows.Forms.Label label103;
+        public System.Windows.Forms.Label label102;
+        public System.Windows.Forms.Label label104;
+        public System.Windows.Forms.Button button83;
+        public System.Windows.Forms.Button button82;
+        public System.Windows.Forms.Button button78;
+        public System.Windows.Forms.Label label106;
+        public System.Windows.Forms.Label label105;
+        public System.Windows.Forms.TextBox textBox13;
+        public System.Windows.Forms.Button button81;
+        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.Button button80;
+        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.Button button76;
+        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.Button button79;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.Button button74;
+        public System.Windows.Forms.Label label107;
+        public System.Windows.Forms.Label label85;
+        public System.Windows.Forms.Button createProjectBTN;
+        public System.Windows.Forms.Button loadProjectBTN;
+        public System.Windows.Forms.Button deleteProjectBTN;
+        public System.Windows.Forms.Button toolC;
+        public System.Windows.Forms.Label bigProjectICON;
+        public System.Windows.Forms.Button changelogsBtn;
+        public System.Windows.Forms.Label funTools;
+        public System.Windows.Forms.Label bigFolderICON;
+        public System.Windows.Forms.Label bigExcludeICON;
+        public System.Windows.Forms.Button button66;
+        public System.Windows.Forms.Label label84;
+        public System.Windows.Forms.Label label87;
+        public System.Windows.Forms.Label label123;
+        public System.Windows.Forms.Label label125;
+        public System.Windows.Forms.Label label126;
+        public System.Windows.Forms.Label label120;
+        public System.Windows.Forms.Label label122;
+        public System.Windows.Forms.Label label117;
+        public System.Windows.Forms.Label label116;
+        public System.Windows.Forms.Label label114;
+        public System.Windows.Forms.Label label113;
+        public System.Windows.Forms.Label label111;
+        public System.Windows.Forms.Label label109;
+        public System.Windows.Forms.Label label142;
+        public System.Windows.Forms.Label label146;
+        public System.Windows.Forms.Button button92;
+        public System.Windows.Forms.Button button91;
+        public System.Windows.Forms.Button button89;
+        public System.Windows.Forms.Button button20;
+        public System.Windows.Forms.Button button93;
+        public System.Windows.Forms.Button button94;
+        public System.Windows.Forms.Label label92;
+        public System.Windows.Forms.Label label83;
+        public System.Windows.Forms.Label label91;
+        public System.Windows.Forms.Label label156;
+        public System.Windows.Forms.Label label157;
+        public System.Windows.Forms.Label label158;
+        public System.Windows.Forms.Label label159;
+        public System.Windows.Forms.Label label160;
+        public System.Windows.Forms.Label label161;
+        public System.Windows.Forms.Label label162;
+        public System.Windows.Forms.Label label163;
+        public System.Windows.Forms.Label label164;
+        public System.Windows.Forms.Label label165;
+        public System.Windows.Forms.Label label166;
+        public System.Windows.Forms.Label label108;
+        public System.Windows.Forms.Button button58;
+        public System.Windows.Forms.Button button95;
+        public System.Windows.Forms.Label label69;
+        public System.Windows.Forms.Label label70;
+        public System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.TextBox textBox17;
+        public System.Windows.Forms.Button button57;
+        public System.Windows.Forms.Button button98;
+        public System.Windows.Forms.Button button97;
+        public System.Windows.Forms.Button button52;
+        public System.Windows.Forms.Button button99;
+        public System.Windows.Forms.Label label90;
+        public System.Windows.Forms.TextBox textBox18;
+        public System.Windows.Forms.CheckBox checkBox24;
+        public System.Windows.Forms.Label label93;
+        public System.Windows.Forms.Label label96;
+        public System.Windows.Forms.ComboBox comboBox55;
+        public System.Windows.Forms.ComboBox comboBox54;
+        public System.Windows.Forms.Panel template;
+        public System.Windows.Forms.Panel staticeffecteditor;
+        public System.Windows.Forms.Button StaticEffectEditor_FrameList;
+        public System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.TextBox textBox20;
+        public System.Windows.Forms.Button button112;
+        public System.Windows.Forms.Button button110;
+        public System.Windows.Forms.Button button111;
+        public System.Windows.Forms.ComboBox comboBox57;
+        public System.Windows.Forms.CheckBox checkBox25;
+        public System.Windows.Forms.TextBox FPS_StaticEffectEditor;
+        public System.Windows.Forms.Button button103;
+        public System.Windows.Forms.Button button107;
+        public System.Windows.Forms.Button DeleteFrame_StaticEffectEditor;
+        public System.Windows.Forms.Button AddFrame_StaticEffectEditor;
+        public System.Windows.Forms.ComboBox AnimationList_StaticEffectEditor;
+        public System.Windows.Forms.Button button102;
+        public System.Windows.Forms.Button button101;
+        public System.Windows.Forms.Button button100;
+        public System.Windows.Forms.Button button105;
+        public System.Windows.Forms.Button button106;
+        public System.Windows.Forms.ComboBox comboBox61;
+        public System.Windows.Forms.Button button113;
+        public System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Button button114;
+        public System.Windows.Forms.TextBox textBox21;
+        public System.Windows.Forms.CheckBox checkBox26;
+        public System.Windows.Forms.Button button115;
+        public System.Windows.Forms.TextBox textbox_BorderRGBcamera;
+        public System.Windows.Forms.Label lblInfoCameraEditorBorderRGB;
+        public System.Windows.Forms.CheckBox checkBox27;
+        public System.Windows.Forms.Label label115;
+        public System.Windows.Forms.CheckBox checkBox28;
+        public System.Windows.Forms.ComboBox AllCamerasStaticEffect_Combobox;
+        public System.Windows.Forms.CheckBox checkBox30;
+        public System.Windows.Forms.TextBox AllCamerasBorderRGB_TextBox;
+        public System.Windows.Forms.Label lblInfoCameraEditorAllBorderRGB;
+        public System.Windows.Forms.Label lblInfoCameraEditorAllStaticEffect;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.TextBox textBox24;
+        public System.Windows.Forms.Button button117;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.ComboBox comboBox58;
+        public System.Windows.Forms.Label label143;
+        public System.Windows.Forms.Label label94;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.Label label119;
+        public System.Windows.Forms.Label label110;
+        public System.Windows.Forms.Label label72;
+        public System.Windows.Forms.Label label29;
+        public System.Windows.Forms.Label label124;
+        public System.Windows.Forms.ComboBox comboBox59;
+        public System.Windows.Forms.ComboBox comboBox62;
+        public System.Windows.Forms.ComboBox comboBox60;
+        public System.Windows.Forms.ComboBox comboBox63;
+        public System.Windows.Forms.Panel panel9;
+        public System.Windows.Forms.TextBox textBox25;
+        public System.Windows.Forms.Button button31;
+        public System.Windows.Forms.ComboBox Offices_ComboBox;
+        public System.Windows.Forms.Label label71;
+        public System.Windows.Forms.Label label144;
+        public System.Windows.Forms.Label label172;
+        public System.Windows.Forms.Label label173;
+        public System.Windows.Forms.Label label168;
+        public System.Windows.Forms.Label label169;
+        public System.Windows.Forms.Label label170;
+        public System.Windows.Forms.Label label171;
+        public System.Windows.Forms.Label label153;
+        public System.Windows.Forms.Label label154;
+        public System.Windows.Forms.Label label155;
+        public System.Windows.Forms.Label label174;
+        public System.Windows.Forms.Label label176;
+        public System.Windows.Forms.Label label175;
+        public System.Windows.Forms.Label label167;
+        public System.Windows.Forms.Label label97;
+        public System.Windows.Forms.Label label177;
+        public System.Windows.Forms.ComboBox comboBox65;
+        public System.Windows.Forms.Button button37;
+        public System.Windows.Forms.Button button29;
+        public System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.Label label38;
+        public System.Windows.Forms.Label label39;
+        public System.Windows.Forms.Label label36;
+        public System.Windows.Forms.Label label121;
+        public System.Windows.Forms.Label label43;
+        public System.Windows.Forms.TreeView Menus;
+        public System.Windows.Forms.Button CreateInput_OfficeEditor;
+        public System.Windows.Forms.Button RightScroll_CameraEditor;
+        public System.Windows.Forms.Button LeftScroll_CameraEditor;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Button button9;
+        public System.Windows.Forms.Panel PanelCreatingNewScript;
+        public System.Windows.Forms.TextBox ScriptEditor_TextBoxname;
+        public System.Windows.Forms.Button CreateScript;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.Label label47;
+        public System.Windows.Forms.Label label49;
+        public System.Windows.Forms.Label label75;
+        public System.Windows.Forms.TextBox textBox23;
+        public System.Windows.Forms.CheckBox checkBox18;
+        public System.Windows.Forms.TextBox textBox26;
+        public System.Windows.Forms.TextBox textBox27;
+        public System.Windows.Forms.ComboBox comboBox5;
+        public System.Windows.Forms.ComboBox comboBox6;
+        public System.Windows.Forms.ComboBox comboBox9;
+        public System.Windows.Forms.Label label76;
+        public System.Windows.Forms.Label label81;
+        public System.Windows.Forms.Label label86;
+        public System.Windows.Forms.Label label95;
+        public System.Windows.Forms.Label label98;
+        public System.Windows.Forms.Label label99;
+        public System.Windows.Forms.Label label100;
+        public System.Windows.Forms.Label label101;
+        public System.Windows.Forms.Button button35;
+        public System.Windows.Forms.Button button41;
+        public System.Windows.Forms.Button button42;
+        public System.Windows.Forms.Button button43;
+        public System.Windows.Forms.Button button44;
+        public System.Windows.Forms.Label label112;
+        public System.Windows.Forms.ComboBox comboBox13;
+        public System.Windows.Forms.Label label118;
+        public System.Windows.Forms.Label label127;
+        public System.Windows.Forms.ComboBox comboBox15;
+        public System.Windows.Forms.ComboBox comboBox16;
+        public System.Windows.Forms.Button button51;
+        public System.Windows.Forms.Label label128;
+        public System.Windows.Forms.Label label139;
+        public System.Windows.Forms.Label label141;
+        public System.Windows.Forms.Button button53;
+        public System.Windows.Forms.Label label129;
+        public System.Windows.Forms.Label label130;
+        public System.Windows.Forms.Label label131;
+        public System.Windows.Forms.TextBox textBox14;
+        public System.Windows.Forms.CheckBox checkBox22;
+        public System.Windows.Forms.TextBox textBox15;
+        public System.Windows.Forms.TextBox textBox16;
+        public System.Windows.Forms.ComboBox comboBox45;
+        public System.Windows.Forms.ComboBox comboBox46;
+        public System.Windows.Forms.ComboBox comboBox48;
+        public System.Windows.Forms.Label label132;
+        public System.Windows.Forms.Label label133;
+        public System.Windows.Forms.Label label134;
+        public System.Windows.Forms.Label label135;
+        public System.Windows.Forms.Label label136;
+        public System.Windows.Forms.Label label137;
+        public System.Windows.Forms.Label label138;
+        public System.Windows.Forms.Label label140;
+        public System.Windows.Forms.Button button19;
+        public System.Windows.Forms.Button button47;
+        public System.Windows.Forms.Button button84;
+        public System.Windows.Forms.Button button85;
+        public System.Windows.Forms.Button button86;
+        public System.Windows.Forms.Label label147;
+        public System.Windows.Forms.ComboBox comboBox50;
+        public System.Windows.Forms.Label label148;
+        public System.Windows.Forms.Label label149;
+        public System.Windows.Forms.ComboBox comboBox51;
+        public System.Windows.Forms.ComboBox comboBox52;
+        public System.Windows.Forms.Button button87;
+        public System.Windows.Forms.Label label150;
+        public System.Windows.Forms.Label label151;
+        public System.Windows.Forms.Label label152;
+        public System.Windows.Forms.Button button90;
+        public System.Windows.Forms.Panel Menu_Elements_Create;
+        public System.Windows.Forms.TextBox Element_Font_MenuEditor;
+        public System.Windows.Forms.Label Element_Y_MenuEditor;
+        public System.Windows.Forms.Label label210;
+        public System.Windows.Forms.Label Element_X_MenuEditor;
+        public System.Windows.Forms.CheckBox Element_HiddenCheck_MenuEditor;
+        public System.Windows.Forms.TextBox Element_FontSize_MenuEditor;
+        public System.Windows.Forms.TextBox Element_Text_MenuEditor;
+        public System.Windows.Forms.ComboBox Element_Image_MenuEditor;
+        public System.Windows.Forms.ComboBox Element_Animatronic_MenuEditor;
+        public System.Windows.Forms.Label label212;
+        public System.Windows.Forms.Label label213;
+        public System.Windows.Forms.Label label214;
+        public System.Windows.Forms.Label label215;
+        public System.Windows.Forms.Label label216;
+        public System.Windows.Forms.Label label217;
+        public System.Windows.Forms.Button button124;
+        public System.Windows.Forms.Button button125;
+        public System.Windows.Forms.Button button126;
+        public System.Windows.Forms.Button button127;
+        public System.Windows.Forms.Label label218;
+        public System.Windows.Forms.ComboBox BackgroundAudio_MenuEditor;
+        public System.Windows.Forms.Label label219;
+        public System.Windows.Forms.Label label220;
+        public System.Windows.Forms.ComboBox comboBox73;
+        public System.Windows.Forms.Button button129;
+        public System.Windows.Forms.Label label222;
+        public System.Windows.Forms.Label label223;
+        public System.Windows.Forms.Button button13;
+        public System.Windows.Forms.TextBox Element_Color_MenuEditor;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label MenuEditor_ScriptEditor;
     }
 }

@@ -1,6 +1,5 @@
 ﻿namespace FNAF_Engine_Reborn
 {
-    using DiscordRpcDemo;
     using FNAF_Engine_Reborn.bin;
     using FNAF_Engine_Reborn.Main_Stuff;
     using FNAF_Engine_Reborn.Object_Editors;
@@ -12,14 +11,15 @@
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.1.1";
-        public string Build_Version = "rpv2.1.4.2";
+        public string Version = "0.1.2";
+        public string Build_Version = "rpv2.2.4.2";
         public bool bringToFront;
         public bool isopen = false;
-        internal bool usableEngine = false;
+        internal bool usableEngine = true;
+        public string script;
         public Control control;
-        private DiscordRpc.EventHandlers handlers;
-        private DiscordRpc.RichPresence presence;
+        //private DiscordRpc.EventHandlers handlers;
+        //private DiscordRpc.RichPresence presence;
         internal static loadFERproject projectloader = new loadFERproject();
 
         public string projecto;
@@ -36,12 +36,16 @@
             File.WriteAllText("DO_NOT_MODIFY.txt", "");
 #if (DEBUG)
             {
-                button67.Visible = true; //load editors button gets visible lol so useless
+                //button67.Visible = true; //load editors button gets visible lol so useless
             }
 #endif
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
             int randomNumber = random.Next(1, 38);
+            //switch (randomNumber)
+            //{
+            //
+            //}
             if (randomNumber == 1)
             {
                 label84.Text = "Good Morning!";
@@ -190,16 +194,16 @@
             {
                 label84.Text = "Yeah!";
             }
-            this.handlers = default(DiscordRpc.EventHandlers);
-            DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
-            this.handlers = default(DiscordRpc.EventHandlers);
-            DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
-            this.presence.details = "Version: " + Version;
-            this.presence.state = "No project loaded";
-            this.presence.largeImageKey = "1";
-            this.presence.largeImageText = "";
-            this.presence.smallImageText = "";
-            DiscordRpc.UpdatePresence(ref this.presence);
+            //this.handlers = default(DiscordRpc.EventHandlers);
+            //DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
+            //this.handlers = default(DiscordRpc.EventHandlers);
+            //DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
+            //this.presence.details = "Version: " + Version;
+            //this.presence.state = "No project loaded";
+            //this.presence.largeImageKey = "1";
+            //this.presence.largeImageText = "";
+            //this.presence.smallImageText = "";
+            //DiscordRpc.UpdatePresence(ref this.presence);
             //if (File.Exists("DO_NOT_MODIFY.txt"))
             //{
             //    if (File.ReadAllText("DO_NOT_MODIFY.txt") == "2QVZ-V2Q5-CS6Z-S8AY-4YE9-SDAQ-5AR3-GUSJ-PQDQ-UMZP-E7JH-6JLU")
@@ -252,7 +256,7 @@
 
         private void button43_Click(object sender, EventArgs e)
         {
-            FNAF_Engine_Game theGameTest = new FNAF_Engine_Game();
+            FNAF_Engine_Game theGameTest = new FNAF_Engine_Game(this);
             theGameTest.Show();
             this.Text = "FNAF Engine: Reborn - Testing Game";
         }
@@ -271,7 +275,7 @@
 
         private void button57_Click(object sender, EventArgs e)
         {
-            FNAF_Engine_Game theGameTest = new FNAF_Engine_Game();
+            FNAF_Engine_Game theGameTest = new FNAF_Engine_Game(this);
             theGameTest.Text = textBox6.Text;
             textBox6.Text = textBox6.Text;
         }
@@ -412,13 +416,13 @@
             string projecto = projectloader.label3.Text;
             if (showProject == true)
             {
-                this.presence.state = "Project: " + projecto;
-                DiscordRpc.UpdatePresence(ref this.presence);
+                //this.presence.state = "Project: " + projecto;
+                //DiscordRpc.UpdatePresence(ref this.presence);
             }
             else
             {
-                this.presence.state = "Version " + Version;
-                DiscordRpc.UpdatePresence(ref this.presence);
+                //this.presence.state = "Version " + Version;
+                //DiscordRpc.UpdatePresence(ref this.presence);
             }
         }
 
@@ -471,10 +475,13 @@
                 {
                     Menus.Nodes.Clear();
                     //comboBox9.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/menus"));
-                    var ass = System.IO.Directory.GetDirectories(projecto + "/menus");
-                    foreach (string node in ass)
+                    var dirs = Directory.GetDirectories(projecto + "/menus");
+                    foreach (string node in dirs)
                     {
-                        Menus.Nodes.Add(node);
+                        TreeNode treeNode = new TreeNode();
+                        treeNode.Name = node;
+                        treeNode.Text = File.ReadAllText(node + "/name.txt");
+                        Menus.Nodes.Add(treeNode);
                     }
                 }
                 else
@@ -577,8 +584,8 @@
         {
             if (usableEngine == true)
             {
-                this.presence.details = "Editing game...";
-                DiscordRpc.UpdatePresence(ref this.presence);
+                //this.presence.details = "Editing game...";
+                //DiscordRpc.UpdatePresence(ref this.presence);
                 if (Directory.Exists(projecto + "/animations"))
                 {
                     //aight
@@ -1006,11 +1013,16 @@
                 {
                     string menuNam = menuName.Text;
                     Directory.CreateDirectory(projecto + "/menus/" + menuNam);
-                    var ass = System.IO.Directory.GetDirectories(projecto + "/menus");
+                    Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/text_elements");
+                    File.WriteAllText(projecto + "/menus/" + menuNam + "/name.txt", menuNam);
+                    var dirs = Directory.GetDirectories(projecto + "/menus");
                     Menus.Nodes.Clear();
-                    foreach (string node in ass)
+                    foreach (string node in dirs)
                     {
-                        Menus.Nodes.Add(node);
+                        TreeNode treeNode = new TreeNode();
+                        treeNode.Name = node;
+                        treeNode.Text = File.ReadAllText(node + "/name.txt");
+                        Menus.Nodes.Add(treeNode);
                     }
                     createShit.Hide();
                 }
@@ -1442,18 +1454,18 @@
 
         private void label21_Click(object sender, EventArgs e)
         {
-            ReleaseOrDebug releaseordebug = new ReleaseOrDebug();
-            releaseordebug.ShowDialog();
-            this.presence.details = "Compiling game...";
-            DiscordRpc.UpdatePresence(ref this.presence);
+            Compiler compiler = new Compiler(this);
+            compiler.ShowDialog();
+            //this.presence.details = "Compiling game...";
+            //DiscordRpc.UpdatePresence(ref this.presence);
         }
 
         private void label94_Click(object sender, EventArgs e)
         {
-            ReleaseOrDebug releaseordebug = new ReleaseOrDebug();
+            ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this);
             releaseordebug.ShowDialog();
-            this.presence.details = "Testing game...";
-            DiscordRpc.UpdatePresence(ref this.presence);
+            //this.presence.details = "Testing game...";
+            //DiscordRpc.UpdatePresence(ref this.presence);
         }
 
         private void button40_Click(object sender, EventArgs e) // add image
@@ -2046,13 +2058,25 @@
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            //MessageBox.Show("Hehehaw");
+            Menu_Editor menu_Editor = new Menu_Editor(this);
+            menu_Editor.Menu = Menus.SelectedNode.Name;
+            MenuPreview.Controls.Clear();
+            Menu_Elements_Create.Show();
+            menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
+            if (File.Exists(Menus.SelectedNode.Name.ToString() + "/bg.txt"))
+            {
+                MenuPreview.BackgroundImage = Image.FromFile(File.ReadAllText(Menus.SelectedNode.Name.ToString() + "/bg.txt"));
+            }
+            else
+            {
+                MenuPreview.BackgroundImage = null;
+            }
         }
 
         private void label119_Click(object sender, EventArgs e)
         {
-            this.presence.details = "Debugging game...";
-            DiscordRpc.UpdatePresence(ref this.presence);
+            //this.presence.details = "Debugging game...";
+            //DiscordRpc.UpdatePresence(ref this.presence);
         }
 
         private void staticeffecteditor_VisibleChanged(object sender, EventArgs e)
@@ -2100,12 +2124,21 @@
                 string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 ScriptEditor scripteditor = new ScriptEditor();
                 panel4.Show();
-                if (scripteditor.HasEvent(script))
+                if (File.Exists(script + "/event.txt"))
                 {
-                    string event_ = scripteditor.ToEvent(script);
-                    button25.Show();
-                    button25.Text = event_;
-                    button26.Show();
+                    if (scripteditor.HasEvent(script))
+                    {
+                        string event_ = scripteditor.ToEvent(script);
+                        button25.Show();
+                        button25.Text = event_;
+                        button26.Show();
+                    }
+                    else
+                    {
+                        button25.Hide();
+                        button26.Hide();
+                        button10.Show();
+                    }
                 }
                 else
                 {
@@ -2120,14 +2153,9 @@
         {
             if (usableEngine == true)
             {
-                string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
-                ScriptEditor scripteditor = new ScriptEditor();
-                scripteditor.AddEvent(script, "On Engine Loop");
-                button10.Hide();
-                string event_ = scripteditor.ToEvent(script);
-                button25.Show();
-                button25.Text = event_;
-                button26.Show();
+                script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+                CodeblockSelector selector = new CodeblockSelector(this);
+                selector.ShowDialog();
             }
         }
 
@@ -2144,23 +2172,57 @@
             }
         }
 
-        private void button16_Click(object sender, EventArgs e)
-        {
-            textCreate_MenuEditor.Show();
-        }
-
         private void create_text_menuEditorBTN_Click(object sender, EventArgs e)
         {
+            Menu_Editor menu_Editor = new Menu_Editor(this);
+            menu_Editor.Menu = projecto + "/menus/" + text_ID_MenuEditor_Create;
             if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
             {
                 MessageBox.Show("Unable to create new text element: Error 1");
             }
             else
             {
-                Menu_Editor asa = new Menu_Editor(this);
-                //Directory.CreateDirectory(projecto + "/menus/" + text_ID_MenuEditor_Create);
+                string id = text_ID_MenuEditor_Create.Text;
+                menu_Editor.CreateText(id, Menus.SelectedNode.Name.ToString());
+                menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
                 textCreate_MenuEditor.Hide();
             }
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (usableEngine == true)
+            {
+                script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+                CodeblockSelector selector = new CodeblockSelector(this);
+                selector.ShowDialog();
+            }
+        }
+
+        private void button125_Click(object sender, EventArgs e)
+        {
+            textCreate_MenuEditor.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (usableEngine == true)
+            {
+                OpenFileDialog p = new OpenFileDialog();
+                p.Filter = "Images (*.png)|*.png";
+                p.ShowDialog();
+                if (p.ShowDialog() == DialogResult.OK)
+                {
+                    string FileName = p.SafeFileName;
+                    Import_Sprites.CreateSprite(p.FileName, FileName, projecto);
+                    File.WriteAllText(Menus.SelectedNode.Name.ToString() + "/bg.txt", projecto + "/images/" + FileName);
+                }
+            }
+        }
+
+        private void MenuEditor_ScriptEditor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

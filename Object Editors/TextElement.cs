@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace FNAF_Engine_Reborn.Object_Editors
 {
@@ -18,5 +12,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
         public int X { get; set; }
         public int Y { get; set; }
         public bool args { get; set; }
+        public string Functions { get; set; }
+        public Color Color { get; set; }
     }
 }
