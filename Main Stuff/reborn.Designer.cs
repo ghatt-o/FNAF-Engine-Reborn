@@ -32,7 +32,7 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -5195,7 +5195,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4});
+            listViewItem5});
             this.listView1.Location = new System.Drawing.Point(125, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -6712,12 +6712,12 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
+            this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
             this.Controls.Add(this.buildSettingsPanelMoment);
-            this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
