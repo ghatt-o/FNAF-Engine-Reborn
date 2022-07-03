@@ -38,10 +38,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label2.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(76, 9);
+            this.label2.Location = new System.Drawing.Point(54, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 15);
+            this.label2.Size = new System.Drawing.Size(196, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Compiling your FE:R Game";
             // 

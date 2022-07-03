@@ -44,11 +44,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.projectNamelbl.AutoSize = true;
             this.projectNamelbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.projectNamelbl.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.projectNamelbl.Font = new System.Drawing.Font("Digital-7", 15F);
             this.projectNamelbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.projectNamelbl.Location = new System.Drawing.Point(12, 9);
+            this.projectNamelbl.Location = new System.Drawing.Point(12, 1);
             this.projectNamelbl.Name = "projectNamelbl";
-            this.projectNamelbl.Size = new System.Drawing.Size(79, 15);
+            this.projectNamelbl.Size = new System.Drawing.Size(114, 21);
             this.projectNamelbl.TabIndex = 0;
             this.projectNamelbl.Text = "Project Name";
             // 
@@ -56,7 +56,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.projectNamebox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.projectNamebox.ForeColor = System.Drawing.SystemColors.Window;
-            this.projectNamebox.Location = new System.Drawing.Point(15, 25);
+            this.projectNamebox.Location = new System.Drawing.Point(15, 20);
             this.projectNamebox.Name = "projectNamebox";
             this.projectNamebox.Size = new System.Drawing.Size(185, 20);
             this.projectNamebox.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace FNAF_Engine_Reborn
             // createProjectbtn
             // 
             this.createProjectbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.createProjectbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createProjectbtn.Font = new System.Drawing.Font("Digital-7", 15F);
             this.createProjectbtn.ForeColor = System.Drawing.SystemColors.Window;
             this.createProjectbtn.Location = new System.Drawing.Point(33, 137);
             this.createProjectbtn.Name = "createProjectbtn";
@@ -78,11 +78,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label1.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(12, 48);
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 15);
+            this.label1.Size = new System.Drawing.Size(150, 21);
             this.label1.TabIndex = 15;
             this.label1.Text = "Project Template";
             // 
@@ -97,7 +97,7 @@ namespace FNAF_Engine_Reborn
             "Premade Menus",
             "Required Empty Menus",
             "John\'s Template"});
-            this.comboBox1.Location = new System.Drawing.Point(15, 66);
+            this.comboBox1.Location = new System.Drawing.Point(15, 60);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 21);
             this.comboBox1.TabIndex = 16;
@@ -116,10 +116,10 @@ namespace FNAF_Engine_Reborn
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 93);
+            this.checkBox1.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.checkBox1.Location = new System.Drawing.Point(13, 82);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(206, 17);
+            this.checkBox1.Size = new System.Drawing.Size(206, 51);
             this.checkBox1.TabIndex = 20;
             this.checkBox1.Text = "FNAF 4 Style (can\'t be changed later!)";
             this.checkBox1.UseVisualStyleBackColor = true;

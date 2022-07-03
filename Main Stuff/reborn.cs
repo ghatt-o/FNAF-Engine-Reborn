@@ -6,18 +6,17 @@
     using System;
     using System.Drawing;
     using System.IO;
+    using System.Media;
     using System.Windows.Forms;
 
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.1.2";
-        public string Build_Version = "rpv2.2.4.2";
-        public bool bringToFront;
+        public string Version = "0.2.1";
+        public string Build_Version = "rpv2.3.5.2";
         public bool isopen = false;
-        internal bool usableEngine = true;
+        internal bool usableEngine = false;
         public string script;
-        public Control control;
         //private DiscordRpc.EventHandlers handlers;
         //private DiscordRpc.RichPresence presence;
         internal static loadFERproject projectloader = new loadFERproject();
@@ -355,48 +354,31 @@
             menu.Hide();
         }
 
-        private void wait(int waitSeconds) //wait function just like roblox lua, pointless but i don't care lol
+        private void playMusic(string musicS)
         {
-            System.Threading.Thread.Sleep(waitSeconds * 1000); //put this in the start!!
-        }
-
-        private void playMusic(string music)
-        {
-            System.Media.SoundPlayer musicP = new System.Media.SoundPlayer(@"assets/music/" + music);
-            if (music == null)
+            try
             {
-                exception("Couldn't play music: null string");
+                SoundPlayer music = new SoundPlayer("assets/music/" + musicS);
+                music.Load();
+                music.Play();
             }
-            else
+            catch (Exception e)
             {
-                musicP.Play();
+                Console.WriteLine(e.Message);
             }
         }
 
         private void stopMusic(string music)
         {
             System.Media.SoundPlayer musicP = new System.Media.SoundPlayer(@"assets/music/" + music);
-            musicP.Load();
-            if (music == null)
-            {
-                exception("Couldn't stop music: null string");
-            }
-            else
-            {
-                musicP.Stop();
-            }
+            musicP.Stop();
         }
 
         private void cutsceneMoment_VisibleChanged(object sender, EventArgs e)
         {
-            if (cutsceneMoment.Visible == true)
-            {
-                playMusic("fnaf_engine_reborn_credits.wav");
-            }
-            else
-            {
-                stopMusic("fnaf_engine_reborn_credits.wav");
-            }
+            SoundPlayer music = new SoundPlayer(@"assets/music/fnaf_engine_reborn_credits.wav");
+            music.Load();
+            music.Play();
         }
 
         private void button67_Click(object sender, EventArgs e)
@@ -1454,16 +1436,22 @@
 
         private void label21_Click(object sender, EventArgs e)
         {
-            Compiler compiler = new Compiler(this);
-            compiler.ShowDialog();
+            if (usableEngine == true)
+            {
+                Compiler compiler = new Compiler(this);
+                compiler.ShowDialog();
+            }
             //this.presence.details = "Compiling game...";
             //DiscordRpc.UpdatePresence(ref this.presence);
         }
 
         private void label94_Click(object sender, EventArgs e)
         {
-            ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this);
-            releaseordebug.ShowDialog();
+            if (usableEngine == true)
+            {
+                ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this);
+                releaseordebug.ShowDialog();
+            }
             //this.presence.details = "Testing game...";
             //DiscordRpc.UpdatePresence(ref this.presence);
         }
@@ -1481,10 +1469,7 @@
                     {
                         string filePath = Path.GetFullPath(p.FileName);
                         string fileName = p.SafeFileName;
-                        System.IO.File.Copy(filePath, projecto + "/images/" + fileName);
-                        Console.WriteLine("Successfully added image!");
-                        //Console.WriteLine("File name: " + p.SafeFileName);
-                        //Console.WriteLine("File path: " + Path.GetFullPath(p.FileName));
+                        Import_Sprites.CreateSprite(filePath, fileName, projecto);
                     }
                     catch (Exception ex)
                     {
@@ -2046,11 +2031,6 @@
             Code();
         }
 
-        private void button41_Click_1(object sender, EventArgs e)
-        {
-            bringToFront = true;
-        }
-
         private void textBox22_TextChanged(object sender, EventArgs e)
         {
 
@@ -2223,6 +2203,32 @@
         private void MenuEditor_ScriptEditor_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox28_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox30_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cutsceneMoment_VisibleChanged_1(object sender, EventArgs e)
+        {
+            object asas = "";
+            //SystemSound systemSound = new SystemSound(asas, asas);
+            //SoundPlayer music = new System.Media.SoundPlayer(@"assets/music/fnaf_engine_reborn_credits.wav");
+            //music.Load();
+            //music.Stream = 
+            //music.Stream.Position = 0;
+            //music.Play();
         }
     }
 }

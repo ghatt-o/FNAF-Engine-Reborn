@@ -49,6 +49,7 @@ namespace FNAF_Engine_Reborn
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
             this.button2.Location = new System.Drawing.Point(42, 83);
             this.button2.Name = "button2";
@@ -71,12 +72,12 @@ namespace FNAF_Engine_Reborn
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label1.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(47, 133);
+            this.label1.Location = new System.Drawing.Point(52, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 15);
+            this.label1.Size = new System.Drawing.Size(230, 48);
             this.label1.TabIndex = 8;
             this.label1.Text = "Delete your FNAF Engine: Reborn Projects!";
             // 
