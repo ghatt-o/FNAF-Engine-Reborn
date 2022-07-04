@@ -801,11 +801,21 @@
             {
                 comboBox36.Items.Clear();
                 comboBox36.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
-                pname.Text = "Project Location:" + projecto;
             }
             else
             {
 
+            }
+            plocation.Text = "Project Location: " + projecto;
+            pname.Text = "Project Name: " + File.ReadAllText(projecto + "/name.txt");
+            try
+            {
+                ptemplate.Text = "Project Template: " + File.ReadAllText(projecto + "/template.txt");
+            }
+            catch (Exception)
+            {
+                File.WriteAllText(projecto + "/template.txt", "None");
+                ptemplate.Text = "Project Template: " + File.ReadAllText(projecto + "/template.txt");
             }
         }
 

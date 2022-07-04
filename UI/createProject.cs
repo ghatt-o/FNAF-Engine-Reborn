@@ -87,6 +87,14 @@ namespace FNAF_Engine_Reborn
                     {
                         JamesTemplate();
                     }
+                    else if (comboBox1.SelectedItem.Equals("None"))
+                    {
+                        File.WriteAllText(projectPath + "/template.txt", "None");
+                    }
+                    else if(comboBox1.SelectedItem == null)
+                    {
+                        File.WriteAllText(projectPath + "/template.txt", "None");
+                    }
                 }
                 catch (Exception)
                 {
@@ -97,6 +105,7 @@ namespace FNAF_Engine_Reborn
         private void premadeAssets()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
+            File.WriteAllText(projectPath + "/template.txt", "Premade Assets");
             CreateMenu(projectPath, "CustomNight");
             CreateMenu(projectPath, "News");
             CreateMenu(projectPath, "Ending5");
@@ -113,6 +122,7 @@ namespace FNAF_Engine_Reborn
         private void JamesTemplate()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
+            File.WriteAllText(projectPath + "/template.txt", "James' Template");
             CreateMenu(projectPath, "CustomNight");
             CreateMenu(projectPath, "News");
             CreateMenu(projectPath, "Ending5");
@@ -136,6 +146,7 @@ namespace FNAF_Engine_Reborn
         private void JohnsTemplate()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
+            File.WriteAllText(projectPath + "/template.txt", "John's Template");
             CreateMenu(projectPath, "CustomNight");
             CreateMenu(projectPath, "News");
             CreateMenu(projectPath, "Ending5");
@@ -161,6 +172,7 @@ namespace FNAF_Engine_Reborn
         private void premadeMenus()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
+            File.WriteAllText(projectPath + "/template.txt", "Premade Menus");
             CreateMenu(projectPath, "CustomNight");
             CreateMenu(projectPath, "News");
             CreateMenu(projectPath, "Ending5");
@@ -171,6 +183,7 @@ namespace FNAF_Engine_Reborn
         private void rMenus()
         {
             string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
+            File.WriteAllText(projectPath + "/template.txt", "Required Menus");
             this.Hide();
         }
 
