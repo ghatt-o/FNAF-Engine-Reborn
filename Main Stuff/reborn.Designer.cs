@@ -32,7 +32,7 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -293,6 +293,8 @@ namespace FNAF_Engine_Reborn
             this.comboBox54 = new System.Windows.Forms.ComboBox();
             this.button58 = new System.Windows.Forms.Button();
             this.ProjectStuffs = new System.Windows.Forms.Panel();
+            this.ptemplate = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
             this.plocation = new System.Windows.Forms.Label();
             this.pname = new System.Windows.Forms.Label();
             this.button113 = new System.Windows.Forms.Button();
@@ -520,8 +522,6 @@ namespace FNAF_Engine_Reborn
             this.DeleteFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AddFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AnimationList_StaticEffectEditor = new System.Windows.Forms.ComboBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.ptemplate = new System.Windows.Forms.Label();
             this.allEditorsPNL.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -976,10 +976,11 @@ namespace FNAF_Engine_Reborn
             // button95
             // 
             this.button95.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button95.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button95.ForeColor = System.Drawing.SystemColors.Control;
-            this.button95.Location = new System.Drawing.Point(6, 599);
+            this.button95.Location = new System.Drawing.Point(619, 5);
             this.button95.Name = "button95";
-            this.button95.Size = new System.Drawing.Size(108, 27);
+            this.button95.Size = new System.Drawing.Size(138, 27);
             this.button95.TabIndex = 52;
             this.button95.Text = "Open Directory";
             this.button95.UseVisualStyleBackColor = true;
@@ -1019,10 +1020,12 @@ namespace FNAF_Engine_Reborn
             this.button89.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button89.BackgroundImage")));
             this.button89.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button89.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button89.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button89.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button89.FlatAppearance.BorderSize = 0;
+            this.button89.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button89.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button89.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button89.Location = new System.Drawing.Point(623, 74);
+            this.button89.Location = new System.Drawing.Point(623, 73);
             this.button89.Name = "button89";
             this.button89.Size = new System.Drawing.Size(35, 453);
             this.button89.TabIndex = 58;
@@ -1047,8 +1050,10 @@ namespace FNAF_Engine_Reborn
             this.button48.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button48.BackgroundImage")));
             this.button48.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button48.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button48.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button48.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button48.FlatAppearance.BorderSize = 0;
+            this.button48.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button48.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button48.Location = new System.Drawing.Point(497, 73);
             this.button48.Name = "button48";
@@ -1165,8 +1170,10 @@ namespace FNAF_Engine_Reborn
             this.funnyPath.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("funnyPath.BackgroundImage")));
             this.funnyPath.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.funnyPath.Cursor = System.Windows.Forms.Cursors.Default;
-            this.funnyPath.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.funnyPath.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.funnyPath.FlatAppearance.BorderSize = 0;
+            this.funnyPath.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.funnyPath.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.funnyPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.funnyPath.Location = new System.Drawing.Point(509, 74);
             this.funnyPath.Name = "funnyPath";
@@ -3820,6 +3827,32 @@ namespace FNAF_Engine_Reborn
             this.ProjectStuffs.TabIndex = 103;
             this.ProjectStuffs.Click += new System.EventHandler(this.ProjectStuffs_Click);
             // 
+            // ptemplate
+            // 
+            this.ptemplate.AutoSize = true;
+            this.ptemplate.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.ptemplate.ForeColor = System.Drawing.SystemColors.Control;
+            this.ptemplate.Location = new System.Drawing.Point(1, 47);
+            this.ptemplate.Name = "ptemplate";
+            this.ptemplate.Size = new System.Drawing.Size(158, 21);
+            this.ptemplate.TabIndex = 123;
+            this.ptemplate.Text = "Project Template: ";
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.button14.ForeColor = System.Drawing.SystemColors.Control;
+            this.button14.Location = new System.Drawing.Point(3, 145);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(193, 52);
+            this.button14.TabIndex = 122;
+            this.button14.Text = "Get project on cloud data";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
             // plocation
             // 
             this.plocation.AutoSize = true;
@@ -5186,7 +5219,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem3});
             this.listView1.Location = new System.Drawing.Point(125, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -6696,32 +6729,6 @@ namespace FNAF_Engine_Reborn
             this.AnimationList_StaticEffectEditor.TabIndex = 11;
             this.AnimationList_StaticEffectEditor.Text = "Animation List";
             // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.button14.ForeColor = System.Drawing.SystemColors.Control;
-            this.button14.Location = new System.Drawing.Point(3, 145);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(193, 52);
-            this.button14.TabIndex = 122;
-            this.button14.Text = "Get project on cloud data";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // ptemplate
-            // 
-            this.ptemplate.AutoSize = true;
-            this.ptemplate.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.ptemplate.ForeColor = System.Drawing.SystemColors.Control;
-            this.ptemplate.Location = new System.Drawing.Point(1, 47);
-            this.ptemplate.Name = "ptemplate";
-            this.ptemplate.Size = new System.Drawing.Size(158, 21);
-            this.ptemplate.TabIndex = 123;
-            this.ptemplate.Text = "Project Template: ";
-            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -6733,7 +6740,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
@@ -6748,6 +6754,7 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.AssetManagerPanel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
