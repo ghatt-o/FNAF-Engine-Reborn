@@ -227,7 +227,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 {
                     fontfamily = new FontFamily(fontname);
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     fontfamily = new FontFamily("Consolas");
                 }

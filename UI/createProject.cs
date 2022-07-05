@@ -91,7 +91,7 @@ namespace FNAF_Engine_Reborn
                     {
                         File.WriteAllText(projectPath + "/template.txt", "None");
                     }
-                    else if(comboBox1.SelectedItem == null)
+                    else if (comboBox1.SelectedItem == null)
                     {
                         File.WriteAllText(projectPath + "/template.txt", "None");
                     }
