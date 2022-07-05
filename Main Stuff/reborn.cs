@@ -313,7 +313,7 @@
                 AnimAdd.Visible = false;
                 if (spriteName.Text == "")
                 {
-                    MessageBox.Show("Please insert something in there!");
+                    MessageBox.Show("Please insert something in the name box!");
                 }
                 else
                 {
@@ -2238,6 +2238,12 @@
         private void cutsceneMoment_VisibleChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void animationEditorPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            comboBox43.Items.Clear();
+            comboBox43.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations/"));
         }
     }
 }

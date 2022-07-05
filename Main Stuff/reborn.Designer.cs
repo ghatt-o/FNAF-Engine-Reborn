@@ -32,7 +32,7 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -5179,6 +5179,7 @@ namespace FNAF_Engine_Reborn
             this.animationEditorPanel.Size = new System.Drawing.Size(766, 644);
             this.animationEditorPanel.TabIndex = 104;
             this.animationEditorPanel.Visible = false;
+            this.animationEditorPanel.VisibleChanged += new System.EventHandler(this.animationEditorPanel_VisibleChanged);
             // 
             // label90
             // 
@@ -5245,7 +5246,7 @@ namespace FNAF_Engine_Reborn
             this.AnimAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.AnimAdd.Controls.Add(this.spriteName);
             this.AnimAdd.Controls.Add(this.createSpritebtn);
-            this.AnimAdd.Location = new System.Drawing.Point(10, 47);
+            this.AnimAdd.Location = new System.Drawing.Point(8, 10);
             this.AnimAdd.Name = "AnimAdd";
             this.AnimAdd.Size = new System.Drawing.Size(128, 65);
             this.AnimAdd.TabIndex = 111;
@@ -5301,7 +5302,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.listView1.Location = new System.Drawing.Point(125, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -5314,7 +5315,7 @@ namespace FNAF_Engine_Reborn
             this.button60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button60.FlatAppearance.BorderSize = 0;
             this.button60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button60.Location = new System.Drawing.Point(80, 33);
+            this.button60.Location = new System.Drawing.Point(71, 33);
             this.button60.Name = "button60";
             this.button60.Size = new System.Drawing.Size(23, 12);
             this.button60.TabIndex = 107;
@@ -5340,7 +5341,7 @@ namespace FNAF_Engine_Reborn
             this.button61.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button61.FlatAppearance.BorderSize = 0;
             this.button61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button61.Location = new System.Drawing.Point(587, 25);
+            this.button61.Location = new System.Drawing.Point(613, 25);
             this.button61.Name = "button61";
             this.button61.Size = new System.Drawing.Size(23, 24);
             this.button61.TabIndex = 106;
@@ -5352,9 +5353,9 @@ namespace FNAF_Engine_Reborn
             this.comboBox43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.comboBox43.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox43.FormattingEnabled = true;
-            this.comboBox43.Location = new System.Drawing.Point(107, 25);
+            this.comboBox43.Location = new System.Drawing.Point(96, 25);
             this.comboBox43.Name = "comboBox43";
-            this.comboBox43.Size = new System.Drawing.Size(478, 23);
+            this.comboBox43.Size = new System.Drawing.Size(514, 23);
             this.comboBox43.TabIndex = 105;
             // 
             // cutsceneMoment
@@ -6818,25 +6819,25 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
-            this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.animationEditorPanel);
+            this.Controls.Add(this.menu);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
             this.Controls.Add(this.template);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
-            this.Controls.Add(this.animationEditorPanel);
-            this.Controls.Add(this.menu);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
