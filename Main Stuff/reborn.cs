@@ -12,8 +12,8 @@
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.2.1";
-        public string Build_Version = "rpv2.3.5.2";
+        public string Version = "0.5.6";
+        public string Build_Version = "rpv3.5.5.2";
         public bool isopen = false;
         internal bool usableEngine = true;
         public string script;

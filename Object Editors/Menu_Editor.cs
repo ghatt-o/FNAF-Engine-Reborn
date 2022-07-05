@@ -82,6 +82,8 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         catch (ArgumentException)
                         {
                             TextElement.FontName = "Consolas";
+                            RewriteText(Menu, TextElement);
+                            RefreshText(Menu);
                         }
                     }
                 }
