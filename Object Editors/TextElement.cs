@@ -8,6 +8,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
         public string Text { get; set; }
         public float FontSize { get; set; }
         public Font Font { get; set; }
+        public string FontName { get; set; }
         public bool Hidden { get; set; }
         public int X { get; set; }
         public int Y { get; set; }

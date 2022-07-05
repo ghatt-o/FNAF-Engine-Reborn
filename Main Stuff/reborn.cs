@@ -15,7 +15,7 @@
         public string Version = "0.2.1";
         public string Build_Version = "rpv2.3.5.2";
         public bool isopen = false;
-        internal bool usableEngine = false;
+        internal bool usableEngine = true;
         public string script;
         //private DiscordRpc.EventHandlers handlers;
         //private DiscordRpc.RichPresence presence;
@@ -1034,17 +1034,22 @@
         {
             if (usableEngine == true)
             {
-                //if (comboBox9.SelectedItem == null)
-                //{
-                MessageBox.Show("Select an menu to delete!");
-                //}
-            }
-            else
-            {
-                //if (comboBox9.SelectedItem.Equals("Warning") || comboBox9.SelectedItem.Equals("Main") || comboBox9.SelectedItem.Equals("6AM"))
-                //{
+                if (Menus.SelectedNode == null)
+                {
+                    MessageBox.Show("Select an menu to delete!");
+                }
+                else
+                {
+                    var Confirmation = MessageBox.Show($"This can't be undone! Are you sure you want to delete the menu {Menus.SelectedNode.Text}?", "Menu Deletion", MessageBoxButtons.YesNo);
 
-                //}
+                    if (Confirmation == DialogResult.Yes)
+                    {
+                        Directory.Delete(Menus.SelectedNode.Name, true);
+                        Menus.Refresh();
+                        menuEditorPanel.Hide();
+                        menuEditorPanel.Show();
+                    }
+                }
             }
         }
         private void button1_Click_1(object sender, EventArgs e)
@@ -2232,13 +2237,7 @@
 
         private void cutsceneMoment_VisibleChanged_1(object sender, EventArgs e)
         {
-            object asas = "";
-            //SystemSound systemSound = new SystemSound(asas, asas);
-            //SoundPlayer music = new System.Media.SoundPlayer(@"assets/music/fnaf_engine_reborn_credits.wav");
-            //music.Load();
-            //music.Stream = 
-            //music.Stream.Position = 0;
-            //music.Play();
+
         }
     }
 }

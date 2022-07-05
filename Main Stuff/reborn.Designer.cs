@@ -32,7 +32,7 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -1813,7 +1813,7 @@ namespace FNAF_Engine_Reborn
             this.textCreate_MenuEditor.Controls.Add(this.label139);
             this.textCreate_MenuEditor.Controls.Add(this.label141);
             this.textCreate_MenuEditor.Controls.Add(this.button53);
-            this.textCreate_MenuEditor.Location = new System.Drawing.Point(6, 7);
+            this.textCreate_MenuEditor.Location = new System.Drawing.Point(8, 8);
             this.textCreate_MenuEditor.Name = "textCreate_MenuEditor";
             this.textCreate_MenuEditor.Size = new System.Drawing.Size(195, 93);
             this.textCreate_MenuEditor.TabIndex = 103;
@@ -2372,11 +2372,11 @@ namespace FNAF_Engine_Reborn
             this.Element_ID_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.Element_ID_MenuEditor.Font = new System.Drawing.Font("Digital-7", 10F);
             this.Element_ID_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.Element_ID_MenuEditor.Location = new System.Drawing.Point(174, 47);
+            this.Element_ID_MenuEditor.Location = new System.Drawing.Point(169, 47);
             this.Element_ID_MenuEditor.Name = "Element_ID_MenuEditor";
-            this.Element_ID_MenuEditor.Size = new System.Drawing.Size(69, 15);
+            this.Element_ID_MenuEditor.Size = new System.Drawing.Size(78, 15);
             this.Element_ID_MenuEditor.TabIndex = 161;
-            this.Element_ID_MenuEditor.Text = "element_id";
+            this.Element_ID_MenuEditor.Text = "INDETERMINED";
             // 
             // label11
             // 
@@ -2384,7 +2384,7 @@ namespace FNAF_Engine_Reborn
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label11.Font = new System.Drawing.Font("Digital-7", 10F);
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(157, 47);
+            this.label11.Location = new System.Drawing.Point(155, 47);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(18, 15);
             this.label11.TabIndex = 160;
@@ -2398,7 +2398,6 @@ namespace FNAF_Engine_Reborn
             this.Element_Font_MenuEditor.Name = "Element_Font_MenuEditor";
             this.Element_Font_MenuEditor.Size = new System.Drawing.Size(105, 23);
             this.Element_Font_MenuEditor.TabIndex = 159;
-            this.Element_Font_MenuEditor.Text = "Consolas";
             // 
             // Element_Y_MenuEditor
             // 
@@ -5219,7 +5218,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem2});
             this.listView1.Location = new System.Drawing.Point(125, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -6736,10 +6735,14 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
+            this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
+            this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
@@ -6751,10 +6754,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
-            this.Controls.Add(this.buildSettingsPanelMoment);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.AssetManagerPanel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;

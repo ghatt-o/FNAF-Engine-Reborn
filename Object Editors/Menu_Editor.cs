@@ -39,7 +39,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
             string ID = TextElement.ID;
             string Path = Menu + "/text_elements/" + ID;
             File.WriteAllText(Path + "/text.txt", TextElement.Text);
-            File.WriteAllText(Path + "/font.txt", "Consolas");
+            File.WriteAllText(Path + "/font.txt", TextElement.FontName);
             File.WriteAllText(Path + "/fontsize.txt", Convert.ToString(TextElement.FontSize));
             File.WriteAllText(Path + "/args.txt", Convert.ToString(TextElement.args));
             File.WriteAllText(Path + "/x.txt", Convert.ToString(TextElement.X));
@@ -65,16 +65,40 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 Text.Move += newText_Move;
                 Text.MouseDoubleClick += Text_MouseDoubleClick;
                 Text.Name = TextElement.ID;
-                reborn.Element_Text_MenuEditor.TextChanged += Element_Text_MenuEditor_TextChanged;
-                reborn.Element_FontSize_MenuEditor.TextChanged += Element_FontSize_MenuEditor_TextChanged;
+                reborn.Element_Text_MenuEditor.TextChanged += TextChanged;
+                reborn.Element_FontSize_MenuEditor.TextChanged += FontSizeChanged;
                 reborn.Element_Color_MenuEditor.TextChanged += ColorChanged;
-                void Element_Text_MenuEditor_TextChanged(object sender, EventArgs e)
+                reborn.Element_Font_MenuEditor.TextChanged += FontChanged;
+                void FontChanged(object sender, EventArgs e)
                 {
                     if (reborn.Element_ID_MenuEditor.Text == Text.Name)
                     {
-                        TextElement.Text = reborn.Element_Text_MenuEditor.Text;
-                        Text.Text = reborn.Element_Text_MenuEditor.Text;
-                        RewriteText(Menu, TextElement);
+                        try
+                        {
+                            TextElement.FontName = reborn.Element_Font_MenuEditor.Text;
+                            RewriteText(Menu, TextElement);
+                            RefreshText(Menu);
+                        }
+                        catch (ArgumentException)
+                        {
+
+                        }
+                    }
+                }
+                void TextChanged(object sender, EventArgs e)
+                {
+                    try
+                    {
+                        if (reborn.Element_ID_MenuEditor.Text == Text.Name)
+                        {
+                            TextElement.Text = reborn.Element_Text_MenuEditor.Text;
+                            Text.Text = reborn.Element_Text_MenuEditor.Text;
+                            RewriteText(Menu, TextElement);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
                     }
                 }
                 void ColorChanged(object sender, EventArgs e)
@@ -104,7 +128,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         Console.WriteLine("Oh no, an exception!!");
                     }
                 }
-                async void Element_FontSize_MenuEditor_TextChanged(object sender, EventArgs e)
+                async void FontSizeChanged(object sender, EventArgs e)
                 {
                     try
                     {
@@ -124,28 +148,50 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 }
                 void newText_Select(object sender, EventArgs e)
                 {
-                    reborn.Element_ID_MenuEditor.Text = Text.Name;
-                    reborn.Element_X_MenuEditor.Text = "X: " + Text.Location.X;
-                    reborn.Element_Y_MenuEditor.Text = "Y: " + Text.Location.Y;
-                    reborn.Element_Text_MenuEditor.Text = TextElement.Text;
-                    reborn.Element_FontSize_MenuEditor.Text = Convert.ToString(TextElement.FontSize);
-                    reborn.Element_Color_MenuEditor.Text = TextElement.Color.R.ToString() + "," + TextElement.Color.G.ToString() + "," + TextElement.Color.B.ToString();
+                    try
+                    {
+                        reborn.Element_Font_MenuEditor.Text = TextElement.FontName;
+                        reborn.Element_ID_MenuEditor.Text = Text.Name;
+                        reborn.Element_X_MenuEditor.Text = "X: " + Text.Location.X;
+                        reborn.Element_Y_MenuEditor.Text = "Y: " + Text.Location.Y;
+                        reborn.Element_Text_MenuEditor.Text = TextElement.Text;
+                        reborn.Element_FontSize_MenuEditor.Text = Convert.ToString(TextElement.FontSize);
+                        reborn.Element_Color_MenuEditor.Text = TextElement.Color.R.ToString() + "," + TextElement.Color.G.ToString() + "," + TextElement.Color.B.ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
                 void newText_Move(object sender, EventArgs e)
                 {
-                    TextElement.X = Text.Location.X;
-                    TextElement.Y = Text.Location.Y;
-                    RewriteText(Menu, TextElement);
-                    reborn.Element_X_MenuEditor.Text = "X: " + Text.Location.X;
-                    reborn.Element_Y_MenuEditor.Text = "Y: " + Text.Location.Y;
+                    try
+                    {
+                        TextElement.X = Text.Location.X;
+                        TextElement.Y = Text.Location.Y;
+                        RewriteText(Menu, TextElement);
+                        reborn.Element_X_MenuEditor.Text = "X: " + Text.Location.X;
+                        reborn.Element_Y_MenuEditor.Text = "Y: " + Text.Location.Y;
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
                 void Text_MouseDoubleClick(object sender, MouseEventArgs e)
                 {
-                    if (e.Button == MouseButtons.Right)
+                    try
                     {
-                        TextElement.args = true;
-                        RewriteText(Menu, TextElement);
-                        RefreshText(Menu);
+                        if (e.Button == MouseButtons.Right)
+                        {
+                            TextElement.args = true;
+                            RewriteText(Menu, TextElement);
+                            RefreshText(Menu);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
                     }
                 }
                 Preview.Controls.Add(Text);
@@ -175,7 +221,16 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 int B = Convert.ToInt32(SeparatedRGB[2]);
                 int fontsize = Convert.ToInt32(fontsize_string);
 
-                FontFamily fontfamily = new FontFamily(fontname);
+                FontFamily fontfamily;
+
+                try
+                {
+                    fontfamily = new FontFamily(fontname);
+                }
+                catch(Exception)
+                {
+                    fontfamily = new FontFamily("Consolas");
+                }
 
                 Font font = new Font(fontfamily, fontsize, FontStyle.Regular);
 
@@ -185,6 +240,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     Text = text,
                     FontSize = fontsize,
                     Font = font,
+                    FontName = fontname,
                     X = x,
                     Y = y,
                     args = Convert.ToBoolean(args),
