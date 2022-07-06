@@ -301,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FE.ico" />
+    <None Include="Resources\straight vertical line.png" />
     <None Include="Resources\Diamond_Cat.png" />
     <None Include="Resources\discord-rpc-w32.dll.bmp" />
     <None Include="Resources\selectme.png" />

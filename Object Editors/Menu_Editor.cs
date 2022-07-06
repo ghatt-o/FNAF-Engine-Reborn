@@ -19,7 +19,10 @@ namespace FNAF_Engine_Reborn.Object_Editors
             await Task.Delay(miliseconds);
         }
         public string Menu { get; set; }
-        bool trigger { get; set; }
+        public void ShowActionEditor(string ID, string Menu)
+        {
+
+        }
         public void CreateText(string ID, string Menu)
         {
             Directory.CreateDirectory(Menu + "/text_elements/" + ID);

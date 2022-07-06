@@ -12,8 +12,8 @@
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.5.7";
-        public string Build_Version = "rpv3.5.5.3";
+        public string Version = "0.5.9";
+        public string Build_Version = "rrcs3.5.7.3";
         public bool isopen = false;
         internal bool usableEngine = true;
         public string script;
@@ -1175,6 +1175,8 @@
             {
                 string staticname = textBox20.Text;
                 Directory.CreateDirectory(projecto + "/statics" + staticname);
+                AnimationList_StaticEffectEditor.Items.Clear();
+                AnimationList_StaticEffectEditor.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
                 panel7.Hide();
             }
             else
@@ -1292,9 +1294,16 @@
         {
             if (usableEngine == true)
             {
-                Directory.Delete(projecto + "/statics/" + comboBox57.SelectedItem.ToString());
-                comboBox57.Items.Clear();
-                comboBox57.Items.AddRange(Directory.GetDirectories(projecto + "/statics"));
+                try
+                {
+                    Directory.Delete(projecto + "/statics/" + comboBox57.SelectedItem.ToString());
+                    comboBox57.Items.Clear();
+                    comboBox57.Items.AddRange(Directory.GetDirectories(projecto + "/statics"));
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error 3: Failed to delete static effect");
+                }
             }
             else
             {
@@ -2076,7 +2085,8 @@
 
         private void staticeffecteditor_VisibleChanged(object sender, EventArgs e)
         {
-            AnimationList_StaticEffectEditor.Items.AddRange(Directory.GetDirectories(projecto + "/animations"));
+            AnimationList_StaticEffectEditor.Items.Clear();
+            AnimationList_StaticEffectEditor.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
         }
 
         private void panel4_VisibleChanged(object sender, EventArgs e)
