@@ -330,7 +330,7 @@ namespace FNAF_Engine_Reborn
             this.button40 = new System.Windows.Forms.Button();
             this.comboBox39 = new System.Windows.Forms.ComboBox();
             this.comboBox36 = new System.Windows.Forms.ComboBox();
-            this.comboBox35 = new System.Windows.Forms.ComboBox();
+            this.ImageList = new System.Windows.Forms.ComboBox();
             this.comboBox34 = new System.Windows.Forms.ComboBox();
             this.officeEditorPanel = new System.Windows.Forms.Panel();
             this.CreateInput_OfficeEditor = new System.Windows.Forms.Button();
@@ -553,6 +553,12 @@ namespace FNAF_Engine_Reborn
             this.DataValuesFileLabel = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.SoundList = new System.Windows.Forms.ComboBox();
+            this.DownloadFontBtn = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
             this.allEditorsPNL.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -2520,13 +2526,12 @@ namespace FNAF_Engine_Reborn
             // 
             // Element_ID_MenuEditor
             // 
-            this.Element_ID_MenuEditor.AutoSize = true;
             this.Element_ID_MenuEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.Element_ID_MenuEditor.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.Element_ID_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
             this.Element_ID_MenuEditor.Location = new System.Drawing.Point(169, 47);
             this.Element_ID_MenuEditor.Name = "Element_ID_MenuEditor";
-            this.Element_ID_MenuEditor.Size = new System.Drawing.Size(86, 13);
+            this.Element_ID_MenuEditor.Size = new System.Drawing.Size(75, 34);
             this.Element_ID_MenuEditor.TabIndex = 161;
             this.Element_ID_MenuEditor.Text = "INDETERMINED";
             // 
@@ -3834,6 +3839,9 @@ namespace FNAF_Engine_Reborn
             // 
             this.AssetManagerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.AssetManagerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.AssetManagerPanel.Controls.Add(this.button15);
+            this.AssetManagerPanel.Controls.Add(this.button16);
+            this.AssetManagerPanel.Controls.Add(this.SoundList);
             this.AssetManagerPanel.Controls.Add(this.reassign_Value_GameManager_Textbox);
             this.AssetManagerPanel.Controls.Add(this.DataValue_Name);
             this.AssetManagerPanel.Controls.Add(this.reassignDataValue_GameManager);
@@ -3869,7 +3877,7 @@ namespace FNAF_Engine_Reborn
             this.AssetManagerPanel.Controls.Add(this.button40);
             this.AssetManagerPanel.Controls.Add(this.comboBox39);
             this.AssetManagerPanel.Controls.Add(this.comboBox36);
-            this.AssetManagerPanel.Controls.Add(this.comboBox35);
+            this.AssetManagerPanel.Controls.Add(this.ImageList);
             this.AssetManagerPanel.Controls.Add(this.comboBox34);
             this.AssetManagerPanel.Location = new System.Drawing.Point(194, 61);
             this.AssetManagerPanel.Name = "AssetManagerPanel";
@@ -3972,7 +3980,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.fnaf4_warning_GameManager.Font = new System.Drawing.Font("Digital-7", 15F);
             this.fnaf4_warning_GameManager.ForeColor = System.Drawing.SystemColors.Control;
-            this.fnaf4_warning_GameManager.Location = new System.Drawing.Point(5, 33);
+            this.fnaf4_warning_GameManager.Location = new System.Drawing.Point(5, 87);
             this.fnaf4_warning_GameManager.Name = "fnaf4_warning_GameManager";
             this.fnaf4_warning_GameManager.Size = new System.Drawing.Size(204, 47);
             this.fnaf4_warning_GameManager.TabIndex = 122;
@@ -4263,16 +4271,16 @@ namespace FNAF_Engine_Reborn
             this.comboBox36.TabIndex = 12;
             this.comboBox36.Text = "Animation List";
             // 
-            // comboBox35
+            // ImageList
             // 
-            this.comboBox35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox35.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox35.FormattingEnabled = true;
-            this.comboBox35.Location = new System.Drawing.Point(6, 6);
-            this.comboBox35.Name = "comboBox35";
-            this.comboBox35.Size = new System.Drawing.Size(140, 23);
-            this.comboBox35.TabIndex = 11;
-            this.comboBox35.Text = "Image List";
+            this.ImageList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.ImageList.ForeColor = System.Drawing.SystemColors.Window;
+            this.ImageList.FormattingEnabled = true;
+            this.ImageList.Location = new System.Drawing.Point(6, 6);
+            this.ImageList.Name = "ImageList";
+            this.ImageList.Size = new System.Drawing.Size(140, 23);
+            this.ImageList.TabIndex = 11;
+            this.ImageList.Text = "Image List";
             // 
             // comboBox34
             // 
@@ -6404,6 +6412,9 @@ namespace FNAF_Engine_Reborn
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.menu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menu.Controls.Add(this.label44);
+            this.menu.Controls.Add(this.label39);
+            this.menu.Controls.Add(this.DownloadFontBtn);
             this.menu.Controls.Add(this.pictureBox2);
             this.menu.Controls.Add(this.label176);
             this.menu.Controls.Add(this.funTools);
@@ -7091,6 +7102,83 @@ namespace FNAF_Engine_Reborn
             this.button17.TabIndex = 104;
             this.button17.UseVisualStyleBackColor = true;
             // 
+            // button15
+            // 
+            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Location = new System.Drawing.Point(179, 43);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(23, 12);
+            this.button15.TabIndex = 170;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Location = new System.Drawing.Point(149, 35);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(23, 24);
+            this.button16.TabIndex = 169;
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // SoundList
+            // 
+            this.SoundList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.SoundList.ForeColor = System.Drawing.SystemColors.Window;
+            this.SoundList.FormattingEnabled = true;
+            this.SoundList.Location = new System.Drawing.Point(6, 35);
+            this.SoundList.Name = "SoundList";
+            this.SoundList.Size = new System.Drawing.Size(140, 23);
+            this.SoundList.TabIndex = 168;
+            this.SoundList.Text = "Sound List";
+            // 
+            // DownloadFontBtn
+            // 
+            this.DownloadFontBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.DownloadFontBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DownloadFontBtn.BackgroundImage")));
+            this.DownloadFontBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DownloadFontBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.DownloadFontBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.DownloadFontBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DownloadFontBtn.Font = new System.Drawing.Font("Digital-7", 15.5F);
+            this.DownloadFontBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DownloadFontBtn.Location = new System.Drawing.Point(92, 5);
+            this.DownloadFontBtn.Name = "DownloadFontBtn";
+            this.DownloadFontBtn.Size = new System.Drawing.Size(149, 58);
+            this.DownloadFontBtn.TabIndex = 151;
+            this.DownloadFontBtn.Text = "        Download            Font";
+            this.DownloadFontBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DownloadFontBtn.UseVisualStyleBackColor = false;
+            this.DownloadFontBtn.Click += new System.EventHandler(this.DownloadFontBtn_Click);
+            // 
+            // label39
+            // 
+            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label39.ForeColor = System.Drawing.SystemColors.Control;
+            this.label39.Location = new System.Drawing.Point(95, 73);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(167, 51);
+            this.label39.TabIndex = 152;
+            this.label39.Text = "(You can install it by right clicking the font and selecting \"Install for all use" +
+    "rs\"!)";
+            // 
+            // label44
+            // 
+            this.label44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label44.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label44.ForeColor = System.Drawing.SystemColors.Control;
+            this.label44.Location = new System.Drawing.Point(45, 119);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(257, 24);
+            this.label44.TabIndex = 153;
+            this.label44.Text = "(Also only download if the text (Font) is broken!)";
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7102,6 +7190,9 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
+            this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.ScriptEditorPanel);
@@ -7115,9 +7206,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
-            this.Controls.Add(this.buildSettingsPanelMoment);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7347,7 +7435,7 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Button button40;
         public System.Windows.Forms.ComboBox comboBox39;
         public System.Windows.Forms.ComboBox comboBox36;
-        public System.Windows.Forms.ComboBox comboBox35;
+        public System.Windows.Forms.ComboBox ImageList;
         public System.Windows.Forms.ComboBox comboBox34;
         public System.Windows.Forms.Button button48;
         public System.Windows.Forms.Panel ExtensionsPanel;
@@ -7717,5 +7805,11 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Button X_Leave_MenuCodeEditor;
         private System.Windows.Forms.Label Menu_Name_MenuCodeEditor_InfoLBL;
         private System.Windows.Forms.ImageList MenuImages_MenuEditor;
+        public System.Windows.Forms.Button button15;
+        public System.Windows.Forms.Button button16;
+        public System.Windows.Forms.ComboBox SoundList;
+        public System.Windows.Forms.Label label39;
+        public System.Windows.Forms.Button DownloadFontBtn;
+        public System.Windows.Forms.Label label44;
     }
 }

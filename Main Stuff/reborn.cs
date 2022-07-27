@@ -2,6 +2,7 @@
 using FNAF_Engine_Reborn.Main_Stuff;
 using FNAF_Engine_Reborn.Object_Editors;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Media;
@@ -17,6 +18,8 @@ namespace FNAF_Engine_Reborn
         public bool isopen = false;
         internal bool usableEngine = true;
         public string script;
+
+        public string style;
         //private DiscordRpc.EventHandlers handlers;
         //private DiscordRpc.RichPresence presence;
         internal static loadFERproject projectloader = new loadFERproject();
@@ -46,7 +49,7 @@ namespace FNAF_Engine_Reborn
             {
                 label93.Location = new Point(872, 1);
             }
-            Text = "Sunset Creator";
+            this.Text = "Sunset Creator";
             Random random = new Random();
             int randomNumber = random.Next(1, 38);
             //switch (randomNumber)
@@ -420,6 +423,7 @@ namespace FNAF_Engine_Reborn
                 //this.presence.state = "Version " + Version;
                 //DiscordRpc.UpdatePresence(ref this.presence);
             }
+
         }
 
         public void j() //testing purposes
@@ -2225,6 +2229,11 @@ namespace FNAF_Engine_Reborn
             {
                 MessageBox.Show("Warning: This project is unsupported with the newer versions of FNAF Engine: Reborn! Do you wish to create the needed files?", "Unsupported Version", MessageBoxButtons.YesNo);
             }
+        }
+
+        private void DownloadFontBtn_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://cdn.discordapp.com/attachments/966684909739601952/1001816335837315082/digital-7.ttf");
         }
     }
 }
