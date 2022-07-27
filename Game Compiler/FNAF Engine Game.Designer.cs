@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace FNAF_Engine_Reborn
 {
     partial class FNAF_Engine_Game
@@ -33,6 +35,7 @@ namespace FNAF_Engine_Reborn
             this.Error = new System.Windows.Forms.Panel();
             this.Description = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
+            this.Office = new System.Windows.Forms.Panel();
             this.Night_Start = new System.Windows.Forms.Panel();
             this.nightLBL = new System.Windows.Forms.Label();
             this.TwelveAM = new System.Windows.Forms.Label();
@@ -40,7 +43,6 @@ namespace FNAF_Engine_Reborn
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Invisible = new System.Windows.Forms.Label();
-            this.Office = new System.Windows.Forms.Panel();
             this.Error.SuspendLayout();
             this.Night_Start.SuspendLayout();
             this.SuspendLayout();
@@ -50,10 +52,9 @@ namespace FNAF_Engine_Reborn
             this.Error.BackColor = System.Drawing.Color.DodgerBlue;
             this.Error.Controls.Add(this.Description);
             this.Error.Controls.Add(this.Title);
-            this.Error.Controls.Add(this.Office);
             this.Error.Location = new System.Drawing.Point(0, -1);
             this.Error.Name = "Error";
-            this.Error.Size = new System.Drawing.Size(9999, 9999);
+            this.Error.Size = new System.Drawing.Size(1444, 920);
             this.Error.TabIndex = 2;
             this.Error.Visible = false;
             // 
@@ -79,6 +80,15 @@ namespace FNAF_Engine_Reborn
             this.Title.TabIndex = 2;
             this.Title.Text = "Title";
             // 
+            // Office
+            // 
+            this.Office.BackColor = System.Drawing.Color.Black;
+            this.Office.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Office.Location = new System.Drawing.Point(0, 1);
+            this.Office.Name = "Office";
+            this.Office.Size = new System.Drawing.Size(1444, 920);
+            this.Office.TabIndex = 1;
+            // 
             // Night_Start
             // 
             this.Night_Start.BackColor = System.Drawing.Color.Black;
@@ -90,7 +100,7 @@ namespace FNAF_Engine_Reborn
             this.Night_Start.Controls.Add(this.Invisible);
             this.Night_Start.Location = new System.Drawing.Point(0, 0);
             this.Night_Start.Name = "Night_Start";
-            this.Night_Start.Size = new System.Drawing.Size(9999, 9999);
+            this.Night_Start.Size = new System.Drawing.Size(1444, 920);
             this.Night_Start.TabIndex = 4;
             this.Night_Start.Visible = false;
             this.Night_Start.VisibleChanged += new System.EventHandler(this.Night_Start_VisibleChanged);
@@ -158,22 +168,15 @@ namespace FNAF_Engine_Reborn
             this.Invisible.Text = "_________________";
             this.Invisible.Visible = false;
             // 
-            // Office
-            // 
-            this.Office.BackColor = System.Drawing.Color.Black;
-            this.Office.Location = new System.Drawing.Point(0, 1);
-            this.Office.Name = "Office";
-            this.Office.Size = new System.Drawing.Size(1444, 860);
-            this.Office.TabIndex = 1;
-            // 
             // FNAF_Engine_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1444, 860);
+            this.ClientSize = new System.Drawing.Size(1444, 920);
             this.Controls.Add(this.Error);
             this.Controls.Add(this.Night_Start);
+            this.Controls.Add(this.Office);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FNAF_Engine_Game";

@@ -465,8 +465,8 @@ namespace FNAF_Engine_Reborn
                 TwelveAM.Hide();
                 await Task.Delay(800);
                 Office.Show();
-                EventArgs events = new EventArgs();
-                Office_Paint(null, events);
+                Office.BringToFront();
+                ChangeOfficeState("Default");
             }
         }
         private void Office_Paint(object sender, EventArgs e)
