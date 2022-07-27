@@ -39,6 +39,9 @@ namespace FNAF_Engine_Reborn
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -56,16 +59,9 @@ namespace FNAF_Engine_Reborn
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.releases = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.releases.SuspendLayout();
             this.SuspendLayout();
@@ -178,6 +174,34 @@ namespace FNAF_Engine_Reborn
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 455);
             this.panel1.TabIndex = 8;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(166, 198);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(60, 15);
+            this.label30.TabIndex = 29;
+            this.label30.Text = "-Cleant UI";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label32.Location = new System.Drawing.Point(164, 177);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(86, 21);
+            this.label32.TabIndex = 27;
+            this.label32.Text = "-New Font";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(161, 152);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(133, 15);
+            this.label33.TabIndex = 26;
+            this.label33.Text = "Patch 7 (0.2.0) Released!";
             // 
             // label29
             // 
@@ -325,125 +349,53 @@ namespace FNAF_Engine_Reborn
             // 
             // releases
             // 
-            this.releases.Controls.Add(this.label12);
-            this.releases.Controls.Add(this.label11);
-            this.releases.Controls.Add(this.label10);
-            this.releases.Controls.Add(this.label8);
             this.releases.Controls.Add(this.label7);
             this.releases.Controls.Add(this.label9);
-            this.releases.Controls.Add(this.label13);
             this.releases.Location = new System.Drawing.Point(12, 38);
             this.releases.Name = "releases";
             this.releases.Size = new System.Drawing.Size(200, 438);
             this.releases.TabIndex = 9;
             this.releases.Visible = false;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1, 84);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(178, 15);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "-Added more menus and credits";
-            this.label12.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 15);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "-Changed where data is stored";
-            this.label11.Visible = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1, 52);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 15);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "-Engine is now usable";
-            this.label10.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 15);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "-Tons of bug fixes";
-            this.label8.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "-Fixed changelogs again";
-            this.label7.Visible = false;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 15);
+            this.label9.Size = new System.Drawing.Size(80, 15);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Coming soon!";
+            this.label9.Text = "1.0.0 Released";
             // 
-            // label13
+            // label7
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1, 100);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 15);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "-And more...";
-            this.label13.Visible = false;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(177, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "-First version of engine released.";
             // 
-            // label30
+            // button3
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(166, 198);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(60, 15);
-            this.label30.TabIndex = 29;
-            this.label30.Text = "-Cleant UI";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label32.Location = new System.Drawing.Point(164, 177);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(86, 21);
-            this.label32.TabIndex = 27;
-            this.label32.Text = "-New Font";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(161, 152);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(133, 15);
-            this.label33.TabIndex = 26;
-            this.label33.Text = "Patch 7 (0.2.0) Released!";
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(329, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(158, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "COMING SOON";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // changelogs
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(335, 488);
+            this.ClientSize = new System.Drawing.Size(496, 488);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.releases);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.releases);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -472,13 +424,7 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel releases;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
@@ -498,5 +444,7 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button3;
     }
 }

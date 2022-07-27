@@ -5634,7 +5634,7 @@ namespace FNAF_Engine_Reborn
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.ForeColor = System.Drawing.SystemColors.Control;
-            this.label69.Location = new System.Drawing.Point(535, 29);
+            this.label69.Location = new System.Drawing.Point(508, 29);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(25, 25);
             this.label69.TabIndex = 31;
@@ -5645,11 +5645,11 @@ namespace FNAF_Engine_Reborn
             this.fermoment.AutoSize = true;
             this.fermoment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fermoment.ForeColor = System.Drawing.SystemColors.Control;
-            this.fermoment.Location = new System.Drawing.Point(322, 29);
+            this.fermoment.Location = new System.Drawing.Point(358, 29);
             this.fermoment.Name = "fermoment";
-            this.fermoment.Size = new System.Drawing.Size(222, 25);
+            this.fermoment.Size = new System.Drawing.Size(156, 25);
             this.fermoment.TabIndex = 1;
-            this.fermoment.Text = "FNAF Engine: Reborn";
+            this.fermoment.Text = "Sunset Creator";
             // 
             // label70
             // 
@@ -7102,6 +7102,12 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
+            this.Controls.Add(this.AssetManagerPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
+            this.Controls.Add(this.ScriptEditorPanel);
+            this.Controls.Add(this.ExtensionsPanel);
+            this.Controls.Add(this.GameDebugMenu);
+            this.Controls.Add(this.template);
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
@@ -7112,12 +7118,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.AssetManagerPanel);
-            this.Controls.Add(this.animatronicEditorPNL2);
-            this.Controls.Add(this.ScriptEditorPanel);
-            this.Controls.Add(this.ExtensionsPanel);
-            this.Controls.Add(this.GameDebugMenu);
-            this.Controls.Add(this.template);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7125,7 +7125,7 @@ namespace FNAF_Engine_Reborn
             this.MaximizeBox = false;
             this.Name = "reborn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FNAF Engine: Reborn 0.0.0 TITLE";
+            this.Text = "Sunset Creator";
             this.Load += new System.EventHandler(this.reborn_Load);
             this.Click += new System.EventHandler(this.reborn_Click);
             this.allEditorsPNL.ResumeLayout(false);

@@ -42,7 +42,7 @@ namespace FNAF_Engine_Reborn
             Load_Menus();
         }
 
-        private void Load_Menus()
+        private async void Load_Menus()
         {
             string[] menus = Directory.GetDirectories(project + "/menus/");
             foreach (string Menu in menus)
@@ -74,7 +74,7 @@ namespace FNAF_Engine_Reborn
 
                 panel.Controls.Clear();
 
-                Controls.Add(panel);
+                this.Controls.Add(panel);
 
                 if (MenuName == "Main")
                 {
@@ -83,9 +83,9 @@ namespace FNAF_Engine_Reborn
 
                 panel.VisibleChanged += Menu_Load;
 
-                panel.Paint += Menu_Start;
-
                 panel.Visible = true;
+
+                panel.Paint += Menu_Start;
 
                 async void Menu_Start(object sender, EventArgs e)
                 {
@@ -125,6 +125,7 @@ namespace FNAF_Engine_Reborn
                 void Menu_Load(object sender, EventArgs e)
                 {
                     string[] texts = Directory.GetDirectories(project + $"/menus/{MenuName}/text_elements/");
+                    panel.Controls.Clear();
                     foreach (string text in texts)
                     {
                         string args = File.ReadAllText(text + "/args.txt");
@@ -132,7 +133,10 @@ namespace FNAF_Engine_Reborn
                         {
 
                             Label Text = new Label();
+
                             panel.Controls.Add(Text);
+
+                            panel.Show();
 
                             string Path = text;
                             int X = Convert.ToInt32(File.ReadAllText(Path + "/x.txt"));
@@ -443,8 +447,11 @@ namespace FNAF_Engine_Reborn
                         await RunCode();
                         RunScript(instruction);
                     }
-
                 }
+
+                await Task.Delay(2500);
+
+                Loading.Hide();
             }
         }
 
@@ -463,26 +470,38 @@ namespace FNAF_Engine_Reborn
                 await Task.Delay(2700);
                 nightLBL.Hide();
                 TwelveAM.Hide();
-                await Task.Delay(800);
+                ChangeOfficeState("Default");
+                await Task.Delay(1500);
                 Office.Show();
                 Office.BringToFront();
-                ChangeOfficeState("Default");
             }
         }
         private void Office_Paint(object sender, EventArgs e)
         {
             ChangeOfficeState("Default");
         }
-        private void ChangeOfficeState(string State)
+        private async void ChangeOfficeState(string State)
         {
             try
             {
                 Console.WriteLine("Changing office state image...");
+                await Task.Delay(50);
+                Console.WriteLine("");
+                Console.WriteLine("Loading image...");
+                Console.WriteLine("");
                 Office.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/offices/default/office_states/{State}/mainsprite.txt"));
+                await Task.Delay(50);
+                Console.WriteLine("Image loaded.");
+                Console.WriteLine("");
+                await Task.Delay(525);
+                Console.WriteLine("Successfully loaded office state image.");
             }
             catch (Exception)
             {
+                await Task.Delay(50);
                 Console.WriteLine("Default office state image not found!");
+                await Task.Delay(350);
+                Console.WriteLine("Failed to load office state image.");
             }
         }
     }

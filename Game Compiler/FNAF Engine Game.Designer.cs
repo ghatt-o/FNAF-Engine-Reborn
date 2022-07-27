@@ -43,6 +43,7 @@ namespace FNAF_Engine_Reborn
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Invisible = new System.Windows.Forms.Label();
+            this.Loading = new System.Windows.Forms.Panel();
             this.Error.SuspendLayout();
             this.Night_Start.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@ namespace FNAF_Engine_Reborn
             // Error
             // 
             this.Error.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Error.Controls.Add(this.Loading);
             this.Error.Controls.Add(this.Description);
             this.Error.Controls.Add(this.Title);
             this.Error.Location = new System.Drawing.Point(0, -1);
@@ -168,6 +170,14 @@ namespace FNAF_Engine_Reborn
             this.Invisible.Text = "_________________";
             this.Invisible.Visible = false;
             // 
+            // Loading
+            // 
+            this.Loading.BackColor = System.Drawing.Color.Black;
+            this.Loading.Location = new System.Drawing.Point(0, 1);
+            this.Loading.Name = "Loading";
+            this.Loading.Size = new System.Drawing.Size(1444, 920);
+            this.Loading.TabIndex = 4;
+            // 
             // FNAF_Engine_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,5 +216,6 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Label Invisible;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private Panel Loading;
     }
 }

@@ -46,7 +46,7 @@ namespace FNAF_Engine_Reborn
             {
                 label93.Location = new Point(872, 1);
             }
-            Text = "FNAF Engine: Reborn";
+            Text = "Sunset Creator";
             Random random = new Random();
             int randomNumber = random.Next(1, 38);
             //switch (randomNumber)
@@ -234,7 +234,7 @@ namespace FNAF_Engine_Reborn
         {
             changelogs rebornChangelogs = new changelogs();
             rebornChangelogs.Show();
-            Text = "FNAF Engine: Reborn - Changelogs";
+            Text = "Sunset Creator - Changelogs";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -269,7 +269,7 @@ namespace FNAF_Engine_Reborn
         {
             FNAF_Engine_Game theGameTest = new FNAF_Engine_Game(this);
             theGameTest.Show();
-            Text = "FNAF Engine: Reborn - Testing Game";
+            Text = "Sunset Creator - Testing Game";
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -345,21 +345,21 @@ namespace FNAF_Engine_Reborn
 
         private void createProjectBTN_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Create Project";
+            Text = "Sunset Creator - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void loadProjectBTN_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Load Project";
+            Text = "Sunset Creator - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
 
         private void menu_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn";
+            Text = "Sunset Creator";
         }
 
         private void button66_Click(object sender, EventArgs e)
@@ -407,7 +407,7 @@ namespace FNAF_Engine_Reborn
             REBORNtitle.Size = new Size(1000, 60);
             menu.Hide();
             allEditorsPNL.Visible = true;
-            Text = "FNAF Engine: Reborn";
+            Text = "Sunset Creator";
             button38.Visible = true;
             _ = projectloader.label3.Text;
             if (showProject == true)
@@ -429,12 +429,12 @@ namespace FNAF_Engine_Reborn
 
         private void AssetManagerPanel_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn";
+            Text = "Sunset Creator";
         }
 
         private void ProjectStuffs_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn";
+            Text = "Sunset Creator";
         }
 
         private void button75_Click(object sender, EventArgs e)
@@ -454,11 +454,11 @@ namespace FNAF_Engine_Reborn
             loadFERproject loadProject = new loadFERproject();
             if (suscreate.Visible == true)
             {
-                Text = "FNAF Engine: Reborn";
+                Text = "Sunset Creator";
             }
             if (loadProject.Visible == true)
             {
-                Text = "FNAF Engine: Reborn";
+                Text = "Sunset Creator";
             }
         }
 
@@ -540,14 +540,14 @@ namespace FNAF_Engine_Reborn
 
         private void bigProjectICON_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Create Project";
+            Text = "Sunset Creator - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void bigFolderICON_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Load Project";
+            Text = "Sunset Creator - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
@@ -724,7 +724,7 @@ namespace FNAF_Engine_Reborn
         {
             extensionCreator extensionCreator = new extensionCreator();
             _ = extensionCreator.ShowDialog();
-            Text = "FNAF Engine: Reborn - Custom Extensions";
+            Text = "Sunset Creator - Custom Extensions";
         }
 
         private void AssetManagerPanel_VisibleChanged(object sender, EventArgs e)
@@ -1587,35 +1587,35 @@ namespace FNAF_Engine_Reborn
 
         private void createProjectBTN_Click_1(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Create Project";
+            Text = "Sunset Creator - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void label170_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Create Project";
+            Text = "Sunset Creator - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void label171_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Create Project";
+            Text = "Sunset Creator - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void label153_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Load Project";
+            Text = "Sunset Creator - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
 
         private void label154_Click(object sender, EventArgs e)
         {
-            Text = "FNAF Engine: Reborn - Load Project";
+            Text = "Sunset Creator - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
