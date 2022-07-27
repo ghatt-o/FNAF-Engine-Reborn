@@ -17,7 +17,7 @@ namespace FNAF_Engine_Reborn.bin
         private void MinigameMaker_Load(object sender, EventArgs e)
         {
             loadFERproject projectloader = new loadFERproject();
-            string projecto = projectloader.label3.Text;
+            _ = projectloader.label3.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace FNAF_Engine_Reborn.bin
         {
             if (comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("Select a minigame!");
+                _ = MessageBox.Show("Select a minigame!");
             }
             else
             {
@@ -88,11 +88,11 @@ namespace FNAF_Engine_Reborn.bin
         {
             if (Directory.Exists(projecto + "/minigames") == false)
             {
-                MessageBox.Show("Something went wrong! Fixing...");
-                Directory.CreateDirectory(projecto + "/minigames");
+                _ = MessageBox.Show("Something went wrong! Fixing...");
+                _ = Directory.CreateDirectory(projecto + "/minigames");
                 comboBox1.Items.Clear();
                 currentMinigame = "";
-                MessageBox.Show("Fixed!");
+                _ = MessageBox.Show("Fixed!");
             }
         }
 
@@ -110,7 +110,7 @@ namespace FNAF_Engine_Reborn.bin
         private void button16_Click(object sender, EventArgs e)
         {
             string minigameBTBC = textBox1.Text;
-            Directory.CreateDirectory(projecto + "/minigames/" + minigameBTBC);
+            _ = Directory.CreateDirectory(projecto + "/minigames/" + minigameBTBC);
             panel2.Hide();
         }
 

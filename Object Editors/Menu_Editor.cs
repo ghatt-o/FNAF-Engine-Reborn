@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace FNAF_Engine_Reborn.Object_Editors
 {
-    class Menu_Editor
+    internal class Menu_Editor
     {
-        private reborn reborn;
+        private readonly reborn reborn;
 
         public Menu_Editor(reborn reborn)
         {
@@ -25,7 +25,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
         }
         public void CreateText(string ID, string Menu)
         {
-            Directory.CreateDirectory(Menu + "/text_elements/" + ID);
+            _ = Directory.CreateDirectory(Menu + "/text_elements/" + ID);
             string NewPath = Menu + "/text_elements/" + ID;
             File.WriteAllText(NewPath + "/id.txt", ID);
             File.WriteAllText(NewPath + "/text.txt", "Text");
@@ -34,7 +34,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
             File.WriteAllText(NewPath + "/args.txt", "false");
             File.WriteAllText(NewPath + "/x.txt", "0");
             File.WriteAllText(NewPath + "/y.txt", "0");
-            File.WriteAllText(NewPath + "/Functions.txt", "goto:");
+            File.WriteAllText(NewPath + "/Functions.txt", "");
             File.WriteAllText(NewPath + "/color.txt", "255,255,255");
         }
         public void RewriteText(string Menu, TextElement TextElement)
@@ -52,26 +52,44 @@ namespace FNAF_Engine_Reborn.Object_Editors
         }
         public void AddText(string Menu, TextElement TextElement)
         {
-            var Preview = reborn.MenuPreview;
+            Panel Preview = reborn.MenuPreview;
             if (TextElement.args == false)
             {
-                Label Text = new Label();
-                Text.Location = new Point(TextElement.X, TextElement.Y);
-                Text.AutoSize = true;
-                Text.BackColor = Color.Transparent;
-                Text.FlatStyle = FlatStyle.Flat;
-                Text.ForeColor = TextElement.Color;
-                Text.Font = new Font(TextElement.Font, FontStyle.Regular);
-                Text.Text = TextElement.Text;
+                Label Text = new Label
+                {
+                    Location = new Point(TextElement.X, TextElement.Y), // set location
+                    AutoSize = true, // the text's text size is the text size
+                    BackColor = Color.Transparent,
+                    FlatStyle = FlatStyle.Flat,
+                    ForeColor = TextElement.Color,
+                    Font = new Font(TextElement.Font, FontStyle.Regular),
+                    Text = TextElement.Text,
+                    Name = TextElement.ID
+                }; //the menu editor text 
                 Text.Draggable(true);
                 Text.Click += newText_Select;
                 Text.Move += newText_Move;
                 Text.MouseDoubleClick += Text_MouseDoubleClick;
-                Text.Name = TextElement.ID;
                 reborn.Element_Text_MenuEditor.TextChanged += TextChanged;
                 reborn.Element_FontSize_MenuEditor.TextChanged += FontSizeChanged;
                 reborn.Element_Color_MenuEditor.TextChanged += ColorChanged;
                 reborn.Element_Font_MenuEditor.TextChanged += FontChanged;
+                reborn.MenuEditor_CodeEditor.TextChanged += CodeChanged;
+                void CodeChanged(object sender, EventArgs e)
+                {
+                    try
+                    {
+                        if (reborn.Element_ID_MenuEditor.Text == Text.Name)
+                        {
+                            TextElement.Functions = reborn.MenuEditor_CodeEditor.Text;
+                            RewriteText(Menu, TextElement);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
                 void FontChanged(object sender, EventArgs e)
                 {
                     if (reborn.Element_ID_MenuEditor.Text == Text.Name)
@@ -84,9 +102,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         }
                         catch (ArgumentException)
                         {
-                            TextElement.FontName = "Consolas";
-                            RewriteText(Menu, TextElement);
-                            RefreshText(Menu);
+                            Text.Font = new Font("Microsoft Sans Serif", Text.Font.Size);
                         }
                     }
                 }
@@ -112,7 +128,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     {
                         if (reborn.Element_ID_MenuEditor.Text == Text.Name)
                         {
-                            var RGB = reborn.Element_Color_MenuEditor.Text.Split(',');
+                            string[] RGB = reborn.Element_Color_MenuEditor.Text.Split(',');
                             if (RGB.Length == 3)
                             {
                                 int R = Convert.ToInt32(RGB[0]);
@@ -130,10 +146,10 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Oh no, an exception!!");
+
                     }
                 }
-                async void FontSizeChanged(object sender, EventArgs e)
+                void FontSizeChanged(object sender, EventArgs e)
                 {
                     try
                     {
@@ -142,7 +158,6 @@ namespace FNAF_Engine_Reborn.Object_Editors
                             float fontsize = Convert.ToSingle(reborn.Element_FontSize_MenuEditor.Text);
                             TextElement.FontSize = fontsize;
                             RewriteText(Menu, TextElement);
-                            await Wait(1);
                             RefreshText(Menu);
                         }
                     }
@@ -162,6 +177,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         reborn.Element_Text_MenuEditor.Text = TextElement.Text;
                         reborn.Element_FontSize_MenuEditor.Text = Convert.ToString(TextElement.FontSize);
                         reborn.Element_Color_MenuEditor.Text = TextElement.Color.R.ToString() + "," + TextElement.Color.G.ToString() + "," + TextElement.Color.B.ToString();
+                        reborn.MenuEditor_CodeEditor.Text = TextElement.Functions;
                     }
                     catch (Exception)
                     {
@@ -215,12 +231,13 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 string id = File.ReadAllText(TextElement + "/id.txt");
                 string text = File.ReadAllText(TextElement + "/text.txt");
                 string args = File.ReadAllText(TextElement + "/args.txt");
+                string functions = File.ReadAllText(TextElement + "/Functions.txt");
                 string fontname = File.ReadAllText(TextElement + "/font.txt");
                 string fontsize_string = File.ReadAllText(TextElement + "/fontsize.txt");
                 int x = Convert.ToInt32(File.ReadAllText(TextElement + "/x.txt"));
                 int y = Convert.ToInt32(File.ReadAllText(TextElement + "/y.txt"));
                 string colorTxt = File.ReadAllText(TextElement + "/color.txt");
-                var SeparatedRGB = colorTxt.Split(',');
+                string[] SeparatedRGB = colorTxt.Split(',');
                 int R = Convert.ToInt32(SeparatedRGB[0]);
                 int G = Convert.ToInt32(SeparatedRGB[1]);
                 int B = Convert.ToInt32(SeparatedRGB[2]);
@@ -237,7 +254,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     fontfamily = new FontFamily("Consolas");
                 }
 
-                Font font = new Font(fontfamily, fontsize, FontStyle.Regular);
+                Font font = new Font(fontfamily, fontsize);
 
                 TextElement NewText = new TextElement
                 {
@@ -246,10 +263,11 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     FontSize = fontsize,
                     Font = font,
                     FontName = fontname,
+                    Functions = functions,
                     X = x,
                     Y = y,
                     args = Convert.ToBoolean(args),
-                    Color = Color.FromArgb(R, G, B)
+                    Color = Color.FromArgb(R, G, B),
                 };
                 AddText(Menu, NewText);
             }

@@ -5,8 +5,8 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 {
     public partial class CodeblockSelector : Form
     {
-        string all = "";
-        private reborn reborn;
+        private string all = "";
+        private readonly reborn reborn;
         public string Path;
         public CodeblockSelector(reborn reborn)
         {
@@ -33,9 +33,9 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             else
             {
                 Console.WriteLine(Events.SelectedNode.ToString());
-                var separated = Events.SelectedNode.ToString().Split(' ');
+                string[] separated = Events.SelectedNode.ToString().Split(' ');
                 separated.SetValue("", 0);
-                int slenght = separated.Length;
+                _ = separated.Length;
                 foreach (string text in separated)
                 {
                     all = all + " " + text;
@@ -48,13 +48,13 @@ namespace FNAF_Engine_Reborn.Main_Stuff
                 reborn.button25.Text = event_;
                 Console.WriteLine("event isss: " + event_);
                 reborn.button26.Show();
-                this.Hide();
+                Hide();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
         }
     }
 }

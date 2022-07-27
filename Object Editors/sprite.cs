@@ -1,13 +1,13 @@
-﻿namespace FNAF_Engine_Reborn
-{
-    using System;
-    using System.Drawing;
-    using System.IO;
-    using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
+namespace FNAF_Engine_Reborn
+{
     public class Sprite
     {
-        private reborn reborn;
+        private readonly reborn reborn;
 
         public Sprite(reborn reborn)
         {
@@ -36,17 +36,19 @@
                 //vars
                 string FilePath = Path;
                 //code
-                Sprite sprite = new Sprite(reborn);
-                sprite.Name = FileName;
-                sprite.Image = FilePath;
-                //Console.WriteLine(FileName);
-                //Console.WriteLine(FilePath);
-                sprite.Layer = "1";
-                sprite.X = "0";
-                sprite.Y = "0";
+                Sprite sprite = new Sprite(reborn)
+                {
+                    Name = FileName,
+                    Image = FilePath,
+                    //Console.WriteLine(FileName);
+                    //Console.WriteLine(FilePath);
+                    Layer = "1",
+                    X = "0",
+                    Y = "0"
+                };
                 string SpriteData = sprite.SortData();
                 //create sprite
-                Directory.CreateDirectory(project + "/offices/default/sprites/" + FileName);
+                _ = Directory.CreateDirectory(project + "/offices/default/sprites/" + FileName);
                 File.WriteAllText(project + "/offices/default/sprites/" + FileName + "/data.txt", SpriteData);
                 File.Copy(FilePath, project + "/offices/default/sprites/" + FileName + "/" + FileName);
             }
@@ -54,13 +56,13 @@
         public void Intiate()
         {
             reborn.officePreview.Controls.Clear();
-            var AllSprites = Directory.GetDirectories(project + "/offices/default/sprites/");
+            string[] AllSprites = Directory.GetDirectories(project + "/offices/default/sprites/");
             foreach (string Sprite in AllSprites) // for each sprite found
             {
                 //setting vars
 
                 string SpritePropertiesText = File.ReadAllText(Sprite + "/data.txt");
-                var SpriteProperties = SpritePropertiesText.Split('~');
+                string[] SpriteProperties = SpritePropertiesText.Split('~');
 
                 if (SpritePropertiesText.Contains("[ptp]")) // if deleted
                 {
@@ -76,23 +78,27 @@
                     Image img = System.Drawing.Image.FromFile(Image);
                     //code
 
-                    var NewSprite = new Sprite(reborn);
-                    NewSprite.Name = Name;
-                    NewSprite.Image = Image;
-                    NewSprite.Layer = Layer;
-                    NewSprite.X = X;
-                    NewSprite.Y = Y;
+                    Sprite NewSprite = new Sprite(reborn)
+                    {
+                        Name = Name,
+                        Image = Image,
+                        Layer = Layer,
+                        X = X,
+                        Y = Y
+                    };
                     int PicBoxX = Convert.ToInt32(NewSprite.X);
                     int PicBoxY = Convert.ToInt32(NewSprite.Y);
                     //setting up the image preview
 
-                    PictureBox sprite = new PictureBox();
-                    sprite.Name = NewSprite.Name;
-                    sprite.MinimumSize = new Size(0, 0);
-                    sprite.MaximumSize = new Size(581, 342);
-                    sprite.BackgroundImageLayout = ImageLayout.Stretch;
-                    sprite.Size = img.Size;
-                    sprite.BackColor = Color.Transparent;
+                    PictureBox sprite = new PictureBox
+                    {
+                        Name = NewSprite.Name,
+                        MinimumSize = new Size(0, 0),
+                        MaximumSize = new Size(581, 342),
+                        BackgroundImageLayout = ImageLayout.Stretch,
+                        Size = img.Size,
+                        BackColor = Color.Transparent
+                    };
                     Console.WriteLine();
                     sprite.BackgroundImage = System.Drawing.Image.FromFile(project + "/offices/default/sprites/" + NewSprite.Name + "/" + NewSprite.Name);
                     Console.WriteLine();

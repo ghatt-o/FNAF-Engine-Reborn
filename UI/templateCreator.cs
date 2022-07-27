@@ -19,9 +19,6 @@ namespace FNAF_Engine_Reborn
                 if (comboBox1.SelectedItem == null)
                 {
                     MessageBox.Show("Select a project to serve as template!");
-                }
-                else
-                {
                     Directory.CreateDirectory("assets/custom_assets/templates/" + textBox1.Text);
                 }
                 try
@@ -47,7 +44,7 @@ namespace FNAF_Engine_Reborn
             {
                 if (textBox1.Text == null)
                 {
-                    MessageBox.Show("Special characters are not allowed!");
+                    _ = MessageBox.Show("Special characters are not allowed!");
                 }
             }
         }
@@ -63,7 +60,7 @@ namespace FNAF_Engine_Reborn
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void templateCreator_Load_1(object sender, EventArgs e)
@@ -104,7 +101,7 @@ namespace FNAF_Engine_Reborn
             try
             {
                 Directory.Delete(comboBox3.SelectedItem.ToString(), true);
-                MessageBox.Show("Deleted template!");
+                _ = MessageBox.Show("Deleted template!");
                 try
                 {
                     comboBox3.Items.Clear();
@@ -126,7 +123,7 @@ namespace FNAF_Engine_Reborn
             }
             catch (Exception)
             {
-                MessageBox.Show("Select a template!");
+                _ = MessageBox.Show("Select a template!");
             }
         }
     }

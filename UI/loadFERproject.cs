@@ -26,34 +26,34 @@ namespace FNAF_Engine_Reborn
         {
             if (comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("Select a project or create one if you haven't!");
+                _ = MessageBox.Show("Select a project or create one if you haven't!");
             }
             else
             {
                 reborn reborn = new reborn();
                 label3.Text = comboBox1.SelectedItem.ToString();
-                string sus = comboBox1.SelectedItem.ToString();
+                _ = comboBox1.SelectedItem.ToString();
                 reborn rebor = Application.OpenForms.OfType<reborn>().Single();
                 rebor.load_editors();
                 rebor.projecto = comboBox1.SelectedItem.ToString();
                 reborn.projecto = comboBox1.SelectedItem.ToString();
-                this.Hide();
+                Hide();
             }
         }
 
         private void loadFERproject_VisibleChanged(object sender, EventArgs e)
         {
-            if (this.Visible == false)
+            if (Visible == false)
             {
                 try
                 {
-                    try
-                    {
-                        label3.Text = comboBox1.SelectedItem.ToString();
-                    }
-                    catch (Exception)
+                    if (comboBox1.SelectedItem == null)
                     {
 
+                    }
+                    else
+                    {
+                        label3.Text = comboBox1.SelectedItem.ToString();
                     }
                 }
                 catch (Exception ex)

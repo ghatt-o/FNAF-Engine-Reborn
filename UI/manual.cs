@@ -29,7 +29,7 @@ namespace FNAF_Engine_Reborn
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://discord.gg/gGCdUpKDrW");
+            _ = System.Diagnostics.Process.Start("https://discord.gg/gGCdUpKDrW");
         }
     }
 }

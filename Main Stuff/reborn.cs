@@ -1,19 +1,19 @@
-﻿namespace FNAF_Engine_Reborn
-{
-    using FNAF_Engine_Reborn.bin;
-    using FNAF_Engine_Reborn.Main_Stuff;
-    using FNAF_Engine_Reborn.Object_Editors;
-    using System;
-    using System.Drawing;
-    using System.IO;
-    using System.Media;
-    using System.Windows.Forms;
+﻿using FNAF_Engine_Reborn.bin;
+using FNAF_Engine_Reborn.Main_Stuff;
+using FNAF_Engine_Reborn.Object_Editors;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Media;
+using System.Windows.Forms;
 
+namespace FNAF_Engine_Reborn
+{
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.5.9";
-        public string Build_Version = "rrcs3.5.7.3";
+        public string Version = "pre-1.0.0";
+        public string Build_Version = "pre-rf1.0.0.-1";
         public bool isopen = false;
         internal bool usableEngine = true;
         public string script;
@@ -28,17 +28,25 @@
         }
         private void createFolder(string folder)
         {
-            Directory.CreateDirectory(projecto + folder);
+            _ = Directory.CreateDirectory(projecto + folder);
         }
         private void reborn_Load(object sender, EventArgs e)
         {
             File.WriteAllText("DO_NOT_MODIFY.txt", "");
-#if (DEBUG)
+#if DEBUG
             {
                 //button67.Visible = true; //load editors button gets visible lol so useless
             }
 #endif
-            this.Text = "FNAF Engine: Reborn";
+            if (Version == "pre-1.0.0")
+            {
+                label93.Location = new Point(850, 1);
+            }
+            else
+            {
+                label93.Location = new Point(872, 1);
+            }
+            Text = "FNAF Engine: Reborn";
             Random random = new Random();
             int randomNumber = random.Next(1, 38);
             //switch (randomNumber)
@@ -67,7 +75,7 @@
             }
             if (randomNumber == 6)
             {
-                label84.Text = "Made by lily_!";
+                label84.Text = "Made by lily!";
             }
             if (randomNumber == 7)
             {
@@ -193,6 +201,10 @@
             {
                 label84.Text = "Yeah!";
             }
+            if (randomNumber == 38)
+            {
+                label84.Text = "Snow!";
+            }
             //this.handlers = default(DiscordRpc.EventHandlers);
             //DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
             //this.handlers = default(DiscordRpc.EventHandlers);
@@ -222,19 +234,19 @@
         {
             changelogs rebornChangelogs = new changelogs();
             rebornChangelogs.Show();
-            this.Text = "FNAF Engine: Reborn - Changelogs";
+            Text = "FNAF Engine: Reborn - Changelogs";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             createProject createNew = new createProject();
-            createNew.ShowDialog();
+            _ = createNew.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             templateCreator templateMaker = new templateCreator();
-            templateMaker.ShowDialog();
+            _ = templateMaker.ShowDialog();
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -257,7 +269,7 @@
         {
             FNAF_Engine_Game theGameTest = new FNAF_Engine_Game(this);
             theGameTest.Show();
-            this.Text = "FNAF Engine: Reborn - Testing Game";
+            Text = "FNAF Engine: Reborn - Testing Game";
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -274,8 +286,10 @@
 
         private void button57_Click(object sender, EventArgs e)
         {
-            FNAF_Engine_Game theGameTest = new FNAF_Engine_Game(this);
-            theGameTest.Text = textBox6.Text;
+            _ = new FNAF_Engine_Game(this)
+            {
+                Text = textBox6.Text
+            };
             textBox6.Text = textBox6.Text;
         }
 
@@ -285,12 +299,12 @@
             {
                 if (comboBox43.SelectedItem == null)
                 {
-                    MessageBox.Show("Select a animation!");
+                    _ = MessageBox.Show("Select a animation!");
                 }
                 else
                 {
                     Directory.Delete(comboBox43.SelectedItem.ToString());
-                    MessageBox.Show("Animation deleted!");
+                    _ = MessageBox.Show("Animation deleted!");
                     comboBox43.Items.Clear();
                     comboBox43.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
                 }
@@ -313,12 +327,12 @@
                 AnimAdd.Visible = false;
                 if (spriteName.Text == "")
                 {
-                    MessageBox.Show("Please insert something in the name box!");
+                    _ = MessageBox.Show("Please insert something in the name box!");
                 }
                 else
                 {
                     string animName = spriteName.Text;
-                    Directory.CreateDirectory(projecto + "/animations/" + animName);
+                    _ = Directory.CreateDirectory(projecto + "/animations/" + animName);
                     comboBox43.Items.Clear();
                     comboBox43.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations/"));
                 }
@@ -331,21 +345,21 @@
 
         private void createProjectBTN_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
-            projectMaker.ShowDialog();
+            _ = projectMaker.ShowDialog();
         }
 
         private void loadProjectBTN_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
-            projectLoader.ShowDialog();
+            _ = projectLoader.ShowDialog();
         }
 
         private void menu_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn";
+            Text = "FNAF Engine: Reborn";
         }
 
         private void button66_Click(object sender, EventArgs e)
@@ -393,9 +407,9 @@
             REBORNtitle.Size = new Size(1000, 60);
             menu.Hide();
             allEditorsPNL.Visible = true;
-            this.Text = "FNAF Engine: Reborn";
+            Text = "FNAF Engine: Reborn";
             button38.Visible = true;
-            string projecto = projectloader.label3.Text;
+            _ = projectloader.label3.Text;
             if (showProject == true)
             {
                 //this.presence.state = "Project: " + projecto;
@@ -415,23 +429,23 @@
 
         private void AssetManagerPanel_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn";
+            Text = "FNAF Engine: Reborn";
         }
 
         private void ProjectStuffs_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn";
+            Text = "FNAF Engine: Reborn";
         }
 
         private void button75_Click(object sender, EventArgs e)
         {
             Application.Restart();
-            this.Show();
+            Show();
         }
 
         private void label108_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://discord.gg/gGCdUpKDrW");
+            _ = System.Diagnostics.Process.Start("https://discord.gg/gGCdUpKDrW");
         }
 
         private void reborn_Click(object sender, EventArgs e)
@@ -440,11 +454,11 @@
             loadFERproject loadProject = new loadFERproject();
             if (suscreate.Visible == true)
             {
-                this.Text = "FNAF Engine: Reborn";
+                Text = "FNAF Engine: Reborn";
             }
             if (loadProject.Visible == true)
             {
-                this.Text = "FNAF Engine: Reborn";
+                Text = "FNAF Engine: Reborn";
             }
         }
 
@@ -457,20 +471,47 @@
                 {
                     Menus.Nodes.Clear();
                     //comboBox9.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/menus"));
-                    var dirs = Directory.GetDirectories(projecto + "/menus");
+                    string[] dirs = Directory.GetDirectories(projecto + "/menus");
                     foreach (string node in dirs)
                     {
-                        TreeNode treeNode = new TreeNode();
-                        treeNode.Name = node;
-                        treeNode.Text = File.ReadAllText(node + "/name.txt");
-                        Menus.Nodes.Add(treeNode);
+                        string Name = File.ReadAllText(node + "/name.txt");
+                        TreeNode menu = new TreeNode
+                        {
+                            Name = "Menu",
+                            Text = Name,
+                            ImageIndex = 0,
+                            Tag = node
+                        };
+                        _ = Menus.Nodes.Add(menu);
+
+                        string[] texts = Directory.GetDirectories(projecto + "/menus/" + Name + "/text_elements");
+
+                        foreach (string text in texts)
+                        {
+                            string element_name = File.ReadAllText(text + "/id.txt");
+                            TreeNode element = new TreeNode
+                            {
+                                Name = "Text",
+                                Text = element_name,
+                                ImageIndex = 1,
+                                SelectedImageIndex = 1
+                            };
+                            TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
+                            foreach (TreeNode Frame in Menus)
+                            {
+                                if (Frame.Tag.ToString() == node)
+                                {
+                                    Frame.Nodes.Add(element);
+                                }
+                            }
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong! Fixing...");
+                    _ = MessageBox.Show("Something went wrong! Fixing...");
                     createFolder(projecto + "/menus");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Fixed!");
                 }
             }
             else
@@ -494,27 +535,27 @@
         private void minigameEditor_Click(object sender, EventArgs e)
         {
             MinigameMaker minigameMaker = new MinigameMaker();
-            minigameMaker.ShowDialog();
+            _ = minigameMaker.ShowDialog();
         }
 
         private void bigProjectICON_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
-            projectMaker.ShowDialog();
+            _ = projectMaker.ShowDialog();
         }
 
         private void bigFolderICON_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
-            projectLoader.ShowDialog();
+            _ = projectLoader.ShowDialog();
         }
 
         private void funTools_Click(object sender, EventArgs e)
         {
             templateCreator templateMaker = new templateCreator();
-            templateMaker.ShowDialog();
+            _ = templateMaker.ShowDialog();
         }
 
         private void label87_Click(object sender, EventArgs e)
@@ -532,13 +573,13 @@
         private void label98_Click(object sender, EventArgs e)
         {
             MinigameMaker minigameMaker = new MinigameMaker();
-            minigameMaker.ShowDialog();
+            _ = minigameMaker.ShowDialog();
         }
 
         private void toolC_Click(object sender, EventArgs e)
         {
             templateCreator templateMaker = new templateCreator();
-            templateMaker.ShowDialog();
+            _ = templateMaker.ShowDialog();
         }
 
         private void button38_Click(object sender, EventArgs e)
@@ -548,18 +589,7 @@
 
         private void label166_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Show();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            buildSettingsPanelMoment.BringToFront();
         }
 
         private void label165_Click(object sender, EventArgs e)
@@ -574,43 +604,34 @@
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong!");
-                    Directory.CreateDirectory(projecto + "/animations");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Something went wrong!");
+                    _ = Directory.CreateDirectory(projecto + "/animations");
+                    _ = MessageBox.Show("Fixed!");
                 }
             }
             else
             {
 
             }
-            buildSettingsPanelMoment.Hide();
             AssetManagerPanel.Show();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            AssetManagerPanel.BringToFront();
+            buildSettingsPanelMoment.Show();
+            officeEditorPanel.Show();
+            cameraEditorPanel.Show();
+            ExtensionsPanel.Show();
+            SoundEditorPanel.Show();
+            animationEditorPanel.Show();
+            cutsceneEditorPanel.Show();
+            menuEditorPanel.Show();
+            staticeffecteditor.Show();
+            ScriptEditorPanel.Show();
+            animatronicEditorPNL2.Show();
+            GameDebugMenu.Show();
         }
 
         private void label163_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Show();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            animatronicEditorPNL2.BringToFront();
             if (usableEngine == true)
             {
                 if (Directory.Exists(projecto + "/animatronics"))
@@ -619,9 +640,9 @@
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong!");
-                    Directory.CreateDirectory(projecto + "/animatronics");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Something went wrong!");
+                    _ = Directory.CreateDirectory(projecto + "/animatronics");
+                    _ = MessageBox.Show("Fixed!");
                 }
                 comboBox1.Items.Clear();
                 comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal"));
@@ -641,158 +662,69 @@
                 {
                     comboBox4.Items.Clear();
                     comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras/"));
-                    cameraEditorPanel.Show();
+                    cameraEditorPanel.BringToFront();
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong! Fixing...");
+                    _ = MessageBox.Show("Something went wrong! Fixing...");
                     createFolder("/cameras");
                     comboBox4.Items.Clear();
-                    MessageBox.Show("Fixed!");
-                    cameraEditorPanel.Show();
+                    _ = MessageBox.Show("Fixed!");
+                    cameraEditorPanel.BringToFront();
                 }
             }
             else
             {
 
             }
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Show();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
         }
 
         private void label164_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Show();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            menuEditorPanel.BringToFront();
         }
 
         private void label161_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Show();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            officeEditorPanel.BringToFront();
         }
 
         private void label160_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Show();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            animationEditorPanel.BringToFront();
         }
 
         private void label158_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Show();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            cutsceneEditorPanel.BringToFront();
         }
 
         private void label157_Click(object sender, EventArgs e)
         {
             MinigameMaker minigameMaker = new MinigameMaker();
-            minigameMaker.ShowDialog();
+            _ = minigameMaker.ShowDialog();
         }
 
         private void label159_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Show();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            ScriptEditorPanel.BringToFront();
         }
 
         private void label156_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Show();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Hide();
+            SoundEditorPanel.BringToFront();
         }
 
         private void label91_Click_1(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Show();
-            staticeffecteditor.Hide();
+            ExtensionsPanel.BringToFront();
         }
 
         private void button94_Click(object sender, EventArgs e)
         {
             extensionCreator extensionCreator = new extensionCreator();
-            extensionCreator.ShowDialog();
-            this.Text = "FNAF Engine: Reborn - Custom Extensions";
+            _ = extensionCreator.ShowDialog();
+            Text = "FNAF Engine: Reborn - Custom Extensions";
         }
 
         private void AssetManagerPanel_VisibleChanged(object sender, EventArgs e)
@@ -823,7 +755,7 @@
         {
             if (usableEngine == true)
             {
-                System.Diagnostics.Process.Start(projecto);
+                _ = System.Diagnostics.Process.Start(projecto);
             }
             else
             {
@@ -837,17 +769,17 @@
             {
                 if (Directory.Exists(projecto))
                 {
-                    System.Diagnostics.Process.Start("explorer.exe", Application.StartupPath + projecto);
+                    _ = System.Diagnostics.Process.Start("explorer.exe", Application.StartupPath + projecto);
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong!, Fixing...");
-                    MessageBox.Show("Fixed!");
-                    System.Diagnostics.Process.Start("explorer.exe", Application.StartupPath + projecto);
+                    _ = MessageBox.Show("Something went wrong!, Fixing...");
+                    _ = MessageBox.Show("Fixed!");
+                    _ = System.Diagnostics.Process.Start("explorer.exe", Application.StartupPath + projecto);
                 }
                 try
                 {
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                    _ = System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
                     {
                         FileName = projecto,
                         UseShellExecute = true,
@@ -874,48 +806,20 @@
             if (usableEngine == true)
             {
                 string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                var options = optionstxt.Split(',');
-                var newoptions = string.Join(",", options);
+                string[] options = optionstxt.Split(',');
+                _ = string.Join(",", options);
                 if (File.Exists(projecto + "/options.txt"))
                 {
-                    if (options[0] == "fullscreen=true")
-                    {
-                        checkBox8.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox8.Checked = false;
-                    }
-                    if (options[1] == "minigamesenabled=true")
-                    {
-                        checkBox7.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox7.Checked = false;
-                    }
-                    if (options[2] == "watermarks=true")
-                    {
-                        checkBox10.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox10.Checked = false;
-                    }
-                    if (options[3] == "sourcecode=true")
-                    {
-                        checkBox9.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox9.Checked = false;
-                    }
+                    checkBox8.Checked = options[0] == "fullscreen=true";
+                    checkBox7.Checked = options[1] == "minigamesenabled=true";
+                    checkBox10.Checked = options[2] == "watermarks=true";
+                    checkBox9.Checked = options[3] == "sourcecode=true";
                 }
                 if (File.Exists(projecto + "/options.txt") == false)
                 {
-                    MessageBox.Show("Something went wrong!, Fixing...");
-                    File.CreateText(projecto + "/options.txt");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Something went wrong!, Fixing...");
+                    _ = File.CreateText(projecto + "/options.txt");
+                    _ = MessageBox.Show("Fixed!");
                 }
                 if (File.Exists(projecto + "/game.txt"))
                 {
@@ -923,9 +827,9 @@
                 }
                 if (File.Exists(projecto + "/game.txt") == false)
                 {
-                    MessageBox.Show("Something went wrong!, Fixing...");
-                    File.CreateText(projecto + "/game.txt");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Something went wrong!, Fixing...");
+                    _ = File.CreateText(projecto + "/game.txt");
+                    _ = MessageBox.Show("Fixed!");
                     textBox6.Text = File.ReadAllText(projecto + "/game.txt");
                 }
                 if (File.Exists(projecto + "/gameid.txt"))
@@ -934,9 +838,9 @@
                 }
                 if (File.Exists(projecto + "/gameid.txt") == false)
                 {
-                    MessageBox.Show("Something went wrong!, Fixing...");
-                    File.CreateText(projecto + "/gameid.txt");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Something went wrong!, Fixing...");
+                    _ = File.CreateText(projecto + "/gameid.txt");
+                    _ = MessageBox.Show("Fixed!");
                     textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
                 }
                 try
@@ -957,17 +861,17 @@
                 if (checkBox8.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[0] = "fullscreen=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[0] = "fullscreen=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
             }
@@ -976,7 +880,7 @@
         private void deleteProjectBTN_Click(object sender, EventArgs e)
         {
             Deleteproject deleteproject = new Deleteproject();
-            deleteproject.ShowDialog();
+            _ = deleteproject.ShowDialog();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -989,9 +893,9 @@
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong!, Fixing...");
-                    File.CreateText(project + "/gameid.txt");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Something went wrong!, Fixing...");
+                    _ = File.CreateText(project + "/gameid.txt");
+                    _ = MessageBox.Show("Fixed!");
                     textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
                 }
             }
@@ -1003,30 +907,30 @@
             {
                 try
                 {
-                    string menuNam = menuName.Text;
-                    Directory.CreateDirectory(projecto + "/menus/" + menuNam);
-                    Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/text_elements");
-                    File.WriteAllText(projecto + "/menus/" + menuNam + "/name.txt", menuNam);
-                    var dirs = Directory.GetDirectories(projecto + "/menus");
-                    Menus.Nodes.Clear();
-                    foreach (string node in dirs)
+                    if (string.IsNullOrWhiteSpace(menuName.Text))
                     {
-                        TreeNode treeNode = new TreeNode();
-                        treeNode.Name = node;
-                        treeNode.Text = File.ReadAllText(node + "/name.txt");
-                        Menus.Nodes.Add(treeNode);
+                        _ = MessageBox.Show("Please insert something in the box!");
                     }
-                    createShit.Hide();
+                    else
+                    {
+                        string menuNam = menuName.Text;
+                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam);
+                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/text_elements");
+                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/variables");
+                        File.WriteAllText(projecto + "/menus/" + menuNam + "/name.txt", menuNam);
+                        File.WriteAllText(projecto + "/menus/" + menuNam + "/ongameloop.txt", "");
+                        File.WriteAllText(projecto + "/menus/" + menuNam + "/onmenustart.txt", "");
+                        Menus.Nodes.Clear();
+                        createShit.Hide();
+                        menuEditorPanel.Hide();
+                        menuEditorPanel.Show();
+                    }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Cringe exception: " + ex);
-                    MessageBox.Show("Special characters aren't allowed!");
+                    _ = MessageBox.Show("Special characters aren't allowed!");
                 }
-            }
-            else
-            {
-
             }
         }
 
@@ -1036,15 +940,15 @@
             {
                 if (Menus.SelectedNode == null)
                 {
-                    MessageBox.Show("Select an menu to delete!");
+                    _ = MessageBox.Show("Select an menu to delete!");
                 }
                 else
                 {
-                    var Confirmation = MessageBox.Show($"This can't be undone! Are you sure you want to delete the menu {Menus.SelectedNode.Text}?", "Menu Deletion", MessageBoxButtons.YesNo);
+                    DialogResult Confirmation = MessageBox.Show($"This can't be undone! Are you sure you want to delete the menu {Menus.SelectedNode.Text}?", "Menu Deletion", MessageBoxButtons.YesNo);
 
                     if (Confirmation == DialogResult.Yes)
                     {
-                        Directory.Delete(Menus.SelectedNode.Name, true);
+                        Directory.Delete(Menus.SelectedNode.Tag.ToString(), true);
                         Menus.Refresh();
                         menuEditorPanel.Hide();
                         menuEditorPanel.Show();
@@ -1063,9 +967,9 @@
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong! Fixing...");
+                    _ = MessageBox.Show("Something went wrong! Fixing...");
                     createFolder("/cameras");
-                    MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Fixed!");
                     panel6.Show();
                 }
             }
@@ -1080,12 +984,12 @@
             if (usableEngine == true)
             {
                 string cameraName = textBox17.Text;
-                Directory.CreateDirectory(projecto + "/cameras/" + cameraName);
+                _ = Directory.CreateDirectory(projecto + "/cameras/" + cameraName);
                 panel6.Hide();
                 comboBox4.Items.Clear();
                 comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
-                Directory.CreateDirectory(projecto + "/cameras/" + cameraName + "/animations");
-                File.CreateText("settings.txt");
+                _ = Directory.CreateDirectory(projecto + "/cameras/" + cameraName + "/animations");
+                _ = File.CreateText("settings.txt");
             }
             else
             {
@@ -1099,12 +1003,12 @@
             {
                 if (comboBox4.SelectedItem == null)
                 {
-                    MessageBox.Show("Select an menu to delete!");
+                    _ = MessageBox.Show("Select an menu to delete!");
                 }
                 else
                 {
                     Directory.Delete(comboBox4.SelectedItem.ToString());
-                    MessageBox.Show("Deleted camera!");
+                    _ = MessageBox.Show("Deleted camera!");
                     comboBox4.Items.Clear();
                     comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
                 }
@@ -1119,14 +1023,14 @@
         {
             comboBox43.Items.Clear();
             comboBox43.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
-            MessageBox.Show("Updated!");
+            _ = MessageBox.Show("Updated!");
         }
 
         private void button62_Click(object sender, EventArgs e)
         {
             if (usableEngine == true)
             {
-                listView1.Items.Add("frame2");
+                _ = listView1.Items.Add("frame2");
             }
             else
             {
@@ -1141,17 +1045,17 @@
                 if (checkBox13.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[3] = "camera=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[3] = "camera=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -1174,7 +1078,7 @@
             if (usableEngine == true)
             {
                 string staticname = textBox20.Text;
-                Directory.CreateDirectory(projecto + "/statics" + staticname);
+                _ = Directory.CreateDirectory(projecto + "/statics" + staticname);
                 AnimationList_StaticEffectEditor.Items.Clear();
                 AnimationList_StaticEffectEditor.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
                 panel7.Hide();
@@ -1207,18 +1111,7 @@
 
         private void label96_Click(object sender, EventArgs e)
         {
-            buildSettingsPanelMoment.Hide();
-            AssetManagerPanel.Hide();
-            animatronicEditorPNL2.Hide();
-            cameraEditorPanel.Hide();
-            menuEditorPanel.Hide();
-            officeEditorPanel.Hide();
-            animationEditorPanel.Hide();
-            cutsceneEditorPanel.Hide();
-            ScriptEditorPanel.Hide();
-            SoundEditorPanel.Hide();
-            ExtensionsPanel.Hide();
-            staticeffecteditor.Show();
+            staticeffecteditor.BringToFront();
         }
 
         private void button113_Click_1(object sender, EventArgs e)
@@ -1253,7 +1146,7 @@
                 string animatronicName = textBox21.Text;
                 try
                 {
-                    Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
+                    _ = Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
                     comboBox1.Items.Clear();
                     comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal/"));
                     comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/phantom/"));
@@ -1302,7 +1195,7 @@
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error 3: Failed to delete static effect");
+                    _ = MessageBox.Show("Error 3: Failed to delete static effect");
                 }
             }
             else
@@ -1319,17 +1212,17 @@
                 if (checkBox7.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[1] = "minigamesenabled=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[1] = "minigamesenabled=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
             }
@@ -1342,17 +1235,17 @@
                 if (checkBox9.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[3] = "sourcecode=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[3] = "sourcecode=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
             }
@@ -1365,17 +1258,17 @@
                 if (checkBox10.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[2] = "watermarks=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[2] = "watermarks=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
             }
@@ -1385,13 +1278,15 @@
         {
             if (usableEngine == true)
             {
-                OpenFileDialog icon = new OpenFileDialog();
-                icon.Filter = "Images (*.png)|*.png";
-                icon.ShowDialog();
+                OpenFileDialog icon = new OpenFileDialog
+                {
+                    Filter = "Images (*.png)|*.png"
+                };
+                _ = icon.ShowDialog();
                 if (icon.ShowDialog() == DialogResult.OK)
                 {
                     string filePath = icon.FileName;
-                    var fileStream = icon.OpenFile();
+                    _ = icon.OpenFile();
                     System.IO.File.Copy(filePath, projecto + "/images/icon.png");
                     label33.Image = Image.FromFile(projecto + "/images/icon.png");
                 }
@@ -1409,17 +1304,17 @@
                 if (checkBox4.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[3] = "sourcecode=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[3] = "sourcecode=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
             }
@@ -1463,7 +1358,7 @@
             if (usableEngine == true)
             {
                 Compiler compiler = new Compiler(this);
-                compiler.ShowDialog();
+                _ = compiler.ShowDialog();
             }
             //this.presence.details = "Compiling game...";
             //DiscordRpc.UpdatePresence(ref this.presence);
@@ -1474,7 +1369,7 @@
             if (usableEngine == true)
             {
                 ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this);
-                releaseordebug.ShowDialog();
+                _ = releaseordebug.ShowDialog();
             }
             //this.presence.details = "Testing game...";
             //DiscordRpc.UpdatePresence(ref this.presence);
@@ -1484,9 +1379,11 @@
         {
             if (usableEngine == true)
             {
-                OpenFileDialog p = new OpenFileDialog();
-                p.Filter = "Images (*.png)|*.png";
-                p.ShowDialog();
+                OpenFileDialog p = new OpenFileDialog
+                {
+                    Filter = "Images (*.png)|*.png"
+                };
+                _ = p.ShowDialog();
                 if (p.ShowDialog() == DialogResult.OK)
                 {
                     try
@@ -1498,7 +1395,7 @@
                     catch (Exception ex)
                     {
                         Console.WriteLine("Cringe exception: " + ex);
-                        MessageBox.Show("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
+                        _ = MessageBox.Show("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
                     }
                 }
             }
@@ -1524,14 +1421,14 @@
                 string officename = textBox25.Text;
                 try
                 {
-                    System.IO.Directory.CreateDirectory(projecto + "/offices/default/office_states/" + officename);
+                    _ = System.IO.Directory.CreateDirectory(projecto + "/offices/default/office_states/" + officename);
                     panel9.Hide();
                     comboBox17.Items.Clear();
                     comboBox17.Items.AddRange(Directory.GetDirectories(projecto + "/offices/default/office_states/"));
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Special characters are not allowed!");
+                    _ = MessageBox.Show("Special characters are not allowed!");
                 }
             }
         }
@@ -1552,7 +1449,7 @@
                         Directory.Delete(comboBox17.SelectedItem.ToString(), true);
                         comboBox17.Items.Clear();
                         comboBox17.Items.AddRange(Directory.GetDirectories(projecto + "/offices/default/office_states/"));
-                        MessageBox.Show("Office state deleted!");
+                        _ = MessageBox.Show("Office state deleted!");
                     }
                 }
                 catch (Exception)
@@ -1562,7 +1459,7 @@
             }
         }
 
-        private void button36_Click(object sender, EventArgs e)
+        private void button36_Click(object sender, EventArgs e) //set office state image
         {
             if (usableEngine == true)
             {
@@ -1574,15 +1471,17 @@
                 {
                     try
                     {
-                        OpenFileDialog p = new OpenFileDialog();
-                        p.Filter = "Images (*.png)|*.png";
-                        p.ShowDialog();
+                        OpenFileDialog p = new OpenFileDialog
+                        {
+                            Filter = "Images (*.png)|*.png"
+                        };
+                        _ = p.ShowDialog();
                         if (p.ShowDialog() == DialogResult.OK)
                         {
                             string filePath = Path.GetFullPath(p.FileName);
                             string png = p.SafeFileName;
-                            File.Copy(filePath, projecto + "/images/" + png, true);
-                            File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", projecto + "/images/" + png);
+                            Import_Sprites.CreateSprite(filePath, png, projecto);
+                            File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", png);
                             officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
                         }
                     }
@@ -1594,14 +1493,14 @@
             }
         }
 
-        private void comboBox17_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox17_SelectedIndexChanged(object sender, EventArgs e) //selected office state
         {
             if (usableEngine == true)
             {
                 try
                 {
-                    string it = File.ReadAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt");
-                    officePreview.BackgroundImage = Image.FromFile(it);
+                    string image = File.ReadAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt");
+                    officePreview.BackgroundImage = Image.FromFile(project + "/images/" + image);
                 }
                 catch (Exception)
                 {
@@ -1616,8 +1515,10 @@
             if (usableEngine == true)
             {
                 Console.WriteLine(usableEngine);
-                Sprite amagos = new Sprite(this);
-                amagos.project = projecto;
+                Sprite amagos = new Sprite(this)
+                {
+                    project = projecto
+                };
                 amagos.Intiate();
                 CameraAnim_ComboBox.Items.Clear();
                 CameraAnim_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
@@ -1632,80 +1533,24 @@
                 comboBox14.Items.Clear();
                 comboBox14.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal/"));
                 string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                var options = optionstxt.Split(',');
+                string[] options = optionstxt.Split(',');
                 if (File.Exists(projecto + "/offices/default/office.txt"))
                 {
-                    if (options[0] == "power=true")
-                    {
-                        checkBox16.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox16.Checked = false;
-                    }
-                    if (options[1] == "toxic=true")
-                    {
-                        checkBox12.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox12.Checked = false;
-                    }
-                    if (options[2] == "mask=true")
-                    {
-                        checkBox11.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox11.Checked = false;
-                    }
-                    if (options[3] == "camera=true")
-                    {
-                        checkBox13.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox13.Checked = false;
-                    }
-                    if (options[4] == "flashlight=true")
-                    {
-                        checkBox14.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox14.Checked = false;
-                    }
-                    if (options[5] == "panorama=true")
-                    {
-                        checkBox15.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox15.Checked = false;
-                    }
-                    if (options[6] == "perspective=true")
-                    {
-                        checkBox24.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox24.Checked = false;
-                    }
-                    if (options[7] == "ucnstyle=true")
-                    {
-                        checkBox17.Checked = true;
-                    }
-                    else
-                    {
-                        checkBox17.Checked = false;
-                    }
+                    checkBox16.Checked = options[0] == "power=true";
+                    checkBox12.Checked = options[1] == "toxic=true";
+                    checkBox11.Checked = options[2] == "mask=true";
+                    checkBox13.Checked = options[3] == "camera=true";
+                    checkBox14.Checked = options[4] == "flashlight=true";
+                    checkBox15.Checked = options[5] == "panorama=true";
+                    checkBox24.Checked = options[6] == "perspective=true";
+                    checkBox17.Checked = options[7] == "ucnstyle=true";
                     if (options[8] == "animatronic=")
                     {
 
                     }
                     else
                     {
-                        comboBox14.Controls.IndexOfKey(options[9]);
+                        _ = comboBox14.Controls.IndexOfKey(options[9]);
                     }
                 }
                 try
@@ -1723,13 +1568,17 @@
         {
             if (usableEngine == true)
             {
-                OpenFileDialog p = new OpenFileDialog();
-                p.Filter = "Images (*.png)|*.png";
-                p.ShowDialog();
+                OpenFileDialog p = new OpenFileDialog
+                {
+                    Filter = "Images (*.png)|*.png"
+                };
+                _ = p.ShowDialog();
                 if (p.ShowDialog() == DialogResult.OK)
                 {
-                    Sprite s = new Sprite(this);
-                    s.project = projecto;
+                    Sprite s = new Sprite(this)
+                    {
+                        project = projecto
+                    };
                     s.Add(p.SafeFileName, p.FileName);
                     s.Intiate();
                 }
@@ -1738,61 +1587,61 @@
 
         private void createProjectBTN_Click_1(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
-            projectMaker.ShowDialog();
+            _ = projectMaker.ShowDialog();
         }
 
         private void label170_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
-            projectMaker.ShowDialog();
+            _ = projectMaker.ShowDialog();
         }
 
         private void label171_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
-            projectMaker.ShowDialog();
+            _ = projectMaker.ShowDialog();
         }
 
         private void label153_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
-            projectLoader.ShowDialog();
+            _ = projectLoader.ShowDialog();
         }
 
         private void label154_Click(object sender, EventArgs e)
         {
-            this.Text = "FNAF Engine: Reborn - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
-            projectLoader.ShowDialog();
+            _ = projectLoader.ShowDialog();
         }
 
         private void label168_Click(object sender, EventArgs e)
         {
             Deleteproject deleteproject = new Deleteproject();
-            deleteproject.ShowDialog();
+            _ = deleteproject.ShowDialog();
         }
 
         private void label169_Click(object sender, EventArgs e)
         {
             Deleteproject deleteproject = new Deleteproject();
-            deleteproject.ShowDialog();
+            _ = deleteproject.ShowDialog();
         }
 
         private void label155_Click(object sender, EventArgs e)
         {
             templateCreator templateMaker = new templateCreator();
-            templateMaker.ShowDialog();
+            _ = templateMaker.ShowDialog();
         }
 
         private void label167_Click(object sender, EventArgs e)
         {
             templateCreator templateMaker = new templateCreator();
-            templateMaker.ShowDialog();
+            _ = templateMaker.ShowDialog();
         }
 
         private void label172_Click(object sender, EventArgs e)
@@ -1816,9 +1665,9 @@
                     textBox7.Show();
                     powerPercentage_label.Show();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[0] = "power=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
@@ -1826,9 +1675,9 @@
                     textBox7.Hide();
                     powerPercentage_label.Hide();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[0] = "power=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -1872,9 +1721,9 @@
                     displayOfficeEditorInfoAnimatronicKill.Hide();
                     comboBox14.Hide();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[7] = "ucnstyle=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
@@ -1882,9 +1731,9 @@
                     displayOfficeEditorInfoAnimatronicKill.Show();
                     comboBox14.Show();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[7] = "ucnstyle=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -1897,17 +1746,17 @@
                 if (checkBox12.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[1] = "toxic=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[1] = "toxic=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -1920,17 +1769,17 @@
                 if (checkBox11.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[2] = "mask=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[2] = "mask=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -1943,17 +1792,17 @@
                 if (checkBox14.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[4] = "flashlight=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[4] = "flashlight=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -1966,17 +1815,17 @@
                 if (checkBox15.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[5] = "panorama=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[5] = "panorama=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -1989,17 +1838,17 @@
                 if (checkBox24.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[6] = "perspective=true";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[6] = "perspective=false";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
@@ -2021,22 +1870,23 @@
                 if (comboBox14.SelectedItem == null)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[8] = "animatronic=,";
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
                 else
                 {
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    var options = optionstxt.Split(',');
+                    string[] options = optionstxt.Split(',');
                     options[8] = "animatronic=," + comboBox14.Text;
-                    var newoptions = string.Join(",", options);
+                    string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
                 }
             }
         }
-        void Code()
+
+        private void Code()
         {
 
         }
@@ -2062,18 +1912,35 @@
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            Menu_Editor menu_Editor = new Menu_Editor(this);
-            menu_Editor.Menu = Menus.SelectedNode.Name;
-            MenuPreview.Controls.Clear();
-            Menu_Elements_Create.Show();
-            menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
-            if (File.Exists(Menus.SelectedNode.Name.ToString() + "/bg.txt"))
+            if (Menus.SelectedNode.Name == "Text")
             {
-                MenuPreview.BackgroundImage = Image.FromFile(File.ReadAllText(Menus.SelectedNode.Name.ToString() + "/bg.txt"));
+
             }
             else
             {
-                MenuPreview.BackgroundImage = null;
+                Menu_Name_MenuCodeEditor_InfoLBL.Text = (string)Menus.SelectedNode.Tag;
+                Menu_Editor menu_Editor = new Menu_Editor(this)
+                {
+                    Menu = (string)Menus.SelectedNode.Tag
+                };
+                MenuPreview.Controls.Clear();
+                Menu_Elements_Create.Show();
+                menu_Editor.RefreshText(Menus.SelectedNode.Tag.ToString());
+                if (File.Exists(Menus.SelectedNode.Tag.ToString() + "/bg.txt"))
+                {
+                    try
+                    {
+                        MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(Menus.SelectedNode.Tag.ToString() + "/bg.txt"));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Unable to load menu background: Invalid Image", "Corrupted Image");
+                    }
+                }
+                else
+                {
+                    MenuPreview.BackgroundImage = null;
+                }
             }
         }
 
@@ -2081,6 +1948,7 @@
         {
             //this.presence.details = "Debugging game...";
             //DiscordRpc.UpdatePresence(ref this.presence);
+            GameDebugMenu.BringToFront();
         }
 
         private void staticeffecteditor_VisibleChanged(object sender, EventArgs e)
@@ -2091,7 +1959,7 @@
 
         private void panel4_VisibleChanged(object sender, EventArgs e)
         {
-            string path = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+            _ = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
         }
 
         private void button52_Click(object sender, EventArgs e)
@@ -2104,8 +1972,10 @@
             if (usableEngine == true)
             {
                 string Name = ScriptEditor_TextBoxname.Text;
-                ScriptEditor scriptEditor = new ScriptEditor();
-                scriptEditor.Project = projecto;
+                ScriptEditor scriptEditor = new ScriptEditor
+                {
+                    Project = projecto
+                };
                 scriptEditor.CreateScript(Name);
                 ScriptEditor_Scripts_ComboBox.Items.Clear();
                 ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
@@ -2160,7 +2030,7 @@
             {
                 script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 CodeblockSelector selector = new CodeblockSelector(this);
-                selector.ShowDialog();
+                _ = selector.ShowDialog();
             }
         }
 
@@ -2170,27 +2040,33 @@
             {
                 if (e.Button == MouseButtons.Right)
                 {
-                    CodeblockSelector codeblockselector = new CodeblockSelector(this);
-                    codeblockselector.Path = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
-                    codeblockselector.ShowDialog();
+                    CodeblockSelector codeblockselector = new CodeblockSelector(this)
+                    {
+                        Path = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString()
+                    };
+                    _ = codeblockselector.ShowDialog();
                 }
             }
         }
 
         private void create_text_menuEditorBTN_Click(object sender, EventArgs e)
         {
-            Menu_Editor menu_Editor = new Menu_Editor(this);
-            menu_Editor.Menu = projecto + "/menus/" + text_ID_MenuEditor_Create;
+            Menu_Editor menu_Editor = new Menu_Editor(this)
+            {
+                Menu = projecto + "/menus/" + text_ID_MenuEditor_Create
+            };
             if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
             {
-                MessageBox.Show("Unable to create new text element: Error 1");
+                _ = MessageBox.Show("Unable to create new text element: Error 1");
             }
             else
             {
                 string id = text_ID_MenuEditor_Create.Text;
-                menu_Editor.CreateText(id, Menus.SelectedNode.Name.ToString());
-                menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
+                menu_Editor.CreateText(id, Menu_Name_MenuCodeEditor_InfoLBL.Text);
+                //menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
                 textCreate_MenuEditor.Hide();
+                menuEditorPanel.Hide();
+                menuEditorPanel.Show();
             }
         }
 
@@ -2200,7 +2076,7 @@
             {
                 script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 CodeblockSelector selector = new CodeblockSelector(this);
-                selector.ShowDialog();
+                _ = selector.ShowDialog();
             }
         }
 
@@ -2213,21 +2089,19 @@
         {
             if (usableEngine == true)
             {
-                OpenFileDialog p = new OpenFileDialog();
-                p.Filter = "Images (*.png)|*.png";
-                p.ShowDialog();
+                OpenFileDialog p = new OpenFileDialog
+                {
+                    Filter = "Images (*.png)|*.png"
+                };
+                _ = p.ShowDialog();
                 if (p.ShowDialog() == DialogResult.OK)
                 {
                     string FileName = p.SafeFileName;
                     Import_Sprites.CreateSprite(p.FileName, FileName, projecto);
-                    File.WriteAllText(Menus.SelectedNode.Name.ToString() + "/bg.txt", projecto + "/images/" + FileName);
+                    File.WriteAllText(Menus.SelectedNode.Tag.ToString() + "/bg.txt", FileName);
+                    MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(Menus.SelectedNode.Tag.ToString() + "/bg.txt"));
                 }
             }
-        }
-
-        private void MenuEditor_ScriptEditor_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void checkBox28_CheckedChanged(object sender, EventArgs e)
@@ -2254,6 +2128,103 @@
         {
             comboBox43.Items.Clear();
             comboBox43.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations/"));
+        }
+
+        private void GameManager_Variables_View_VisibleChanged(object sender, EventArgs e)
+        {
+            DataValues.Project = projecto;
+            DataValues.Engine = this;
+            DataValues.RefreshDataValues();
+        }
+
+        private void addDataValue_GameManager_Click(object sender, EventArgs e)
+        {
+            if (DataValue_Name.Visible == false)
+            {
+                DataValue_Name.Show();
+            }
+            else
+            {
+                DataValues.CreateDataValue(DataValue_Name.Text);
+                DataValues.RefreshDataValues();
+                DataValue_Name.Hide();
+            }
+        }
+
+        private void reassignDataValue_GameManager_Click(object sender, EventArgs e)
+        {
+            if (reassign_Value_GameManager_Textbox.Visible == false)
+            {
+                object tag = "Data_Values_List";
+                if (GameManager_Variables_View.SelectedNode == null || GameManager_Variables_View.SelectedNode.Tag == tag || GameManager_Variables_View.SelectedNode.Name == "value")
+                {
+                    _ = MessageBox.Show("Please select a data value to change the value!");
+                }
+                else
+                {
+                    reassign_Value_GameManager_Textbox.Show();
+                }
+            }
+            else
+            {
+                string DataValue = GameManager_Variables_View.SelectedNode.Name;
+                string Value = reassign_Value_GameManager_Textbox.Text;
+                DataValues.ReassignDataValue(DataValue, Value);
+                DataValues.RefreshDataValues();
+                reassign_Value_GameManager_Textbox.Hide();
+            }
+        }
+
+        private void menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void GameDebugMenu_VisibleChanged(object sender, EventArgs e)
+        {
+            DataValuesFileLabel.Draggable(true);
+            DataValuesFileLabel.Text = File.ReadAllText(projecto + "/data.txt");
+        }
+
+        private void MenuEditor_ScriptEditor_Click(object sender, EventArgs e)
+        {
+            Menu_CodeEditor.Show();
+        }
+
+        private void X_Leave_MenuCodeEditor_Click(object sender, EventArgs e)
+        {
+            Menu_CodeEditor.Hide();
+        }
+
+        private void MenuStart_CodeEditor_TextChanged(object sender, EventArgs e)
+        {
+            File.WriteAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt", MenuStart_CodeEditor.Text);
+        }
+
+        private void OnGameLoop_MenuEditor_CodeEditor_TextChanged(object sender, EventArgs e)
+        {
+            File.WriteAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt", OnGameLoop_MenuEditor_CodeEditor.Text);
+        }
+
+        private void Menu_CodeEditor_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Menus.SelectedNode == null)
+            {
+                Menu_CodeEditor.Hide();
+            }
+            else
+            {
+                Menu_Name_MenuCodeEditor_InfoLBL.Text = Menus.SelectedNode.Text;
+            }
+
+            try
+            {
+                MenuStart_CodeEditor.Text = File.ReadAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt");
+                OnGameLoop_MenuEditor_CodeEditor.Text = File.ReadAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Warning: This project is unsupported with the newer versions of FNAF Engine: Reborn! Do you wish to create the needed files?", "Unsupported Version", MessageBoxButtons.YesNo);
+            }
         }
     }
 }

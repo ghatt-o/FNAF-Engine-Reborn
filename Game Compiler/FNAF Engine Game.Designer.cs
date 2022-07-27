@@ -30,28 +30,141 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FNAF_Engine_Game));
-            this.Main = new System.Windows.Forms.Panel();
+            this.Error = new System.Windows.Forms.Panel();
+            this.Description = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.Label();
+            this.Night_Start = new System.Windows.Forms.Panel();
+            this.nightLBL = new System.Windows.Forms.Label();
+            this.TwelveAM = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Invisible = new System.Windows.Forms.Label();
             this.Office = new System.Windows.Forms.Panel();
-            this.Main.SuspendLayout();
+            this.Error.SuspendLayout();
+            this.Night_Start.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Main
+            // Error
             // 
-            this.Main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Main.Controls.Add(this.Office);
-            this.Main.Location = new System.Drawing.Point(0, 2);
-            this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(1442, 859);
-            this.Main.TabIndex = 0;
-            this.Main.VisibleChanged += new System.EventHandler(this.Main_VisibleChanged);
+            this.Error.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Error.Controls.Add(this.Description);
+            this.Error.Controls.Add(this.Title);
+            this.Error.Controls.Add(this.Office);
+            this.Error.Location = new System.Drawing.Point(0, -1);
+            this.Error.Name = "Error";
+            this.Error.Size = new System.Drawing.Size(9999, 9999);
+            this.Error.TabIndex = 2;
+            this.Error.Visible = false;
+            // 
+            // Description
+            // 
+            this.Description.AutoSize = true;
+            this.Description.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.Description.ForeColor = System.Drawing.SystemColors.Control;
+            this.Description.Location = new System.Drawing.Point(57, 108);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(112, 28);
+            this.Description.TabIndex = 3;
+            this.Description.Text = "Description";
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.Title.ForeColor = System.Drawing.SystemColors.Control;
+            this.Title.Location = new System.Drawing.Point(54, 46);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(84, 46);
+            this.Title.TabIndex = 2;
+            this.Title.Text = "Title";
+            // 
+            // Night_Start
+            // 
+            this.Night_Start.BackColor = System.Drawing.Color.Black;
+            this.Night_Start.Controls.Add(this.nightLBL);
+            this.Night_Start.Controls.Add(this.TwelveAM);
+            this.Night_Start.Controls.Add(this.label3);
+            this.Night_Start.Controls.Add(this.label2);
+            this.Night_Start.Controls.Add(this.label1);
+            this.Night_Start.Controls.Add(this.Invisible);
+            this.Night_Start.Location = new System.Drawing.Point(0, 0);
+            this.Night_Start.Name = "Night_Start";
+            this.Night_Start.Size = new System.Drawing.Size(9999, 9999);
+            this.Night_Start.TabIndex = 4;
+            this.Night_Start.Visible = false;
+            this.Night_Start.VisibleChanged += new System.EventHandler(this.Night_Start_VisibleChanged);
+            // 
+            // nightLBL
+            // 
+            this.nightLBL.AutoSize = true;
+            this.nightLBL.Font = new System.Drawing.Font("Consolas", 33.75F, System.Drawing.FontStyle.Bold);
+            this.nightLBL.ForeColor = System.Drawing.SystemColors.Window;
+            this.nightLBL.Location = new System.Drawing.Point(623, 364);
+            this.nightLBL.Name = "nightLBL";
+            this.nightLBL.Size = new System.Drawing.Size(197, 52);
+            this.nightLBL.TabIndex = 1;
+            this.nightLBL.Text = "Night 1";
+            // 
+            // TwelveAM
+            // 
+            this.TwelveAM.AutoSize = true;
+            this.TwelveAM.Font = new System.Drawing.Font("Consolas", 27.5F);
+            this.TwelveAM.ForeColor = System.Drawing.SystemColors.Window;
+            this.TwelveAM.Location = new System.Drawing.Point(631, 328);
+            this.TwelveAM.Name = "TwelveAM";
+            this.TwelveAM.Size = new System.Drawing.Size(179, 43);
+            this.TwelveAM.TabIndex = 0;
+            this.TwelveAM.Text = "12:00 AM";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Consolas", 300.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(-115, 169);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1926, 486);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "_________________";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Consolas", 300.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(-172, -398);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1926, 546);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "_________________";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Consolas", 300.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(-242, -261);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1926, 459);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "_________________";
+            // 
+            // Invisible
+            // 
+            this.Invisible.Font = new System.Drawing.Font("Consolas", 300.75F, System.Drawing.FontStyle.Bold);
+            this.Invisible.ForeColor = System.Drawing.SystemColors.Window;
+            this.Invisible.Location = new System.Drawing.Point(-242, 372);
+            this.Invisible.Name = "Invisible";
+            this.Invisible.Size = new System.Drawing.Size(1926, 458);
+            this.Invisible.TabIndex = 1;
+            this.Invisible.Text = "_________________";
+            this.Invisible.Visible = false;
             // 
             // Office
             // 
-            this.Office.Location = new System.Drawing.Point(2, -3);
+            this.Office.BackColor = System.Drawing.Color.Black;
+            this.Office.Location = new System.Drawing.Point(0, 1);
             this.Office.Name = "Office";
-            this.Office.Size = new System.Drawing.Size(1442, 859);
+            this.Office.Size = new System.Drawing.Size(1444, 860);
             this.Office.TabIndex = 1;
-            this.Office.Paint += new System.Windows.Forms.PaintEventHandler(this.Office_Paint);
             // 
             // FNAF_Engine_Game
             // 
@@ -59,7 +172,8 @@ namespace FNAF_Engine_Reborn
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1444, 860);
-            this.Controls.Add(this.Main);
+            this.Controls.Add(this.Error);
+            this.Controls.Add(this.Night_Start);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FNAF_Engine_Game";
@@ -68,14 +182,26 @@ namespace FNAF_Engine_Reborn
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FNAF_Engine_Game_Load_1);
             this.VisibleChanged += new System.EventHandler(this.FNAF_Engine_Game_VisibleChanged);
-            this.Main.ResumeLayout(false);
+            this.Error.ResumeLayout(false);
+            this.Error.PerformLayout();
+            this.Night_Start.ResumeLayout(false);
+            this.Night_Start.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel Main;
+        private System.Windows.Forms.Panel Error;
+        private System.Windows.Forms.Label Description;
+        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Label nightLBL;
+        private System.Windows.Forms.Label TwelveAM;
+        private System.Windows.Forms.Panel Night_Start;
         private System.Windows.Forms.Panel Office;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Invisible;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

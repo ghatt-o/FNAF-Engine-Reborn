@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>FNAF_Engine_Reborn</RootNamespace>
     <AssemblyName>FNAF_Engine_Reborn</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -50,6 +50,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +123,8 @@
     <Compile Include="Main Stuff\CodeblockSelector.Designer.cs">
       <DependentUpon>CodeblockSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object Editors\Compiler.cs" />
+    <Compile Include="Object Editors\DataValues.cs" />
     <Compile Include="Object Editors\Import_Sprites.cs" />
     <Compile Include="Object Editors\Menu_Editor.cs" />
     <Compile Include="Object Editors\ScriptEditor.cs" />
@@ -272,6 +276,7 @@
       <DependentUpon>virtualStarboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

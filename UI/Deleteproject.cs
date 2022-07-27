@@ -21,13 +21,13 @@ namespace FNAF_Engine_Reborn
         {
             if (comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("Please select an project!");
+                _ = MessageBox.Show("Please select an project!");
             }
             else
             {
                 string CurrentProject = comboBox1.SelectedItem.ToString();
                 Directory.Delete(CurrentProject, true);
-                MessageBox.Show("Project deleted!");
+                _ = MessageBox.Show("Project deleted!");
                 comboBox1.Items.Clear();
                 comboBox1.Items.AddRange(System.IO.Directory.GetDirectories(@"assets/custom_assets/projects/"));
             }

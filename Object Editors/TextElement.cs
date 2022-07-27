@@ -2,7 +2,7 @@
 
 namespace FNAF_Engine_Reborn.Object_Editors
 {
-    class TextElement
+    internal class TextElement
     {
         public string ID { get; set; }
         public string Text { get; set; }

@@ -2,19 +2,12 @@
 
 namespace FNAF_Engine_Reborn
 {
-    class ScriptEditor
+    internal class ScriptEditor
     {
         public string Project { get; set; }
         public bool HasEvent(string Name)
         {
-            if (File.ReadAllText(Name + "/event.txt") == "none")
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return File.ReadAllText(Name + "/event.txt") != "none";
         }
         public string ToEvent(string Name)
         {
@@ -23,7 +16,7 @@ namespace FNAF_Engine_Reborn
         }
         public void CreateScript(string Name)
         {
-            Directory.CreateDirectory(Project + "/scripts/visual/" + Name);
+            _ = Directory.CreateDirectory(Project + "/scripts/visual/" + Name);
             File.WriteAllText(Project + "/scripts/visual/" + Name + "/event.txt", "none");
             File.WriteAllText(Project + "/scripts/visual/" + Name + "/actions.txt", "none");
         }
