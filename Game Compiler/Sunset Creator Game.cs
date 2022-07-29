@@ -6,13 +6,13 @@ using System.Windows.Forms;
 
 namespace FNAF_Engine_Reborn
 {
-    public partial class FNAF_Engine_Game : Form
+    public partial class Sunset_Creator_Game : Form
     {
         private readonly reborn reborn;
         private string project;
         int time = 0;
 
-        public FNAF_Engine_Game(reborn reborn)
+        public Sunset_Creator_Game(reborn reborn)
         {
             this.reborn = reborn;
             project = reborn.projecto;
@@ -253,255 +253,206 @@ namespace FNAF_Engine_Reborn
                             }
                         }
                     }
-                    if (instruction == "newgame")
+                    //if (instruction == "newgame")
                     {
-                        await RunCode();
-                        Console.WriteLine("Night 1");
-                        Night_Start.Show();
-                        Night_Start.BringToFront();
-                        nightLBL.Text = "Night 1";
-                    }
-                    if (instruction == "continue")
-                    {
-                        await RunCode();
-                        //todo
-                    }
+                        //    await RunCode();
+                        //    Console.WriteLine("Night 1");
+                        //    Night_Start.Show();
+                        //    Night_Start.BringToFront();
+                        //    nightLBL.Text = "Night 1";
+                        //}
+                        //if (instruction == "continue")
+                        //{
+                        //    await RunCode();
+                        //    //todo
+                        //}
 
-                    if (instruction.StartsWith("set_var:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], instructions[2]);
-                    }
-
-                    if (instruction.StartsWith("set_data:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        long Value = 0;
-                        if (instructions[2].Contains("("))
+                        if (instruction.StartsWith("set_var:"))
                         {
-                            Value = Value + Convert.ToInt64(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + instructions[2].Split('(', ')')[1]));
-                            string NewValue = Value.ToString();
-                            NewValue.Replace("(" + instructions[2].Split('(', ')')[1] + ")", "");
-                            Value = Convert.ToInt64(NewValue);
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], instructions[2]);
                         }
-                        File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], Value.ToString());
-                    }
 
-                    if (instruction.StartsWith("if("))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':', '[');
-                        string value = instructions[1];
-                        string block = instruction.Split('[', ']')[1];
-                        string variable = instruction.Split('(', ')')[1];
-                        if (File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) == value)
+                        if (instruction.StartsWith("set_data:"))
                         {
-                            RunScript(block);
-                        }
-                    }
-
-                    if (instruction == "quit")
-                    {
-                        await RunCode();
-                        this.Close();
-                    }
-
-                    if (instruction.StartsWith("wait:"))
-                    {
-                        await RunCode();
-                        time = Convert.ToInt32(instruction.Split(':')[1]);
-                    }
-
-                    if (instruction.StartsWith("set_text:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        try
-                        {
-                            if (instructions[2].Contains("%var(") || instructions[2].Contains("%data("))
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            long Value = 0;
+                            if (instructions[2].Contains("("))
                             {
-                                string variable_args = instructions[2].Split('%')[1];
-                                string variable = variable_args.Split('(', ')')[1];
-                                panel.Controls[instructions[1]].Text = File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable);
+                                Value = Value + Convert.ToInt64(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + instructions[2].Split('(', ')')[1]));
+                                string NewValue = Value.ToString();
+                                NewValue.Replace("(" + instructions[2].Split('(', ')')[1] + ")", "");
+                                Value = Convert.ToInt64(NewValue);
                             }
-                            else
+                            File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], Value.ToString());
+                        }
+
+                        if (instruction.StartsWith("if("))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':', '[');
+                            string value = instructions[1];
+                            string block = instruction.Split('[', ']')[1];
+                            string variable = instruction.Split('(', ')')[1];
+                            if (File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) == value)
                             {
-                                panel.Controls[instructions[1]].Text = instructions[2]; //the text value
+                                RunScript(block);
                             }
                         }
-                        catch (Exception)
+
+                        if (instruction == "quit")
                         {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to change text";
-                            Description.Text = "Failed to change text. Original code: " + instruction;
+                            await RunCode();
+                            this.Close();
+                        }
+
+                        if (instruction.StartsWith("wait:"))
+                        {
+                            await RunCode();
+                            time = Convert.ToInt32(instruction.Split(':')[1]);
+                        }
+
+                        if (instruction.StartsWith("set_text:"))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            try
+                            {
+                                if (instructions[2].Contains("%var(") || instructions[2].Contains("%data("))
+                                {
+                                    string variable_args = instructions[2].Split('%')[1];
+                                    string variable = variable_args.Split('(', ')')[1];
+                                    panel.Controls[instructions[1]].Text = File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable);
+                                }
+                                else
+                                {
+                                    panel.Controls[instructions[1]].Text = instructions[2]; //the text value
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                Error.Show();
+                                Error.BringToFront();
+                                Title.Text = "Failed to change text";
+                                Description.Text = "Failed to change text. Original code: " + instruction;
+                            }
+                        }
+
+                        if (instruction.StartsWith("set_font:"))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            try
+                            {
+                                panel.Controls[instructions[1]].Font = new Font(instructions[2], Convert.ToInt32(instructions[3]) + 22); //the text value
+                            }
+                            catch (Exception)
+                            {
+                                Error.Show();
+                                Error.BringToFront();
+                                Title.Text = "Failed to change font";
+                                Description.Text = "Failed to change font. Original code: " + instruction;
+                            }
+                        }
+
+                        if (instruction.StartsWith("set_color:"))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            int argsR = Convert.ToInt32(instructions[2].Split(',')[0]);
+                            int argsG = Convert.ToInt32(instructions[2].Split(',')[1]);
+                            int argsB = Convert.ToInt32(instructions[2].Split(',')[2]);
+                            try
+                            {
+                                panel.Controls[instructions[1]].ForeColor = Color.FromArgb(argsR, argsG, argsB); //the text value
+                            }
+                            catch (Exception)
+                            {
+                                Error.Show();
+                                Error.BringToFront();
+                                Title.Text = "Failed to change color";
+                                Description.Text = "Failed to change color. Original code: " + instruction;
+                            }
+                        }
+
+                        if (instruction.StartsWith("hide_text"))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            try
+                            {
+                                panel.Controls[instructions[1]].Hide(); //the text value
+                            }
+                            catch (Exception)
+                            {
+                                Error.Show();
+                                Error.BringToFront();
+                                Title.Text = "Failed to hide text: " + panel.Controls[instructions[1]].Name;
+                                Description.Text = "Failed to hide text. Original code: " + instruction;
+                            }
+                        }
+
+                        if (instruction.StartsWith("show_text:"))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            try
+                            {
+                                panel.Controls[instructions[1]].Show(); //the text value
+                            }
+                            catch (Exception)
+                            {
+                                Error.Show();
+                                Error.BringToFront();
+                                Title.Text = "Failed to show text: " + panel.Controls[instructions[1]].Name;
+                                Description.Text = "Failed to show text. Original code: " + instruction;
+                            }
+                        }
+
+                        if (instruction.StartsWith("set_bg:"))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            try
+                            {
+                                //panel.Controls[instructions[1]].Show(); //the text value
+                            }
+                            catch (Exception)
+                            {
+                                Error.Show();
+                                Error.BringToFront();
+                                Title.Text = "Failed to change background: "; //+ panel.Controls[instructions[1]].Name;
+                                Description.Text = "Failed to change background. Original code: (SET BACKGROUND IS WIP, THIS ISNT A BUG!!!)";// + instruction;
+                            }
+                        }
+
+                        if (instruction.StartsWith("set_data:"))
+                        {
+                            await RunCode();
+                            string[] instructions = instruction.Split(':');
+                            string name = instructions[1];
+                            string value = instructions[2];
+                            string data_values = File.ReadAllText(project + "/data.txt");
+
+                            if (data_values.Contains($",{name}:")) //if theres already a data value
+                            {
+                                //data_values.Replace($",{name}:", );
+                            }
+                        }
+
+                        if (instruction == "run_script")
+                        {
+                            await RunCode();
+                            RunScript(instruction);
                         }
                     }
 
-                    if (instruction.StartsWith("set_font:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        try
-                        {
-                            panel.Controls[instructions[1]].Font = new Font(instructions[2], Convert.ToInt32(instructions[3]) + 22); //the text value
-                        }
-                        catch (Exception)
-                        {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to change font";
-                            Description.Text = "Failed to change font. Original code: " + instruction;
-                        }
-                    }
+                    await Task.Delay(2500);
 
-                    if (instruction.StartsWith("set_color:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        int argsR = Convert.ToInt32(instructions[2].Split(',')[0]);
-                        int argsG = Convert.ToInt32(instructions[2].Split(',')[1]);
-                        int argsB = Convert.ToInt32(instructions[2].Split(',')[2]);
-                        try
-                        {
-                            panel.Controls[instructions[1]].ForeColor = Color.FromArgb(argsR, argsG, argsB); //the text value
-                        }
-                        catch (Exception)
-                        {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to change color";
-                            Description.Text = "Failed to change color. Original code: " + instruction;
-                        }
-                    }
-
-                    if (instruction.StartsWith("hide_text"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        try
-                        {
-                            panel.Controls[instructions[1]].Hide(); //the text value
-                        }
-                        catch (Exception)
-                        {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to hide text: " + panel.Controls[instructions[1]].Name;
-                            Description.Text = "Failed to hide text. Original code: " + instruction;
-                        }
-                    }
-
-                    if (instruction.StartsWith("show_text:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        try
-                        {
-                            panel.Controls[instructions[1]].Show(); //the text value
-                        }
-                        catch (Exception)
-                        {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to show text: " + panel.Controls[instructions[1]].Name;
-                            Description.Text = "Failed to show text. Original code: " + instruction;
-                        }
-                    }
-
-                    if (instruction.StartsWith("set_bg:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        try
-                        {
-                            panel.Controls[instructions[1]].Show(); //the text value
-                        }
-                        catch (Exception)
-                        {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to show text: " + panel.Controls[instructions[1]].Name;
-                            Description.Text = "Failed to show text. Original code: " + instruction;
-                        }
-                    }
-
-                    if (instruction.StartsWith("set_data:"))
-                    {
-                        await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        string name = instructions[1];
-                        string value = instructions[2];
-                        string data_values = File.ReadAllText(project + "/data.txt");
-
-                        if (data_values.Contains($",{name}:")) //if theres already a data value
-                        {
-                            //data_values.Replace($",{name}:", );
-                        }
-                    }
-
-                    if (instruction == "run_script")
-                    {
-                        await RunCode();
-                        RunScript(instruction);
-                    }
+                    Loading.Hide();
                 }
-
-                await Task.Delay(2500);
-
-                Loading.Hide();
-            }
-        }
-
-        private async void Night_Start_VisibleChanged(object sender, EventArgs e)
-        {
-            if (Night_Start.Visible == true)
-            {
-                await Task.Delay(45);
-                Invisible.Show();
-                label1.Hide();
-                label2.Hide();
-                await Task.Delay(35);
-                Invisible.Hide();
-                await Task.Delay(15);
-                label3.Hide();
-                await Task.Delay(2700);
-                nightLBL.Hide();
-                TwelveAM.Hide();
-                ChangeOfficeState("Default");
-                await Task.Delay(1500);
-                Office.Show();
-                Office.BringToFront();
-            }
-        }
-        private void Office_Paint(object sender, EventArgs e)
-        {
-            ChangeOfficeState("Default");
-        }
-        private async void ChangeOfficeState(string State)
-        {
-            try
-            {
-                Console.WriteLine("Changing office state image...");
-                await Task.Delay(50);
-                Console.WriteLine("");
-                Console.WriteLine("Loading image...");
-                Console.WriteLine("");
-                Office.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/offices/default/office_states/{State}/mainsprite.txt"));
-                await Task.Delay(50);
-                Console.WriteLine("Image loaded.");
-                Console.WriteLine("");
-                await Task.Delay(525);
-                Console.WriteLine("Successfully loaded office state image.");
-            }
-            catch (Exception)
-            {
-                await Task.Delay(50);
-                Console.WriteLine("Default office state image not found!");
-                await Task.Delay(350);
-                Console.WriteLine("Failed to load office state image.");
             }
         }
     }

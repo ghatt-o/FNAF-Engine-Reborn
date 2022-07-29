@@ -8,11 +8,14 @@ namespace FNAF_Engine_Reborn
     public partial class Compiler : Form
     {
 
-        public Compiler(reborn reborn)
+        public Compiler(reborn reborn, string style)
         {
             InitializeComponent();
             this.reborn = reborn;
+            this.style = style;
         }
+
+        public string style { get; }
 
         public reborn reborn { get; }
 
@@ -48,49 +51,99 @@ namespace FNAF_Engine_Reborn
 
         private async void Compiler_Load(object sender, EventArgs e)
         {
-            try
+            if (style == "fnaf")
             {
-                await Wait(300);
-                Compiling_Progress.Value += 5;
-                string game_name = File.ReadAllText(reborn.projecto + "/game.txt");
-                string project_name = File.ReadAllText(reborn.projecto + "/name.txt");
                 try
                 {
-                    Directory.Delete($@"Exports/{game_name}", true);
+                    await Wait(300);
+                    Compiling_Progress.Value += 5;
+                    string game_name = File.ReadAllText(reborn.projecto + "/game.txt");
+                    string project_name = File.ReadAllText(reborn.projecto + "/name.txt");
+                    try
+                    {
+                        Directory.Delete($@"Exports/{game_name}", true);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    _ = Directory.CreateDirectory(@"Exports/");
+                    Compiling_Progress.Value += 5;
+                    await Wait(300);
+                    _ = Directory.CreateDirectory($@"Exports/{game_name}");
+                    Compiling_Progress.Value += 7;
+                    await Wait(300);
+                    _ = Directory.CreateDirectory($@"Exports/{game_name}/assets/");
+                    Compiling_Progress.Value += 1;
+                    await Wait(300);
+                    CopyDirectory($"{reborn.projecto}", $@"Exports/{game_name}/assets", true);
+                    Compiling_Progress.Value += 50;
+                    await Wait(300);
+                    CopyDirectory(@"assets/files/fnaf/", $@"Exports/{game_name}/", true);
+                    await Wait(300);
+                    Compiling_Progress.Value += 5;
+                    await Wait(300);
+                    Compiling_Progress.Value += 6;
+                    await Wait(300);
+                    Compiling_Progress.Value += 18;
+                    _ = MessageBox.Show($"Game successfully compiled to {Application.StartupPath}/Exports/{game_name}! (CLICK OK TO CONTINUE)");
+                    //compiled to Exports/projectname/Game.exe
                 }
                 catch (Exception)
                 {
-
+                    _ = MessageBox.Show("Failed to compile!! (CLICK OK TO CONTINUE)");
                 }
-                _ = Directory.CreateDirectory(@"Exports/");
-                Compiling_Progress.Value += 5;
-                await Wait(300);
-                _ = Directory.CreateDirectory($@"Exports/{game_name}");
-                Compiling_Progress.Value += 7;
-                await Wait(300);
-                _ = Directory.CreateDirectory($@"Exports/{game_name}/assets/");
-                Compiling_Progress.Value += 1;
-                await Wait(300);
-                CopyDirectory($"{reborn.projecto}", $@"Exports/{game_name}/assets", true);
-                Compiling_Progress.Value += 50;
-                await Wait(300);
-                CopyDirectory(@"assets/files", $@"Exports/{game_name}/", true);
-                await Wait(300);
-                Compiling_Progress.Value += 5;
-                await Wait(300);
-                Compiling_Progress.Value += 6;
-                await Wait(300);
-                Compiling_Progress.Value += 18;
-                _ = MessageBox.Show($"Game successfully compiled to {Application.StartupPath}/Exports/{game_name}! (CLICK OK TO CONTINUE)");
-                //compiled to Exports/projectname/Game.exe
+                finally
+                {
+                    Hide();
+                }
             }
-            catch (Exception)
+            else if (style == "standard")
             {
-                _ = MessageBox.Show("Failed to compile!! (CLICK OK TO CONTINUE)");
-            }
-            finally
-            {
-                Hide();
+                try
+                {
+                    await Wait(300);
+                    Compiling_Progress.Value += 5;
+                    string game_name = File.ReadAllText(reborn.projecto + "/game.txt");
+                    string project_name = File.ReadAllText(reborn.projecto + "/name.txt");
+                    try
+                    {
+                        Directory.Delete($@"Exports/{game_name}", true);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    _ = Directory.CreateDirectory(@"Exports/");
+                    Compiling_Progress.Value += 5;
+                    await Wait(300);
+                    _ = Directory.CreateDirectory($@"Exports/{game_name}");
+                    Compiling_Progress.Value += 7;
+                    await Wait(300);
+                    _ = Directory.CreateDirectory($@"Exports/{game_name}/assets/");
+                    Compiling_Progress.Value += 1;
+                    await Wait(300);
+                    CopyDirectory($"{reborn.projecto}", $@"Exports/{game_name}/assets", true);
+                    Compiling_Progress.Value += 50;
+                    await Wait(300);
+                    CopyDirectory(@"assets/files/standard/", $@"Exports/{game_name}/", true);
+                    await Wait(300);
+                    Compiling_Progress.Value += 5;
+                    await Wait(300);
+                    Compiling_Progress.Value += 6;
+                    await Wait(300);
+                    Compiling_Progress.Value += 18;
+                    _ = MessageBox.Show($"Game successfully compiled to {Application.StartupPath}/Exports/{game_name}! (CLICK OK TO CONTINUE)");
+                    //compiled to Exports/projectname/Game.exe
+                }
+                catch (Exception)
+                {
+                    _ = MessageBox.Show("Failed to compile!! (CLICK OK TO CONTINUE)");
+                }
+                finally
+                {
+                    Hide();
+                }
             }
         }
     }

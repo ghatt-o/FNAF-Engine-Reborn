@@ -36,8 +36,8 @@ namespace FNAF_Engine_Reborn
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.fnaf4style_CheckBox = new System.Windows.Forms.CheckBox();
+            this.gameStyleOptions = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -116,32 +116,31 @@ namespace FNAF_Engine_Reborn
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
-            // checkBox1
+            // fnaf4style_CheckBox
             // 
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.checkBox1.Location = new System.Drawing.Point(13, 82);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(206, 51);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "FNAF 4 Style (can\'t be changed later!)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.fnaf4style_CheckBox.Enabled = false;
+            this.fnaf4style_CheckBox.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.fnaf4style_CheckBox.Location = new System.Drawing.Point(212, 42);
+            this.fnaf4style_CheckBox.Name = "fnaf4style_CheckBox";
+            this.fnaf4style_CheckBox.Size = new System.Drawing.Size(141, 22);
+            this.fnaf4style_CheckBox.TabIndex = 20;
+            this.fnaf4style_CheckBox.Text = "FNAF 4 Style";
+            this.fnaf4style_CheckBox.UseVisualStyleBackColor = true;
+            this.fnaf4style_CheckBox.Visible = false;
             // 
-            // comboBox2
+            // gameStyleOptions
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "None",
-            "Premade Assets",
-            "Premade Menus",
-            "Required Empty Menus",
-            "John\'s Template"});
-            this.comboBox2.Location = new System.Drawing.Point(210, 20);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(188, 21);
-            this.comboBox2.TabIndex = 22;
+            this.gameStyleOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.gameStyleOptions.ForeColor = System.Drawing.SystemColors.Window;
+            this.gameStyleOptions.FormattingEnabled = true;
+            this.gameStyleOptions.Items.AddRange(new object[] {
+            "Standard",
+            "Five Nights at Freddy\'s (Beta)"});
+            this.gameStyleOptions.Location = new System.Drawing.Point(210, 20);
+            this.gameStyleOptions.Name = "gameStyleOptions";
+            this.gameStyleOptions.Size = new System.Drawing.Size(188, 21);
+            this.gameStyleOptions.TabIndex = 22;
+            this.gameStyleOptions.SelectedIndexChanged += new System.EventHandler(this.gameStyleOptions_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -160,10 +159,10 @@ namespace FNAF_Engine_Reborn
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(489, 307);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(414, 307);
+            this.Controls.Add(this.gameStyleOptions);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.fnaf4style_CheckBox);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.createProjectbtn);
@@ -190,8 +189,8 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.CheckBox fnaf4style_CheckBox;
+        public System.Windows.Forms.ComboBox gameStyleOptions;
         private System.Windows.Forms.Label label2;
     }
 }

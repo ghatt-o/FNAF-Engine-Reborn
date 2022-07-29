@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace FNAF_Engine_Reborn
 {
-    partial class FNAF_Engine_Game
+    partial class Sunset_Creator_Game
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace FNAF_Engine_Reborn
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FNAF_Engine_Game));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sunset_Creator_Game));
             this.Error = new System.Windows.Forms.Panel();
             this.Description = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
@@ -105,7 +105,6 @@ namespace FNAF_Engine_Reborn
             this.Night_Start.Size = new System.Drawing.Size(1444, 920);
             this.Night_Start.TabIndex = 4;
             this.Night_Start.Visible = false;
-            this.Night_Start.VisibleChanged += new System.EventHandler(this.Night_Start_VisibleChanged);
             // 
             // nightLBL
             // 

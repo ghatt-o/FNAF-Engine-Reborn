@@ -25,13 +25,21 @@ namespace FNAF_Engine_Reborn
         internal static loadFERproject projectloader = new loadFERproject();
 
         public string projecto;
+
+        private string v;
+
         public reborn()
         {
             InitializeComponent();
         }
+
         private void createFolder(string folder)
         {
             _ = Directory.CreateDirectory(projecto + folder);
+        }
+        public void GetFunctions(string v)
+        {
+            this.v = v;
         }
         private void reborn_Load(object sender, EventArgs e)
         {
@@ -400,10 +408,10 @@ namespace FNAF_Engine_Reborn
 
         private void button67_Click(object sender, EventArgs e)
         {
-            load_editors(); //calls function below
+            load_editors(projecto); //calls function below
         }
 
-        public void load_editors() // loads all the editors, public so "loadFERproject.cs" can access and call this function. :)
+        public void load_editors(string projec) // loads all the editors, public so "loadFERproject.cs" can access and call this function. :)
         {
             label108.Size = new Size(74, 60);
             REBORNtitle.Location = new Point(-55, 1);
@@ -412,7 +420,8 @@ namespace FNAF_Engine_Reborn
             allEditorsPNL.Visible = true;
             Text = "Sunset Creator";
             button38.Visible = true;
-            _ = projectloader.label3.Text;
+            //_ = projectloader.label3.Text;
+            this.projecto = projec;
             if (showProject == true)
             {
                 //this.presence.state = "Project: " + projecto;
@@ -423,6 +432,7 @@ namespace FNAF_Engine_Reborn
                 //this.presence.state = "Version " + Version;
                 //DiscordRpc.UpdatePresence(ref this.presence);
             }
+            style = File.ReadAllText(v + "/style.txt");
 
         }
 
@@ -454,16 +464,7 @@ namespace FNAF_Engine_Reborn
 
         private void reborn_Click(object sender, EventArgs e)
         {
-            createProject suscreate = new createProject();
-            loadFERproject loadProject = new loadFERproject();
-            if (suscreate.Visible == true)
-            {
-                Text = "Sunset Creator";
-            }
-            if (loadProject.Visible == true)
-            {
-                Text = "Sunset Creator";
-            }
+            Text = "Sunset Creator";
         }
 
         private void menuEditorPanel_VisibleChanged(object sender, EventArgs e)
@@ -608,9 +609,9 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
-                    _ = MessageBox.Show("Something went wrong!");
-                    _ = Directory.CreateDirectory(projecto + "/animations");
-                    _ = MessageBox.Show("Fixed!");
+                    //_ = MessageBox.Show("Something went wrong!");
+                    //_ = Directory.CreateDirectory(projecto + "/animations");
+                    //_ = MessageBox.Show("Fixed!");
                 }
             }
             else
@@ -620,17 +621,30 @@ namespace FNAF_Engine_Reborn
             AssetManagerPanel.Show();
             AssetManagerPanel.BringToFront();
             buildSettingsPanelMoment.Show();
-            officeEditorPanel.Show();
-            cameraEditorPanel.Show();
-            ExtensionsPanel.Show();
             SoundEditorPanel.Show();
-            animationEditorPanel.Show();
-            cutsceneEditorPanel.Show();
             menuEditorPanel.Show();
             staticeffecteditor.Show();
-            ScriptEditorPanel.Show();
-            animatronicEditorPNL2.Show();
             GameDebugMenu.Show();
+            if (style == "standard")
+            {
+                //officeEditorPanel.Show();
+                //cameraEditorPanel.Show();
+                //ExtensionsPanel.Show();
+                //animationEditorPanel.Show();
+                //cutsceneEditorPanel.Show();
+                //ScriptEditorPanel.Show();
+                //animatronicEditorPNL2.Show();
+            }
+            else
+            {
+                officeEditorPanel.Show();
+                cameraEditorPanel.Show();
+                ExtensionsPanel.Show();
+                animationEditorPanel.Show();
+                cutsceneEditorPanel.Show();
+                ScriptEditorPanel.Show();
+                animatronicEditorPNL2.Show();
+            }
         }
 
         private void label163_Click(object sender, EventArgs e)
@@ -752,6 +766,22 @@ namespace FNAF_Engine_Reborn
             {
                 File.WriteAllText(projecto + "/template.txt", "None");
                 ptemplate.Text = "Project Template: " + File.ReadAllText(projecto + "/template.txt");
+            }
+
+            if (style == "standard")
+            {
+                comboBox63.Hide(); //animatronic
+                comboBox62.Hide(); //office
+                comboBox60.Hide(); //cameras
+                comboBox58.Hide(); //minigame maker
+                comboBox39.Hide(); //cutscenes
+                comboBox38.Hide(); //script editor
+                label163.Hide();
+                label162.Hide();
+                label161.Hide();
+                label159.Hide();
+                label158.Hide();
+                label157.Hide();
             }
         }
 
@@ -1361,7 +1391,7 @@ namespace FNAF_Engine_Reborn
         {
             if (usableEngine == true)
             {
-                Compiler compiler = new Compiler(this);
+                Compiler compiler = new Compiler(this, style);
                 _ = compiler.ShowDialog();
             }
             //this.presence.details = "Compiling game...";
@@ -1372,7 +1402,7 @@ namespace FNAF_Engine_Reborn
         {
             if (usableEngine == true)
             {
-                ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this);
+                ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
                 _ = releaseordebug.ShowDialog();
             }
             //this.presence.details = "Testing game...";

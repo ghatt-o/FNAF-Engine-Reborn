@@ -417,14 +417,14 @@ namespace FNAF_Engine_Reborn
                         string[] instructions = instruction.Split(':');
                         try
                         {
-                            panel.Controls[instructions[1]].Show(); //the text value
+                            //panel.Controls[instructions[1]].Show(); //the text value
                         }
                         catch (Exception)
                         {
                             Error.Show();
                             Error.BringToFront();
-                            Title.Text = "Failed to show text: " + panel.Controls[instructions[1]].Name;
-                            Description.Text = "Failed to show text. Original code: " + instruction;
+                            Title.Text = "Failed to change background: "; //+ panel.Controls[instructions[1]].Name;
+                            Description.Text = "Failed to change background. Original code: (SET BACKGROUND IS WIP, THIS ISNT A BUG!!!)";// + instruction;
                         }
                     }
 

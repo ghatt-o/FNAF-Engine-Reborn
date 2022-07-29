@@ -30,13 +30,11 @@ namespace FNAF_Engine_Reborn
             }
             else
             {
-                reborn reborn = new reborn();
                 label3.Text = comboBox1.SelectedItem.ToString();
                 _ = comboBox1.SelectedItem.ToString();
-                reborn rebor = Application.OpenForms.OfType<reborn>().Single();
-                rebor.load_editors();
-                rebor.projecto = comboBox1.SelectedItem.ToString();
-                reborn.projecto = comboBox1.SelectedItem.ToString();
+                reborn reb = Application.OpenForms.OfType<reborn>().FirstOrDefault();
+                reb.GetFunctions(comboBox1.SelectedItem.ToString());
+                reb.load_editors(comboBox1.SelectedItem.ToString());
                 Hide();
             }
         }

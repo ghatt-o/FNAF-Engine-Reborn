@@ -296,6 +296,9 @@ namespace FNAF_Engine_Reborn
             this.label51 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.AssetManagerPanel = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.SoundList = new System.Windows.Forms.ComboBox();
             this.reassign_Value_GameManager_Textbox = new System.Windows.Forms.TextBox();
             this.DataValue_Name = new System.Windows.Forms.TextBox();
             this.reassignDataValue_GameManager = new System.Windows.Forms.Button();
@@ -499,6 +502,9 @@ namespace FNAF_Engine_Reborn
             this.label84 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.Panel();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.DownloadFontBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label176 = new System.Windows.Forms.Label();
             this.label175 = new System.Windows.Forms.Label();
@@ -553,12 +559,6 @@ namespace FNAF_Engine_Reborn
             this.DataValuesFileLabel = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.SoundList = new System.Windows.Forms.ComboBox();
-            this.DownloadFontBtn = new System.Windows.Forms.Button();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
             this.allEditorsPNL.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -3887,6 +3887,41 @@ namespace FNAF_Engine_Reborn
             this.AssetManagerPanel.VisibleChanged += new System.EventHandler(this.AssetManagerPanel_VisibleChanged);
             this.AssetManagerPanel.Click += new System.EventHandler(this.AssetManagerPanel_Click);
             // 
+            // button15
+            // 
+            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Location = new System.Drawing.Point(179, 43);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(23, 12);
+            this.button15.TabIndex = 170;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Location = new System.Drawing.Point(149, 35);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(23, 24);
+            this.button16.TabIndex = 169;
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // SoundList
+            // 
+            this.SoundList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.SoundList.ForeColor = System.Drawing.SystemColors.Window;
+            this.SoundList.FormattingEnabled = true;
+            this.SoundList.Location = new System.Drawing.Point(6, 35);
+            this.SoundList.Name = "SoundList";
+            this.SoundList.Size = new System.Drawing.Size(140, 23);
+            this.SoundList.TabIndex = 168;
+            this.SoundList.Text = "Sound List";
+            // 
             // reassign_Value_GameManager_Textbox
             // 
             this.reassign_Value_GameManager_Textbox.Location = new System.Drawing.Point(615, 239);
@@ -6455,6 +6490,48 @@ namespace FNAF_Engine_Reborn
             this.menu.Click += new System.EventHandler(this.menu_Click);
             this.menu.Paint += new System.Windows.Forms.PaintEventHandler(this.menu_Paint);
             // 
+            // label44
+            // 
+            this.label44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label44.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label44.ForeColor = System.Drawing.SystemColors.Control;
+            this.label44.Location = new System.Drawing.Point(45, 119);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(257, 24);
+            this.label44.TabIndex = 153;
+            this.label44.Text = "(Also only download if the text (Font) is broken!)";
+            // 
+            // label39
+            // 
+            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label39.ForeColor = System.Drawing.SystemColors.Control;
+            this.label39.Location = new System.Drawing.Point(95, 73);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(167, 51);
+            this.label39.TabIndex = 152;
+            this.label39.Text = "(You can install it by right clicking the font and selecting \"Install for all use" +
+    "rs\"!)";
+            // 
+            // DownloadFontBtn
+            // 
+            this.DownloadFontBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.DownloadFontBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DownloadFontBtn.BackgroundImage")));
+            this.DownloadFontBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DownloadFontBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.DownloadFontBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.DownloadFontBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DownloadFontBtn.Font = new System.Drawing.Font("Digital-7", 15.5F);
+            this.DownloadFontBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DownloadFontBtn.Location = new System.Drawing.Point(92, 5);
+            this.DownloadFontBtn.Name = "DownloadFontBtn";
+            this.DownloadFontBtn.Size = new System.Drawing.Size(149, 58);
+            this.DownloadFontBtn.TabIndex = 151;
+            this.DownloadFontBtn.Text = "        Download            Font";
+            this.DownloadFontBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DownloadFontBtn.UseVisualStyleBackColor = false;
+            this.DownloadFontBtn.Click += new System.EventHandler(this.DownloadFontBtn_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -7102,83 +7179,6 @@ namespace FNAF_Engine_Reborn
             this.button17.TabIndex = 104;
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // button15
-            // 
-            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Location = new System.Drawing.Point(179, 43);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(23, 12);
-            this.button15.TabIndex = 170;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Location = new System.Drawing.Point(149, 35);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(23, 24);
-            this.button16.TabIndex = 169;
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // SoundList
-            // 
-            this.SoundList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.SoundList.ForeColor = System.Drawing.SystemColors.Window;
-            this.SoundList.FormattingEnabled = true;
-            this.SoundList.Location = new System.Drawing.Point(6, 35);
-            this.SoundList.Name = "SoundList";
-            this.SoundList.Size = new System.Drawing.Size(140, 23);
-            this.SoundList.TabIndex = 168;
-            this.SoundList.Text = "Sound List";
-            // 
-            // DownloadFontBtn
-            // 
-            this.DownloadFontBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.DownloadFontBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DownloadFontBtn.BackgroundImage")));
-            this.DownloadFontBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.DownloadFontBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.DownloadFontBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.DownloadFontBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DownloadFontBtn.Font = new System.Drawing.Font("Digital-7", 15.5F);
-            this.DownloadFontBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.DownloadFontBtn.Location = new System.Drawing.Point(92, 5);
-            this.DownloadFontBtn.Name = "DownloadFontBtn";
-            this.DownloadFontBtn.Size = new System.Drawing.Size(149, 58);
-            this.DownloadFontBtn.TabIndex = 151;
-            this.DownloadFontBtn.Text = "        Download            Font";
-            this.DownloadFontBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DownloadFontBtn.UseVisualStyleBackColor = false;
-            this.DownloadFontBtn.Click += new System.EventHandler(this.DownloadFontBtn_Click);
-            // 
-            // label39
-            // 
-            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label39.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label39.ForeColor = System.Drawing.SystemColors.Control;
-            this.label39.Location = new System.Drawing.Point(95, 73);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(167, 51);
-            this.label39.TabIndex = 152;
-            this.label39.Text = "(You can install it by right clicking the font and selecting \"Install for all use" +
-    "rs\"!)";
-            // 
-            // label44
-            // 
-            this.label44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label44.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label44.ForeColor = System.Drawing.SystemColors.Control;
-            this.label44.Location = new System.Drawing.Point(45, 119);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(257, 24);
-            this.label44.TabIndex = 153;
-            this.label44.Text = "(Also only download if the text (Font) is broken!)";
-            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7190,9 +7190,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.buildSettingsPanelMoment);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.ScriptEditorPanel);
@@ -7206,6 +7203,9 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;

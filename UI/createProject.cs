@@ -18,6 +18,10 @@ namespace FNAF_Engine_Reborn
         }
         private void createProjectbtn_Click(object sender, EventArgs e)
         {
+            if (gameStyleOptions.SelectedItem == null)
+            {
+                MessageBox.Show("Choose a game style first!");
+            }
             if (projectNamebox.Text == "")
             {
                 _ = MessageBox.Show("Put something in there!");
@@ -29,72 +33,119 @@ namespace FNAF_Engine_Reborn
                     _ = MessageBox.Show("Creating your project! This may take a few seconds. (CLICK OK TO CONTINUE!)");
                     string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
                     _ = Directory.CreateDirectory(projectPath);
-                    _ = Directory.CreateDirectory(projectPath + "/offices/");
-                    _ = Directory.CreateDirectory(projectPath + "/offices/default/");
-                    _ = Directory.CreateDirectory(projectPath + "/offices/default/sprites");
-                    _ = Directory.CreateDirectory(projectPath + "/offices/default/office_states/");
-                    _ = Directory.CreateDirectory(projectPath + "/offices/default/office_states/Default/");
-                    _ = Directory.CreateDirectory(projectPath + "/statics/");
-                    _ = Directory.CreateDirectory(projectPath + "/images");
-                    _ = Directory.CreateDirectory(projectPath + "/animations");
-                    _ = Directory.CreateDirectory(projectPath + "/animatronics");
-                    _ = Directory.CreateDirectory(projectPath + "/animatronics/normal/");
-                    _ = Directory.CreateDirectory(projectPath + "/animatronics/phantom/");
-                    _ = Directory.CreateDirectory(projectPath + "/sounds");
-                    _ = Directory.CreateDirectory(projectPath + "/menus");
-                    CreateMenu(projectPath, "GameOver");
-                    CreateMenu(projectPath, "Main");
-                    CreateMenu(projectPath, "Warning");
-                    CreateMenu(projectPath, "6AM");
-                    _ = Directory.CreateDirectory(projectPath + "/scripts");
-                    _ = Directory.CreateDirectory(projectPath + "/scripts/visual");
-                    _ = Directory.CreateDirectory(projectPath + "/scripts/csharp");
-                    _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic");
-                    _ = File.CreateText(projectPath + "/game.txt");
-                    _ = File.CreateText(projectPath + "/gameid.txt");
-                    if (checkBox1.Checked == true)
+                    if (gameStyleOptions.SelectedIndex == 0) //standard game style
                     {
-                        File.WriteAllText(projectPath + "/style.txt", "fnaf4");
+                        _ = Directory.CreateDirectory(projectPath + "/statics/");
+                        _ = Directory.CreateDirectory(projectPath + "/images");
+                        _ = Directory.CreateDirectory(projectPath + "/animations");
+                        _ = Directory.CreateDirectory(projectPath + "/sounds");
+                        _ = Directory.CreateDirectory(projectPath + "/menus");
+                            CreateMenu(projectPath, "Main");
+                        _ = File.CreateText(projectPath + "/game.txt");
+                        _ = File.CreateText(projectPath + "/gameid.txt");
+
+                            File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
+                            File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
+                            File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
+
+                            File.WriteAllText(projectPath + "/style.txt", "standard");
+
+                        _ = MessageBox.Show("Project created succesfully!");
+                           Hide();
                     }
-                    else
+                    else if (gameStyleOptions.SelectedIndex == 1) //fnaf game style
                     {
-                        File.WriteAllText(projectPath + "/style.txt", "fnaf1");
-                    }
-                    File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
-                    File.WriteAllText(projectPath + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=false,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,");
-                    File.WriteAllText(projectPath + "/offices/default/misc.txt", "camera=,mask=,powerout=");
-                    File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
-                    File.WriteAllText(projectPath + "/offices/default/sprites.txt", "");
-                    File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
-                    _ = MessageBox.Show("Project created succesfully!");
-                    Hide();
-                    if (comboBox1.SelectedItem.Equals("Premade Assets"))
-                    {
-                        premadeAssets();
-                    }
-                    else if (comboBox1.SelectedItem.Equals("Premade Menus"))
-                    {
-                        premadeMenus();
-                    }
-                    else if (comboBox1.SelectedItem.Equals("Required Empty Menus"))
-                    {
-                        rMenus();
-                    }
-                    else if (comboBox1.SelectedItem.Equals("John's Template"))
-                    {
-                        JohnsTemplate();
-                    }
-                    else if (comboBox1.SelectedItem.Equals("James' Template"))
-                    {
-                        JamesTemplate();
-                    }
-                    else if (comboBox1.SelectedItem.Equals("None"))
-                    {
-                        File.WriteAllText(projectPath + "/template.txt", "None");
-                    }
-                    else if (comboBox1.SelectedItem == null)
-                    {
-                        File.WriteAllText(projectPath + "/template.txt", "None");
+                        _ = Directory.CreateDirectory(projectPath + "/offices/");
+                        _ = Directory.CreateDirectory(projectPath + "/offices/default/");
+                        _ = Directory.CreateDirectory(projectPath + "/offices/default/sprites");
+                        _ = Directory.CreateDirectory(projectPath + "/offices/default/office_states/");
+                        _ = Directory.CreateDirectory(projectPath + "/offices/default/office_states/Default/");
+                        _ = Directory.CreateDirectory(projectPath + "/statics/");
+                        _ = Directory.CreateDirectory(projectPath + "/images");
+                        _ = Directory.CreateDirectory(projectPath + "/animations");
+                        _ = Directory.CreateDirectory(projectPath + "/animatronics");
+                        _ = Directory.CreateDirectory(projectPath + "/animatronics/normal/");
+                        _ = Directory.CreateDirectory(projectPath + "/animatronics/phantom/");
+                        _ = Directory.CreateDirectory(projectPath + "/sounds");
+                        _ = Directory.CreateDirectory(projectPath + "/menus");
+                        CreateMenu(projectPath, "GameOver");
+                        CreateMenu(projectPath, "Main");
+                        CreateMenu(projectPath, "Warning");
+                        CreateMenu(projectPath, "6AM");
+                        _ = Directory.CreateDirectory(projectPath + "/scripts");
+                        _ = Directory.CreateDirectory(projectPath + "/scripts/visual");
+                        _ = Directory.CreateDirectory(projectPath + "/scripts/csharp");
+                        _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic");
+                        _ = File.CreateText(projectPath + "/game.txt");
+                        _ = File.CreateText(projectPath + "/gameid.txt");
+                        if (fnaf4style_CheckBox.Checked == true)
+                        {
+                            File.WriteAllText(projectPath + "/style.txt", "fnaf4");
+                        }
+                        else
+                        {
+                            File.WriteAllText(projectPath + "/style.txt", "fnaf");
+                        }
+                        File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
+                        File.WriteAllText(projectPath + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=false,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,");
+                        File.WriteAllText(projectPath + "/offices/default/misc.txt", "camera=,mask=,powerout=");
+                        File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
+                        File.WriteAllText(projectPath + "/offices/default/sprites.txt", "");
+                        File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
+                        _ = MessageBox.Show("Project created succesfully!");
+                        Hide();
+
+                        switch(comboBox1.SelectedIndex)
+                        {
+                            case 0: //none
+                            case 1: //premade assets
+                                premadeAssets();
+                                break;
+                            case 2: //premade menus
+                                premadeMenus();
+                                break;
+                            case 3: //required empty menus
+                                rMenus();
+                                break;
+                            case 4: //johns template
+                                JohnsTemplate();
+                                break;
+                            case 5: //james template
+                                JamesTemplate();
+                                break;
+                            default:
+                                File.WriteAllText(projectPath + "/template.txt", "None");
+                                break;
+                        }
+
+                        if (comboBox1.SelectedItem.Equals("Premade Assets")) //1
+                        {
+                            premadeAssets();
+                        }
+                        else if (comboBox1.SelectedItem.Equals("Premade Menus")) //2
+                        {
+                            premadeMenus();
+                        }
+                        else if (comboBox1.SelectedItem.Equals("Required Empty Menus")) //3
+                        {
+                            rMenus();
+                        }
+                        else if (comboBox1.SelectedItem.Equals("John's Template")) //4
+                        {
+                            JohnsTemplate();
+                        }
+                        else if (comboBox1.SelectedItem.Equals("James' Template")) //5
+                        {
+                            JamesTemplate();
+                        }
+                        else if (comboBox1.SelectedItem.Equals("None")) //0
+                        {
+                            File.WriteAllText(projectPath + "/template.txt", "None");
+                        }
+                        else if (comboBox1.SelectedItem == null) //
+                        {
+                            File.WriteAllText(projectPath + "/template.txt", "None");
+                        }
                     }
                 }
                 catch (Exception)
@@ -217,6 +268,18 @@ namespace FNAF_Engine_Reborn
             File.WriteAllText(projectPath + "/menus/" + Name + "/name.txt", Name);
             File.WriteAllText(projectPath + "/menus/" + Name + "/ongameloop.txt", "");
             File.WriteAllText(projectPath + "/menus/" + Name + "/onmenustart.txt", "");
+        }
+
+        private void gameStyleOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (gameStyleOptions.SelectedIndex == 1)
+            {
+                fnaf4style_CheckBox.Show();
+            }
+            else
+            {
+                fnaf4style_CheckBox.Hide();
+            }
         }
     }
 }
