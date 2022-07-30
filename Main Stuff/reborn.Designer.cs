@@ -559,6 +559,7 @@ namespace FNAF_Engine_Reborn
             this.DataValuesFileLabel = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -2285,6 +2286,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.Menu_CodeEditor.BackColor = System.Drawing.Color.Black;
             this.Menu_CodeEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Menu_CodeEditor.Controls.Add(this.button21);
             this.Menu_CodeEditor.Controls.Add(this.Menu_Name_MenuCodeEditor_InfoLBL);
             this.Menu_CodeEditor.Controls.Add(this.X_Leave_MenuCodeEditor);
             this.Menu_CodeEditor.Controls.Add(this.OnGameLoop_Info_MenuEditor);
@@ -7179,6 +7181,17 @@ namespace FNAF_Engine_Reborn
             this.button17.TabIndex = 104;
             this.button17.UseVisualStyleBackColor = true;
             // 
+            // button21
+            // 
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.ForeColor = System.Drawing.SystemColors.Window;
+            this.button21.Location = new System.Drawing.Point(518, 183);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(117, 23);
+            this.button21.TabIndex = 177;
+            this.button21.Text = "FOR BEGINNERS";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7190,6 +7203,9 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.REBORNtitle);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.ScriptEditorPanel);
@@ -7203,9 +7219,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.buildSettingsPanelMoment);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7811,5 +7824,6 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Label label39;
         public System.Windows.Forms.Button DownloadFontBtn;
         public System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button button21;
     }
 }
