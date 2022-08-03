@@ -131,6 +131,16 @@ namespace FNAF_Engine_Reborn
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.menuEditorPanel = new System.Windows.Forms.Panel();
+            this.Code_MenuEditor_GroupBox = new System.Windows.Forms.GroupBox();
+            this.button28 = new System.Windows.Forms.Button();
+            this.Menu_CodeEditor = new System.Windows.Forms.Panel();
+            this.button21 = new System.Windows.Forms.Button();
+            this.Menu_Name_MenuCodeEditor_InfoLBL = new System.Windows.Forms.Label();
+            this.X_Leave_MenuCodeEditor = new System.Windows.Forms.Button();
+            this.OnGameLoop_Info_MenuEditor = new System.Windows.Forms.Label();
+            this.OnGameLoop_MenuEditor_CodeEditor = new System.Windows.Forms.RichTextBox();
+            this.MenuStart_Info_MenuEditor = new System.Windows.Forms.Label();
+            this.MenuStart_CodeEditor = new System.Windows.Forms.RichTextBox();
             this.textCreate_MenuEditor = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.create_text_menuEditorBTN = new System.Windows.Forms.Button();
@@ -169,14 +179,6 @@ namespace FNAF_Engine_Reborn
             this.label139 = new System.Windows.Forms.Label();
             this.label141 = new System.Windows.Forms.Label();
             this.button53 = new System.Windows.Forms.Button();
-            this.Menu_CodeEditor = new System.Windows.Forms.Panel();
-            this.button21 = new System.Windows.Forms.Button();
-            this.Menu_Name_MenuCodeEditor_InfoLBL = new System.Windows.Forms.Label();
-            this.X_Leave_MenuCodeEditor = new System.Windows.Forms.Button();
-            this.OnGameLoop_Info_MenuEditor = new System.Windows.Forms.Label();
-            this.OnGameLoop_MenuEditor_CodeEditor = new System.Windows.Forms.RichTextBox();
-            this.MenuStart_Info_MenuEditor = new System.Windows.Forms.Label();
-            this.MenuStart_CodeEditor = new System.Windows.Forms.RichTextBox();
             this.MenuEditor_ScriptEditor = new System.Windows.Forms.Label();
             this.Menu_Elements_Create = new System.Windows.Forms.Panel();
             this.MenuEditor_CodeEditor = new System.Windows.Forms.RichTextBox();
@@ -560,8 +562,6 @@ namespace FNAF_Engine_Reborn
             this.DataValuesFileLabel = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button28 = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -571,8 +571,9 @@ namespace FNAF_Engine_Reborn
             this.cameraEditorPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.menuEditorPanel.SuspendLayout();
-            this.textCreate_MenuEditor.SuspendLayout();
+            this.Code_MenuEditor_GroupBox.SuspendLayout();
             this.Menu_CodeEditor.SuspendLayout();
+            this.textCreate_MenuEditor.SuspendLayout();
             this.Menu_Elements_Create.SuspendLayout();
             this.createShit.SuspendLayout();
             this.SoundEditorPanel.SuspendLayout();
@@ -596,7 +597,6 @@ namespace FNAF_Engine_Reborn
             this.staticeffecteditor.SuspendLayout();
             this.panel7.SuspendLayout();
             this.GameDebugMenu.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // allEditorsPNL
@@ -1798,7 +1798,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.menuEditorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.menuEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.menuEditorPanel.Controls.Add(this.groupBox1);
+            this.menuEditorPanel.Controls.Add(this.Code_MenuEditor_GroupBox);
             this.menuEditorPanel.Controls.Add(this.Menu_CodeEditor);
             this.menuEditorPanel.Controls.Add(this.textCreate_MenuEditor);
             this.menuEditorPanel.Controls.Add(this.MenuEditor_ScriptEditor);
@@ -1814,6 +1814,124 @@ namespace FNAF_Engine_Reborn
             this.menuEditorPanel.TabIndex = 72;
             this.menuEditorPanel.Visible = false;
             this.menuEditorPanel.VisibleChanged += new System.EventHandler(this.menuEditorPanel_VisibleChanged);
+            // 
+            // Code_MenuEditor_GroupBox
+            // 
+            this.Code_MenuEditor_GroupBox.Controls.Add(this.button28);
+            this.Code_MenuEditor_GroupBox.ForeColor = System.Drawing.SystemColors.Control;
+            this.Code_MenuEditor_GroupBox.Location = new System.Drawing.Point(426, 220);
+            this.Code_MenuEditor_GroupBox.Name = "Code_MenuEditor_GroupBox";
+            this.Code_MenuEditor_GroupBox.Size = new System.Drawing.Size(313, 199);
+            this.Code_MenuEditor_GroupBox.TabIndex = 0;
+            this.Code_MenuEditor_GroupBox.TabStop = false;
+            this.Code_MenuEditor_GroupBox.Text = "Code";
+            this.Code_MenuEditor_GroupBox.Visible = false;
+            // 
+            // button28
+            // 
+            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button28.Location = new System.Drawing.Point(8, 24);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(132, 23);
+            this.button28.TabIndex = 0;
+            this.button28.Text = "Goto Another Menu";
+            this.button28.UseVisualStyleBackColor = true;
+            // 
+            // Menu_CodeEditor
+            // 
+            this.Menu_CodeEditor.BackColor = System.Drawing.Color.Black;
+            this.Menu_CodeEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Menu_CodeEditor.Controls.Add(this.button21);
+            this.Menu_CodeEditor.Controls.Add(this.Menu_Name_MenuCodeEditor_InfoLBL);
+            this.Menu_CodeEditor.Controls.Add(this.X_Leave_MenuCodeEditor);
+            this.Menu_CodeEditor.Controls.Add(this.OnGameLoop_Info_MenuEditor);
+            this.Menu_CodeEditor.Controls.Add(this.OnGameLoop_MenuEditor_CodeEditor);
+            this.Menu_CodeEditor.Controls.Add(this.MenuStart_Info_MenuEditor);
+            this.Menu_CodeEditor.Controls.Add(this.MenuStart_CodeEditor);
+            this.Menu_CodeEditor.Location = new System.Drawing.Point(112, 9);
+            this.Menu_CodeEditor.Name = "Menu_CodeEditor";
+            this.Menu_CodeEditor.Size = new System.Drawing.Size(638, 212);
+            this.Menu_CodeEditor.TabIndex = 102;
+            this.Menu_CodeEditor.Visible = false;
+            this.Menu_CodeEditor.VisibleChanged += new System.EventHandler(this.Menu_CodeEditor_VisibleChanged);
+            // 
+            // button21
+            // 
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.ForeColor = System.Drawing.SystemColors.Window;
+            this.button21.Location = new System.Drawing.Point(469, 185);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(166, 23);
+            this.button21.TabIndex = 177;
+            this.button21.Text = "CLICK ME TO ADD CODE";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // Menu_Name_MenuCodeEditor_InfoLBL
+            // 
+            this.Menu_Name_MenuCodeEditor_InfoLBL.AutoSize = true;
+            this.Menu_Name_MenuCodeEditor_InfoLBL.ForeColor = System.Drawing.SystemColors.Control;
+            this.Menu_Name_MenuCodeEditor_InfoLBL.Location = new System.Drawing.Point(3, 189);
+            this.Menu_Name_MenuCodeEditor_InfoLBL.Name = "Menu_Name_MenuCodeEditor_InfoLBL";
+            this.Menu_Name_MenuCodeEditor_InfoLBL.Size = new System.Drawing.Size(75, 15);
+            this.Menu_Name_MenuCodeEditor_InfoLBL.TabIndex = 176;
+            this.Menu_Name_MenuCodeEditor_InfoLBL.Text = "Menu_Name";
+            // 
+            // X_Leave_MenuCodeEditor
+            // 
+            this.X_Leave_MenuCodeEditor.BackColor = System.Drawing.Color.Gray;
+            this.X_Leave_MenuCodeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.X_Leave_MenuCodeEditor.Location = new System.Drawing.Point(605, 0);
+            this.X_Leave_MenuCodeEditor.Name = "X_Leave_MenuCodeEditor";
+            this.X_Leave_MenuCodeEditor.Size = new System.Drawing.Size(33, 23);
+            this.X_Leave_MenuCodeEditor.TabIndex = 175;
+            this.X_Leave_MenuCodeEditor.Text = "X";
+            this.X_Leave_MenuCodeEditor.UseVisualStyleBackColor = false;
+            this.X_Leave_MenuCodeEditor.Click += new System.EventHandler(this.X_Leave_MenuCodeEditor_Click);
+            // 
+            // OnGameLoop_Info_MenuEditor
+            // 
+            this.OnGameLoop_Info_MenuEditor.AutoSize = true;
+            this.OnGameLoop_Info_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
+            this.OnGameLoop_Info_MenuEditor.Location = new System.Drawing.Point(303, 3);
+            this.OnGameLoop_Info_MenuEditor.Name = "OnGameLoop_Info_MenuEditor";
+            this.OnGameLoop_Info_MenuEditor.Size = new System.Drawing.Size(87, 15);
+            this.OnGameLoop_Info_MenuEditor.TabIndex = 174;
+            this.OnGameLoop_Info_MenuEditor.Text = "On Game Loop";
+            // 
+            // OnGameLoop_MenuEditor_CodeEditor
+            // 
+            this.OnGameLoop_MenuEditor_CodeEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.OnGameLoop_MenuEditor_CodeEditor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.OnGameLoop_MenuEditor_CodeEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.OnGameLoop_MenuEditor_CodeEditor.Location = new System.Drawing.Point(307, 19);
+            this.OnGameLoop_MenuEditor_CodeEditor.Name = "OnGameLoop_MenuEditor_CodeEditor";
+            this.OnGameLoop_MenuEditor_CodeEditor.Size = new System.Drawing.Size(296, 165);
+            this.OnGameLoop_MenuEditor_CodeEditor.TabIndex = 173;
+            this.OnGameLoop_MenuEditor_CodeEditor.Text = "";
+            this.OnGameLoop_MenuEditor_CodeEditor.TextChanged += new System.EventHandler(this.OnGameLoop_MenuEditor_CodeEditor_TextChanged);
+            // 
+            // MenuStart_Info_MenuEditor
+            // 
+            this.MenuStart_Info_MenuEditor.AutoSize = true;
+            this.MenuStart_Info_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
+            this.MenuStart_Info_MenuEditor.Location = new System.Drawing.Point(-1, 3);
+            this.MenuStart_Info_MenuEditor.Name = "MenuStart_Info_MenuEditor";
+            this.MenuStart_Info_MenuEditor.Size = new System.Drawing.Size(84, 15);
+            this.MenuStart_Info_MenuEditor.TabIndex = 172;
+            this.MenuStart_Info_MenuEditor.Text = "On Menu Start";
+            // 
+            // MenuStart_CodeEditor
+            // 
+            this.MenuStart_CodeEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.MenuStart_CodeEditor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.MenuStart_CodeEditor.ForeColor = System.Drawing.SystemColors.Window;
+            this.MenuStart_CodeEditor.Location = new System.Drawing.Point(3, 19);
+            this.MenuStart_CodeEditor.Name = "MenuStart_CodeEditor";
+            this.MenuStart_CodeEditor.Size = new System.Drawing.Size(296, 165);
+            this.MenuStart_CodeEditor.TabIndex = 171;
+            this.MenuStart_CodeEditor.Text = "";
+            this.MenuStart_CodeEditor.TextChanged += new System.EventHandler(this.MenuStart_CodeEditor_TextChanged);
             // 
             // textCreate_MenuEditor
             // 
@@ -2285,101 +2403,6 @@ namespace FNAF_Engine_Reborn
             this.button53.Text = "load";
             this.button53.UseVisualStyleBackColor = true;
             this.button53.Visible = false;
-            // 
-            // Menu_CodeEditor
-            // 
-            this.Menu_CodeEditor.BackColor = System.Drawing.Color.Black;
-            this.Menu_CodeEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Menu_CodeEditor.Controls.Add(this.button21);
-            this.Menu_CodeEditor.Controls.Add(this.Menu_Name_MenuCodeEditor_InfoLBL);
-            this.Menu_CodeEditor.Controls.Add(this.X_Leave_MenuCodeEditor);
-            this.Menu_CodeEditor.Controls.Add(this.OnGameLoop_Info_MenuEditor);
-            this.Menu_CodeEditor.Controls.Add(this.OnGameLoop_MenuEditor_CodeEditor);
-            this.Menu_CodeEditor.Controls.Add(this.MenuStart_Info_MenuEditor);
-            this.Menu_CodeEditor.Controls.Add(this.MenuStart_CodeEditor);
-            this.Menu_CodeEditor.Location = new System.Drawing.Point(112, 9);
-            this.Menu_CodeEditor.Name = "Menu_CodeEditor";
-            this.Menu_CodeEditor.Size = new System.Drawing.Size(638, 212);
-            this.Menu_CodeEditor.TabIndex = 102;
-            this.Menu_CodeEditor.Visible = false;
-            this.Menu_CodeEditor.VisibleChanged += new System.EventHandler(this.Menu_CodeEditor_VisibleChanged);
-            // 
-            // button21
-            // 
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.ForeColor = System.Drawing.SystemColors.Window;
-            this.button21.Location = new System.Drawing.Point(469, 185);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(166, 23);
-            this.button21.TabIndex = 177;
-            this.button21.Text = "CLICK ME TO ADD CODE";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // Menu_Name_MenuCodeEditor_InfoLBL
-            // 
-            this.Menu_Name_MenuCodeEditor_InfoLBL.AutoSize = true;
-            this.Menu_Name_MenuCodeEditor_InfoLBL.ForeColor = System.Drawing.SystemColors.Control;
-            this.Menu_Name_MenuCodeEditor_InfoLBL.Location = new System.Drawing.Point(3, 189);
-            this.Menu_Name_MenuCodeEditor_InfoLBL.Name = "Menu_Name_MenuCodeEditor_InfoLBL";
-            this.Menu_Name_MenuCodeEditor_InfoLBL.Size = new System.Drawing.Size(75, 15);
-            this.Menu_Name_MenuCodeEditor_InfoLBL.TabIndex = 176;
-            this.Menu_Name_MenuCodeEditor_InfoLBL.Text = "Menu_Name";
-            // 
-            // X_Leave_MenuCodeEditor
-            // 
-            this.X_Leave_MenuCodeEditor.BackColor = System.Drawing.Color.Gray;
-            this.X_Leave_MenuCodeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.X_Leave_MenuCodeEditor.Location = new System.Drawing.Point(605, 0);
-            this.X_Leave_MenuCodeEditor.Name = "X_Leave_MenuCodeEditor";
-            this.X_Leave_MenuCodeEditor.Size = new System.Drawing.Size(33, 23);
-            this.X_Leave_MenuCodeEditor.TabIndex = 175;
-            this.X_Leave_MenuCodeEditor.Text = "X";
-            this.X_Leave_MenuCodeEditor.UseVisualStyleBackColor = false;
-            this.X_Leave_MenuCodeEditor.Click += new System.EventHandler(this.X_Leave_MenuCodeEditor_Click);
-            // 
-            // OnGameLoop_Info_MenuEditor
-            // 
-            this.OnGameLoop_Info_MenuEditor.AutoSize = true;
-            this.OnGameLoop_Info_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.OnGameLoop_Info_MenuEditor.Location = new System.Drawing.Point(303, 3);
-            this.OnGameLoop_Info_MenuEditor.Name = "OnGameLoop_Info_MenuEditor";
-            this.OnGameLoop_Info_MenuEditor.Size = new System.Drawing.Size(87, 15);
-            this.OnGameLoop_Info_MenuEditor.TabIndex = 174;
-            this.OnGameLoop_Info_MenuEditor.Text = "On Game Loop";
-            // 
-            // OnGameLoop_MenuEditor_CodeEditor
-            // 
-            this.OnGameLoop_MenuEditor_CodeEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.OnGameLoop_MenuEditor_CodeEditor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.OnGameLoop_MenuEditor_CodeEditor.ForeColor = System.Drawing.SystemColors.Window;
-            this.OnGameLoop_MenuEditor_CodeEditor.Location = new System.Drawing.Point(307, 19);
-            this.OnGameLoop_MenuEditor_CodeEditor.Name = "OnGameLoop_MenuEditor_CodeEditor";
-            this.OnGameLoop_MenuEditor_CodeEditor.Size = new System.Drawing.Size(296, 165);
-            this.OnGameLoop_MenuEditor_CodeEditor.TabIndex = 173;
-            this.OnGameLoop_MenuEditor_CodeEditor.Text = "";
-            this.OnGameLoop_MenuEditor_CodeEditor.TextChanged += new System.EventHandler(this.OnGameLoop_MenuEditor_CodeEditor_TextChanged);
-            // 
-            // MenuStart_Info_MenuEditor
-            // 
-            this.MenuStart_Info_MenuEditor.AutoSize = true;
-            this.MenuStart_Info_MenuEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.MenuStart_Info_MenuEditor.Location = new System.Drawing.Point(-1, 3);
-            this.MenuStart_Info_MenuEditor.Name = "MenuStart_Info_MenuEditor";
-            this.MenuStart_Info_MenuEditor.Size = new System.Drawing.Size(84, 15);
-            this.MenuStart_Info_MenuEditor.TabIndex = 172;
-            this.MenuStart_Info_MenuEditor.Text = "On Menu Start";
-            // 
-            // MenuStart_CodeEditor
-            // 
-            this.MenuStart_CodeEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.MenuStart_CodeEditor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.MenuStart_CodeEditor.ForeColor = System.Drawing.SystemColors.Window;
-            this.MenuStart_CodeEditor.Location = new System.Drawing.Point(3, 19);
-            this.MenuStart_CodeEditor.Name = "MenuStart_CodeEditor";
-            this.MenuStart_CodeEditor.Size = new System.Drawing.Size(296, 165);
-            this.MenuStart_CodeEditor.TabIndex = 171;
-            this.MenuStart_CodeEditor.Text = "";
-            this.MenuStart_CodeEditor.TextChanged += new System.EventHandler(this.MenuStart_CodeEditor_TextChanged);
             // 
             // MenuEditor_ScriptEditor
             // 
@@ -7196,27 +7219,6 @@ namespace FNAF_Engine_Reborn
             this.button17.TabIndex = 104;
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button28);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(426, 220);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 199);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Code";
-            // 
-            // button28
-            // 
-            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Location = new System.Drawing.Point(8, 24);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(132, 23);
-            this.button28.TabIndex = 0;
-            this.button28.Text = "Goto Another Menu";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7268,10 +7270,11 @@ namespace FNAF_Engine_Reborn
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.menuEditorPanel.ResumeLayout(false);
-            this.textCreate_MenuEditor.ResumeLayout(false);
-            this.textCreate_MenuEditor.PerformLayout();
+            this.Code_MenuEditor_GroupBox.ResumeLayout(false);
             this.Menu_CodeEditor.ResumeLayout(false);
             this.Menu_CodeEditor.PerformLayout();
+            this.textCreate_MenuEditor.ResumeLayout(false);
+            this.textCreate_MenuEditor.PerformLayout();
             this.Menu_Elements_Create.ResumeLayout(false);
             this.Menu_Elements_Create.PerformLayout();
             this.createShit.ResumeLayout(false);
@@ -7315,7 +7318,6 @@ namespace FNAF_Engine_Reborn
             this.panel7.PerformLayout();
             this.GameDebugMenu.ResumeLayout(false);
             this.GameDebugMenu.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7851,7 +7853,7 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Button DownloadFontBtn;
         public System.Windows.Forms.Label label44;
         private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox Code_MenuEditor_GroupBox;
         private System.Windows.Forms.Button button28;
     }
 }

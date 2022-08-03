@@ -2265,5 +2265,10 @@ namespace FNAF_Engine_Reborn
         {
             Process.Start("https://cdn.discordapp.com/attachments/966684909739601952/1001816335837315082/digital-7.ttf");
         }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

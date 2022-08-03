@@ -51,7 +51,7 @@ namespace FNAF_Engine_Reborn
 
         private async void Compiler_Load(object sender, EventArgs e)
         {
-            if (style == "fnaf")
+            if (style == "fnaf1" || style == "fnaf4")
             {
                 try
                 {

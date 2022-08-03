@@ -34,12 +34,13 @@ namespace FNAF_Engine_Reborn
 
         private void ReleaseOrDebug_Load(object sender, EventArgs e)
         {
-
+            label2.Text = "Game Style: " + style;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             label1.Show();
+            await Task.Delay(1000);
             if (style == "standard")
             {
                 Sunset_Creator_Game sunset = new Sunset_Creator_Game(reborn);

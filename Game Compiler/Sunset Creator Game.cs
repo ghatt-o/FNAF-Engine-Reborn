@@ -449,7 +449,7 @@ namespace FNAF_Engine_Reborn
                         }
                     }
 
-                    await Task.Delay(2500);
+                    await Task.Delay(500);
 
                     Loading.Hide();
                 }

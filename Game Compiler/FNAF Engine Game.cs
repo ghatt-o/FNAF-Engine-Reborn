@@ -449,7 +449,7 @@ namespace FNAF_Engine_Reborn
                     }
                 }
 
-                await Task.Delay(2500);
+                await Task.Delay(500);
 
                 Loading.Hide();
             }
@@ -470,7 +470,7 @@ namespace FNAF_Engine_Reborn
                 await Task.Delay(2700);
                 nightLBL.Hide();
                 TwelveAM.Hide();
-                ChangeOfficeState("Default");
+                MF_ChangeOfficeState("Default");
                 await Task.Delay(1500);
                 Office.Show();
                 Office.BringToFront();
@@ -478,9 +478,9 @@ namespace FNAF_Engine_Reborn
         }
         private void Office_Paint(object sender, EventArgs e)
         {
-            ChangeOfficeState("Default");
+            MF_ChangeOfficeState("Default");
         }
-        private async void ChangeOfficeState(string State)
+        private async void MF_ChangeOfficeState(string State)
         {
             try
             {

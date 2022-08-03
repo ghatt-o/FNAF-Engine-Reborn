@@ -35,6 +35,7 @@ namespace FNAF_Engine_Reborn
             this.button1 = new System.Windows.Forms.Button();
             this.label71 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button113
@@ -96,12 +97,22 @@ namespace FNAF_Engine_Reborn
             this.label1.Text = "Loading...";
             this.label1.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(2, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 91);
+            this.label2.TabIndex = 127;
+            this.label2.Text = "Game style: ";
+            // 
             // ReleaseOrDebug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(405, 131);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label71);
             this.Controls.Add(this.button1);
@@ -124,5 +135,6 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
