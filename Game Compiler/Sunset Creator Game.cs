@@ -455,5 +455,23 @@ namespace FNAF_Engine_Reborn
                 }
             }
         }
+        private void MF_GotoMenu(string Menu)
+        {
+            try
+            {
+                this.Controls[Menu].BringToFront();
+            }
+            catch (Exception)
+            {
+                MF_Error("Failed to show menu.", "Failed to show menu '" + Menu + "'!");
+            }
+        }
+        private void MF_Error(string Title, string Description)
+        {
+            Error.Show();
+            Error.BringToFront();
+            this.Title.Text = Title;
+            this.Description.Text = Description;
+        }
     }
 }

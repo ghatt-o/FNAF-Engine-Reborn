@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Media;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FNAF_Engine_Reborn
@@ -18,6 +19,7 @@ namespace FNAF_Engine_Reborn
         public bool isopen = false;
         internal bool usableEngine = true;
         public string script;
+        public bool editable;
 
         public string style;
         //private DiscordRpc.EventHandlers handlers;
@@ -413,11 +415,11 @@ namespace FNAF_Engine_Reborn
 
         public void load_editors(string projec) // loads all the editors, public so "loadFERproject.cs" can access and call this function. :)
         {
-            label108.Size = new Size(74, 60);
-            REBORNtitle.Location = new Point(-55, 1);
-            REBORNtitle.Size = new Size(1000, 60);
+            //label108.Size = new Size(74, 60);
+            //REBORNtitle.Location = new Point(-55, 1);
+            //REBORNtitle.Size = new Size(1000, 60);
             menu.Hide();
-            allEditorsPNL.Visible = true;
+            editable = true;
             Text = "Sunset Creator";
             button38.Visible = true;
             //_ = projectloader.label3.Text;
@@ -599,51 +601,54 @@ namespace FNAF_Engine_Reborn
 
         private void label165_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (editable == true)
             {
-                //this.presence.details = "Editing game...";
-                //DiscordRpc.UpdatePresence(ref this.presence);
-                if (Directory.Exists(projecto + "/animations"))
+                if (usableEngine == true)
                 {
-                    //aight
+                    //this.presence.details = "Editing game...";
+                    //DiscordRpc.UpdatePresence(ref this.presence);
+                    if (Directory.Exists(projecto + "/animations"))
+                    {
+                        //aight
+                    }
+                    else
+                    {
+                        //_ = MessageBox.Show("Something went wrong!");
+                        //_ = Directory.CreateDirectory(projecto + "/animations");
+                        //_ = MessageBox.Show("Fixed!");
+                    }
                 }
                 else
                 {
-                    //_ = MessageBox.Show("Something went wrong!");
-                    //_ = Directory.CreateDirectory(projecto + "/animations");
-                    //_ = MessageBox.Show("Fixed!");
-                }
-            }
-            else
-            {
 
-            }
-            AssetManagerPanel.Show();
-            AssetManagerPanel.BringToFront();
-            buildSettingsPanelMoment.Show();
-            SoundEditorPanel.Show();
-            menuEditorPanel.Show();
-            staticeffecteditor.Show();
-            GameDebugMenu.Show();
-            if (style == "standard")
-            {
-                //officeEditorPanel.Show();
-                //cameraEditorPanel.Show();
-                //ExtensionsPanel.Show();
-                //animationEditorPanel.Show();
-                //cutsceneEditorPanel.Show();
-                //ScriptEditorPanel.Show();
-                //animatronicEditorPNL2.Show();
-            }
-            else
-            {
-                officeEditorPanel.Show();
-                cameraEditorPanel.Show();
-                ExtensionsPanel.Show();
-                animationEditorPanel.Show();
-                cutsceneEditorPanel.Show();
-                ScriptEditorPanel.Show();
-                animatronicEditorPNL2.Show();
+                }
+                AssetManagerPanel.Show();
+                AssetManagerPanel.BringToFront();
+                buildSettingsPanelMoment.Show();
+                SoundEditorPanel.Show();
+                menuEditorPanel.Show();
+                staticeffecteditor.Show();
+                GameDebugMenu.Show();
+                if (style == "standard")
+                {
+                    //officeEditorPanel.Show();
+                    //cameraEditorPanel.Show();
+                    //ExtensionsPanel.Show();
+                    //animationEditorPanel.Show();
+                    //cutsceneEditorPanel.Show();
+                    //ScriptEditorPanel.Show();
+                    //animatronicEditorPNL2.Show();
+                }
+                else
+                {
+                    officeEditorPanel.Show();
+                    cameraEditorPanel.Show();
+                    ExtensionsPanel.Show();
+                    animationEditorPanel.Show();
+                    cutsceneEditorPanel.Show();
+                    ScriptEditorPanel.Show();
+                    animatronicEditorPNL2.Show();
+                }
             }
         }
 
@@ -1023,7 +1028,7 @@ namespace FNAF_Engine_Reborn
                 comboBox4.Items.Clear();
                 comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
                 _ = Directory.CreateDirectory(projecto + "/cameras/" + cameraName + "/animations");
-                _ = File.CreateText("settings.txt");
+                //_ = File.CreateText("settings.txt");
             }
             else
             {
@@ -1389,24 +1394,30 @@ namespace FNAF_Engine_Reborn
 
         private void label21_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (editable == true)
             {
-                Compiler compiler = new Compiler(this, style);
-                _ = compiler.ShowDialog();
+                if (usableEngine == true)
+                {
+                    Compiler compiler = new Compiler(this, style);
+                    _ = compiler.ShowDialog();
+                    //this.presence.details = "Compiling game...";
+                    //DiscordRpc.UpdatePresence(ref this.presence);
+                }
             }
-            //this.presence.details = "Compiling game...";
-            //DiscordRpc.UpdatePresence(ref this.presence);
         }
 
         private void label94_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (editable == true)
             {
-                ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
-                _ = releaseordebug.ShowDialog();
+                if (usableEngine == true)
+                {
+                    ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
+                    _ = releaseordebug.ShowDialog();
+                    //this.presence.details = "Testing game...";
+                    //DiscordRpc.UpdatePresence(ref this.presence);
+                }
             }
-            //this.presence.details = "Testing game...";
-            //DiscordRpc.UpdatePresence(ref this.presence);
         }
 
         private void button40_Click(object sender, EventArgs e) // add image
@@ -1980,9 +1991,12 @@ namespace FNAF_Engine_Reborn
 
         private void label119_Click(object sender, EventArgs e)
         {
-            //this.presence.details = "Debugging game...";
-            //DiscordRpc.UpdatePresence(ref this.presence);
-            GameDebugMenu.BringToFront();
+            if (editable == true)
+            {
+                GameDebugMenu.BringToFront();
+                //this.presence.details = "Debugging game...";
+                //DiscordRpc.UpdatePresence(ref this.presence);
+            }
         }
 
         private void staticeffecteditor_VisibleChanged(object sender, EventArgs e)
@@ -2268,7 +2282,110 @@ namespace FNAF_Engine_Reborn
 
         private void button21_Click(object sender, EventArgs e)
         {
+            Code_MenuEditor_GroupBox.Show();
+        }
 
+        private void button28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+            if (editable == true)
+            {
+                if (usableEngine == true)
+                {
+                    //this.presence.details = "Editing game...";
+                    //DiscordRpc.UpdatePresence(ref this.presence);
+                    if (Directory.Exists(projecto + "/animations"))
+                    {
+                        //aight
+                    }
+                    else
+                    {
+                        //_ = MessageBox.Show("Something went wrong!");
+                        //_ = Directory.CreateDirectory(projecto + "/animations");
+                        //_ = MessageBox.Show("Fixed!");
+                    }
+                }
+                else
+                {
+
+                }
+                AssetManagerPanel.Show();
+                AssetManagerPanel.BringToFront();
+                buildSettingsPanelMoment.Show();
+                SoundEditorPanel.Show();
+                menuEditorPanel.Show();
+                staticeffecteditor.Show();
+                GameDebugMenu.Show();
+                if (style == "standard")
+                {
+                    //officeEditorPanel.Show();
+                    //cameraEditorPanel.Show();
+                    //ExtensionsPanel.Show();
+                    //animationEditorPanel.Show();
+                    //cutsceneEditorPanel.Show();
+                    //ScriptEditorPanel.Show();
+                    //animatronicEditorPNL2.Show();
+                }
+                else
+                {
+                    officeEditorPanel.Show();
+                    cameraEditorPanel.Show();
+                    ExtensionsPanel.Show();
+                    animationEditorPanel.Show();
+                    cutsceneEditorPanel.Show();
+                    ScriptEditorPanel.Show();
+                    animatronicEditorPNL2.Show();
+                }
+            }
+        }
+
+        private void label124_Click(object sender, EventArgs e)
+        {
+            if (editable == true)
+            {
+                GameDebugMenu.BringToFront();
+                //this.presence.details = "Debugging game...";
+                //DiscordRpc.UpdatePresence(ref this.presence);
+            }
+        }
+
+        private void label143_Click(object sender, EventArgs e)
+        {
+            if (editable == true)
+            {
+                if (usableEngine == true)
+                {
+                    ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
+                    _ = releaseordebug.ShowDialog();
+                    //this.presence.details = "Testing game...";
+                    //DiscordRpc.UpdatePresence(ref this.presence);
+                }
+            }
+        }
+
+        private void label83_Click(object sender, EventArgs e)
+        {
+            if (editable == true)
+            {
+                if (usableEngine == true)
+                {
+                    Compiler compiler = new Compiler(this, style);
+                    _ = compiler.ShowDialog();
+                    //this.presence.details = "Compiling game...";
+                    //DiscordRpc.UpdatePresence(ref this.presence);
+                }
+            }
+        }
+
+        private async void REBORNtitle_Click(object sender, EventArgs e)
+        {
+            REBORNtitle.Image = Properties.Resources.Sunset_Creator_old;
+            await Task.Delay(30);
+            REBORNtitle.Image = Properties.Resources.Sunset_Creator;
         }
     }
 }

@@ -37,7 +37,8 @@ namespace FNAF_Engine_Reborn
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.label124 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.label143 = new System.Windows.Forms.Label();
@@ -47,8 +48,6 @@ namespace FNAF_Engine_Reborn
             this.label21 = new System.Windows.Forms.Label();
             this.label119 = new System.Windows.Forms.Label();
             this.label165 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label124 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label156 = new System.Windows.Forms.Label();
@@ -133,6 +132,7 @@ namespace FNAF_Engine_Reborn
             this.menuEditorPanel = new System.Windows.Forms.Panel();
             this.Code_MenuEditor_GroupBox = new System.Windows.Forms.GroupBox();
             this.button28 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
             this.Menu_CodeEditor = new System.Windows.Forms.Panel();
             this.button21 = new System.Windows.Forms.Button();
             this.Menu_Name_MenuCodeEditor_InfoLBL = new System.Windows.Forms.Label();
@@ -182,7 +182,6 @@ namespace FNAF_Engine_Reborn
             this.MenuEditor_ScriptEditor = new System.Windows.Forms.Label();
             this.Menu_Elements_Create = new System.Windows.Forms.Panel();
             this.MenuEditor_CodeEditor = new System.Windows.Forms.RichTextBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label218 = new System.Windows.Forms.Label();
             this.label219 = new System.Windows.Forms.Label();
@@ -259,6 +258,7 @@ namespace FNAF_Engine_Reborn
             this.button24 = new System.Windows.Forms.Button();
             this.Menus = new System.Windows.Forms.TreeView();
             this.MenuImages_MenuEditor = new System.Windows.Forms.ImageList(this.components);
+            this.label82 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.SoundEditorPanel = new System.Windows.Forms.Panel();
             this.comboBox49 = new System.Windows.Forms.ComboBox();
@@ -339,11 +339,11 @@ namespace FNAF_Engine_Reborn
             this.ImageList = new System.Windows.Forms.ComboBox();
             this.comboBox34 = new System.Windows.Forms.ComboBox();
             this.officeEditorPanel = new System.Windows.Forms.Panel();
-            this.CreateInput_OfficeEditor = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.button31 = new System.Windows.Forms.Button();
+            this.CreateInput_OfficeEditor = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
             this.officePreview = new System.Windows.Forms.Panel();
             this.button37 = new System.Windows.Forms.Button();
             this.comboBox65 = new System.Windows.Forms.ComboBox();
@@ -530,7 +530,6 @@ namespace FNAF_Engine_Reborn
             this.label177 = new System.Windows.Forms.Label();
             this.button38 = new System.Windows.Forms.Button();
             this.REBORNtitle = new System.Windows.Forms.Label();
-            this.label108 = new System.Windows.Forms.Label();
             this.template = new System.Windows.Forms.Panel();
             this.button102 = new System.Windows.Forms.Button();
             this.button101 = new System.Windows.Forms.Button();
@@ -562,8 +561,8 @@ namespace FNAF_Engine_Reborn
             this.DataValuesFileLabel = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
+            this.label108 = new System.Windows.Forms.Label();
             this.allEditorsPNL.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -601,36 +600,47 @@ namespace FNAF_Engine_Reborn
             // 
             // allEditorsPNL
             // 
-            this.allEditorsPNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.allEditorsPNL.Controls.Add(this.panel5);
+            this.allEditorsPNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.allEditorsPNL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.allEditorsPNL.Controls.Add(this.label124);
+            this.allEditorsPNL.Controls.Add(this.label29);
+            this.allEditorsPNL.Controls.Add(this.label72);
+            this.allEditorsPNL.Controls.Add(this.label92);
+            this.allEditorsPNL.Controls.Add(this.label143);
+            this.allEditorsPNL.Controls.Add(this.label94);
+            this.allEditorsPNL.Controls.Add(this.button75);
+            this.allEditorsPNL.Controls.Add(this.label83);
+            this.allEditorsPNL.Controls.Add(this.label21);
+            this.allEditorsPNL.Controls.Add(this.label119);
+            this.allEditorsPNL.Controls.Add(this.label165);
+            this.allEditorsPNL.Controls.Add(this.label110);
             this.allEditorsPNL.ForeColor = System.Drawing.SystemColors.Control;
-            this.allEditorsPNL.Location = new System.Drawing.Point(-1, 62);
+            this.allEditorsPNL.Location = new System.Drawing.Point(427, 1);
             this.allEditorsPNL.Name = "allEditorsPNL";
-            this.allEditorsPNL.Size = new System.Drawing.Size(197, 645);
-            this.allEditorsPNL.TabIndex = 37;
-            this.allEditorsPNL.Visible = false;
+            this.allEditorsPNL.Size = new System.Drawing.Size(529, 60);
+            this.allEditorsPNL.TabIndex = 120;
             // 
-            // panel5
+            // label124
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.label72);
-            this.panel5.Controls.Add(this.label92);
-            this.panel5.Controls.Add(this.label143);
-            this.panel5.Controls.Add(this.label94);
-            this.panel5.Controls.Add(this.button75);
-            this.panel5.Controls.Add(this.label83);
-            this.panel5.Controls.Add(this.label21);
-            this.panel5.Controls.Add(this.label119);
-            this.panel5.Controls.Add(this.label165);
-            this.panel5.Controls.Add(this.label29);
-            this.panel5.Controls.Add(this.label124);
-            this.panel5.Controls.Add(this.label110);
-            this.panel5.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel5.Location = new System.Drawing.Point(0, 5);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 628);
-            this.panel5.TabIndex = 120;
+            this.label124.Image = ((System.Drawing.Image)(resources.GetObject("label124.Image")));
+            this.label124.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label124.Location = new System.Drawing.Point(78, 4);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(42, 48);
+            this.label124.TabIndex = 127;
+            this.label124.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label124.Click += new System.EventHandler(this.label124_Click);
+            // 
+            // label29
+            // 
+            this.label29.Image = ((System.Drawing.Image)(resources.GetObject("label29.Image")));
+            this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label29.Location = new System.Drawing.Point(8, -43);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(51, 91);
+            this.label29.TabIndex = 123;
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // label72
             // 
@@ -652,20 +662,20 @@ namespace FNAF_Engine_Reborn
             // label143
             // 
             this.label143.Image = ((System.Drawing.Image)(resources.GetObject("label143.Image")));
-            this.label143.Location = new System.Drawing.Point(2, 77);
+            this.label143.Location = new System.Drawing.Point(157, 14);
             this.label143.Name = "label143";
             this.label143.Size = new System.Drawing.Size(34, 33);
             this.label143.TabIndex = 131;
+            this.label143.Click += new System.EventHandler(this.label143_Click);
             // 
             // label94
             // 
             this.label94.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label94.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label94.Location = new System.Drawing.Point(38, 81);
+            this.label94.Location = new System.Drawing.Point(137, -1);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(143, 24);
+            this.label94.Size = new System.Drawing.Size(72, 63);
             this.label94.TabIndex = 129;
-            this.label94.Text = "Test Game";
             this.label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label94.Click += new System.EventHandler(this.label94_Click);
             // 
@@ -686,20 +696,20 @@ namespace FNAF_Engine_Reborn
             // label83
             // 
             this.label83.Image = ((System.Drawing.Image)(resources.GetObject("label83.Image")));
-            this.label83.Location = new System.Drawing.Point(1, 116);
+            this.label83.Location = new System.Drawing.Point(225, 14);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(34, 33);
             this.label83.TabIndex = 108;
+            this.label83.Click += new System.EventHandler(this.label83_Click);
             // 
             // label21
             // 
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label21.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label21.Location = new System.Drawing.Point(37, 121);
+            this.label21.Location = new System.Drawing.Point(209, -1);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(143, 24);
+            this.label21.Size = new System.Drawing.Size(70, 60);
             this.label21.TabIndex = 128;
-            this.label21.Text = "Compile Game";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
@@ -707,11 +717,10 @@ namespace FNAF_Engine_Reborn
             // 
             this.label119.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label119.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label119.Location = new System.Drawing.Point(37, 44);
+            this.label119.Location = new System.Drawing.Point(66, -2);
             this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(143, 24);
+            this.label119.Size = new System.Drawing.Size(71, 63);
             this.label119.TabIndex = 126;
-            this.label119.Text = "Debug Game";
             this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label119.Click += new System.EventHandler(this.label119_Click);
             // 
@@ -719,33 +728,12 @@ namespace FNAF_Engine_Reborn
             // 
             this.label165.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label165.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label165.Location = new System.Drawing.Point(37, 5);
+            this.label165.Location = new System.Drawing.Point(-1, -2);
             this.label165.Name = "label165";
-            this.label165.Size = new System.Drawing.Size(143, 24);
+            this.label165.Size = new System.Drawing.Size(67, 62);
             this.label165.TabIndex = 110;
-            this.label165.Text = "Game Manager";
             this.label165.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label165.Click += new System.EventHandler(this.label165_Click);
-            // 
-            // label29
-            // 
-            this.label29.Image = ((System.Drawing.Image)(resources.GetObject("label29.Image")));
-            this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label29.Location = new System.Drawing.Point(-7, -56);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(86, 91);
-            this.label29.TabIndex = 123;
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label124
-            // 
-            this.label124.Image = ((System.Drawing.Image)(resources.GetObject("label124.Image")));
-            this.label124.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label124.Location = new System.Drawing.Point(-5, 29);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(42, 48);
-            this.label124.TabIndex = 127;
-            this.label124.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label110
             // 
@@ -936,9 +924,9 @@ namespace FNAF_Engine_Reborn
             this.animatronicEditorPNL2.Controls.Add(this.comboBox1);
             this.animatronicEditorPNL2.Controls.Add(this.checkBox1);
             this.animatronicEditorPNL2.Controls.Add(this.button49);
-            this.animatronicEditorPNL2.Location = new System.Drawing.Point(194, 61);
+            this.animatronicEditorPNL2.Location = new System.Drawing.Point(8, 61);
             this.animatronicEditorPNL2.Name = "animatronicEditorPNL2";
-            this.animatronicEditorPNL2.Size = new System.Drawing.Size(766, 644);
+            this.animatronicEditorPNL2.Size = new System.Drawing.Size(948, 644);
             this.animatronicEditorPNL2.TabIndex = 37;
             this.animatronicEditorPNL2.Visible = false;
             // 
@@ -973,7 +961,7 @@ namespace FNAF_Engine_Reborn
             this.panel8.Controls.Add(this.checkBox2);
             this.panel8.Controls.Add(this.button114);
             this.panel8.Controls.Add(this.textBox21);
-            this.panel8.Location = new System.Drawing.Point(251, 55);
+            this.panel8.Location = new System.Drawing.Point(388, 55);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(205, 95);
             this.panel8.TabIndex = 54;
@@ -1019,7 +1007,7 @@ namespace FNAF_Engine_Reborn
             this.button95.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button95.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button95.ForeColor = System.Drawing.SystemColors.Control;
-            this.button95.Location = new System.Drawing.Point(619, 5);
+            this.button95.Location = new System.Drawing.Point(803, 4);
             this.button95.Name = "button95";
             this.button95.Size = new System.Drawing.Size(138, 27);
             this.button95.TabIndex = 52;
@@ -1034,7 +1022,7 @@ namespace FNAF_Engine_Reborn
             this.button92.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button92.FlatAppearance.BorderSize = 0;
             this.button92.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button92.Location = new System.Drawing.Point(200, 24);
+            this.button92.Location = new System.Drawing.Point(337, 24);
             this.button92.Name = "button92";
             this.button92.Size = new System.Drawing.Size(20, 24);
             this.button92.TabIndex = 60;
@@ -1048,7 +1036,7 @@ namespace FNAF_Engine_Reborn
             this.button91.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button91.FlatAppearance.BorderSize = 0;
             this.button91.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button91.Location = new System.Drawing.Point(504, 25);
+            this.button91.Location = new System.Drawing.Point(641, 25);
             this.button91.Name = "button91";
             this.button91.Size = new System.Drawing.Size(23, 24);
             this.button91.TabIndex = 59;
@@ -1066,7 +1054,7 @@ namespace FNAF_Engine_Reborn
             this.button89.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button89.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button89.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button89.Location = new System.Drawing.Point(623, 73);
+            this.button89.Location = new System.Drawing.Point(760, 73);
             this.button89.Name = "button89";
             this.button89.Size = new System.Drawing.Size(35, 453);
             this.button89.TabIndex = 58;
@@ -1079,7 +1067,7 @@ namespace FNAF_Engine_Reborn
             this.button46.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button46.FlatAppearance.BorderSize = 0;
             this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button46.Location = new System.Drawing.Point(502, 73);
+            this.button46.Location = new System.Drawing.Point(639, 73);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(20, 24);
             this.button46.TabIndex = 55;
@@ -1096,7 +1084,7 @@ namespace FNAF_Engine_Reborn
             this.button48.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button48.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button48.Location = new System.Drawing.Point(497, 73);
+            this.button48.Location = new System.Drawing.Point(634, 73);
             this.button48.Name = "button48";
             this.button48.Size = new System.Drawing.Size(35, 453);
             this.button48.TabIndex = 56;
@@ -1109,7 +1097,7 @@ namespace FNAF_Engine_Reborn
             this.button45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button45.FlatAppearance.BorderSize = 0;
             this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button45.Location = new System.Drawing.Point(658, 77);
+            this.button45.Location = new System.Drawing.Point(795, 77);
             this.button45.Name = "button45";
             this.button45.Size = new System.Drawing.Size(23, 24);
             this.button45.TabIndex = 54;
@@ -1124,7 +1112,7 @@ namespace FNAF_Engine_Reborn
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.funnyScrollForward);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(268, 56);
+            this.panel1.Location = new System.Drawing.Point(405, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 68);
             this.panel1.TabIndex = 53;
@@ -1199,7 +1187,7 @@ namespace FNAF_Engine_Reborn
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(493, 54);
+            this.label4.Location = new System.Drawing.Point(630, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 21);
             this.label4.TabIndex = 44;
@@ -1216,7 +1204,7 @@ namespace FNAF_Engine_Reborn
             this.funnyPath.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.funnyPath.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.funnyPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.funnyPath.Location = new System.Drawing.Point(509, 74);
+            this.funnyPath.Location = new System.Drawing.Point(646, 74);
             this.funnyPath.Name = "funnyPath";
             this.funnyPath.Size = new System.Drawing.Size(180, 452);
             this.funnyPath.TabIndex = 38;
@@ -1273,7 +1261,7 @@ namespace FNAF_Engine_Reborn
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(301, 3);
+            this.label1.Location = new System.Drawing.Point(438, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 21);
             this.label1.TabIndex = 39;
@@ -1285,7 +1273,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(222, 25);
+            this.comboBox1.Location = new System.Drawing.Point(359, 25);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(280, 23);
             this.comboBox1.TabIndex = 38;
@@ -1312,7 +1300,7 @@ namespace FNAF_Engine_Reborn
             this.button49.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button49.FlatAppearance.BorderSize = 0;
             this.button49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button49.Location = new System.Drawing.Point(497, 73);
+            this.button49.Location = new System.Drawing.Point(634, 73);
             this.button49.Name = "button49";
             this.button49.Size = new System.Drawing.Size(35, 289);
             this.button49.TabIndex = 57;
@@ -1356,9 +1344,9 @@ namespace FNAF_Engine_Reborn
             this.cameraEditorPanel.Controls.Add(this.label8);
             this.cameraEditorPanel.Controls.Add(this.label10);
             this.cameraEditorPanel.Controls.Add(this.label12);
-            this.cameraEditorPanel.Location = new System.Drawing.Point(194, 61);
+            this.cameraEditorPanel.Location = new System.Drawing.Point(7, 61);
             this.cameraEditorPanel.Name = "cameraEditorPanel";
-            this.cameraEditorPanel.Size = new System.Drawing.Size(766, 644);
+            this.cameraEditorPanel.Size = new System.Drawing.Size(948, 644);
             this.cameraEditorPanel.TabIndex = 52;
             this.cameraEditorPanel.Visible = false;
             // 
@@ -1369,7 +1357,7 @@ namespace FNAF_Engine_Reborn
             this.RightScroll_CameraEditor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RightScroll_CameraEditor.Font = new System.Drawing.Font("Digital-7", 15F);
             this.RightScroll_CameraEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.RightScroll_CameraEditor.Location = new System.Drawing.Point(300, 377);
+            this.RightScroll_CameraEditor.Location = new System.Drawing.Point(477, 377);
             this.RightScroll_CameraEditor.Name = "RightScroll_CameraEditor";
             this.RightScroll_CameraEditor.Size = new System.Drawing.Size(104, 249);
             this.RightScroll_CameraEditor.TabIndex = 130;
@@ -1383,7 +1371,7 @@ namespace FNAF_Engine_Reborn
             this.LeftScroll_CameraEditor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LeftScroll_CameraEditor.Font = new System.Drawing.Font("Digital-7", 15F);
             this.LeftScroll_CameraEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.LeftScroll_CameraEditor.Location = new System.Drawing.Point(202, 377);
+            this.LeftScroll_CameraEditor.Location = new System.Drawing.Point(379, 377);
             this.LeftScroll_CameraEditor.Name = "LeftScroll_CameraEditor";
             this.LeftScroll_CameraEditor.Size = new System.Drawing.Size(109, 249);
             this.LeftScroll_CameraEditor.TabIndex = 129;
@@ -1397,7 +1385,7 @@ namespace FNAF_Engine_Reborn
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(307, 343);
+            this.button8.Location = new System.Drawing.Point(484, 343);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(269, 25);
             this.button8.TabIndex = 62;
@@ -1408,7 +1396,7 @@ namespace FNAF_Engine_Reborn
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.textBox17);
             this.panel6.Controls.Add(this.button57);
-            this.panel6.Location = new System.Drawing.Point(235, 13);
+            this.panel6.Location = new System.Drawing.Point(412, 13);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(187, 78);
             this.panel6.TabIndex = 112;
@@ -1440,7 +1428,7 @@ namespace FNAF_Engine_Reborn
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button11.Location = new System.Drawing.Point(435, 51);
+            this.button11.Location = new System.Drawing.Point(612, 51);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(150, 43);
             this.button11.TabIndex = 66;
@@ -1451,7 +1439,7 @@ namespace FNAF_Engine_Reborn
             this.label43.BackColor = System.Drawing.Color.Black;
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label43.ForeColor = System.Drawing.SystemColors.Control;
-            this.label43.Location = new System.Drawing.Point(13, 39);
+            this.label43.Location = new System.Drawing.Point(190, 39);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(574, 334);
             this.label43.TabIndex = 126;
@@ -1464,7 +1452,7 @@ namespace FNAF_Engine_Reborn
             this.AllCamerasStaticEffect_Combobox.FormattingEnabled = true;
             this.AllCamerasStaticEffect_Combobox.Items.AddRange(new object[] {
             "Default"});
-            this.AllCamerasStaticEffect_Combobox.Location = new System.Drawing.Point(417, 550);
+            this.AllCamerasStaticEffect_Combobox.Location = new System.Drawing.Point(594, 550);
             this.AllCamerasStaticEffect_Combobox.Name = "AllCamerasStaticEffect_Combobox";
             this.AllCamerasStaticEffect_Combobox.Size = new System.Drawing.Size(170, 23);
             this.AllCamerasStaticEffect_Combobox.TabIndex = 125;
@@ -1475,7 +1463,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox30.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox30.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox30.Location = new System.Drawing.Point(3, 456);
+            this.checkBox30.Location = new System.Drawing.Point(180, 456);
             this.checkBox30.Name = "checkBox30";
             this.checkBox30.Size = new System.Drawing.Size(189, 25);
             this.checkBox30.TabIndex = 124;
@@ -1487,7 +1475,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.AllCamerasBorderRGB_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.AllCamerasBorderRGB_TextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.AllCamerasBorderRGB_TextBox.Location = new System.Drawing.Point(418, 596);
+            this.AllCamerasBorderRGB_TextBox.Location = new System.Drawing.Point(595, 596);
             this.AllCamerasBorderRGB_TextBox.Name = "AllCamerasBorderRGB_TextBox";
             this.AllCamerasBorderRGB_TextBox.Size = new System.Drawing.Size(171, 23);
             this.AllCamerasBorderRGB_TextBox.TabIndex = 123;
@@ -1497,7 +1485,7 @@ namespace FNAF_Engine_Reborn
             this.lblInfoCameraEditorAllBorderRGB.AutoSize = true;
             this.lblInfoCameraEditorAllBorderRGB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.lblInfoCameraEditorAllBorderRGB.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblInfoCameraEditorAllBorderRGB.Location = new System.Drawing.Point(436, 578);
+            this.lblInfoCameraEditorAllBorderRGB.Location = new System.Drawing.Point(613, 578);
             this.lblInfoCameraEditorAllBorderRGB.Name = "lblInfoCameraEditorAllBorderRGB";
             this.lblInfoCameraEditorAllBorderRGB.Size = new System.Drawing.Size(131, 15);
             this.lblInfoCameraEditorAllBorderRGB.TabIndex = 122;
@@ -1508,7 +1496,7 @@ namespace FNAF_Engine_Reborn
             this.lblInfoCameraEditorAllStaticEffect.AutoSize = true;
             this.lblInfoCameraEditorAllStaticEffect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.lblInfoCameraEditorAllStaticEffect.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblInfoCameraEditorAllStaticEffect.Location = new System.Drawing.Point(438, 533);
+            this.lblInfoCameraEditorAllStaticEffect.Location = new System.Drawing.Point(615, 533);
             this.lblInfoCameraEditorAllStaticEffect.Name = "lblInfoCameraEditorAllStaticEffect";
             this.lblInfoCameraEditorAllStaticEffect.Size = new System.Drawing.Size(133, 15);
             this.lblInfoCameraEditorAllStaticEffect.TabIndex = 120;
@@ -1519,7 +1507,7 @@ namespace FNAF_Engine_Reborn
             this.label115.AutoSize = true;
             this.label115.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label115.ForeColor = System.Drawing.SystemColors.Control;
-            this.label115.Location = new System.Drawing.Point(598, 35);
+            this.label115.Location = new System.Drawing.Point(780, 35);
             this.label115.Name = "label115";
             this.label115.Size = new System.Drawing.Size(157, 15);
             this.label115.TabIndex = 118;
@@ -1531,7 +1519,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox28.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox28.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox28.Location = new System.Drawing.Point(3, 436);
+            this.checkBox28.Location = new System.Drawing.Point(180, 436);
             this.checkBox28.Name = "checkBox28";
             this.checkBox28.Size = new System.Drawing.Size(192, 25);
             this.checkBox28.TabIndex = 117;
@@ -1543,7 +1531,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textbox_BorderRGBcamera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textbox_BorderRGBcamera.ForeColor = System.Drawing.SystemColors.Window;
-            this.textbox_BorderRGBcamera.Location = new System.Drawing.Point(6, 511);
+            this.textbox_BorderRGBcamera.Location = new System.Drawing.Point(183, 511);
             this.textbox_BorderRGBcamera.Name = "textbox_BorderRGBcamera";
             this.textbox_BorderRGBcamera.Size = new System.Drawing.Size(174, 23);
             this.textbox_BorderRGBcamera.TabIndex = 115;
@@ -1555,7 +1543,7 @@ namespace FNAF_Engine_Reborn
             this.lblInfoCameraEditorBorderRGB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.lblInfoCameraEditorBorderRGB.Font = new System.Drawing.Font("Digital-7", 15F);
             this.lblInfoCameraEditorBorderRGB.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblInfoCameraEditorBorderRGB.Location = new System.Drawing.Point(42, 489);
+            this.lblInfoCameraEditorBorderRGB.Location = new System.Drawing.Point(219, 489);
             this.lblInfoCameraEditorBorderRGB.Name = "lblInfoCameraEditorBorderRGB";
             this.lblInfoCameraEditorBorderRGB.Size = new System.Drawing.Size(96, 21);
             this.lblInfoCameraEditorBorderRGB.TabIndex = 114;
@@ -1567,7 +1555,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox27.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox27.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox27.Location = new System.Drawing.Point(3, 417);
+            this.checkBox27.Location = new System.Drawing.Point(180, 417);
             this.checkBox27.Name = "checkBox27";
             this.checkBox27.Size = new System.Drawing.Size(139, 25);
             this.checkBox27.TabIndex = 113;
@@ -1581,7 +1569,7 @@ namespace FNAF_Engine_Reborn
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button6.ForeColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(424, 414);
+            this.button6.Location = new System.Drawing.Point(601, 414);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(156, 50);
             this.button6.TabIndex = 60;
@@ -1595,7 +1583,7 @@ namespace FNAF_Engine_Reborn
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button12.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button12.ForeColor = System.Drawing.SystemColors.Control;
-            this.button12.Location = new System.Drawing.Point(416, 379);
+            this.button12.Location = new System.Drawing.Point(593, 379);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(173, 36);
             this.button12.TabIndex = 71;
@@ -1608,7 +1596,7 @@ namespace FNAF_Engine_Reborn
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(594, 11);
+            this.button4.Location = new System.Drawing.Point(776, 11);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(23, 24);
             this.button4.TabIndex = 7;
@@ -1620,7 +1608,7 @@ namespace FNAF_Engine_Reborn
             this.lblInfoCameraEditorStaticEffect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.lblInfoCameraEditorStaticEffect.Font = new System.Drawing.Font("Digital-7", 15F);
             this.lblInfoCameraEditorStaticEffect.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblInfoCameraEditorStaticEffect.Location = new System.Drawing.Point(33, 532);
+            this.lblInfoCameraEditorStaticEffect.Location = new System.Drawing.Point(210, 532);
             this.lblInfoCameraEditorStaticEffect.Name = "lblInfoCameraEditorStaticEffect";
             this.lblInfoCameraEditorStaticEffect.Size = new System.Drawing.Size(117, 21);
             this.lblInfoCameraEditorStaticEffect.TabIndex = 68;
@@ -1634,7 +1622,7 @@ namespace FNAF_Engine_Reborn
             this.StaticEffect_CameraEditor.FormattingEnabled = true;
             this.StaticEffect_CameraEditor.Items.AddRange(new object[] {
             "Default"});
-            this.StaticEffect_CameraEditor.Location = new System.Drawing.Point(8, 553);
+            this.StaticEffect_CameraEditor.Location = new System.Drawing.Point(185, 553);
             this.StaticEffect_CameraEditor.Name = "StaticEffect_CameraEditor";
             this.StaticEffect_CameraEditor.Size = new System.Drawing.Size(171, 23);
             this.StaticEffect_CameraEditor.TabIndex = 67;
@@ -1645,7 +1633,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox6.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox6.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox6.Location = new System.Drawing.Point(3, 397);
+            this.checkBox6.Location = new System.Drawing.Point(180, 397);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(156, 25);
             this.checkBox6.TabIndex = 65;
@@ -1660,7 +1648,7 @@ namespace FNAF_Engine_Reborn
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(438, 463);
+            this.button7.Location = new System.Drawing.Point(615, 463);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(128, 36);
             this.button7.TabIndex = 61;
@@ -1674,7 +1662,7 @@ namespace FNAF_Engine_Reborn
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button5.ForeColor = System.Drawing.SystemColors.Control;
-            this.button5.Location = new System.Drawing.Point(448, 496);
+            this.button5.Location = new System.Drawing.Point(625, 496);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(105, 36);
             this.button5.TabIndex = 59;
@@ -1687,7 +1675,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox4.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox4.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox4.Location = new System.Drawing.Point(3, 377);
+            this.checkBox4.Location = new System.Drawing.Point(180, 377);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(157, 25);
             this.checkBox4.TabIndex = 57;
@@ -1701,7 +1689,7 @@ namespace FNAF_Engine_Reborn
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label9.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(616, 13);
+            this.label9.Location = new System.Drawing.Point(797, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 21);
             this.label9.TabIndex = 53;
@@ -1713,7 +1701,7 @@ namespace FNAF_Engine_Reborn
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(734, 20);
+            this.button3.Location = new System.Drawing.Point(917, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(23, 12);
             this.button3.TabIndex = 6;
@@ -1725,7 +1713,7 @@ namespace FNAF_Engine_Reborn
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(192, 18);
+            this.button2.Location = new System.Drawing.Point(369, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(23, 12);
             this.button2.TabIndex = 3;
@@ -1738,7 +1726,7 @@ namespace FNAF_Engine_Reborn
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(159, 9);
+            this.button1.Location = new System.Drawing.Point(336, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 24);
             this.button1.TabIndex = 2;
@@ -1752,7 +1740,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox4.Font = new System.Drawing.Font("Digital-7", 15F);
             this.comboBox4.ForeColor = System.Drawing.SystemColors.Control;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(12, 8);
+            this.comboBox4.Location = new System.Drawing.Point(189, 8);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(140, 29);
             this.comboBox4.TabIndex = 1;
@@ -1762,7 +1750,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.Location = new System.Drawing.Point(467, 270);
+            this.label7.Location = new System.Drawing.Point(644, 270);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 373);
             this.label7.TabIndex = 4;
@@ -1771,7 +1759,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.Location = new System.Drawing.Point(467, -121);
+            this.label8.Location = new System.Drawing.Point(644, -121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(152, 446);
             this.label8.TabIndex = 5;
@@ -1780,7 +1768,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
-            this.label10.Location = new System.Drawing.Point(70, 277);
+            this.label10.Location = new System.Drawing.Point(247, 277);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(152, 373);
             this.label10.TabIndex = 127;
@@ -1789,7 +1777,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
-            this.label12.Location = new System.Drawing.Point(286, 276);
+            this.label12.Location = new System.Drawing.Point(463, 276);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(152, 373);
             this.label12.TabIndex = 128;
@@ -1799,6 +1787,7 @@ namespace FNAF_Engine_Reborn
             this.menuEditorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.menuEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.menuEditorPanel.Controls.Add(this.Code_MenuEditor_GroupBox);
+            this.menuEditorPanel.Controls.Add(this.label28);
             this.menuEditorPanel.Controls.Add(this.Menu_CodeEditor);
             this.menuEditorPanel.Controls.Add(this.textCreate_MenuEditor);
             this.menuEditorPanel.Controls.Add(this.MenuEditor_ScriptEditor);
@@ -1808,9 +1797,10 @@ namespace FNAF_Engine_Reborn
             this.menuEditorPanel.Controls.Add(this.button23);
             this.menuEditorPanel.Controls.Add(this.button24);
             this.menuEditorPanel.Controls.Add(this.Menus);
-            this.menuEditorPanel.Location = new System.Drawing.Point(194, 61);
+            this.menuEditorPanel.Controls.Add(this.label82);
+            this.menuEditorPanel.Location = new System.Drawing.Point(8, 61);
             this.menuEditorPanel.Name = "menuEditorPanel";
-            this.menuEditorPanel.Size = new System.Drawing.Size(766, 644);
+            this.menuEditorPanel.Size = new System.Drawing.Size(947, 644);
             this.menuEditorPanel.TabIndex = 72;
             this.menuEditorPanel.Visible = false;
             this.menuEditorPanel.VisibleChanged += new System.EventHandler(this.menuEditorPanel_VisibleChanged);
@@ -1819,7 +1809,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.Code_MenuEditor_GroupBox.Controls.Add(this.button28);
             this.Code_MenuEditor_GroupBox.ForeColor = System.Drawing.SystemColors.Control;
-            this.Code_MenuEditor_GroupBox.Location = new System.Drawing.Point(426, 220);
+            this.Code_MenuEditor_GroupBox.Location = new System.Drawing.Point(611, 218);
             this.Code_MenuEditor_GroupBox.Name = "Code_MenuEditor_GroupBox";
             this.Code_MenuEditor_GroupBox.Size = new System.Drawing.Size(313, 199);
             this.Code_MenuEditor_GroupBox.TabIndex = 0;
@@ -1836,6 +1826,17 @@ namespace FNAF_Engine_Reborn
             this.button28.TabIndex = 0;
             this.button28.Text = "Goto Another Menu";
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label28.Image = ((System.Drawing.Image)(resources.GetObject("label28.Image")));
+            this.label28.Location = new System.Drawing.Point(926, 451);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(10, 181);
+            this.label28.TabIndex = 169;
             // 
             // Menu_CodeEditor
             // 
@@ -1848,7 +1849,7 @@ namespace FNAF_Engine_Reborn
             this.Menu_CodeEditor.Controls.Add(this.OnGameLoop_MenuEditor_CodeEditor);
             this.Menu_CodeEditor.Controls.Add(this.MenuStart_Info_MenuEditor);
             this.Menu_CodeEditor.Controls.Add(this.MenuStart_CodeEditor);
-            this.Menu_CodeEditor.Location = new System.Drawing.Point(112, 9);
+            this.Menu_CodeEditor.Location = new System.Drawing.Point(303, 2);
             this.Menu_CodeEditor.Name = "Menu_CodeEditor";
             this.Menu_CodeEditor.Size = new System.Drawing.Size(638, 212);
             this.Menu_CodeEditor.TabIndex = 102;
@@ -2419,7 +2420,6 @@ namespace FNAF_Engine_Reborn
             // 
             this.Menu_Elements_Create.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.Menu_Elements_Create.Controls.Add(this.MenuEditor_CodeEditor);
-            this.Menu_Elements_Create.Controls.Add(this.label28);
             this.Menu_Elements_Create.Controls.Add(this.label26);
             this.Menu_Elements_Create.Controls.Add(this.label218);
             this.Menu_Elements_Create.Controls.Add(this.label219);
@@ -2456,7 +2456,7 @@ namespace FNAF_Engine_Reborn
             this.Menu_Elements_Create.Controls.Add(this.label27);
             this.Menu_Elements_Create.Location = new System.Drawing.Point(5, 371);
             this.Menu_Elements_Create.Name = "Menu_Elements_Create";
-            this.Menu_Elements_Create.Size = new System.Drawing.Size(749, 254);
+            this.Menu_Elements_Create.Size = new System.Drawing.Size(749, 262);
             this.Menu_Elements_Create.TabIndex = 131;
             this.Menu_Elements_Create.Visible = false;
             // 
@@ -2467,19 +2467,9 @@ namespace FNAF_Engine_Reborn
             this.MenuEditor_CodeEditor.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuEditor_CodeEditor.Location = new System.Drawing.Point(206, 105);
             this.MenuEditor_CodeEditor.Name = "MenuEditor_CodeEditor";
-            this.MenuEditor_CodeEditor.Size = new System.Drawing.Size(385, 143);
+            this.MenuEditor_CodeEditor.Size = new System.Drawing.Size(538, 143);
             this.MenuEditor_CodeEditor.TabIndex = 170;
             this.MenuEditor_CodeEditor.Text = "";
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label28.Image = ((System.Drawing.Image)(resources.GetObject("label28.Image")));
-            this.label28.Location = new System.Drawing.Point(735, 104);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(10, 150);
-            this.label28.TabIndex = 169;
             // 
             // label26
             // 
@@ -2859,7 +2849,7 @@ namespace FNAF_Engine_Reborn
             this.label222.ForeColor = System.Drawing.SystemColors.Control;
             this.label222.Location = new System.Drawing.Point(677, -369);
             this.label222.Name = "label222";
-            this.label222.Size = new System.Drawing.Size(81, 638);
+            this.label222.Size = new System.Drawing.Size(81, 632);
             this.label222.TabIndex = 157;
             // 
             // label223
@@ -2921,7 +2911,7 @@ namespace FNAF_Engine_Reborn
             this.createShit.Controls.Add(this.label151);
             this.createShit.Controls.Add(this.label152);
             this.createShit.Controls.Add(this.button90);
-            this.createShit.Location = new System.Drawing.Point(486, 18);
+            this.createShit.Location = new System.Drawing.Point(11, 107);
             this.createShit.Name = "createShit";
             this.createShit.Size = new System.Drawing.Size(251, 99);
             this.createShit.TabIndex = 102;
@@ -3397,13 +3387,23 @@ namespace FNAF_Engine_Reborn
             this.MenuImages_MenuEditor.Images.SetKeyName(0, "meowpurr-eyrf6cmf.png");
             this.MenuImages_MenuEditor.Images.SetKeyName(1, "A.png");
             // 
+            // label82
+            // 
+            this.label82.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label82.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.label82.ForeColor = System.Drawing.SystemColors.Control;
+            this.label82.Location = new System.Drawing.Point(754, -1);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(191, 765);
+            this.label82.TabIndex = 171;
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label30.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label30.ForeColor = System.Drawing.SystemColors.Control;
-            this.label30.Location = new System.Drawing.Point(307, 4);
+            this.label30.Location = new System.Drawing.Point(422, 4);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(114, 21);
             this.label30.TabIndex = 89;
@@ -3450,7 +3450,7 @@ namespace FNAF_Engine_Reborn
             this.SoundEditorPanel.Controls.Add(this.label52);
             this.SoundEditorPanel.Controls.Add(this.label51);
             this.SoundEditorPanel.Controls.Add(this.label41);
-            this.SoundEditorPanel.Location = new System.Drawing.Point(195, 63);
+            this.SoundEditorPanel.Location = new System.Drawing.Point(8, 62);
             this.SoundEditorPanel.Name = "SoundEditorPanel";
             this.SoundEditorPanel.Size = new System.Drawing.Size(473, 535);
             this.SoundEditorPanel.TabIndex = 99;
@@ -3919,9 +3919,9 @@ namespace FNAF_Engine_Reborn
             this.AssetManagerPanel.Controls.Add(this.comboBox36);
             this.AssetManagerPanel.Controls.Add(this.ImageList);
             this.AssetManagerPanel.Controls.Add(this.comboBox34);
-            this.AssetManagerPanel.Location = new System.Drawing.Point(194, 61);
+            this.AssetManagerPanel.Location = new System.Drawing.Point(8, 61);
             this.AssetManagerPanel.Name = "AssetManagerPanel";
-            this.AssetManagerPanel.Size = new System.Drawing.Size(766, 644);
+            this.AssetManagerPanel.Size = new System.Drawing.Size(948, 644);
             this.AssetManagerPanel.TabIndex = 100;
             this.AssetManagerPanel.Visible = false;
             this.AssetManagerPanel.VisibleChanged += new System.EventHandler(this.AssetManagerPanel_VisibleChanged);
@@ -3964,7 +3964,7 @@ namespace FNAF_Engine_Reborn
             // 
             // reassign_Value_GameManager_Textbox
             // 
-            this.reassign_Value_GameManager_Textbox.Location = new System.Drawing.Point(615, 239);
+            this.reassign_Value_GameManager_Textbox.Location = new System.Drawing.Point(801, 239);
             this.reassign_Value_GameManager_Textbox.Name = "reassign_Value_GameManager_Textbox";
             this.reassign_Value_GameManager_Textbox.Size = new System.Drawing.Size(136, 23);
             this.reassign_Value_GameManager_Textbox.TabIndex = 167;
@@ -3972,7 +3972,7 @@ namespace FNAF_Engine_Reborn
             // 
             // DataValue_Name
             // 
-            this.DataValue_Name.Location = new System.Drawing.Point(418, 263);
+            this.DataValue_Name.Location = new System.Drawing.Point(604, 263);
             this.DataValue_Name.Name = "DataValue_Name";
             this.DataValue_Name.Size = new System.Drawing.Size(100, 23);
             this.DataValue_Name.TabIndex = 166;
@@ -3980,7 +3980,7 @@ namespace FNAF_Engine_Reborn
             // 
             // reassignDataValue_GameManager
             // 
-            this.reassignDataValue_GameManager.Location = new System.Drawing.Point(614, 263);
+            this.reassignDataValue_GameManager.Location = new System.Drawing.Point(800, 263);
             this.reassignDataValue_GameManager.Name = "reassignDataValue_GameManager";
             this.reassignDataValue_GameManager.Size = new System.Drawing.Size(138, 23);
             this.reassignDataValue_GameManager.TabIndex = 165;
@@ -3990,7 +3990,7 @@ namespace FNAF_Engine_Reborn
             // 
             // deleteDataValue_GameManager
             // 
-            this.deleteDataValue_GameManager.Location = new System.Drawing.Point(566, 263);
+            this.deleteDataValue_GameManager.Location = new System.Drawing.Point(752, 263);
             this.deleteDataValue_GameManager.Name = "deleteDataValue_GameManager";
             this.deleteDataValue_GameManager.Size = new System.Drawing.Size(48, 23);
             this.deleteDataValue_GameManager.TabIndex = 164;
@@ -3999,7 +3999,7 @@ namespace FNAF_Engine_Reborn
             // 
             // addDataValue_GameManager
             // 
-            this.addDataValue_GameManager.Location = new System.Drawing.Point(518, 263);
+            this.addDataValue_GameManager.Location = new System.Drawing.Point(704, 263);
             this.addDataValue_GameManager.Name = "addDataValue_GameManager";
             this.addDataValue_GameManager.Size = new System.Drawing.Size(48, 23);
             this.addDataValue_GameManager.TabIndex = 163;
@@ -4010,7 +4010,7 @@ namespace FNAF_Engine_Reborn
             // GameManager_Variables_View
             // 
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.GameManager_Variables_View.Location = new System.Drawing.Point(519, 287);
+            this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
             treeNode1.Name = "Data Values";
             treeNode1.Tag = "Data_Values_List";
@@ -4048,7 +4048,7 @@ namespace FNAF_Engine_Reborn
             this.label16.ForeColor = System.Drawing.SystemColors.Control;
             this.label16.Location = new System.Drawing.Point(677, 207);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 425);
+            this.label16.Size = new System.Drawing.Size(269, 425);
             this.label16.TabIndex = 159;
             // 
             // fnaf4_warning_GameManager
@@ -4177,7 +4177,7 @@ namespace FNAF_Engine_Reborn
             this.ProjectStuffs.Controls.Add(this.label24);
             this.ProjectStuffs.Controls.Add(this.label20);
             this.ProjectStuffs.Controls.Add(this.label17);
-            this.ProjectStuffs.Location = new System.Drawing.Point(246, -2);
+            this.ProjectStuffs.Location = new System.Drawing.Point(426, -2);
             this.ProjectStuffs.Name = "ProjectStuffs";
             this.ProjectStuffs.Size = new System.Drawing.Size(518, 208);
             this.ProjectStuffs.TabIndex = 103;
@@ -4372,9 +4372,9 @@ namespace FNAF_Engine_Reborn
             // 
             this.officeEditorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.officeEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.officeEditorPanel.Controls.Add(this.panel9);
             this.officeEditorPanel.Controls.Add(this.CreateInput_OfficeEditor);
             this.officeEditorPanel.Controls.Add(this.button29);
-            this.officeEditorPanel.Controls.Add(this.panel9);
             this.officeEditorPanel.Controls.Add(this.officePreview);
             this.officeEditorPanel.Controls.Add(this.button37);
             this.officeEditorPanel.Controls.Add(this.comboBox65);
@@ -4417,36 +4417,12 @@ namespace FNAF_Engine_Reborn
             this.officeEditorPanel.Controls.Add(this.label48);
             this.officeEditorPanel.Controls.Add(this.label79);
             this.officeEditorPanel.Controls.Add(this.label40);
-            this.officeEditorPanel.Location = new System.Drawing.Point(194, 61);
+            this.officeEditorPanel.Location = new System.Drawing.Point(8, 61);
             this.officeEditorPanel.Name = "officeEditorPanel";
-            this.officeEditorPanel.Size = new System.Drawing.Size(766, 644);
+            this.officeEditorPanel.Size = new System.Drawing.Size(948, 644);
             this.officeEditorPanel.TabIndex = 72;
             this.officeEditorPanel.Visible = false;
             this.officeEditorPanel.VisibleChanged += new System.EventHandler(this.officeEditorPanel_VisibleChanged);
-            // 
-            // CreateInput_OfficeEditor
-            // 
-            this.CreateInput_OfficeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateInput_OfficeEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.CreateInput_OfficeEditor.Location = new System.Drawing.Point(571, 490);
-            this.CreateInput_OfficeEditor.Name = "CreateInput_OfficeEditor";
-            this.CreateInput_OfficeEditor.Size = new System.Drawing.Size(181, 27);
-            this.CreateInput_OfficeEditor.TabIndex = 130;
-            this.CreateInput_OfficeEditor.Text = "Input";
-            this.CreateInput_OfficeEditor.UseVisualStyleBackColor = true;
-            // 
-            // button29
-            // 
-            this.button29.BackColor = System.Drawing.Color.Transparent;
-            this.button29.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button29.BackgroundImage")));
-            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button29.FlatAppearance.BorderSize = 0;
-            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button29.Location = new System.Drawing.Point(304, 347);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(265, 24);
-            this.button29.TabIndex = 62;
-            this.button29.UseVisualStyleBackColor = false;
             // 
             // panel9
             // 
@@ -4454,7 +4430,7 @@ namespace FNAF_Engine_Reborn
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.textBox25);
             this.panel9.Controls.Add(this.button31);
-            this.panel9.Location = new System.Drawing.Point(389, 20);
+            this.panel9.Location = new System.Drawing.Point(670, 51);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(257, 100);
             this.panel9.TabIndex = 125;
@@ -4483,11 +4459,35 @@ namespace FNAF_Engine_Reborn
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
+            // CreateInput_OfficeEditor
+            // 
+            this.CreateInput_OfficeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CreateInput_OfficeEditor.ForeColor = System.Drawing.SystemColors.Control;
+            this.CreateInput_OfficeEditor.Location = new System.Drawing.Point(699, 490);
+            this.CreateInput_OfficeEditor.Name = "CreateInput_OfficeEditor";
+            this.CreateInput_OfficeEditor.Size = new System.Drawing.Size(181, 27);
+            this.CreateInput_OfficeEditor.TabIndex = 130;
+            this.CreateInput_OfficeEditor.Text = "Input";
+            this.CreateInput_OfficeEditor.UseVisualStyleBackColor = true;
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.Transparent;
+            this.button29.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button29.BackgroundImage")));
+            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button29.FlatAppearance.BorderSize = 0;
+            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button29.Location = new System.Drawing.Point(468, 347);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(265, 24);
+            this.button29.TabIndex = 62;
+            this.button29.UseVisualStyleBackColor = false;
+            // 
             // officePreview
             // 
             this.officePreview.BackColor = System.Drawing.Color.Black;
             this.officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.officePreview.Location = new System.Drawing.Point(10, 41);
+            this.officePreview.Location = new System.Drawing.Point(174, 41);
             this.officePreview.Name = "officePreview";
             this.officePreview.Size = new System.Drawing.Size(581, 342);
             this.officePreview.TabIndex = 129;
@@ -4496,7 +4496,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button37.ForeColor = System.Drawing.SystemColors.Control;
-            this.button37.Location = new System.Drawing.Point(493, 426);
+            this.button37.Location = new System.Drawing.Point(621, 426);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(51, 26);
             this.button37.TabIndex = 128;
@@ -4511,7 +4511,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox65.ForeColor = System.Drawing.SystemColors.Control;
             this.comboBox65.FormattingEnabled = true;
-            this.comboBox65.Location = new System.Drawing.Point(549, 427);
+            this.comboBox65.Location = new System.Drawing.Point(677, 427);
             this.comboBox65.Name = "comboBox65";
             this.comboBox65.Size = new System.Drawing.Size(110, 23);
             this.comboBox65.TabIndex = 127;
@@ -4524,7 +4524,7 @@ namespace FNAF_Engine_Reborn
             this.PowerOutAnim_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PowerOutAnim_ComboBox.ForeColor = System.Drawing.SystemColors.Control;
             this.PowerOutAnim_ComboBox.FormattingEnabled = true;
-            this.PowerOutAnim_ComboBox.Location = new System.Drawing.Point(341, 441);
+            this.PowerOutAnim_ComboBox.Location = new System.Drawing.Point(469, 441);
             this.PowerOutAnim_ComboBox.Name = "PowerOutAnim_ComboBox";
             this.PowerOutAnim_ComboBox.Size = new System.Drawing.Size(110, 23);
             this.PowerOutAnim_ComboBox.TabIndex = 86;
@@ -4539,7 +4539,7 @@ namespace FNAF_Engine_Reborn
             this.Offices_ComboBox.FormattingEnabled = true;
             this.Offices_ComboBox.Items.AddRange(new object[] {
             "Default"});
-            this.Offices_ComboBox.Location = new System.Drawing.Point(10, 9);
+            this.Offices_ComboBox.Location = new System.Drawing.Point(406, 10);
             this.Offices_ComboBox.Name = "Offices_ComboBox";
             this.Offices_ComboBox.Size = new System.Drawing.Size(146, 29);
             this.Offices_ComboBox.TabIndex = 126;
@@ -4552,7 +4552,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox24.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox24.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox24.Location = new System.Drawing.Point(10, 511);
+            this.checkBox24.Location = new System.Drawing.Point(138, 511);
             this.checkBox24.Name = "checkBox24";
             this.checkBox24.Size = new System.Drawing.Size(178, 25);
             this.checkBox24.TabIndex = 106;
@@ -4567,7 +4567,7 @@ namespace FNAF_Engine_Reborn
             this.button20.FlatAppearance.BorderSize = 0;
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button20.ForeColor = System.Drawing.SystemColors.Control;
-            this.button20.Location = new System.Drawing.Point(474, 400);
+            this.button20.Location = new System.Drawing.Point(602, 400);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(17, 19);
             this.button20.TabIndex = 105;
@@ -4578,7 +4578,7 @@ namespace FNAF_Engine_Reborn
             this.powerPercentage_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.powerPercentage_label.Font = new System.Drawing.Font("Digital-7", 15F);
             this.powerPercentage_label.ForeColor = System.Drawing.SystemColors.Control;
-            this.powerPercentage_label.Location = new System.Drawing.Point(226, 388);
+            this.powerPercentage_label.Location = new System.Drawing.Point(354, 388);
             this.powerPercentage_label.Name = "powerPercentage_label";
             this.powerPercentage_label.Size = new System.Drawing.Size(17, 24);
             this.powerPercentage_label.TabIndex = 104;
@@ -4592,7 +4592,7 @@ namespace FNAF_Engine_Reborn
             this.button22.FlatAppearance.BorderSize = 0;
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button22.ForeColor = System.Drawing.SystemColors.Control;
-            this.button22.Location = new System.Drawing.Point(500, 400);
+            this.button22.Location = new System.Drawing.Point(628, 400);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(19, 19);
             this.button22.TabIndex = 91;
@@ -4605,7 +4605,7 @@ namespace FNAF_Engine_Reborn
             this.label80.ForeColor = System.Drawing.SystemColors.Control;
             this.label80.Image = global::FNAF_Engine_Reborn.Properties.Resources.space_arrows;
             this.label80.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label80.Location = new System.Drawing.Point(494, 396);
+            this.label80.Location = new System.Drawing.Point(622, 396);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(31, 30);
             this.label80.TabIndex = 103;
@@ -4616,7 +4616,7 @@ namespace FNAF_Engine_Reborn
             this.button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button36.FlatAppearance.BorderSize = 0;
             this.button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button36.Location = new System.Drawing.Point(671, 33);
+            this.button36.Location = new System.Drawing.Point(835, 33);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(23, 24);
             this.button36.TabIndex = 101;
@@ -4629,7 +4629,7 @@ namespace FNAF_Engine_Reborn
             this.button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button34.FlatAppearance.BorderSize = 0;
             this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button34.Location = new System.Drawing.Point(733, 41);
+            this.button34.Location = new System.Drawing.Point(897, 41);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(23, 13);
             this.button34.TabIndex = 100;
@@ -4640,7 +4640,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.CreatePanel_OfficeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreatePanel_OfficeEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.CreatePanel_OfficeEditor.Location = new System.Drawing.Point(665, 458);
+            this.CreatePanel_OfficeEditor.Location = new System.Drawing.Point(793, 458);
             this.CreatePanel_OfficeEditor.Name = "CreatePanel_OfficeEditor";
             this.CreatePanel_OfficeEditor.Size = new System.Drawing.Size(87, 27);
             this.CreatePanel_OfficeEditor.TabIndex = 99;
@@ -4651,7 +4651,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button33.ForeColor = System.Drawing.SystemColors.Control;
-            this.button33.Location = new System.Drawing.Point(571, 458);
+            this.button33.Location = new System.Drawing.Point(699, 458);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(87, 27);
             this.button33.TabIndex = 98;
@@ -4663,7 +4663,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button32.ForeColor = System.Drawing.SystemColors.Control;
-            this.button32.Location = new System.Drawing.Point(665, 425);
+            this.button32.Location = new System.Drawing.Point(793, 425);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(87, 27);
             this.button32.TabIndex = 97;
@@ -4675,7 +4675,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button30.ForeColor = System.Drawing.SystemColors.Control;
-            this.button30.Location = new System.Drawing.Point(571, 425);
+            this.button30.Location = new System.Drawing.Point(699, 425);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(87, 27);
             this.button30.TabIndex = 96;
@@ -4686,7 +4686,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.CreateDoorButton_OfficeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateDoorButton_OfficeEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.CreateDoorButton_OfficeEditor.Location = new System.Drawing.Point(665, 391);
+            this.CreateDoorButton_OfficeEditor.Location = new System.Drawing.Point(793, 391);
             this.CreateDoorButton_OfficeEditor.Name = "CreateDoorButton_OfficeEditor";
             this.CreateDoorButton_OfficeEditor.Size = new System.Drawing.Size(87, 27);
             this.CreateDoorButton_OfficeEditor.TabIndex = 95;
@@ -4697,7 +4697,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.CreateLightButton_OfficeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateLightButton_OfficeEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.CreateLightButton_OfficeEditor.Location = new System.Drawing.Point(571, 391);
+            this.CreateLightButton_OfficeEditor.Location = new System.Drawing.Point(699, 391);
             this.CreateLightButton_OfficeEditor.Name = "CreateLightButton_OfficeEditor";
             this.CreateLightButton_OfficeEditor.Size = new System.Drawing.Size(87, 27);
             this.CreateLightButton_OfficeEditor.TabIndex = 94;
@@ -4709,7 +4709,7 @@ namespace FNAF_Engine_Reborn
             this.label46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label46.ForeColor = System.Drawing.SystemColors.Control;
             this.label46.Image = global::FNAF_Engine_Reborn.Properties.Resources.space_arrows;
-            this.label46.Location = new System.Drawing.Point(454, 391);
+            this.label46.Location = new System.Drawing.Point(582, 391);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(59, 39);
             this.label46.TabIndex = 88;
@@ -4719,7 +4719,7 @@ namespace FNAF_Engine_Reborn
             this.label45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label45.ForeColor = System.Drawing.SystemColors.Control;
             this.label45.Image = global::FNAF_Engine_Reborn.Properties.Resources.space_arrows;
-            this.label45.Location = new System.Drawing.Point(468, 391);
+            this.label45.Location = new System.Drawing.Point(596, 391);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(24, 39);
             this.label45.TabIndex = 87;
@@ -4730,7 +4730,7 @@ namespace FNAF_Engine_Reborn
             this.MaskAnim_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MaskAnim_ComboBox.ForeColor = System.Drawing.SystemColors.Control;
             this.MaskAnim_ComboBox.FormattingEnabled = true;
-            this.MaskAnim_ComboBox.Location = new System.Drawing.Point(298, 417);
+            this.MaskAnim_ComboBox.Location = new System.Drawing.Point(426, 417);
             this.MaskAnim_ComboBox.Name = "MaskAnim_ComboBox";
             this.MaskAnim_ComboBox.Size = new System.Drawing.Size(110, 23);
             this.MaskAnim_ComboBox.TabIndex = 85;
@@ -4742,7 +4742,7 @@ namespace FNAF_Engine_Reborn
             this.CameraAnim_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CameraAnim_ComboBox.ForeColor = System.Drawing.SystemColors.Control;
             this.CameraAnim_ComboBox.FormattingEnabled = true;
-            this.CameraAnim_ComboBox.Location = new System.Drawing.Point(318, 390);
+            this.CameraAnim_ComboBox.Location = new System.Drawing.Point(446, 390);
             this.CameraAnim_ComboBox.Name = "CameraAnim_ComboBox";
             this.CameraAnim_ComboBox.Size = new System.Drawing.Size(110, 23);
             this.CameraAnim_ComboBox.TabIndex = 84;
@@ -4754,7 +4754,7 @@ namespace FNAF_Engine_Reborn
             this.powerOut_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.powerOut_label.Font = new System.Drawing.Font("Digital-7", 15F);
             this.powerOut_label.ForeColor = System.Drawing.SystemColors.Control;
-            this.powerOut_label.Location = new System.Drawing.Point(255, 443);
+            this.powerOut_label.Location = new System.Drawing.Point(383, 443);
             this.powerOut_label.Name = "powerOut_label";
             this.powerOut_label.Size = new System.Drawing.Size(87, 21);
             this.powerOut_label.TabIndex = 83;
@@ -4766,7 +4766,7 @@ namespace FNAF_Engine_Reborn
             this.mask_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.mask_label.Font = new System.Drawing.Font("Digital-7", 15F);
             this.mask_label.ForeColor = System.Drawing.SystemColors.Control;
-            this.mask_label.Location = new System.Drawing.Point(255, 418);
+            this.mask_label.Location = new System.Drawing.Point(383, 418);
             this.mask_label.Name = "mask_label";
             this.mask_label.Size = new System.Drawing.Size(46, 21);
             this.mask_label.TabIndex = 82;
@@ -4778,7 +4778,7 @@ namespace FNAF_Engine_Reborn
             this.camera_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.camera_label.Font = new System.Drawing.Font("Digital-7", 15F);
             this.camera_label.ForeColor = System.Drawing.SystemColors.Control;
-            this.camera_label.Location = new System.Drawing.Point(256, 391);
+            this.camera_label.Location = new System.Drawing.Point(384, 391);
             this.camera_label.Name = "camera_label";
             this.camera_label.Size = new System.Drawing.Size(64, 21);
             this.camera_label.TabIndex = 81;
@@ -4790,7 +4790,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox14.ForeColor = System.Drawing.SystemColors.Control;
             this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(6, 596);
+            this.comboBox14.Location = new System.Drawing.Point(134, 596);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(188, 23);
             this.comboBox14.TabIndex = 80;
@@ -4803,7 +4803,7 @@ namespace FNAF_Engine_Reborn
             this.displayOfficeEditorInfoAnimatronicKill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.displayOfficeEditorInfoAnimatronicKill.Font = new System.Drawing.Font("Digital-7", 11F);
             this.displayOfficeEditorInfoAnimatronicKill.ForeColor = System.Drawing.SystemColors.Control;
-            this.displayOfficeEditorInfoAnimatronicKill.Location = new System.Drawing.Point(3, 576);
+            this.displayOfficeEditorInfoAnimatronicKill.Location = new System.Drawing.Point(131, 576);
             this.displayOfficeEditorInfoAnimatronicKill.Name = "displayOfficeEditorInfoAnimatronicKill";
             this.displayOfficeEditorInfoAnimatronicKill.Size = new System.Drawing.Size(228, 16);
             this.displayOfficeEditorInfoAnimatronicKill.TabIndex = 79;
@@ -4814,7 +4814,7 @@ namespace FNAF_Engine_Reborn
             this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox7.Font = new System.Drawing.Font("Digital-7", 15F);
             this.textBox7.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Location = new System.Drawing.Point(137, 385);
+            this.textBox7.Location = new System.Drawing.Point(265, 385);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(88, 27);
             this.textBox7.TabIndex = 78;
@@ -4828,7 +4828,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox17.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox17.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox17.Location = new System.Drawing.Point(10, 532);
+            this.checkBox17.Location = new System.Drawing.Point(138, 532);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(103, 25);
             this.checkBox17.TabIndex = 77;
@@ -4842,7 +4842,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox16.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox16.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox16.Location = new System.Drawing.Point(10, 386);
+            this.checkBox16.Location = new System.Drawing.Point(138, 386);
             this.checkBox16.Name = "checkBox16";
             this.checkBox16.Size = new System.Drawing.Size(130, 25);
             this.checkBox16.TabIndex = 76;
@@ -4856,7 +4856,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox15.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox15.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox15.Location = new System.Drawing.Point(10, 489);
+            this.checkBox15.Location = new System.Drawing.Point(138, 489);
             this.checkBox15.Name = "checkBox15";
             this.checkBox15.Size = new System.Drawing.Size(157, 25);
             this.checkBox15.TabIndex = 75;
@@ -4870,7 +4870,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox14.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox14.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox14.Location = new System.Drawing.Point(10, 468);
+            this.checkBox14.Location = new System.Drawing.Point(138, 468);
             this.checkBox14.Name = "checkBox14";
             this.checkBox14.Size = new System.Drawing.Size(169, 25);
             this.checkBox14.TabIndex = 74;
@@ -4884,7 +4884,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox13.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox13.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox13.Location = new System.Drawing.Point(10, 448);
+            this.checkBox13.Location = new System.Drawing.Point(138, 448);
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(139, 25);
             this.checkBox13.TabIndex = 73;
@@ -4898,7 +4898,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox17.ForeColor = System.Drawing.SystemColors.Control;
             this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Location = new System.Drawing.Point(609, 5);
+            this.comboBox17.Location = new System.Drawing.Point(773, 5);
             this.comboBox17.Name = "comboBox17";
             this.comboBox17.Size = new System.Drawing.Size(146, 23);
             this.comboBox17.TabIndex = 72;
@@ -4911,7 +4911,7 @@ namespace FNAF_Engine_Reborn
             this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button27.FlatAppearance.BorderSize = 0;
             this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button27.Location = new System.Drawing.Point(609, 34);
+            this.button27.Location = new System.Drawing.Point(773, 34);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(23, 24);
             this.button27.TabIndex = 7;
@@ -4924,7 +4924,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox11.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox11.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox11.Location = new System.Drawing.Point(10, 428);
+            this.checkBox11.Location = new System.Drawing.Point(138, 428);
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(121, 25);
             this.checkBox11.TabIndex = 65;
@@ -4936,7 +4936,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label37.Image = ((System.Drawing.Image)(resources.GetObject("label37.Image")));
-            this.label37.Location = new System.Drawing.Point(465, -183);
+            this.label37.Location = new System.Drawing.Point(629, -183);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(152, 446);
             this.label37.TabIndex = 5;
@@ -4947,7 +4947,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox12.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox12.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox12.Location = new System.Drawing.Point(10, 408);
+            this.checkBox12.Location = new System.Drawing.Point(138, 408);
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(124, 25);
             this.checkBox12.TabIndex = 57;
@@ -4959,7 +4959,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label42.Image = ((System.Drawing.Image)(resources.GetObject("label42.Image")));
-            this.label42.Location = new System.Drawing.Point(353, 378);
+            this.label42.Location = new System.Drawing.Point(481, 378);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(102, 296);
             this.label42.TabIndex = 4;
@@ -4968,7 +4968,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label48.Image = ((System.Drawing.Image)(resources.GetObject("label48.Image")));
-            this.label48.Location = new System.Drawing.Point(440, 371);
+            this.label48.Location = new System.Drawing.Point(568, 371);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(99, 266);
             this.label48.TabIndex = 92;
@@ -4977,7 +4977,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label79.Image = ((System.Drawing.Image)(resources.GetObject("label79.Image")));
-            this.label79.Location = new System.Drawing.Point(464, 100);
+            this.label79.Location = new System.Drawing.Point(628, 100);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(152, 276);
             this.label79.TabIndex = 102;
@@ -4986,7 +4986,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.label40.Image = ((System.Drawing.Image)(resources.GetObject("label40.Image")));
-            this.label40.Location = new System.Drawing.Point(125, 381);
+            this.label40.Location = new System.Drawing.Point(253, 381);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(152, 272);
             this.label40.TabIndex = 54;
@@ -5001,9 +5001,9 @@ namespace FNAF_Engine_Reborn
             this.ExtensionsPanel.Controls.Add(this.panel2);
             this.ExtensionsPanel.Controls.Add(this.label78);
             this.ExtensionsPanel.Controls.Add(this.comboBox41);
-            this.ExtensionsPanel.Location = new System.Drawing.Point(196, 61);
+            this.ExtensionsPanel.Location = new System.Drawing.Point(7, 61);
             this.ExtensionsPanel.Name = "ExtensionsPanel";
-            this.ExtensionsPanel.Size = new System.Drawing.Size(759, 458);
+            this.ExtensionsPanel.Size = new System.Drawing.Size(948, 638);
             this.ExtensionsPanel.TabIndex = 58;
             this.ExtensionsPanel.Visible = false;
             // 
@@ -5036,7 +5036,7 @@ namespace FNAF_Engine_Reborn
             this.button94.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button94.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button94.ForeColor = System.Drawing.SystemColors.Control;
-            this.button94.Location = new System.Drawing.Point(560, 10);
+            this.button94.Location = new System.Drawing.Point(753, 14);
             this.button94.Name = "button94";
             this.button94.Size = new System.Drawing.Size(174, 27);
             this.button94.TabIndex = 99;
@@ -5054,7 +5054,7 @@ namespace FNAF_Engine_Reborn
             this.panel2.Controls.Add(this.label73);
             this.panel2.Location = new System.Drawing.Point(19, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(715, 381);
+            this.panel2.Size = new System.Drawing.Size(908, 381);
             this.panel2.TabIndex = 54;
             // 
             // checkBox21
@@ -5098,7 +5098,7 @@ namespace FNAF_Engine_Reborn
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label74.ForeColor = System.Drawing.SystemColors.Control;
-            this.label74.Location = new System.Drawing.Point(349, 4);
+            this.label74.Location = new System.Drawing.Point(541, 3);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(364, 21);
             this.label74.TabIndex = 56;
@@ -5148,9 +5148,9 @@ namespace FNAF_Engine_Reborn
             this.ScriptEditorPanel.Controls.Add(this.button50);
             this.ScriptEditorPanel.Controls.Add(this.label77);
             this.ScriptEditorPanel.Controls.Add(this.ScriptEditor_Scripts_ComboBox);
-            this.ScriptEditorPanel.Location = new System.Drawing.Point(196, 61);
+            this.ScriptEditorPanel.Location = new System.Drawing.Point(8, 61);
             this.ScriptEditorPanel.Name = "ScriptEditorPanel";
-            this.ScriptEditorPanel.Size = new System.Drawing.Size(759, 629);
+            this.ScriptEditorPanel.Size = new System.Drawing.Size(947, 629);
             this.ScriptEditorPanel.TabIndex = 59;
             this.ScriptEditorPanel.Visible = false;
             this.ScriptEditorPanel.VisibleChanged += new System.EventHandler(this.ScriptEditorPanel_VisibleChanged);
@@ -5196,7 +5196,7 @@ namespace FNAF_Engine_Reborn
             this.panel4.Controls.Add(this.button10);
             this.panel4.Location = new System.Drawing.Point(6, 33);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(746, 588);
+            this.panel4.Size = new System.Drawing.Size(807, 588);
             this.panel4.TabIndex = 54;
             this.panel4.Visible = false;
             this.panel4.VisibleChanged += new System.EventHandler(this.panel4_VisibleChanged);
@@ -5263,7 +5263,7 @@ namespace FNAF_Engine_Reborn
             this.button54.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button54.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button54.ForeColor = System.Drawing.SystemColors.Control;
-            this.button54.Location = new System.Drawing.Point(508, 3);
+            this.button54.Location = new System.Drawing.Point(819, 33);
             this.button54.Name = "button54";
             this.button54.Size = new System.Drawing.Size(120, 27);
             this.button54.TabIndex = 1;
@@ -5288,7 +5288,7 @@ namespace FNAF_Engine_Reborn
             this.button50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button50.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button50.ForeColor = System.Drawing.SystemColors.Control;
-            this.button50.Location = new System.Drawing.Point(630, 3);
+            this.button50.Location = new System.Drawing.Point(819, 3);
             this.button50.Name = "button50";
             this.button50.Size = new System.Drawing.Size(120, 27);
             this.button50.TabIndex = 0;
@@ -5331,7 +5331,7 @@ namespace FNAF_Engine_Reborn
             this.buildSettingsPanelMoment.Controls.Add(this.textBox6);
             this.buildSettingsPanelMoment.Controls.Add(this.label34);
             this.buildSettingsPanelMoment.Controls.Add(this.checkBox7);
-            this.buildSettingsPanelMoment.Location = new System.Drawing.Point(196, 61);
+            this.buildSettingsPanelMoment.Location = new System.Drawing.Point(8, 61);
             this.buildSettingsPanelMoment.Name = "buildSettingsPanelMoment";
             this.buildSettingsPanelMoment.Size = new System.Drawing.Size(215, 268);
             this.buildSettingsPanelMoment.TabIndex = 101;
@@ -5488,9 +5488,9 @@ namespace FNAF_Engine_Reborn
             this.animationEditorPanel.Controls.Add(this.button61);
             this.animationEditorPanel.Controls.Add(this.label30);
             this.animationEditorPanel.Controls.Add(this.comboBox43);
-            this.animationEditorPanel.Location = new System.Drawing.Point(194, 61);
+            this.animationEditorPanel.Location = new System.Drawing.Point(8, 61);
             this.animationEditorPanel.Name = "animationEditorPanel";
-            this.animationEditorPanel.Size = new System.Drawing.Size(766, 644);
+            this.animationEditorPanel.Size = new System.Drawing.Size(947, 644);
             this.animationEditorPanel.TabIndex = 104;
             this.animationEditorPanel.Visible = false;
             this.animationEditorPanel.VisibleChanged += new System.EventHandler(this.animationEditorPanel_VisibleChanged);
@@ -5501,7 +5501,7 @@ namespace FNAF_Engine_Reborn
             this.label90.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.label90.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label90.ForeColor = System.Drawing.SystemColors.Control;
-            this.label90.Location = new System.Drawing.Point(423, 360);
+            this.label90.Location = new System.Drawing.Point(538, 360);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(55, 21);
             this.label90.TabIndex = 115;
@@ -5512,7 +5512,7 @@ namespace FNAF_Engine_Reborn
             this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox18.Font = new System.Drawing.Font("Digital-7", 15F);
             this.textBox18.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox18.Location = new System.Drawing.Point(480, 356);
+            this.textBox18.Location = new System.Drawing.Point(595, 356);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(116, 27);
             this.textBox18.TabIndex = 114;
@@ -5523,7 +5523,7 @@ namespace FNAF_Engine_Reborn
             this.button99.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button99.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button99.ForeColor = System.Drawing.SystemColors.Control;
-            this.button99.Location = new System.Drawing.Point(659, 9);
+            this.button99.Location = new System.Drawing.Point(774, 9);
             this.button99.Name = "button99";
             this.button99.Size = new System.Drawing.Size(97, 31);
             this.button99.TabIndex = 113;
@@ -5536,7 +5536,7 @@ namespace FNAF_Engine_Reborn
             this.button65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button65.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button65.ForeColor = System.Drawing.SystemColors.Control;
-            this.button65.Location = new System.Drawing.Point(611, 415);
+            this.button65.Location = new System.Drawing.Point(726, 415);
             this.button65.Name = "button65";
             this.button65.Size = new System.Drawing.Size(116, 56);
             this.button65.TabIndex = 112;
@@ -5548,7 +5548,7 @@ namespace FNAF_Engine_Reborn
             this.button64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button64.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button64.ForeColor = System.Drawing.SystemColors.Control;
-            this.button64.Location = new System.Drawing.Point(611, 349);
+            this.button64.Location = new System.Drawing.Point(726, 349);
             this.button64.Name = "button64";
             this.button64.Size = new System.Drawing.Size(116, 56);
             this.button64.TabIndex = 105;
@@ -5560,7 +5560,7 @@ namespace FNAF_Engine_Reborn
             this.AnimAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.AnimAdd.Controls.Add(this.spriteName);
             this.AnimAdd.Controls.Add(this.createSpritebtn);
-            this.AnimAdd.Location = new System.Drawing.Point(8, 10);
+            this.AnimAdd.Location = new System.Drawing.Point(123, 10);
             this.AnimAdd.Name = "AnimAdd";
             this.AnimAdd.Size = new System.Drawing.Size(128, 65);
             this.AnimAdd.TabIndex = 111;
@@ -5591,7 +5591,7 @@ namespace FNAF_Engine_Reborn
             this.button63.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button63.FlatAppearance.BorderSize = 0;
             this.button63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button63.Location = new System.Drawing.Point(96, 385);
+            this.button63.Location = new System.Drawing.Point(211, 385);
             this.button63.Name = "button63";
             this.button63.Size = new System.Drawing.Size(23, 12);
             this.button63.TabIndex = 110;
@@ -5603,7 +5603,7 @@ namespace FNAF_Engine_Reborn
             this.button62.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button62.FlatAppearance.BorderSize = 0;
             this.button62.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button62.Location = new System.Drawing.Point(97, 350);
+            this.button62.Location = new System.Drawing.Point(212, 350);
             this.button62.Name = "button62";
             this.button62.Size = new System.Drawing.Size(23, 24);
             this.button62.TabIndex = 109;
@@ -5617,7 +5617,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(125, 350);
+            this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
             this.listView1.TabIndex = 108;
@@ -5629,7 +5629,7 @@ namespace FNAF_Engine_Reborn
             this.button60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button60.FlatAppearance.BorderSize = 0;
             this.button60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button60.Location = new System.Drawing.Point(71, 33);
+            this.button60.Location = new System.Drawing.Point(186, 33);
             this.button60.Name = "button60";
             this.button60.Size = new System.Drawing.Size(23, 12);
             this.button60.TabIndex = 107;
@@ -5643,7 +5643,7 @@ namespace FNAF_Engine_Reborn
             this.button59.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button59.FlatAppearance.BorderSize = 0;
             this.button59.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button59.Location = new System.Drawing.Point(71, 52);
+            this.button59.Location = new System.Drawing.Point(186, 52);
             this.button59.Name = "button59";
             this.button59.Size = new System.Drawing.Size(565, 291);
             this.button59.TabIndex = 99;
@@ -5655,7 +5655,7 @@ namespace FNAF_Engine_Reborn
             this.button61.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button61.FlatAppearance.BorderSize = 0;
             this.button61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button61.Location = new System.Drawing.Point(613, 25);
+            this.button61.Location = new System.Drawing.Point(728, 25);
             this.button61.Name = "button61";
             this.button61.Size = new System.Drawing.Size(23, 24);
             this.button61.TabIndex = 106;
@@ -5667,7 +5667,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.comboBox43.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox43.FormattingEnabled = true;
-            this.comboBox43.Location = new System.Drawing.Point(96, 25);
+            this.comboBox43.Location = new System.Drawing.Point(211, 25);
             this.comboBox43.Name = "comboBox43";
             this.comboBox43.Size = new System.Drawing.Size(514, 23);
             this.comboBox43.TabIndex = 105;
@@ -5694,7 +5694,7 @@ namespace FNAF_Engine_Reborn
             this.cutsceneMoment.Controls.Add(this.label113);
             this.cutsceneMoment.Controls.Add(this.label111);
             this.cutsceneMoment.Controls.Add(this.label109);
-            this.cutsceneMoment.Location = new System.Drawing.Point(8, 62);
+            this.cutsceneMoment.Location = new System.Drawing.Point(8, 61);
             this.cutsceneMoment.Name = "cutsceneMoment";
             this.cutsceneMoment.Size = new System.Drawing.Size(1009, 635);
             this.cutsceneMoment.TabIndex = 105;
@@ -5928,9 +5928,9 @@ namespace FNAF_Engine_Reborn
             this.cutsceneEditorPanel.Controls.Add(this.label103);
             this.cutsceneEditorPanel.Controls.Add(this.label104);
             this.cutsceneEditorPanel.Controls.Add(this.label107);
-            this.cutsceneEditorPanel.Location = new System.Drawing.Point(194, 61);
+            this.cutsceneEditorPanel.Location = new System.Drawing.Point(9, 61);
             this.cutsceneEditorPanel.Name = "cutsceneEditorPanel";
-            this.cutsceneEditorPanel.Size = new System.Drawing.Size(766, 644);
+            this.cutsceneEditorPanel.Size = new System.Drawing.Size(947, 644);
             this.cutsceneEditorPanel.TabIndex = 104;
             this.cutsceneEditorPanel.Visible = false;
             // 
@@ -5938,7 +5938,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.SystemColors.Control;
-            this.label18.Location = new System.Drawing.Point(635, 146);
+            this.label18.Location = new System.Drawing.Point(764, 146);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(115, 15);
             this.label18.TabIndex = 122;
@@ -5948,7 +5948,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox24.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox24.Location = new System.Drawing.Point(635, 119);
+            this.textBox24.Location = new System.Drawing.Point(764, 119);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(116, 23);
             this.textBox24.TabIndex = 121;
@@ -5960,7 +5960,7 @@ namespace FNAF_Engine_Reborn
             this.button117.FlatAppearance.BorderSize = 0;
             this.button117.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button117.ForeColor = System.Drawing.SystemColors.Control;
-            this.button117.Location = new System.Drawing.Point(635, 87);
+            this.button117.Location = new System.Drawing.Point(764, 87);
             this.button117.Name = "button117";
             this.button117.Size = new System.Drawing.Size(117, 29);
             this.button117.TabIndex = 120;
@@ -5971,7 +5971,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(632, 70);
+            this.label14.Location = new System.Drawing.Point(761, 70);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 15);
             this.label14.TabIndex = 119;
@@ -5984,7 +5984,7 @@ namespace FNAF_Engine_Reborn
             this.button83.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button83.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button83.ForeColor = System.Drawing.SystemColors.Control;
-            this.button83.Location = new System.Drawing.Point(105, 482);
+            this.button83.Location = new System.Drawing.Point(207, 482);
             this.button83.Name = "button83";
             this.button83.Size = new System.Drawing.Size(113, 56);
             this.button83.TabIndex = 118;
@@ -5998,7 +5998,7 @@ namespace FNAF_Engine_Reborn
             this.button82.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button82.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button82.ForeColor = System.Drawing.SystemColors.Control;
-            this.button82.Location = new System.Drawing.Point(105, 424);
+            this.button82.Location = new System.Drawing.Point(207, 424);
             this.button82.Name = "button82";
             this.button82.Size = new System.Drawing.Size(114, 55);
             this.button82.TabIndex = 117;
@@ -6012,7 +6012,7 @@ namespace FNAF_Engine_Reborn
             this.button78.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button78.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button78.ForeColor = System.Drawing.SystemColors.Control;
-            this.button78.Location = new System.Drawing.Point(105, 392);
+            this.button78.Location = new System.Drawing.Point(207, 392);
             this.button78.Name = "button78";
             this.button78.Size = new System.Drawing.Size(114, 29);
             this.button78.TabIndex = 115;
@@ -6023,7 +6023,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label106.AutoSize = true;
             this.label106.ForeColor = System.Drawing.SystemColors.Control;
-            this.label106.Location = new System.Drawing.Point(191, 372);
+            this.label106.Location = new System.Drawing.Point(293, 372);
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(86, 15);
             this.label106.TabIndex = 114;
@@ -6033,7 +6033,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label105.AutoSize = true;
             this.label105.ForeColor = System.Drawing.SystemColors.Control;
-            this.label105.Location = new System.Drawing.Point(517, 374);
+            this.label105.Location = new System.Drawing.Point(619, 374);
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(56, 15);
             this.label105.TabIndex = 113;
@@ -6043,7 +6043,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox13.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox13.Location = new System.Drawing.Point(422, 593);
+            this.textBox13.Location = new System.Drawing.Point(524, 593);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(116, 23);
             this.textBox13.TabIndex = 112;
@@ -6055,7 +6055,7 @@ namespace FNAF_Engine_Reborn
             this.button81.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button81.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button81.ForeColor = System.Drawing.SystemColors.Control;
-            this.button81.Location = new System.Drawing.Point(302, 592);
+            this.button81.Location = new System.Drawing.Point(404, 592);
             this.button81.Name = "button81";
             this.button81.Size = new System.Drawing.Size(114, 29);
             this.button81.TabIndex = 111;
@@ -6066,7 +6066,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox12.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox12.Location = new System.Drawing.Point(422, 563);
+            this.textBox12.Location = new System.Drawing.Point(524, 563);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(116, 23);
             this.textBox12.TabIndex = 110;
@@ -6078,7 +6078,7 @@ namespace FNAF_Engine_Reborn
             this.button80.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button80.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button80.ForeColor = System.Drawing.SystemColors.Control;
-            this.button80.Location = new System.Drawing.Point(302, 560);
+            this.button80.Location = new System.Drawing.Point(404, 560);
             this.button80.Name = "button80";
             this.button80.Size = new System.Drawing.Size(114, 29);
             this.button80.TabIndex = 109;
@@ -6089,7 +6089,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox10.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox10.Location = new System.Drawing.Point(421, 532);
+            this.textBox10.Location = new System.Drawing.Point(523, 532);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(116, 23);
             this.textBox10.TabIndex = 108;
@@ -6101,7 +6101,7 @@ namespace FNAF_Engine_Reborn
             this.button76.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button76.Font = new System.Drawing.Font("Digital-7", 12.5F);
             this.button76.ForeColor = System.Drawing.SystemColors.Control;
-            this.button76.Location = new System.Drawing.Point(302, 528);
+            this.button76.Location = new System.Drawing.Point(404, 528);
             this.button76.Name = "button76";
             this.button76.Size = new System.Drawing.Size(114, 29);
             this.button76.TabIndex = 107;
@@ -6112,7 +6112,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox11.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox11.Location = new System.Drawing.Point(421, 503);
+            this.textBox11.Location = new System.Drawing.Point(523, 503);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(116, 23);
             this.textBox11.TabIndex = 106;
@@ -6124,7 +6124,7 @@ namespace FNAF_Engine_Reborn
             this.button79.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button79.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button79.ForeColor = System.Drawing.SystemColors.Control;
-            this.button79.Location = new System.Drawing.Point(302, 497);
+            this.button79.Location = new System.Drawing.Point(404, 497);
             this.button79.Name = "button79";
             this.button79.Size = new System.Drawing.Size(114, 29);
             this.button79.TabIndex = 105;
@@ -6135,7 +6135,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox9.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox9.Location = new System.Drawing.Point(421, 469);
+            this.textBox9.Location = new System.Drawing.Point(523, 469);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(116, 23);
             this.textBox9.TabIndex = 104;
@@ -6147,7 +6147,7 @@ namespace FNAF_Engine_Reborn
             this.button74.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button74.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button74.ForeColor = System.Drawing.SystemColors.Control;
-            this.button74.Location = new System.Drawing.Point(302, 465);
+            this.button74.Location = new System.Drawing.Point(404, 465);
             this.button74.Name = "button74";
             this.button74.Size = new System.Drawing.Size(114, 29);
             this.button74.TabIndex = 103;
@@ -6158,7 +6158,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label102.AutoSize = true;
             this.label102.ForeColor = System.Drawing.SystemColors.Control;
-            this.label102.Location = new System.Drawing.Point(695, 373);
+            this.label102.Location = new System.Drawing.Point(797, 373);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(47, 15);
             this.label102.TabIndex = 100;
@@ -6168,7 +6168,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.textBox8.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox8.Location = new System.Drawing.Point(421, 428);
+            this.textBox8.Location = new System.Drawing.Point(523, 428);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(116, 23);
             this.textBox8.TabIndex = 98;
@@ -6180,7 +6180,7 @@ namespace FNAF_Engine_Reborn
             this.button77.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button77.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button77.ForeColor = System.Drawing.SystemColors.Control;
-            this.button77.Location = new System.Drawing.Point(302, 410);
+            this.button77.Location = new System.Drawing.Point(404, 410);
             this.button77.Name = "button77";
             this.button77.Size = new System.Drawing.Size(114, 53);
             this.button77.TabIndex = 97;
@@ -6194,7 +6194,7 @@ namespace FNAF_Engine_Reborn
             this.button71.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button71.FlatAppearance.BorderSize = 0;
             this.button71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button71.Location = new System.Drawing.Point(91, 70);
+            this.button71.Location = new System.Drawing.Point(220, 70);
             this.button71.Name = "button71";
             this.button71.Size = new System.Drawing.Size(535, 298);
             this.button71.TabIndex = 79;
@@ -6206,7 +6206,7 @@ namespace FNAF_Engine_Reborn
             this.button73.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button73.FlatAppearance.BorderSize = 0;
             this.button73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button73.Location = new System.Drawing.Point(456, 47);
+            this.button73.Location = new System.Drawing.Point(585, 47);
             this.button73.Name = "button73";
             this.button73.Size = new System.Drawing.Size(23, 13);
             this.button73.TabIndex = 94;
@@ -6218,7 +6218,7 @@ namespace FNAF_Engine_Reborn
             this.button72.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button72.FlatAppearance.BorderSize = 0;
             this.button72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button72.Location = new System.Drawing.Point(213, 41);
+            this.button72.Location = new System.Drawing.Point(342, 41);
             this.button72.Name = "button72";
             this.button72.Size = new System.Drawing.Size(23, 24);
             this.button72.TabIndex = 93;
@@ -6231,7 +6231,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox44.Font = new System.Drawing.Font("Digital-7", 15F);
             this.comboBox44.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox44.FormattingEnabled = true;
-            this.comboBox44.Location = new System.Drawing.Point(251, 40);
+            this.comboBox44.Location = new System.Drawing.Point(380, 40);
             this.comboBox44.Name = "comboBox44";
             this.comboBox44.Size = new System.Drawing.Size(193, 29);
             this.comboBox44.TabIndex = 92;
@@ -6244,7 +6244,7 @@ namespace FNAF_Engine_Reborn
             this.button70.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button70.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button70.ForeColor = System.Drawing.SystemColors.Control;
-            this.button70.Location = new System.Drawing.Point(302, 376);
+            this.button70.Location = new System.Drawing.Point(404, 376);
             this.button70.Name = "button70";
             this.button70.Size = new System.Drawing.Size(114, 29);
             this.button70.TabIndex = 78;
@@ -6258,7 +6258,7 @@ namespace FNAF_Engine_Reborn
             this.button69.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button69.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button69.ForeColor = System.Drawing.SystemColors.Control;
-            this.button69.Location = new System.Drawing.Point(593, 423);
+            this.button69.Location = new System.Drawing.Point(695, 423);
             this.button69.Name = "button69";
             this.button69.Size = new System.Drawing.Size(147, 29);
             this.button69.TabIndex = 77;
@@ -6272,7 +6272,7 @@ namespace FNAF_Engine_Reborn
             this.button68.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button68.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button68.ForeColor = System.Drawing.SystemColors.Control;
-            this.button68.Location = new System.Drawing.Point(594, 391);
+            this.button68.Location = new System.Drawing.Point(696, 391);
             this.button68.Name = "button68";
             this.button68.Size = new System.Drawing.Size(147, 29);
             this.button68.TabIndex = 76;
@@ -6283,7 +6283,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label103.ForeColor = System.Drawing.SystemColors.Control;
             this.label103.Image = global::FNAF_Engine_Reborn.Properties.Resources.nicePath;
-            this.label103.Location = new System.Drawing.Point(461, 334);
+            this.label103.Location = new System.Drawing.Point(563, 334);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(126, 300);
             this.label103.TabIndex = 101;
@@ -6292,7 +6292,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label104.ForeColor = System.Drawing.SystemColors.Control;
             this.label104.Image = global::FNAF_Engine_Reborn.Properties.Resources.nicePath;
-            this.label104.Location = new System.Drawing.Point(167, 343);
+            this.label104.Location = new System.Drawing.Point(269, 343);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(126, 300);
             this.label104.TabIndex = 102;
@@ -6301,7 +6301,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label107.ForeColor = System.Drawing.SystemColors.Control;
             this.label107.Image = global::FNAF_Engine_Reborn.Properties.Resources.nicePath;
-            this.label107.Location = new System.Drawing.Point(-21, 330);
+            this.label107.Location = new System.Drawing.Point(81, 330);
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(126, 300);
             this.label107.TabIndex = 116;
@@ -6809,22 +6809,12 @@ namespace FNAF_Engine_Reborn
             // 
             this.REBORNtitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.REBORNtitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.REBORNtitle.Image = ((System.Drawing.Image)(resources.GetObject("REBORNtitle.Image")));
-            this.REBORNtitle.Location = new System.Drawing.Point(7, 0);
+            this.REBORNtitle.Image = global::FNAF_Engine_Reborn.Properties.Resources.Sunset_Creator;
+            this.REBORNtitle.Location = new System.Drawing.Point(7, 1);
             this.REBORNtitle.Name = "REBORNtitle";
-            this.REBORNtitle.Size = new System.Drawing.Size(945, 65);
+            this.REBORNtitle.Size = new System.Drawing.Size(420, 60);
             this.REBORNtitle.TabIndex = 7;
-            // 
-            // label108
-            // 
-            this.label108.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label108.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label108.Image = ((System.Drawing.Image)(resources.GetObject("label108.Image")));
-            this.label108.Location = new System.Drawing.Point(880, 1);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(75, 64);
-            this.label108.TabIndex = 106;
-            this.label108.Click += new System.EventHandler(this.label108_Click);
+            this.REBORNtitle.Click += new System.EventHandler(this.REBORNtitle_Click);
             // 
             // template
             // 
@@ -6837,9 +6827,9 @@ namespace FNAF_Engine_Reborn
             this.template.Controls.Add(this.button105);
             this.template.Controls.Add(this.button106);
             this.template.Controls.Add(this.comboBox61);
-            this.template.Location = new System.Drawing.Point(194, 65);
+            this.template.Location = new System.Drawing.Point(8, 61);
             this.template.Name = "template";
-            this.template.Size = new System.Drawing.Size(766, 638);
+            this.template.Size = new System.Drawing.Size(948, 638);
             this.template.TabIndex = 122;
             this.template.Visible = false;
             // 
@@ -6948,9 +6938,9 @@ namespace FNAF_Engine_Reborn
             this.staticeffecteditor.Controls.Add(this.DeleteFrame_StaticEffectEditor);
             this.staticeffecteditor.Controls.Add(this.AddFrame_StaticEffectEditor);
             this.staticeffecteditor.Controls.Add(this.AnimationList_StaticEffectEditor);
-            this.staticeffecteditor.Location = new System.Drawing.Point(188, 61);
+            this.staticeffecteditor.Location = new System.Drawing.Point(8, 61);
             this.staticeffecteditor.Name = "staticeffecteditor";
-            this.staticeffecteditor.Size = new System.Drawing.Size(771, 638);
+            this.staticeffecteditor.Size = new System.Drawing.Size(948, 638);
             this.staticeffecteditor.TabIndex = 123;
             this.staticeffecteditor.Visible = false;
             this.staticeffecteditor.VisibleChanged += new System.EventHandler(this.staticeffecteditor_VisibleChanged);
@@ -6975,7 +6965,7 @@ namespace FNAF_Engine_Reborn
             this.StaticEffectEditor_FrameList.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.StaticEffectEditor_FrameList.FlatAppearance.BorderSize = 0;
             this.StaticEffectEditor_FrameList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StaticEffectEditor_FrameList.Location = new System.Drawing.Point(327, 388);
+            this.StaticEffectEditor_FrameList.Location = new System.Drawing.Point(459, 388);
             this.StaticEffectEditor_FrameList.Name = "StaticEffectEditor_FrameList";
             this.StaticEffectEditor_FrameList.Size = new System.Drawing.Size(161, 223);
             this.StaticEffectEditor_FrameList.TabIndex = 127;
@@ -6986,7 +6976,7 @@ namespace FNAF_Engine_Reborn
             this.DeleteFrameInfo_StaticEffectEditor.AutoSize = true;
             this.DeleteFrameInfo_StaticEffectEditor.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.DeleteFrameInfo_StaticEffectEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.DeleteFrameInfo_StaticEffectEditor.Location = new System.Drawing.Point(222, 391);
+            this.DeleteFrameInfo_StaticEffectEditor.Location = new System.Drawing.Point(354, 391);
             this.DeleteFrameInfo_StaticEffectEditor.Name = "DeleteFrameInfo_StaticEffectEditor";
             this.DeleteFrameInfo_StaticEffectEditor.Size = new System.Drawing.Size(74, 13);
             this.DeleteFrameInfo_StaticEffectEditor.TabIndex = 126;
@@ -6997,7 +6987,7 @@ namespace FNAF_Engine_Reborn
             this.StaticEffectEditor_addFrameInfo.AutoSize = true;
             this.StaticEffectEditor_addFrameInfo.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.StaticEffectEditor_addFrameInfo.ForeColor = System.Drawing.SystemColors.Control;
-            this.StaticEffectEditor_addFrameInfo.Location = new System.Drawing.Point(518, 391);
+            this.StaticEffectEditor_addFrameInfo.Location = new System.Drawing.Point(650, 391);
             this.StaticEffectEditor_addFrameInfo.Name = "StaticEffectEditor_addFrameInfo";
             this.StaticEffectEditor_addFrameInfo.Size = new System.Drawing.Size(62, 13);
             this.StaticEffectEditor_addFrameInfo.TabIndex = 125;
@@ -7009,7 +6999,7 @@ namespace FNAF_Engine_Reborn
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.textBox20);
             this.panel7.Controls.Add(this.button112);
-            this.panel7.Location = new System.Drawing.Point(450, 169);
+            this.panel7.Location = new System.Drawing.Point(661, 44);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(273, 119);
             this.panel7.TabIndex = 124;
@@ -7044,7 +7034,7 @@ namespace FNAF_Engine_Reborn
             this.button110.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button110.FlatAppearance.BorderSize = 0;
             this.button110.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button110.Location = new System.Drawing.Point(654, 22);
+            this.button110.Location = new System.Drawing.Point(762, 22);
             this.button110.Name = "button110";
             this.button110.Size = new System.Drawing.Size(23, 12);
             this.button110.TabIndex = 112;
@@ -7057,7 +7047,7 @@ namespace FNAF_Engine_Reborn
             this.button111.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button111.FlatAppearance.BorderSize = 0;
             this.button111.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button111.Location = new System.Drawing.Point(625, 13);
+            this.button111.Location = new System.Drawing.Point(731, 13);
             this.button111.Name = "button111";
             this.button111.Size = new System.Drawing.Size(23, 24);
             this.button111.TabIndex = 111;
@@ -7069,9 +7059,9 @@ namespace FNAF_Engine_Reborn
             this.comboBox57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.comboBox57.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox57.FormattingEnabled = true;
-            this.comboBox57.Location = new System.Drawing.Point(96, 13);
+            this.comboBox57.Location = new System.Drawing.Point(203, 14);
             this.comboBox57.Name = "comboBox57";
-            this.comboBox57.Size = new System.Drawing.Size(527, 23);
+            this.comboBox57.Size = new System.Drawing.Size(522, 23);
             this.comboBox57.TabIndex = 110;
             this.comboBox57.Text = "Static Effects";
             // 
@@ -7082,7 +7072,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox25.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox25.Font = new System.Drawing.Font("Digital-7", 15F);
             this.checkBox25.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkBox25.Location = new System.Drawing.Point(88, 386);
+            this.checkBox25.Location = new System.Drawing.Point(220, 386);
             this.checkBox25.Name = "checkBox25";
             this.checkBox25.Size = new System.Drawing.Size(139, 25);
             this.checkBox25.TabIndex = 109;
@@ -7095,7 +7085,7 @@ namespace FNAF_Engine_Reborn
             this.FPS_Info_StaticEffectEditor.AutoSize = true;
             this.FPS_Info_StaticEffectEditor.Font = new System.Drawing.Font("Digital-7", 15F);
             this.FPS_Info_StaticEffectEditor.ForeColor = System.Drawing.SystemColors.Control;
-            this.FPS_Info_StaticEffectEditor.Location = new System.Drawing.Point(88, 443);
+            this.FPS_Info_StaticEffectEditor.Location = new System.Drawing.Point(220, 443);
             this.FPS_Info_StaticEffectEditor.Name = "FPS_Info_StaticEffectEditor";
             this.FPS_Info_StaticEffectEditor.Size = new System.Drawing.Size(40, 21);
             this.FPS_Info_StaticEffectEditor.TabIndex = 108;
@@ -7106,7 +7096,7 @@ namespace FNAF_Engine_Reborn
             this.FPS_StaticEffectEditor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.FPS_StaticEffectEditor.Font = new System.Drawing.Font("Digital-7", 15F);
             this.FPS_StaticEffectEditor.ForeColor = System.Drawing.SystemColors.Window;
-            this.FPS_StaticEffectEditor.Location = new System.Drawing.Point(127, 441);
+            this.FPS_StaticEffectEditor.Location = new System.Drawing.Point(259, 441);
             this.FPS_StaticEffectEditor.Name = "FPS_StaticEffectEditor";
             this.FPS_StaticEffectEditor.Size = new System.Drawing.Size(100, 27);
             this.FPS_StaticEffectEditor.TabIndex = 107;
@@ -7119,7 +7109,7 @@ namespace FNAF_Engine_Reborn
             this.button103.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button103.FlatAppearance.BorderSize = 0;
             this.button103.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button103.Location = new System.Drawing.Point(96, 41);
+            this.button103.Location = new System.Drawing.Point(203, 41);
             this.button103.Name = "button103";
             this.button103.Size = new System.Drawing.Size(581, 342);
             this.button103.TabIndex = 106;
@@ -7142,7 +7132,7 @@ namespace FNAF_Engine_Reborn
             this.DeleteFrame_StaticEffectEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeleteFrame_StaticEffectEditor.FlatAppearance.BorderSize = 0;
             this.DeleteFrame_StaticEffectEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteFrame_StaticEffectEditor.Location = new System.Drawing.Point(298, 394);
+            this.DeleteFrame_StaticEffectEditor.Location = new System.Drawing.Point(430, 394);
             this.DeleteFrame_StaticEffectEditor.Name = "DeleteFrame_StaticEffectEditor";
             this.DeleteFrame_StaticEffectEditor.Size = new System.Drawing.Size(23, 12);
             this.DeleteFrame_StaticEffectEditor.TabIndex = 102;
@@ -7154,7 +7144,7 @@ namespace FNAF_Engine_Reborn
             this.AddFrame_StaticEffectEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddFrame_StaticEffectEditor.FlatAppearance.BorderSize = 0;
             this.AddFrame_StaticEffectEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddFrame_StaticEffectEditor.Location = new System.Drawing.Point(492, 387);
+            this.AddFrame_StaticEffectEditor.Location = new System.Drawing.Point(624, 387);
             this.AddFrame_StaticEffectEditor.Name = "AddFrame_StaticEffectEditor";
             this.AddFrame_StaticEffectEditor.Size = new System.Drawing.Size(23, 24);
             this.AddFrame_StaticEffectEditor.TabIndex = 101;
@@ -7166,7 +7156,7 @@ namespace FNAF_Engine_Reborn
             this.AnimationList_StaticEffectEditor.Font = new System.Drawing.Font("Digital-7", 15F);
             this.AnimationList_StaticEffectEditor.ForeColor = System.Drawing.SystemColors.Window;
             this.AnimationList_StaticEffectEditor.FormattingEnabled = true;
-            this.AnimationList_StaticEffectEditor.Location = new System.Drawing.Point(87, 410);
+            this.AnimationList_StaticEffectEditor.Location = new System.Drawing.Point(219, 410);
             this.AnimationList_StaticEffectEditor.Name = "AnimationList_StaticEffectEditor";
             this.AnimationList_StaticEffectEditor.Size = new System.Drawing.Size(140, 29);
             this.AnimationList_StaticEffectEditor.TabIndex = 11;
@@ -7179,9 +7169,9 @@ namespace FNAF_Engine_Reborn
             this.GameDebugMenu.Controls.Add(this.DataValuesFileLabel);
             this.GameDebugMenu.Controls.Add(this.label35);
             this.GameDebugMenu.Controls.Add(this.button17);
-            this.GameDebugMenu.Location = new System.Drawing.Point(196, 65);
+            this.GameDebugMenu.Location = new System.Drawing.Point(8, 61);
             this.GameDebugMenu.Name = "GameDebugMenu";
-            this.GameDebugMenu.Size = new System.Drawing.Size(766, 638);
+            this.GameDebugMenu.Size = new System.Drawing.Size(947, 638);
             this.GameDebugMenu.TabIndex = 123;
             this.GameDebugMenu.Visible = false;
             this.GameDebugMenu.VisibleChanged += new System.EventHandler(this.GameDebugMenu_VisibleChanged);
@@ -7219,6 +7209,17 @@ namespace FNAF_Engine_Reborn
             this.button17.TabIndex = 104;
             this.button17.UseVisualStyleBackColor = true;
             // 
+            // label108
+            // 
+            this.label108.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.label108.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label108.Image = ((System.Drawing.Image)(resources.GetObject("label108.Image")));
+            this.label108.Location = new System.Drawing.Point(880, 1);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(75, 59);
+            this.label108.TabIndex = 106;
+            this.label108.Click += new System.EventHandler(this.label108_Click);
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7226,26 +7227,26 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
-            this.Controls.Add(this.button38);
-            this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.label108);
+            this.Controls.Add(this.allEditorsPNL);
+            this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
+            this.Controls.Add(this.GameDebugMenu);
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
-            this.Controls.Add(this.GameDebugMenu);
             this.Controls.Add(this.template);
             this.Controls.Add(this.officeEditorPanel);
-            this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
+            this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.menuEditorPanel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7257,7 +7258,6 @@ namespace FNAF_Engine_Reborn
             this.Load += new System.EventHandler(this.reborn_Load);
             this.Click += new System.EventHandler(this.reborn_Click);
             this.allEditorsPNL.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.animatronicEditorPNL2.ResumeLayout(false);
             this.animatronicEditorPNL2.PerformLayout();
@@ -7333,7 +7333,6 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Panel buildSettingsPanelMoment;
         public System.Windows.Forms.Panel menu;
         public System.Windows.Forms.Panel allEditorsPNL;
-        public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Button button38;
         public System.Windows.Forms.Label REBORNtitle;
         public System.Windows.Forms.CheckBox checkBox13;
@@ -7598,7 +7597,6 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Label label164;
         public System.Windows.Forms.Label label165;
         public System.Windows.Forms.Label label166;
-        public System.Windows.Forms.Label label108;
         public System.Windows.Forms.Button button58;
         public System.Windows.Forms.Button button95;
         public System.Windows.Forms.Label label69;
@@ -7855,5 +7853,7 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.GroupBox Code_MenuEditor_GroupBox;
         private System.Windows.Forms.Button button28;
+        public System.Windows.Forms.Label label108;
+        public System.Windows.Forms.Label label82;
     }
 }

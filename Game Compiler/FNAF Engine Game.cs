@@ -10,6 +10,7 @@ namespace FNAF_Engine_Reborn
     {
         private readonly reborn reborn;
         private string project;
+        int curNight;
         int time = 0;
 
         public FNAF_Engine_Game(reborn reborn)
@@ -19,20 +20,18 @@ namespace FNAF_Engine_Reborn
             InitializeComponent();
         }
 
-        private void FNAF_Engine_Game_VisibleChanged(object sender, EventArgs e)
+        private async void FNAF_Engine_Game_VisibleChanged(object sender, EventArgs e)
         {
-            //while (true)
-            //{
-            //    await Task.Delay(5000);
-            //    if (Controls.ContainsKey("Main"))
-            //    {
-            //        Console.WriteLine("Main");
-            //    }
-            //}
+            while (true)
+            {
+                await Task.Delay(1);
+                curNight = Convert.ToInt32(File.ReadAllText(project + "/data.txt").Split(':')[1].Split(',')[0]);
+            }
         }
 
         private void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
         {
+            this.DoubleBuffered = true;
             project = reborn.projecto;
             Load_Game();
         }
@@ -49,7 +48,7 @@ namespace FNAF_Engine_Reborn
             {
                 string MenuName = File.ReadAllText(Menu + "/name.txt");
 
-                Panel panel = new Panel
+                Panel menu_panel = new Panel
                 {
                     Size = Size,
                     Name = MenuName,
@@ -57,35 +56,48 @@ namespace FNAF_Engine_Reborn
                     BackColor = Color.Black
                 };
 
+                PictureBox bg = new PictureBox();
+
                 try
                 {
-                    panel.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{panel.Name}/bg.txt"));
+                    bg.Name = "background";
+                    bg.Size = menu_panel.Size;
+                    bg.BackgroundImageLayout = ImageLayout.Stretch;
+                    Console.WriteLine("thinging");
+                    bg.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
+                    bg.Image = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
+                    Console.WriteLine("thinged");
+                    bg.Visible = true;
                 }
                 catch (FileNotFoundException)
                 {
-                    Console.WriteLine("Failed to load image: Image file not found");
+                    Console.WriteLine($"Failed to load menu {menu_panel.Name} image: Image file not found");
                 }
                 catch (OutOfMemoryException)
                 {
-                    Console.WriteLine("Failed to load image: Bad file");
+                    Console.WriteLine($"Failed to load menu {menu_panel.Name} image: Bad file");
+                }
+                finally
+                {
+                    menu_panel.Controls.Add(bg);
                 }
 
-                panel.Visible = false;
+                menu_panel.Visible = false;
 
-                panel.Controls.Clear();
+                menu_panel.Controls.Clear();
 
-                this.Controls.Add(panel);
+                this.Controls.Add(menu_panel);
 
                 if (MenuName == "Main")
                 {
-                    panel.BringToFront();
+                    menu_panel.BringToFront();
                 }
 
-                panel.VisibleChanged += Menu_Load;
+                menu_panel.VisibleChanged += Menu_Load;
 
-                panel.Visible = true;
+                menu_panel.Visible = true;
 
-                panel.Paint += Menu_Start;
+                menu_panel.Paint += Menu_Start;
 
                 async void Menu_Start(object sender, EventArgs e)
                 {
@@ -112,7 +124,7 @@ namespace FNAF_Engine_Reborn
                     {
 
                     }
-                    while (panel.Visible == true)
+                    while (menu_panel.Visible == true)
                     {
                         await Task.Delay(1);
                         foreach (string instruction in instructions_onloop)
@@ -125,7 +137,7 @@ namespace FNAF_Engine_Reborn
                 void Menu_Load(object sender, EventArgs e)
                 {
                     string[] texts = Directory.GetDirectories(project + $"/menus/{MenuName}/text_elements/");
-                    panel.Controls.Clear();
+                    menu_panel.Controls.Clear();
                     foreach (string text in texts)
                     {
                         string args = File.ReadAllText(text + "/args.txt");
@@ -134,9 +146,9 @@ namespace FNAF_Engine_Reborn
 
                             Label Text = new Label();
 
-                            panel.Controls.Add(Text);
+                            menu_panel.Controls.Add(Text);
 
-                            panel.Show();
+                            menu_panel.Show();
 
                             string Path = text;
                             int X = Convert.ToInt32(File.ReadAllText(Path + "/x.txt"));
@@ -237,21 +249,7 @@ namespace FNAF_Engine_Reborn
                     if (instruction.StartsWith("goto:"))
                     {
                         await RunCode();
-                        string[] instructions = instruction.Split(':');
-                        foreach (Panel panel_menu in Controls)
-                        {
-                            if (panel_menu.Name == instructions[1]) // the menu inputted
-                            {
-                                panel_menu.BringToFront();
-                                panel_menu.BringToFront();
-                                panel_menu.BringToFront();
-                            }
-                            else
-                            {
-                                panel_menu.SendToBack();
-                                panel_menu.SendToBack();
-                            }
-                        }
+                        MF_GotoMenu(instruction.Split(':')[1]);
                     }
                     if (instruction == "newgame")
                     {
@@ -324,19 +322,16 @@ namespace FNAF_Engine_Reborn
                             {
                                 string variable_args = instructions[2].Split('%')[1];
                                 string variable = variable_args.Split('(', ')')[1];
-                                panel.Controls[instructions[1]].Text = File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable);
+                                menu_panel.Controls[instructions[1]].Text = File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable);
                             }
                             else
                             {
-                                panel.Controls[instructions[1]].Text = instructions[2]; //the text value
+                                menu_panel.Controls[instructions[1]].Text = instructions[2]; //the text value
                             }
                         }
                         catch (Exception)
                         {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to change text";
-                            Description.Text = "Failed to change text. Original code: " + instruction;
+                            MF_Error("Failed to change text", "Failed to change text. Original code: " + instruction);
                         }
                     }
 
@@ -346,14 +341,11 @@ namespace FNAF_Engine_Reborn
                         string[] instructions = instruction.Split(':');
                         try
                         {
-                            panel.Controls[instructions[1]].Font = new Font(instructions[2], Convert.ToInt32(instructions[3]) + 22); //the text value
+                            menu_panel.Controls[instructions[1]].Font = new Font(instructions[2], Convert.ToInt32(instructions[3]) + 22); //the text value
                         }
                         catch (Exception)
                         {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to change font";
-                            Description.Text = "Failed to change font. Original code: " + instruction;
+                            MF_Error("Failed to change font", "Failed to change text font. Original code: " + instruction);
                         }
                     }
 
@@ -366,14 +358,11 @@ namespace FNAF_Engine_Reborn
                         int argsB = Convert.ToInt32(instructions[2].Split(',')[2]);
                         try
                         {
-                            panel.Controls[instructions[1]].ForeColor = Color.FromArgb(argsR, argsG, argsB); //the text value
+                            menu_panel.Controls[instructions[1]].ForeColor = Color.FromArgb(argsR, argsG, argsB); //the text value
                         }
                         catch (Exception)
                         {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to change color";
-                            Description.Text = "Failed to change color. Original code: " + instruction;
+                            MF_Error("Failed to change color", "Failed to change text color. Original code: " + instruction);
                         }
                     }
 
@@ -383,14 +372,11 @@ namespace FNAF_Engine_Reborn
                         string[] instructions = instruction.Split(':');
                         try
                         {
-                            panel.Controls[instructions[1]].Hide(); //the text value
+                            menu_panel.Controls[instructions[1]].Hide(); //the text value
                         }
                         catch (Exception)
                         {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to hide text: " + panel.Controls[instructions[1]].Name;
-                            Description.Text = "Failed to hide text. Original code: " + instruction;
+                            MF_Error("Failed to hide text: " + menu_panel.Controls[instructions[1]].Name, "Failed to hide text. Original code: " + instruction);
                         }
                     }
 
@@ -400,14 +386,11 @@ namespace FNAF_Engine_Reborn
                         string[] instructions = instruction.Split(':');
                         try
                         {
-                            panel.Controls[instructions[1]].Show(); //the text value
+                            menu_panel.Controls[instructions[1]].Show(); //the text value
                         }
                         catch (Exception)
                         {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to show text: " + panel.Controls[instructions[1]].Name;
-                            Description.Text = "Failed to show text. Original code: " + instruction;
+                            MF_Error("Failed to show text: " + menu_panel.Controls[instructions[1]].Name, "Failed to show text. Original code: " + instruction);
                         }
                     }
 
@@ -421,10 +404,7 @@ namespace FNAF_Engine_Reborn
                         }
                         catch (Exception)
                         {
-                            Error.Show();
-                            Error.BringToFront();
-                            Title.Text = "Failed to change background: "; //+ panel.Controls[instructions[1]].Name;
-                            Description.Text = "Failed to change background. Original code: (SET BACKGROUND IS WIP, THIS ISNT A BUG!!!)";// + instruction;
+                            MF_Error("Failed to change background: ", "CHANGING BACKGROUND IS STILL WIP! THIS IS NOT A BUG");
                         }
                     }
 
@@ -503,6 +483,31 @@ namespace FNAF_Engine_Reborn
                 await Task.Delay(350);
                 Console.WriteLine("Failed to load office state image.");
             }
+        }
+        private void MF_GotoMenu(string Menu)
+        {
+            try
+            {
+                this.Controls[Menu].BringToFront();
+            }
+            catch (Exception)
+            {
+                MF_Error("Failed to show menu.", "Failed to show menu '" + Menu + "'!");
+            }
+        }
+        private void MF_Error(string Title, string Description)
+        {
+            Error.Show();
+            Error.BringToFront();
+            this.Title.Text = Title;
+            this.Description.Text = Description;
+        }
+        private void MF_NightEnd()
+        {
+            string txt = File.ReadAllText(project + "/data.txt");
+            txt.Replace("night:" + curNight, "night:" + curNight + 1);
+            File.WriteAllText(project + "data.txt", txt);
+            MF_GotoMenu("6AM");
         }
     }
 }

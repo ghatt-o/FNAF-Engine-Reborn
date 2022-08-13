@@ -70,7 +70,6 @@ namespace FNAF_Engine_Reborn
                         _ = Directory.CreateDirectory(projectPath + "/menus");
                         CreateMenu(projectPath, "GameOver");
                         CreateMenu(projectPath, "Main");
-                        CreateMenu(projectPath, "Warning");
                         CreateMenu(projectPath, "6AM");
                         _ = Directory.CreateDirectory(projectPath + "/scripts");
                         _ = Directory.CreateDirectory(projectPath + "/scripts/visual");

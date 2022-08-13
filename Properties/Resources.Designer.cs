@@ -83,6 +83,16 @@ namespace FNAF_Engine_Reborn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fnaf_loading {
+            get {
+                object obj = ResourceManager.GetObject("fnaf loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap funnyPlus {
             get {
                 object obj = ResourceManager.GetObject("funnyPlus", resourceCulture);
@@ -196,6 +206,26 @@ namespace FNAF_Engine_Reborn.Properties {
         internal static System.Drawing.Bitmap straight_vertical_line {
             get {
                 object obj = ResourceManager.GetObject("straight vertical line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sunset_Creator {
+            get {
+                object obj = ResourceManager.GetObject("Sunset_Creator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sunset_Creator_old {
+            get {
+                object obj = ResourceManager.GetObject("Sunset_Creator_old", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
