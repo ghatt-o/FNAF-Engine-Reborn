@@ -10,6 +10,8 @@ namespace FNAF_Engine_Reborn
     {
         private readonly reborn reborn;
         private string project;
+        bool inNight;
+        int CurrentHour;
         int curNight;
         int time = 0;
 
@@ -450,37 +452,65 @@ namespace FNAF_Engine_Reborn
                 await Task.Delay(2700);
                 nightLBL.Hide();
                 TwelveAM.Hide();
-                MF_ChangeOfficeState("Default");
-                await Task.Delay(1500);
-                Office.Show();
-                Office.BringToFront();
+                MF_OnNightStart();
             }
+        }
+        private async void MF_OnNightStart()
+        {
+            MF_ChangeOfficeState("Default");
+            await Task.Delay(1500);
+            Office.Show();
+            Office.BringToFront();
+            inNight = true;
+            while (inNight == true)
+            {
+                await Task.Delay(1);
+                MF_Update();
+            }
+        }
+        private async void MF_Update()
+        {
+            clock.Text = CurrentHour + " AM";
+            //time
+            int hours = Convert.ToInt32(File.ReadAllText(project + "/offices/default/office.txt").Split(',')[9].Split('=')[1]) * 1200;
+            while (inNight)
+            {
+                await Task.Delay(hours - hours + 1);
+                if (CurrentHour == 1)
+                {
+                    MF_OnNightEnd();
+                }
+                else
+                {
+                    CurrentHour -= 1;
+                }
+            }
+        }
+        private void MF_OnNightEnd()
+        {
+            inNight = false;
+            MF_NightEnd();
         }
         private void Office_Paint(object sender, EventArgs e)
         {
             MF_ChangeOfficeState("Default");
         }
-        private async void MF_ChangeOfficeState(string State)
+        private void MF_ChangeOfficeState(string State)
         {
             try
             {
                 Console.WriteLine("Changing office state image...");
-                await Task.Delay(50);
                 Console.WriteLine("");
                 Console.WriteLine("Loading image...");
                 Console.WriteLine("");
-                Office.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/offices/default/office_states/{State}/mainsprite.txt"));
-                await Task.Delay(50);
+                OfficeBackground.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/offices/default/office_states/{State}/mainsprite.txt"));
                 Console.WriteLine("Image loaded.");
                 Console.WriteLine("");
-                await Task.Delay(525);
                 Console.WriteLine("Successfully loaded office state image.");
-            }
+            }  
             catch (Exception)
             {
-                await Task.Delay(50);
                 Console.WriteLine("Default office state image not found!");
-                await Task.Delay(350);
                 Console.WriteLine("Failed to load office state image.");
             }
         }

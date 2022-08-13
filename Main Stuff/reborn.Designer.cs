@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.label124 = new System.Windows.Forms.Label();
@@ -562,6 +562,8 @@ namespace FNAF_Engine_Reborn
             this.label35 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
             this.label108 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.gamehourstextbox = new System.Windows.Forms.TextBox();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -1740,7 +1742,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox4.Font = new System.Drawing.Font("Digital-7", 15F);
             this.comboBox4.ForeColor = System.Drawing.SystemColors.Control;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(189, 8);
+            this.comboBox4.Location = new System.Drawing.Point(190, 8);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(140, 29);
             this.comboBox4.TabIndex = 1;
@@ -4012,11 +4014,11 @@ namespace FNAF_Engine_Reborn
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode1.Name = "Data Values";
-            treeNode1.Tag = "Data_Values_List";
-            treeNode1.Text = "Data Values";
+            treeNode2.Name = "Data Values";
+            treeNode2.Tag = "Data_Values_List";
+            treeNode2.Text = "Data Values";
             this.GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.GameManager_Variables_View.Size = new System.Drawing.Size(232, 339);
             this.GameManager_Variables_View.TabIndex = 162;
             this.GameManager_Variables_View.VisibleChanged += new System.EventHandler(this.GameManager_Variables_View_VisibleChanged);
@@ -4372,6 +4374,8 @@ namespace FNAF_Engine_Reborn
             // 
             this.officeEditorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.officeEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.officeEditorPanel.Controls.Add(this.label121);
+            this.officeEditorPanel.Controls.Add(this.gamehourstextbox);
             this.officeEditorPanel.Controls.Add(this.panel9);
             this.officeEditorPanel.Controls.Add(this.CreateInput_OfficeEditor);
             this.officeEditorPanel.Controls.Add(this.button29);
@@ -5333,7 +5337,7 @@ namespace FNAF_Engine_Reborn
             this.buildSettingsPanelMoment.Controls.Add(this.checkBox7);
             this.buildSettingsPanelMoment.Location = new System.Drawing.Point(8, 61);
             this.buildSettingsPanelMoment.Name = "buildSettingsPanelMoment";
-            this.buildSettingsPanelMoment.Size = new System.Drawing.Size(215, 268);
+            this.buildSettingsPanelMoment.Size = new System.Drawing.Size(218, 268);
             this.buildSettingsPanelMoment.TabIndex = 101;
             this.buildSettingsPanelMoment.Visible = false;
             this.buildSettingsPanelMoment.VisibleChanged += new System.EventHandler(this.buildSettingsPanelMoment_VisibleChanged);
@@ -5616,7 +5620,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -7220,6 +7224,28 @@ namespace FNAF_Engine_Reborn
             this.label108.TabIndex = 106;
             this.label108.Click += new System.EventHandler(this.label108_Click);
             // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label121.ForeColor = System.Drawing.SystemColors.Control;
+            this.label121.Location = new System.Drawing.Point(1, 1);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(197, 15);
+            this.label121.TabIndex = 132;
+            this.label121.Text = "How much hours will the night last?";
+            // 
+            // gamehourstextbox
+            // 
+            this.gamehourstextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.gamehourstextbox.ForeColor = System.Drawing.SystemColors.Window;
+            this.gamehourstextbox.Location = new System.Drawing.Point(3, 18);
+            this.gamehourstextbox.MaxLength = 242345;
+            this.gamehourstextbox.Name = "gamehourstextbox";
+            this.gamehourstextbox.Size = new System.Drawing.Size(167, 23);
+            this.gamehourstextbox.TabIndex = 131;
+            this.gamehourstextbox.TextChanged += new System.EventHandler(this.gamehourstextbox_TextChanged);
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7231,22 +7257,22 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.SoundEditorPanel);
-            this.Controls.Add(this.AssetManagerPanel);
-            this.Controls.Add(this.animatronicEditorPNL2);
-            this.Controls.Add(this.GameDebugMenu);
-            this.Controls.Add(this.ScriptEditorPanel);
-            this.Controls.Add(this.ExtensionsPanel);
-            this.Controls.Add(this.template);
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
-            this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.SoundEditorPanel);
+            this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.AssetManagerPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
+            this.Controls.Add(this.GameDebugMenu);
+            this.Controls.Add(this.ScriptEditorPanel);
+            this.Controls.Add(this.ExtensionsPanel);
+            this.Controls.Add(this.template);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7855,5 +7881,7 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Button button28;
         public System.Windows.Forms.Label label108;
         public System.Windows.Forms.Label label82;
+        public System.Windows.Forms.Label label121;
+        public System.Windows.Forms.TextBox gamehourstextbox;
     }
 }

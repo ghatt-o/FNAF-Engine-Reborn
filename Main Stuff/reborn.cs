@@ -1589,6 +1589,7 @@ namespace FNAF_Engine_Reborn
                     checkBox15.Checked = options[5] == "panorama=true";
                     checkBox24.Checked = options[6] == "perspective=true";
                     checkBox17.Checked = options[7] == "ucnstyle=true";
+                    gamehourstextbox.Text = options[9].Split('=')[1];
                     if (options[8] == "animatronic=")
                     {
 
@@ -2386,6 +2387,18 @@ namespace FNAF_Engine_Reborn
             REBORNtitle.Image = Properties.Resources.Sunset_Creator_old;
             await Task.Delay(30);
             REBORNtitle.Image = Properties.Resources.Sunset_Creator;
+        }
+
+        private void gamehourstextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (usableEngine == true)
+            {
+                string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
+                string[] options = optionstxt.Split(',');
+                options[9] = "hours=" + gamehourstextbox.Text;
+                string newoptions = string.Join(",", options);
+                File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+            }
         }
     }
 }

@@ -45,10 +45,14 @@ namespace FNAF_Engine_Reborn
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Invisible = new System.Windows.Forms.Label();
+            this.OfficeBackground = new System.Windows.Forms.PictureBox();
+            this.clock = new System.Windows.Forms.Label();
             this.Error.SuspendLayout();
             this.Loading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoadingIcon)).BeginInit();
+            this.Office.SuspendLayout();
             this.Night_Start.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OfficeBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // Error
@@ -108,10 +112,13 @@ namespace FNAF_Engine_Reborn
             // 
             this.Office.BackColor = System.Drawing.Color.Black;
             this.Office.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Office.Controls.Add(this.clock);
+            this.Office.Controls.Add(this.OfficeBackground);
             this.Office.Location = new System.Drawing.Point(0, 1);
             this.Office.Name = "Office";
             this.Office.Size = new System.Drawing.Size(1444, 920);
             this.Office.TabIndex = 2;
+            this.Office.Visible = false;
             // 
             // Night_Start
             // 
@@ -192,14 +199,31 @@ namespace FNAF_Engine_Reborn
             this.Invisible.Text = "_________________";
             this.Invisible.Visible = false;
             // 
+            // OfficeBackground
+            // 
+            this.OfficeBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OfficeBackground.Location = new System.Drawing.Point(0, 0);
+            this.OfficeBackground.Name = "OfficeBackground";
+            this.OfficeBackground.Size = new System.Drawing.Size(1444, 920);
+            this.OfficeBackground.TabIndex = 0;
+            this.OfficeBackground.TabStop = false;
+            // 
+            // clock
+            // 
+            this.clock.AutoSize = true;
+            this.clock.ForeColor = System.Drawing.SystemColors.Control;
+            this.clock.Location = new System.Drawing.Point(1354, 19);
+            this.clock.Name = "clock";
+            this.clock.Size = new System.Drawing.Size(22, 13);
+            this.clock.TabIndex = 1;
+            this.clock.Text = "Am";
+            // 
             // FNAF_Engine_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1444, 920);
-            //this.Controls.Add(this.Error);
-            //this.Controls.Add(this.Night_Start);
             this.Controls.Add(this.Office);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -213,8 +237,11 @@ namespace FNAF_Engine_Reborn
             this.Error.PerformLayout();
             this.Loading.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoadingIcon)).EndInit();
+            this.Office.ResumeLayout(false);
+            this.Office.PerformLayout();
             this.Night_Start.ResumeLayout(false);
             this.Night_Start.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OfficeBackground)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,5 +261,7 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Label label1;
         private Panel Loading;
         private PictureBox LoadingIcon;
+        private PictureBox OfficeBackground;
+        private Label clock;
     }
 }
