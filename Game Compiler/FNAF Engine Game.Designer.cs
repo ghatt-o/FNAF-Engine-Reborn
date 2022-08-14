@@ -225,6 +225,9 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1444, 920);
             this.Controls.Add(this.Office);
+            this.Controls.Add(this.Night_Start);
+            this.Controls.Add(this.Error);
+            this.Controls.Add(this.Loading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FNAF_Engine_Game";

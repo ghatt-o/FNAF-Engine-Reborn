@@ -31,11 +31,15 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
+        private async void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
         {
             this.DoubleBuffered = true;
             project = reborn.projecto;
             Load_Game();
+            await Task.Delay(500);
+
+            this.Controls["Main"].BringToFront();
+            Loading.Hide();
         }
         private void Load_Game()
         {
@@ -430,10 +434,6 @@ namespace FNAF_Engine_Reborn
                         RunScript(instruction);
                     }
                 }
-
-                await Task.Delay(500);
-
-                Loading.Hide();
             }
         }
 
@@ -462,6 +462,7 @@ namespace FNAF_Engine_Reborn
             Office.Show();
             Office.BringToFront();
             inNight = true;
+            CurrentHour = Convert.ToInt32(File.ReadAllText(project + "/offices/default/office.txt").Split(',')[9].Split('=')[1]);
             while (inNight == true)
             {
                 await Task.Delay(1);
@@ -475,7 +476,7 @@ namespace FNAF_Engine_Reborn
             int hours = Convert.ToInt32(File.ReadAllText(project + "/offices/default/office.txt").Split(',')[9].Split('=')[1]) * 1200;
             while (inNight)
             {
-                await Task.Delay(hours - hours + 1);
+                await Task.Delay(8000); //1.20 seconds
                 if (CurrentHour == 1)
                 {
                     MF_OnNightEnd();
@@ -507,7 +508,7 @@ namespace FNAF_Engine_Reborn
                 Console.WriteLine("Image loaded.");
                 Console.WriteLine("");
                 Console.WriteLine("Successfully loaded office state image.");
-            }  
+            }
             catch (Exception)
             {
                 Console.WriteLine("Default office state image not found!");
