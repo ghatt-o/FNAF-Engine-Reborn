@@ -1,7 +1,7 @@
 ﻿
 namespace FNAF_Engine_Reborn.Main_Stuff
 {
-    partial class CodeblockSelector
+    partial class MenuCodeblockSelector
     {
         /// <summary>
         /// Required designer variable.

@@ -2400,5 +2400,20 @@ namespace FNAF_Engine_Reborn
                 File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
             }
         }
+
+        private void click_Click(object sender, EventArgs e)
+        {
+            MenuEditor_CodeEditorClick.BringToFront();
+        }
+
+        private void hover_Click(object sender, EventArgs e)
+        {
+            MenuEditor_CodeEditorHover.BringToFront();
+        }
+
+        private void mousebuttonheld_Click(object sender, EventArgs e)
+        {
+            MenuEditor_CodeEditorHold.BringToFront();
+        }
     }
 }

@@ -10,6 +10,8 @@ namespace FNAF_Engine_Reborn
     {
         private readonly reborn reborn;
         private string project;
+        string curMenu;
+        bool open = true;
         bool inNight;
         int CurrentHour;
         int curNight;
@@ -47,7 +49,7 @@ namespace FNAF_Engine_Reborn
             Load_Menus();
         }
 
-        private async void Load_Menus()
+        private void Load_Menus()
         {
             string[] menus = Directory.GetDirectories(project + "/menus/");
             foreach (string Menu in menus)
@@ -71,9 +73,9 @@ namespace FNAF_Engine_Reborn
                     bg.BackgroundImageLayout = ImageLayout.Stretch;
                     Console.WriteLine("thinging");
                     bg.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
-                    bg.Image = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
                     Console.WriteLine("thinged");
                     bg.Visible = true;
+                    menu_panel.Controls.Add(bg);
                 }
                 catch (FileNotFoundException)
                 {
@@ -82,10 +84,6 @@ namespace FNAF_Engine_Reborn
                 catch (OutOfMemoryException)
                 {
                     Console.WriteLine($"Failed to load menu {menu_panel.Name} image: Bad file");
-                }
-                finally
-                {
-                    menu_panel.Controls.Add(bg);
                 }
 
                 menu_panel.Visible = false;
@@ -224,6 +222,8 @@ namespace FNAF_Engine_Reborn
                             Text.Name = ID;
 
                             Text.Click += Element_Click;
+                            Text.MouseEnter += Element_Hover;
+                            Text.MouseDown += Element_Hold;
 
                             void Element_Click(object object_sender, EventArgs event_args)
                             {
@@ -233,8 +233,25 @@ namespace FNAF_Engine_Reborn
                                     RunScript(instruction);
                                 }
                             }
+                            void Element_Hover(object object_sender, EventArgs event_args)
+                            {
+                                string[] functions = File.ReadAllLines(Path + "/functionshover.txt");
+                                foreach (string instruction in functions)
+                                {
+                                    RunScript(instruction);
+                                }
+                            }
+                            void Element_Hold(object object_sender, EventArgs event_args)
+                            {
+                                string[] functions = File.ReadAllLines(Path + "/functionshold.txt");
+                                foreach (string instruction in functions)
+                                {
+                                    RunScript(instruction);
+                                }
+                            }
                         }
                     }
+                    MF_OnEngineStart();
                 }
                 async void RunScript(string instruction)
                 {
@@ -252,11 +269,13 @@ namespace FNAF_Engine_Reborn
                             time = 0;
                         }
                     }
+
                     if (instruction.StartsWith("goto:"))
                     {
                         await RunCode();
                         MF_GotoMenu(instruction.Split(':')[1]);
                     }
+
                     if (instruction == "newgame")
                     {
                         await RunCode();
@@ -265,10 +284,23 @@ namespace FNAF_Engine_Reborn
                         Night_Start.BringToFront();
                         nightLBL.Text = "Night 1";
                     }
+
                     if (instruction == "continue")
                     {
                         await RunCode();
                         //todo
+                    }
+
+                    if (instruction.StartsWith("error:"))
+                    {
+                        await RunCode();
+                        MF_Error(instruction.Split(':')[1], instruction.Split(':')[2]);
+                    }
+
+                    if (instruction.StartsWith("popup:"))
+                    {
+                        await RunCode();
+                        MF_Popup(instruction.Split(':')[1]);
                     }
 
                     if (instruction.StartsWith("set_var:"))
@@ -278,7 +310,13 @@ namespace FNAF_Engine_Reborn
                         File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], instructions[2]);
                     }
 
-                    if (instruction.StartsWith("set_data:"))
+                    if (instruction == "break")
+                    {
+                        await RunCode();
+                        MF_Break();
+                    }
+
+                    if (instruction.StartsWith("set_data:")) // set_data:myfuckingvariable:1
                     {
                         await RunCode();
                         string[] instructions = instruction.Split(':');
@@ -293,7 +331,7 @@ namespace FNAF_Engine_Reborn
                         File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], Value.ToString());
                     }
 
-                    if (instruction.StartsWith("if("))
+                    if (instruction.StartsWith("if(")) // if(myfuckingvariable:1)[break]
                     {
                         await RunCode();
                         string[] instructions = instruction.Split(':', '[');
@@ -463,17 +501,25 @@ namespace FNAF_Engine_Reborn
             Office.BringToFront();
             inNight = true;
             CurrentHour = Convert.ToInt32(File.ReadAllText(project + "/offices/default/office.txt").Split(',')[9].Split('=')[1]);
-            while (inNight == true)
-            {
-                await Task.Delay(1);
-                MF_Update();
-            }
+            //while (inNight == true)
+            //{
+                //await Task.Delay(1);
+                MF_GameUpdate();
+            //}
         }
-        private async void MF_Update()
+        private async void MF_GameUpdate()
         {
-            clock.Text = CurrentHour + " AM";
+            //clock.Text = CurrentHour + " AM";
             //time
             int hours = Convert.ToInt32(File.ReadAllText(project + "/offices/default/office.txt").Split(',')[9].Split('=')[1]) * 1200;
+            try
+            {
+                string hour = File.ReadAllText(project + "/offices/default/office.txt").Split(',')[9].Split('=')[1];
+            }
+            catch(System.Reflection.TargetInvocationException)
+            {
+                MF_Error("Could not load the night hours in lenght.", "Did you leave the Hours box blank in [OFFICE EDITOR]?");
+            }
             while (inNight)
             {
                 await Task.Delay(8000); //1.20 seconds
@@ -487,6 +533,34 @@ namespace FNAF_Engine_Reborn
                 }
             }
         }
+        private void MF_Break()
+        {
+            inNight = false;
+            open = false;
+            MF_OnEngineEnd();
+            curMenu = "";
+            Error.Show();
+            Error.BringToFront();
+            this.Title.Text = "Operation cancelled.";
+            this.Description.Text = "Game has been terminated.";
+            this.Close();
+        }
+        private async void MF_OnEngineStart()
+        {
+            while (open == true)
+            {
+                await Task.Delay(1);
+                MF_OnEngineUpdate();
+            }
+        }
+        private void MF_OnEngineUpdate()
+        {
+            
+        }
+        private void MF_OnEngineEnd()
+        {
+
+        }
         private void MF_OnNightEnd()
         {
             inNight = false;
@@ -495,6 +569,10 @@ namespace FNAF_Engine_Reborn
         private void Office_Paint(object sender, EventArgs e)
         {
             MF_ChangeOfficeState("Default");
+        }
+        private void MF_Popup(string message)
+        {
+            MessageBox.Show(message, "Main:558 'MF_Popup' at line 560");
         }
         private void MF_ChangeOfficeState(string State)
         {
@@ -528,6 +606,7 @@ namespace FNAF_Engine_Reborn
         }
         private void MF_Error(string Title, string Description)
         {
+            MF_Break();
             Error.Show();
             Error.BringToFront();
             this.Title.Text = Title;

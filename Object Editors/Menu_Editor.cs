@@ -34,7 +34,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
             File.WriteAllText(NewPath + "/args.txt", "false");
             File.WriteAllText(NewPath + "/x.txt", "0");
             File.WriteAllText(NewPath + "/y.txt", "0");
-            File.WriteAllText(NewPath + "/Functions.txt", "");
+            File.WriteAllText(NewPath + "/functions.txt", "");
+            File.WriteAllText(NewPath + "/functionshover.txt", "");
+            File.WriteAllText(NewPath + "/functionshold.txt", "");
             File.WriteAllText(NewPath + "/color.txt", "255,255,255");
         }
         public void RewriteText(string Menu, TextElement TextElement)
@@ -47,7 +49,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
             File.WriteAllText(Path + "/args.txt", Convert.ToString(TextElement.args));
             File.WriteAllText(Path + "/x.txt", Convert.ToString(TextElement.X));
             File.WriteAllText(Path + "/y.txt", Convert.ToString(TextElement.Y));
-            File.WriteAllText(Path + "/Functions.txt", TextElement.Functions);
+            File.WriteAllText(Path + "/functions.txt", TextElement.Functions);
+            File.WriteAllText(Path + "/functionshover.txt", TextElement.FunctionsHover);
+            File.WriteAllText(Path + "/functionshold.txt", TextElement.FunctionsHold);
             File.WriteAllText(Path + "/color.txt", TextElement.Color.R.ToString() + "," + TextElement.Color.G.ToString() + "," + TextElement.Color.B.ToString());
         }
         public void AddText(string Menu, TextElement TextElement)
@@ -74,14 +78,46 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 reborn.Element_FontSize_MenuEditor.TextChanged += FontSizeChanged;
                 reborn.Element_Color_MenuEditor.TextChanged += ColorChanged;
                 reborn.Element_Font_MenuEditor.TextChanged += FontChanged;
-                reborn.MenuEditor_CodeEditor.TextChanged += CodeChanged;
-                void CodeChanged(object sender, EventArgs e)
+                reborn.MenuEditor_CodeEditorClick.TextChanged += CodeClickChanged;
+                reborn.MenuEditor_CodeEditorHover.TextChanged += CodeHoverChanged;
+                reborn.MenuEditor_CodeEditorHold.TextChanged += CodeHoldChanged;
+                void CodeClickChanged(object sender, EventArgs e)
                 {
                     try
                     {
                         if (reborn.Element_ID_MenuEditor.Text == Text.Name)
                         {
-                            TextElement.Functions = reborn.MenuEditor_CodeEditor.Text;
+                            TextElement.Functions = reborn.MenuEditor_CodeEditorClick.Text;
+                            RewriteText(Menu, TextElement);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                void CodeHoverChanged(object sender, EventArgs e)
+                {
+                    try
+                    {
+                        if (reborn.Element_ID_MenuEditor.Text == Text.Name)
+                        {
+                            TextElement.FunctionsHover = reborn.MenuEditor_CodeEditorClick.Text;
+                            RewriteText(Menu, TextElement);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                void CodeHoldChanged(object sender, EventArgs e)
+                {
+                    try
+                    {
+                        if (reborn.Element_ID_MenuEditor.Text == Text.Name)
+                        {
+                            TextElement.FunctionsHold = reborn.MenuEditor_CodeEditorClick.Text;
                             RewriteText(Menu, TextElement);
                         }
                     }
@@ -177,7 +213,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         reborn.Element_Text_MenuEditor.Text = TextElement.Text;
                         reborn.Element_FontSize_MenuEditor.Text = Convert.ToString(TextElement.FontSize);
                         reborn.Element_Color_MenuEditor.Text = TextElement.Color.R.ToString() + "," + TextElement.Color.G.ToString() + "," + TextElement.Color.B.ToString();
-                        reborn.MenuEditor_CodeEditor.Text = TextElement.Functions;
+                        reborn.MenuEditor_CodeEditorClick.Text = TextElement.Functions;
+                        reborn.MenuEditor_CodeEditorHover.Text = TextElement.FunctionsHover;
+                        reborn.MenuEditor_CodeEditorHold.Text = TextElement.FunctionsHold;
                     }
                     catch (Exception)
                     {

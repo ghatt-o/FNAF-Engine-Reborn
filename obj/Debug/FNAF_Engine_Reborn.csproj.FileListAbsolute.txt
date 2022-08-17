@@ -58,3 +58,5 @@ C:\Users\lily\Desktop\FNAF Engine Reborn\fer\obj\Debug\FNAF_Engine_Reborn.csproj
 C:\Users\lily\Desktop\FNAF Engine Reborn\fer\obj\Debug\FNAF_Engine_Reborn.csproj.CopyComplete
 C:\Users\lily\Desktop\FNAF Engine Reborn\fer\obj\Debug\FNAF_Engine_Reborn.exe
 C:\Users\lily\Desktop\FNAF Engine Reborn\fer\obj\Debug\FNAF_Engine_Reborn.pdb
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\obj\Debug\FNAF_Engine_Reborn.Sunset_Creator_Game.resources
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\obj\Debug\FNAF_Engine_Reborn.Main_Stuff.MenuCodeblockSelector.resources

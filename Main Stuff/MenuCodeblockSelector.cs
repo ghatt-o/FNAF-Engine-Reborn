@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace FNAF_Engine_Reborn.Main_Stuff
 {
-    public partial class CodeblockSelector : Form
+    public partial class MenuCodeblockSelector : Form
     {
         private string all = "";
         private readonly reborn reborn;
         public string Path;
-        public CodeblockSelector(reborn reborn)
+        public MenuCodeblockSelector(reborn reborn)
         {
             InitializeComponent();
             this.reborn = reborn;

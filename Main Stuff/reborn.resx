@@ -607,43 +607,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="label101.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
-        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
-        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
-        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
-        CgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="label141.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
-        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
-        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
-        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
-        CgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="label217.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
-        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
-        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
-        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
-        CgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="label140.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
-        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
-        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
-        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
-        CgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="label152.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
         CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
@@ -674,7 +638,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAo
-        CAAAAk1TRnQBSQFMAgEBAgEAAYgBAAGIAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CAAAAk1TRnQBSQFMAgEBAgEAAZgBAAGYAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -709,6 +673,45 @@
         AQ8EEAEAAxAgAAERBG0BEQr/AQAEEAIABRABAAMQIAABEQRtAREK/wEABBACDgUQAQADECAAAREEbQER
         Cv8BAAsQAQADECAAAREEbQERCv8BDgEABw4DDwEAAxAgAAERBG0BEQr/DBABAAMQIAABEQRtAREK/woQ
         BQABECAAEBEQECAAAUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEBBQABgBcAA/+BAAs=
+</value>
+  </data>
+  <data name="button56.Text" xml:space="preserve">
+    <value>lily has been forcing me violently to do this... explanation: this codeblock has the default text in it or you decompiled somehow, please someone do something i cant stand this anymore... -DIAMOND CHEF</value>
+  </data>
+  <data name="label101.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
+        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
+        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
+        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
+        CgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="label141.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
+        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
+        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
+        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
+        CgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="label140.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
+        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
+        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
+        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
+        CgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="label152.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAGIBAMAAADfXk3yAAAABGdBTUEAALGPC/xhBQAAAAZQTFRFIiIi
+        CAgIlihVoQAAAAlwSFlzAAAOvAAADrwBlbxySQAAAI1JREFUeNrtzDEBADAMwKBIqH+1E9EeO0AArU3n
+        lEqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVS
+        qVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUqlUKpVKpVKpVCqVSqVSqVQqlUqlUvlJWQ9n9RiByAGE
+        CgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="label62.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
