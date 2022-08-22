@@ -146,6 +146,7 @@
     <Compile Include="Game Compiler\Compiler.Designer.cs">
       <DependentUpon>Compiler.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object Editors\ImageElement.cs" />
     <Compile Include="Object Editors\TextElement.cs" />
     <Compile Include="UI\Deleteproject.cs">
       <SubType>Form</SubType>

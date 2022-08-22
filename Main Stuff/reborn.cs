@@ -17,7 +17,8 @@ namespace FNAF_Engine_Reborn
         public string Version = "pre-1.0.0";
         public string Build_Version = "pre-rf1.0.0.-1";
         public bool isopen = false;
-        internal bool usableEngine = true;
+        internal bool _0_2C = true;
+        public bool inScriptEditor;
         public string script;
         public bool editable;
 
@@ -232,11 +233,11 @@ namespace FNAF_Engine_Reborn
             //{
             //    if (File.ReadAllText("DO_NOT_MODIFY.txt") == "2QVZ-V2Q5-CS6Z-S8AY-4YE9-SDAQ-5AR3-GUSJ-PQDQ-UMZP-E7JH-6JLU")
             //    {
-            //        usableEngine = true;
+            //        _0_2C = true;
             //    }
             //    else
             //    {
-            //        usableEngine = false;
+            //        _0_2C = false;
             //    }
             //}
             label93.Text = "Version: " + Version;
@@ -287,7 +288,7 @@ namespace FNAF_Engine_Reborn
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 File.WriteAllText(projecto + "/game.txt", textBox6.Text);
             }
@@ -308,7 +309,7 @@ namespace FNAF_Engine_Reborn
 
         private void button60_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (comboBox43.SelectedItem == null)
                 {
@@ -335,7 +336,7 @@ namespace FNAF_Engine_Reborn
 
         private void createSpritebtn_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 AnimAdd.Visible = false;
                 if (spriteName.Text == "")
@@ -471,7 +472,7 @@ namespace FNAF_Engine_Reborn
 
         private void menuEditorPanel_VisibleChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 //comboBox9.Items.Clear();
                 if (Directory.Exists(projecto + "/menus"))
@@ -529,7 +530,7 @@ namespace FNAF_Engine_Reborn
 
         private void button24_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 createShit.Show();
             }
@@ -603,7 +604,7 @@ namespace FNAF_Engine_Reborn
         {
             if (editable == true)
             {
-                if (usableEngine == true)
+                if (_0_2C == true)
                 {
                     //this.presence.details = "Editing game...";
                     //DiscordRpc.UpdatePresence(ref this.presence);
@@ -655,7 +656,7 @@ namespace FNAF_Engine_Reborn
         private void label163_Click(object sender, EventArgs e)
         {
             animatronicEditorPNL2.BringToFront();
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (Directory.Exists(projecto + "/animatronics"))
                 {
@@ -679,7 +680,7 @@ namespace FNAF_Engine_Reborn
 
         private void label162_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (Directory.Exists(projecto + "/cameras"))
                 {
@@ -752,7 +753,7 @@ namespace FNAF_Engine_Reborn
 
         private void AssetManagerPanel_VisibleChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 comboBox36.Items.Clear();
                 comboBox36.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
@@ -792,7 +793,7 @@ namespace FNAF_Engine_Reborn
 
         private void button95_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 _ = System.Diagnostics.Process.Start(projecto);
             }
@@ -804,7 +805,7 @@ namespace FNAF_Engine_Reborn
 
         private void button96_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (Directory.Exists(projecto))
                 {
@@ -840,9 +841,9 @@ namespace FNAF_Engine_Reborn
         {
         }
 
-        private void buildSettingsPanelMoment_VisibleChanged(object sender, EventArgs e)
+        private async void buildSettingsPanelMoment_VisibleChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string optionstxt = File.ReadAllText(projecto + "/options.txt");
                 string[] options = optionstxt.Split(',');
@@ -862,6 +863,7 @@ namespace FNAF_Engine_Reborn
                 }
                 if (File.Exists(projecto + "/game.txt"))
                 {
+                    await Task.Delay(1);
                     textBox6.Text = File.ReadAllText(projecto + "/game.txt");
                 }
                 if (File.Exists(projecto + "/game.txt") == false)
@@ -895,7 +897,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox8_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox8.Checked == true)
                 {
@@ -924,7 +926,7 @@ namespace FNAF_Engine_Reborn
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (File.Exists(projecto + "/gameid.txt"))
                 {
@@ -942,7 +944,7 @@ namespace FNAF_Engine_Reborn
 
         private void button88_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 try
                 {
@@ -975,7 +977,7 @@ namespace FNAF_Engine_Reborn
 
         private void button23_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (Menus.SelectedNode == null)
                 {
@@ -997,7 +999,7 @@ namespace FNAF_Engine_Reborn
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 comboBox4.Items.Clear();
                 if (Directory.Exists(projecto + "/cameras"))
@@ -1020,7 +1022,7 @@ namespace FNAF_Engine_Reborn
 
         private void button57_Click_1(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string cameraName = textBox17.Text;
                 _ = Directory.CreateDirectory(projecto + "/cameras/" + cameraName);
@@ -1038,7 +1040,7 @@ namespace FNAF_Engine_Reborn
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (comboBox4.SelectedItem == null)
                 {
@@ -1067,7 +1069,7 @@ namespace FNAF_Engine_Reborn
 
         private void button62_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 _ = listView1.Items.Add("frame2");
             }
@@ -1079,7 +1081,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox13_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox13.Checked == true)
                 {
@@ -1102,7 +1104,7 @@ namespace FNAF_Engine_Reborn
 
         private void button111_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 panel7.Show();
             }
@@ -1114,7 +1116,7 @@ namespace FNAF_Engine_Reborn
 
         private void button112_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string staticname = textBox20.Text;
                 _ = Directory.CreateDirectory(projecto + "/statics" + staticname);
@@ -1168,7 +1170,7 @@ namespace FNAF_Engine_Reborn
 
         private void button91_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 panel8.Show();
             }
@@ -1180,7 +1182,7 @@ namespace FNAF_Engine_Reborn
 
         private void button114_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string animatronicName = textBox21.Text;
                 try
@@ -1211,7 +1213,7 @@ namespace FNAF_Engine_Reborn
 
         private void button115_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 comboBox57.Items.Clear();
                 comboBox57.Items.AddRange(Directory.GetDirectories(projecto + "/statics"));
@@ -1224,7 +1226,7 @@ namespace FNAF_Engine_Reborn
 
         private void button110_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 try
                 {
@@ -1245,7 +1247,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
 
                 if (checkBox7.Checked == true)
@@ -1269,7 +1271,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox9_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox9.Checked == true)
                 {
@@ -1292,7 +1294,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox10_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox10.Checked == true)
                 {
@@ -1315,7 +1317,7 @@ namespace FNAF_Engine_Reborn
 
         private void button18_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 OpenFileDialog icon = new OpenFileDialog
                 {
@@ -1338,7 +1340,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox4.Checked == true)
                 {
@@ -1361,7 +1363,7 @@ namespace FNAF_Engine_Reborn
 
         private void button92_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 Directory.Delete(comboBox1.SelectedItem.ToString());
                 comboBox1.Items.Clear();
@@ -1396,7 +1398,7 @@ namespace FNAF_Engine_Reborn
         {
             if (editable == true)
             {
-                if (usableEngine == true)
+                if (_0_2C == true)
                 {
                     Compiler compiler = new Compiler(this, style);
                     _ = compiler.ShowDialog();
@@ -1410,7 +1412,7 @@ namespace FNAF_Engine_Reborn
         {
             if (editable == true)
             {
-                if (usableEngine == true)
+                if (_0_2C == true)
                 {
                     ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
                     _ = releaseordebug.ShowDialog();
@@ -1422,7 +1424,7 @@ namespace FNAF_Engine_Reborn
 
         private void button40_Click(object sender, EventArgs e) // add image
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 OpenFileDialog p = new OpenFileDialog
                 {
@@ -1461,7 +1463,7 @@ namespace FNAF_Engine_Reborn
 
         private void button31_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string officename = textBox25.Text;
                 try
@@ -1480,7 +1482,7 @@ namespace FNAF_Engine_Reborn
 
         private void button34_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 try
                 {
@@ -1506,7 +1508,7 @@ namespace FNAF_Engine_Reborn
 
         private void button36_Click(object sender, EventArgs e) //set office state image
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (comboBox17.SelectedItem == null)
                 {
@@ -1540,7 +1542,7 @@ namespace FNAF_Engine_Reborn
 
         private void comboBox17_SelectedIndexChanged(object sender, EventArgs e) //selected office state
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 try
                 {
@@ -1556,10 +1558,10 @@ namespace FNAF_Engine_Reborn
 
         private void officeEditorPanel_VisibleChanged(object sender, EventArgs e)
         {
-            Console.WriteLine(usableEngine);
-            if (usableEngine == true)
+            Console.WriteLine(_0_2C);
+            if (_0_2C == true)
             {
-                Console.WriteLine(usableEngine);
+                Console.WriteLine(_0_2C);
                 Sprite amagos = new Sprite(this)
                 {
                     project = projecto
@@ -1612,7 +1614,7 @@ namespace FNAF_Engine_Reborn
 
         private void button33_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 OpenFileDialog p = new OpenFileDialog
                 {
@@ -1704,7 +1706,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox16_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox16.Checked == true)
                 {
@@ -1760,7 +1762,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox17.Checked == true)
                 {
@@ -1787,7 +1789,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox12_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox12.Checked == true)
                 {
@@ -1810,7 +1812,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox11.Checked == true)
                 {
@@ -1833,7 +1835,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox14_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox14.Checked == true)
                 {
@@ -1856,7 +1858,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox15_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox15.Checked == true)
                 {
@@ -1879,7 +1881,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox24_CheckedChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (checkBox24.Checked == true)
                 {
@@ -1911,7 +1913,7 @@ namespace FNAF_Engine_Reborn
 
         private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (comboBox14.SelectedItem == null)
                 {
@@ -1971,7 +1973,8 @@ namespace FNAF_Engine_Reborn
                 };
                 MenuPreview.Controls.Clear();
                 Menu_Elements_Create.Show();
-                menu_Editor.RefreshText(Menus.SelectedNode.Tag.ToString());
+                menu_Editor.RefreshTextData(Menus.SelectedNode.Tag.ToString());
+                menu_Editor.RefreshImage(Menus.SelectedNode.Tag.ToString(), projecto);
                 if (File.Exists(Menus.SelectedNode.Tag.ToString() + "/bg.txt"))
                 {
                     try
@@ -2018,7 +2021,7 @@ namespace FNAF_Engine_Reborn
 
         private void CreateScript_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string Name = ScriptEditor_TextBoxname.Text;
                 ScriptEditor scriptEditor = new ScriptEditor
@@ -2043,7 +2046,7 @@ namespace FNAF_Engine_Reborn
         }
         private void button9_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 ScriptEditor scripteditor = new ScriptEditor();
@@ -2075,7 +2078,7 @@ namespace FNAF_Engine_Reborn
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 CodeblockSelector selector = new CodeblockSelector(this);
@@ -2085,7 +2088,7 @@ namespace FNAF_Engine_Reborn
 
         private void button25_MouseClick(object sender, MouseEventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 if (e.Button == MouseButtons.Right)
                 {
@@ -2121,7 +2124,7 @@ namespace FNAF_Engine_Reborn
 
         private void button25_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 CodeblockSelector selector = new CodeblockSelector(this);
@@ -2136,7 +2139,7 @@ namespace FNAF_Engine_Reborn
 
         private void button13_Click(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 OpenFileDialog p = new OpenFileDialog
                 {
@@ -2272,7 +2275,7 @@ namespace FNAF_Engine_Reborn
             }
             catch (Exception)
             {
-                MessageBox.Show("Warning: This project is unsupported with the newer versions of FNAF Engine: Reborn! Do you wish to create the needed files?", "Unsupported Version", MessageBoxButtons.YesNo);
+                MessageBox.Show("Warning: Some project data might've been corrupted!", "Corrupted Project", MessageBoxButtons.OK);
             }
         }
 
@@ -2295,7 +2298,7 @@ namespace FNAF_Engine_Reborn
         {
             if (editable == true)
             {
-                if (usableEngine == true)
+                if (_0_2C == true)
                 {
                     //this.presence.details = "Editing game...";
                     //DiscordRpc.UpdatePresence(ref this.presence);
@@ -2358,7 +2361,7 @@ namespace FNAF_Engine_Reborn
         {
             if (editable == true)
             {
-                if (usableEngine == true)
+                if (_0_2C == true)
                 {
                     ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
                     _ = releaseordebug.ShowDialog();
@@ -2372,7 +2375,7 @@ namespace FNAF_Engine_Reborn
         {
             if (editable == true)
             {
-                if (usableEngine == true)
+                if (_0_2C == true)
                 {
                     Compiler compiler = new Compiler(this, style);
                     _ = compiler.ShowDialog();
@@ -2391,7 +2394,7 @@ namespace FNAF_Engine_Reborn
 
         private void gamehourstextbox_TextChanged(object sender, EventArgs e)
         {
-            if (usableEngine == true)
+            if (_0_2C == true)
             {
                 string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
                 string[] options = optionstxt.Split(',');
@@ -2414,6 +2417,36 @@ namespace FNAF_Engine_Reborn
         private void mousebuttonheld_Click(object sender, EventArgs e)
         {
             MenuEditor_CodeEditorHold.BringToFront();
+        }
+
+        private void AddImage_MenuEditor_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog icon = new OpenFileDialog
+            {
+                Filter = "Images (*.png)|*.png"
+            };
+            _ = icon.ShowDialog();
+            if (icon.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = icon.FileName;
+                Menu_Editor menu_Editor = new Menu_Editor(this)
+                {
+                    Menu = projecto + "/menus/" + text_ID_MenuEditor_Create
+                };
+                if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
+                {
+                    _ = MessageBox.Show("Unable to create new text element: Error 1");
+                }
+                else
+                {
+                    string id = icon.SafeFileName;
+                    menu_Editor.CreateImage(id, Menu_Name_MenuCodeEditor_InfoLBL.Text, filePath, projecto);
+                    //menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
+                    textCreate_MenuEditor.Hide();
+                    menuEditorPanel.Hide();
+                    menuEditorPanel.Show();
+                }
+            }
         }
     }
 }

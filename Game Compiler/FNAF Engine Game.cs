@@ -316,7 +316,7 @@ namespace FNAF_Engine_Reborn
                         MF_Break();
                     }
 
-                    if (instruction.StartsWith("set_data:")) // set_data:myfuckingvariable:1
+                    if (instruction.StartsWith("Set Data"))
                     {
                         await RunCode();
                         string[] instructions = instruction.Split(':');
@@ -344,22 +344,22 @@ namespace FNAF_Engine_Reborn
                         }
                     }
 
-                    if (instruction == "quit")
+                    if (instruction == "Quit")
                     {
                         await RunCode();
                         this.Close();
                     }
 
-                    if (instruction.StartsWith("wait:"))
+                    if (instruction.StartsWith("Wait "))
                     {
                         await RunCode();
-                        time = Convert.ToInt32(instruction.Split(':')[1]);
+                        time = Convert.ToInt32(instruction.Split(' ')[1]);
                     }
 
-                    if (instruction.StartsWith("set_text:"))
+                    if (instruction.StartsWith("Set Text"))
                     {
                         await RunCode();
-                        string[] instructions = instruction.Split(':');
+                        string[] instructions = instruction.Split(' ');
                         try
                         {
                             if (instructions[2].Contains("%var(") || instructions[2].Contains("%data("))
