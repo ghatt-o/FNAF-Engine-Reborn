@@ -118,6 +118,7 @@ namespace FNAF_Engine_Reborn
             // 
             // fnaf4style_CheckBox
             // 
+            this.fnaf4style_CheckBox.Enabled = false;
             this.fnaf4style_CheckBox.Font = new System.Drawing.Font("Digital-7", 15F);
             this.fnaf4style_CheckBox.Location = new System.Drawing.Point(212, 42);
             this.fnaf4style_CheckBox.Name = "fnaf4style_CheckBox";
@@ -133,7 +134,6 @@ namespace FNAF_Engine_Reborn
             this.gameStyleOptions.ForeColor = System.Drawing.SystemColors.Window;
             this.gameStyleOptions.FormattingEnabled = true;
             this.gameStyleOptions.Items.AddRange(new object[] {
-            "Standard",
             "Five Nights at Freddy\'s (Beta)"});
             this.gameStyleOptions.Location = new System.Drawing.Point(210, 20);
             this.gameStyleOptions.Name = "gameStyleOptions";

@@ -293,7 +293,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
         {
             _ = Directory.CreateDirectory(Menu + "/image_elements/" + ID);
             string NewPath = Menu + "/image_elements/" + ID;
-            Import_Sprites.CreateSprite(FullImagePath, ID, Project);
+            Import_Files.CreateSprite(FullImagePath, ID, Project);
             File.WriteAllText(NewPath + "/id.txt", ID);
             File.WriteAllText(NewPath + "/args.txt", "false");
             File.WriteAllText(NewPath + "/x.txt", "0");

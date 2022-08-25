@@ -1490,7 +1490,7 @@ namespace FNAF_Engine_Reborn
                     {
                         string filePath = Path.GetFullPath(p.FileName);
                         string fileName = p.SafeFileName;
-                        Import_Sprites.CreateSprite(filePath, fileName, projecto);
+                        Import_Files.CreateSprite(filePath, fileName, projecto);
                     }
                     catch (Exception ex)
                     {
@@ -1580,7 +1580,7 @@ namespace FNAF_Engine_Reborn
                         {
                             string filePath = Path.GetFullPath(p.FileName);
                             string png = p.SafeFileName;
-                            Import_Sprites.CreateSprite(filePath, png, projecto);
+                            Import_Files.CreateSprite(filePath, png, projecto);
                             File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", png);
                             officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
                         }
@@ -2027,6 +2027,7 @@ namespace FNAF_Engine_Reborn
                 Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
                 Menu_Editor menu_Editor = new Menu_Editor(this);
                 MenuPreview.Controls.Clear();
+                Menu_Elements_Create.Hide();
                 Menu_Elements_Create.Show();
                 menu_Editor.RefreshElements(curMenuTag, projecto);
                 if (File.Exists(curMenuTag + "/bg.txt"))
@@ -2034,6 +2035,19 @@ namespace FNAF_Engine_Reborn
                     try
                     {
                         MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Unable to load menu background: Invalid Image", "Corrupted Image");
+                    }
+                }
+                if (File.Exists(curMenuTag + "/audio.txt"))
+                {
+                    try
+                    {
+                        FileInfo fileInfo = new FileInfo(File.ReadAllText(curMenuTag + "/audio.txt"));
+                        string name = fileInfo.Name;
+                        BackgroundAudio_MenuEditor.SelectedItem = name;
                     }
                     catch (Exception)
                     {
@@ -2200,7 +2214,7 @@ namespace FNAF_Engine_Reborn
                 if (p.ShowDialog() == DialogResult.OK)
                 {
                     string FileName = p.SafeFileName;
-                    Import_Sprites.CreateSprite(p.FileName, FileName, projecto);
+                    Import_Files.CreateSprite(p.FileName, FileName, projecto);
                     File.WriteAllText(curMenuTag + "/bg.txt", FileName);
                     MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
                 }
@@ -2338,7 +2352,7 @@ namespace FNAF_Engine_Reborn
 
         private void button21_Click(object sender, EventArgs e)
         {
-            Code_MenuEditor_GroupBox.Show();
+            
         }
 
         private void button28_Click(object sender, EventArgs e)
@@ -2506,6 +2520,68 @@ namespace FNAF_Engine_Reborn
         private void unhover_Click(object sender, EventArgs e)
         {
             MenuEditor_CodeEditorUnhover.BringToFront();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (_0_2C == true)
+            {
+                OpenFileDialog p = new OpenFileDialog
+                {
+                    Filter = "Audio (*.mp3;*.wav;*.ogg)|*.mp3;*.wav;*.ogg"
+                };
+                _ = p.ShowDialog();
+                if (p.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        string filePath = Path.GetFullPath(p.FileName);
+                        string fileName = p.SafeFileName;
+                        Import_Files.CreateAudio(filePath, projecto);
+                        Menu_Elements_Create.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Cringe exception: " + ex);
+                        _ = MessageBox.Show("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
+                    }
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void Menu_Elements_Create_VisibleChanged(object sender, EventArgs e)
+        {
+            var audios = Directory.GetFiles(projecto + "/sounds/");
+            string fileName;
+            foreach (string audio in audios)
+            {
+                FileInfo fileInfo = new FileInfo(audio);
+                fileName = fileInfo.Name;
+                BackgroundAudio_MenuEditor.Items.Add(fileName);
+            }
+        }
+
+        private void BackgroundAudio_MenuEditor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Menus.SelectedNode == null)
+            {
+
+            }
+            else
+            {
+                //yoo its a menu
+                //or is it
+                if (Menus.SelectedNode.Name == "Menu")
+                {
+                    //it is!
+                    //lets set the audio
+                    File.WriteAllText(Menus.SelectedNode.Tag + "/audio.txt", projecto + "/sounds/" + BackgroundAudio_MenuEditor.SelectedItem.ToString());
+                }
+            }
         }
     }
 }

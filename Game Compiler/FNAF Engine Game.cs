@@ -138,8 +138,20 @@ namespace FNAF_Engine_Reborn
                     }
                 }
 
-                void Menu_Load(object sender, EventArgs e)
+                async void Menu_Load(object sender, EventArgs e)
                 {
+                    try
+                    {
+                        //System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(File.ReadAllText(project + "/menus/" + MenuName + "/audio.txt"));
+                        //while (true)
+                        //{
+                        //    await Task.Delay(1);
+                        //}
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Could not play " + MenuName + "'s background audio.");
+                    }
                     string[] texts = Directory.GetDirectories(project + $"/menus/{MenuName}/text_elements/");
                     string[] images = Directory.GetDirectories(project + $"/menus/{MenuName}/image_elements/");
                     menu_panel.Controls.Clear();
@@ -584,7 +596,21 @@ namespace FNAF_Engine_Reborn
                         }
                         catch (Exception)
                         {
-                            MF_Error("Failed to change background to: " + instructions[1], "Failed to change backgrund. Original code: " + instruction);
+                            MF_Error("Failed to change background to: " + instructions[1], "Failed to change background. Original code: " + instruction);
+                        }
+                    }
+
+                    if (instruction.StartsWith("Set Sprite ")) //Set Sprite "myimage.png" image to "otherimage.png"
+                    {
+                        await RunCode();
+                        string[] instructions = instruction.Split('"');
+                        try
+                        {
+                            menu_panel.Controls[instructions[1]].BackgroundImage = Image.FromFile(project + "/images/" + instructions[3]);
+                        }
+                        catch (Exception)
+                        {
+                            MF_Error("Failed to change sprite: " + instructions[1] + "'s image to " + instructions[3], "Failed to change sprite. Original code: " + instruction);
                         }
                     }
 
