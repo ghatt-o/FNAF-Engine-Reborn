@@ -40,18 +40,18 @@ namespace FNAF_Engine_Reborn
                         _ = Directory.CreateDirectory(projectPath + "/animations");
                         _ = Directory.CreateDirectory(projectPath + "/sounds");
                         _ = Directory.CreateDirectory(projectPath + "/menus");
-                            CreateMenu(projectPath, "Main");
+                        CreateMenu(projectPath, "Main");
                         _ = File.CreateText(projectPath + "/game.txt");
                         _ = File.CreateText(projectPath + "/gameid.txt");
 
-                            File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
-                            File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
-                            File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
+                        File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
+                        File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
+                        File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
 
-                            File.WriteAllText(projectPath + "/style.txt", "standard");
+                        File.WriteAllText(projectPath + "/style.txt", "standard");
 
                         _ = MessageBox.Show("Project created succesfully!");
-                           Hide();
+                        Hide();
                     }
                     else if (gameStyleOptions.SelectedIndex == 1) //fnaf game style
                     {
@@ -94,7 +94,7 @@ namespace FNAF_Engine_Reborn
                         _ = MessageBox.Show("Project created succesfully!");
                         Hide();
 
-                        switch(comboBox1.SelectedIndex)
+                        switch (comboBox1.SelectedIndex)
                         {
                             case 0: //none
                             case 1: //premade assets

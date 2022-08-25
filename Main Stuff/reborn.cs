@@ -14,11 +14,13 @@ namespace FNAF_Engine_Reborn
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "pre-1.0.0";
-        public string Build_Version = "pre-rf1.0.0.-1";
+        public string Version = "0.9.1-rc.1";
+        public string Build_Version = "r1.0.0.-b";
         public bool isopen = false;
         internal bool _0_2C = true;
+        readonly bool lightmode = false;
         public bool inScriptEditor;
+        string curMenuTag;
         public string script;
         public bool editable;
 
@@ -46,6 +48,24 @@ namespace FNAF_Engine_Reborn
         }
         private void reborn_Load(object sender, EventArgs e)
         {
+            if (lightmode == false)
+            {
+
+            }
+            else
+            {
+                foreach (Control control in Controls)
+                {
+                    if (control.BackColor == Color.FromArgb(30, 30, 30) || control.BackColor == Color.FromArgb(34, 34, 34) || control.BackColor == Color.FromArgb(35, 35, 35) || control.BackColor == Color.FromArgb(37, 37, 37) || control.BackColor == Color.FromArgb(40, 40, 40) || control.BackColor == Color.FromArgb(45, 45, 45) || control.BackColor == Color.FromArgb(50, 50, 50))
+                    {
+                        control.BackColor = Color.FromArgb(224, 224, 224);
+                    }
+                    if (control.ForeColor == SystemColors.Control)
+                    {
+                        control.ForeColor = SystemColors.ControlText;
+                    }
+                }
+            }
             File.WriteAllText("DO_NOT_MODIFY.txt", "");
 #if DEBUG
             {
@@ -477,43 +497,8 @@ namespace FNAF_Engine_Reborn
                 //comboBox9.Items.Clear();
                 if (Directory.Exists(projecto + "/menus"))
                 {
-                    Menus.Nodes.Clear();
                     //comboBox9.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/menus"));
-                    string[] dirs = Directory.GetDirectories(projecto + "/menus");
-                    foreach (string node in dirs)
-                    {
-                        string Name = File.ReadAllText(node + "/name.txt");
-                        TreeNode menu = new TreeNode
-                        {
-                            Name = "Menu",
-                            Text = Name,
-                            ImageIndex = 0,
-                            Tag = node
-                        };
-                        _ = Menus.Nodes.Add(menu);
-
-                        string[] texts = Directory.GetDirectories(projecto + "/menus/" + Name + "/text_elements");
-
-                        foreach (string text in texts)
-                        {
-                            string element_name = File.ReadAllText(text + "/id.txt");
-                            TreeNode element = new TreeNode
-                            {
-                                Name = "Text",
-                                Text = element_name,
-                                ImageIndex = 1,
-                                SelectedImageIndex = 1
-                            };
-                            TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
-                            foreach (TreeNode Frame in Menus)
-                            {
-                                if (Frame.Tag.ToString() == node)
-                                {
-                                    Frame.Nodes.Add(element);
-                                }
-                            }
-                        }
-                    }
+                    UpdateMenuElements();
                 }
                 else
                 {
@@ -525,6 +510,74 @@ namespace FNAF_Engine_Reborn
             else
             {
 
+            }
+        }
+
+        public void UpdateMenuElements()
+        {
+            Menus.Nodes.Clear();
+            string[] dirs = Directory.GetDirectories(projecto + "/menus");
+            foreach (string node in dirs)
+            {
+                string Name = File.ReadAllText(node + "/name.txt");
+                TreeNode menu = new TreeNode
+                {
+                    Name = "Menu",
+                    Text = Name,
+                    ImageIndex = 0,
+                    Tag = node
+                };
+                _ = Menus.Nodes.Add(menu);
+
+                string[] texts = Directory.GetDirectories(projecto + "/menus/" + Name + "/text_elements");
+
+                string[] images = Directory.GetDirectories(projecto + "/menus/" + Name + "/image_elements");
+
+                foreach (string text in texts)
+                {
+                    string element_name = File.ReadAllText(text + "/id.txt");
+                    if (File.ReadAllText(text + "/args.txt") == "False")
+                    {
+                        TreeNode element = new TreeNode
+                        {
+                            Name = "Text",
+                            Text = element_name,
+                            ImageIndex = 1,
+                            SelectedImageIndex = 1
+                        };
+                        TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
+                        foreach (TreeNode Frame in Menus)
+                        {
+                            if (Frame.Tag.ToString() == node)
+                            {
+                                Frame.Nodes.Add(element);
+                            }
+                        }
+                    }
+                }
+
+                foreach (string image in images)
+                {
+                    string element_name = File.ReadAllText(image + "/id.txt");
+                    if (File.ReadAllText(image + "/args.txt") == "False")
+                    {
+                        TreeNode element = new TreeNode
+                        {
+                            Name = "Image",
+                            Text = element_name,
+                            ImageIndex = 2,
+                            SelectedImageIndex = 2
+                        };
+                        TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
+                        foreach (TreeNode Frame in Menus)
+                        {
+                            if (Frame.Tag.ToString() == node)
+                            {
+                                Frame.Nodes.Add(element);
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -989,7 +1042,7 @@ namespace FNAF_Engine_Reborn
 
                     if (Confirmation == DialogResult.Yes)
                     {
-                        Directory.Delete(Menus.SelectedNode.Tag.ToString(), true);
+                        Directory.Delete(curMenuTag, true);
                         Menus.Refresh();
                         menuEditorPanel.Hide();
                         menuEditorPanel.Show();
@@ -1964,22 +2017,23 @@ namespace FNAF_Engine_Reborn
             {
 
             }
-            else
+            else if (Menus.SelectedNode.Name == "Image")
             {
-                Menu_Name_MenuCodeEditor_InfoLBL.Text = (string)Menus.SelectedNode.Tag;
-                Menu_Editor menu_Editor = new Menu_Editor(this)
-                {
-                    Menu = (string)Menus.SelectedNode.Tag
-                };
+
+            }
+            else if (Menus.SelectedNode.Name == "Menu")
+            {
+                this.curMenuTag = Menus.SelectedNode.Tag.ToString();
+                Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
+                Menu_Editor menu_Editor = new Menu_Editor(this);
                 MenuPreview.Controls.Clear();
                 Menu_Elements_Create.Show();
-                menu_Editor.RefreshTextData(Menus.SelectedNode.Tag.ToString());
-                menu_Editor.RefreshImage(Menus.SelectedNode.Tag.ToString(), projecto);
-                if (File.Exists(Menus.SelectedNode.Tag.ToString() + "/bg.txt"))
+                menu_Editor.RefreshElements(curMenuTag, projecto);
+                if (File.Exists(curMenuTag + "/bg.txt"))
                 {
                     try
                     {
-                        MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(Menus.SelectedNode.Tag.ToString() + "/bg.txt"));
+                        MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
                     }
                     catch (Exception)
                     {
@@ -2103,10 +2157,7 @@ namespace FNAF_Engine_Reborn
 
         private void create_text_menuEditorBTN_Click(object sender, EventArgs e)
         {
-            Menu_Editor menu_Editor = new Menu_Editor(this)
-            {
-                Menu = projecto + "/menus/" + text_ID_MenuEditor_Create
-            };
+            Menu_Editor menu_Editor = new Menu_Editor(this);
             if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
             {
                 _ = MessageBox.Show("Unable to create new text element: Error 1");
@@ -2115,7 +2166,7 @@ namespace FNAF_Engine_Reborn
             {
                 string id = text_ID_MenuEditor_Create.Text;
                 menu_Editor.CreateText(id, Menu_Name_MenuCodeEditor_InfoLBL.Text);
-                //menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
+                menu_Editor.RefreshElements(curMenuTag, projecto);
                 textCreate_MenuEditor.Hide();
                 menuEditorPanel.Hide();
                 menuEditorPanel.Show();
@@ -2150,8 +2201,8 @@ namespace FNAF_Engine_Reborn
                 {
                     string FileName = p.SafeFileName;
                     Import_Sprites.CreateSprite(p.FileName, FileName, projecto);
-                    File.WriteAllText(Menus.SelectedNode.Tag.ToString() + "/bg.txt", FileName);
-                    MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(Menus.SelectedNode.Tag.ToString() + "/bg.txt"));
+                    File.WriteAllText(curMenuTag + "/bg.txt", FileName);
+                    MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
                 }
             }
         }
@@ -2240,6 +2291,7 @@ namespace FNAF_Engine_Reborn
         private void MenuEditor_ScriptEditor_Click(object sender, EventArgs e)
         {
             Menu_CodeEditor.Show();
+            Menu_CodeEditor.BringToFront();
         }
 
         private void X_Leave_MenuCodeEditor_Click(object sender, EventArgs e)
@@ -2429,24 +2481,31 @@ namespace FNAF_Engine_Reborn
             if (icon.ShowDialog() == DialogResult.OK)
             {
                 string filePath = icon.FileName;
-                Menu_Editor menu_Editor = new Menu_Editor(this)
-                {
-                    Menu = projecto + "/menus/" + text_ID_MenuEditor_Create
-                };
+                Menu_Editor menu_Editor = new Menu_Editor(this);
                 if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
                 {
-                    _ = MessageBox.Show("Unable to create new text element: Error 1");
+                    _ = MessageBox.Show("Unable to create new image element: Error 1");
                 }
                 else
                 {
                     string id = icon.SafeFileName;
                     menu_Editor.CreateImage(id, Menu_Name_MenuCodeEditor_InfoLBL.Text, filePath, projecto);
-                    //menu_Editor.RefreshText(Menus.SelectedNode.Name.ToString());
+                    menu_Editor.RefreshElements(curMenuTag, projecto);
                     textCreate_MenuEditor.Hide();
                     menuEditorPanel.Hide();
                     menuEditorPanel.Show();
                 }
             }
+        }
+
+        private void text_ID_MenuEditor_Create_TextChanged(object sender, EventArgs e)
+        {
+            text_ID_MenuEditor_Create.Text = text_ID_MenuEditor_Create.Text.Replace(" ", "");
+        }
+
+        private void unhover_Click(object sender, EventArgs e)
+        {
+            MenuEditor_CodeEditorUnhover.BringToFront();
         }
     }
 }

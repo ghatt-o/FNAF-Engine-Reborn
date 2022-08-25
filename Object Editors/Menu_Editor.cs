@@ -18,7 +18,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
         {
             await Task.Delay(miliseconds);
         }
-        public string Menu { get; set; }
+        //public string Menu { get; set; }
         public void ShowActionEditor(string ID, string Menu)
         {
 
@@ -36,6 +36,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
             File.WriteAllText(NewPath + "/y.txt", "0");
             File.WriteAllText(NewPath + "/functions.txt", "");
             File.WriteAllText(NewPath + "/functionshover.txt", "");
+            File.WriteAllText(NewPath + "/functionsunhover.txt", "");
             File.WriteAllText(NewPath + "/functionshold.txt", "");
             File.WriteAllText(NewPath + "/color.txt", "255,255,255");
         }
@@ -51,10 +52,11 @@ namespace FNAF_Engine_Reborn.Object_Editors
             File.WriteAllText(Path + "/y.txt", Convert.ToString(TextElement.Y));
             File.WriteAllText(Path + "/functions.txt", TextElement.Functions);
             File.WriteAllText(Path + "/functionshover.txt", TextElement.FunctionsHover);
+            File.WriteAllText(Path + "/functionsunhover.txt", TextElement.FunctionsUnhover);
             File.WriteAllText(Path + "/functionshold.txt", TextElement.FunctionsHold);
             File.WriteAllText(Path + "/color.txt", TextElement.Color.R.ToString() + "," + TextElement.Color.G.ToString() + "," + TextElement.Color.B.ToString());
         }
-        public void AddText(string Menu, TextElement TextElement)
+        public void AddText(string Menu, TextElement TextElement, string Project)
         {
             Panel Preview = reborn.MenuPreview;
             if (TextElement.args == false)
@@ -71,16 +73,25 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     Name = TextElement.ID
                 }; //the menu editor text 
                 Text.Draggable(true);
+
+
                 Text.Click += newText_Select;
                 Text.Move += newText_Move;
                 Text.MouseDoubleClick += Text_MouseDoubleClick;
+
+
                 reborn.Element_Text_MenuEditor.TextChanged += TextChanged;
                 reborn.Element_FontSize_MenuEditor.TextChanged += FontSizeChanged;
                 reborn.Element_Color_MenuEditor.TextChanged += ColorChanged;
                 reborn.Element_Font_MenuEditor.TextChanged += FontChanged;
+
+
                 reborn.MenuEditor_CodeEditorClick.TextChanged += CodeClickChanged;
                 reborn.MenuEditor_CodeEditorHover.TextChanged += CodeHoverChanged;
+                reborn.MenuEditor_CodeEditorUnhover.TextChanged += CodeUnhoverChanged;
                 reborn.MenuEditor_CodeEditorHold.TextChanged += CodeHoldChanged;
+
+
                 void CodeClickChanged(object sender, EventArgs e)
                 {
                     try
@@ -102,7 +113,22 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     {
                         if (reborn.Element_ID_MenuEditor.Text == Text.Name)
                         {
-                            TextElement.FunctionsHover = reborn.MenuEditor_CodeEditorClick.Text;
+                            TextElement.FunctionsHover = reborn.MenuEditor_CodeEditorHover.Text;
+                            RewriteTextData(Menu, TextElement);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                void CodeUnhoverChanged(object sender, EventArgs e)
+                {
+                    try
+                    {
+                        if (reborn.Element_ID_MenuEditor.Text == Text.Name)
+                        {
+                            TextElement.FunctionsUnhover = reborn.MenuEditor_CodeEditorUnhover.Text;
                             RewriteTextData(Menu, TextElement);
                         }
                     }
@@ -117,7 +143,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     {
                         if (reborn.Element_ID_MenuEditor.Text == Text.Name)
                         {
-                            TextElement.FunctionsHold = reborn.MenuEditor_CodeEditorClick.Text;
+                            TextElement.FunctionsHold = reborn.MenuEditor_CodeEditorHold.Text;
                             RewriteTextData(Menu, TextElement);
                         }
                     }
@@ -134,7 +160,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         {
                             TextElement.FontName = reborn.Element_Font_MenuEditor.Text;
                             RewriteTextData(Menu, TextElement);
-                            RefreshTextData(Menu);
+                            RefreshElements(Menu, Project);
                         }
                         catch (ArgumentException)
                         {
@@ -172,7 +198,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                                 int B = Convert.ToInt32(RGB[2]);
                                 TextElement.Color = Color.FromArgb(R, G, B);
                                 RewriteTextData(Menu, TextElement);
-                                RefreshTextData(Menu);
+                                RefreshElements(Menu, Project);
                             }
                             else
                             {
@@ -194,7 +220,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                             float fontsize = Convert.ToSingle(reborn.Element_FontSize_MenuEditor.Text);
                             TextElement.FontSize = fontsize;
                             RewriteTextData(Menu, TextElement);
-                            RefreshTextData(Menu);
+                            RefreshElements(Menu, Project);
                         }
                     }
                     catch (Exception)
@@ -245,7 +271,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         {
                             TextElement.args = true;
                             RewriteTextData(Menu, TextElement);
-                            RefreshTextData(Menu);
+                            RefreshElements(Menu, Project);
                         }
                     }
                     catch (Exception)
@@ -258,56 +284,6 @@ namespace FNAF_Engine_Reborn.Object_Editors
             else
             {
 
-            }
-        }
-        public void RefreshTextData(string Menu)
-        {
-            reborn.MenuPreview.Controls.Clear();
-            string[] TextElements = Directory.GetDirectories(Menu + "/text_elements");
-            foreach (string TextElement in TextElements)
-            {
-                string id = File.ReadAllText(TextElement + "/id.txt");
-                string text = File.ReadAllText(TextElement + "/text.txt");
-                string args = File.ReadAllText(TextElement + "/args.txt");
-                string functions = File.ReadAllText(TextElement + "/Functions.txt");
-                string fontname = File.ReadAllText(TextElement + "/font.txt");
-                string fontsize_string = File.ReadAllText(TextElement + "/fontsize.txt");
-                int x = Convert.ToInt32(File.ReadAllText(TextElement + "/x.txt"));
-                int y = Convert.ToInt32(File.ReadAllText(TextElement + "/y.txt"));
-                string colorTxt = File.ReadAllText(TextElement + "/color.txt");
-                string[] SeparatedRGB = colorTxt.Split(',');
-                int R = Convert.ToInt32(SeparatedRGB[0]);
-                int G = Convert.ToInt32(SeparatedRGB[1]);
-                int B = Convert.ToInt32(SeparatedRGB[2]);
-                int fontsize = Convert.ToInt32(fontsize_string);
-
-                FontFamily fontfamily;
-
-                try
-                {
-                    fontfamily = new FontFamily(fontname);
-                }
-                catch (Exception)
-                {
-                    fontfamily = new FontFamily("Consolas");
-                }
-
-                Font font = new Font(fontfamily, fontsize);
-
-                TextElement NewText = new TextElement
-                {
-                    ID = id,
-                    Text = text,
-                    FontSize = fontsize,
-                    Font = font,
-                    FontName = fontname,
-                    Functions = functions,
-                    X = x,
-                    Y = y,
-                    args = Convert.ToBoolean(args),
-                    Color = Color.FromArgb(R, G, B),
-                };
-                AddText(Menu, NewText);
             }
         }
 
@@ -324,6 +300,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
             File.WriteAllText(NewPath + "/y.txt", "0");
             File.WriteAllText(NewPath + "/functions.txt", "");
             File.WriteAllText(NewPath + "/functionshover.txt", "");
+            File.WriteAllText(NewPath + "/functionsunhover.txt", "");
             File.WriteAllText(NewPath + "/functionshold.txt", "");
         }
         public void RewriteImageData(string Menu, ImageElement ImageElement)
@@ -335,6 +312,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
             File.WriteAllText(Path + "/y.txt", Convert.ToString(ImageElement.Y));
             File.WriteAllText(Path + "/functions.txt", ImageElement.Functions);
             File.WriteAllText(Path + "/functionshover.txt", ImageElement.FunctionsHover);
+            File.WriteAllText(Path + "/functionsunhover.txt", ImageElement.FunctionsUnhover);
             File.WriteAllText(Path + "/functionshold.txt", ImageElement.FunctionsHold);
         }
         public void AddImage(string Menu, ImageElement ImageElement, string Project)
@@ -342,13 +320,13 @@ namespace FNAF_Engine_Reborn.Object_Editors
             Panel Preview = reborn.MenuPreview;
             if (ImageElement.args == false)
             {
-                Label Image = new Label
+                PictureBox Image = new PictureBox
                 {
                     Location = new Point(ImageElement.X, ImageElement.Y), // set location
                     BackColor = Color.Transparent,
                     Size = System.Drawing.Image.FromFile(Project + "/images/" + ImageElement.ID).Size,
-                    Image = System.Drawing.Image.FromFile(Project + "/images/" + ImageElement.ID),
-                    FlatStyle = FlatStyle.Flat,
+                    BackgroundImageLayout = ImageLayout.None,
+                    BackgroundImage = System.Drawing.Image.FromFile(Project + "/images/" + ImageElement.ID),
                     Name = ImageElement.ID
                 }; //the menu editor image 
                 Image.Draggable(true);
@@ -357,6 +335,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 Image.MouseDoubleClick += Image_MouseDoubleClick;
                 reborn.MenuEditor_CodeEditorClick.TextChanged += CodeClickChanged;
                 reborn.MenuEditor_CodeEditorHover.TextChanged += CodeHoverChanged;
+                reborn.MenuEditor_CodeEditorUnhover.TextChanged += CodeUnhoverChanged;
                 reborn.MenuEditor_CodeEditorHold.TextChanged += CodeHoldChanged;
                 Preview.Controls.Add(Image);
                 void CodeClickChanged(object sender, EventArgs e)
@@ -380,7 +359,22 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     {
                         if (reborn.Element_ID_MenuEditor.Text == Image.Name)
                         {
-                            ImageElement.FunctionsHover = reborn.MenuEditor_CodeEditorClick.Text;
+                            ImageElement.FunctionsHover = reborn.MenuEditor_CodeEditorUnhover.Text;
+                            RewriteImageData(Menu, ImageElement);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                void CodeUnhoverChanged(object sender, EventArgs e)
+                {
+                    try
+                    {
+                        if (reborn.Element_ID_MenuEditor.Text == Image.Name)
+                        {
+                            ImageElement.FunctionsHover = reborn.MenuEditor_CodeEditorUnhover.Text;
                             RewriteImageData(Menu, ImageElement);
                         }
                     }
@@ -395,7 +389,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     {
                         if (reborn.Element_ID_MenuEditor.Text == Image.Name)
                         {
-                            ImageElement.FunctionsHold = reborn.MenuEditor_CodeEditorClick.Text;
+                            ImageElement.FunctionsHold = reborn.MenuEditor_CodeEditorHold.Text;
                             RewriteImageData(Menu, ImageElement);
                         }
                     }
@@ -443,7 +437,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                         {
                             ImageElement.args = true;
                             RewriteImageData(Menu, ImageElement);
-                            RefreshImage(Menu, Project);
+                            RefreshElements(Menu, Project);
                         }
                     }
                     catch (Exception)
@@ -457,17 +451,63 @@ namespace FNAF_Engine_Reborn.Object_Editors
 
             }
         }
-        public void RefreshImage(string Menu, string Project)
+        public void RefreshElements(string Menu, string Project)
         {
             reborn.MenuPreview.Controls.Clear();
-            string[] TextElements = Directory.GetDirectories(Menu + "/image_elements");
+            string[] TextElements = Directory.GetDirectories(Menu + "/text_elements");
             foreach (string TextElement in TextElements)
             {
                 string id = File.ReadAllText(TextElement + "/id.txt");
+                string text = File.ReadAllText(TextElement + "/text.txt");
                 string args = File.ReadAllText(TextElement + "/args.txt");
                 string functions = File.ReadAllText(TextElement + "/Functions.txt");
+                string fontname = File.ReadAllText(TextElement + "/font.txt");
+                string fontsize_string = File.ReadAllText(TextElement + "/fontsize.txt");
                 int x = Convert.ToInt32(File.ReadAllText(TextElement + "/x.txt"));
                 int y = Convert.ToInt32(File.ReadAllText(TextElement + "/y.txt"));
+                string colorTxt = File.ReadAllText(TextElement + "/color.txt");
+                string[] SeparatedRGB = colorTxt.Split(',');
+                int R = Convert.ToInt32(SeparatedRGB[0]);
+                int G = Convert.ToInt32(SeparatedRGB[1]);
+                int B = Convert.ToInt32(SeparatedRGB[2]);
+                int fontsize = Convert.ToInt32(fontsize_string);
+
+                FontFamily fontfamily;
+
+                try
+                {
+                    fontfamily = new FontFamily(fontname);
+                }
+                catch (Exception)
+                {
+                    fontfamily = new FontFamily("Consolas");
+                }
+
+                Font font = new Font(fontfamily, fontsize);
+
+                TextElement NewText = new TextElement
+                {
+                    ID = id,
+                    Text = text,
+                    FontSize = fontsize,
+                    Font = font,
+                    FontName = fontname,
+                    Functions = functions,
+                    X = x,
+                    Y = y,
+                    args = Convert.ToBoolean(args),
+                    Color = Color.FromArgb(R, G, B),
+                };
+                AddText(Menu, NewText, Project);
+            }
+            string[] ImageElements = Directory.GetDirectories(Menu + "/image_elements");
+            foreach (string ImageElement in ImageElements)
+            {
+                string id = File.ReadAllText(ImageElement + "/id.txt");
+                string args = File.ReadAllText(ImageElement + "/args.txt");
+                string functions = File.ReadAllText(ImageElement + "/Functions.txt");
+                int x = Convert.ToInt32(File.ReadAllText(ImageElement + "/x.txt"));
+                int y = Convert.ToInt32(File.ReadAllText(ImageElement + "/y.txt"));
 
                 ImageElement NewImage = new ImageElement
                 {

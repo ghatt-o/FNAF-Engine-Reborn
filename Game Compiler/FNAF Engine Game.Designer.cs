@@ -224,13 +224,11 @@ namespace FNAF_Engine_Reborn
             this.Load += new System.EventHandler(this.FNAF_Engine_Game_Load_1);
             this.VisibleChanged += new System.EventHandler(this.FNAF_Engine_Game_VisibleChanged);
             this.Error.ResumeLayout(false);
-            this.Error.PerformLayout();
             this.Loading.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoadingIcon)).EndInit();
             this.Office.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OfficeBackground)).EndInit();
             this.Night_Start.ResumeLayout(false);
-            this.Night_Start.PerformLayout();
             this.ResumeLayout(false);
 
         }
