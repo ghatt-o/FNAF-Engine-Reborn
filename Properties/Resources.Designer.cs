@@ -83,6 +83,16 @@ namespace FNAF_Engine_Reborn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FE_R_TEXTLOGO {
+            get {
+                object obj = ResourceManager.GetObject("FE-R-TEXTLOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fnaf_loading {
             get {
                 object obj = ResourceManager.GetObject("fnaf loading", resourceCulture);

@@ -45,7 +45,7 @@ namespace FNAF_Engine_Reborn
             // projectNamelbl
             // 
             this.projectNamelbl.AutoSize = true;
-            this.projectNamelbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.projectNamelbl.BackColor = System.Drawing.Color.White;
             this.projectNamelbl.Font = new System.Drawing.Font("Digital-7", 15F);
             this.projectNamelbl.ForeColor = System.Drawing.SystemColors.Window;
             this.projectNamelbl.Location = new System.Drawing.Point(12, 1);
@@ -56,8 +56,8 @@ namespace FNAF_Engine_Reborn
             // 
             // projectNamebox
             // 
-            this.projectNamebox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.projectNamebox.ForeColor = System.Drawing.SystemColors.Window;
+            this.projectNamebox.BackColor = System.Drawing.Color.White;
+            this.projectNamebox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.projectNamebox.Location = new System.Drawing.Point(15, 20);
             this.projectNamebox.Name = "projectNamebox";
             this.projectNamebox.Size = new System.Drawing.Size(185, 20);
@@ -65,9 +65,9 @@ namespace FNAF_Engine_Reborn
             // 
             // createProjectbtn
             // 
-            this.createProjectbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.createProjectbtn.BackColor = System.Drawing.Color.White;
             this.createProjectbtn.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.createProjectbtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.createProjectbtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.createProjectbtn.Location = new System.Drawing.Point(33, 137);
             this.createProjectbtn.Name = "createProjectbtn";
             this.createProjectbtn.Size = new System.Drawing.Size(156, 43);
@@ -79,7 +79,7 @@ namespace FNAF_Engine_Reborn
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(12, 41);
@@ -90,8 +90,8 @@ namespace FNAF_Engine_Reborn
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "None",
@@ -107,6 +107,7 @@ namespace FNAF_Engine_Reborn
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(-190, 137);
@@ -118,22 +119,25 @@ namespace FNAF_Engine_Reborn
             // 
             // fnaf4style_CheckBox
             // 
+            this.fnaf4style_CheckBox.BackColor = System.Drawing.Color.White;
             this.fnaf4style_CheckBox.Enabled = false;
             this.fnaf4style_CheckBox.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.fnaf4style_CheckBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.fnaf4style_CheckBox.Location = new System.Drawing.Point(212, 42);
             this.fnaf4style_CheckBox.Name = "fnaf4style_CheckBox";
             this.fnaf4style_CheckBox.Size = new System.Drawing.Size(141, 22);
             this.fnaf4style_CheckBox.TabIndex = 20;
             this.fnaf4style_CheckBox.Text = "FNAF 4 Style";
-            this.fnaf4style_CheckBox.UseVisualStyleBackColor = true;
+            this.fnaf4style_CheckBox.UseVisualStyleBackColor = false;
             this.fnaf4style_CheckBox.Visible = false;
             // 
             // gameStyleOptions
             // 
-            this.gameStyleOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.gameStyleOptions.ForeColor = System.Drawing.SystemColors.Window;
+            this.gameStyleOptions.BackColor = System.Drawing.Color.White;
+            this.gameStyleOptions.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gameStyleOptions.FormattingEnabled = true;
             this.gameStyleOptions.Items.AddRange(new object[] {
+            "dont choose this",
             "Five Nights at Freddy\'s (Beta)"});
             this.gameStyleOptions.Location = new System.Drawing.Point(210, 20);
             this.gameStyleOptions.Name = "gameStyleOptions";
@@ -144,7 +148,7 @@ namespace FNAF_Engine_Reborn
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(207, 1);
@@ -157,7 +161,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(414, 307);
             this.Controls.Add(this.gameStyleOptions);
             this.Controls.Add(this.label2);

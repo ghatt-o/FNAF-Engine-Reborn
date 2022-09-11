@@ -8,15 +8,17 @@ using System.IO;
 using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace FNAF_Engine_Reborn
 {
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.9.1-rc.1";
-        public string Build_Version = "r1.0.0.-b";
+        public string Version = "0.9.2";
+        public string Build_Version = "f2";
         public bool isopen = false;
+        public bool animatronicselected = false;
         internal bool _0_2C = true;
         readonly bool lightmode = false;
         public bool inScriptEditor;
@@ -48,7 +50,8 @@ namespace FNAF_Engine_Reborn
         }
         private void reborn_Load(object sender, EventArgs e)
         {
-            if (lightmode == false)
+            DoubleBuffered = true;
+            /*if (darkmode == true)
             {
 
             }
@@ -65,7 +68,7 @@ namespace FNAF_Engine_Reborn
                         control.ForeColor = SystemColors.ControlText;
                     }
                 }
-            }
+            }*/
             File.WriteAllText("DO_NOT_MODIFY.txt", "");
 #if DEBUG
             {
@@ -80,7 +83,7 @@ namespace FNAF_Engine_Reborn
             {
                 label93.Location = new Point(872, 1);
             }
-            this.Text = "Sunset Creator";
+            this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
             int randomNumber = random.Next(1, 38);
             //switch (randomNumber)
@@ -268,7 +271,7 @@ namespace FNAF_Engine_Reborn
         {
             changelogs rebornChangelogs = new changelogs();
             rebornChangelogs.Show();
-            Text = "Sunset Creator - Changelogs";
+            Text = "FNAF Engine: Reborn - Changelogs";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -303,7 +306,7 @@ namespace FNAF_Engine_Reborn
         {
             FNAF_Engine_Game theGameTest = new FNAF_Engine_Game(this);
             theGameTest.Show();
-            Text = "Sunset Creator - Testing Game";
+            Text = "FNAF Engine: Reborn - Testing Game";
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -379,21 +382,21 @@ namespace FNAF_Engine_Reborn
 
         private void createProjectBTN_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void loadProjectBTN_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
 
         private void menu_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator";
+            Text = "FNAF Engine: Reborn";
         }
 
         private void button66_Click(object sender, EventArgs e)
@@ -441,7 +444,7 @@ namespace FNAF_Engine_Reborn
             //REBORNtitle.Size = new Size(1000, 60);
             menu.Hide();
             editable = true;
-            Text = "Sunset Creator";
+            Text = "FNAF Engine: Reborn";
             button38.Visible = true;
             //_ = projectloader.label3.Text;
             this.projecto = projec;
@@ -466,12 +469,12 @@ namespace FNAF_Engine_Reborn
 
         private void AssetManagerPanel_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator";
+            Text = "FNAF Engine: Reborn";
         }
 
         private void ProjectStuffs_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator";
+            Text = "FNAF Engine: Reborn";
         }
 
         private void button75_Click(object sender, EventArgs e)
@@ -487,7 +490,7 @@ namespace FNAF_Engine_Reborn
 
         private void reborn_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator";
+            Text = "FNAF Engine: Reborn";
         }
 
         private void menuEditorPanel_VisibleChanged(object sender, EventArgs e)
@@ -601,14 +604,14 @@ namespace FNAF_Engine_Reborn
 
         private void bigProjectICON_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void bigFolderICON_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
@@ -721,9 +724,9 @@ namespace FNAF_Engine_Reborn
                     _ = Directory.CreateDirectory(projecto + "/animatronics");
                     _ = MessageBox.Show("Fixed!");
                 }
-                comboBox1.Items.Clear();
-                comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal"));
-                comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/phantom"));
+                AnimatronicDropDown.Items.Clear();
+                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal"));
+                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/phantom"));
             }
             else
             {
@@ -758,22 +761,28 @@ namespace FNAF_Engine_Reborn
 
         private void label164_Click(object sender, EventArgs e)
         {
+            menuEditorPanel.Hide();
+            menuEditorPanel.Show();
             menuEditorPanel.BringToFront();
+            Sidebar.BringToFront();
         }
 
         private void label161_Click(object sender, EventArgs e)
         {
             officeEditorPanel.BringToFront();
+            Sidebar.BringToFront();
         }
 
         private void label160_Click(object sender, EventArgs e)
         {
             animationEditorPanel.BringToFront();
+            Sidebar.BringToFront();
         }
 
         private void label158_Click(object sender, EventArgs e)
         {
             cutsceneEditorPanel.BringToFront();
+            Sidebar.BringToFront();
         }
 
         private void label157_Click(object sender, EventArgs e)
@@ -801,7 +810,7 @@ namespace FNAF_Engine_Reborn
         {
             extensionCreator extensionCreator = new extensionCreator();
             _ = extensionCreator.ShowDialog();
-            Text = "Sunset Creator - Custom Extensions";
+            Text = "FNAF Engine: Reborn - Custom Extensions";
         }
 
         private void AssetManagerPanel_VisibleChanged(object sender, EventArgs e)
@@ -1241,17 +1250,18 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     _ = Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
-                    comboBox1.Items.Clear();
-                    comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal/"));
-                    comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/phantom/"));
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/data.feranim", "ignoremask=false,audiolure=false,likebb=false");
                     if (checkBox2.Checked == true)
                     {
-                        File.WriteAllText(projecto + "/animatronics/phantom/" + animatronicName + "/options.txt", "ignoremask=false,audiolure=false,likebb=false");
+                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom", "true");
                     }
                     else
                     {
-
+                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom", "false");
                     }
+                    AnimatronicDropDown.Items.Clear();
+                    AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
+                    AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
                 }
                 catch (Exception)
                 {
@@ -1418,9 +1428,9 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                Directory.Delete(comboBox1.SelectedItem.ToString());
-                comboBox1.Items.Clear();
-                comboBox1.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
+                Directory.Delete(AnimatronicDropDown.SelectedItem.ToString());
+                AnimatronicDropDown.Items.Clear();
+                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
             }
             else
             {
@@ -1688,35 +1698,35 @@ namespace FNAF_Engine_Reborn
 
         private void createProjectBTN_Click_1(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void label170_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void label171_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Create Project";
+            Text = "FNAF Engine: Reborn - Create Project";
             createProject projectMaker = new createProject();
             _ = projectMaker.ShowDialog();
         }
 
         private void label153_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
 
         private void label154_Click(object sender, EventArgs e)
         {
-            Text = "Sunset Creator - Load Project";
+            Text = "FNAF Engine: Reborn - Load Project";
             loadFERproject projectLoader = new loadFERproject();
             _ = projectLoader.ShowDialog();
         }
@@ -2032,14 +2042,10 @@ namespace FNAF_Engine_Reborn
                 menu_Editor.RefreshElements(curMenuTag, projecto);
                 if (File.Exists(curMenuTag + "/bg.txt"))
                 {
-                    try
-                    {
-                        MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Unable to load menu background: Invalid Image", "Corrupted Image");
-                    }
+                    MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
+                    MenuPreview.Refresh();
+                    MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
+                    MenuPreview.Refresh();
                 }
                 if (File.Exists(curMenuTag + "/audio.txt"))
                 {
@@ -2182,8 +2188,7 @@ namespace FNAF_Engine_Reborn
                 menu_Editor.CreateText(id, Menu_Name_MenuCodeEditor_InfoLBL.Text);
                 menu_Editor.RefreshElements(curMenuTag, projecto);
                 textCreate_MenuEditor.Hide();
-                menuEditorPanel.Hide();
-                menuEditorPanel.Show();
+                UpdateMenuElements();
             }
         }
 
@@ -2325,15 +2330,13 @@ namespace FNAF_Engine_Reborn
 
         private void Menu_CodeEditor_VisibleChanged(object sender, EventArgs e)
         {
-            if (Menus.SelectedNode == null)
-            {
-                Menu_CodeEditor.Hide();
-            }
-            else
-            {
-                Menu_Name_MenuCodeEditor_InfoLBL.Text = Menus.SelectedNode.Text;
-            }
 
+
+            // //OLD CODE!!
+
+
+
+            
             try
             {
                 MenuStart_CodeEditor.Text = File.ReadAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt");
@@ -2343,6 +2346,7 @@ namespace FNAF_Engine_Reborn
             {
                 MessageBox.Show("Warning: Some project data might've been corrupted!", "Corrupted Project", MessageBoxButtons.OK);
             }
+            
         }
 
         private void DownloadFontBtn_Click(object sender, EventArgs e)
@@ -2383,8 +2387,10 @@ namespace FNAF_Engine_Reborn
                 {
 
                 }
+                Sidebar.Show();
                 AssetManagerPanel.Show();
                 AssetManagerPanel.BringToFront();
+                Sidebar.BringToFront();
                 buildSettingsPanelMoment.Show();
                 SoundEditorPanel.Show();
                 menuEditorPanel.Show();
@@ -2453,9 +2459,9 @@ namespace FNAF_Engine_Reborn
 
         private async void REBORNtitle_Click(object sender, EventArgs e)
         {
-            REBORNtitle.Image = Properties.Resources.Sunset_Creator_old;
-            await Task.Delay(30);
-            REBORNtitle.Image = Properties.Resources.Sunset_Creator;
+            //REBORNtitle.Image = Properties.Resources.Sunset_Creator_old;
+            //await Task.Delay(30);
+            //REBORNtitle.Image = Properties.Resources.Sunset_Creator;
         }
 
         private void gamehourstextbox_TextChanged(object sender, EventArgs e)
@@ -2580,6 +2586,85 @@ namespace FNAF_Engine_Reborn
                     //it is!
                     //lets set the audio
                     File.WriteAllText(Menus.SelectedNode.Tag + "/audio.txt", projecto + "/sounds/" + BackgroundAudio_MenuEditor.SelectedItem.ToString());
+                }
+            }
+        }
+
+        private void animatronicEditorIgnoresMask_Check_CheckedChanged(object sender, EventArgs e)
+        {
+            if (animatronicselected == true)
+            {
+                //string optionstxt = File.ReadAllText(projecto + "/animatronics/" + Animatronics.txt");
+                //string[] options = optionstxt.Split(',');
+                //options[8] = "animatronic=,";
+                //string newoptions = string.Join(",", options);
+                //File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+            }
+        }
+
+        private void animatronicEditorAudioLured_Check_CheckedChanged(object sender, EventArgs e)
+        {
+            if (animatronicselected == true)
+            {
+
+            }
+        }
+
+        private void animatronicEditorLikeBB_Check_CheckedChanged(object sender, EventArgs e)
+        {
+            if (animatronicselected == true)
+            {
+
+            }
+        }
+
+        private void isphantom_animatronicEditor_Click(object sender, EventArgs e)
+        {
+            if (animatronicselected == true)
+            {
+
+            }
+        }
+
+        private void AnimatronicDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string data = File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString());
+        }
+
+        private void Menu_CodeEditor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+
+        private void label92_Click(object sender, EventArgs e)
+        {
+            this.menu.Show();
+            this.menu.BringToFront();
+        }
+
+        private void label71_Click(object sender, EventArgs e)
+        {
+            this.menu.Show();
+            this.menu.BringToFront();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TheCutestCat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Menus_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Menus.SelectedNode != null)
+            {
+                if (e.Modifiers == Keys.Control && e.KeyCode == Keys.C)
+                {
+                    Clipboard.SetText("Menu: " + File.ReadAllText(curMenuTag + "/name.txt") + ", \nCode: On Game Loop, On Menu Start, \nElements: ", TextDataFormat.Text);
                 }
             }
         }

@@ -3,6 +3,8 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DarkUI.Forms;
+using FNAF_Engine_Reborn.Properties;
 
 namespace FNAF_Engine_Reborn
 {
@@ -19,6 +21,7 @@ namespace FNAF_Engine_Reborn
 
         public FNAF_Engine_Game(reborn reborn)
         {
+            this.Dock = DockStyle.Fill;
             this.reborn = reborn;
             project = reborn.projecto;
             InitializeComponent();
@@ -38,14 +41,19 @@ namespace FNAF_Engine_Reborn
             this.DoubleBuffered = true;
             project = reborn.projecto;
             Load_Game();
-            await Task.Delay(500);
-
             this.Controls["Main"].BringToFront();
-            Loading.Hide();
         }
         private void Load_Game()
         {
             this.Text = File.ReadAllText(project + "/game.txt");
+            if (File.ReadAllText(project + "/options.txt").StartsWith("fullscreen=false"))
+            {
+                this.MaximizeBox = true;
+                this.Size = new Size(1280, 720);
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FNAF_Engine_Game));
+                this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            }
             Load_Menus();
         }
 
@@ -94,6 +102,7 @@ namespace FNAF_Engine_Reborn
 
                 if (MenuName == "Main")
                 {
+                    menu_panel.Tag = 1;
                     menu_panel.BringToFront();
                 }
 
@@ -105,37 +114,95 @@ namespace FNAF_Engine_Reborn
 
                 async void Menu_Start(object sender, EventArgs e)
                 {
-                    string[] instructions = { };
-                    string[] instructions_onloop = { };
+
+                    //SCRIPTS!
+                    string instructions = "";
+                    string instructions_loop = "";
+
+                    //ON MENU START
                     try
                     {
-                        instructions = File.ReadAllLines(project + "/menus/" + MenuName + "/onmenustart.txt");
+                        instructions = File.ReadAllText(project + "/menus/" + MenuName + "/onmenustart.txt");
                     }
                     catch (Exception)
                     {
 
                     }
-                    foreach (string instruction in instructions)
-                    {
-                        RunScript(instruction);
-                    }
+                    string[] Lines = instructions.Split('*');
+                    var Condition = Lines[0].Split('\n')[0];
+                    Lines.SetValue("", 0);
 
-                    try
-                    {
-                        instructions_onloop = File.ReadAllLines(project + "/menus/" + MenuName + "/ongameloop.txt");
-                    }
-                    catch (Exception)
-                    {
+                    //IF CONDITIONS
 
-                    }
-                    while (menu_panel.Visible == true)
+                    if (Condition.StartsWith("If("))
                     {
-                        await Task.Delay(1);
-                        foreach (string instruction in instructions_onloop)
+                        if (Condition.StartsWith("If()")) // If() Do
                         {
-                            RunScript(instruction);
+                            foreach (string line in Lines)
+                            {
+                                RunStandardScript(line);
+                            }
+                        }
+                        //No key conditions because you can't press/hold a key on menu START.
+                    }
+
+                    //IF NOT CONDITIONS
+
+                    if (Condition.StartsWith("If not"))
+                    {
+                        if (Condition.StartsWith("If not()")) // If not() Do
+                        {
+                            foreach (string line in Lines)
+                            {
+                                RunStandardScript(line);
+                            }
                         }
                     }
+
+                    //ON GAME LOOP
+
+                    try
+                    {
+                        instructions_loop = File.ReadAllText(project + "/menus/" + MenuName + "/ongameloop.txt");
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    while (menu_panel.Tag == (object)1)
+                    {
+                        await Task.Delay(1);
+                        string[] Lines2 = instructions_loop.Split('*');
+                        var Condition2 = Lines2[0].Split('\n')[0];
+                        Lines2.SetValue("", 0);
+
+                        //IF CONDITIONS
+
+                        if (Condition.StartsWith("If("))
+                        {
+                            if (Condition.StartsWith("If()")) // If() Do
+                            {
+                                foreach (string line2 in Lines2)
+                                {
+                                    RunStandardScript(line2);
+                                }
+                            }
+                        }
+
+                        //IF NOT CONDITIONS
+
+                        if (Condition.StartsWith("If not"))
+                        {
+                            if (Condition.StartsWith("If not()")) // If not() Do
+                            {
+                                foreach (string line2 in Lines2)
+                                {
+                                    RunStandardScript(line2);
+                                }
+                            }
+                        }
+                    }
+
                 }
 
                 async void Menu_Load(object sender, EventArgs e)
@@ -244,7 +311,7 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functions.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                             void Element_Hover(object object_sender, EventArgs event_args)
@@ -252,7 +319,7 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functionshover.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                             void Element_Unhover(object object_sender, EventArgs event_args)
@@ -260,7 +327,7 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functionsunhover.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                             void Element_Hold(object object_sender, EventArgs event_args)
@@ -268,7 +335,7 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functionshold.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                         }
@@ -333,7 +400,7 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functions.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                             void Element_Hover(object object_sender, EventArgs event_args)
@@ -341,7 +408,7 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functionshover.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                             void Element_Unhover(object object_sender, EventArgs event_args)
@@ -349,7 +416,7 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functionsunhover.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                             void Element_Hold(object object_sender, EventArgs event_args)
@@ -357,14 +424,18 @@ namespace FNAF_Engine_Reborn
                                 string[] functions = File.ReadAllLines(Path + "/functionshold.txt");
                                 foreach (string instruction in functions)
                                 {
-                                    RunScript(instruction);
+                                    RunStandardScript(instruction);
                                 }
                             }
                         }
                     }
                     MF_OnEngineStart();
                 }
-                async void RunScript(string instruction)
+                async void RunScript(string[] file)
+                {
+
+                }
+                async void RunStandardScript(string instruction)
                 {
                     await RunCode();
                     async Task RunCode()
@@ -390,16 +461,13 @@ namespace FNAF_Engine_Reborn
                     if (instruction.StartsWith("Start Night ")) //Start Night "0"
                     {
                         await RunCode();
-                        //todo
+                        MF_NightStart(1);
                     }
 
                     if (instruction == "New Game")
                     {
                         await RunCode();
-                        Console.WriteLine("Night 1");
-                        Night_Start.Show();
-                        Night_Start.BringToFront();
-                        nightLBL.Text = "Night 1";
+                        MF_NewGame();
                     }
 
                     if (instruction == "Continue")
@@ -423,8 +491,16 @@ namespace FNAF_Engine_Reborn
                     if (instruction.StartsWith("Set Variable ")) //Set Variable "varname" to "varvalue"
                     {
                         await RunCode();
-                        string[] instructions = instruction.Split('"');
-                        File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], instructions[3]);
+                        try
+                        {
+                            string[] instructions = instruction.Split('"');
+                            Directory.CreateDirectory(project + "/menus/" + MenuName + "/variables/" + instructions[1]);
+                            File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], instructions[3]);
+                        }
+                        catch(Exception)
+                        {
+                            MF_Error("Failed to set variable", "Failed to set variable: '" + instruction.Split('"')[1] + "', Original code: " + instruction);
+                        }
                     }
 
                     if (instruction == "Break")
@@ -433,51 +509,51 @@ namespace FNAF_Engine_Reborn
                         MF_Break();
                     }
 
-                    if (instruction.StartsWith("If (")) // If (myfuckingvariable = 1) Do []
+                    if (instruction.StartsWith("If (")) // If ("myfuckingvariable" = "1") Do []
                     {
                         await RunCode();
                         try
                         {
                             string param = instruction.Split(' ')[3];
-                            string value = instruction.Split(' ', ')')[1];
+                            string value = instruction.Split('"')[3];
                             string block = instruction.Split('[', ']')[1];
-                            string variable = instruction.Split('(', ')')[1];
+                            string variable = instruction.Split('"')[1];
                             switch (param)
                             {
                                 case "=":
                                     if (File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) == value)
                                     {
-                                        RunScript(block);
+                                        RunStandardScript(block);
                                     }
                                     break;
                                 case "<":
                                     if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) < Convert.ToInt32(value))
                                     {
-                                        RunScript(block);
+                                        RunStandardScript(block);
                                     }
                                     break;
                                 case "<=":
                                     if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) <= Convert.ToInt32(value))
                                     {
-                                        RunScript(block);
+                                        RunStandardScript(block);
                                     }
                                     break;
                                 case ">":
                                     if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) > Convert.ToInt32(value))
                                     {
-                                        RunScript(block);
+                                        RunStandardScript(block);
                                     }
                                     break;
                                 case ">=":
                                     if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) >= Convert.ToInt32(value))
                                     {
-                                        RunScript(block);
+                                        RunStandardScript(block);
                                     }
                                     break;
                                 case "<>":
-                                    if (File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) != value)
+                                    if (File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) != value || File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) == null)
                                     {
-                                        RunScript(block);
+                                        RunStandardScript(block);
                                     }
                                     break;
                             }
@@ -617,11 +693,24 @@ namespace FNAF_Engine_Reborn
                     if (instruction == "Run Script")
                     {
                         await RunCode();
-                        RunScript(instruction);
+                        RunStandardScript(instruction);
                     }
 
                 }
             }
+        }
+
+        private void MF_NewGame()
+        {
+            MF_NightStart(1);
+        }
+
+        private void MF_NightStart(int night)
+        {
+            Console.WriteLine("Night " + night);
+            Night_Start.Show();
+            Night_Start.BringToFront();
+            nightLBL.Text = "Night " + night;
         }
 
         private async void Night_Start_VisibleChanged(object sender, EventArgs e)
@@ -752,7 +841,12 @@ namespace FNAF_Engine_Reborn
         {
             try
             {
+                foreach(Control control in Controls)
+                {
+                    control.Tag = 0;
+                }
                 this.Controls[Menu].BringToFront();
+                this.Controls[Menu].Tag = 0;
             }
             catch (Exception)
             {
