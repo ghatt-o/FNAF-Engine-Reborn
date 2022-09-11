@@ -176,7 +176,7 @@ namespace FNAF_Engine_Reborn
                         var Condition2 = Lines2[0].Split('\n')[0];
                         Lines2.SetValue("", 0);
 
-                        //IF CONDITIONS
+                        //IF CONDITIONS!
 
                         if (Condition.StartsWith("If("))
                         {
