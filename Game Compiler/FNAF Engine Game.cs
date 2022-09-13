@@ -79,9 +79,9 @@ namespace FNAF_Engine_Reborn
                     bg.Name = "background";
                     bg.Size = menu_panel.Size;
                     bg.BackgroundImageLayout = ImageLayout.Stretch;
-                    Console.WriteLine("thinging");
+                    //Console.WriteLine("thinging");
                     bg.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
-                    Console.WriteLine("thinged");
+                    //Console.WriteLine("thinged");
                     bg.Visible = true;
                     menu_panel.Controls.Add(bg);
                 }
