@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DarkUI.Forms;
@@ -39,9 +40,17 @@ namespace FNAF_Engine_Reborn
         private async void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
         {
             this.DoubleBuffered = true;
+            this.Refresh();
             project = reborn.projecto;
             Load_Game();
-            this.Controls["Main"].BringToFront();
+            try
+            {
+                this.Controls["Main"].BringToFront();
+            }
+            catch(Exception)
+            {
+
+            }
         }
         private void Load_Game()
         {
@@ -57,7 +66,7 @@ namespace FNAF_Engine_Reborn
             Load_Menus();
         }
 
-        private void Load_Menus()
+        private async void Load_Menus()
         {
             string[] menus = Directory.GetDirectories(project + "/menus/");
             foreach (string Menu in menus)
@@ -72,18 +81,10 @@ namespace FNAF_Engine_Reborn
                     BackColor = Color.Black
                 };
 
-                PictureBox bg = new PictureBox();
-
                 try
                 {
-                    bg.Name = "background";
-                    bg.Size = menu_panel.Size;
-                    bg.BackgroundImageLayout = ImageLayout.Stretch;
-                    //Console.WriteLine("thinging");
-                    bg.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
-                    //Console.WriteLine("thinged");
-                    bg.Visible = true;
-                    menu_panel.Controls.Add(bg);
+                    await Task.Delay(100);
+                    menu_panel.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
                 }
                 catch (FileNotFoundException)
                 {
@@ -116,46 +117,49 @@ namespace FNAF_Engine_Reborn
                 {
 
                     //SCRIPTS!
-                    string instructions = "";
+                    string[] instructions = { };
                     string instructions_loop = "";
 
                     //ON MENU START
                     try
                     {
-                        instructions = File.ReadAllText(project + "/menus/" + MenuName + "/onmenustart.txt");
+                        instructions = File.ReadAllLines(project + "/menus/" + MenuName + "/onmenustart.txt");
                     }
                     catch (Exception)
                     {
 
                     }
-                    string[] Lines = instructions.Split('*');
-                    var Condition = Lines[0].Split('\n')[0];
-                    Lines.SetValue("", 0);
 
-                    //IF CONDITIONS
-
-                    if (Condition.StartsWith("If("))
+                    foreach (string instruction in instructions)
                     {
-                        if (Condition.StartsWith("If()")) // If() Do
+                        string Condition = instruction;
+
+                        if (Condition.StartsWith("*"))
                         {
-                            foreach (string line in Lines)
+                            //IF CONDITIONS
+
+                            if (Condition.StartsWith("*If ("))
                             {
-                                RunStandardScript(line);
+                                if (Condition.StartsWith("*If ()")) // If() Do
+                                {
+                                    continue;
+                                }
+                                //No key conditions because you can't press/hold a key on menu START.
+                            }
+
+                            //IF NOT CONDITIONS
+
+                            if (Condition.StartsWith("*If not"))
+                            {
+                                if (Condition.StartsWith("*If not ()")) // If not() Do
+                                {
+                                    
+                                }
                             }
                         }
-                        //No key conditions because you can't press/hold a key on menu START.
-                    }
-
-                    //IF NOT CONDITIONS
-
-                    if (Condition.StartsWith("If not"))
-                    {
-                        if (Condition.StartsWith("If not()")) // If not() Do
+                        else
                         {
-                            foreach (string line in Lines)
-                            {
-                                RunStandardScript(line);
-                            }
+                            RunStandardScript(Condition);
                         }
                     }
 
@@ -178,9 +182,9 @@ namespace FNAF_Engine_Reborn
 
                         //IF CONDITIONS
 
-                        if (Condition.StartsWith("If("))
+                        if (Condition2.StartsWith("If ("))
                         {
-                            if (Condition.StartsWith("If()")) // If() Do
+                            if (Condition2.StartsWith("If ()")) // If() Do
                             {
                                 foreach (string line2 in Lines2)
                                 {
@@ -191,9 +195,9 @@ namespace FNAF_Engine_Reborn
 
                         //IF NOT CONDITIONS
 
-                        if (Condition.StartsWith("If not"))
+                        if (Condition2.StartsWith("If not"))
                         {
-                            if (Condition.StartsWith("If not()")) // If not() Do
+                            if (Condition2.StartsWith("If not ()")) // If not() Do
                             {
                                 foreach (string line2 in Lines2)
                                 {
@@ -205,7 +209,7 @@ namespace FNAF_Engine_Reborn
 
                 }
 
-                async void Menu_Load(object sender, EventArgs e)
+                void Menu_Load(object sender, EventArgs e)
                 {
                     try
                     {
@@ -384,7 +388,7 @@ namespace FNAF_Engine_Reborn
                             string ID = File.ReadAllText(Path + "/id.txt");
 
                             Sprite.Location = new Point(X, Y);
-                            Sprite.AutoSize = true;
+                            Sprite.Size = Image.FromFile(project + "/images/" + ID).Size;
                             Sprite.BackColor = Color.Transparent;
                             Sprite.BackgroundImageLayout = ImageLayout.None;
                             Sprite.BackgroundImage = Image.FromFile(project + "/images/" + ID);
@@ -668,7 +672,7 @@ namespace FNAF_Engine_Reborn
                         string[] instructions = instruction.Split('"');
                         try
                         {
-                            bg.BackgroundImage = Image.FromFile(project + "/images/" + instructions[1]);
+                            menu_panel.BackgroundImage = Image.FromFile(project + "/images/" + instructions[1]);
                         }
                         catch (Exception)
                         {
@@ -686,7 +690,7 @@ namespace FNAF_Engine_Reborn
                         }
                         catch (Exception)
                         {
-                            MF_Error("Failed to change sprite: " + instructions[1] + "'s image to " + instructions[3], "Failed to change sprite. Original code: " + instruction);
+                            MF_Error("Failed to change sprite: " + instructions[1] + "'s image to " + instructions[2], "Failed to change sprite. Original code: " + instruction);
                         }
                     }
 

@@ -21,34 +21,18 @@ namespace FNAF_Engine_Reborn.Object_Editors
             }
         }
 
-        public static void DeleteDataValue(string Name)
+        public static void DeleteDataValue(string Name, object Value)
         {
             string VariableTXT = File.ReadAllText(Project + "/data.txt");
-            string[] Variables = VariableTXT.Split(',');
-            foreach (string Variable in Variables)
-            {
-                string[] Values = Variable.Split(':');
-                if (Values[0] == Name)
-                {
-                    _ = VariableTXT.Replace($",{Values[0]}:{Values[1]}", "");
-                    File.WriteAllText(Project + "/data.txt", VariableTXT);
-                }
-            }
+            _ = VariableTXT.Replace($",{Name}:{Value}", "");
+            File.WriteAllText(Project + "/data.txt", VariableTXT);
         }
 
-        public static void ReassignDataValue(string Name, object Value)
+        public static void ReassignDataValue(string name, object oldValue, object newValue)
         {
             string VariableTXT = File.ReadAllText(Project + "/data.txt");
-            string[] Variables = VariableTXT.Split(',');
-            foreach (string Variable in Variables)
-            {
-                string[] Values = Variable.Split(':');
-                if (Values[0] == Name)
-                {
-                    _ = VariableTXT.Replace($",{Name}:{Values[1]}", $",{Name}:{Value}");
-                    File.WriteAllText(Project + "/data.txt", VariableTXT);
-                }
-            }
+            _ = VariableTXT.Replace($",{name}:{oldValue}", $",{name}:{newValue}");
+            File.WriteAllText(Project + "/data.txt", VariableTXT);
         }
 
         public static void RefreshDataValues()
@@ -73,6 +57,21 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     _ = dataValue.Nodes.Add("value", Values[1]);
                 }
             }
+        }
+
+        public static object GetDataValue(string Name)
+        {
+            string VariableTXT = File.ReadAllText(Project + "/data.txt");
+            var separator = VariableTXT.Split(',');
+            object finalValue = null;
+            foreach (var DataValue in separator)
+            {
+                if (DataValue.StartsWith($"{Name}:"))
+                {
+                    finalValue = DataValue.Split(':')[1];
+                }
+            }
+            return finalValue;
         }
     }
 }

@@ -86,7 +86,7 @@ namespace FNAF_Engine_Reborn
                             File.WriteAllText(projectPath + "/style.txt", "fnaf");
                         }
                         File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
-                        File.WriteAllText(projectPath + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=false,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=,");
+                        File.WriteAllText(projectPath + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=false,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,");
                         File.WriteAllText(projectPath + "/offices/default/misc.txt", "camera=,mask=,powerout=");
                         File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
                         File.WriteAllText(projectPath + "/offices/default/sprites.txt", "");
@@ -267,8 +267,8 @@ namespace FNAF_Engine_Reborn
             _ = Directory.CreateDirectory(projectPath + "/menus/" + Name + "/variables");
             _ = Directory.CreateDirectory(projectPath + "/menus/" + Name + "/events");
             File.WriteAllText(projectPath + "/menus/" + Name + "/name.txt", Name);
-            //File.WriteAllText(projectPath + "/menus/" + Name + "/ongameloop.txt", "");
-            //File.WriteAllText(projectPath + "/menus/" + Name + "/onmenustart.txt", "");
+            File.WriteAllText(projectPath + "/menus/" + Name + "/onmenustart.txt", "*If () Do");
+            File.WriteAllText(projectPath + "/menus/" + Name + "/ongameloop.txt", "*If not () Do");
         }
 
         private void gameStyleOptions_SelectedIndexChanged(object sender, EventArgs e)

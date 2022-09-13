@@ -712,26 +712,7 @@ namespace FNAF_Engine_Reborn
         private void label163_Click(object sender, EventArgs e)
         {
             animatronicEditorPNL2.BringToFront();
-            if (_0_2C == true)
-            {
-                if (Directory.Exists(projecto + "/animatronics"))
-                {
-                    //aight
-                }
-                else
-                {
-                    _ = MessageBox.Show("Something went wrong!");
-                    _ = Directory.CreateDirectory(projecto + "/animatronics");
-                    _ = MessageBox.Show("Fixed!");
-                }
-                AnimatronicDropDown.Items.Clear();
-                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal"));
-                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/phantom"));
-            }
-            else
-            {
-
-            }
+            Sidebar.BringToFront();
         }
 
         private void label162_Click(object sender, EventArgs e)
@@ -743,6 +724,7 @@ namespace FNAF_Engine_Reborn
                     comboBox4.Items.Clear();
                     comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras/"));
                     cameraEditorPanel.BringToFront();
+                    Sidebar.BringToFront();
                 }
                 else
                 {
@@ -751,6 +733,7 @@ namespace FNAF_Engine_Reborn
                     comboBox4.Items.Clear();
                     _ = MessageBox.Show("Fixed!");
                     cameraEditorPanel.BringToFront();
+                    Sidebar.BringToFront();
                 }
             }
             else
@@ -799,11 +782,13 @@ namespace FNAF_Engine_Reborn
         private void label156_Click(object sender, EventArgs e)
         {
             SoundEditorPanel.BringToFront();
+            Sidebar.BringToFront();
         }
 
         private void label91_Click_1(object sender, EventArgs e)
         {
             ExtensionsPanel.BringToFront();
+            Sidebar.BringToFront();
         }
 
         private void button94_Click(object sender, EventArgs e)
@@ -937,14 +922,14 @@ namespace FNAF_Engine_Reborn
                 }
                 if (File.Exists(projecto + "/gameid.txt"))
                 {
-                    textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
+                    //textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
                 }
                 if (File.Exists(projecto + "/gameid.txt") == false)
                 {
                     _ = MessageBox.Show("Something went wrong!, Fixing...");
                     _ = File.CreateText(projecto + "/gameid.txt");
                     _ = MessageBox.Show("Fixed!");
-                    textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
+                    //textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
                 }
                 try
                 {
@@ -992,14 +977,14 @@ namespace FNAF_Engine_Reborn
             {
                 if (File.Exists(projecto + "/gameid.txt"))
                 {
-                    File.WriteAllText(projecto + "/gameid.txt", textBox5.Text);
+                    File.WriteAllText(projecto + "/gameid.txt", "");
                 }
                 else
                 {
                     _ = MessageBox.Show("Something went wrong!, Fixing...");
                     _ = File.CreateText(project + "/gameid.txt");
                     _ = MessageBox.Show("Fixed!");
-                    textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
+                    //textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
                 }
             }
         }
@@ -1019,6 +1004,7 @@ namespace FNAF_Engine_Reborn
                         string menuNam = menuName.Text;
                         _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam);
                         _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/text_elements");
+                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/image_elements");
                         _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/variables");
                         File.WriteAllText(projecto + "/menus/" + menuNam + "/name.txt", menuNam);
                         File.WriteAllText(projecto + "/menus/" + menuNam + "/ongameloop.txt", "");
@@ -1215,6 +1201,7 @@ namespace FNAF_Engine_Reborn
         private void label96_Click(object sender, EventArgs e)
         {
             staticeffecteditor.BringToFront();
+            Sidebar.BringToFront();
         }
 
         private void button113_Click_1(object sender, EventArgs e)
@@ -1253,19 +1240,22 @@ namespace FNAF_Engine_Reborn
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/data.feranim", "ignoremask=false,audiolure=false,likebb=false");
                     if (checkBox2.Checked == true)
                     {
-                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom", "true");
+                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "true");
                     }
                     else
                     {
-                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom", "false");
+                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "false");
                     }
                     AnimatronicDropDown.Items.Clear();
-                    AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
                     AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
                 }
                 catch (Exception)
                 {
-
+                    MessageBox.Show("Failed to create animatronic!");
+                }
+                finally
+                {
+                    panel8.Hide();
                 }
             }
             else
@@ -1430,7 +1420,7 @@ namespace FNAF_Engine_Reborn
             {
                 Directory.Delete(AnimatronicDropDown.SelectedItem.ToString());
                 AnimatronicDropDown.Items.Clear();
-                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
+                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
             }
             else
             {
@@ -1637,11 +1627,11 @@ namespace FNAF_Engine_Reborn
                 PowerOutAnim_ComboBox.Items.Clear();
                 PowerOutAnim_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
                 comboBox14.Items.Clear();
-                comboBox14.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/phantom/"));
+                comboBox14.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
                 comboBox17.Items.Clear();
                 comboBox17.Items.AddRange(Directory.GetDirectories(projecto + "/offices/default/office_states/"));
                 comboBox14.Items.Clear();
-                comboBox14.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/normal/"));
+                comboBox14.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
                 string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
                 string[] options = optionstxt.Split(',');
                 if (File.Exists(projecto + "/offices/default/office.txt"))
@@ -2044,8 +2034,6 @@ namespace FNAF_Engine_Reborn
                 {
                     MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
                     MenuPreview.Refresh();
-                    MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
-                    MenuPreview.Refresh();
                 }
                 if (File.Exists(curMenuTag + "/audio.txt"))
                 {
@@ -2062,7 +2050,7 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
-                    MenuPreview.BackgroundImage = null;
+                    
                 }
             }
         }
@@ -2267,6 +2255,7 @@ namespace FNAF_Engine_Reborn
             }
             else
             {
+                DataValue_Name.Text = DataValue_Name.Text.Replace(":", "");
                 DataValues.CreateDataValue(DataValue_Name.Text);
                 DataValues.RefreshDataValues();
                 DataValue_Name.Hide();
@@ -2275,6 +2264,7 @@ namespace FNAF_Engine_Reborn
 
         private void reassignDataValue_GameManager_Click(object sender, EventArgs e)
         {
+            reassign_Value_GameManager_Textbox.Text = reassign_Value_GameManager_Textbox.Text.Replace(":", "");
             if (reassign_Value_GameManager_Textbox.Visible == false)
             {
                 object tag = "Data_Values_List";
@@ -2291,7 +2281,7 @@ namespace FNAF_Engine_Reborn
             {
                 string DataValue = GameManager_Variables_View.SelectedNode.Name;
                 string Value = reassign_Value_GameManager_Textbox.Text;
-                DataValues.ReassignDataValue(DataValue, Value);
+                DataValues.ReassignDataValue(DataValue, DataValues.GetDataValue(DataValue), Value);
                 DataValues.RefreshDataValues();
                 reassign_Value_GameManager_Textbox.Hide();
             }
@@ -2309,8 +2299,11 @@ namespace FNAF_Engine_Reborn
 
         private void MenuEditor_ScriptEditor_Click(object sender, EventArgs e)
         {
-            Menu_CodeEditor.Show();
-            Menu_CodeEditor.BringToFront();
+            if (curMenuTag != null)
+            {
+                Menu_CodeEditor.Show();
+                Menu_CodeEditor.BringToFront();
+            }
         }
 
         private void X_Leave_MenuCodeEditor_Click(object sender, EventArgs e)
@@ -2320,12 +2313,12 @@ namespace FNAF_Engine_Reborn
 
         private void MenuStart_CodeEditor_TextChanged(object sender, EventArgs e)
         {
-            File.WriteAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt", MenuStart_CodeEditor.Text);
+            File.WriteAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt", MenuStart_CodeEditor.Text);
         }
 
         private void OnGameLoop_MenuEditor_CodeEditor_TextChanged(object sender, EventArgs e)
         {
-            File.WriteAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt", OnGameLoop_MenuEditor_CodeEditor.Text);
+            File.WriteAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt", OnGameLoop_MenuEditor_CodeEditor.Text);
         }
 
         private void Menu_CodeEditor_VisibleChanged(object sender, EventArgs e)
@@ -2339,11 +2332,12 @@ namespace FNAF_Engine_Reborn
             
             try
             {
-                MenuStart_CodeEditor.Text = File.ReadAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt");
-                OnGameLoop_MenuEditor_CodeEditor.Text = File.ReadAllText(projecto + "/menus/" + Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt");
+                MenuStart_CodeEditor.Text = File.ReadAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt");
+                OnGameLoop_MenuEditor_CodeEditor.Text = File.ReadAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Exc:" + ex.ToString());
                 MessageBox.Show("Warning: Some project data might've been corrupted!", "Corrupted Project", MessageBoxButtons.OK);
             }
             
@@ -2618,17 +2612,18 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private void isphantom_animatronicEditor_Click(object sender, EventArgs e)
-        {
-            if (animatronicselected == true)
-            {
-
-            }
-        }
-
         private void AnimatronicDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string data = File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString());
+            string data = File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/data.feranim");
+            bool phantom = Convert.ToBoolean(File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/phantom.feranimext"));
+            if (phantom == true)
+            {
+                isphantom_animatronicEditor.Hide();
+            }
+            else
+            {
+                isphantom_animatronicEditor.Show();
+            }
         }
 
         private void Menu_CodeEditor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -2666,6 +2661,43 @@ namespace FNAF_Engine_Reborn
                 {
                     Clipboard.SetText("Menu: " + File.ReadAllText(curMenuTag + "/name.txt") + ", \nCode: On Game Loop, On Menu Start, \nElements: ", TextDataFormat.Text);
                 }
+            }
+        }
+
+        private void deleteDataValue_GameManager_Click(object sender, EventArgs e)
+        {
+            object tag = "Data_Values_List";
+            if (GameManager_Variables_View.SelectedNode == null || GameManager_Variables_View.SelectedNode.Tag == tag || GameManager_Variables_View.SelectedNode.Name == "value")
+            {
+                MessageBox.Show("Select an data value first!");
+            }
+            else
+            {
+                DataValues.DeleteDataValue(GameManager_Variables_View.SelectedNode.Name, DataValues.GetDataValue(GameManager_Variables_View.SelectedNode.Name));
+                DataValues.RefreshDataValues();
+            }
+        }
+
+        private void animatronicEditorPNL2_VisibleChanged(object sender, EventArgs e)
+        {
+            if (_0_2C == true)
+            {
+                if (Directory.Exists(projecto + "/animatronics"))
+                {
+                    //aight
+                }
+                else
+                {
+                    _ = MessageBox.Show("Something went wrong!");
+                    _ = Directory.CreateDirectory(projecto + "/animatronics");
+                    _ = MessageBox.Show("Fixed!");
+                }
+                AnimatronicDropDown.Items.Clear();
+                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
+            }
+            else
+            {
+
             }
         }
     }

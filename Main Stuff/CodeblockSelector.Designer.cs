@@ -200,9 +200,9 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // Events
             // 
-            this.Events.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Events.BackColor = System.Drawing.SystemColors.Control;
             this.Events.Font = new System.Drawing.Font("Segoe UI", 11.5F);
-            this.Events.ForeColor = System.Drawing.SystemColors.Window;
+            this.Events.ForeColor = System.Drawing.Color.Black;
             this.Events.ItemHeight = 35;
             this.Events.LineColor = System.Drawing.Color.Red;
             this.Events.Location = new System.Drawing.Point(12, 9);
@@ -240,6 +240,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             treeNode16.Name = "When power is at []%";
             treeNode16.Text = "When power is at []%";
             treeNode17.Name = "Game Loop";
+            treeNode17.Tag = "Cat";
             treeNode17.Text = "Game Loop";
             treeNode18.Name = "Timer equals []ms";
             treeNode18.Text = "Timer equals []ms";
@@ -248,6 +249,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             treeNode20.Name = "Custom Timer Completed";
             treeNode20.Text = "Custom Timer Completed";
             treeNode21.Name = "Timers";
+            treeNode21.Tag = "Cat";
             treeNode21.Text = "Timers";
             treeNode22.Name = "On key press";
             treeNode22.Text = "On key press";
@@ -260,6 +262,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             treeNode26.Name = "On input []";
             treeNode26.Text = "On input []";
             treeNode27.Name = "Player";
+            treeNode27.Tag = "Cat";
             treeNode27.Text = "Player";
             treeNode28.Name = "On AI Changed";
             treeNode28.Text = "On AI Changed";
@@ -270,18 +273,21 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             treeNode31.Name = "On move";
             treeNode31.Text = "On move";
             treeNode32.Name = "Animatronics";
+            treeNode32.Tag = "Cat";
             treeNode32.Text = "Animatronics";
             treeNode33.Name = "When [] animation finished";
             treeNode33.Text = "When [] animation finished";
             treeNode34.Name = "Custom Function";
             treeNode34.Text = "Custom Function";
             treeNode35.Name = "Advanced";
+            treeNode35.Tag = "Cat";
             treeNode35.Text = "Advanced";
             treeNode36.Name = "Light [] is []";
             treeNode36.Text = "Light [] is []";
             treeNode37.Name = "Door [] is []";
             treeNode37.Text = "Door [] is []";
             treeNode38.Name = "Office";
+            treeNode38.Tag = "Cat";
             treeNode38.Text = "Office";
             treeNode39.Name = "On cutscene [] start";
             treeNode39.Text = "On cutscene [] start";
@@ -300,6 +306,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             treeNode46.Name = "On minigame [] end";
             treeNode46.Text = "On minigame [] end";
             treeNode47.Name = "Other";
+            treeNode47.Tag = "Cat";
             treeNode47.Text = "Other";
             this.Events.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode17,
@@ -315,9 +322,9 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // Actions
             // 
-            this.Actions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.Actions.BackColor = System.Drawing.SystemColors.Control;
             this.Actions.Font = new System.Drawing.Font("Segoe UI", 11.5F);
-            this.Actions.ForeColor = System.Drawing.SystemColors.Window;
+            this.Actions.ForeColor = System.Drawing.Color.Black;
             this.Actions.ItemHeight = 35;
             this.Actions.LineColor = System.Drawing.Color.Red;
             this.Actions.Location = new System.Drawing.Point(12, 10);
@@ -433,20 +440,22 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(290, 372);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 104);
             this.button1.TabIndex = 44;
             this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CodeblockSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(485, 501);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Events);

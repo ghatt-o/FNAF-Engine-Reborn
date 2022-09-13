@@ -177,7 +177,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                             RewriteTextData(Menu, TextElement);
                             Text.Font = new Font(reborn.Element_Font_MenuEditor.Text, Convert.ToSingle(reborn.Element_FontSize_MenuEditor.Text));
                         }
-                        catch (ArgumentException)
+                        catch (Exception)
                         {
                             Text.Font = new Font("Microsoft Sans Serif", Text.Font.Size);
                         }

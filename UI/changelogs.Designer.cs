@@ -59,8 +59,8 @@ namespace FNAF_Engine_Reborn
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.releases = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.releases.SuspendLayout();
@@ -68,31 +68,35 @@ namespace FNAF_Engine_Reborn
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Pre-Releases";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(165, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Releases";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 15);
@@ -102,6 +106,8 @@ namespace FNAF_Engine_Reborn
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(3, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 15);
@@ -111,6 +117,8 @@ namespace FNAF_Engine_Reborn
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(3, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 15);
@@ -120,6 +128,8 @@ namespace FNAF_Engine_Reborn
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(3, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 15);
@@ -129,6 +139,8 @@ namespace FNAF_Engine_Reborn
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(3, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(133, 15);
@@ -138,6 +150,8 @@ namespace FNAF_Engine_Reborn
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(3, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 15);
@@ -146,6 +160,7 @@ namespace FNAF_Engine_Reborn
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label32);
             this.panel1.Controls.Add(this.label33);
@@ -170,6 +185,7 @@ namespace FNAF_Engine_Reborn
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(12, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 455);
@@ -178,6 +194,8 @@ namespace FNAF_Engine_Reborn
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.SystemColors.Control;
+            this.label30.ForeColor = System.Drawing.Color.Black;
             this.label30.Location = new System.Drawing.Point(166, 198);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(60, 15);
@@ -187,7 +205,9 @@ namespace FNAF_Engine_Reborn
             // label32
             // 
             this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.SystemColors.Control;
             this.label32.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(164, 177);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(86, 21);
@@ -197,6 +217,8 @@ namespace FNAF_Engine_Reborn
             // label33
             // 
             this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.SystemColors.Control;
+            this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(161, 152);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(133, 15);
@@ -206,6 +228,8 @@ namespace FNAF_Engine_Reborn
             // label29
             // 
             this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.SystemColors.Control;
+            this.label29.ForeColor = System.Drawing.Color.Black;
             this.label29.Location = new System.Drawing.Point(164, 130);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(60, 15);
@@ -215,6 +239,8 @@ namespace FNAF_Engine_Reborn
             // label28
             // 
             this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.SystemColors.Control;
+            this.label28.ForeColor = System.Drawing.Color.Black;
             this.label28.Location = new System.Drawing.Point(164, 115);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(114, 15);
@@ -224,6 +250,8 @@ namespace FNAF_Engine_Reborn
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.SystemColors.Control;
+            this.label26.ForeColor = System.Drawing.Color.Black;
             this.label26.Location = new System.Drawing.Point(164, 100);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(69, 15);
@@ -233,6 +261,8 @@ namespace FNAF_Engine_Reborn
             // label27
             // 
             this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.SystemColors.Control;
+            this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(161, 71);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(133, 15);
@@ -242,6 +272,8 @@ namespace FNAF_Engine_Reborn
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.SystemColors.Control;
+            this.label24.ForeColor = System.Drawing.Color.Black;
             this.label24.Location = new System.Drawing.Point(164, 35);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(69, 15);
@@ -251,6 +283,8 @@ namespace FNAF_Engine_Reborn
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.SystemColors.Control;
+            this.label25.ForeColor = System.Drawing.Color.Black;
             this.label25.Location = new System.Drawing.Point(161, 6);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(133, 15);
@@ -260,6 +294,8 @@ namespace FNAF_Engine_Reborn
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.SystemColors.Control;
+            this.label22.ForeColor = System.Drawing.Color.Black;
             this.label22.Location = new System.Drawing.Point(3, 416);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 15);
@@ -269,6 +305,8 @@ namespace FNAF_Engine_Reborn
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.SystemColors.Control;
+            this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(3, 388);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(133, 15);
@@ -278,6 +316,8 @@ namespace FNAF_Engine_Reborn
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.SystemColors.Control;
+            this.label21.ForeColor = System.Drawing.Color.Black;
             this.label21.Location = new System.Drawing.Point(3, 344);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(68, 15);
@@ -287,6 +327,8 @@ namespace FNAF_Engine_Reborn
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.SystemColors.Control;
+            this.label20.ForeColor = System.Drawing.Color.Black;
             this.label20.Location = new System.Drawing.Point(4, 329);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(99, 15);
@@ -296,6 +338,8 @@ namespace FNAF_Engine_Reborn
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.Control;
+            this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(4, 314);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(82, 15);
@@ -305,6 +349,8 @@ namespace FNAF_Engine_Reborn
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.Control;
+            this.label18.ForeColor = System.Drawing.Color.Black;
             this.label18.Location = new System.Drawing.Point(4, 297);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(134, 15);
@@ -314,6 +360,8 @@ namespace FNAF_Engine_Reborn
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.Control;
+            this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(4, 282);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 15);
@@ -323,6 +371,8 @@ namespace FNAF_Engine_Reborn
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.Control;
+            this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(3, 267);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(148, 15);
@@ -332,6 +382,8 @@ namespace FNAF_Engine_Reborn
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.Control;
+            this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(3, 252);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(106, 15);
@@ -341,6 +393,8 @@ namespace FNAF_Engine_Reborn
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.Control;
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(3, 227);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(148, 15);
@@ -349,46 +403,53 @@ namespace FNAF_Engine_Reborn
             // 
             // releases
             // 
+            this.releases.BackColor = System.Drawing.SystemColors.Control;
             this.releases.Controls.Add(this.label7);
             this.releases.Controls.Add(this.label9);
+            this.releases.ForeColor = System.Drawing.Color.Black;
             this.releases.Location = new System.Drawing.Point(12, 38);
             this.releases.Name = "releases";
             this.releases.Size = new System.Drawing.Size(200, 438);
             this.releases.TabIndex = 9;
             this.releases.Visible = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 15);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "1.0.0 Released";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(6, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 15);
             this.label7.TabIndex = 4;
             this.label7.Text = "-First version of engine released.";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.Control;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(3, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 15);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "1.0.0 Released";
+            // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(329, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(158, 23);
             this.button3.TabIndex = 10;
             this.button3.Text = "COMING SOON";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // changelogs
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(496, 488);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.releases);

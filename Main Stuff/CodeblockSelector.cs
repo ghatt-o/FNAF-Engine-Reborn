@@ -26,7 +26,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 
         private void Events_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (Events.SelectedNode.ToString() == "TreeNode: Game Loop")
+            if (Events.SelectedNode.Tag.ToString() == "Cat")
             {
 
             }

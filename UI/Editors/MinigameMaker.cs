@@ -8,6 +8,7 @@ namespace FNAF_Engine_Reborn.bin
     {
         public string currentMinigame;
         public string projecto;
+        public bool buildMode;
 
         public MinigameMaker()
         {
@@ -50,6 +51,7 @@ namespace FNAF_Engine_Reborn.bin
             comboBox1.Enabled = false;
             button11.Visible = true;
             panel1.Visible = true;
+            buildMode = false;
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -70,6 +72,7 @@ namespace FNAF_Engine_Reborn.bin
             comboBox1.Enabled = true;
             button11.Visible = false;
             panel1.Visible = false;
+            buildMode = true;
         }
 
         private void button12_Click(object sender, EventArgs e)

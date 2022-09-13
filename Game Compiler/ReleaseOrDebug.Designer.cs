@@ -40,11 +40,11 @@ namespace FNAF_Engine_Reborn
             // 
             // button113
             // 
-            this.button113.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button113.BackColor = System.Drawing.SystemColors.Control;
             this.button113.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button113.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.button113.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button113.ForeColor = System.Drawing.SystemColors.Control;
+            this.button113.ForeColor = System.Drawing.Color.Black;
             this.button113.Location = new System.Drawing.Point(80, 73);
             this.button113.Name = "button113";
             this.button113.Size = new System.Drawing.Size(107, 31);
@@ -55,7 +55,8 @@ namespace FNAF_Engine_Reborn
             // 
             // ptemplate
             // 
-            this.ptemplate.ForeColor = System.Drawing.SystemColors.Control;
+            this.ptemplate.BackColor = System.Drawing.SystemColors.Control;
+            this.ptemplate.ForeColor = System.Drawing.Color.Black;
             this.ptemplate.Location = new System.Drawing.Point(77, 6);
             this.ptemplate.Name = "ptemplate";
             this.ptemplate.Size = new System.Drawing.Size(283, 65);
@@ -65,11 +66,11 @@ namespace FNAF_Engine_Reborn
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(250, 73);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 31);
@@ -89,7 +90,8 @@ namespace FNAF_Engine_Reborn
             // 
             // label1
             // 
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(191, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 16);
@@ -99,18 +101,20 @@ namespace FNAF_Engine_Reborn
             // 
             // label2
             // 
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(2, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 91);
             this.label2.TabIndex = 127;
             this.label2.Text = "Game style: ";
+            this.label2.Visible = false;
             // 
             // ReleaseOrDebug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(405, 131);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

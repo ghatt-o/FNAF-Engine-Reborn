@@ -149,7 +149,7 @@ namespace FNAF_Engine_Reborn
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Location = new System.Drawing.Point(146, 213);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(728, 251);
+            this.panel2.Size = new System.Drawing.Size(728, 294);
             this.panel2.TabIndex = 12;
             // 
             // button4
@@ -454,12 +454,12 @@ namespace FNAF_Engine_Reborn
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Green;
+            this.button6.BackColor = System.Drawing.Color.Gray;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button6.Location = new System.Drawing.Point(210, 136);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(387, 39);
+            this.button6.Size = new System.Drawing.Size(387, 56);
             this.button6.TabIndex = 14;
             this.button6.Text = "*Add action";
             this.button6.UseVisualStyleBackColor = false;
