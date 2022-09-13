@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.label92 = new System.Windows.Forms.Label();
@@ -1042,7 +1042,7 @@ namespace FNAF_Engine_Reborn
             this.button92.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button92.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button92.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button92.Location = new System.Drawing.Point(16, 46);
+            this.button92.Location = new System.Drawing.Point(18, 46);
             this.button92.Name = "button92";
             this.button92.Size = new System.Drawing.Size(20, 24);
             this.button92.TabIndex = 60;
@@ -1058,7 +1058,7 @@ namespace FNAF_Engine_Reborn
             this.button91.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button91.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button91.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button91.Location = new System.Drawing.Point(602, 45);
+            this.button91.Location = new System.Drawing.Point(600, 45);
             this.button91.Name = "button91";
             this.button91.Size = new System.Drawing.Size(23, 24);
             this.button91.TabIndex = 59;
@@ -3995,11 +3995,11 @@ namespace FNAF_Engine_Reborn
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode4.Name = "Data Values";
-            treeNode4.Tag = "Data_Values_List";
-            treeNode4.Text = "Data Values";
+            treeNode5.Name = "Data Values";
+            treeNode5.Tag = "Data_Values_List";
+            treeNode5.Text = "Data Values";
             this.GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode5});
             this.GameManager_Variables_View.Size = new System.Drawing.Size(232, 339);
             this.GameManager_Variables_View.TabIndex = 162;
             this.GameManager_Variables_View.VisibleChanged += new System.EventHandler(this.GameManager_Variables_View_VisibleChanged);
@@ -5529,7 +5529,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4});
+            listViewItem5});
             this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
