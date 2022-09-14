@@ -26,29 +26,36 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 
         private void Events_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (Events.SelectedNode.Tag.ToString() == "Cat")
+            try
             {
-
-            }
-            else
-            {
-                Console.WriteLine(Events.SelectedNode.ToString());
-                string[] separated = Events.SelectedNode.ToString().Split(' ');
-                separated.SetValue("", 0);
-                _ = separated.Length;
-                foreach (string text in separated)
+                if (Events.SelectedNode.Tag.ToString() == "Cat")
                 {
-                    all = all + " " + text;
+
                 }
-                ScriptEditor scripteditor = new ScriptEditor();
-                scripteditor.AddEvent(reborn.script, all);
-                reborn.button10.Hide();
-                string event_ = scripteditor.ToEvent(reborn.script);
-                reborn.button25.Show();
-                reborn.button25.Text = event_;
-                Console.WriteLine("event isss: " + event_);
-                reborn.button26.Show();
-                Hide();
+                else
+                {
+                    Console.WriteLine(Events.SelectedNode.ToString());
+                    string[] separated = Events.SelectedNode.ToString().Split(' ');
+                    separated.SetValue("", 0);
+                    _ = separated.Length;
+                    foreach (string text in separated)
+                    {
+                        all = all + " " + text;
+                    }
+                    ScriptEditor scripteditor = new ScriptEditor();
+                    scripteditor.AddEvent(reborn.script, all);
+                    reborn.button10.Hide();
+                    string event_ = scripteditor.ToEvent(reborn.script);
+                    reborn.button25.Show();
+                    reborn.button25.Text = event_;
+                    Console.WriteLine("event isss: " + event_);
+                    reborn.button26.Show();
+                    Hide();
+                }
+            }
+            catch(Exception)
+            {
+                this.Close();
             }
         }
 

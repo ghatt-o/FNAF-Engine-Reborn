@@ -15,8 +15,8 @@ namespace FNAF_Engine_Reborn
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.9.2";
-        public string Build_Version = "f2";
+        public string Version = "0.9.3";
+        public string Build_Version = "nr42";
         public bool isopen = false;
         public bool animatronicselected = false;
         internal bool _0_2C = true;
@@ -662,51 +662,56 @@ namespace FNAF_Engine_Reborn
             {
                 if (_0_2C == true)
                 {
-                    //this.presence.details = "Editing game...";
-                    //DiscordRpc.UpdatePresence(ref this.presence);
-                    if (Directory.Exists(projecto + "/animations"))
+                    try
                     {
-                        //aight
+                        //this.presence.details = "Editing game...";
+                        //DiscordRpc.UpdatePresence(ref this.presence);
+                        if (Directory.Exists(projecto + "/animations"))
+                        {
+                            //aight
+                        }
+                        else
+                        {
+                            //_ = MessageBox.Show("Something went wrong!");
+                            //_ = Directory.CreateDirectory(projecto + "/animations");
+                            //_ = MessageBox.Show("Fixed!");
+                        }
+                        Sidebar.Show();
+                        AssetManagerPanel.Show();
+                        AssetManagerPanel.BringToFront();
+                        buildSettingsPanelMoment.Show();
+                        SoundEditorPanel.Show();
+                        menuEditorPanel.Show();
+                        staticeffecteditor.Show();
+                        GameDebugMenu.Show();
+                        if (style == "standard")
+                        {
+                            //officeEditorPanel.Show();
+                            //cameraEditorPanel.Show();
+                            //ExtensionsPanel.Show();
+                            //animationEditorPanel.Show();
+                            //cutsceneEditorPanel.Show();
+                            //ScriptEditorPanel.Show();
+                            //animatronicEditorPNL2.Show();
+                        }
+                        else
+                        {
+                            officeEditorPanel.Show();
+                            cameraEditorPanel.Show();
+                            ExtensionsPanel.Show();
+                            animationEditorPanel.Show();
+                            cutsceneEditorPanel.Show();
+                            ScriptEditorPanel.Show();
+                            animatronicEditorPNL2.Show();
+                        }
                     }
-                    else
+                    catch(Exception)
                     {
-                        //_ = MessageBox.Show("Something went wrong!");
-                        //_ = Directory.CreateDirectory(projecto + "/animations");
-                        //_ = MessageBox.Show("Fixed!");
-                    }
-                }
-                else
-                {
 
-                }
-                AssetManagerPanel.Show();
-                AssetManagerPanel.BringToFront();
-                buildSettingsPanelMoment.Show();
-                SoundEditorPanel.Show();
-                menuEditorPanel.Show();
-                staticeffecteditor.Show();
-                GameDebugMenu.Show();
-                if (style == "standard")
-                {
-                    //officeEditorPanel.Show();
-                    //cameraEditorPanel.Show();
-                    //ExtensionsPanel.Show();
-                    //animationEditorPanel.Show();
-                    //cutsceneEditorPanel.Show();
-                    //ScriptEditorPanel.Show();
-                    //animatronicEditorPNL2.Show();
-                }
-                else
-                {
-                    officeEditorPanel.Show();
-                    cameraEditorPanel.Show();
-                    ExtensionsPanel.Show();
-                    animationEditorPanel.Show();
-                    cutsceneEditorPanel.Show();
-                    ScriptEditorPanel.Show();
-                    animatronicEditorPNL2.Show();
+                    }
                 }
             }
+            Sidebar.BringToFront();
         }
 
         private void label163_Click(object sender, EventArgs e)
@@ -1237,7 +1242,12 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     _ = Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/data.feranim", "ignoremask=false,audiolure=false,likebb=false");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/sound.fersound", "");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/janimation.feranimation", "");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/im.im", "false");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/al.al", "false");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/lbb.lbb", "false");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", "");
                     if (checkBox2.Checked == true)
                     {
                         File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "true");
@@ -2110,17 +2120,26 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
-                ScriptEditor scripteditor = new ScriptEditor();
-                panel4.Show();
-                if (File.Exists(script + "/event.txt"))
+                try
                 {
-                    if (scripteditor.HasEvent(script))
+                    string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+                    ScriptEditor scripteditor = new ScriptEditor();
+                    panel4.Show();
+                    if (File.Exists(script + "/event.txt"))
                     {
-                        string event_ = scripteditor.ToEvent(script);
-                        button25.Show();
-                        button25.Text = event_;
-                        button26.Show();
+                        if (scripteditor.HasEvent(script))
+                        {
+                            string event_ = scripteditor.ToEvent(script);
+                            button25.Show();
+                            button25.Text = event_;
+                            button26.Show();
+                        }
+                        else
+                        {
+                            button25.Hide();
+                            button26.Hide();
+                            button10.Show();
+                        }
                     }
                     else
                     {
@@ -2129,11 +2148,9 @@ namespace FNAF_Engine_Reborn
                         button10.Show();
                     }
                 }
-                else
+                catch(Exception)
                 {
-                    button25.Hide();
-                    button26.Hide();
-                    button10.Show();
+
                 }
             }
         }
@@ -2364,51 +2381,54 @@ namespace FNAF_Engine_Reborn
             {
                 if (_0_2C == true)
                 {
-                    //this.presence.details = "Editing game...";
-                    //DiscordRpc.UpdatePresence(ref this.presence);
-                    if (Directory.Exists(projecto + "/animations"))
+                    try
                     {
-                        //aight
+                        //this.presence.details = "Editing game...";
+                        //DiscordRpc.UpdatePresence(ref this.presence);
+                        if (Directory.Exists(projecto + "/animations"))
+                        {
+                            //aight
+                        }
+                        else
+                        {
+                            //_ = MessageBox.Show("Something went wrong!");
+                            //_ = Directory.CreateDirectory(projecto + "/animations");
+                            //_ = MessageBox.Show("Fixed!");
+                        }
+                        Sidebar.Show();
+                        AssetManagerPanel.Show();
+                        AssetManagerPanel.BringToFront();
+                        Sidebar.BringToFront();
+                        buildSettingsPanelMoment.Show();
+                        SoundEditorPanel.Show();
+                        menuEditorPanel.Show();
+                        staticeffecteditor.Show();
+                        GameDebugMenu.Show();
+                        if (style == "standard")
+                        {
+                            //officeEditorPanel.Show();
+                            //cameraEditorPanel.Show();
+                            //ExtensionsPanel.Show();
+                            //animationEditorPanel.Show();
+                            //cutsceneEditorPanel.Show();
+                            //ScriptEditorPanel.Show();
+                            //animatronicEditorPNL2.Show();
+                        }
+                        else
+                        {
+                            officeEditorPanel.Show();
+                            cameraEditorPanel.Show();
+                            ExtensionsPanel.Show();
+                            animationEditorPanel.Show();
+                            cutsceneEditorPanel.Show();
+                            ScriptEditorPanel.Show();
+                            animatronicEditorPNL2.Show();
+                        }
                     }
-                    else
+                    catch(Exception)
                     {
-                        //_ = MessageBox.Show("Something went wrong!");
-                        //_ = Directory.CreateDirectory(projecto + "/animations");
-                        //_ = MessageBox.Show("Fixed!");
-                    }
-                }
-                else
-                {
 
-                }
-                Sidebar.Show();
-                AssetManagerPanel.Show();
-                AssetManagerPanel.BringToFront();
-                Sidebar.BringToFront();
-                buildSettingsPanelMoment.Show();
-                SoundEditorPanel.Show();
-                menuEditorPanel.Show();
-                staticeffecteditor.Show();
-                GameDebugMenu.Show();
-                if (style == "standard")
-                {
-                    //officeEditorPanel.Show();
-                    //cameraEditorPanel.Show();
-                    //ExtensionsPanel.Show();
-                    //animationEditorPanel.Show();
-                    //cutsceneEditorPanel.Show();
-                    //ScriptEditorPanel.Show();
-                    //animatronicEditorPNL2.Show();
-                }
-                else
-                {
-                    officeEditorPanel.Show();
-                    cameraEditorPanel.Show();
-                    ExtensionsPanel.Show();
-                    animationEditorPanel.Show();
-                    cutsceneEditorPanel.Show();
-                    ScriptEditorPanel.Show();
-                    animatronicEditorPNL2.Show();
+                    }
                 }
             }
         }
@@ -2588,11 +2608,14 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
-                //string optionstxt = File.ReadAllText(projecto + "/animatronics/" + Animatronics.txt");
-                //string[] options = optionstxt.Split(',');
-                //options[8] = "animatronic=,";
-                //string newoptions = string.Join(",", options);
-                //File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                if (animatronicEditorIgnoresMask_Check.Checked == true)
+                {
+                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/im.im", "true");
+                }
+                else
+                {
+                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/im.im", "false");
+                }
             }
         }
 
@@ -2600,7 +2623,14 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
-
+                if (animatronicEditorAudioLured_Check.Checked == true)
+                {
+                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/al.al", "true");
+                }
+                else
+                {
+                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/al.al", "false");
+                }
             }
         }
 
@@ -2608,14 +2638,24 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
-
+                if (animatronicEditorLikeBB_Check.Checked == true)
+                {
+                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/lbb.lbb", "true");
+                }
+                else
+                {
+                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/lbb.lbb", "false");
+                }
             }
         }
 
         private void AnimatronicDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string data = File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/data.feranim");
+            animatronicselected = true;
             bool phantom = Convert.ToBoolean(File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/phantom.feranimext"));
+
+            //properties
+
             if (phantom == true)
             {
                 isphantom_animatronicEditor.Hide();
@@ -2624,6 +2664,39 @@ namespace FNAF_Engine_Reborn
             {
                 isphantom_animatronicEditor.Show();
             }
+
+            //settings
+
+            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/im.im") == "true")
+            {
+                animatronicEditorIgnoresMask_Check.Checked = true;
+            }
+            else
+            {
+                animatronicEditorIgnoresMask_Check.Checked = false;
+            }
+
+            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/al.al") == "true")
+            {
+                animatronicEditorAudioLured_Check.Checked = true;
+            }
+            else
+            {
+                animatronicEditorAudioLured_Check.Checked = false;
+            }
+
+            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/lbb.lbb") == "true")
+            {
+                animatronicEditorLikeBB_Check.Checked = true;
+            }
+            else
+            {
+                animatronicEditorLikeBB_Check.Checked = false;
+            }
+
+            //path
+
+
         }
 
         private void Menu_CodeEditor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -2682,6 +2755,11 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
+                comboBox2.Items.Clear();
+                comboBox2.Items.AddRange(Directory.GetDirectories(projecto + "/sounds"));
+                comboBox3.Items.Clear();
+                comboBox3.Items.AddRange(Directory.GetDirectories(projecto + "/animations"));
+                animatronicselected = false;
                 if (Directory.Exists(projecto + "/animatronics"))
                 {
                     //aight

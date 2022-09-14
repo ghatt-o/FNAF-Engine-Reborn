@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.label92 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@ namespace FNAF_Engine_Reborn
             this.label158 = new System.Windows.Forms.Label();
             this.label159 = new System.Windows.Forms.Label();
             this.animatronicEditorPNL2 = new System.Windows.Forms.Panel();
+            this.animatronicEditor_AnimPath = new System.Windows.Forms.TreeView();
             this.isphantom_animatronicEditor = new System.Windows.Forms.Label();
             this.animatronicEditorLikeBB_Check = new System.Windows.Forms.CheckBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -73,7 +74,7 @@ namespace FNAF_Engine_Reborn
             this.button92 = new System.Windows.Forms.Button();
             this.button91 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.button45 = new System.Windows.Forms.Button();
+            this.AddPath = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.funnyScrollBack = new System.Windows.Forms.Button();
@@ -255,8 +256,6 @@ namespace FNAF_Engine_Reborn
             this.MenuStart_CodeEditor = new System.Windows.Forms.RichTextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.SoundEditorPanel = new System.Windows.Forms.Panel();
-            this.comboBox49 = new System.Windows.Forms.ComboBox();
-            this.label89 = new System.Windows.Forms.Label();
             this.comboBox33 = new System.Windows.Forms.ComboBox();
             this.label68 = new System.Windows.Forms.Label();
             this.comboBox32 = new System.Windows.Forms.ComboBox();
@@ -532,6 +531,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.button119 = new System.Windows.Forms.Button();
+            this.ChooseAnimatronicPath = new System.Windows.Forms.Panel();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -915,6 +915,8 @@ namespace FNAF_Engine_Reborn
             | System.Windows.Forms.AnchorStyles.Right)));
             this.animatronicEditorPNL2.BackColor = System.Drawing.SystemColors.Control;
             this.animatronicEditorPNL2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.animatronicEditorPNL2.Controls.Add(this.ChooseAnimatronicPath);
+            this.animatronicEditorPNL2.Controls.Add(this.animatronicEditor_AnimPath);
             this.animatronicEditorPNL2.Controls.Add(this.isphantom_animatronicEditor);
             this.animatronicEditorPNL2.Controls.Add(this.animatronicEditorLikeBB_Check);
             this.animatronicEditorPNL2.Controls.Add(this.panel8);
@@ -922,7 +924,7 @@ namespace FNAF_Engine_Reborn
             this.animatronicEditorPNL2.Controls.Add(this.button92);
             this.animatronicEditorPNL2.Controls.Add(this.button91);
             this.animatronicEditorPNL2.Controls.Add(this.button46);
-            this.animatronicEditorPNL2.Controls.Add(this.button45);
+            this.animatronicEditorPNL2.Controls.Add(this.AddPath);
             this.animatronicEditorPNL2.Controls.Add(this.panel1);
             this.animatronicEditorPNL2.Controls.Add(this.animatronicEditorAudioLured_Check);
             this.animatronicEditorPNL2.Controls.Add(this.label4);
@@ -940,13 +942,20 @@ namespace FNAF_Engine_Reborn
             this.animatronicEditorPNL2.Visible = false;
             this.animatronicEditorPNL2.VisibleChanged += new System.EventHandler(this.animatronicEditorPNL2_VisibleChanged);
             // 
+            // animatronicEditor_AnimPath
+            // 
+            this.animatronicEditor_AnimPath.Location = new System.Drawing.Point(458, 132);
+            this.animatronicEditor_AnimPath.Name = "animatronicEditor_AnimPath";
+            this.animatronicEditor_AnimPath.Size = new System.Drawing.Size(177, 301);
+            this.animatronicEditor_AnimPath.TabIndex = 64;
+            // 
             // isphantom_animatronicEditor
             // 
             this.isphantom_animatronicEditor.AutoSize = true;
             this.isphantom_animatronicEditor.BackColor = System.Drawing.SystemColors.Control;
             this.isphantom_animatronicEditor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.isphantom_animatronicEditor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.isphantom_animatronicEditor.Location = new System.Drawing.Point(35, 337);
+            this.isphantom_animatronicEditor.Location = new System.Drawing.Point(225, 323);
             this.isphantom_animatronicEditor.Name = "isphantom_animatronicEditor";
             this.isphantom_animatronicEditor.Size = new System.Drawing.Size(150, 15);
             this.isphantom_animatronicEditor.TabIndex = 63;
@@ -960,7 +969,7 @@ namespace FNAF_Engine_Reborn
             this.animatronicEditorLikeBB_Check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.animatronicEditorLikeBB_Check.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.animatronicEditorLikeBB_Check.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.animatronicEditorLikeBB_Check.Location = new System.Drawing.Point(39, 311);
+            this.animatronicEditorLikeBB_Check.Location = new System.Drawing.Point(239, 305);
             this.animatronicEditorLikeBB_Check.Name = "animatronicEditorLikeBB_Check";
             this.animatronicEditorLikeBB_Check.Size = new System.Drawing.Size(123, 19);
             this.animatronicEditorLikeBB_Check.TabIndex = 62;
@@ -1025,7 +1034,7 @@ namespace FNAF_Engine_Reborn
             this.button95.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button95.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button95.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button95.Location = new System.Drawing.Point(588, 6);
+            this.button95.Location = new System.Drawing.Point(594, 6);
             this.button95.Name = "button95";
             this.button95.Size = new System.Drawing.Size(138, 27);
             this.button95.TabIndex = 52;
@@ -1074,26 +1083,26 @@ namespace FNAF_Engine_Reborn
             this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button46.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button46.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button46.Location = new System.Drawing.Point(437, 135);
+            this.button46.Location = new System.Drawing.Point(437, 132);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(20, 24);
             this.button46.TabIndex = 55;
             this.button46.UseVisualStyleBackColor = false;
             // 
-            // button45
+            // AddPath
             // 
-            this.button45.BackColor = System.Drawing.SystemColors.Control;
-            this.button45.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button45.BackgroundImage")));
-            this.button45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button45.FlatAppearance.BorderSize = 0;
-            this.button45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button45.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button45.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button45.Location = new System.Drawing.Point(588, 134);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(23, 24);
-            this.button45.TabIndex = 54;
-            this.button45.UseVisualStyleBackColor = false;
+            this.AddPath.BackColor = System.Drawing.SystemColors.Control;
+            this.AddPath.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddPath.BackgroundImage")));
+            this.AddPath.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AddPath.FlatAppearance.BorderSize = 0;
+            this.AddPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddPath.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddPath.Location = new System.Drawing.Point(636, 132);
+            this.AddPath.Name = "AddPath";
+            this.AddPath.Size = new System.Drawing.Size(23, 24);
+            this.AddPath.TabIndex = 54;
+            this.AddPath.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -1173,7 +1182,7 @@ namespace FNAF_Engine_Reborn
             this.animatronicEditorAudioLured_Check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.animatronicEditorAudioLured_Check.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.animatronicEditorAudioLured_Check.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.animatronicEditorAudioLured_Check.Location = new System.Drawing.Point(39, 288);
+            this.animatronicEditorAudioLured_Check.Location = new System.Drawing.Point(239, 287);
             this.animatronicEditorAudioLured_Check.Name = "animatronicEditorAudioLured_Check";
             this.animatronicEditorAudioLured_Check.Size = new System.Drawing.Size(128, 19);
             this.animatronicEditorAudioLured_Check.TabIndex = 45;
@@ -1187,7 +1196,7 @@ namespace FNAF_Engine_Reborn
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(454, 112);
+            this.label4.Location = new System.Drawing.Point(492, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 15);
             this.label4.TabIndex = 44;
@@ -1199,7 +1208,7 @@ namespace FNAF_Engine_Reborn
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(36, 213);
+            this.label3.Location = new System.Drawing.Point(245, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 15);
             this.label3.TabIndex = 43;
@@ -1211,7 +1220,7 @@ namespace FNAF_Engine_Reborn
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(36, 157);
+            this.label2.Location = new System.Drawing.Point(256, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 42;
@@ -1223,9 +1232,9 @@ namespace FNAF_Engine_Reborn
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(39, 231);
+            this.comboBox3.Location = new System.Drawing.Point(184, 240);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(140, 23);
+            this.comboBox3.Size = new System.Drawing.Size(245, 23);
             this.comboBox3.TabIndex = 41;
             this.comboBox3.Text = "Animation List";
             // 
@@ -1235,9 +1244,9 @@ namespace FNAF_Engine_Reborn
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(39, 175);
+            this.comboBox2.Location = new System.Drawing.Point(184, 184);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 23);
+            this.comboBox2.Size = new System.Drawing.Size(245, 23);
             this.comboBox2.TabIndex = 40;
             this.comboBox2.Text = "Sound List";
             // 
@@ -1273,7 +1282,7 @@ namespace FNAF_Engine_Reborn
             this.animatronicEditorIgnoresMask_Check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.animatronicEditorIgnoresMask_Check.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.animatronicEditorIgnoresMask_Check.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.animatronicEditorIgnoresMask_Check.Location = new System.Drawing.Point(39, 264);
+            this.animatronicEditorIgnoresMask_Check.Location = new System.Drawing.Point(249, 267);
             this.animatronicEditorIgnoresMask_Check.Name = "animatronicEditorIgnoresMask_Check";
             this.animatronicEditorIgnoresMask_Check.Size = new System.Drawing.Size(98, 19);
             this.animatronicEditorIgnoresMask_Check.TabIndex = 0;
@@ -3439,8 +3448,6 @@ namespace FNAF_Engine_Reborn
             // 
             this.SoundEditorPanel.BackColor = System.Drawing.SystemColors.Control;
             this.SoundEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.SoundEditorPanel.Controls.Add(this.comboBox49);
-            this.SoundEditorPanel.Controls.Add(this.label89);
             this.SoundEditorPanel.Controls.Add(this.comboBox33);
             this.SoundEditorPanel.Controls.Add(this.label68);
             this.SoundEditorPanel.Controls.Add(this.comboBox32);
@@ -3482,39 +3489,15 @@ namespace FNAF_Engine_Reborn
             this.SoundEditorPanel.TabIndex = 99;
             this.SoundEditorPanel.Visible = false;
             // 
-            // comboBox49
-            // 
-            this.comboBox49.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox49.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.comboBox49.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.comboBox49.FormattingEnabled = true;
-            this.comboBox49.Location = new System.Drawing.Point(263, 389);
-            this.comboBox49.Name = "comboBox49";
-            this.comboBox49.Size = new System.Drawing.Size(140, 29);
-            this.comboBox49.TabIndex = 91;
-            this.comboBox49.Text = "Sound List";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.BackColor = System.Drawing.SystemColors.Control;
-            this.label89.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label89.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label89.Location = new System.Drawing.Point(284, 368);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(92, 21);
-            this.label89.TabIndex = 90;
-            this.label89.Text = "6 AM Sound";
-            // 
             // comboBox33
             // 
             this.comboBox33.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox33.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox33.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox33.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox33.FormattingEnabled = true;
             this.comboBox33.Location = new System.Drawing.Point(263, 339);
             this.comboBox33.Name = "comboBox33";
-            this.comboBox33.Size = new System.Drawing.Size(140, 29);
+            this.comboBox33.Size = new System.Drawing.Size(140, 23);
             this.comboBox33.TabIndex = 89;
             this.comboBox33.Text = "Sound List";
             // 
@@ -3522,23 +3505,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label68.AutoSize = true;
             this.label68.BackColor = System.Drawing.SystemColors.Control;
-            this.label68.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label68.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label68.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label68.Location = new System.Drawing.Point(247, 320);
+            this.label68.Location = new System.Drawing.Point(264, 320);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(200, 21);
+            this.label68.Size = new System.Drawing.Size(137, 15);
             this.label68.TabIndex = 88;
             this.label68.Text = "Animatronic Office Stare";
             // 
             // comboBox32
             // 
             this.comboBox32.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox32.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox32.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox32.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox32.FormattingEnabled = true;
             this.comboBox32.Location = new System.Drawing.Point(263, 291);
             this.comboBox32.Name = "comboBox32";
-            this.comboBox32.Size = new System.Drawing.Size(140, 29);
+            this.comboBox32.Size = new System.Drawing.Size(140, 23);
             this.comboBox32.TabIndex = 87;
             this.comboBox32.Text = "Sound List";
             // 
@@ -3546,23 +3529,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label67.AutoSize = true;
             this.label67.BackColor = System.Drawing.SystemColors.Control;
-            this.label67.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label67.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label67.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label67.Location = new System.Drawing.Point(265, 270);
+            this.label67.Location = new System.Drawing.Point(278, 270);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(145, 21);
+            this.label67.Size = new System.Drawing.Size(109, 15);
             this.label67.TabIndex = 86;
             this.label67.Text = "Music Box Run Out";
             // 
             // comboBox31
             // 
             this.comboBox31.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox31.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox31.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox31.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox31.FormattingEnabled = true;
             this.comboBox31.Location = new System.Drawing.Point(261, 242);
             this.comboBox31.Name = "comboBox31";
-            this.comboBox31.Size = new System.Drawing.Size(140, 29);
+            this.comboBox31.Size = new System.Drawing.Size(140, 23);
             this.comboBox31.TabIndex = 85;
             this.comboBox31.Text = "Sound List";
             // 
@@ -3570,11 +3553,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label66.AutoSize = true;
             this.label66.BackColor = System.Drawing.SystemColors.Control;
-            this.label66.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label66.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label66.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label66.Location = new System.Drawing.Point(290, 219);
+            this.label66.Location = new System.Drawing.Point(298, 223);
             this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(81, 21);
+            this.label66.Size = new System.Drawing.Size(62, 15);
             this.label66.TabIndex = 84;
             this.label66.Text = "Music Box";
             // 
@@ -3582,23 +3565,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label65.AutoSize = true;
             this.label65.BackColor = System.Drawing.SystemColors.Control;
-            this.label65.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label65.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label65.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label65.Location = new System.Drawing.Point(290, 169);
+            this.label65.Location = new System.Drawing.Point(296, 171);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(87, 21);
+            this.label65.Size = new System.Drawing.Size(63, 15);
             this.label65.TabIndex = 83;
             this.label65.Text = "Power Out";
             // 
             // comboBox30
             // 
             this.comboBox30.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox30.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox30.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox30.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox30.FormattingEnabled = true;
             this.comboBox30.Location = new System.Drawing.Point(260, 190);
             this.comboBox30.Name = "comboBox30";
-            this.comboBox30.Size = new System.Drawing.Size(140, 29);
+            this.comboBox30.Size = new System.Drawing.Size(140, 23);
             this.comboBox30.TabIndex = 82;
             this.comboBox30.Text = "Sound List";
             // 
@@ -3606,11 +3589,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label64.AutoSize = true;
             this.label64.BackColor = System.Drawing.SystemColors.Control;
-            this.label64.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label64.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label64.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label64.Location = new System.Drawing.Point(240, 151);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(64, 21);
+            this.label64.Size = new System.Drawing.Size(38, 15);
             this.label64.TabIndex = 81;
             this.label64.Text = "Extras";
             // 
@@ -3618,21 +3601,21 @@ namespace FNAF_Engine_Reborn
             // 
             this.label63.AutoSize = true;
             this.label63.BackColor = System.Drawing.SystemColors.Control;
-            this.label63.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label63.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label63.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label63.Location = new System.Drawing.Point(293, 33);
+            this.label63.Location = new System.Drawing.Point(298, 39);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(63, 21);
+            this.label63.Size = new System.Drawing.Size(46, 15);
             this.label63.TabIndex = 80;
             this.label63.Text = "Night 0";
             // 
             // label62
             // 
             this.label62.BackColor = System.Drawing.SystemColors.Control;
-            this.label62.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label62.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label62.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label62.Image = ((System.Drawing.Image)(resources.GetObject("label62.Image")));
-            this.label62.Location = new System.Drawing.Point(359, 36);
+            this.label62.Location = new System.Drawing.Point(347, 39);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(12, 16);
             this.label62.TabIndex = 79;
@@ -3640,10 +3623,10 @@ namespace FNAF_Engine_Reborn
             // label61
             // 
             this.label61.BackColor = System.Drawing.SystemColors.Control;
-            this.label61.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label61.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label61.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label61.Image = global::FNAF_Engine_Reborn.Properties.Resources.left_arrow;
-            this.label61.Location = new System.Drawing.Point(276, 36);
+            this.label61.Location = new System.Drawing.Point(285, 39);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(12, 16);
             this.label61.TabIndex = 78;
@@ -3651,12 +3634,12 @@ namespace FNAF_Engine_Reborn
             // comboBox29
             // 
             this.comboBox29.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox29.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox29.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox29.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox29.FormattingEnabled = true;
             this.comboBox29.Location = new System.Drawing.Point(260, 58);
             this.comboBox29.Name = "comboBox29";
-            this.comboBox29.Size = new System.Drawing.Size(140, 29);
+            this.comboBox29.Size = new System.Drawing.Size(140, 23);
             this.comboBox29.TabIndex = 77;
             this.comboBox29.Text = "Sound List";
             // 
@@ -3664,35 +3647,35 @@ namespace FNAF_Engine_Reborn
             // 
             this.label60.AutoSize = true;
             this.label60.BackColor = System.Drawing.SystemColors.Control;
-            this.label60.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label60.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label60.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label60.Location = new System.Drawing.Point(274, 13);
+            this.label60.Location = new System.Drawing.Point(286, 13);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(105, 21);
+            this.label60.Size = new System.Drawing.Size(67, 15);
             this.label60.TabIndex = 76;
             this.label60.Text = "Phone calls";
             // 
             // comboBox28
             // 
             this.comboBox28.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox28.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox28.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox28.ForeColor = System.Drawing.Color.Black;
             this.comboBox28.FormattingEnabled = true;
             this.comboBox28.Location = new System.Drawing.Point(33, 495);
             this.comboBox28.Name = "comboBox28";
-            this.comboBox28.Size = new System.Drawing.Size(140, 29);
+            this.comboBox28.Size = new System.Drawing.Size(140, 23);
             this.comboBox28.TabIndex = 75;
             this.comboBox28.Text = "Sound List";
             // 
             // comboBox27
             // 
             this.comboBox27.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox27.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox27.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox27.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox27.FormattingEnabled = true;
             this.comboBox27.Location = new System.Drawing.Point(30, 448);
             this.comboBox27.Name = "comboBox27";
-            this.comboBox27.Size = new System.Drawing.Size(140, 29);
+            this.comboBox27.Size = new System.Drawing.Size(140, 23);
             this.comboBox27.TabIndex = 19;
             this.comboBox27.Text = "Sound List";
             // 
@@ -3700,11 +3683,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label59.AutoSize = true;
             this.label59.BackColor = System.Drawing.SystemColors.Control;
-            this.label59.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label59.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label59.ForeColor = System.Drawing.Color.Black;
-            this.label59.Location = new System.Drawing.Point(26, 475);
+            this.label59.Location = new System.Drawing.Point(51, 475);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(156, 21);
+            this.label59.Size = new System.Drawing.Size(101, 15);
             this.label59.TabIndex = 74;
             this.label59.Text = "Signal Interrupted";
             // 
@@ -3712,23 +3695,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label58.AutoSize = true;
             this.label58.BackColor = System.Drawing.SystemColors.Control;
-            this.label58.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label58.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label58.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label58.Location = new System.Drawing.Point(52, 429);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(105, 21);
+            this.label58.Size = new System.Drawing.Size(82, 15);
             this.label58.TabIndex = 18;
             this.label58.Text = "Camera Down";
             // 
             // comboBox26
             // 
             this.comboBox26.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox26.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox26.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox26.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox26.FormattingEnabled = true;
             this.comboBox26.Location = new System.Drawing.Point(30, 400);
             this.comboBox26.Name = "comboBox26";
-            this.comboBox26.Size = new System.Drawing.Size(140, 29);
+            this.comboBox26.Size = new System.Drawing.Size(140, 23);
             this.comboBox26.TabIndex = 17;
             this.comboBox26.Text = "Sound List";
             // 
@@ -3736,23 +3719,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label57.AutoSize = true;
             this.label57.BackColor = System.Drawing.SystemColors.Control;
-            this.label57.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label57.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label57.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label57.Location = new System.Drawing.Point(58, 379);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(87, 21);
+            this.label57.Size = new System.Drawing.Size(66, 15);
             this.label57.TabIndex = 16;
             this.label57.Text = "Camera Up";
             // 
             // comboBox25
             // 
             this.comboBox25.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox25.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox25.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox25.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox25.FormattingEnabled = true;
             this.comboBox25.Location = new System.Drawing.Point(31, 351);
             this.comboBox25.Name = "comboBox25";
-            this.comboBox25.Size = new System.Drawing.Size(140, 29);
+            this.comboBox25.Size = new System.Drawing.Size(140, 23);
             this.comboBox25.TabIndex = 15;
             this.comboBox25.Text = "Sound List";
             // 
@@ -3760,23 +3743,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label56.AutoSize = true;
             this.label56.BackColor = System.Drawing.SystemColors.Control;
-            this.label56.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label56.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label56.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label56.Location = new System.Drawing.Point(24, 331);
+            this.label56.Location = new System.Drawing.Point(39, 331);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(154, 21);
+            this.label56.Size = new System.Drawing.Size(110, 15);
             this.label56.TabIndex = 14;
             this.label56.Text = "Mask Toxic Run out";
             // 
             // comboBox24
             // 
             this.comboBox24.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox24.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox24.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox24.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox24.FormattingEnabled = true;
             this.comboBox24.Location = new System.Drawing.Point(31, 302);
             this.comboBox24.Name = "comboBox24";
-            this.comboBox24.Size = new System.Drawing.Size(140, 29);
+            this.comboBox24.Size = new System.Drawing.Size(140, 23);
             this.comboBox24.TabIndex = 13;
             this.comboBox24.Text = "Sound List";
             // 
@@ -3784,23 +3767,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label55.AutoSize = true;
             this.label55.BackColor = System.Drawing.SystemColors.Control;
-            this.label55.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label55.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label55.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label55.Location = new System.Drawing.Point(45, 285);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(126, 21);
+            this.label55.Size = new System.Drawing.Size(89, 15);
             this.label55.TabIndex = 12;
             this.label55.Text = "Mask Breathing";
             // 
             // comboBox23
             // 
             this.comboBox23.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox23.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox23.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox23.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox23.FormattingEnabled = true;
             this.comboBox23.Location = new System.Drawing.Point(30, 257);
             this.comboBox23.Name = "comboBox23";
-            this.comboBox23.Size = new System.Drawing.Size(140, 29);
+            this.comboBox23.Size = new System.Drawing.Size(140, 23);
             this.comboBox23.TabIndex = 11;
             this.comboBox23.Text = "Sound List";
             // 
@@ -3808,23 +3791,23 @@ namespace FNAF_Engine_Reborn
             // 
             this.label54.AutoSize = true;
             this.label54.BackColor = System.Drawing.SystemColors.Control;
-            this.label54.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label54.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label54.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label54.Location = new System.Drawing.Point(63, 238);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(78, 21);
+            this.label54.Size = new System.Drawing.Size(55, 15);
             this.label54.TabIndex = 10;
             this.label54.Text = "Mask Off";
             // 
             // comboBox22
             // 
             this.comboBox22.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox22.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox22.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox22.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox22.FormattingEnabled = true;
             this.comboBox22.Location = new System.Drawing.Point(31, 208);
             this.comboBox22.Name = "comboBox22";
-            this.comboBox22.Size = new System.Drawing.Size(140, 29);
+            this.comboBox22.Size = new System.Drawing.Size(140, 23);
             this.comboBox22.TabIndex = 9;
             this.comboBox22.Text = "Sound List";
             // 
@@ -3832,11 +3815,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label53.AutoSize = true;
             this.label53.BackColor = System.Drawing.SystemColors.Control;
-            this.label53.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label53.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label53.Location = new System.Drawing.Point(64, 188);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(69, 21);
+            this.label53.Size = new System.Drawing.Size(54, 15);
             this.label53.TabIndex = 8;
             this.label53.Text = "Mask On";
             // 
@@ -3844,47 +3827,47 @@ namespace FNAF_Engine_Reborn
             // 
             this.label50.AutoSize = true;
             this.label50.BackColor = System.Drawing.SystemColors.Control;
-            this.label50.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label50.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label50.Location = new System.Drawing.Point(5, 164);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(122, 21);
+            this.label50.Size = new System.Drawing.Size(92, 15);
             this.label50.TabIndex = 7;
             this.label50.Text = "Mask n\' Camera";
             // 
             // comboBox21
             // 
             this.comboBox21.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox21.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox21.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox21.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox21.FormattingEnabled = true;
             this.comboBox21.Location = new System.Drawing.Point(19, 125);
             this.comboBox21.Name = "comboBox21";
-            this.comboBox21.Size = new System.Drawing.Size(140, 29);
+            this.comboBox21.Size = new System.Drawing.Size(140, 23);
             this.comboBox21.TabIndex = 6;
             this.comboBox21.Text = "Sound List";
             // 
             // comboBox20
             // 
             this.comboBox20.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox20.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox20.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox20.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox20.FormattingEnabled = true;
             this.comboBox20.Location = new System.Drawing.Point(19, 79);
             this.comboBox20.Name = "comboBox20";
-            this.comboBox20.Size = new System.Drawing.Size(140, 29);
+            this.comboBox20.Size = new System.Drawing.Size(140, 23);
             this.comboBox20.TabIndex = 5;
             this.comboBox20.Text = "Sound List";
             // 
             // comboBox19
             // 
             this.comboBox19.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox19.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.comboBox19.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.comboBox19.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox19.FormattingEnabled = true;
             this.comboBox19.Location = new System.Drawing.Point(19, 31);
             this.comboBox19.Name = "comboBox19";
-            this.comboBox19.Size = new System.Drawing.Size(140, 29);
+            this.comboBox19.Size = new System.Drawing.Size(140, 23);
             this.comboBox19.TabIndex = 4;
             this.comboBox19.Text = "Sound List";
             // 
@@ -3892,11 +3875,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label52.AutoSize = true;
             this.label52.BackColor = System.Drawing.SystemColors.Control;
-            this.label52.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label52.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label52.Location = new System.Drawing.Point(45, 59);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(94, 21);
+            this.label52.Size = new System.Drawing.Size(58, 15);
             this.label52.TabIndex = 3;
             this.label52.Text = "Flashlight";
             // 
@@ -3904,11 +3887,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label51.AutoSize = true;
             this.label51.BackColor = System.Drawing.SystemColors.Control;
-            this.label51.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label51.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label51.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label51.Location = new System.Drawing.Point(46, 106);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(90, 21);
+            this.label51.Size = new System.Drawing.Size(57, 15);
             this.label51.TabIndex = 2;
             this.label51.Text = "Blip Flash";
             // 
@@ -3916,11 +3899,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label41.AutoSize = true;
             this.label41.BackColor = System.Drawing.SystemColors.Control;
-            this.label41.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.label41.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label41.Location = new System.Drawing.Point(51, 12);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(76, 21);
+            this.label41.Size = new System.Drawing.Size(61, 15);
             this.label41.TabIndex = 0;
             this.label41.Text = "Ambience";
             // 
@@ -3995,11 +3978,11 @@ namespace FNAF_Engine_Reborn
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode5.Name = "Data Values";
-            treeNode5.Tag = "Data_Values_List";
-            treeNode5.Text = "Data Values";
+            treeNode1.Name = "Data Values";
+            treeNode1.Tag = "Data_Values_List";
+            treeNode1.Text = "Data Values";
             this.GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            treeNode1});
             this.GameManager_Variables_View.Size = new System.Drawing.Size(232, 339);
             this.GameManager_Variables_View.TabIndex = 162;
             this.GameManager_Variables_View.VisibleChanged += new System.EventHandler(this.GameManager_Variables_View_VisibleChanged);
@@ -5166,9 +5149,9 @@ namespace FNAF_Engine_Reborn
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.button25.ForeColor = System.Drawing.SystemColors.Control;
-            this.button25.Location = new System.Drawing.Point(14, 12);
+            this.button25.Location = new System.Drawing.Point(7, 3);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(487, 75);
+            this.button25.Size = new System.Drawing.Size(494, 84);
             this.button25.TabIndex = 1;
             this.button25.Text = "Event";
             this.button25.UseVisualStyleBackColor = false;
@@ -5178,6 +5161,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button10
             // 
+            this.button10.BackColor = System.Drawing.Color.Gray;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Digital-7", 15F);
             this.button10.ForeColor = System.Drawing.SystemColors.Control;
@@ -5186,7 +5170,7 @@ namespace FNAF_Engine_Reborn
             this.button10.Size = new System.Drawing.Size(227, 75);
             this.button10.TabIndex = 0;
             this.button10.Text = "Add Event";
-            this.button10.UseVisualStyleBackColor = true;
+            this.button10.UseVisualStyleBackColor = false;
             this.button10.Visible = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -5529,7 +5513,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5});
+            listViewItem1});
             this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -7087,6 +7071,18 @@ namespace FNAF_Engine_Reborn
             this.button119.TabIndex = 104;
             this.button119.UseVisualStyleBackColor = true;
             // 
+            // ChooseAnimatronicPath
+            // 
+            this.ChooseAnimatronicPath.BackColor = System.Drawing.SystemColors.Control;
+            this.ChooseAnimatronicPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ChooseAnimatronicPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ChooseAnimatronicPath.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ChooseAnimatronicPath.Location = new System.Drawing.Point(475, 166);
+            this.ChooseAnimatronicPath.Name = "ChooseAnimatronicPath";
+            this.ChooseAnimatronicPath.Size = new System.Drawing.Size(255, 29);
+            this.ChooseAnimatronicPath.TabIndex = 64;
+            this.ChooseAnimatronicPath.Visible = false;
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7113,8 +7109,8 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
-            this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
             this.DoubleBuffered = true;
@@ -7326,10 +7322,8 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.ComboBox comboBox30;
         public System.Windows.Forms.Label label64;
         public System.Windows.Forms.Panel AssetManagerPanel;
-        public System.Windows.Forms.ComboBox comboBox49;
-        public System.Windows.Forms.Label label89;
         public System.Windows.Forms.Button button46;
-        public System.Windows.Forms.Button button45;
+        public System.Windows.Forms.Button AddPath;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel ProjectStuffs;
         public System.Windows.Forms.Label plocation;
@@ -7698,5 +7692,7 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TreeView animatronicEditor_AnimPath;
+        public System.Windows.Forms.Panel ChooseAnimatronicPath;
     }
 }
