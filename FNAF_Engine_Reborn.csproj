@@ -132,6 +132,7 @@
     <Compile Include="Main Stuff\CodeblockSelector.Designer.cs">
       <DependentUpon>CodeblockSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object Editors\AnimElement.cs" />
     <Compile Include="Object Editors\Compiler.cs" />
     <Compile Include="Object Editors\DataValues.cs" />
     <Compile Include="Object Editors\Import_Files.cs" />
@@ -144,6 +145,7 @@
       <DependentUpon>Compiler.cs</DependentUpon>
     </Compile>
     <Compile Include="Object Editors\ImageElement.cs" />
+    <Compile Include="Object Editors\CNIcon.cs" />
     <Compile Include="Object Editors\TextElement.cs" />
     <Compile Include="UI\Deleteproject.cs">
       <SubType>Form</SubType>
