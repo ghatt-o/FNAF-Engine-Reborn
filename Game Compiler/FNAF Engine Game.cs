@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DarkUI.Forms;
-using FNAF_Engine_Reborn.Properties;
 
 namespace FNAF_Engine_Reborn
 {
@@ -47,7 +44,7 @@ namespace FNAF_Engine_Reborn
             {
                 this.Controls["Main"].BringToFront();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -153,7 +150,7 @@ namespace FNAF_Engine_Reborn
                             {
                                 if (Condition.StartsWith("*If not ()")) // If not() Do
                                 {
-                                    
+
                                 }
                             }
                         }
@@ -239,9 +236,10 @@ namespace FNAF_Engine_Reborn
                             menu_panel.Show();
 
                             string Path = text;
-                            int X = Convert.ToInt32(File.ReadAllText(Path + "/x.txt"));
-                            int Y = Convert.ToInt32(File.ReadAllText(Path + "/y.txt"));
+                            double X = Convert.ToInt32(File.ReadAllText(Path + "/x.txt"));
+                            double Y = Convert.ToInt32(File.ReadAllText(Path + "/y.txt"));
                             //X
+                            /*
                             if (X < 190)
                             {
                                 X += 70;
@@ -267,6 +265,13 @@ namespace FNAF_Engine_Reborn
                             {
                                 Y += 470;
                             }
+                            */
+                            X = X * 2.13333333;
+                            Y = Y * 2.13649852;
+                            string xS = X.ToString();
+                            string yS = Y.ToString();
+                            if (xS.Contains(".5") || xS.Contains(".6") || xS.Contains(".7") || xS.Contains(".8") || xS.Contains(".9")) X += 0.4;
+                            if (yS.Contains(".5") || yS.Contains(".6") || yS.Contains(".7") || yS.Contains(".8") || yS.Contains(".9")) Y += 0.4;
                             string TXTText = File.ReadAllText(Path + "/text.txt");
                             string ID = File.ReadAllText(Path + "/id.txt");
 
@@ -283,7 +288,7 @@ namespace FNAF_Engine_Reborn
                             }
                             catch (Exception)
                             {
-                                fontfamily = new FontFamily("Consolas");
+                                fontfamily = new FontFamily("Microsoft Sans Serif");
                             }
 
                             Font font = new Font(fontfamily, fontsize, FontStyle.Regular);
@@ -296,7 +301,7 @@ namespace FNAF_Engine_Reborn
                             int G = Convert.ToInt32(SeparatedRGB[1]);
                             int B = Convert.ToInt32(SeparatedRGB[2]);
 
-                            Text.Location = new Point(X, Y);
+                            Text.Location = new Point((int)X, (int)Y);
                             Text.AutoSize = true;
                             Text.BackColor = Color.Transparent;
                             Text.FlatStyle = FlatStyle.Flat;
@@ -501,7 +506,7 @@ namespace FNAF_Engine_Reborn
                             Directory.CreateDirectory(project + "/menus/" + MenuName + "/variables/" + instructions[1]);
                             File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], instructions[3]);
                         }
-                        catch(Exception)
+                        catch (Exception)
                         {
                             MF_Error("Failed to set variable", "Failed to set variable: '" + instruction.Split('"')[1] + "', Original code: " + instruction);
                         }
@@ -845,7 +850,7 @@ namespace FNAF_Engine_Reborn
         {
             try
             {
-                foreach(Control control in Controls)
+                foreach (Control control in Controls)
                 {
                     control.Tag = 0;
                 }

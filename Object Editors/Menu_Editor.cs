@@ -112,8 +112,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
 
                     }
                 }
-                void CodeHoverChanged(object sender, EventArgs e)
+                async void CodeHoverChanged(object sender, EventArgs e)
                 {
+                    await Task.Delay(50);
                     try
                     {
                         if (Selected == true)
@@ -130,26 +131,22 @@ namespace FNAF_Engine_Reborn.Object_Editors
 
                     }
                 }
-                void CodeUnhoverChanged(object sender, EventArgs e)
+                async void CodeUnhoverChanged(object sender, EventArgs e)
                 {
-                    try
+                    //
+                    await Task.Delay(50);
+                    if (Selected == true)
                     {
-                        if (Selected == true)
+                        if (reborn.Element_ID_MenuEditor.Text == Text.Name)
                         {
-                            if (reborn.Element_ID_MenuEditor.Text == Text.Name)
-                            {
-                                TextElement.FunctionsUnhover = reborn.MenuEditor_CodeEditorUnhover.Text;
-                                RewriteTextData(Menu, TextElement);
-                            }
+                            TextElement.FunctionsUnhover = reborn.MenuEditor_CodeEditorUnhover.Text;
+                            RewriteTextData(Menu, TextElement);
                         }
                     }
-                    catch (Exception)
-                    {
-
-                    }
                 }
-                void CodeHoldChanged(object sender, EventArgs e)
+                async void CodeHoldChanged(object sender, EventArgs e)
                 {
+                    await Task.Delay(50);
                     try
                     {
                         if (Selected == true)
@@ -168,7 +165,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 }
                 async void FontChanged(object sender, EventArgs e)
                 {
-                    await Task.Delay(1);
+                    await Task.Delay(50);
                     if (reborn.Element_ID_MenuEditor.Text == Text.Name)
                     {
                         try
@@ -497,6 +494,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 string text = File.ReadAllText(TextElement + "/text.txt");
                 string args = File.ReadAllText(TextElement + "/args.txt");
                 string functions = File.ReadAllText(TextElement + "/Functions.txt");
+                string functionshold = File.ReadAllText(TextElement + "/Functionshold.txt");
+                string functionshover = File.ReadAllText(TextElement + "/Functionshover.txt");
+                string functionsunhover = File.ReadAllText(TextElement + "/Functionsunhover.txt");
                 string fontname = File.ReadAllText(TextElement + "/font.txt");
                 string fontsize_string = File.ReadAllText(TextElement + "/fontsize.txt");
                 int x = Convert.ToInt32(File.ReadAllText(TextElement + "/x.txt"));
@@ -529,6 +529,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     Font = font,
                     FontName = fontname,
                     Functions = functions,
+                    FunctionsHold = functionshold,
+                    FunctionsHover = functionshover,
+                    FunctionsUnhover = functionsunhover,
                     X = x,
                     Y = y,
                     args = Convert.ToBoolean(args),
@@ -542,6 +545,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 string id = File.ReadAllText(ImageElement + "/id.txt");
                 string args = File.ReadAllText(ImageElement + "/args.txt");
                 string functions = File.ReadAllText(ImageElement + "/Functions.txt");
+                string functionshold = File.ReadAllText(ImageElement + "/Functionshold.txt");
+                string functionshover = File.ReadAllText(ImageElement + "/Functionshover.txt");
+                string functionsunhover = File.ReadAllText(ImageElement + "/Functionsunhover.txt");
                 int x = Convert.ToInt32(File.ReadAllText(ImageElement + "/x.txt"));
                 int y = Convert.ToInt32(File.ReadAllText(ImageElement + "/y.txt"));
 
@@ -549,6 +555,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 {
                     ID = id,
                     Functions = functions,
+                    FunctionsHold = functionshold,
+                    FunctionsHover = functionshover,
+                    FunctionsUnhover = functionsunhover,
                     X = x,
                     Y = y,
                     args = Convert.ToBoolean(args)

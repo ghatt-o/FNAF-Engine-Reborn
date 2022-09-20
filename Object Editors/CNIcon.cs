@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace FNAF_Engine_Reborn.Object_Editors
+﻿namespace FNAF_Engine_Reborn.Object_Editors
 {
     internal class CNIcon
     {

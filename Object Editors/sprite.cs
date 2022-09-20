@@ -40,8 +40,6 @@ namespace FNAF_Engine_Reborn
                 {
                     Name = FileName,
                     Image = FilePath,
-                    //Console.WriteLine(FileName);
-                    //Console.WriteLine(FilePath);
                     Layer = "1",
                     X = "0",
                     Y = "0"
@@ -76,6 +74,7 @@ namespace FNAF_Engine_Reborn
                     string X = SpriteProperties[7];
                     string Y = SpriteProperties[9];
                     Image img = System.Drawing.Image.FromFile(Image);
+
                     //code
 
                     Sprite NewSprite = new Sprite(reborn)
@@ -88,6 +87,7 @@ namespace FNAF_Engine_Reborn
                     };
                     int PicBoxX = Convert.ToInt32(NewSprite.X);
                     int PicBoxY = Convert.ToInt32(NewSprite.Y);
+
                     //setting up the image preview
 
                     PictureBox sprite = new PictureBox
@@ -106,8 +106,13 @@ namespace FNAF_Engine_Reborn
                     sprite.Move += Sprite_Move;
                     sprite.Draggable(true);
                     sprite.MouseEnter += Sprite_MouseEnter;
+                    sprite.MouseLeave += Sprite_MouseLeave;
                     sprite.MouseClick += Sprite_MouseClick;
                     sprite.MouseDoubleClick += Sprite_Delete;
+                    void Sprite_MouseLeave(object sender, EventArgs e)
+                    {
+                        sprite.BorderStyle = BorderStyle.None;
+                    }
                     void Sprite_MouseClick(object sender, MouseEventArgs e)
                     {
                         if (e.Button == MouseButtons.Middle)
@@ -132,6 +137,8 @@ namespace FNAF_Engine_Reborn
                     {
                         ToolTip tooltip = new ToolTip();
                         tooltip.SetToolTip(sprite, "Left Click to drag, Middle Click to layer, Double Right Click to delete");
+
+                        sprite.BorderStyle = BorderStyle.FixedSingle;
                     }
                     void Sprite_Delete(object sender, MouseEventArgs e)
                     {
@@ -145,6 +152,7 @@ namespace FNAF_Engine_Reborn
                     }
                     void Sprite_Move(object sender, EventArgs e)
                     {
+                        sprite.BorderStyle = BorderStyle.Fixed3D;
                         NewSprite.X = Convert.ToString(sprite.Location.X);
                         NewSprite.Y = Convert.ToString(sprite.Location.Y);
                         string txt = NewSprite.SortData();

@@ -205,7 +205,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.Events.ForeColor = System.Drawing.Color.Black;
             this.Events.ItemHeight = 35;
             this.Events.LineColor = System.Drawing.Color.Red;
-            this.Events.Location = new System.Drawing.Point(12, 9);
+            this.Events.Location = new System.Drawing.Point(12, 10);
             this.Events.Name = "Events";
             treeNode1.Name = "On Engine Start";
             treeNode1.Text = "On Engine Start";
@@ -464,7 +464,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeblockSelector";
-            this.Text = "CodeblockSelector";
+            this.Text = "Script Codeblock Selector";
             this.Load += new System.EventHandler(this.CodeblockSelector_Load);
             this.ResumeLayout(false);
 

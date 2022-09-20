@@ -6,6 +6,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
     public partial class CodeblockSelector : Form
     {
         private string all = "";
+        public bool eventr;
         private readonly reborn reborn;
         public string Path;
         public CodeblockSelector(reborn reborn)
@@ -16,7 +17,14 @@ namespace FNAF_Engine_Reborn.Main_Stuff
 
         private void CodeblockSelector_Load(object sender, EventArgs e)
         {
+            if (eventr == true)
+            {
 
+            }
+            else
+            {
+                Actions.BringToFront();
+            }
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -53,7 +61,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
                     Hide();
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 this.Close();
             }

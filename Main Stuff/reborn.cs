@@ -8,7 +8,6 @@ using System.IO;
 using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
 
 namespace FNAF_Engine_Reborn
 {
@@ -679,6 +678,7 @@ namespace FNAF_Engine_Reborn
                         Sidebar.Show();
                         AssetManagerPanel.Show();
                         AssetManagerPanel.BringToFront();
+                        Sidebar.BringToFront();
                         buildSettingsPanelMoment.Show();
                         SoundEditorPanel.Show();
                         menuEditorPanel.Show();
@@ -705,13 +705,12 @@ namespace FNAF_Engine_Reborn
                             animatronicEditorPNL2.Show();
                         }
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
 
                     }
                 }
             }
-            Sidebar.BringToFront();
         }
 
         private void label163_Click(object sender, EventArgs e)
@@ -1138,6 +1137,7 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox13.Checked == true)
                 {
+                    CameraInput.Show();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
                     string[] options = optionstxt.Split(',');
                     options[3] = "camera=true";
@@ -1146,6 +1146,7 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
+                    CameraInput.Hide();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
                     string[] options = optionstxt.Split(',');
                     options[3] = "camera=false";
@@ -1649,7 +1650,9 @@ namespace FNAF_Engine_Reborn
                     checkBox16.Checked = options[0] == "power=true";
                     checkBox12.Checked = options[1] == "toxic=true";
                     checkBox11.Checked = options[2] == "mask=true";
+                    if (checkBox11.Checked == false) MaskInput.Hide();
                     checkBox13.Checked = options[3] == "camera=true";
+                    if (checkBox13.Checked == false) CameraInput.Hide();
                     checkBox14.Checked = options[4] == "flashlight=true";
                     checkBox15.Checked = options[5] == "panorama=true";
                     checkBox24.Checked = options[6] == "perspective=true";
@@ -1808,7 +1811,7 @@ namespace FNAF_Engine_Reborn
                 button33.Hide();
                 CreatePanel_OfficeEditor.Hide();
                 button37.Show();
-                comboBox65.Show();
+                AnimationsOfficeEditor_CreateBox.Show();
             }
         }
 
@@ -1820,7 +1823,7 @@ namespace FNAF_Engine_Reborn
             button33.Show();
             CreatePanel_OfficeEditor.Show();
             button37.Hide();
-            comboBox65.Hide();
+            AnimationsOfficeEditor_CreateBox.Hide();
         }
 
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
@@ -1884,6 +1887,7 @@ namespace FNAF_Engine_Reborn
                     options[2] = "mask=true";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    MaskInput.Show();
                 }
                 else
                 {
@@ -1892,6 +1896,7 @@ namespace FNAF_Engine_Reborn
                     options[2] = "mask=false";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    MaskInput.Hide();
                 }
             }
         }
@@ -1967,8 +1972,7 @@ namespace FNAF_Engine_Reborn
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-            //Thread.Sleep(10000);
-            if (string.IsNullOrWhiteSpace(textBox7.Text))
+            if (string.IsNullOrWhiteSpace(textBox7.Text) || textBox7.Text.Contains(" "))
             {
                 textBox7.Text = "0";
             }
@@ -2060,7 +2064,7 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
-                    
+
                 }
             }
         }
@@ -2148,7 +2152,7 @@ namespace FNAF_Engine_Reborn
                         button10.Show();
                     }
                 }
-                catch(Exception)
+                catch (Exception)
                 {
 
                 }
@@ -2161,6 +2165,7 @@ namespace FNAF_Engine_Reborn
             {
                 script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 CodeblockSelector selector = new CodeblockSelector(this);
+                selector.eventr = true;
                 _ = selector.ShowDialog();
             }
         }
@@ -2203,6 +2208,7 @@ namespace FNAF_Engine_Reborn
             {
                 script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                 CodeblockSelector selector = new CodeblockSelector(this);
+                selector.eventr = true;
                 _ = selector.ShowDialog();
             }
         }
@@ -2298,7 +2304,8 @@ namespace FNAF_Engine_Reborn
             {
                 string DataValue = GameManager_Variables_View.SelectedNode.Name;
                 string Value = reassign_Value_GameManager_Textbox.Text;
-                DataValues.ReassignDataValue(DataValue, DataValues.GetDataValue(DataValue), Value);
+                var old = DataValues.GetDataValue(DataValue);
+                DataValues.ReassignDataValue(DataValue, old, Value);
                 DataValues.RefreshDataValues();
                 reassign_Value_GameManager_Textbox.Hide();
             }
@@ -2346,7 +2353,7 @@ namespace FNAF_Engine_Reborn
 
 
 
-            
+
             try
             {
                 MenuStart_CodeEditor.Text = File.ReadAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt");
@@ -2357,7 +2364,7 @@ namespace FNAF_Engine_Reborn
                 Console.WriteLine("Exc:" + ex.ToString());
                 MessageBox.Show("Warning: Some project data might've been corrupted!", "Corrupted Project", MessageBoxButtons.OK);
             }
-            
+
         }
 
         private void DownloadFontBtn_Click(object sender, EventArgs e)
@@ -2367,7 +2374,7 @@ namespace FNAF_Engine_Reborn
 
         private void button21_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button28_Click(object sender, EventArgs e)
@@ -2425,7 +2432,7 @@ namespace FNAF_Engine_Reborn
                             animatronicEditorPNL2.Show();
                         }
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
 
                     }
@@ -2777,6 +2784,14 @@ namespace FNAF_Engine_Reborn
             {
 
             }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
+            CodeblockSelector selector = new CodeblockSelector(this);
+            selector.eventr = false;
+            _ = selector.ShowDialog();
         }
     }
 }
