@@ -1243,12 +1243,18 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     _ = Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/sound.fersound", "");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/jsound.fersound", "");
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/janimation.feranimation", "");
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/im.im", "false");
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/al.al", "false");
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/lbb.lbb", "false");
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", "");
+                    BinaryWriter binWriter = new BinaryWriter(new FileStream(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", FileMode.Open));
+                    binWriter.Write("None");
+                    binWriter.Flush();
+                    binWriter.Dispose();
+                    binWriter.Close();
+
                     if (checkBox2.Checked == true)
                     {
                         File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "true");

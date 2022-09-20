@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.label92 = new System.Windows.Forms.Label();
@@ -531,9 +531,11 @@ namespace FNAF_Engine_Reborn
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.button119 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
+            this.ChooseAnimatronicPath.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.cameraEditorPanel.SuspendLayout();
@@ -936,6 +938,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.ChooseAnimatronicPath.BackColor = System.Drawing.SystemColors.Control;
             this.ChooseAnimatronicPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ChooseAnimatronicPath.Controls.Add(this.button21);
             this.ChooseAnimatronicPath.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ChooseAnimatronicPath.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ChooseAnimatronicPath.Location = new System.Drawing.Point(475, 166);
@@ -3981,11 +3984,11 @@ namespace FNAF_Engine_Reborn
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode1.Name = "Data Values";
-            treeNode1.Tag = "Data_Values_List";
-            treeNode1.Text = "Data Values";
+            treeNode4.Name = "Data Values";
+            treeNode4.Tag = "Data_Values_List";
+            treeNode4.Text = "Data Values";
             this.GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode4});
             this.GameManager_Variables_View.Size = new System.Drawing.Size(232, 339);
             this.GameManager_Variables_View.TabIndex = 162;
             this.GameManager_Variables_View.VisibleChanged += new System.EventHandler(this.GameManager_Variables_View_VisibleChanged);
@@ -5516,7 +5519,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem4});
             this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -7074,6 +7077,14 @@ namespace FNAF_Engine_Reborn
             this.button119.TabIndex = 104;
             this.button119.UseVisualStyleBackColor = true;
             // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(3, 2);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(25, 23);
+            this.button21.TabIndex = 65;
+            this.button21.UseVisualStyleBackColor = true;
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7086,7 +7097,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.GameDebugMenu);
@@ -7104,6 +7114,7 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.AssetManagerPanel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7118,6 +7129,7 @@ namespace FNAF_Engine_Reborn
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.animatronicEditorPNL2.ResumeLayout(false);
             this.animatronicEditorPNL2.PerformLayout();
+            this.ChooseAnimatronicPath.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -7685,5 +7697,6 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.TreeView animatronicEditor_AnimPath;
         public System.Windows.Forms.Panel ChooseAnimatronicPath;
         public System.Windows.Forms.Button MaskInput;
+        private System.Windows.Forms.Button button21;
     }
 }
