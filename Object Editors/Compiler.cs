@@ -64,6 +64,9 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     if (File.ReadAllText(project + "/options.txt").Contains("fullscreen=true")) binWriter.Write(true);
                     else binWriter.Write(false);
 
+                    //IMAGES
+                    #region
+
                     int ImageCount = 0;
 
                     List<string> images = new List<string>();
@@ -79,12 +82,142 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     foreach (var img in images)
                     {
                         byte[] imgBytes = File.ReadAllBytes(img);
-                        long imgSize = imgBytes.LongLength;
+                        long imgSize = imgBytes.ToString().Length;
 
                         binWriter.Write(imgSize);
                         binWriter.Write(imgBytes);
                     }
 
+                    #endregion
+                    //AUDIO FILES
+                    #region
+
+                    int AudioCount = 0;
+
+                    List<string> Audios = new List<string>();
+
+                    foreach (var file in Directory.GetFiles(project + "/sounds"))
+                    {
+                        ImageCount++;
+                        images.Add(file);
+                    }
+
+                    binWriter.Write(AudioCount);
+
+                    foreach (var aud in Audios)
+                    {
+                        byte[] AudioBytes = File.ReadAllBytes(aud);
+                        long AudioSize = AudioBytes.ToString().Length;
+
+                        binWriter.Write(AudioSize);
+                        binWriter.Write(AudioBytes);
+                    }
+
+                    #endregion
+
+                    //MENUS
+                    #region
+                    int MenuCount = -1;
+
+                    foreach(var menu in Directory.GetDirectories(project + "/menus")) MenuCount++;
+
+                    binWriter.Write(MenuCount);
+
+                    foreach (var menu in Directory.GetDirectories(project + "/menus"))
+                    {
+                        binWriter.Write(File.ReadAllText(menu + "/name.txt"));
+                        binWriter.Write(0);
+
+
+
+                        //MENU CODE
+
+
+
+                        string[] onmenustart_stuff = File.ReadAllLines(menu + "/onmenustart.txt");
+
+                        long CodeLines = 0;
+                        for (int i = 0; i < onmenustart_stuff.Length; i++) CodeLines++;
+
+                        binWriter.Write(CodeLines);
+
+                        foreach (string str in onmenustart_stuff) binWriter.Write(str);
+
+
+
+
+
+
+                        string[] ongameloop_stuff = File.ReadAllLines(menu + "/onmenustart.txt");
+
+                        long CodeLinesG = 0;
+                        for (int i = 0; i < ongameloop_stuff.Length; i++) CodeLinesG++;
+
+                        binWriter.Write(CodeLinesG);
+
+                        foreach (string strG in ongameloop_stuff) binWriter.Write(strG);
+
+
+
+
+                        //ELEMENTS
+                        int textElementCount = 0;
+                        int imgElementCount = 0;
+                        foreach (var TextElement in Directory.GetDirectories(menu + "/text_elements")) textElementCount++;
+                        foreach (var ImageElement in Directory.GetDirectories(menu + "/image_elements")) imgElementCount++;
+
+                        binWriter.Write(textElementCount);
+                        binWriter.Write(imgElementCount);
+
+                        //TEXT ELEMENT
+                        foreach (var TextElement in Directory.GetDirectories(menu + "/text_elements"))
+                        {
+                            if (File.ReadAllText(TextElement + "/args.txt") == "True") binWriter.Write(true);
+                            else binWriter.Write(false);
+                            binWriter.Write(Convert.ToInt32(File.ReadAllText(TextElement + "/x.txt")));
+                            binWriter.Write(Convert.ToInt32(File.ReadAllText(TextElement + "/y.txt")));
+                            binWriter.Write(File.ReadAllText(TextElement + "/text.txt"));
+                            binWriter.Write(File.ReadAllText(TextElement + "/id.txt"));
+                            binWriter.Write(File.ReadAllText(TextElement + "/fontname.txt"));
+                            binWriter.Write(File.ReadAllText(TextElement + "/fontsize.txt"));
+                            binWriter.Write(Convert.ToByte(File.ReadAllText(TextElement + "/color.txt").Split(',')[0]));
+                            binWriter.Write(Convert.ToByte(File.ReadAllText(TextElement + "/color.txt").Split(',')[1]));
+                            binWriter.Write(Convert.ToByte(File.ReadAllText(TextElement + "/color.txt").Split(',')[2]));
+
+                            string[] funcs = File.ReadAllLines(TextElement + "/functions.txt");
+                            string[] funcshover = File.ReadAllLines(TextElement + "/functionshover.txt");
+                            string[] funcsunhover = File.ReadAllLines(TextElement + "/functionsunhover.txt");
+                            string[] funcshold = File.ReadAllLines(TextElement + "/functionshold.txt");
+
+                            binWriter.Write(funcs.Length);
+                            binWriter.Write(funcshover.Length);
+                            binWriter.Write(funcsunhover.Length);
+                            binWriter.Write(funcshold.Length);
+
+                            foreach(string f in funcs)
+                            {
+                                binWriter.Write(f);
+                            }
+
+                            foreach (string f in funcshover)
+                            {
+                                binWriter.Write(f);
+                            }
+
+                            foreach (string f in funcsunhover)
+                            {
+                                binWriter.Write(f);
+                            }
+
+                            foreach (string f in funcshold)
+                            {
+                                binWriter.Write(f);
+                            }
+                        }
+                        //IMAGE ELEMENT
+                    }
+
+                    #endregion
                     binWriter.Close();
                 }
                 else if (binary == false)
