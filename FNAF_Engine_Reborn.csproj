@@ -132,6 +132,7 @@
     <Compile Include="Main Stuff\CodeblockSelector.Designer.cs">
       <DependentUpon>CodeblockSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object Editors\AnimatronicEditorPath.cs" />
     <Compile Include="Object Editors\AnimElement.cs" />
     <Compile Include="Object Editors\Compiler.cs" />
     <Compile Include="Object Editors\DataValues.cs" />

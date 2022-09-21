@@ -1250,7 +1250,7 @@ namespace FNAF_Engine_Reborn
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/lbb.lbb", "false");
                     File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", "");
                     BinaryWriter binWriter = new BinaryWriter(new FileStream(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", FileMode.Open));
-                    binWriter.Write("None");
+                    binWriter.Write(0);
                     binWriter.Flush();
                     binWriter.Dispose();
                     binWriter.Close();
@@ -1470,7 +1470,7 @@ namespace FNAF_Engine_Reborn
             {
                 if (_0_2C == true)
                 {
-                    Compiler compiler = new Compiler(this, style);
+                    Compiler compiler = new Compiler(this, style, projecto);
                     _ = compiler.ShowDialog();
                     //this.presence.details = "Compiling game...";
                     //DiscordRpc.UpdatePresence(ref this.presence);
@@ -2476,7 +2476,7 @@ namespace FNAF_Engine_Reborn
             {
                 if (_0_2C == true)
                 {
-                    Compiler compiler = new Compiler(this, style);
+                    Compiler compiler = new Compiler(this, style, projecto);
                     _ = compiler.ShowDialog();
                     //this.presence.details = "Compiling game...";
                     //DiscordRpc.UpdatePresence(ref this.presence);
@@ -2709,7 +2709,14 @@ namespace FNAF_Engine_Reborn
 
             //path
 
+            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/path.feranimpath") == "")
+            {
 
+            }
+            else
+            {
+                //RefreshAnimPathView(AnimatronicDropDown.SelectedItem.ToString());
+            }
         }
 
         private void Menu_CodeEditor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -2798,6 +2805,58 @@ namespace FNAF_Engine_Reborn
             CodeblockSelector selector = new CodeblockSelector(this);
             selector.eventr = false;
             _ = selector.ShowDialog();
+        }
+
+        private void AddPath_Click(object sender, EventArgs e)
+        {
+            ChooseAnimatronicPath.Show();
+        }
+
+        private void ThrowNotImplementedError(string type)
+        {
+            throw new NotImplementedException("Not implemented type: " + type);
+        }
+
+        //ANIM EDITOR PATH SELECTION
+
+        private void CamIcon_AnimEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DoorIcon_AnimEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FlashlightIcon_AnimEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LightIcon_AnimEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MusicBox_AnimEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OfficeIcon_AnimEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AlternatePath_AnimEditor_Click(object sender, EventArgs e)
+        {
+            ThrowNotImplementedError("Alternate Path");
+        }
+
+        private void StateIcon_AnimEditor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
