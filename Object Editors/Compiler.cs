@@ -82,7 +82,8 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     foreach (var img in images)
                     {
                         byte[] imgBytes = File.ReadAllBytes(img);
-                        long imgSize = imgBytes.ToString().Length;
+                        FileInfo fileInfo = new FileInfo(img);
+                        long imgSize = fileInfo.Length;
 
                         binWriter.Write(imgSize);
                         binWriter.Write(imgBytes);
@@ -98,8 +99,8 @@ namespace FNAF_Engine_Reborn.Object_Editors
 
                     foreach (var file in Directory.GetFiles(project + "/sounds"))
                     {
-                        ImageCount++;
-                        images.Add(file);
+                        AudioCount++;
+                        Audios.Add(file);
                     }
 
                     binWriter.Write(AudioCount);
@@ -107,7 +108,8 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     foreach (var aud in Audios)
                     {
                         byte[] AudioBytes = File.ReadAllBytes(aud);
-                        long AudioSize = AudioBytes.ToString().Length;
+                        FileInfo fileInfo = new FileInfo(aud);
+                        long AudioSize = fileInfo.Length;
 
                         binWriter.Write(AudioSize);
                         binWriter.Write(AudioBytes);
@@ -117,7 +119,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
 
                     //MENUS
                     #region
-                    int MenuCount = -1;
+                    int MenuCount = 0;
 
                     foreach(var menu in Directory.GetDirectories(project + "/menus")) MenuCount++;
 
@@ -126,7 +128,25 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     foreach (var menu in Directory.GetDirectories(project + "/menus"))
                     {
                         binWriter.Write(File.ReadAllText(menu + "/name.txt"));
-                        binWriter.Write(0);
+                        binWriter.Write((long)0);
+                        if (File.Exists(menu + "/bg.txt"))
+                        {
+                            string[] imagess = Directory.GetFiles(project + "/images/");
+                            for (int i = 0; i < imagess.Length; i++)
+                            {
+                                foreach (var file in Directory.GetFiles(project + "/images/"))
+                                {
+                                    if (file == File.ReadAllText(menu + "/bg.txt"))
+                                    {
+                                        binWriter.Write(((long)i));
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            binWriter.Write((long)0);
+                        }
 
 
 
@@ -178,7 +198,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                             binWriter.Write(Convert.ToInt32(File.ReadAllText(TextElement + "/y.txt")));
                             binWriter.Write(File.ReadAllText(TextElement + "/text.txt"));
                             binWriter.Write(File.ReadAllText(TextElement + "/id.txt"));
-                            binWriter.Write(File.ReadAllText(TextElement + "/fontname.txt"));
+                            binWriter.Write(File.ReadAllText(TextElement + "/font.txt"));
                             binWriter.Write(File.ReadAllText(TextElement + "/fontsize.txt"));
                             binWriter.Write(Convert.ToByte(File.ReadAllText(TextElement + "/color.txt").Split(',')[0]));
                             binWriter.Write(Convert.ToByte(File.ReadAllText(TextElement + "/color.txt").Split(',')[1]));
