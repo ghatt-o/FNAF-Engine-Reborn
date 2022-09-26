@@ -90,10 +90,7 @@ namespace FNAF_Engine_Reborn
                     {
                         Directory.Delete($@"Exports/{game_name}", true);
                     }
-                    catch (Exception)
-                    {
-
-                    }
+                    catch (Exception) { }
                     _ = Directory.CreateDirectory(@"Exports/");
                     Compiling_Progress.Value += 5;
                     await Wait(300);
