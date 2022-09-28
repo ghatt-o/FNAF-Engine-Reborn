@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNAF_Engine_Reborn", "FNAF_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FNAF Engine Game", "..\FNAF Engine Reborn Game\FNAF Engine Game.csproj", "{EF3ABC1A-F8A7-4857-93C7-66DD269A2C06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNAF Engine Compiler", "..\FNAF Engine Compiler\FNAF Engine Compiler.csproj", "{CF56CC89-7CF3-491B-8069-0D06D0079BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FNAF Engine GameData", "..\FNAF Engine Compiler\FNAF Engine GameData.csproj", "{CF56CC89-7CF3-491B-8069-0D06D0079BC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
