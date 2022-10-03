@@ -63,6 +63,16 @@ namespace FNAF_Engine_Reborn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cancel {
+            get {
+                object obj = ResourceManager.GetObject("Cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_project {
             get {
                 object obj = ResourceManager.GetObject("delete project", resourceCulture);
@@ -76,6 +86,16 @@ namespace FNAF_Engine_Reborn.Properties {
         internal static System.Drawing.Bitmap Diamond_Cat {
             get {
                 object obj = ResourceManager.GetObject("Diamond_Cat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Drag {
+            get {
+                object obj = ResourceManager.GetObject("Drag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace FNAF_Engine_Reborn.Properties {
         internal static System.Drawing.Bitmap funnyPlus {
             get {
                 object obj = ResourceManager.GetObject("funnyPlus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gaynessbucket {
+            get {
+                object obj = ResourceManager.GetObject("gaynessbucket", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

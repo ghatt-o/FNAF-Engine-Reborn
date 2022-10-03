@@ -14,8 +14,8 @@ namespace FNAF_Engine_Reborn
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "0.9.3";
-        public string Build_Version = "nr42";
+        public string Version = "pre-1.0.0";
+        public string Build_Version = "0_nr-ns_eb_lvn_jk";
         public bool isopen = false;
         public bool animatronicselected = false;
         internal bool _0_2C = true;

@@ -322,6 +322,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FE.ico" />
+    <None Include="Resources\gaynessbucket.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Drag.png" />
     <None Include="Resources\FE-R-TEXTLOGO.png" />
     <None Include="Resources\label83.Image.png" />
     <None Include="Resources\DownloadFontBtn.BackgroundImage.png" />

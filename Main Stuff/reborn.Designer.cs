@@ -32,11 +32,12 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.label124 = new System.Windows.Forms.Label();
@@ -64,6 +65,13 @@ namespace FNAF_Engine_Reborn
             this.label159 = new System.Windows.Forms.Label();
             this.animatronicEditorPNL2 = new System.Windows.Forms.Panel();
             this.ChooseAnimatronicPath = new System.Windows.Forms.Panel();
+            this.OfficeIcon_AnimEditor = new System.Windows.Forms.Button();
+            this.StateIcon_AnimEditor = new System.Windows.Forms.Button();
+            this.AlternatePath_AnimEditor = new System.Windows.Forms.Button();
+            this.MusicBox_AnimEditor = new System.Windows.Forms.Button();
+            this.LightIcon_AnimEditor = new System.Windows.Forms.Button();
+            this.FlashlightIcon_AnimEditor = new System.Windows.Forms.Button();
+            this.DoorIcon_AnimEditor = new System.Windows.Forms.Button();
             this.CamIcon_AnimEditor = new System.Windows.Forms.Button();
             this.animatronicEditor_AnimPath = new System.Windows.Forms.TreeView();
             this.isphantom_animatronicEditor = new System.Windows.Forms.Label();
@@ -514,7 +522,7 @@ namespace FNAF_Engine_Reborn
             this.FPS_Info_StaticEffectEditor = new System.Windows.Forms.Label();
             this.FPS_StaticEffectEditor = new System.Windows.Forms.TextBox();
             this.button103 = new System.Windows.Forms.Button();
-            this.button107 = new System.Windows.Forms.Button();
+            this.Drag_UIEditor = new System.Windows.Forms.Button();
             this.DeleteFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AddFrame_StaticEffectEditor = new System.Windows.Forms.Button();
             this.AnimationList_StaticEffectEditor = new System.Windows.Forms.ComboBox();
@@ -533,13 +541,12 @@ namespace FNAF_Engine_Reborn
             this.Sidebar = new System.Windows.Forms.Panel();
             this.button119 = new System.Windows.Forms.Button();
             this.AnimatronicPath_Images = new System.Windows.Forms.ImageList(this.components);
-            this.DoorIcon_AnimEditor = new System.Windows.Forms.Button();
-            this.FlashlightIcon_AnimEditor = new System.Windows.Forms.Button();
-            this.LightIcon_AnimEditor = new System.Windows.Forms.Button();
-            this.MusicBox_AnimEditor = new System.Windows.Forms.Button();
-            this.AlternatePath_AnimEditor = new System.Windows.Forms.Button();
-            this.StateIcon_AnimEditor = new System.Windows.Forms.Button();
-            this.OfficeIcon_AnimEditor = new System.Windows.Forms.Button();
+            this.UI_Editor = new System.Windows.Forms.Panel();
+            this.Paint_UIEditor = new System.Windows.Forms.Button();
+            this.button104 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.OK_UIEditor = new System.Windows.Forms.Button();
+            this.Settings = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -578,12 +585,15 @@ namespace FNAF_Engine_Reborn
             this.GameDebugMenu.SuspendLayout();
             this.ImageEditorPanel.SuspendLayout();
             this.Sidebar.SuspendLayout();
+            this.UI_Editor.SuspendLayout();
             this.SuspendLayout();
             // 
             // allEditorsPNL
             // 
             this.allEditorsPNL.BackColor = System.Drawing.SystemColors.Control;
             this.allEditorsPNL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.allEditorsPNL.Controls.Add(this.Settings);
+            this.allEditorsPNL.Controls.Add(this.label10);
             this.allEditorsPNL.Controls.Add(this.label92);
             this.allEditorsPNL.Controls.Add(this.label71);
             this.allEditorsPNL.Controls.Add(this.label124);
@@ -603,13 +613,26 @@ namespace FNAF_Engine_Reborn
             this.allEditorsPNL.Size = new System.Drawing.Size(529, 60);
             this.allEditorsPNL.TabIndex = 120;
             // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.Control;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label10.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label10.Location = new System.Drawing.Point(388, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 60);
+            this.label10.TabIndex = 133;
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label92
             // 
             this.label92.Image = ((System.Drawing.Image)(resources.GetObject("label92.Image")));
-            this.label92.Location = new System.Drawing.Point(294, 15);
+            this.label92.Location = new System.Drawing.Point(294, 12);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(34, 33);
             this.label92.TabIndex = 109;
+            this.label92.Text = "c";
             this.label92.Click += new System.EventHandler(this.label92_Click);
             // 
             // label71
@@ -961,6 +984,83 @@ namespace FNAF_Engine_Reborn
             this.ChooseAnimatronicPath.Size = new System.Drawing.Size(255, 29);
             this.ChooseAnimatronicPath.TabIndex = 64;
             this.ChooseAnimatronicPath.Visible = false;
+            // 
+            // OfficeIcon_AnimEditor
+            // 
+            this.OfficeIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OfficeIcon_AnimEditor.BackgroundImage")));
+            this.OfficeIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OfficeIcon_AnimEditor.Location = new System.Drawing.Point(225, 2);
+            this.OfficeIcon_AnimEditor.Name = "OfficeIcon_AnimEditor";
+            this.OfficeIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
+            this.OfficeIcon_AnimEditor.TabIndex = 72;
+            this.OfficeIcon_AnimEditor.UseVisualStyleBackColor = true;
+            this.OfficeIcon_AnimEditor.Click += new System.EventHandler(this.OfficeIcon_AnimEditor_Click);
+            // 
+            // StateIcon_AnimEditor
+            // 
+            this.StateIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StateIcon_AnimEditor.BackgroundImage")));
+            this.StateIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.StateIcon_AnimEditor.Location = new System.Drawing.Point(164, 2);
+            this.StateIcon_AnimEditor.Name = "StateIcon_AnimEditor";
+            this.StateIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
+            this.StateIcon_AnimEditor.TabIndex = 71;
+            this.StateIcon_AnimEditor.UseVisualStyleBackColor = true;
+            this.StateIcon_AnimEditor.Click += new System.EventHandler(this.StateIcon_AnimEditor_Click);
+            // 
+            // AlternatePath_AnimEditor
+            // 
+            this.AlternatePath_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AlternatePath_AnimEditor.BackgroundImage")));
+            this.AlternatePath_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AlternatePath_AnimEditor.Location = new System.Drawing.Point(138, 2);
+            this.AlternatePath_AnimEditor.Name = "AlternatePath_AnimEditor";
+            this.AlternatePath_AnimEditor.Size = new System.Drawing.Size(25, 23);
+            this.AlternatePath_AnimEditor.TabIndex = 70;
+            this.AlternatePath_AnimEditor.UseVisualStyleBackColor = true;
+            this.AlternatePath_AnimEditor.Click += new System.EventHandler(this.AlternatePath_AnimEditor_Click);
+            // 
+            // MusicBox_AnimEditor
+            // 
+            this.MusicBox_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MusicBox_AnimEditor.BackgroundImage")));
+            this.MusicBox_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MusicBox_AnimEditor.Location = new System.Drawing.Point(111, 2);
+            this.MusicBox_AnimEditor.Name = "MusicBox_AnimEditor";
+            this.MusicBox_AnimEditor.Size = new System.Drawing.Size(25, 23);
+            this.MusicBox_AnimEditor.TabIndex = 69;
+            this.MusicBox_AnimEditor.UseVisualStyleBackColor = true;
+            this.MusicBox_AnimEditor.Click += new System.EventHandler(this.MusicBox_AnimEditor_Click);
+            // 
+            // LightIcon_AnimEditor
+            // 
+            this.LightIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LightIcon_AnimEditor.BackgroundImage")));
+            this.LightIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LightIcon_AnimEditor.Location = new System.Drawing.Point(85, 2);
+            this.LightIcon_AnimEditor.Name = "LightIcon_AnimEditor";
+            this.LightIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
+            this.LightIcon_AnimEditor.TabIndex = 68;
+            this.LightIcon_AnimEditor.UseVisualStyleBackColor = true;
+            this.LightIcon_AnimEditor.Click += new System.EventHandler(this.LightIcon_AnimEditor_Click);
+            // 
+            // FlashlightIcon_AnimEditor
+            // 
+            this.FlashlightIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FlashlightIcon_AnimEditor.BackgroundImage")));
+            this.FlashlightIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FlashlightIcon_AnimEditor.Location = new System.Drawing.Point(57, 2);
+            this.FlashlightIcon_AnimEditor.Name = "FlashlightIcon_AnimEditor";
+            this.FlashlightIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
+            this.FlashlightIcon_AnimEditor.TabIndex = 67;
+            this.FlashlightIcon_AnimEditor.UseVisualStyleBackColor = true;
+            this.FlashlightIcon_AnimEditor.Click += new System.EventHandler(this.FlashlightIcon_AnimEditor_Click);
+            // 
+            // DoorIcon_AnimEditor
+            // 
+            this.DoorIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DoorIcon_AnimEditor.BackgroundImage")));
+            this.DoorIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.DoorIcon_AnimEditor.Location = new System.Drawing.Point(30, 2);
+            this.DoorIcon_AnimEditor.Name = "DoorIcon_AnimEditor";
+            this.DoorIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
+            this.DoorIcon_AnimEditor.TabIndex = 66;
+            this.DoorIcon_AnimEditor.UseVisualStyleBackColor = true;
+            this.DoorIcon_AnimEditor.Click += new System.EventHandler(this.DoorIcon_AnimEditor_Click);
             // 
             // CamIcon_AnimEditor
             // 
@@ -6678,7 +6778,7 @@ namespace FNAF_Engine_Reborn
             this.staticeffecteditor.Controls.Add(this.FPS_Info_StaticEffectEditor);
             this.staticeffecteditor.Controls.Add(this.FPS_StaticEffectEditor);
             this.staticeffecteditor.Controls.Add(this.button103);
-            this.staticeffecteditor.Controls.Add(this.button107);
+            this.staticeffecteditor.Controls.Add(this.Drag_UIEditor);
             this.staticeffecteditor.Controls.Add(this.DeleteFrame_StaticEffectEditor);
             this.staticeffecteditor.Controls.Add(this.AddFrame_StaticEffectEditor);
             this.staticeffecteditor.Controls.Add(this.AnimationList_StaticEffectEditor);
@@ -6860,16 +6960,16 @@ namespace FNAF_Engine_Reborn
             this.button103.TabIndex = 106;
             this.button103.UseVisualStyleBackColor = false;
             // 
-            // button107
+            // Drag_UIEditor
             // 
-            this.button107.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button107.FlatAppearance.BorderSize = 0;
-            this.button107.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button107.Location = new System.Drawing.Point(705, 590);
-            this.button107.Name = "button107";
-            this.button107.Size = new System.Drawing.Size(59, 43);
-            this.button107.TabIndex = 104;
-            this.button107.UseVisualStyleBackColor = true;
+            this.Drag_UIEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Drag_UIEditor.FlatAppearance.BorderSize = 0;
+            this.Drag_UIEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Drag_UIEditor.Location = new System.Drawing.Point(705, 590);
+            this.Drag_UIEditor.Name = "Drag_UIEditor";
+            this.Drag_UIEditor.Size = new System.Drawing.Size(59, 43);
+            this.Drag_UIEditor.TabIndex = 104;
+            this.Drag_UIEditor.UseVisualStyleBackColor = true;
             // 
             // DeleteFrame_StaticEffectEditor
             // 
@@ -7117,82 +7217,77 @@ namespace FNAF_Engine_Reborn
             this.AnimatronicPath_Images.Images.SetKeyName(6, "altpath.png");
             this.AnimatronicPath_Images.Images.SetKeyName(7, "state.png");
             // 
-            // DoorIcon_AnimEditor
+            // UI_Editor
             // 
-            this.DoorIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DoorIcon_AnimEditor.BackgroundImage")));
-            this.DoorIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.DoorIcon_AnimEditor.Location = new System.Drawing.Point(30, 2);
-            this.DoorIcon_AnimEditor.Name = "DoorIcon_AnimEditor";
-            this.DoorIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
-            this.DoorIcon_AnimEditor.TabIndex = 66;
-            this.DoorIcon_AnimEditor.UseVisualStyleBackColor = true;
-            this.DoorIcon_AnimEditor.Click += new System.EventHandler(this.DoorIcon_AnimEditor_Click);
+            this.UI_Editor.BackColor = System.Drawing.SystemColors.Control;
+            this.UI_Editor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UI_Editor.Controls.Add(this.OK_UIEditor);
+            this.UI_Editor.Controls.Add(this.label12);
+            this.UI_Editor.Controls.Add(this.Paint_UIEditor);
+            this.UI_Editor.Controls.Add(this.button104);
+            this.UI_Editor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UI_Editor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.UI_Editor.Location = new System.Drawing.Point(383, 29);
+            this.UI_Editor.Name = "UI_Editor";
+            this.UI_Editor.Size = new System.Drawing.Size(244, 29);
+            this.UI_Editor.TabIndex = 73;
+            this.UI_Editor.Visible = false;
             // 
-            // FlashlightIcon_AnimEditor
+            // Paint_UIEditor
             // 
-            this.FlashlightIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FlashlightIcon_AnimEditor.BackgroundImage")));
-            this.FlashlightIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FlashlightIcon_AnimEditor.Location = new System.Drawing.Point(57, 2);
-            this.FlashlightIcon_AnimEditor.Name = "FlashlightIcon_AnimEditor";
-            this.FlashlightIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
-            this.FlashlightIcon_AnimEditor.TabIndex = 67;
-            this.FlashlightIcon_AnimEditor.UseVisualStyleBackColor = true;
-            this.FlashlightIcon_AnimEditor.Click += new System.EventHandler(this.FlashlightIcon_AnimEditor_Click);
+            this.Paint_UIEditor.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.gaynessbucket;
+            this.Paint_UIEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Paint_UIEditor.Location = new System.Drawing.Point(28, 2);
+            this.Paint_UIEditor.Name = "Paint_UIEditor";
+            this.Paint_UIEditor.Size = new System.Drawing.Size(25, 23);
+            this.Paint_UIEditor.TabIndex = 66;
+            this.Paint_UIEditor.UseVisualStyleBackColor = true;
             // 
-            // LightIcon_AnimEditor
+            // button104
             // 
-            this.LightIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LightIcon_AnimEditor.BackgroundImage")));
-            this.LightIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LightIcon_AnimEditor.Location = new System.Drawing.Point(85, 2);
-            this.LightIcon_AnimEditor.Name = "LightIcon_AnimEditor";
-            this.LightIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
-            this.LightIcon_AnimEditor.TabIndex = 68;
-            this.LightIcon_AnimEditor.UseVisualStyleBackColor = true;
-            this.LightIcon_AnimEditor.Click += new System.EventHandler(this.LightIcon_AnimEditor_Click);
+            this.button104.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Drag;
+            this.button104.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button104.Location = new System.Drawing.Point(3, 2);
+            this.button104.Name = "button104";
+            this.button104.Size = new System.Drawing.Size(25, 23);
+            this.button104.TabIndex = 65;
+            this.button104.UseVisualStyleBackColor = true;
             // 
-            // MusicBox_AnimEditor
+            // label12
             // 
-            this.MusicBox_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MusicBox_AnimEditor.BackgroundImage")));
-            this.MusicBox_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MusicBox_AnimEditor.Location = new System.Drawing.Point(111, 2);
-            this.MusicBox_AnimEditor.Name = "MusicBox_AnimEditor";
-            this.MusicBox_AnimEditor.Size = new System.Drawing.Size(25, 23);
-            this.MusicBox_AnimEditor.TabIndex = 69;
-            this.MusicBox_AnimEditor.UseVisualStyleBackColor = true;
-            this.MusicBox_AnimEditor.Click += new System.EventHandler(this.MusicBox_AnimEditor_Click);
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Control;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.Location = new System.Drawing.Point(53, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(152, 15);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Customize your workspace!";
             // 
-            // AlternatePath_AnimEditor
+            // OK_UIEditor
             // 
-            this.AlternatePath_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AlternatePath_AnimEditor.BackgroundImage")));
-            this.AlternatePath_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.AlternatePath_AnimEditor.Location = new System.Drawing.Point(138, 2);
-            this.AlternatePath_AnimEditor.Name = "AlternatePath_AnimEditor";
-            this.AlternatePath_AnimEditor.Size = new System.Drawing.Size(25, 23);
-            this.AlternatePath_AnimEditor.TabIndex = 70;
-            this.AlternatePath_AnimEditor.UseVisualStyleBackColor = true;
-            this.AlternatePath_AnimEditor.Click += new System.EventHandler(this.AlternatePath_AnimEditor_Click);
+            this.OK_UIEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OK_UIEditor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.OK_UIEditor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OK_UIEditor.Location = new System.Drawing.Point(205, 3);
+            this.OK_UIEditor.Name = "OK_UIEditor";
+            this.OK_UIEditor.Size = new System.Drawing.Size(33, 22);
+            this.OK_UIEditor.TabIndex = 64;
+            this.OK_UIEditor.Text = "OK";
+            this.OK_UIEditor.UseVisualStyleBackColor = true;
             // 
-            // StateIcon_AnimEditor
+            // Settings
             // 
-            this.StateIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StateIcon_AnimEditor.BackgroundImage")));
-            this.StateIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.StateIcon_AnimEditor.Location = new System.Drawing.Point(164, 2);
-            this.StateIcon_AnimEditor.Name = "StateIcon_AnimEditor";
-            this.StateIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
-            this.StateIcon_AnimEditor.TabIndex = 71;
-            this.StateIcon_AnimEditor.UseVisualStyleBackColor = true;
-            this.StateIcon_AnimEditor.Click += new System.EventHandler(this.StateIcon_AnimEditor_Click);
-            // 
-            // OfficeIcon_AnimEditor
-            // 
-            this.OfficeIcon_AnimEditor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OfficeIcon_AnimEditor.BackgroundImage")));
-            this.OfficeIcon_AnimEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OfficeIcon_AnimEditor.Location = new System.Drawing.Point(225, 2);
-            this.OfficeIcon_AnimEditor.Name = "OfficeIcon_AnimEditor";
-            this.OfficeIcon_AnimEditor.Size = new System.Drawing.Size(25, 23);
-            this.OfficeIcon_AnimEditor.TabIndex = 72;
-            this.OfficeIcon_AnimEditor.UseVisualStyleBackColor = true;
-            this.OfficeIcon_AnimEditor.Click += new System.EventHandler(this.OfficeIcon_AnimEditor_Click);
+            this.Settings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Settings.BackgroundImage")));
+            this.Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Settings.FlatAppearance.BorderSize = 0;
+            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings.Location = new System.Drawing.Point(398, 6);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(45, 44);
+            this.Settings.TabIndex = 67;
+            this.Settings.UseVisualStyleBackColor = true;
             // 
             // reborn
             // 
@@ -7201,6 +7296,7 @@ namespace FNAF_Engine_Reborn
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
+            this.Controls.Add(this.UI_Editor);
             this.Controls.Add(this.Sidebar);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.allEditorsPNL);
@@ -7300,6 +7396,8 @@ namespace FNAF_Engine_Reborn
             this.ImageEditorPanel.ResumeLayout(false);
             this.ImageEditorPanel.PerformLayout();
             this.Sidebar.ResumeLayout(false);
+            this.UI_Editor.ResumeLayout(false);
+            this.UI_Editor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7588,7 +7686,7 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.CheckBox checkBox25;
         public System.Windows.Forms.TextBox FPS_StaticEffectEditor;
         public System.Windows.Forms.Button button103;
-        public System.Windows.Forms.Button button107;
+        public System.Windows.Forms.Button Drag_UIEditor;
         public System.Windows.Forms.Button DeleteFrame_StaticEffectEditor;
         public System.Windows.Forms.Button AddFrame_StaticEffectEditor;
         public System.Windows.Forms.ComboBox AnimationList_StaticEffectEditor;
@@ -7815,5 +7913,12 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Button StateIcon_AnimEditor;
         private System.Windows.Forms.Button AlternatePath_AnimEditor;
         private System.Windows.Forms.Button OfficeIcon_AnimEditor;
+        public System.Windows.Forms.Panel UI_Editor;
+        private System.Windows.Forms.Button button104;
+        public System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button Paint_UIEditor;
+        private System.Windows.Forms.Button Settings;
+        public System.Windows.Forms.Button OK_UIEditor;
+        public System.Windows.Forms.Label label12;
     }
 }
