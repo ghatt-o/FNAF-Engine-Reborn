@@ -17,6 +17,7 @@ namespace FNAF_Engine_Reborn
         public string Version = "pre-1.0.0";
         public string Build_Version = "0_nr-ns_eb_lvn_jk";
         public bool isopen = false;
+        public bool draggable_ui = false;
         public bool animatronicselected = false;
         internal bool _0_2C = true;
         readonly bool lightmode = false;
@@ -47,7 +48,7 @@ namespace FNAF_Engine_Reborn
         {
             this.v = v;
         }
-        private void reborn_Load(object sender, EventArgs e)
+        private async void reborn_Load(object sender, EventArgs e)
         {
             DoubleBuffered = true;
             /*if (darkmode == true)
@@ -264,6 +265,22 @@ namespace FNAF_Engine_Reborn
             //}
             label93.Text = "Version: " + Version;
             label72.Text = "FE:R Build Version: \"" + Build_Version + "\"";
+
+            while (draggable_ui == true)
+            {
+                await Task.Delay(1);
+                foreach (Control control in this.Controls)
+                {
+                    if (control is Panel)
+                    {
+                        foreach (Control controls in control.Controls)
+                        {
+                            controls.Draggable(true);
+                        }
+                    }
+                    control.Draggable(true);
+                }
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -1655,10 +1672,11 @@ namespace FNAF_Engine_Reborn
                 {
                     checkBox16.Checked = options[0] == "power=true";
                     checkBox12.Checked = options[1] == "toxic=true";
+                    Toxic.Visible = options[1] == "toxic=true";
                     checkBox11.Checked = options[2] == "mask=true";
-                    if (checkBox11.Checked == false) MaskInput.Hide();
+                    MaskInput.Visible = options[2] == "mask=true";
                     checkBox13.Checked = options[3] == "camera=true";
-                    if (checkBox13.Checked == false) CameraInput.Hide();
+                    CameraInput.Visible = options[3] == "camera=true";
                     checkBox14.Checked = options[4] == "flashlight=true";
                     checkBox15.Checked = options[5] == "panorama=true";
                     checkBox24.Checked = options[6] == "perspective=true";
@@ -1870,6 +1888,7 @@ namespace FNAF_Engine_Reborn
                     options[1] = "toxic=true";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    Toxic.Show();
                 }
                 else
                 {
@@ -1878,6 +1897,7 @@ namespace FNAF_Engine_Reborn
                     options[1] = "toxic=false";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    Toxic.Hide();
                 }
             }
         }
@@ -2857,6 +2877,59 @@ namespace FNAF_Engine_Reborn
         private void StateIcon_AnimEditor_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            UI_Editor.Show();
+        }
+
+        private void OK_UIEditor_Click(object sender, EventArgs e)
+        {
+            draggable_ui = false;
+            UI_Editor.Hide();
+        }
+
+        private async void Drag_UIEditor_Click(object sender, EventArgs e)
+        {
+            if (draggable_ui == false)
+            {
+                draggable_ui = true;
+                Drag_.BackgroundImage = Properties.Resources.Cancel;
+            }
+            else if (draggable_ui == true)
+            {
+                draggable_ui = false;
+                Drag_.BackgroundImage = Properties.Resources.Drag;
+            }
+
+            while (true)
+            {
+                await Task.Delay(1);
+                foreach (Control control in this.Controls)
+                {
+                    if (control is Panel)
+                    {
+                        foreach (Control controls in control.Controls)
+                        {
+                            controls.Draggable(draggable_ui);
+                            if (controls is Panel)
+                            {
+                                foreach (Control controlss in controls.Controls)
+                                {
+                                    controlss.Draggable(draggable_ui);
+                                }
+                            }
+                        }
+                    }
+                    control.Draggable(draggable_ui);
+                }
+            }
+        }
+
+        private void Paint_UIEditor_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Every element you click from now will change its color to what you pick here.");
         }
     }
 }

@@ -53,7 +53,14 @@ namespace FNAF_Engine_Reborn
         }
         public void Intiate()
         {
+            Control control = reborn.Toxic;
+            Control control2 = reborn.CameraInput;
+            Control control3 = reborn.MaskInput;
             reborn.officePreview.Controls.Clear();
+
+            reborn.officePreview.Controls.Add(control);
+            reborn.officePreview.Controls.Add(control2);
+            reborn.officePreview.Controls.Add(control3);
             string[] AllSprites = Directory.GetDirectories(project + "/offices/default/sprites/");
             foreach (string Sprite in AllSprites) // for each sprite found
             {

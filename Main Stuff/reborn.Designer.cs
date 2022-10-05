@@ -32,11 +32,12 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
+            this.Settings = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
@@ -542,11 +543,11 @@ namespace FNAF_Engine_Reborn
             this.button119 = new System.Windows.Forms.Button();
             this.AnimatronicPath_Images = new System.Windows.Forms.ImageList(this.components);
             this.UI_Editor = new System.Windows.Forms.Panel();
-            this.Paint_UIEditor = new System.Windows.Forms.Button();
-            this.button104 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.OK_UIEditor = new System.Windows.Forms.Button();
-            this.Settings = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Paint_UIEditor = new System.Windows.Forms.Button();
+            this.Drag_ = new System.Windows.Forms.Button();
+            this.Toxic = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -612,6 +613,19 @@ namespace FNAF_Engine_Reborn
             this.allEditorsPNL.Name = "allEditorsPNL";
             this.allEditorsPNL.Size = new System.Drawing.Size(529, 60);
             this.allEditorsPNL.TabIndex = 120;
+            // 
+            // Settings
+            // 
+            this.Settings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Settings.BackgroundImage")));
+            this.Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Settings.FlatAppearance.BorderSize = 0;
+            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings.Location = new System.Drawing.Point(398, 6);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(45, 44);
+            this.Settings.TabIndex = 67;
+            this.Settings.UseVisualStyleBackColor = true;
+            this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // label10
             // 
@@ -4558,6 +4572,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.officePreview.BackColor = System.Drawing.Color.Black;
             this.officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.officePreview.Controls.Add(this.Toxic);
             this.officePreview.Controls.Add(this.MaskInput);
             this.officePreview.Controls.Add(this.CameraInput);
             this.officePreview.ForeColor = System.Drawing.Color.Black;
@@ -4582,7 +4597,6 @@ namespace FNAF_Engine_Reborn
             this.MaskInput.Size = new System.Drawing.Size(265, 24);
             this.MaskInput.TabIndex = 63;
             this.MaskInput.UseVisualStyleBackColor = false;
-            this.MaskInput.Visible = false;
             // 
             // CameraInput
             // 
@@ -4600,7 +4614,6 @@ namespace FNAF_Engine_Reborn
             this.CameraInput.Size = new System.Drawing.Size(265, 24);
             this.CameraInput.TabIndex = 62;
             this.CameraInput.UseVisualStyleBackColor = false;
-            this.CameraInput.Visible = false;
             // 
             // button37
             // 
@@ -7224,7 +7237,7 @@ namespace FNAF_Engine_Reborn
             this.UI_Editor.Controls.Add(this.OK_UIEditor);
             this.UI_Editor.Controls.Add(this.label12);
             this.UI_Editor.Controls.Add(this.Paint_UIEditor);
-            this.UI_Editor.Controls.Add(this.button104);
+            this.UI_Editor.Controls.Add(this.Drag_);
             this.UI_Editor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UI_Editor.ForeColor = System.Drawing.SystemColors.ControlText;
             this.UI_Editor.Location = new System.Drawing.Point(383, 29);
@@ -7233,25 +7246,18 @@ namespace FNAF_Engine_Reborn
             this.UI_Editor.TabIndex = 73;
             this.UI_Editor.Visible = false;
             // 
-            // Paint_UIEditor
+            // OK_UIEditor
             // 
-            this.Paint_UIEditor.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.gaynessbucket;
-            this.Paint_UIEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Paint_UIEditor.Location = new System.Drawing.Point(28, 2);
-            this.Paint_UIEditor.Name = "Paint_UIEditor";
-            this.Paint_UIEditor.Size = new System.Drawing.Size(25, 23);
-            this.Paint_UIEditor.TabIndex = 66;
-            this.Paint_UIEditor.UseVisualStyleBackColor = true;
-            // 
-            // button104
-            // 
-            this.button104.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Drag;
-            this.button104.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button104.Location = new System.Drawing.Point(3, 2);
-            this.button104.Name = "button104";
-            this.button104.Size = new System.Drawing.Size(25, 23);
-            this.button104.TabIndex = 65;
-            this.button104.UseVisualStyleBackColor = true;
+            this.OK_UIEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OK_UIEditor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.OK_UIEditor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OK_UIEditor.Location = new System.Drawing.Point(205, 3);
+            this.OK_UIEditor.Name = "OK_UIEditor";
+            this.OK_UIEditor.Size = new System.Drawing.Size(33, 22);
+            this.OK_UIEditor.TabIndex = 64;
+            this.OK_UIEditor.Text = "OK";
+            this.OK_UIEditor.UseVisualStyleBackColor = true;
+            this.OK_UIEditor.Click += new System.EventHandler(this.OK_UIEditor_Click);
             // 
             // label12
             // 
@@ -7265,29 +7271,44 @@ namespace FNAF_Engine_Reborn
             this.label12.TabIndex = 65;
             this.label12.Text = "Customize your workspace!";
             // 
-            // OK_UIEditor
+            // Paint_UIEditor
             // 
-            this.OK_UIEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OK_UIEditor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.OK_UIEditor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OK_UIEditor.Location = new System.Drawing.Point(205, 3);
-            this.OK_UIEditor.Name = "OK_UIEditor";
-            this.OK_UIEditor.Size = new System.Drawing.Size(33, 22);
-            this.OK_UIEditor.TabIndex = 64;
-            this.OK_UIEditor.Text = "OK";
-            this.OK_UIEditor.UseVisualStyleBackColor = true;
+            this.Paint_UIEditor.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.gaynessbucket;
+            this.Paint_UIEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Paint_UIEditor.Location = new System.Drawing.Point(28, 2);
+            this.Paint_UIEditor.Name = "Paint_UIEditor";
+            this.Paint_UIEditor.Size = new System.Drawing.Size(25, 23);
+            this.Paint_UIEditor.TabIndex = 66;
+            this.Paint_UIEditor.UseVisualStyleBackColor = true;
+            this.Paint_UIEditor.Click += new System.EventHandler(this.Paint_UIEditor_Click);
             // 
-            // Settings
+            // Drag_
             // 
-            this.Settings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Settings.BackgroundImage")));
-            this.Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Settings.FlatAppearance.BorderSize = 0;
-            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Settings.Location = new System.Drawing.Point(398, 6);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(45, 44);
-            this.Settings.TabIndex = 67;
-            this.Settings.UseVisualStyleBackColor = true;
+            this.Drag_.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Drag;
+            this.Drag_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Drag_.Location = new System.Drawing.Point(3, 2);
+            this.Drag_.Name = "Drag_";
+            this.Drag_.Size = new System.Drawing.Size(25, 23);
+            this.Drag_.TabIndex = 65;
+            this.Drag_.UseVisualStyleBackColor = true;
+            this.Drag_.Click += new System.EventHandler(this.Drag_UIEditor_Click);
+            // 
+            // Toxic
+            // 
+            this.Toxic.BackColor = System.Drawing.Color.Black;
+            this.Toxic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Toxic.BackgroundImage")));
+            this.Toxic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Toxic.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Toxic.FlatAppearance.BorderSize = 0;
+            this.Toxic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Toxic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.Toxic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Toxic.ForeColor = System.Drawing.Color.Black;
+            this.Toxic.Location = new System.Drawing.Point(4, 4);
+            this.Toxic.Name = "Toxic";
+            this.Toxic.Size = new System.Drawing.Size(80, 36);
+            this.Toxic.TabIndex = 64;
+            this.Toxic.UseVisualStyleBackColor = false;
             // 
             // reborn
             // 
@@ -7302,13 +7323,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.animatronicEditorPNL2);
-            this.Controls.Add(this.SoundEditorPanel);
-            this.Controls.Add(this.GameDebugMenu);
-            this.Controls.Add(this.Menu_CodeEditor);
-            this.Controls.Add(this.ScriptEditorPanel);
-            this.Controls.Add(this.ExtensionsPanel);
-            this.Controls.Add(this.template);
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.ImageEditorPanel);
@@ -7320,6 +7334,13 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.AssetManagerPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
+            this.Controls.Add(this.SoundEditorPanel);
+            this.Controls.Add(this.GameDebugMenu);
+            this.Controls.Add(this.Menu_CodeEditor);
+            this.Controls.Add(this.ScriptEditorPanel);
+            this.Controls.Add(this.ExtensionsPanel);
+            this.Controls.Add(this.template);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7914,11 +7935,12 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Button AlternatePath_AnimEditor;
         private System.Windows.Forms.Button OfficeIcon_AnimEditor;
         public System.Windows.Forms.Panel UI_Editor;
-        private System.Windows.Forms.Button button104;
+        private System.Windows.Forms.Button Drag_;
         public System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Paint_UIEditor;
         private System.Windows.Forms.Button Settings;
         public System.Windows.Forms.Button OK_UIEditor;
         public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Button Toxic;
     }
 }
