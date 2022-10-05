@@ -343,6 +343,7 @@ namespace FNAF_Engine_Reborn
             this.button31 = new System.Windows.Forms.Button();
             this.CreateInput_OfficeEditor = new System.Windows.Forms.Button();
             this.officePreview = new System.Windows.Forms.Panel();
+            this.Toxic = new System.Windows.Forms.Button();
             this.MaskInput = new System.Windows.Forms.Button();
             this.CameraInput = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
@@ -547,7 +548,8 @@ namespace FNAF_Engine_Reborn
             this.label12 = new System.Windows.Forms.Label();
             this.Paint_UIEditor = new System.Windows.Forms.Button();
             this.Drag_ = new System.Windows.Forms.Button();
-            this.Toxic = new System.Windows.Forms.Button();
+            this.Lives = new System.Windows.Forms.Button();
+            this.LivesMan = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -4450,9 +4452,9 @@ namespace FNAF_Engine_Reborn
             // 
             this.officeEditorPanel.BackColor = System.Drawing.Color.White;
             this.officeEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.officeEditorPanel.Controls.Add(this.panel9);
             this.officeEditorPanel.Controls.Add(this.label121);
             this.officeEditorPanel.Controls.Add(this.gamehourstextbox);
-            this.officeEditorPanel.Controls.Add(this.panel9);
             this.officeEditorPanel.Controls.Add(this.CreateInput_OfficeEditor);
             this.officeEditorPanel.Controls.Add(this.officePreview);
             this.officeEditorPanel.Controls.Add(this.button37);
@@ -4572,6 +4574,8 @@ namespace FNAF_Engine_Reborn
             // 
             this.officePreview.BackColor = System.Drawing.Color.Black;
             this.officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.officePreview.Controls.Add(this.LivesMan);
+            this.officePreview.Controls.Add(this.Lives);
             this.officePreview.Controls.Add(this.Toxic);
             this.officePreview.Controls.Add(this.MaskInput);
             this.officePreview.Controls.Add(this.CameraInput);
@@ -4580,6 +4584,23 @@ namespace FNAF_Engine_Reborn
             this.officePreview.Name = "officePreview";
             this.officePreview.Size = new System.Drawing.Size(581, 342);
             this.officePreview.TabIndex = 129;
+            // 
+            // Toxic
+            // 
+            this.Toxic.BackColor = System.Drawing.Color.Black;
+            this.Toxic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Toxic.BackgroundImage")));
+            this.Toxic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Toxic.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Toxic.FlatAppearance.BorderSize = 0;
+            this.Toxic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Toxic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.Toxic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Toxic.ForeColor = System.Drawing.Color.Black;
+            this.Toxic.Location = new System.Drawing.Point(4, 4);
+            this.Toxic.Name = "Toxic";
+            this.Toxic.Size = new System.Drawing.Size(80, 36);
+            this.Toxic.TabIndex = 64;
+            this.Toxic.UseVisualStyleBackColor = false;
             // 
             // MaskInput
             // 
@@ -7293,22 +7314,39 @@ namespace FNAF_Engine_Reborn
             this.Drag_.UseVisualStyleBackColor = true;
             this.Drag_.Click += new System.EventHandler(this.Drag_UIEditor_Click);
             // 
-            // Toxic
+            // Lives
             // 
-            this.Toxic.BackColor = System.Drawing.Color.Black;
-            this.Toxic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Toxic.BackgroundImage")));
-            this.Toxic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Toxic.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Toxic.FlatAppearance.BorderSize = 0;
-            this.Toxic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Toxic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.Toxic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Toxic.ForeColor = System.Drawing.Color.Black;
-            this.Toxic.Location = new System.Drawing.Point(4, 4);
-            this.Toxic.Name = "Toxic";
-            this.Toxic.Size = new System.Drawing.Size(80, 36);
-            this.Toxic.TabIndex = 64;
-            this.Toxic.UseVisualStyleBackColor = false;
+            this.Lives.BackColor = System.Drawing.Color.Black;
+            this.Lives.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Lives.BackgroundImage")));
+            this.Lives.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Lives.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Lives.FlatAppearance.BorderSize = 0;
+            this.Lives.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Lives.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.Lives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lives.ForeColor = System.Drawing.Color.Black;
+            this.Lives.Location = new System.Drawing.Point(4, 42);
+            this.Lives.Name = "Lives";
+            this.Lives.Size = new System.Drawing.Size(41, 18);
+            this.Lives.TabIndex = 65;
+            this.Lives.UseVisualStyleBackColor = false;
+            // 
+            // LivesMan
+            // 
+            this.LivesMan.BackColor = System.Drawing.Color.Black;
+            this.LivesMan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LivesMan.BackgroundImage")));
+            this.LivesMan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LivesMan.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.LivesMan.FlatAppearance.BorderSize = 0;
+            this.LivesMan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.LivesMan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.LivesMan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LivesMan.ForeColor = System.Drawing.Color.Black;
+            this.LivesMan.Location = new System.Drawing.Point(2, 62);
+            this.LivesMan.Name = "LivesMan";
+            this.LivesMan.Size = new System.Drawing.Size(40, 43);
+            this.LivesMan.TabIndex = 66;
+            this.LivesMan.UseVisualStyleBackColor = false;
             // 
             // reborn
             // 
@@ -7942,5 +7980,7 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Button OK_UIEditor;
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.Button Toxic;
+        public System.Windows.Forms.Button LivesMan;
+        public System.Windows.Forms.Button Lives;
     }
 }
