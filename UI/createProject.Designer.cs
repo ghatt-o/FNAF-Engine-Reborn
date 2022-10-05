@@ -56,7 +56,7 @@ namespace FNAF_Engine_Reborn
             // 
             // projectNamebox
             // 
-            this.projectNamebox.BackColor = System.Drawing.Color.White;
+            this.projectNamebox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.projectNamebox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.projectNamebox.Location = new System.Drawing.Point(15, 20);
             this.projectNamebox.Name = "projectNamebox";
@@ -91,6 +91,7 @@ namespace FNAF_Engine_Reborn
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -120,7 +121,6 @@ namespace FNAF_Engine_Reborn
             // fnaf4style_CheckBox
             // 
             this.fnaf4style_CheckBox.BackColor = System.Drawing.Color.White;
-            this.fnaf4style_CheckBox.Enabled = false;
             this.fnaf4style_CheckBox.Font = new System.Drawing.Font("Digital-7", 15F);
             this.fnaf4style_CheckBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.fnaf4style_CheckBox.Location = new System.Drawing.Point(212, 42);
@@ -134,10 +134,11 @@ namespace FNAF_Engine_Reborn
             // gameStyleOptions
             // 
             this.gameStyleOptions.BackColor = System.Drawing.Color.White;
+            this.gameStyleOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gameStyleOptions.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gameStyleOptions.FormattingEnabled = true;
             this.gameStyleOptions.Items.AddRange(new object[] {
-            "dont choose this",
+            "Standard",
             "Five Nights at Freddy\'s (Beta)"});
             this.gameStyleOptions.Location = new System.Drawing.Point(210, 20);
             this.gameStyleOptions.Name = "gameStyleOptions";

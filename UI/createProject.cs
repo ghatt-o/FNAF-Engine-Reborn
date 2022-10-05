@@ -88,6 +88,7 @@ namespace FNAF_Engine_Reborn
                         File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
                         File.WriteAllText(projectPath + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,");
                         File.WriteAllText(projectPath + "/offices/default/misc.txt", "camera=,mask=,powerout=");
+                        File.WriteAllText(projectPath + "/offices/default/power_val.txt", "");
                         File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
                         File.WriteAllText(projectPath + "/offices/default/sprites.txt", "");
                         File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);

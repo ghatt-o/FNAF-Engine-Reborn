@@ -325,10 +325,11 @@ namespace FNAF_Engine_Reborn
             Text = "FNAF Engine: Reborn - Testing Game";
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private async void textBox6_TextChanged(object sender, EventArgs e)
         {
             if (_0_2C == true)
             {
+                await Task.Delay(100);
                 File.WriteAllText(projecto + "/game.txt", textBox6.Text);
             }
             else
@@ -672,7 +673,7 @@ namespace FNAF_Engine_Reborn
             buildSettingsPanelMoment.BringToFront();
         }
 
-        private void label165_Click(object sender, EventArgs e)
+        private async void label165_Click(object sender, EventArgs e)
         {
             if (editable == true)
             {
@@ -728,12 +729,16 @@ namespace FNAF_Engine_Reborn
                     }
                 }
             }
+            while (true)
+            {
+                await Task.Delay(1);
+                Sidebar.BringToFront();
+            }
         }
 
         private void label163_Click(object sender, EventArgs e)
         {
             animatronicEditorPNL2.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void label162_Click(object sender, EventArgs e)
@@ -745,16 +750,12 @@ namespace FNAF_Engine_Reborn
                     comboBox4.Items.Clear();
                     comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras/"));
                     cameraEditorPanel.BringToFront();
-                    Sidebar.BringToFront();
                 }
                 else
                 {
-                    _ = MessageBox.Show("Something went wrong! Fixing...");
                     createFolder("/cameras");
                     comboBox4.Items.Clear();
-                    _ = MessageBox.Show("Fixed!");
                     cameraEditorPanel.BringToFront();
-                    Sidebar.BringToFront();
                 }
             }
             else
@@ -768,25 +769,21 @@ namespace FNAF_Engine_Reborn
             menuEditorPanel.Hide();
             menuEditorPanel.Show();
             menuEditorPanel.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void label161_Click(object sender, EventArgs e)
         {
             officeEditorPanel.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void label160_Click(object sender, EventArgs e)
         {
             animationEditorPanel.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void label158_Click(object sender, EventArgs e)
         {
             cutsceneEditorPanel.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void label157_Click(object sender, EventArgs e)
@@ -803,13 +800,11 @@ namespace FNAF_Engine_Reborn
         private void label156_Click(object sender, EventArgs e)
         {
             SoundEditorPanel.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void label91_Click_1(object sender, EventArgs e)
         {
             ExtensionsPanel.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void button94_Click(object sender, EventArgs e)
@@ -1224,7 +1219,6 @@ namespace FNAF_Engine_Reborn
         private void label96_Click(object sender, EventArgs e)
         {
             staticeffecteditor.BringToFront();
-            Sidebar.BringToFront();
         }
 
         private void button113_Click_1(object sender, EventArgs e)
@@ -1607,7 +1601,7 @@ namespace FNAF_Engine_Reborn
                     {
                         OpenFileDialog p = new OpenFileDialog
                         {
-                            Filter = "Images (*.png)|*.png"
+                            Filter = "All Files (*.*)|*.*"
                         };
                         _ = p.ShowDialog();
                         if (p.ShowDialog() == DialogResult.OK)
@@ -1643,12 +1637,10 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private void officeEditorPanel_VisibleChanged(object sender, EventArgs e)
+        private async void officeEditorPanel_VisibleChanged(object sender, EventArgs e)
         {
-            Console.WriteLine(_0_2C);
             if (_0_2C == true)
             {
-                Console.WriteLine(_0_2C);
                 Sprite amagos = new Sprite(this)
                 {
                     project = projecto
@@ -1671,6 +1663,7 @@ namespace FNAF_Engine_Reborn
                 if (File.Exists(projecto + "/offices/default/office.txt"))
                 {
                     checkBox16.Checked = options[0] == "power=true";
+                    OfficeEditor_PowerThings.Visible = options[0] == "power=true";
                     checkBox12.Checked = options[1] == "toxic=true";
                     Toxic.Visible = options[1] == "toxic=true";
                     checkBox11.Checked = options[2] == "mask=true";
@@ -1691,6 +1684,7 @@ namespace FNAF_Engine_Reborn
                         _ = comboBox14.Controls.IndexOfKey(options[9]);
                     }
                 }
+                textBox7.Text = File.ReadAllText(projecto + "/offices/default/power_val.txt");
                 try
                 {
                     //GetPreviewSprites(p.SafeFileName);
@@ -1698,6 +1692,11 @@ namespace FNAF_Engine_Reborn
                 catch (Exception)
                 {
 
+                }
+                while (true)
+                {
+                    await Task.Delay(1);
+                    OfficeEditor_PowerPercentage.Text = File.ReadAllText(projecto + "/offices/default/power_val.txt") + "%";
                 }
             }
         }
@@ -1802,6 +1801,8 @@ namespace FNAF_Engine_Reborn
                 {
                     textBox7.Show();
                     powerPercentage_label.Show();
+                    OfficeEditor_PowerThings.Show();
+                    OfficeEditor_PowerThings.BringToFront();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
                     string[] options = optionstxt.Split(',');
                     options[0] = "power=true";
@@ -1812,6 +1813,7 @@ namespace FNAF_Engine_Reborn
                 {
                     textBox7.Hide();
                     powerPercentage_label.Hide();
+                    OfficeEditor_PowerThings.Hide();
                     string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
                     string[] options = optionstxt.Split(',');
                     options[0] = "power=false";
@@ -2002,6 +2004,7 @@ namespace FNAF_Engine_Reborn
             {
                 textBox7.Text = "0";
             }
+            File.WriteAllText(projecto + "/offices/default/power_val.txt", textBox7.Text);
         }
 
         private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
@@ -2408,7 +2411,7 @@ namespace FNAF_Engine_Reborn
 
         }
 
-        private void label29_Click(object sender, EventArgs e)
+        private async void label29_Click(object sender, EventArgs e)
         {
             if (editable == true)
             {
@@ -2463,6 +2466,11 @@ namespace FNAF_Engine_Reborn
 
                     }
                 }
+            }
+            while (true)
+            {
+                await Task.Delay(1);
+                Sidebar.BringToFront();
             }
         }
 
