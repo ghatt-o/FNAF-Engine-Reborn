@@ -336,6 +336,11 @@ namespace FNAF_Engine_Reborn
             this.ImageList = new System.Windows.Forms.ComboBox();
             this.comboBox34 = new System.Windows.Forms.ComboBox();
             this.officeEditorPanel = new System.Windows.Forms.Panel();
+            this.UI_Editor = new System.Windows.Forms.Panel();
+            this.OK_UIEditor = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Paint_UIEditor = new System.Windows.Forms.Button();
+            this.Drag_ = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.button31 = new System.Windows.Forms.Button();
@@ -343,10 +348,14 @@ namespace FNAF_Engine_Reborn
             this.gamehourstextbox = new System.Windows.Forms.TextBox();
             this.CreateInput_OfficeEditor = new System.Windows.Forms.Button();
             this.officePreview = new System.Windows.Forms.Panel();
+            this.OfficeEditor_PowerThings = new System.Windows.Forms.Panel();
+            this.OfficeEditor_PowerPercentage = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.MaskInput = new System.Windows.Forms.Button();
             this.LivesMan = new System.Windows.Forms.Button();
             this.Lives = new System.Windows.Forms.Button();
             this.Toxic = new System.Windows.Forms.Button();
-            this.MaskInput = new System.Windows.Forms.Button();
             this.CameraInput = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
             this.AnimationsOfficeEditor_CreateBox = new System.Windows.Forms.ComboBox();
@@ -541,15 +550,6 @@ namespace FNAF_Engine_Reborn
             this.Sidebar = new System.Windows.Forms.Panel();
             this.button119 = new System.Windows.Forms.Button();
             this.AnimatronicPath_Images = new System.Windows.Forms.ImageList(this.components);
-            this.UI_Editor = new System.Windows.Forms.Panel();
-            this.OK_UIEditor = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.Paint_UIEditor = new System.Windows.Forms.Button();
-            this.Drag_ = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.OfficeEditor_PowerPercentage = new System.Windows.Forms.Label();
-            this.button21 = new System.Windows.Forms.Button();
-            this.OfficeEditor_PowerThings = new System.Windows.Forms.Panel();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -568,8 +568,10 @@ namespace FNAF_Engine_Reborn
             this.AssetManagerPanel.SuspendLayout();
             this.ProjectStuffs.SuspendLayout();
             this.officeEditorPanel.SuspendLayout();
+            this.UI_Editor.SuspendLayout();
             this.panel9.SuspendLayout();
             this.officePreview.SuspendLayout();
+            this.OfficeEditor_PowerThings.SuspendLayout();
             this.ExtensionsPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.ScriptEditorPanel.SuspendLayout();
@@ -588,8 +590,6 @@ namespace FNAF_Engine_Reborn
             this.GameDebugMenu.SuspendLayout();
             this.ImageEditorPanel.SuspendLayout();
             this.Sidebar.SuspendLayout();
-            this.UI_Editor.SuspendLayout();
-            this.OfficeEditor_PowerThings.SuspendLayout();
             this.SuspendLayout();
             // 
             // allEditorsPNL
@@ -4518,6 +4518,69 @@ namespace FNAF_Engine_Reborn
             this.officeEditorPanel.Visible = false;
             this.officeEditorPanel.VisibleChanged += new System.EventHandler(this.officeEditorPanel_VisibleChanged);
             // 
+            // UI_Editor
+            // 
+            this.UI_Editor.BackColor = System.Drawing.Color.Transparent;
+            this.UI_Editor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UI_Editor.Controls.Add(this.OK_UIEditor);
+            this.UI_Editor.Controls.Add(this.label12);
+            this.UI_Editor.Controls.Add(this.Paint_UIEditor);
+            this.UI_Editor.Controls.Add(this.Drag_);
+            this.UI_Editor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UI_Editor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.UI_Editor.Location = new System.Drawing.Point(376, 5);
+            this.UI_Editor.Name = "UI_Editor";
+            this.UI_Editor.Size = new System.Drawing.Size(244, 29);
+            this.UI_Editor.TabIndex = 73;
+            this.UI_Editor.Visible = false;
+            // 
+            // OK_UIEditor
+            // 
+            this.OK_UIEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OK_UIEditor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.OK_UIEditor.ForeColor = System.Drawing.Color.LightGreen;
+            this.OK_UIEditor.Location = new System.Drawing.Point(205, 3);
+            this.OK_UIEditor.Name = "OK_UIEditor";
+            this.OK_UIEditor.Size = new System.Drawing.Size(33, 22);
+            this.OK_UIEditor.TabIndex = 64;
+            this.OK_UIEditor.Text = "OK";
+            this.OK_UIEditor.UseVisualStyleBackColor = true;
+            this.OK_UIEditor.Click += new System.EventHandler(this.OK_UIEditor_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label12.ForeColor = System.Drawing.Color.LightGreen;
+            this.label12.Location = new System.Drawing.Point(53, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(152, 15);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Customize your workspace!";
+            // 
+            // Paint_UIEditor
+            // 
+            this.Paint_UIEditor.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.gaynessbucket;
+            this.Paint_UIEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Paint_UIEditor.Location = new System.Drawing.Point(28, 2);
+            this.Paint_UIEditor.Name = "Paint_UIEditor";
+            this.Paint_UIEditor.Size = new System.Drawing.Size(25, 23);
+            this.Paint_UIEditor.TabIndex = 66;
+            this.Paint_UIEditor.UseVisualStyleBackColor = true;
+            this.Paint_UIEditor.Click += new System.EventHandler(this.Paint_UIEditor_Click);
+            // 
+            // Drag_
+            // 
+            this.Drag_.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Drag;
+            this.Drag_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Drag_.Location = new System.Drawing.Point(3, 2);
+            this.Drag_.Name = "Drag_";
+            this.Drag_.Size = new System.Drawing.Size(25, 23);
+            this.Drag_.TabIndex = 65;
+            this.Drag_.UseVisualStyleBackColor = true;
+            this.Drag_.Click += new System.EventHandler(this.Drag_UIEditor_Click);
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
@@ -4558,8 +4621,8 @@ namespace FNAF_Engine_Reborn
             // label121
             // 
             this.label121.AutoSize = true;
-            this.label121.BackColor = System.Drawing.Color.White;
-            this.label121.ForeColor = System.Drawing.Color.Black;
+            this.label121.BackColor = System.Drawing.Color.Transparent;
+            this.label121.ForeColor = System.Drawing.Color.LightGreen;
             this.label121.Location = new System.Drawing.Point(435, 572);
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(112, 15);
@@ -4605,6 +4668,76 @@ namespace FNAF_Engine_Reborn
             this.officePreview.Name = "officePreview";
             this.officePreview.Size = new System.Drawing.Size(581, 342);
             this.officePreview.TabIndex = 129;
+            // 
+            // OfficeEditor_PowerThings
+            // 
+            this.OfficeEditor_PowerThings.BackColor = System.Drawing.Color.Transparent;
+            this.OfficeEditor_PowerThings.Controls.Add(this.OfficeEditor_PowerPercentage);
+            this.OfficeEditor_PowerThings.Controls.Add(this.button21);
+            this.OfficeEditor_PowerThings.Controls.Add(this.label16);
+            this.OfficeEditor_PowerThings.ForeColor = System.Drawing.Color.Transparent;
+            this.OfficeEditor_PowerThings.Location = new System.Drawing.Point(6, 244);
+            this.OfficeEditor_PowerThings.Name = "OfficeEditor_PowerThings";
+            this.OfficeEditor_PowerThings.Size = new System.Drawing.Size(301, 58);
+            this.OfficeEditor_PowerThings.TabIndex = 136;
+            // 
+            // OfficeEditor_PowerPercentage
+            // 
+            this.OfficeEditor_PowerPercentage.BackColor = System.Drawing.Color.Transparent;
+            this.OfficeEditor_PowerPercentage.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OfficeEditor_PowerPercentage.ForeColor = System.Drawing.Color.Transparent;
+            this.OfficeEditor_PowerPercentage.Location = new System.Drawing.Point(111, 1);
+            this.OfficeEditor_PowerPercentage.Name = "OfficeEditor_PowerPercentage";
+            this.OfficeEditor_PowerPercentage.Size = new System.Drawing.Size(188, 25);
+            this.OfficeEditor_PowerPercentage.TabIndex = 134;
+            this.OfficeEditor_PowerPercentage.Text = "100%";
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.Transparent;
+            this.button21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button21.BackgroundImage")));
+            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button21.FlatAppearance.BorderSize = 0;
+            this.button21.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.ForeColor = System.Drawing.Color.Transparent;
+            this.button21.Location = new System.Drawing.Point(65, 23);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(33, 35);
+            this.button21.TabIndex = 135;
+            this.button21.UseVisualStyleBackColor = false;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Consolas", 13.75F);
+            this.label16.ForeColor = System.Drawing.Color.Transparent;
+            this.label16.Location = new System.Drawing.Point(1, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(138, 48);
+            this.label16.TabIndex = 133;
+            this.label16.Text = "Power left: Usage:";
+            // 
+            // MaskInput
+            // 
+            this.MaskInput.BackColor = System.Drawing.Color.Transparent;
+            this.MaskInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MaskInput.BackgroundImage")));
+            this.MaskInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MaskInput.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.MaskInput.FlatAppearance.BorderSize = 0;
+            this.MaskInput.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.MaskInput.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.MaskInput.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.MaskInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaskInput.ForeColor = System.Drawing.Color.Transparent;
+            this.MaskInput.Location = new System.Drawing.Point(17, 302);
+            this.MaskInput.Name = "MaskInput";
+            this.MaskInput.Size = new System.Drawing.Size(265, 24);
+            this.MaskInput.TabIndex = 63;
+            this.MaskInput.UseVisualStyleBackColor = false;
             // 
             // LivesMan
             // 
@@ -4661,24 +4794,6 @@ namespace FNAF_Engine_Reborn
             this.Toxic.Size = new System.Drawing.Size(80, 36);
             this.Toxic.TabIndex = 64;
             this.Toxic.UseVisualStyleBackColor = false;
-            // 
-            // MaskInput
-            // 
-            this.MaskInput.BackColor = System.Drawing.Color.Transparent;
-            this.MaskInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MaskInput.BackgroundImage")));
-            this.MaskInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MaskInput.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.MaskInput.FlatAppearance.BorderSize = 0;
-            this.MaskInput.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.MaskInput.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.MaskInput.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.MaskInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaskInput.ForeColor = System.Drawing.Color.Transparent;
-            this.MaskInput.Location = new System.Drawing.Point(17, 302);
-            this.MaskInput.Name = "MaskInput";
-            this.MaskInput.Size = new System.Drawing.Size(265, 24);
-            this.MaskInput.TabIndex = 63;
-            this.MaskInput.UseVisualStyleBackColor = false;
             // 
             // CameraInput
             // 
@@ -4976,9 +5091,9 @@ namespace FNAF_Engine_Reborn
             // displayOfficeEditorInfoAnimatronicKill
             // 
             this.displayOfficeEditorInfoAnimatronicKill.AutoSize = true;
-            this.displayOfficeEditorInfoAnimatronicKill.BackColor = System.Drawing.Color.White;
+            this.displayOfficeEditorInfoAnimatronicKill.BackColor = System.Drawing.Color.Transparent;
             this.displayOfficeEditorInfoAnimatronicKill.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.displayOfficeEditorInfoAnimatronicKill.ForeColor = System.Drawing.Color.Black;
+            this.displayOfficeEditorInfoAnimatronicKill.ForeColor = System.Drawing.Color.LightGreen;
             this.displayOfficeEditorInfoAnimatronicKill.Location = new System.Drawing.Point(207, 571);
             this.displayOfficeEditorInfoAnimatronicKill.Name = "displayOfficeEditorInfoAnimatronicKill";
             this.displayOfficeEditorInfoAnimatronicKill.Size = new System.Drawing.Size(205, 15);
@@ -7262,121 +7377,6 @@ namespace FNAF_Engine_Reborn
             this.AnimatronicPath_Images.Images.SetKeyName(6, "altpath.png");
             this.AnimatronicPath_Images.Images.SetKeyName(7, "state.png");
             // 
-            // UI_Editor
-            // 
-            this.UI_Editor.BackColor = System.Drawing.Color.Transparent;
-            this.UI_Editor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UI_Editor.Controls.Add(this.OK_UIEditor);
-            this.UI_Editor.Controls.Add(this.label12);
-            this.UI_Editor.Controls.Add(this.Paint_UIEditor);
-            this.UI_Editor.Controls.Add(this.Drag_);
-            this.UI_Editor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UI_Editor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UI_Editor.Location = new System.Drawing.Point(376, 5);
-            this.UI_Editor.Name = "UI_Editor";
-            this.UI_Editor.Size = new System.Drawing.Size(244, 29);
-            this.UI_Editor.TabIndex = 73;
-            this.UI_Editor.Visible = false;
-            // 
-            // OK_UIEditor
-            // 
-            this.OK_UIEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OK_UIEditor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.OK_UIEditor.ForeColor = System.Drawing.Color.LightGreen;
-            this.OK_UIEditor.Location = new System.Drawing.Point(205, 3);
-            this.OK_UIEditor.Name = "OK_UIEditor";
-            this.OK_UIEditor.Size = new System.Drawing.Size(33, 22);
-            this.OK_UIEditor.TabIndex = 64;
-            this.OK_UIEditor.Text = "OK";
-            this.OK_UIEditor.UseVisualStyleBackColor = true;
-            this.OK_UIEditor.Click += new System.EventHandler(this.OK_UIEditor_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label12.ForeColor = System.Drawing.Color.LightGreen;
-            this.label12.Location = new System.Drawing.Point(53, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(152, 15);
-            this.label12.TabIndex = 65;
-            this.label12.Text = "Customize your workspace!";
-            // 
-            // Paint_UIEditor
-            // 
-            this.Paint_UIEditor.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.gaynessbucket;
-            this.Paint_UIEditor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Paint_UIEditor.Location = new System.Drawing.Point(28, 2);
-            this.Paint_UIEditor.Name = "Paint_UIEditor";
-            this.Paint_UIEditor.Size = new System.Drawing.Size(25, 23);
-            this.Paint_UIEditor.TabIndex = 66;
-            this.Paint_UIEditor.UseVisualStyleBackColor = true;
-            this.Paint_UIEditor.Click += new System.EventHandler(this.Paint_UIEditor_Click);
-            // 
-            // Drag_
-            // 
-            this.Drag_.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Drag;
-            this.Drag_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Drag_.Location = new System.Drawing.Point(3, 2);
-            this.Drag_.Name = "Drag_";
-            this.Drag_.Size = new System.Drawing.Size(25, 23);
-            this.Drag_.TabIndex = 65;
-            this.Drag_.UseVisualStyleBackColor = true;
-            this.Drag_.Click += new System.EventHandler(this.Drag_UIEditor_Click);
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Consolas", 13.75F);
-            this.label16.ForeColor = System.Drawing.Color.Transparent;
-            this.label16.Location = new System.Drawing.Point(1, 3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(138, 48);
-            this.label16.TabIndex = 133;
-            this.label16.Text = "Power left: Usage:";
-            // 
-            // OfficeEditor_PowerPercentage
-            // 
-            this.OfficeEditor_PowerPercentage.BackColor = System.Drawing.Color.Transparent;
-            this.OfficeEditor_PowerPercentage.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OfficeEditor_PowerPercentage.ForeColor = System.Drawing.Color.Transparent;
-            this.OfficeEditor_PowerPercentage.Location = new System.Drawing.Point(111, 1);
-            this.OfficeEditor_PowerPercentage.Name = "OfficeEditor_PowerPercentage";
-            this.OfficeEditor_PowerPercentage.Size = new System.Drawing.Size(188, 25);
-            this.OfficeEditor_PowerPercentage.TabIndex = 134;
-            this.OfficeEditor_PowerPercentage.Text = "100%";
-            // 
-            // button21
-            // 
-            this.button21.BackColor = System.Drawing.Color.Transparent;
-            this.button21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button21.BackgroundImage")));
-            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button21.FlatAppearance.BorderSize = 0;
-            this.button21.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.ForeColor = System.Drawing.Color.Transparent;
-            this.button21.Location = new System.Drawing.Point(65, 23);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(33, 35);
-            this.button21.TabIndex = 135;
-            this.button21.UseVisualStyleBackColor = false;
-            // 
-            // OfficeEditor_PowerThings
-            // 
-            this.OfficeEditor_PowerThings.BackColor = System.Drawing.Color.Transparent;
-            this.OfficeEditor_PowerThings.Controls.Add(this.OfficeEditor_PowerPercentage);
-            this.OfficeEditor_PowerThings.Controls.Add(this.button21);
-            this.OfficeEditor_PowerThings.Controls.Add(this.label16);
-            this.OfficeEditor_PowerThings.ForeColor = System.Drawing.Color.Transparent;
-            this.OfficeEditor_PowerThings.Location = new System.Drawing.Point(6, 244);
-            this.OfficeEditor_PowerThings.Name = "OfficeEditor_PowerThings";
-            this.OfficeEditor_PowerThings.Size = new System.Drawing.Size(301, 58);
-            this.OfficeEditor_PowerThings.TabIndex = 136;
-            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7449,9 +7449,12 @@ namespace FNAF_Engine_Reborn
             this.ProjectStuffs.PerformLayout();
             this.officeEditorPanel.ResumeLayout(false);
             this.officeEditorPanel.PerformLayout();
+            this.UI_Editor.ResumeLayout(false);
+            this.UI_Editor.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.officePreview.ResumeLayout(false);
+            this.OfficeEditor_PowerThings.ResumeLayout(false);
             this.ExtensionsPanel.ResumeLayout(false);
             this.ExtensionsPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -7484,9 +7487,6 @@ namespace FNAF_Engine_Reborn
             this.ImageEditorPanel.ResumeLayout(false);
             this.ImageEditorPanel.PerformLayout();
             this.Sidebar.ResumeLayout(false);
-            this.UI_Editor.ResumeLayout(false);
-            this.UI_Editor.PerformLayout();
-            this.OfficeEditor_PowerThings.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
