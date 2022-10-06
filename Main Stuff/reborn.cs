@@ -1185,9 +1185,9 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 string staticname = textBox20.Text;
-                _ = Directory.CreateDirectory(projecto + "/statics" + staticname);
-                AnimationList_StaticEffectEditor.Items.Clear();
-                AnimationList_StaticEffectEditor.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
+                _ = Directory.CreateDirectory(projecto + "/statics/" + staticname);
+                comboBox57.Items.Clear();
+                comboBox57.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/statics"));
                 panel7.Hide();
             }
             else
@@ -1198,7 +1198,7 @@ namespace FNAF_Engine_Reborn
 
         private void checkBox25_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox25.Checked == true)
+            if (checkBox25.Checked == false)
             {
                 DeleteFrameInfo_StaticEffectEditor.Show();
                 StaticEffectEditor_addFrameInfo.Show();
@@ -1628,7 +1628,7 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     string image = File.ReadAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt");
-                    officePreview.BackgroundImage = Image.FromFile(project + "/images/" + image);
+                    officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + image);
                 }
                 catch (Exception)
                 {
@@ -1672,7 +1672,16 @@ namespace FNAF_Engine_Reborn
                     CameraInput.Visible = options[3] == "camera=true";
                     checkBox14.Checked = options[4] == "flashlight=true";
                     checkBox15.Checked = options[5] == "panorama=true";
+                    //TODO PANORAMA
                     checkBox24.Checked = options[6] == "perspective=true";
+                    if (checkBox24.Checked == false)
+                    {
+                        officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    }
+                    else
+                    {
+                        officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                    }
                     checkBox17.Checked = options[7] == "ucnstyle=true";
                     gamehourstextbox.Text = options[9].Split('=')[1];
                     if (options[8] == "animatronic=")
@@ -1963,6 +1972,7 @@ namespace FNAF_Engine_Reborn
                     options[5] = "panorama=true";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    //TODO PANORAMA
                 }
                 else
                 {
@@ -1986,6 +1996,7 @@ namespace FNAF_Engine_Reborn
                     options[6] = "perspective=true";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
                 }
                 else
                 {
@@ -1994,6 +2005,7 @@ namespace FNAF_Engine_Reborn
                     options[6] = "perspective=false";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 }
             }
         }

@@ -2457,11 +2457,11 @@ namespace FNAF_Engine_Reborn
             // 
             // unhover
             // 
-            this.unhover.BackColor = System.Drawing.SystemColors.Control;
+            this.unhover.BackColor = System.Drawing.Color.Transparent;
             this.unhover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.unhover.FlatAppearance.BorderSize = 0;
             this.unhover.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.unhover.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.unhover.ForeColor = System.Drawing.Color.LightGreen;
             this.unhover.Location = new System.Drawing.Point(525, 224);
             this.unhover.Name = "unhover";
             this.unhover.Size = new System.Drawing.Size(164, 36);
@@ -2556,11 +2556,11 @@ namespace FNAF_Engine_Reborn
             // 
             // hover
             // 
-            this.hover.BackColor = System.Drawing.SystemColors.Control;
+            this.hover.BackColor = System.Drawing.Color.Transparent;
             this.hover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.hover.FlatAppearance.BorderSize = 0;
             this.hover.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.hover.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.hover.ForeColor = System.Drawing.Color.LightGreen;
             this.hover.Location = new System.Drawing.Point(430, 224);
             this.hover.Name = "hover";
             this.hover.Size = new System.Drawing.Size(94, 36);
@@ -4895,7 +4895,7 @@ namespace FNAF_Engine_Reborn
             // 
             // powerPercentage_label
             // 
-            this.powerPercentage_label.BackColor = System.Drawing.Color.White;
+            this.powerPercentage_label.BackColor = System.Drawing.SystemColors.Control;
             this.powerPercentage_label.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.powerPercentage_label.ForeColor = System.Drawing.Color.Black;
             this.powerPercentage_label.Location = new System.Drawing.Point(395, 383);
@@ -5042,7 +5042,7 @@ namespace FNAF_Engine_Reborn
             // powerOut_label
             // 
             this.powerOut_label.AutoSize = true;
-            this.powerOut_label.BackColor = System.Drawing.Color.White;
+            this.powerOut_label.BackColor = System.Drawing.SystemColors.Control;
             this.powerOut_label.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.powerOut_label.ForeColor = System.Drawing.Color.Black;
             this.powerOut_label.Location = new System.Drawing.Point(459, 438);
@@ -5054,7 +5054,7 @@ namespace FNAF_Engine_Reborn
             // mask_label
             // 
             this.mask_label.AutoSize = true;
-            this.mask_label.BackColor = System.Drawing.Color.White;
+            this.mask_label.BackColor = System.Drawing.SystemColors.Control;
             this.mask_label.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mask_label.ForeColor = System.Drawing.Color.Black;
             this.mask_label.Location = new System.Drawing.Point(459, 413);
@@ -5066,7 +5066,7 @@ namespace FNAF_Engine_Reborn
             // camera_label
             // 
             this.camera_label.AutoSize = true;
-            this.camera_label.BackColor = System.Drawing.Color.White;
+            this.camera_label.BackColor = System.Drawing.SystemColors.Control;
             this.camera_label.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.camera_label.ForeColor = System.Drawing.Color.Black;
             this.camera_label.Location = new System.Drawing.Point(460, 386);
@@ -7389,13 +7389,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.officeEditorPanel);
-            this.Controls.Add(this.cutsceneMoment);
-            this.Controls.Add(this.ImageEditorPanel);
-            this.Controls.Add(this.staticeffecteditor);
-            this.Controls.Add(this.cameraEditorPanel);
-            this.Controls.Add(this.animationEditorPanel);
-            this.Controls.Add(this.menu);
             this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.buildSettingsPanelMoment);
@@ -7407,6 +7400,13 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
             this.Controls.Add(this.template);
+            this.Controls.Add(this.officeEditorPanel);
+            this.Controls.Add(this.cutsceneMoment);
+            this.Controls.Add(this.ImageEditorPanel);
+            this.Controls.Add(this.staticeffecteditor);
+            this.Controls.Add(this.cameraEditorPanel);
+            this.Controls.Add(this.animationEditorPanel);
+            this.Controls.Add(this.menu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
