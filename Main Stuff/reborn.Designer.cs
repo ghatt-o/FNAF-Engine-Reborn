@@ -452,10 +452,6 @@ namespace FNAF_Engine_Reborn
             this.label111 = new System.Windows.Forms.Label();
             this.label109 = new System.Windows.Forms.Label();
             this.cutsceneEditorPanel = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.button117 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.button83 = new System.Windows.Forms.Button();
             this.button82 = new System.Windows.Forms.Button();
             this.button78 = new System.Windows.Forms.Button();
@@ -598,7 +594,7 @@ namespace FNAF_Engine_Reborn
             // 
             // allEditorsPNL
             // 
-            this.allEditorsPNL.BackColor = System.Drawing.SystemColors.Control;
+            this.allEditorsPNL.BackColor = System.Drawing.Color.Transparent;
             this.allEditorsPNL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.allEditorsPNL.Controls.Add(this.Settings);
             this.allEditorsPNL.Controls.Add(this.label10);
@@ -623,6 +619,7 @@ namespace FNAF_Engine_Reborn
             // 
             // Settings
             // 
+            this.Settings.BackColor = System.Drawing.Color.Transparent;
             this.Settings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Settings.BackgroundImage")));
             this.Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Settings.FlatAppearance.BorderSize = 0;
@@ -631,12 +628,12 @@ namespace FNAF_Engine_Reborn
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(45, 44);
             this.Settings.TabIndex = 67;
-            this.Settings.UseVisualStyleBackColor = true;
+            this.Settings.UseVisualStyleBackColor = false;
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.Control;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label10.Font = new System.Drawing.Font("Digital-7", 15F);
@@ -653,12 +650,11 @@ namespace FNAF_Engine_Reborn
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(34, 33);
             this.label92.TabIndex = 109;
-            this.label92.Text = "c";
             this.label92.Click += new System.EventHandler(this.label92_Click);
             // 
             // label71
             // 
-            this.label71.BackColor = System.Drawing.SystemColors.Control;
+            this.label71.BackColor = System.Drawing.Color.Transparent;
             this.label71.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label71.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label71.Font = new System.Drawing.Font("Digital-7", 15F);
@@ -671,7 +667,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label124
             // 
-            this.label124.BackColor = System.Drawing.SystemColors.Control;
+            this.label124.BackColor = System.Drawing.Color.Transparent;
             this.label124.Image = ((System.Drawing.Image)(resources.GetObject("label124.Image")));
             this.label124.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label124.Location = new System.Drawing.Point(78, 4);
@@ -683,7 +679,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label29
             // 
-            this.label29.BackColor = System.Drawing.SystemColors.Control;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
             this.label29.Image = ((System.Drawing.Image)(resources.GetObject("label29.Image")));
             this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label29.Location = new System.Drawing.Point(8, -43);
@@ -704,7 +700,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label143
             // 
-            this.label143.BackColor = System.Drawing.SystemColors.Control;
+            this.label143.BackColor = System.Drawing.Color.Transparent;
             this.label143.Image = ((System.Drawing.Image)(resources.GetObject("label143.Image")));
             this.label143.Location = new System.Drawing.Point(157, 14);
             this.label143.Name = "label143";
@@ -714,7 +710,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label94
             // 
-            this.label94.BackColor = System.Drawing.SystemColors.Control;
+            this.label94.BackColor = System.Drawing.Color.Transparent;
             this.label94.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label94.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label94.Font = new System.Drawing.Font("Digital-7", 15F);
@@ -741,7 +737,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label83
             // 
-            this.label83.BackColor = System.Drawing.SystemColors.Control;
+            this.label83.BackColor = System.Drawing.Color.Transparent;
             this.label83.Image = ((System.Drawing.Image)(resources.GetObject("label83.Image")));
             this.label83.Location = new System.Drawing.Point(225, 14);
             this.label83.Name = "label83";
@@ -751,7 +747,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label21
             // 
-            this.label21.BackColor = System.Drawing.SystemColors.Control;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label21.Font = new System.Drawing.Font("Digital-7", 15F);
@@ -764,6 +760,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label119
             // 
+            this.label119.BackColor = System.Drawing.Color.Transparent;
             this.label119.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label119.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label119.Font = new System.Drawing.Font("Digital-7", 15F);
@@ -776,7 +773,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label165
             // 
-            this.label165.BackColor = System.Drawing.SystemColors.Control;
+            this.label165.BackColor = System.Drawing.Color.Transparent;
             this.label165.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label165.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label165.Font = new System.Drawing.Font("Digital-7", 15F);
@@ -809,9 +806,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label156
             // 
+            this.label156.BackColor = System.Drawing.Color.Transparent;
             this.label156.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label156.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label156.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label156.ForeColor = System.Drawing.Color.LawnGreen;
             this.label156.Location = new System.Drawing.Point(150, 172);
             this.label156.Name = "label156";
             this.label156.Size = new System.Drawing.Size(48, 25);
@@ -822,9 +820,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label160
             // 
+            this.label160.BackColor = System.Drawing.Color.Transparent;
             this.label160.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label160.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label160.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label160.ForeColor = System.Drawing.Color.LawnGreen;
             this.label160.Location = new System.Drawing.Point(150, 200);
             this.label160.Name = "label160";
             this.label160.Size = new System.Drawing.Size(48, 25);
@@ -835,9 +834,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label161
             // 
+            this.label161.BackColor = System.Drawing.Color.Transparent;
             this.label161.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label161.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label161.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label161.ForeColor = System.Drawing.Color.LawnGreen;
             this.label161.Location = new System.Drawing.Point(150, 89);
             this.label161.Name = "label161";
             this.label161.Size = new System.Drawing.Size(48, 25);
@@ -848,9 +848,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label162
             // 
+            this.label162.BackColor = System.Drawing.Color.Transparent;
             this.label162.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label162.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label162.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label162.ForeColor = System.Drawing.Color.LawnGreen;
             this.label162.Location = new System.Drawing.Point(150, 116);
             this.label162.Name = "label162";
             this.label162.Size = new System.Drawing.Size(48, 25);
@@ -861,9 +862,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label163
             // 
+            this.label163.BackColor = System.Drawing.Color.Transparent;
             this.label163.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label163.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label163.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label163.ForeColor = System.Drawing.Color.LawnGreen;
             this.label163.Location = new System.Drawing.Point(150, 60);
             this.label163.Name = "label163";
             this.label163.Size = new System.Drawing.Size(48, 25);
@@ -874,9 +876,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label164
             // 
+            this.label164.BackColor = System.Drawing.Color.Transparent;
             this.label164.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label164.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label164.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label164.ForeColor = System.Drawing.Color.Green;
             this.label164.Location = new System.Drawing.Point(150, 287);
             this.label164.Name = "label164";
             this.label164.Size = new System.Drawing.Size(48, 25);
@@ -901,9 +904,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label91
             // 
+            this.label91.BackColor = System.Drawing.Color.Transparent;
             this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label91.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label91.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label91.ForeColor = System.Drawing.Color.LawnGreen;
             this.label91.Location = new System.Drawing.Point(150, 144);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(48, 25);
@@ -914,9 +918,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label157
             // 
+            this.label157.BackColor = System.Drawing.Color.Transparent;
             this.label157.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label157.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label157.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label157.ForeColor = System.Drawing.Color.LawnGreen;
             this.label157.Location = new System.Drawing.Point(150, 258);
             this.label157.Name = "label157";
             this.label157.Size = new System.Drawing.Size(48, 25);
@@ -927,9 +932,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label158
             // 
+            this.label158.BackColor = System.Drawing.Color.Transparent;
             this.label158.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label158.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label158.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label158.ForeColor = System.Drawing.Color.LawnGreen;
             this.label158.Location = new System.Drawing.Point(150, 230);
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(48, 25);
@@ -940,10 +946,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label159
             // 
-            this.label159.BackColor = System.Drawing.Color.Gainsboro;
+            this.label159.BackColor = System.Drawing.Color.Transparent;
             this.label159.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label159.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label159.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label159.ForeColor = System.Drawing.Color.Black;
             this.label159.Location = new System.Drawing.Point(150, 340);
             this.label159.Name = "label159";
             this.label159.Size = new System.Drawing.Size(48, 25);
@@ -957,7 +963,7 @@ namespace FNAF_Engine_Reborn
             this.animatronicEditorPNL2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.animatronicEditorPNL2.BackColor = System.Drawing.SystemColors.Control;
+            this.animatronicEditorPNL2.BackColor = System.Drawing.Color.Transparent;
             this.animatronicEditorPNL2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.animatronicEditorPNL2.Controls.Add(this.ChooseAnimatronicPath);
             this.animatronicEditorPNL2.Controls.Add(this.animatronicEditor_AnimPath);
@@ -1131,13 +1137,13 @@ namespace FNAF_Engine_Reborn
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.Control;
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.checkBox2);
             this.panel8.Controls.Add(this.button114);
             this.panel8.Controls.Add(this.textBox21);
             this.panel8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.panel8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel8.ForeColor = System.Drawing.Color.LightGreen;
             this.panel8.Location = new System.Drawing.Point(206, 70);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(205, 95);
@@ -1149,7 +1155,7 @@ namespace FNAF_Engine_Reborn
             this.checkBox2.AutoSize = true;
             this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBox2.ForeColor = System.Drawing.Color.LightGreen;
             this.checkBox2.Location = new System.Drawing.Point(5, 1);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(141, 19);
@@ -1161,7 +1167,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button114.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button114.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button114.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button114.ForeColor = System.Drawing.Color.LightGreen;
             this.button114.Location = new System.Drawing.Point(5, 49);
             this.button114.Name = "button114";
             this.button114.Size = new System.Drawing.Size(193, 39);
@@ -1228,13 +1234,13 @@ namespace FNAF_Engine_Reborn
             // 
             // button46
             // 
-            this.button46.BackColor = System.Drawing.SystemColors.Control;
+            this.button46.BackColor = System.Drawing.Color.Transparent;
             this.button46.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.wowMinus2;
             this.button46.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button46.FlatAppearance.BorderSize = 0;
             this.button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button46.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button46.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button46.ForeColor = System.Drawing.Color.LightGreen;
             this.button46.Location = new System.Drawing.Point(437, 132);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(20, 24);
@@ -1243,13 +1249,13 @@ namespace FNAF_Engine_Reborn
             // 
             // AddPath
             // 
-            this.AddPath.BackColor = System.Drawing.SystemColors.Control;
+            this.AddPath.BackColor = System.Drawing.Color.Transparent;
             this.AddPath.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddPath.BackgroundImage")));
             this.AddPath.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AddPath.FlatAppearance.BorderSize = 0;
             this.AddPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddPath.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AddPath.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddPath.ForeColor = System.Drawing.Color.LightGreen;
             this.AddPath.Location = new System.Drawing.Point(636, 132);
             this.AddPath.Name = "AddPath";
             this.AddPath.Size = new System.Drawing.Size(23, 24);
@@ -1346,9 +1352,9 @@ namespace FNAF_Engine_Reborn
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.ForeColor = System.Drawing.Color.LightGreen;
             this.label4.Location = new System.Drawing.Point(492, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 15);
@@ -1358,9 +1364,9 @@ namespace FNAF_Engine_Reborn
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.ForeColor = System.Drawing.Color.LightGreen;
             this.label3.Location = new System.Drawing.Point(245, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 15);
@@ -1370,9 +1376,9 @@ namespace FNAF_Engine_Reborn
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ForeColor = System.Drawing.Color.LightGreen;
             this.label2.Location = new System.Drawing.Point(256, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
@@ -1406,9 +1412,9 @@ namespace FNAF_Engine_Reborn
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.ForeColor = System.Drawing.Color.LightGreen;
             this.label1.Location = new System.Drawing.Point(266, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 15);
@@ -1431,10 +1437,10 @@ namespace FNAF_Engine_Reborn
             // animatronicEditorIgnoresMask_Check
             // 
             this.animatronicEditorIgnoresMask_Check.AutoSize = true;
-            this.animatronicEditorIgnoresMask_Check.BackColor = System.Drawing.SystemColors.Control;
+            this.animatronicEditorIgnoresMask_Check.BackColor = System.Drawing.Color.Transparent;
             this.animatronicEditorIgnoresMask_Check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.animatronicEditorIgnoresMask_Check.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.animatronicEditorIgnoresMask_Check.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.animatronicEditorIgnoresMask_Check.ForeColor = System.Drawing.Color.DarkGreen;
             this.animatronicEditorIgnoresMask_Check.Location = new System.Drawing.Point(249, 267);
             this.animatronicEditorIgnoresMask_Check.Name = "animatronicEditorIgnoresMask_Check";
             this.animatronicEditorIgnoresMask_Check.Size = new System.Drawing.Size(98, 19);
@@ -1445,7 +1451,7 @@ namespace FNAF_Engine_Reborn
             // 
             // cameraEditorPanel
             // 
-            this.cameraEditorPanel.BackColor = System.Drawing.Color.White;
+            this.cameraEditorPanel.BackColor = System.Drawing.Color.Transparent;
             this.cameraEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cameraEditorPanel.Controls.Add(this.RightScroll_CameraEditor);
             this.cameraEditorPanel.Controls.Add(this.LeftScroll_CameraEditor);
@@ -1493,7 +1499,7 @@ namespace FNAF_Engine_Reborn
             this.RightScroll_CameraEditor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RightScroll_CameraEditor.Location = new System.Drawing.Point(520, 377);
             this.RightScroll_CameraEditor.Name = "RightScroll_CameraEditor";
-            this.RightScroll_CameraEditor.Size = new System.Drawing.Size(104, 249);
+            this.RightScroll_CameraEditor.Size = new System.Drawing.Size(104, 189);
             this.RightScroll_CameraEditor.TabIndex = 130;
             this.RightScroll_CameraEditor.Text = "Right";
             this.RightScroll_CameraEditor.UseVisualStyleBackColor = false;
@@ -1508,7 +1514,7 @@ namespace FNAF_Engine_Reborn
             this.LeftScroll_CameraEditor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LeftScroll_CameraEditor.Location = new System.Drawing.Point(422, 377);
             this.LeftScroll_CameraEditor.Name = "LeftScroll_CameraEditor";
-            this.LeftScroll_CameraEditor.Size = new System.Drawing.Size(109, 249);
+            this.LeftScroll_CameraEditor.Size = new System.Drawing.Size(109, 189);
             this.LeftScroll_CameraEditor.TabIndex = 129;
             this.LeftScroll_CameraEditor.Text = "Left";
             this.LeftScroll_CameraEditor.UseVisualStyleBackColor = false;
@@ -1617,9 +1623,9 @@ namespace FNAF_Engine_Reborn
             this.AllCamerasBorderRGB_TextBox.BackColor = System.Drawing.SystemColors.Control;
             this.AllCamerasBorderRGB_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AllCamerasBorderRGB_TextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.AllCamerasBorderRGB_TextBox.Location = new System.Drawing.Point(638, 596);
+            this.AllCamerasBorderRGB_TextBox.Location = new System.Drawing.Point(813, 551);
             this.AllCamerasBorderRGB_TextBox.Name = "AllCamerasBorderRGB_TextBox";
-            this.AllCamerasBorderRGB_TextBox.Size = new System.Drawing.Size(171, 23);
+            this.AllCamerasBorderRGB_TextBox.Size = new System.Drawing.Size(131, 23);
             this.AllCamerasBorderRGB_TextBox.TabIndex = 123;
             // 
             // lblInfoCameraEditorAllBorderRGB
@@ -1628,7 +1634,7 @@ namespace FNAF_Engine_Reborn
             this.lblInfoCameraEditorAllBorderRGB.BackColor = System.Drawing.Color.White;
             this.lblInfoCameraEditorAllBorderRGB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblInfoCameraEditorAllBorderRGB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblInfoCameraEditorAllBorderRGB.Location = new System.Drawing.Point(656, 578);
+            this.lblInfoCameraEditorAllBorderRGB.Location = new System.Drawing.Point(813, 534);
             this.lblInfoCameraEditorAllBorderRGB.Name = "lblInfoCameraEditorAllBorderRGB";
             this.lblInfoCameraEditorAllBorderRGB.Size = new System.Drawing.Size(131, 15);
             this.lblInfoCameraEditorAllBorderRGB.TabIndex = 122;
@@ -1649,7 +1655,7 @@ namespace FNAF_Engine_Reborn
             // label115
             // 
             this.label115.AutoSize = true;
-            this.label115.BackColor = System.Drawing.Color.White;
+            this.label115.BackColor = System.Drawing.Color.Transparent;
             this.label115.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label115.Location = new System.Drawing.Point(789, 35);
             this.label115.Name = "label115";
@@ -1677,7 +1683,7 @@ namespace FNAF_Engine_Reborn
             this.textbox_BorderRGBcamera.BackColor = System.Drawing.SystemColors.Control;
             this.textbox_BorderRGBcamera.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_BorderRGBcamera.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textbox_BorderRGBcamera.Location = new System.Drawing.Point(226, 511);
+            this.textbox_BorderRGBcamera.Location = new System.Drawing.Point(226, 508);
             this.textbox_BorderRGBcamera.Name = "textbox_BorderRGBcamera";
             this.textbox_BorderRGBcamera.Size = new System.Drawing.Size(174, 23);
             this.textbox_BorderRGBcamera.TabIndex = 115;
@@ -1689,7 +1695,7 @@ namespace FNAF_Engine_Reborn
             this.lblInfoCameraEditorBorderRGB.BackColor = System.Drawing.Color.White;
             this.lblInfoCameraEditorBorderRGB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblInfoCameraEditorBorderRGB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblInfoCameraEditorBorderRGB.Location = new System.Drawing.Point(274, 495);
+            this.lblInfoCameraEditorBorderRGB.Location = new System.Drawing.Point(274, 491);
             this.lblInfoCameraEditorBorderRGB.Name = "lblInfoCameraEditorBorderRGB";
             this.lblInfoCameraEditorBorderRGB.Size = new System.Drawing.Size(67, 15);
             this.lblInfoCameraEditorBorderRGB.TabIndex = 114;
@@ -1757,7 +1763,7 @@ namespace FNAF_Engine_Reborn
             this.lblInfoCameraEditorStaticEffect.BackColor = System.Drawing.Color.White;
             this.lblInfoCameraEditorStaticEffect.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblInfoCameraEditorStaticEffect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblInfoCameraEditorStaticEffect.Location = new System.Drawing.Point(275, 536);
+            this.lblInfoCameraEditorStaticEffect.Location = new System.Drawing.Point(275, 532);
             this.lblInfoCameraEditorStaticEffect.Name = "lblInfoCameraEditorStaticEffect";
             this.lblInfoCameraEditorStaticEffect.Size = new System.Drawing.Size(69, 15);
             this.lblInfoCameraEditorStaticEffect.TabIndex = 68;
@@ -1771,7 +1777,7 @@ namespace FNAF_Engine_Reborn
             this.StaticEffect_CameraEditor.FormattingEnabled = true;
             this.StaticEffect_CameraEditor.Items.AddRange(new object[] {
             "Default"});
-            this.StaticEffect_CameraEditor.Location = new System.Drawing.Point(228, 553);
+            this.StaticEffect_CameraEditor.Location = new System.Drawing.Point(228, 550);
             this.StaticEffect_CameraEditor.Name = "StaticEffect_CameraEditor";
             this.StaticEffect_CameraEditor.Size = new System.Drawing.Size(171, 23);
             this.StaticEffect_CameraEditor.TabIndex = 67;
@@ -1839,7 +1845,7 @@ namespace FNAF_Engine_Reborn
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(801, 13);
@@ -1901,7 +1907,7 @@ namespace FNAF_Engine_Reborn
             // 
             // menuEditorPanel
             // 
-            this.menuEditorPanel.BackColor = System.Drawing.Color.White;
+            this.menuEditorPanel.BackColor = System.Drawing.Color.Transparent;
             this.menuEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.menuEditorPanel.Controls.Add(this.textCreate_MenuEditor);
             this.menuEditorPanel.Controls.Add(this.MenuEditor_ScriptEditor);
@@ -1920,7 +1926,7 @@ namespace FNAF_Engine_Reborn
             // 
             // textCreate_MenuEditor
             // 
-            this.textCreate_MenuEditor.BackColor = System.Drawing.SystemColors.Control;
+            this.textCreate_MenuEditor.BackColor = System.Drawing.Color.Transparent;
             this.textCreate_MenuEditor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.textCreate_MenuEditor.Controls.Add(this.label15);
             this.textCreate_MenuEditor.Controls.Add(this.create_text_menuEditorBTN);
@@ -1968,8 +1974,8 @@ namespace FNAF_Engine_Reborn
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.Control;
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.ForeColor = System.Drawing.Color.LightGreen;
             this.label15.Location = new System.Drawing.Point(1, 2);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(188, 15);
@@ -2392,7 +2398,7 @@ namespace FNAF_Engine_Reborn
             // 
             // MenuEditor_ScriptEditor
             // 
-            this.MenuEditor_ScriptEditor.BackColor = System.Drawing.Color.White;
+            this.MenuEditor_ScriptEditor.BackColor = System.Drawing.Color.Transparent;
             this.MenuEditor_ScriptEditor.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MenuEditor_ScriptEditor.Image = global::FNAF_Engine_Reborn.Properties.Resources.selectme;
             this.MenuEditor_ScriptEditor.Location = new System.Drawing.Point(279, 5);
@@ -2403,7 +2409,7 @@ namespace FNAF_Engine_Reborn
             // 
             // Menu_Elements_Create
             // 
-            this.Menu_Elements_Create.BackColor = System.Drawing.SystemColors.Control;
+            this.Menu_Elements_Create.BackColor = System.Drawing.Color.Transparent;
             this.Menu_Elements_Create.Controls.Add(this.unhover);
             this.Menu_Elements_Create.Controls.Add(this.MenuEditor_CodeEditorUnhover);
             this.Menu_Elements_Create.Controls.Add(this.MenuEditor_CodeEditorHold);
@@ -2937,7 +2943,7 @@ namespace FNAF_Engine_Reborn
             // 
             // createShit
             // 
-            this.createShit.BackColor = System.Drawing.SystemColors.Control;
+            this.createShit.BackColor = System.Drawing.Color.Transparent;
             this.createShit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.createShit.Controls.Add(this.button88);
             this.createShit.Controls.Add(this.menuName);
@@ -3588,10 +3594,10 @@ namespace FNAF_Engine_Reborn
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.SystemColors.Control;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
             this.label30.Font = new System.Drawing.Font("Digital-7", 15F);
             this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(448, -2);
+            this.label30.Location = new System.Drawing.Point(448, -1);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(114, 21);
             this.label30.TabIndex = 89;
@@ -3599,7 +3605,7 @@ namespace FNAF_Engine_Reborn
             // 
             // SoundEditorPanel
             // 
-            this.SoundEditorPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.SoundEditorPanel.BackColor = System.Drawing.Color.Transparent;
             this.SoundEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SoundEditorPanel.Controls.Add(this.comboBox33);
             this.SoundEditorPanel.Controls.Add(this.label68);
@@ -3681,9 +3687,9 @@ namespace FNAF_Engine_Reborn
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.BackColor = System.Drawing.SystemColors.Control;
+            this.label67.BackColor = System.Drawing.Color.Transparent;
             this.label67.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label67.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label67.ForeColor = System.Drawing.Color.LightGreen;
             this.label67.Location = new System.Drawing.Point(278, 270);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(109, 15);
@@ -3705,9 +3711,9 @@ namespace FNAF_Engine_Reborn
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.BackColor = System.Drawing.SystemColors.Control;
+            this.label66.BackColor = System.Drawing.Color.Transparent;
             this.label66.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label66.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label66.ForeColor = System.Drawing.Color.LightGreen;
             this.label66.Location = new System.Drawing.Point(298, 223);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(62, 15);
@@ -3717,9 +3723,9 @@ namespace FNAF_Engine_Reborn
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.BackColor = System.Drawing.SystemColors.Control;
+            this.label65.BackColor = System.Drawing.Color.Transparent;
             this.label65.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label65.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label65.ForeColor = System.Drawing.Color.LightGreen;
             this.label65.Location = new System.Drawing.Point(296, 171);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(63, 15);
@@ -3741,9 +3747,9 @@ namespace FNAF_Engine_Reborn
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.BackColor = System.Drawing.SystemColors.Control;
+            this.label64.BackColor = System.Drawing.Color.Transparent;
             this.label64.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label64.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label64.ForeColor = System.Drawing.Color.LightGreen;
             this.label64.Location = new System.Drawing.Point(240, 151);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(38, 15);
@@ -3753,9 +3759,9 @@ namespace FNAF_Engine_Reborn
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.BackColor = System.Drawing.SystemColors.Control;
+            this.label63.BackColor = System.Drawing.Color.Transparent;
             this.label63.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label63.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label63.ForeColor = System.Drawing.Color.LightGreen;
             this.label63.Location = new System.Drawing.Point(298, 39);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(46, 15);
@@ -3764,9 +3770,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label62
             // 
-            this.label62.BackColor = System.Drawing.SystemColors.Control;
+            this.label62.BackColor = System.Drawing.Color.Transparent;
             this.label62.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label62.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label62.ForeColor = System.Drawing.Color.LightGreen;
             this.label62.Image = ((System.Drawing.Image)(resources.GetObject("label62.Image")));
             this.label62.Location = new System.Drawing.Point(347, 39);
             this.label62.Name = "label62";
@@ -3775,9 +3781,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label61
             // 
-            this.label61.BackColor = System.Drawing.SystemColors.Control;
+            this.label61.BackColor = System.Drawing.Color.Transparent;
             this.label61.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label61.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label61.ForeColor = System.Drawing.Color.LightGreen;
             this.label61.Image = global::FNAF_Engine_Reborn.Properties.Resources.left_arrow;
             this.label61.Location = new System.Drawing.Point(285, 39);
             this.label61.Name = "label61";
@@ -3799,9 +3805,9 @@ namespace FNAF_Engine_Reborn
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.BackColor = System.Drawing.SystemColors.Control;
+            this.label60.BackColor = System.Drawing.Color.Transparent;
             this.label60.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label60.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label60.ForeColor = System.Drawing.Color.LightGreen;
             this.label60.Location = new System.Drawing.Point(286, 13);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(67, 15);
@@ -3919,9 +3925,9 @@ namespace FNAF_Engine_Reborn
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.BackColor = System.Drawing.SystemColors.Control;
+            this.label55.BackColor = System.Drawing.Color.Transparent;
             this.label55.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label55.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label55.ForeColor = System.Drawing.Color.LightGreen;
             this.label55.Location = new System.Drawing.Point(45, 285);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(89, 15);
@@ -3943,9 +3949,9 @@ namespace FNAF_Engine_Reborn
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.BackColor = System.Drawing.SystemColors.Control;
+            this.label54.BackColor = System.Drawing.Color.Transparent;
             this.label54.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label54.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label54.ForeColor = System.Drawing.Color.LightGreen;
             this.label54.Location = new System.Drawing.Point(63, 238);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(55, 15);
@@ -3967,9 +3973,9 @@ namespace FNAF_Engine_Reborn
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.BackColor = System.Drawing.SystemColors.Control;
+            this.label53.BackColor = System.Drawing.Color.Transparent;
             this.label53.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label53.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label53.ForeColor = System.Drawing.Color.LightGreen;
             this.label53.Location = new System.Drawing.Point(64, 188);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(54, 15);
@@ -3979,9 +3985,9 @@ namespace FNAF_Engine_Reborn
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.BackColor = System.Drawing.SystemColors.Control;
+            this.label50.BackColor = System.Drawing.Color.Transparent;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label50.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label50.ForeColor = System.Drawing.Color.LightGreen;
             this.label50.Location = new System.Drawing.Point(5, 164);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(92, 15);
@@ -4027,9 +4033,9 @@ namespace FNAF_Engine_Reborn
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.BackColor = System.Drawing.SystemColors.Control;
+            this.label52.BackColor = System.Drawing.Color.Transparent;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label52.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label52.ForeColor = System.Drawing.Color.LightGreen;
             this.label52.Location = new System.Drawing.Point(45, 59);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(58, 15);
@@ -4039,9 +4045,9 @@ namespace FNAF_Engine_Reborn
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.BackColor = System.Drawing.SystemColors.Control;
+            this.label51.BackColor = System.Drawing.Color.Transparent;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label51.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label51.ForeColor = System.Drawing.Color.LightGreen;
             this.label51.Location = new System.Drawing.Point(46, 106);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(57, 15);
@@ -4051,9 +4057,9 @@ namespace FNAF_Engine_Reborn
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.SystemColors.Control;
+            this.label41.BackColor = System.Drawing.Color.Transparent;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label41.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label41.ForeColor = System.Drawing.Color.LightGreen;
             this.label41.Location = new System.Drawing.Point(51, 12);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(61, 15);
@@ -4062,7 +4068,7 @@ namespace FNAF_Engine_Reborn
             // 
             // AssetManagerPanel
             // 
-            this.AssetManagerPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.AssetManagerPanel.BackColor = System.Drawing.Color.Transparent;
             this.AssetManagerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.AssetManagerPanel.Controls.Add(this.reassign_Value_GameManager_Textbox);
             this.AssetManagerPanel.Controls.Add(this.DataValue_Name);
@@ -4248,6 +4254,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button15
             // 
+            this.button15.BackColor = System.Drawing.Color.Transparent;
             this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
             this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button15.FlatAppearance.BorderSize = 0;
@@ -4256,19 +4263,21 @@ namespace FNAF_Engine_Reborn
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(23, 12);
             this.button15.TabIndex = 170;
-            this.button15.UseVisualStyleBackColor = true;
+            this.button15.UseVisualStyleBackColor = false;
             // 
             // button16
             // 
+            this.button16.BackColor = System.Drawing.Color.Transparent;
             this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
             this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.ForeColor = System.Drawing.Color.Transparent;
             this.button16.Location = new System.Drawing.Point(149, 32);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(23, 24);
             this.button16.TabIndex = 169;
-            this.button16.UseVisualStyleBackColor = true;
+            this.button16.UseVisualStyleBackColor = false;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // SoundList
@@ -4291,7 +4300,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox63.Name = "comboBox63";
             this.comboBox63.Size = new System.Drawing.Size(140, 23);
             this.comboBox63.TabIndex = 126;
-            this.comboBox63.Text = "Animatronic List";
+            this.comboBox63.Text = "Animation List";
             // 
             // comboBox62
             // 
@@ -4341,9 +4350,10 @@ namespace FNAF_Engine_Reborn
             // 
             // label96
             // 
+            this.label96.BackColor = System.Drawing.Color.Transparent;
             this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label96.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label96.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label96.ForeColor = System.Drawing.Color.DarkGreen;
             this.label96.Location = new System.Drawing.Point(150, 313);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(48, 25);
@@ -4376,6 +4386,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button39
             // 
+            this.button39.BackColor = System.Drawing.Color.Transparent;
             this.button39.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button39.BackgroundImage")));
             this.button39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button39.FlatAppearance.BorderSize = 0;
@@ -4384,7 +4395,7 @@ namespace FNAF_Engine_Reborn
             this.button39.Name = "button39";
             this.button39.Size = new System.Drawing.Size(23, 12);
             this.button39.TabIndex = 100;
-            this.button39.UseVisualStyleBackColor = true;
+            this.button39.UseVisualStyleBackColor = false;
             this.button39.Click += new System.EventHandler(this.button39_Click);
             // 
             // comboBox38
@@ -4400,6 +4411,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button40
             // 
+            this.button40.BackColor = System.Drawing.Color.Transparent;
             this.button40.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button40.BackgroundImage")));
             this.button40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button40.FlatAppearance.BorderSize = 0;
@@ -4408,7 +4420,7 @@ namespace FNAF_Engine_Reborn
             this.button40.Name = "button40";
             this.button40.Size = new System.Drawing.Size(23, 24);
             this.button40.TabIndex = 99;
-            this.button40.UseVisualStyleBackColor = true;
+            this.button40.UseVisualStyleBackColor = false;
             this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
             // comboBox39
@@ -4420,7 +4432,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox39.Name = "comboBox39";
             this.comboBox39.Size = new System.Drawing.Size(140, 23);
             this.comboBox39.TabIndex = 13;
-            this.comboBox39.Text = "Cutscene List";
+            this.comboBox39.Text = "Cutscene Editor";
             // 
             // comboBox36
             // 
@@ -4457,8 +4469,9 @@ namespace FNAF_Engine_Reborn
             // 
             // officeEditorPanel
             // 
-            this.officeEditorPanel.BackColor = System.Drawing.Color.White;
+            this.officeEditorPanel.BackColor = System.Drawing.Color.Transparent;
             this.officeEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.officeEditorPanel.Controls.Add(this.UI_Editor);
             this.officeEditorPanel.Controls.Add(this.panel9);
             this.officeEditorPanel.Controls.Add(this.label121);
             this.officeEditorPanel.Controls.Add(this.gamehourstextbox);
@@ -5112,7 +5125,7 @@ namespace FNAF_Engine_Reborn
             // 
             // ExtensionsPanel
             // 
-            this.ExtensionsPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.ExtensionsPanel.BackColor = System.Drawing.Color.Transparent;
             this.ExtensionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ExtensionsPanel.Controls.Add(this.button98);
             this.ExtensionsPanel.Controls.Add(this.button97);
@@ -5128,7 +5141,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button98
             // 
-            this.button98.BackColor = System.Drawing.SystemColors.Control;
+            this.button98.BackColor = System.Drawing.Color.Transparent;
             this.button98.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button98.BackgroundImage")));
             this.button98.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button98.FlatAppearance.BorderSize = 0;
@@ -5142,7 +5155,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button97
             // 
-            this.button97.BackColor = System.Drawing.SystemColors.Control;
+            this.button97.BackColor = System.Drawing.Color.Transparent;
             this.button97.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button97.BackgroundImage")));
             this.button97.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button97.FlatAppearance.BorderSize = 0;
@@ -5245,9 +5258,9 @@ namespace FNAF_Engine_Reborn
             // label78
             // 
             this.label78.AutoSize = true;
-            this.label78.BackColor = System.Drawing.SystemColors.Control;
+            this.label78.BackColor = System.Drawing.Color.Transparent;
             this.label78.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label78.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label78.ForeColor = System.Drawing.Color.LightGreen;
             this.label78.Location = new System.Drawing.Point(14, 16);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(120, 21);
@@ -5267,7 +5280,7 @@ namespace FNAF_Engine_Reborn
             // 
             // ScriptEditorPanel
             // 
-            this.ScriptEditorPanel.BackColor = System.Drawing.Color.White;
+            this.ScriptEditorPanel.BackColor = System.Drawing.Color.Transparent;
             this.ScriptEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ScriptEditorPanel.Controls.Add(this.button54);
             this.ScriptEditorPanel.Controls.Add(this.PanelCreatingNewScript);
@@ -5451,7 +5464,7 @@ namespace FNAF_Engine_Reborn
             // 
             // buildSettingsPanelMoment
             // 
-            this.buildSettingsPanelMoment.BackColor = System.Drawing.Color.White;
+            this.buildSettingsPanelMoment.BackColor = System.Drawing.Color.Transparent;
             this.buildSettingsPanelMoment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.buildSettingsPanelMoment.Controls.Add(this.checkBox10);
             this.buildSettingsPanelMoment.Controls.Add(this.checkBox9);
@@ -5472,9 +5485,9 @@ namespace FNAF_Engine_Reborn
             // checkBox10
             // 
             this.checkBox10.AutoSize = true;
-            this.checkBox10.BackColor = System.Drawing.Color.White;
+            this.checkBox10.BackColor = System.Drawing.Color.Transparent;
             this.checkBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.checkBox10.ForeColor = System.Drawing.Color.LightGreen;
             this.checkBox10.Location = new System.Drawing.Point(2, 165);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(91, 19);
@@ -5486,9 +5499,9 @@ namespace FNAF_Engine_Reborn
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
-            this.checkBox9.BackColor = System.Drawing.Color.White;
+            this.checkBox9.BackColor = System.Drawing.Color.Transparent;
             this.checkBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.checkBox9.ForeColor = System.Drawing.Color.LightGreen;
             this.checkBox9.Location = new System.Drawing.Point(2, 143);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(207, 19);
@@ -5500,9 +5513,9 @@ namespace FNAF_Engine_Reborn
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
-            this.checkBox8.BackColor = System.Drawing.Color.White;
+            this.checkBox8.BackColor = System.Drawing.Color.Transparent;
             this.checkBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.checkBox8.ForeColor = System.Drawing.Color.LightGreen;
             this.checkBox8.Location = new System.Drawing.Point(2, 100);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(81, 19);
@@ -5514,8 +5527,8 @@ namespace FNAF_Engine_Reborn
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.White;
-            this.label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.ForeColor = System.Drawing.Color.LightGreen;
             this.label31.Location = new System.Drawing.Point(-1, 74);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(61, 15);
@@ -5537,8 +5550,8 @@ namespace FNAF_Engine_Reborn
             // 
             // label33
             // 
-            this.label33.BackColor = System.Drawing.Color.White;
-            this.label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.ForeColor = System.Drawing.Color.LightGreen;
             this.label33.Image = ((System.Drawing.Image)(resources.GetObject("label33.Image")));
             this.label33.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label33.Location = new System.Drawing.Point(127, 46);
@@ -5560,8 +5573,8 @@ namespace FNAF_Engine_Reborn
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.White;
-            this.label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.ForeColor = System.Drawing.Color.LightGreen;
             this.label34.Location = new System.Drawing.Point(-2, 4);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(73, 15);
@@ -5571,9 +5584,9 @@ namespace FNAF_Engine_Reborn
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.BackColor = System.Drawing.Color.White;
+            this.checkBox7.BackColor = System.Drawing.Color.Transparent;
             this.checkBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.checkBox7.ForeColor = System.Drawing.Color.LightGreen;
             this.checkBox7.Location = new System.Drawing.Point(2, 122);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(132, 19);
@@ -5584,7 +5597,7 @@ namespace FNAF_Engine_Reborn
             // 
             // animationEditorPanel
             // 
-            this.animationEditorPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.animationEditorPanel.BackColor = System.Drawing.Color.Transparent;
             this.animationEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.animationEditorPanel.Controls.Add(this.label90);
             this.animationEditorPanel.Controls.Add(this.textBox18);
@@ -5779,7 +5792,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox43.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox43.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox43.FormattingEnabled = true;
-            this.comboBox43.Location = new System.Drawing.Point(246, 19);
+            this.comboBox43.Location = new System.Drawing.Point(246, 20);
             this.comboBox43.Name = "comboBox43";
             this.comboBox43.Size = new System.Drawing.Size(514, 23);
             this.comboBox43.TabIndex = 105;
@@ -6021,12 +6034,8 @@ namespace FNAF_Engine_Reborn
             // 
             // cutsceneEditorPanel
             // 
-            this.cutsceneEditorPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.cutsceneEditorPanel.BackColor = System.Drawing.Color.Transparent;
             this.cutsceneEditorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cutsceneEditorPanel.Controls.Add(this.label18);
-            this.cutsceneEditorPanel.Controls.Add(this.textBox24);
-            this.cutsceneEditorPanel.Controls.Add(this.button117);
-            this.cutsceneEditorPanel.Controls.Add(this.label14);
             this.cutsceneEditorPanel.Controls.Add(this.button83);
             this.cutsceneEditorPanel.Controls.Add(this.button82);
             this.cutsceneEditorPanel.Controls.Add(this.button78);
@@ -6057,52 +6066,6 @@ namespace FNAF_Engine_Reborn
             this.cutsceneEditorPanel.Size = new System.Drawing.Size(947, 644);
             this.cutsceneEditorPanel.TabIndex = 104;
             this.cutsceneEditorPanel.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.Control;
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(764, 146);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(115, 15);
-            this.label18.TabIndex = 122;
-            this.label18.Text = "PLACEHOLDER TEXT";
-            // 
-            // textBox24
-            // 
-            this.textBox24.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox24.ForeColor = System.Drawing.Color.Black;
-            this.textBox24.Location = new System.Drawing.Point(764, 119);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(116, 23);
-            this.textBox24.TabIndex = 121;
-            this.textBox24.Text = "PLACEHOLDER";
-            // 
-            // button117
-            // 
-            this.button117.BackColor = System.Drawing.SystemColors.Control;
-            this.button117.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button117.FlatAppearance.BorderSize = 0;
-            this.button117.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button117.ForeColor = System.Drawing.Color.Black;
-            this.button117.Location = new System.Drawing.Point(764, 87);
-            this.button117.Name = "button117";
-            this.button117.Size = new System.Drawing.Size(117, 29);
-            this.button117.TabIndex = 120;
-            this.button117.Text = "EXT Placeholder";
-            this.button117.UseVisualStyleBackColor = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.Control;
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(761, 70);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 15);
-            this.label14.TabIndex = 119;
-            this.label14.Text = "EXTENSIONS:";
             // 
             // button83
             // 
@@ -6342,7 +6305,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button73
             // 
-            this.button73.BackColor = System.Drawing.SystemColors.Control;
+            this.button73.BackColor = System.Drawing.Color.Transparent;
             this.button73.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.wowMinus2;
             this.button73.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button73.FlatAppearance.BorderSize = 0;
@@ -6356,7 +6319,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button72
             // 
-            this.button72.BackColor = System.Drawing.SystemColors.Control;
+            this.button72.BackColor = System.Drawing.Color.Transparent;
             this.button72.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button72.BackgroundImage")));
             this.button72.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button72.FlatAppearance.BorderSize = 0;
@@ -6428,7 +6391,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label85
             // 
-            this.label85.BackColor = System.Drawing.SystemColors.Control;
+            this.label85.BackColor = System.Drawing.Color.Transparent;
             this.label85.Image = ((System.Drawing.Image)(resources.GetObject("label85.Image")));
             this.label85.Location = new System.Drawing.Point(645, 96);
             this.label85.Name = "label85";
@@ -6437,7 +6400,7 @@ namespace FNAF_Engine_Reborn
             // 
             // createProjectBTN
             // 
-            this.createProjectBTN.BackColor = System.Drawing.SystemColors.Control;
+            this.createProjectBTN.BackColor = System.Drawing.Color.Transparent;
             this.createProjectBTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.createProjectBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.createProjectBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -6452,7 +6415,7 @@ namespace FNAF_Engine_Reborn
             // 
             // loadProjectBTN
             // 
-            this.loadProjectBTN.BackColor = System.Drawing.SystemColors.Control;
+            this.loadProjectBTN.BackColor = System.Drawing.Color.Transparent;
             this.loadProjectBTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.loadProjectBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.loadProjectBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -6467,7 +6430,7 @@ namespace FNAF_Engine_Reborn
             // 
             // deleteProjectBTN
             // 
-            this.deleteProjectBTN.BackColor = System.Drawing.SystemColors.Control;
+            this.deleteProjectBTN.BackColor = System.Drawing.Color.Transparent;
             this.deleteProjectBTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.deleteProjectBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.deleteProjectBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -6482,7 +6445,7 @@ namespace FNAF_Engine_Reborn
             // 
             // toolC
             // 
-            this.toolC.BackColor = System.Drawing.SystemColors.Control;
+            this.toolC.BackColor = System.Drawing.Color.Transparent;
             this.toolC.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
             this.toolC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.toolC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
@@ -6578,9 +6541,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label84
             // 
-            this.label84.BackColor = System.Drawing.SystemColors.Control;
+            this.label84.BackColor = System.Drawing.Color.Transparent;
             this.label84.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label84.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label84.ForeColor = System.Drawing.Color.LightGreen;
             this.label84.Location = new System.Drawing.Point(668, 148);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(151, 27);
@@ -6599,7 +6562,7 @@ namespace FNAF_Engine_Reborn
             // 
             // menu
             // 
-            this.menu.BackColor = System.Drawing.SystemColors.Control;
+            this.menu.BackColor = System.Drawing.Color.Transparent;
             this.menu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.menu.Controls.Add(this.label44);
             this.menu.Controls.Add(this.label39);
@@ -6629,9 +6592,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label44
             // 
-            this.label44.BackColor = System.Drawing.SystemColors.Control;
+            this.label44.BackColor = System.Drawing.Color.Transparent;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label44.ForeColor = System.Drawing.Color.LightGreen;
             this.label44.Location = new System.Drawing.Point(45, 119);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(257, 24);
@@ -6640,9 +6603,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label39
             // 
-            this.label39.BackColor = System.Drawing.SystemColors.Control;
+            this.label39.BackColor = System.Drawing.Color.Transparent;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.label39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label39.ForeColor = System.Drawing.Color.LightGreen;
             this.label39.Location = new System.Drawing.Point(95, 73);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(167, 51);
@@ -6652,14 +6615,14 @@ namespace FNAF_Engine_Reborn
             // 
             // DownloadFontBtn
             // 
-            this.DownloadFontBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.DownloadFontBtn.BackColor = System.Drawing.Color.Transparent;
             this.DownloadFontBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DownloadFontBtn.BackgroundImage")));
             this.DownloadFontBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.DownloadFontBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.DownloadFontBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.DownloadFontBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DownloadFontBtn.Font = new System.Drawing.Font("Digital-7", 15.5F);
-            this.DownloadFontBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DownloadFontBtn.ForeColor = System.Drawing.Color.LightGreen;
             this.DownloadFontBtn.Location = new System.Drawing.Point(92, 5);
             this.DownloadFontBtn.Name = "DownloadFontBtn";
             this.DownloadFontBtn.Size = new System.Drawing.Size(149, 58);
@@ -6671,7 +6634,7 @@ namespace FNAF_Engine_Reborn
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.Diamond_Cat;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(-52, 440);
@@ -6682,7 +6645,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label19
             // 
-            this.label19.BackColor = System.Drawing.SystemColors.Control;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Image = ((System.Drawing.Image)(resources.GetObject("label19.Image")));
             this.label19.Location = new System.Drawing.Point(3, 2);
             this.label19.Name = "label19";
@@ -6692,7 +6655,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label93
             // 
-            this.label93.BackColor = System.Drawing.SystemColors.Control;
+            this.label93.BackColor = System.Drawing.Color.Transparent;
             this.label93.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.label93.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label93.Location = new System.Drawing.Point(850, 1);
@@ -6724,9 +6687,9 @@ namespace FNAF_Engine_Reborn
             // 
             // REBORNtitle
             // 
-            this.REBORNtitle.BackColor = System.Drawing.SystemColors.Control;
+            this.REBORNtitle.BackColor = System.Drawing.Color.Transparent;
             this.REBORNtitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.REBORNtitle.Image = global::FNAF_Engine_Reborn.Properties.Resources.FE_R_TEXTLOGO;
+            this.REBORNtitle.Image = ((System.Drawing.Image)(resources.GetObject("REBORNtitle.Image")));
             this.REBORNtitle.Location = new System.Drawing.Point(7, 1);
             this.REBORNtitle.Name = "REBORNtitle";
             this.REBORNtitle.Size = new System.Drawing.Size(420, 60);
@@ -6846,7 +6809,7 @@ namespace FNAF_Engine_Reborn
             // 
             // staticeffecteditor
             // 
-            this.staticeffecteditor.BackColor = System.Drawing.Color.White;
+            this.staticeffecteditor.BackColor = System.Drawing.Color.Transparent;
             this.staticeffecteditor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.staticeffecteditor.Controls.Add(this.button115);
             this.staticeffecteditor.Controls.Add(this.StaticEffectEditor_FrameList);
@@ -7139,7 +7102,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label108
             // 
-            this.label108.BackColor = System.Drawing.SystemColors.Control;
+            this.label108.BackColor = System.Drawing.Color.Transparent;
             this.label108.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label108.Image = ((System.Drawing.Image)(resources.GetObject("label108.Image")));
             this.label108.Location = new System.Drawing.Point(883, 3);
@@ -7238,7 +7201,7 @@ namespace FNAF_Engine_Reborn
             // 
             // Sidebar
             // 
-            this.Sidebar.BackColor = System.Drawing.Color.Gainsboro;
+            this.Sidebar.BackColor = System.Drawing.Color.Transparent;
             this.Sidebar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Sidebar.Controls.Add(this.button15);
             this.Sidebar.Controls.Add(this.button119);
@@ -7301,7 +7264,7 @@ namespace FNAF_Engine_Reborn
             // 
             // UI_Editor
             // 
-            this.UI_Editor.BackColor = System.Drawing.SystemColors.Control;
+            this.UI_Editor.BackColor = System.Drawing.Color.Transparent;
             this.UI_Editor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.UI_Editor.Controls.Add(this.OK_UIEditor);
             this.UI_Editor.Controls.Add(this.label12);
@@ -7309,7 +7272,7 @@ namespace FNAF_Engine_Reborn
             this.UI_Editor.Controls.Add(this.Drag_);
             this.UI_Editor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UI_Editor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UI_Editor.Location = new System.Drawing.Point(383, 29);
+            this.UI_Editor.Location = new System.Drawing.Point(376, 5);
             this.UI_Editor.Name = "UI_Editor";
             this.UI_Editor.Size = new System.Drawing.Size(244, 29);
             this.UI_Editor.TabIndex = 73;
@@ -7319,7 +7282,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.OK_UIEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OK_UIEditor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.OK_UIEditor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OK_UIEditor.ForeColor = System.Drawing.Color.LightGreen;
             this.OK_UIEditor.Location = new System.Drawing.Point(205, 3);
             this.OK_UIEditor.Name = "OK_UIEditor";
             this.OK_UIEditor.Size = new System.Drawing.Size(33, 22);
@@ -7331,9 +7294,9 @@ namespace FNAF_Engine_Reborn
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.Control;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.ForeColor = System.Drawing.Color.LightGreen;
             this.label12.Location = new System.Drawing.Point(53, 6);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(152, 15);
@@ -7418,10 +7381,9 @@ namespace FNAF_Engine_Reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 696);
-            this.Controls.Add(this.UI_Editor);
             this.Controls.Add(this.Sidebar);
             this.Controls.Add(this.label108);
             this.Controls.Add(this.allEditorsPNL);
@@ -7445,6 +7407,7 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.ScriptEditorPanel);
             this.Controls.Add(this.ExtensionsPanel);
             this.Controls.Add(this.template);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -7838,10 +7801,6 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.TextBox AllCamerasBorderRGB_TextBox;
         public System.Windows.Forms.Label lblInfoCameraEditorAllBorderRGB;
         public System.Windows.Forms.Label lblInfoCameraEditorAllStaticEffect;
-        public System.Windows.Forms.Label label18;
-        public System.Windows.Forms.TextBox textBox24;
-        public System.Windows.Forms.Button button117;
-        public System.Windows.Forms.Label label14;
         public System.Windows.Forms.Label label19;
         public System.Windows.Forms.ComboBox comboBox58;
         public System.Windows.Forms.Label label143;
