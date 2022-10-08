@@ -11,13 +11,13 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff.Elements
         public string? ID { get; set; }
         public int? X { get; set; }
         public int? Y { get; set; }
-        public byte key;
+        public byte type;
 
         public void Read(BinaryReader reader, bool binary, string? project)
         {
             if (binary == true)
             {
-                key = reader.ReadByte(); //51
+                type = reader.ReadByte();
                 ID = reader.ReadString();
                 X = reader.ReadInt32();
                 Y = reader.ReadInt32();
@@ -27,7 +27,10 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff.Elements
         {
             if (binary == true)
             {
-                Writer.Write(key);
+                Writer.Write(type);
+                Writer.Write(ID);
+                Writer.Write((byte)X);
+                Writer.Write((byte)Y);
             }
         }
     }

@@ -13,6 +13,9 @@ namespace FNAF_Engine_GameData
         public string? ID { get; private set; } //unused for now lol
         public GameOptions? Options { get; set; }
 
+        public List<Image>? ImageBank { get; set; } //general image bank lol
+        public List<Audio>? AudioBank { get; set; } //general audio bank
+
         //office stuff
         public OfficeOptions? OfficeSettings { get; set; }
 

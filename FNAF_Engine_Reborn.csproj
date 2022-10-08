@@ -160,6 +160,12 @@
     <Compile Include="UI\DiscordRPCSettings.Designer.cs">
       <DependentUpon>DiscordRPCSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Editors\ExpressionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Editors\ExpressionEditor.Designer.cs">
+      <DependentUpon>ExpressionEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Editors\extensionCreator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DiscordRPCSettings.resx">
       <DependentUpon>DiscordRPCSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Editors\ExpressionEditor.resx">
+      <DependentUpon>ExpressionEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Editors\extensionCreator.resx">
       <DependentUpon>extensionCreator.cs</DependentUpon>

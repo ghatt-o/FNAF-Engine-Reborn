@@ -19,7 +19,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             }
         }
 
-        public void Writer(BinaryWriter Writer, bool binary, string? project)
+        public void Write(BinaryWriter Writer, bool binary, string? project)
         {
             if (binary == true)
             {

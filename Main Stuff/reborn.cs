@@ -2376,35 +2376,8 @@ namespace FNAF_Engine_Reborn
             Menu_CodeEditor.Hide();
         }
 
-        private void MenuStart_CodeEditor_TextChanged(object sender, EventArgs e)
-        {
-            File.WriteAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt", MenuStart_CodeEditor.Text);
-        }
-
-        private void OnGameLoop_MenuEditor_CodeEditor_TextChanged(object sender, EventArgs e)
-        {
-            File.WriteAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt", OnGameLoop_MenuEditor_CodeEditor.Text);
-        }
-
         private void Menu_CodeEditor_VisibleChanged(object sender, EventArgs e)
         {
-
-
-            // //OLD CODE!!
-
-
-
-
-            try
-            {
-                MenuStart_CodeEditor.Text = File.ReadAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/onmenustart.txt");
-                OnGameLoop_MenuEditor_CodeEditor.Text = File.ReadAllText(Menu_Name_MenuCodeEditor_InfoLBL.Text + "/ongameloop.txt");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exc:" + ex.ToString());
-                MessageBox.Show("Warning: Some project data might've been corrupted!", "Corrupted Project", MessageBoxButtons.OK);
-            }
 
         }
 
@@ -2950,6 +2923,11 @@ namespace FNAF_Engine_Reborn
         private void Paint_UIEditor_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Every element you click from now will change its color to what you pick here.");
+        }
+
+        private void MenuCodeEditor_Code_Tree_Click(object sender, EventArgs e)
+        {
+            MenuCodeEditor_Code_Tree.Nodes.Clear();
         }
     }
 }

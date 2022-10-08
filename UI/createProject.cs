@@ -268,8 +268,6 @@ namespace FNAF_Engine_Reborn
             _ = Directory.CreateDirectory(projectPath + "/menus/" + Name + "/variables");
             _ = Directory.CreateDirectory(projectPath + "/menus/" + Name + "/events");
             File.WriteAllText(projectPath + "/menus/" + Name + "/name.txt", Name);
-            File.WriteAllText(projectPath + "/menus/" + Name + "/onmenustart.txt", "*If () Do");
-            File.WriteAllText(projectPath + "/menus/" + Name + "/ongameloop.txt", "*If not () Do");
         }
 
         private void gameStyleOptions_SelectedIndexChanged(object sender, EventArgs e)
