@@ -24,7 +24,6 @@ namespace FNAF_Engine_Reborn.UI.Editors
 
         private void OkBtn_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
