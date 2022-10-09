@@ -33,10 +33,10 @@ namespace FNAF_Engine_Game
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FNAF_Engine_Game));
             this.Error = new System.Windows.Forms.Panel();
-            this.Loading = new System.Windows.Forms.Panel();
-            this.LoadingIcon = new System.Windows.Forms.PictureBox();
             this.Description = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
+            this.Loading = new System.Windows.Forms.Panel();
+            this.LoadingIcon = new System.Windows.Forms.PictureBox();
             this.Office = new System.Windows.Forms.Panel();
             this.OfficeBackground = new System.Windows.Forms.PictureBox();
             this.Night_Start = new System.Windows.Forms.Panel();
@@ -65,25 +65,6 @@ namespace FNAF_Engine_Game
             this.Error.TabIndex = 2;
             this.Error.Visible = false;
             // 
-            // Loading
-            // 
-            this.Loading.BackColor = System.Drawing.Color.Black;
-            this.Loading.Controls.Add(this.LoadingIcon);
-            this.Loading.Location = new System.Drawing.Point(0, -7);
-            this.Loading.Name = "Loading";
-            this.Loading.Size = new System.Drawing.Size(1444, 920);
-            this.Loading.TabIndex = 2;
-            // 
-            // LoadingIcon
-            // 
-            //this.LoadingIcon.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.fnaf_loading;
-            this.LoadingIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.LoadingIcon.Location = new System.Drawing.Point(1392, 866);
-            this.LoadingIcon.Name = "LoadingIcon";
-            this.LoadingIcon.Size = new System.Drawing.Size(49, 50);
-            this.LoadingIcon.TabIndex = 0;
-            this.LoadingIcon.TabStop = false;
-            // 
             // Description
             // 
             this.Description.AutoSize = true;
@@ -106,6 +87,24 @@ namespace FNAF_Engine_Game
             this.Title.TabIndex = 2;
             this.Title.Text = "Title";
             // 
+            // Loading
+            // 
+            this.Loading.BackColor = System.Drawing.Color.Black;
+            this.Loading.Controls.Add(this.LoadingIcon);
+            this.Loading.Location = new System.Drawing.Point(0, -7);
+            this.Loading.Name = "Loading";
+            this.Loading.Size = new System.Drawing.Size(1444, 920);
+            this.Loading.TabIndex = 2;
+            // 
+            // LoadingIcon
+            // 
+            this.LoadingIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.LoadingIcon.Location = new System.Drawing.Point(1392, 866);
+            this.LoadingIcon.Name = "LoadingIcon";
+            this.LoadingIcon.Size = new System.Drawing.Size(49, 50);
+            this.LoadingIcon.TabIndex = 0;
+            this.LoadingIcon.TabStop = false;
+            // 
             // Office
             // 
             this.Office.BackColor = System.Drawing.Color.Black;
@@ -120,7 +119,7 @@ namespace FNAF_Engine_Game
             // OfficeBackground
             // 
             this.OfficeBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OfficeBackground.Location = new System.Drawing.Point(0, -1);
+            this.OfficeBackground.Location = new System.Drawing.Point(0, 0);
             this.OfficeBackground.Name = "OfficeBackground";
             this.OfficeBackground.Size = new System.Drawing.Size(1444, 921);
             this.OfficeBackground.TabIndex = 0;
@@ -224,11 +223,13 @@ namespace FNAF_Engine_Game
             this.Load += new System.EventHandler(this.FNAF_Engine_Game_Load_1);
             this.VisibleChanged += new System.EventHandler(this.FNAF_Engine_Game_VisibleChanged);
             this.Error.ResumeLayout(false);
+            this.Error.PerformLayout();
             this.Loading.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoadingIcon)).EndInit();
             this.Office.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OfficeBackground)).EndInit();
             this.Night_Start.ResumeLayout(false);
+            this.Night_Start.PerformLayout();
             this.ResumeLayout(false);
 
         }
