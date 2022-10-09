@@ -1,0 +1,11 @@
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF Engine Game.csproj.AssemblyReference.cache
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF Engine Game.csproj.SuggestedBindingRedirects.cache
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF_Engine_Game.Properties.Resources.resources
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF Engine Game.csproj.GenerateResource.cache
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF Engine Game.csproj.CoreCompileInputs.cache
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\bin\Release\FNAF Engine Game.exe.config
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\bin\Release\FNAF Engine Game.exe
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\bin\Release\FNAF Engine Game.pdb
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF_Engine_Game.FNAF_Engine_Game.resources
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF Engine Game.exe
+C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Game\obj\Release\FNAF Engine Game.pdb

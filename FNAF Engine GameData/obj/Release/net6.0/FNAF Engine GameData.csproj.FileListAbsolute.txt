@@ -1,0 +1,5 @@
+C:\Users\lily\Desktop\FNAF Engine Reborn\FNAF Engine GameData\obj\Release\net6.0\FNAF Engine GameData.csproj.AssemblyReference.cache
+C:\Users\lily\Desktop\FNAF Engine Reborn\FNAF Engine GameData\obj\Release\net6.0\FNAF Engine GameData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lily\Desktop\FNAF Engine Reborn\FNAF Engine GameData\obj\Release\net6.0\FNAF Engine GameData.AssemblyInfoInputs.cache
+C:\Users\lily\Desktop\FNAF Engine Reborn\FNAF Engine GameData\obj\Release\net6.0\FNAF Engine GameData.AssemblyInfo.cs
+C:\Users\lily\Desktop\FNAF Engine Reborn\FNAF Engine GameData\obj\Release\net6.0\FNAF Engine GameData.csproj.CoreCompileInputs.cache
