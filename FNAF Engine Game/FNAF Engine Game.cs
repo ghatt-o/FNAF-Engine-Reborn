@@ -112,8 +112,8 @@ namespace FNAF_Engine_Game
 
                 async void Menu_Start(object sender, EventArgs e)
                 {
-
                     //SCRIPTS!
+                    #region
                     string[] instructions = { };
                     string instructions_loop = "";
 
@@ -203,7 +203,7 @@ namespace FNAF_Engine_Game
                             }
                         }
                     }
-
+                    #endregion
                 }
 
                 void Menu_Load(object sender, EventArgs e)

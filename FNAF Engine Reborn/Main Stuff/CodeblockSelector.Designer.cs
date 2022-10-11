@@ -443,7 +443,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(290, 372);
+            this.button1.Location = new System.Drawing.Point(275, 372);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 104);
             this.button1.TabIndex = 44;
@@ -458,8 +458,8 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(485, 501);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Events);
             this.Controls.Add(this.Actions);
+            this.Controls.Add(this.Events);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

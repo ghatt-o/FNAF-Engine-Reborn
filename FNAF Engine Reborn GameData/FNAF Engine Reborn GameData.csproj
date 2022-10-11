@@ -53,6 +53,11 @@
     <Compile Include="BinaryData\MenuStuff\FNAF_Engine_Menu.cs" />
     <Compile Include="BinaryData\Options\GameOptions.cs" />
     <Compile Include="BinaryData\Options\OfficeOptions.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\Animations\Animation.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\Animations\AnimationFrame.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffectFrame.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffect.cs" />
+    <Compile Include="BinaryData\Stuff\Values\Variable.cs" />
     <Compile Include="GameData.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

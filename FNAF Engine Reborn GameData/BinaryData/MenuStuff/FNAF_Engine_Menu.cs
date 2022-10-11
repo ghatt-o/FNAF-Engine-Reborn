@@ -1,8 +1,6 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 {
@@ -39,33 +37,6 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             {
                 Writer.Write(Name);
                 Writer.Write(key);
-
-                if (key != 51)
-                {
-                    //goodbye decompilers
-                    Writer.Write(1);
-                    Writer.Write(new byte[1]);
-
-                    Writer.Write(1);
-                    Writer.Write(new byte[1]);
-
-                    Writer.Write((ulong)0);
-                    Writer.Write("HI YOU FELLOW DECOMPILER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-                    Writer.Write((ulong)0);
-                    Writer.Write("Gonna break your shit right here.");
-
-                    void KillDecompiler()
-                    {
-                        Writer.Write(0);
-                    }
-
-                    while(true)
-                    {
-                        await Task.Delay(1);
-                        KillDecompiler();
-                    }
-                }
 
                 BackgroundImage.Write(Writer);
                 BackgroundAudio.Write(Writer);

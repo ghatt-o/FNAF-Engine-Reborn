@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace FNAF_Engine_Reborn.Object_Editors
 {
@@ -121,7 +119,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     #region
                     int MenuCount = 0;
 
-                    foreach(var menu in Directory.GetDirectories(project + "/menus")) MenuCount++;
+                    foreach (var menu in Directory.GetDirectories(project + "/menus")) MenuCount++;
 
                     binWriter.Write(MenuCount);
 
@@ -213,7 +211,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                             binWriter.Write(funcsunhover.Length);
                             binWriter.Write(funcshold.Length);
 
-                            foreach(string f in funcs)
+                            foreach (string f in funcs)
                             {
                                 binWriter.Write(f);
                             }

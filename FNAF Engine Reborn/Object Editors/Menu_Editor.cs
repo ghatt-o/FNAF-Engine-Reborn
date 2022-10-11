@@ -21,7 +21,8 @@ namespace FNAF_Engine_Reborn.Object_Editors
         //public string Menu { get; set; }
         public void ShowActionEditor(string ID, string Menu)
         {
-
+            //wtf old code
+            //todo i guess
         }
         public void CreateText(string ID, string Menu)
         {
@@ -248,6 +249,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     try
                     {
                         Selected = true;
+                        Text.BorderStyle = BorderStyle.FixedSingle;
                         reborn.Element_Font_MenuEditor.Text = TextElement.FontName;
                         reborn.Element_ID_MenuEditor.Text = Text.Name;
                         reborn.Element_X_MenuEditor.Text = "X: " + Text.Location.X;
@@ -270,6 +272,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     try
                     {
                         Selected = false;
+                        Text.BorderStyle = BorderStyle.None;
                     }
                     catch (Exception)
                     {
@@ -350,16 +353,24 @@ namespace FNAF_Engine_Reborn.Object_Editors
             Panel Preview = reborn.MenuPreview;
             if (ImageElement.args == false)
             {
+                var width = 0;
+                var height = 0;
+
+                width = System.Drawing.Image.FromFile(Project + "/images/" + ImageElement.ID).Size.Width / 2;
+                height = System.Drawing.Image.FromFile(Project + "/images/" + ImageElement.ID).Size.Width / 2;
+
+                Size imgSize = new Size(width, height);
                 PictureBox Image = new PictureBox
                 {
                     Location = new Point(ImageElement.X, ImageElement.Y), // set location
                     BackColor = Color.Transparent,
-                    Size = System.Drawing.Image.FromFile(Project + "/images/" + ImageElement.ID).Size,
-                    BackgroundImageLayout = ImageLayout.None,
+                    Size = imgSize,
+                    BackgroundImageLayout = ImageLayout.Stretch,
                     BackgroundImage = System.Drawing.Image.FromFile(Project + "/images/" + ImageElement.ID),
                     Name = ImageElement.ID
                 }; //the menu editor image 
                 Image.Draggable(true);
+                Image.MouseLeave += Image_MouseLeave;
                 Image.Click += newImage_Select;
                 Image.Move += newImage_Move;
                 Image.MouseDoubleClick += Image_MouseDoubleClick;
@@ -432,6 +443,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 {
                     try
                     {
+                        Image.BorderStyle = BorderStyle.FixedSingle;
                         reborn.Element_ID_MenuEditor.Text = Image.Name;
                         reborn.Element_X_MenuEditor.Text = "X: " + Image.Location.X;
                         reborn.Element_Y_MenuEditor.Text = "Y: " + Image.Location.Y;
@@ -477,6 +489,10 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     {
 
                     }
+                }
+                void Image_MouseLeave(object sender, EventArgs e)
+                {
+                    Image.BorderStyle = BorderStyle.None;
                 }
             }
             else

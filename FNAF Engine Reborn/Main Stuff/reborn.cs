@@ -14,13 +14,12 @@ namespace FNAF_Engine_Reborn
     public partial class reborn : Form
     {
         public bool showProject;
-        public string Version = "pre-1.0.0";
+        public string Version = "0.9.4";
         public string Build_Version = "0_nr-ns_eb_lvn_jk";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
         internal bool _0_2C = true;
-        readonly bool lightmode = false;
         public bool inScriptEditor;
         string curMenuTag;
         public string script;
@@ -816,15 +815,6 @@ namespace FNAF_Engine_Reborn
 
         private void AssetManagerPanel_VisibleChanged(object sender, EventArgs e)
         {
-            if (_0_2C == true)
-            {
-                comboBox36.Items.Clear();
-                comboBox36.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
-            }
-            else
-            {
-
-            }
             plocation.Text = "Project Location: " + projecto;
             pname.Text = "Project Name: " + File.ReadAllText(projecto + "/name.txt");
             try
@@ -839,18 +829,7 @@ namespace FNAF_Engine_Reborn
 
             if (style == "standard")
             {
-                comboBox63.Hide(); //animatronic
-                comboBox62.Hide(); //office
-                comboBox60.Hide(); //cameras
-                comboBox58.Hide(); //minigame maker
-                comboBox39.Hide(); //cutscenes
-                comboBox38.Hide(); //script editor
-                label163.Hide();
-                label162.Hide();
-                label161.Hide();
-                label159.Hide();
-                label158.Hide();
-                label157.Hide();
+
             }
         }
 
@@ -2497,13 +2476,6 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private async void REBORNtitle_Click(object sender, EventArgs e)
-        {
-            //REBORNtitle.Image = Properties.Resources.Sunset_Creator_old;
-            //await Task.Delay(30);
-            //REBORNtitle.Image = Properties.Resources.Sunset_Creator;
-        }
-
         private void gamehourstextbox_TextChanged(object sender, EventArgs e)
         {
             if (_0_2C == true)
@@ -2759,7 +2731,7 @@ namespace FNAF_Engine_Reborn
 
         }
 
-        private async void Menus_KeyDown(object sender, KeyEventArgs e)
+        private void Menus_KeyDown(object sender, KeyEventArgs e)
         {
             if (Menus.SelectedNode != null)
             {
@@ -2922,12 +2894,75 @@ namespace FNAF_Engine_Reborn
 
         private void Paint_UIEditor_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Every element you click from now will change its color to what you pick here.");
+            MessageBox.Show("Every element you click from now on will change its color to what you pick here.");
         }
 
         private void MenuCodeEditor_Code_Tree_Click(object sender, EventArgs e)
         {
             MenuCodeEditor_Code_Tree.Nodes.Clear();
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            createShit.Hide();
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            textCreate_MenuEditor.Hide();
+        }
+
+        private void GoToEditor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (EditorList.SelectedItem.ToString())
+                {
+                    case "Game Info":
+                        buildSettingsPanelMoment.BringToFront();
+                        break;
+                    case "Menu Editor":
+                        menuEditorPanel.BringToFront();
+                        break;
+                    case "Office Editor":
+                        officeEditorPanel.BringToFront();
+                        break;
+                    case "Camera Editor":
+                        cameraEditorPanel.BringToFront();
+                        break;
+                    case "Animatronic Editor":
+                        animatronicEditorPNL2.BringToFront();
+                        break;
+                    case "Animation Editor":
+                        animationEditorPanel.BringToFront();
+                        break;
+                    case "Sound Editor":
+                        SoundEditorPanel.BringToFront();
+                        break;
+                    case "Script Editor":
+                        ScriptEditorPanel.BringToFront();
+                        break;
+                    case "Extensions":
+                        ExtensionsPanel.BringToFront();
+                        break;
+
+                    //exclusive  to fer
+                    case "Minigame Editor":
+                        MinigameMaker m = new MinigameMaker();
+                        m.ShowDialog();
+                        break;
+                    case "Cutscene Editor":
+                        cutsceneEditorPanel.BringToFront();
+                        break;
+                    case "Static Effect Editor":
+                        staticeffecteditor.BringToFront();
+                        break;
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Something went wrong!");
+            }
         }
     }
 }
