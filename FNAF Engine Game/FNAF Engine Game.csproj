@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Elements\TextElement.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FNAF Engine Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FNAF Engine Reborn GameData\FNAF Engine Reborn GameData.csproj">
+      <Project>{784349ec-ecdc-4155-9490-5715d942da6b}</Project>
+      <Name>FNAF Engine Reborn GameData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

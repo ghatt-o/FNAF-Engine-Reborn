@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FNAF_Engine_GameData;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace FNAF_Engine_Game
     public partial class FNAF_Engine_Game : Form
     {
         //private readonly reborn reborn;
+        public GameData data { get; private set; }
+
         private string project;
         string curMenu;
         bool open = true;
@@ -30,12 +33,23 @@ namespace FNAF_Engine_Game
             while (true)
             {
                 await Task.Delay(1);
-                curNight = Convert.ToInt32(File.ReadAllText(project + "/data.txt").Split(':')[1].Split(',')[0]);
+                foreach (var val in data.DataValues)
+                {
+                    if (val.Key == "night")
+                    {
+                        curNight = (int)val.Value;
+                    }
+                }
             }
         }
 
-        private async void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
+        private void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
         {
+            GameData newdata = new GameData();
+            newdata.Read(new BinaryReader(new FileStream("data.ferdata", FileMode.Open)), true, "");
+
+            data = newdata;
+
             this.DoubleBuffered = true;
             this.Refresh();
             //project = reborn.projecto;
@@ -51,8 +65,8 @@ namespace FNAF_Engine_Game
         }
         private void Load_Game()
         {
-            this.Text = File.ReadAllText(project + "/game.txt");
-            if (File.ReadAllText(project + "/options.txt").StartsWith("fullscreen=false"))
+            this.Text = data.GameName;
+            if (data.Options.Fullscreen == true)
             {
                 this.MaximizeBox = true;
                 this.Size = new Size(1280, 720);
