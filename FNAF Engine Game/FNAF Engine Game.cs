@@ -77,25 +77,22 @@ namespace FNAF_Engine_Game
             Load_Menus();
         }
 
-        private async void Load_Menus()
+        private void Load_Menus()
         {
-            string[] menus = Directory.GetDirectories(project + "/menus/");
-            foreach (string Menu in menus)
+            foreach (var Menu in data.Menus)
             {
-                string MenuName = File.ReadAllText(Menu + "/name.txt");
-
                 Panel menu_panel = new Panel
                 {
                     Size = Size,
-                    Name = MenuName,
+                    Name = Menu.Name,
                     BackgroundImageLayout = ImageLayout.Stretch,
                     BackColor = Color.Black
                 };
 
                 try
                 {
-                    await Task.Delay(100);
-                    menu_panel.BackgroundImage = Image.FromFile(project + "/images/" + File.ReadAllText(project + $"/menus/{menu_panel.Name}/bg.txt"));
+                    File.WriteAllBytes(Path.GetTempPath() + "/" + Menu.BackgroundImage.Name, Menu.BackgroundImage.Data);
+                    menu_panel.BackgroundImage = Image.FromFile(Path.GetTempPath() + "/" + Menu.BackgroundImage.Name);
                 }
                 catch (FileNotFoundException)
                 {
@@ -103,7 +100,7 @@ namespace FNAF_Engine_Game
                 }
                 catch (OutOfMemoryException)
                 {
-                    Console.WriteLine($"Failed to load menu {menu_panel.Name} image: Bad file");
+                    Console.WriteLine($"Failed to load menu {menu_panel.Name} image: Bad file!");
                 }
 
                 menu_panel.Visible = false;
@@ -112,7 +109,7 @@ namespace FNAF_Engine_Game
 
                 this.Controls.Add(menu_panel);
 
-                if (MenuName == "Main")
+                if (Menu.Name == "Main")
                 {
                     menu_panel.Tag = 1;
                     menu_panel.BringToFront();
@@ -134,7 +131,7 @@ namespace FNAF_Engine_Game
                     //ON MENU START
                     try
                     {
-                        instructions = File.ReadAllLines(project + "/menus/" + MenuName + "/onmenustart.txt");
+                        instructions = File.ReadAllLines(project + "/menus/" + Menu.Name + "/onmenustart.txt");
                     }
                     catch (Exception)
                     {
@@ -178,7 +175,7 @@ namespace FNAF_Engine_Game
 
                     try
                     {
-                        instructions_loop = File.ReadAllText(project + "/menus/" + MenuName + "/ongameloop.txt");
+                        instructions_loop = File.ReadAllText(project + "/menus/" + Menu.Name + "/ongameloop.txt");
                     }
                     catch (Exception)
                     {
@@ -224,7 +221,7 @@ namespace FNAF_Engine_Game
                 {
                     try
                     {
-                        //System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(File.ReadAllText(project + "/menus/" + MenuName + "/audio.txt"));
+                        //System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(File.ReadAllText(project + "/menus/" + Menu.Name + "/audio.txt"));
                         //while (true)
                         //{
                         //    await Task.Delay(1);
@@ -232,17 +229,16 @@ namespace FNAF_Engine_Game
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Could not play " + MenuName + "'s background audio.");
+                        Console.WriteLine("Could not play " + Menu.Name + "'s background audio.");
                     }
-                    string[] texts = Directory.GetDirectories(project + $"/menus/{MenuName}/text_elements/");
-                    string[] images = Directory.GetDirectories(project + $"/menus/{MenuName}/image_elements/");
+                    string[] texts = Directory.GetDirectories(project + $"/menus/{Menu.Name}/text_elements/");
+                    string[] images = Directory.GetDirectories(project + $"/menus/{Menu.Name}/image_elements/");
                     menu_panel.Controls.Clear();
                     foreach (string text in texts)
                     {
                         string args = File.ReadAllText(text + "/args.txt");
                         if (args == "False")
                         {
-
                             Label Text = new Label();
 
                             menu_panel.Controls.Add(Text);
@@ -517,8 +513,8 @@ namespace FNAF_Engine_Game
                         try
                         {
                             string[] instructions = instruction.Split('"');
-                            Directory.CreateDirectory(project + "/menus/" + MenuName + "/variables/" + instructions[1]);
-                            File.WriteAllText(project + "/menus/" + MenuName + "/variables/" + instructions[1], instructions[3]);
+                            Directory.CreateDirectory(project + "/menus/" + Menu.Name + "/variables/" + instructions[1]);
+                            File.WriteAllText(project + "/menus/" + Menu.Name + "/variables/" + instructions[1], instructions[3]);
                         }
                         catch (Exception)
                         {
@@ -544,37 +540,37 @@ namespace FNAF_Engine_Game
                             switch (param)
                             {
                                 case "=":
-                                    if (File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) == value)
+                                    if (File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable) == value)
                                     {
                                         RunStandardScript(block);
                                     }
                                     break;
                                 case "<":
-                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) < Convert.ToInt32(value))
+                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable)) < Convert.ToInt32(value))
                                     {
                                         RunStandardScript(block);
                                     }
                                     break;
                                 case "<=":
-                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) <= Convert.ToInt32(value))
+                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable)) <= Convert.ToInt32(value))
                                     {
                                         RunStandardScript(block);
                                     }
                                     break;
                                 case ">":
-                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) > Convert.ToInt32(value))
+                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable)) > Convert.ToInt32(value))
                                     {
                                         RunStandardScript(block);
                                     }
                                     break;
                                 case ">=":
-                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable)) >= Convert.ToInt32(value))
+                                    if (Convert.ToInt32(File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable)) >= Convert.ToInt32(value))
                                     {
                                         RunStandardScript(block);
                                     }
                                     break;
                                 case "<>":
-                                    if (File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) != value || File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable) == null)
+                                    if (File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable) != value || File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable) == null)
                                     {
                                         RunStandardScript(block);
                                     }
@@ -612,7 +608,7 @@ namespace FNAF_Engine_Game
                                 string variable_args = instructions[2].Split('%')[1];
                                 string variable = variable_args.Split('(', ')')[1];
 
-                                menu_panel.Controls[instructions[1]].Text = File.ReadAllText(project + "/menus/" + MenuName + "/variables/" + variable);
+                                menu_panel.Controls[instructions[1]].Text = File.ReadAllText(project + "/menus/" + Menu.Name + "/variables/" + variable);
                             }
                             else
                             {

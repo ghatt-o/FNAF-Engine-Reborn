@@ -4,10 +4,10 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff.Elements
 {
     public class MenuElement
     {
+        public byte type { get; set; }
         public string ID { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
-        public byte type;
 
         public void Read(BinaryReader reader, bool binary, string project)
         {
@@ -25,8 +25,8 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff.Elements
             {
                 Writer.Write(type);
                 Writer.Write(ID);
-                Writer.Write((byte)X);
-                Writer.Write((byte)Y);
+                Writer.Write(X);
+                Writer.Write(Y);
             }
         }
     }

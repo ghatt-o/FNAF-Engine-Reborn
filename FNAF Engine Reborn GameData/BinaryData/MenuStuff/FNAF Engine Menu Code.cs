@@ -19,10 +19,10 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         {
             if (binary == true)
             {
-                Writer.Write(Lines);
+                //Writer.Write(Lines);
                 foreach (string CodeLine in Code)
                 {
-                    Writer.Write(CodeLine);
+                    //Writer.Write(CodeLine);
                 }
             }
         }

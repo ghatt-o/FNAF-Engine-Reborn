@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
+using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using System.Collections.Generic;
 using System.IO;
 
@@ -11,7 +12,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         public string Name { get; set; }
         public Binaries.Image BackgroundImage { get; set; }
         public Binaries.Audio BackgroundAudio { get; set; }
-        public List<Binaries.Image> StaticEffect { get; set; }
+        public StaticEffect StaticEffect { get; set; }
 
         public FNAF_Engine_Menu_Code OnMenuStart_Code { get; set; }
         public FNAF_Engine_Menu_Code OnGameLoop_Code { get; set; }
@@ -23,16 +24,27 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             if (binary == true)
             {
                 Name = reader.ReadString();
-                key = reader.ReadByte(); //rekt decompilers
+                key = reader.ReadByte();
 
-                if (key == 51) //always update lmao i'm destroying them
+                BackgroundImage.Read(reader, true, null, null);
+                BackgroundAudio.Read(reader, true, null, null);
+
+                StaticEffect.Read(reader, true, null);
+
+                reader.ReadInt32();
+                reader.ReadInt32();
+
+                var ec = reader.ReadInt32();
+                for(int i = 0; i< ec; i++)
                 {
-
+                    MenuElement ele = new MenuElement();
+                    ele.Read(reader, true, null);
+                    Elements.Add(ele);
                 }
             }
         }
-        public async void Write(BinaryWriter Writer, bool binary, string project)
-        {
+            public async void Write(BinaryWriter Writer, bool binary, string project)
+            {
             if (binary == true)
             {
                 Writer.Write(Name);
@@ -41,16 +53,15 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 BackgroundImage.Write(Writer);
                 BackgroundAudio.Write(Writer);
 
-                Writer.Write((ulong)StaticEffect.Count);
-                foreach (Binaries.Image image in StaticEffect)
-                {
-                    image.Write(Writer);
-                }
+                StaticEffect.Write(Writer, true, null);
 
-                OnMenuStart_Code.Write(Writer, true, null);
-                OnGameLoop_Code.Write(Writer, true, null);
+                //OnMenuStart_Code.Write(Writer, true, null);
+                //OnGameLoop_Code.Write(Writer, true, null);
+                //for now 0
+                Writer.Write(0);
+                Writer.Write(0);
 
-                Writer.Write((ulong)Elements.Count);
+                Writer.Write(Elements.Count);
                 foreach (var element in Elements)
                 {
                     element.Write(Writer, true, null);

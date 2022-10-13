@@ -49,6 +49,7 @@
     <Compile Include="Elements\TextElement.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FER Game.cs" />
     <Compile Include="FNAF Engine Game.cs">
       <SubType>Form</SubType>
     </Compile>

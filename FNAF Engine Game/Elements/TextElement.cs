@@ -5,6 +5,8 @@ namespace FNAF_Engine_Game.Elements
 {
     public class TextElement : Label
     {
+        public short type;
+
         public string FontName
         {
             get

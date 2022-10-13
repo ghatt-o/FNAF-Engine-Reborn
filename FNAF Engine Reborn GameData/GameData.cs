@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_GameData.BinaryData.Binaries;
+using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_GameData.BinaryData.Options;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
@@ -13,7 +14,7 @@ namespace FNAF_Engine_GameData
         public string _header { get; set; }
         public byte _key { get; set; }
 
-       public string Name { get; set; }
+        public string Name { get; set; }
         public string GameName { get; set; }
 
         public string ID { get; private set; } //unused for now lol
@@ -31,8 +32,8 @@ namespace FNAF_Engine_GameData
         //misc
         public List<Animation> Animations { get; set; }
         public List<StaticEffect> StaticEffects { get; set; }
-
-
+        //game
+        public List<FNAF_Engine_Menu> Menus { get; set; }
 
         public void Write(BinaryWriter Writer, bool binary, string projectpath)
         {
@@ -40,7 +41,7 @@ namespace FNAF_Engine_GameData
             {
                 Writer.Write(_header);
                 Writer.Write(_key);
-                
+
                 Writer.Write(Name);
                 Writer.Write(GameName);
                 //options
@@ -155,13 +156,13 @@ namespace FNAF_Engine_GameData
                 var animc = reader.ReadInt32();
                 var sc = reader.ReadInt32();
 
-                for(int i = 0; i < animc; i++)
+                for (int i = 0; i < animc; i++)
                 {
                     Animation anim = new Animation();
                     anim.Read(reader, true, "");
                     Animations.Add(anim);
                 }
-                for(int i = 0; i < sc; i++)
+                for (int i = 0; i < sc; i++)
                 {
                     StaticEffect se = new StaticEffect();
                     se.Read(reader, false, "");
