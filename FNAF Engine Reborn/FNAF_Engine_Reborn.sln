@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNAF_Engine_Reborn", "FNAF_Engine_Reborn.csproj", "{ED0D87C9-3DE8-4F0D-9E2F-C76EB6962470}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNAF Engine Game", "..\FNAF Engine Game\FNAF Engine Game.csproj", "{44420BD0-10FA-47A2-95CF-77C50924C5F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{784349EC-ECDC-4155-9490-5715D942DA6B} = {784349EC-ECDC-4155-9490-5715D942DA6B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNAF Engine Reborn GameData", "..\FNAF Engine Reborn GameData\FNAF Engine Reborn GameData.csproj", "{784349EC-ECDC-4155-9490-5715D942DA6B}"
 EndProject

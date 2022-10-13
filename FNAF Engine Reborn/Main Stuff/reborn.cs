@@ -15,7 +15,7 @@ namespace FNAF_Engine_Reborn
     {
         public bool showProject;
         public string Version = "0.9.4";
-        public string Build_Version = "0_nr-ns_eb_lvn_jk";
+        public string Build_Version = "b_o_w4r1";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -2959,7 +2959,7 @@ namespace FNAF_Engine_Reborn
                         break;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Something went wrong!");
             }
