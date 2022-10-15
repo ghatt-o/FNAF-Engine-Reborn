@@ -21,7 +21,7 @@ namespace FNAF_Engine_GameData
 
         public GameOptions Options { get; set; }
         public OfficeOptions OfficeSettings { get; set; }
-        public ulong MenuSettings { get; set; } //soon todo idfk
+        public ulong MenuSettings { get; set; } //todo
 
         public List<Variable> DataValues { get; set; }
         public List<Variable> Variables { get; set; }
@@ -99,6 +99,15 @@ namespace FNAF_Engine_GameData
                 }
                 #endregion
 
+                //Menus
+                Writer.Write(Menus.Count);
+                #region
+                foreach (var m in Menus)
+                {
+                    m.Write(Writer, true, null);
+                }
+                #endregion
+
 
             }
             else
@@ -119,7 +128,7 @@ namespace FNAF_Engine_GameData
 
                 Options.Read(reader, true, "");
                 OfficeSettings.Read(reader, true, null);
-                MenuSettings = reader.ReadUInt64(); //menu settings
+                MenuSettings = reader.ReadUInt64(); //todo menu settings
 
                 var datavalc = reader.ReadInt32();
                 var VARc = reader.ReadInt32();
@@ -169,10 +178,30 @@ namespace FNAF_Engine_GameData
                     StaticEffects.Add(se);
                 }
 
-                //finally wtf
+
+                var menuCount = reader.ReadInt32();
+                for (int i = 0; i < menuCount; i++)
+                {
+                    FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+                    menu.Read(reader, true, null);
+                    Menus.Add(menu);
+                }
+
+
+
             }
             else
             {
+                Name = File.ReadAllText(projectpath + "/name.txt");
+
+                //ID = File.ReadAllText(projectpath + "/gameid.txt");
+                GameName = File.ReadAllText(projectpath + "/game.txt");
+
+
+                Options.Read(null, false, projectpath);
+                OfficeSettings.Read(null, false, projectpath);
+                MenuSettings = 0;
+
 
             }
         }

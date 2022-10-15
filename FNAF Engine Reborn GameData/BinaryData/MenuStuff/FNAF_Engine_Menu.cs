@@ -19,32 +19,8 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
         public List<MenuElement> Elements { get; set; }
 
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Write(BinaryWriter Writer, bool binary, string project)
         {
-            if (binary == true)
-            {
-                Name = reader.ReadString();
-                key = reader.ReadByte();
-
-                BackgroundImage.Read(reader, true, null, null);
-                BackgroundAudio.Read(reader, true, null, null);
-
-                StaticEffect.Read(reader, true, null);
-
-                reader.ReadInt32();
-                reader.ReadInt32();
-
-                var ec = reader.ReadInt32();
-                for(int i = 0; i< ec; i++)
-                {
-                    MenuElement ele = new MenuElement();
-                    ele.Read(reader, true, null);
-                    Elements.Add(ele);
-                }
-            }
-        }
-            public async void Write(BinaryWriter Writer, bool binary, string project)
-            {
             if (binary == true)
             {
                 Writer.Write(Name);
@@ -66,6 +42,38 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 {
                     element.Write(Writer, true, null);
                 }
+            }
+            else
+            {
+                //todo project writing
+            }
+        }
+        public void Read(BinaryReader reader, bool binary, string project)
+        {
+            if (binary == true)
+            {
+                Name = reader.ReadString();
+                key = reader.ReadByte();
+
+                BackgroundImage.Read(reader, true, null, null);
+                BackgroundAudio.Read(reader, true, null, null);
+
+                StaticEffect.Read(reader, true, null);
+
+                reader.ReadInt32();
+                reader.ReadInt32();
+
+                var ec = reader.ReadInt32();
+                for (int i = 0; i < ec; i++)
+                {
+                    MenuElement ele = new MenuElement();
+                    ele.Read(reader, true, null);
+                    Elements.Add(ele);
+                }
+            }
+            else
+            {
+                //project reading todo
             }
         }
     }
