@@ -38,7 +38,6 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                             break;
                         default:
                             throw new KeyNotFoundException(str);
-                            break;
                     }
                 }
             }

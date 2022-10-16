@@ -10,16 +10,16 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         public byte key;
 
         public string Name { get; set; }
-        public Binaries.Image BackgroundImage { get; set; }
-        public Binaries.Audio BackgroundAudio { get; set; }
-        public StaticEffect StaticEffect { get; set; }
+        public Binaries.Image BackgroundImage { get; set; } = null;
+        public Binaries.Audio BackgroundAudio { get; set; } = null;
+        public StaticEffect StaticEffect { get; set; } = null;
 
         public FNAF_Engine_Menu_Code OnMenuStart_Code { get; set; }
         public FNAF_Engine_Menu_Code OnGameLoop_Code { get; set; }
 
         public List<MenuElement> Elements { get; set; }
 
-        public void Write(BinaryWriter Writer, bool binary, string project)
+        public void Write(BinaryWriter Writer, bool binary, string menupath, string project)
         {
             if (binary == true)
             {
@@ -45,10 +45,19 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             }
             else
             {
-                //todo project writing
+                //Start working on menu writing
+                File.WriteAllText(menupath + "/name.txt", Name);
+                if (BackgroundImage != null)
+                {
+                    File.WriteAllText(menupath + "/bg.txt", BackgroundImage.Name);
+                }
+                if (BackgroundAudio != null)
+                {
+                    File.WriteAllText(menupath + "/audio.txt", project + "/sounds/" + BackgroundAudio.Name);
+                }
             }
         }
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Read(BinaryReader reader, bool binary, string menupath, string project)
         {
             if (binary == true)
             {
@@ -73,7 +82,10 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             }
             else
             {
-                //project reading todo
+                //Start working on menu reading
+                Name = File.ReadAllText(menupath + "/name.txt");
+
+                //TODO: Background Image and Audio
             }
         }
     }

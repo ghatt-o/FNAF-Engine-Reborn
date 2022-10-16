@@ -1589,7 +1589,7 @@ namespace FNAF_Engine_Reborn
                             string png = p.SafeFileName;
                             Import_Files.CreateSprite(filePath, png, projecto);
                             File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", png);
-                            officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
+                            //OfficePreviewBG.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
                         }
                     }
                     catch (Exception)
@@ -1607,7 +1607,25 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     string image = File.ReadAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt");
-                    officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + image);
+                    var img = Image.FromFile(projecto + "/images/" + image);
+                    if (img.Width <= 1280 && img.Height <= 720)
+                    {
+                        //OfficePreviewBG.BackgroundImageLayout = ImageLayout.Stretch;
+                        //OfficePreviewBG.BackgroundImage = img;
+                    }
+                    else
+                    {
+                        if (checkBox24.Checked == false)
+                        {
+                            //OfficePreviewBG.BackgroundImageLayout = ImageLayout.Stretch;
+                            //OfficePreviewBG.BackgroundImage = img;
+                        }
+                        else
+                        {
+                            //OfficePreviewBG.BackgroundImage = img;
+                            //OfficePreviewBG.BackgroundImageLayout = ImageLayout.None;
+                        }
+                    }
                 }
                 catch (Exception)
                 {
@@ -1975,7 +1993,7 @@ namespace FNAF_Engine_Reborn
                     options[6] = "perspective=true";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
-                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                    //OfficePreviewBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
                 }
                 else
                 {
@@ -1984,7 +2002,7 @@ namespace FNAF_Engine_Reborn
                     options[6] = "perspective=false";
                     string newoptions = string.Join(",", options);
                     File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
-                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    //OfficePreviewBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 }
             }
         }
@@ -2713,11 +2731,13 @@ namespace FNAF_Engine_Reborn
         {
             this.menu.Show();
             this.menu.BringToFront();
+            this.menu.BringToFront();
         }
 
         private void label71_Click(object sender, EventArgs e)
         {
             this.menu.Show();
+            this.menu.BringToFront();
             this.menu.BringToFront();
         }
 
@@ -2963,6 +2983,24 @@ namespace FNAF_Engine_Reborn
             {
                 MessageBox.Show("Something went wrong!");
             }
+        }
+
+        private void gamesettings_menubgcolor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.ShowDialog();
+
+            File.WriteAllText(projecto + "/menus/settings.txt", colorDialog.Color.R + "," + colorDialog.Color.G + "," + colorDialog.Color.B);
+        }
+
+        private void ScrollLeft_Office_MouseDown(object sender, MouseEventArgs e)
+        {
+            //OfficePreviewBG.Location = new Point(OfficePreviewBG.Location.X - 5, OfficePreviewBG.Location.Y);
+        }
+
+        private void ScrollRight_Office_MouseDown(object sender, MouseEventArgs e)
+        {
+            //OfficePreviewBG.Location = new Point(OfficePreviewBG.Location.X + 5, OfficePreviewBG.Location.Y);
         }
     }
 }

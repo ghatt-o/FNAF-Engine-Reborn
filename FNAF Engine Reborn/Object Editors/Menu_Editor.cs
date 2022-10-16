@@ -81,6 +81,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 Text.Leave += newText_Leave;
                 Text.MouseLeave += newText_Move;
                 Text.MouseDoubleClick += Text_MouseDoubleClick;
+                Text.MouseHover += Text_MouseHover;
 
 
                 reborn.Element_Text_MenuEditor.TextChanged += TextChanged;
@@ -94,7 +95,10 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 reborn.MenuEditor_CodeEditorUnhover.TextChanged += CodeUnhoverChanged;
                 reborn.MenuEditor_CodeEditorHold.TextChanged += CodeHoldChanged;
 
-
+                void Text_MouseHover(object sender, EventArgs e)
+                {
+                    Text.BorderStyle = BorderStyle.FixedSingle;
+                }
                 void CodeClickChanged(object sender, EventArgs e)
                 {
                     try
@@ -249,7 +253,6 @@ namespace FNAF_Engine_Reborn.Object_Editors
                     try
                     {
                         Selected = true;
-                        Text.BorderStyle = BorderStyle.FixedSingle;
                         reborn.Element_Font_MenuEditor.Text = TextElement.FontName;
                         reborn.Element_ID_MenuEditor.Text = Text.Name;
                         reborn.Element_X_MenuEditor.Text = "X: " + Text.Location.X;
@@ -283,6 +286,7 @@ namespace FNAF_Engine_Reborn.Object_Editors
                 {
                     try
                     {
+                        Text.BorderStyle = BorderStyle.None;
                         TextElement.X = Text.Location.X;
                         TextElement.Y = Text.Location.Y;
                         RewriteTextData(Menu, TextElement);

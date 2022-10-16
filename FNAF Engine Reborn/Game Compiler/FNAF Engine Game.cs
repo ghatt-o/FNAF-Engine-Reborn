@@ -278,7 +278,7 @@ namespace FNAF_Engine_Reborn
                             string fontname = File.ReadAllText(Path + "/font.txt");
                             string fontsize_string = File.ReadAllText(Path + "/fontsize.txt");
 
-                            int fontsize = Convert.ToInt32(fontsize_string) + 20;
+                            int fontsize = Convert.ToInt32(fontsize_string) + 25;
 
                             FontFamily fontfamily;
 
@@ -362,38 +362,24 @@ namespace FNAF_Engine_Reborn
                             menu_panel.Show();
 
                             string Path = image;
-                            int X = Convert.ToInt32(File.ReadAllText(Path + "/x.txt"));
-                            int Y = Convert.ToInt32(File.ReadAllText(Path + "/y.txt"));
+                            double X = Convert.ToInt32(File.ReadAllText(Path + "/x.txt"));
+                            double Y = Convert.ToInt32(File.ReadAllText(Path + "/y.txt"));
                             //X
-                            if (X < 190)
-                            {
-                                X += 70;
-                            }
-                            else if (X >= 190 && X < 285)
-                            {
-                                X += 400;
-                            }
-                            else if (X >= 285)
-                            {
-                                X += 650;
-                            }
-                            //Y
-                            if (Y < 111)
-                            {
-                                Y += 50;
-                            }
-                            else if (Y >= 111 && Y < 165)
-                            {
-                                Y += 250;
-                            }
-                            else if (Y >= 165)
-                            {
-                                Y += 470;
-                            }
+                            X = X * 2.13333333;
+                            Y = Y * 2.13649852;
+                            string xS = X.ToString();
+                            string yS = Y.ToString();
+                            if (xS.Contains(".5") || xS.Contains(".6") || xS.Contains(".7") || xS.Contains(".8") || xS.Contains(".9")) X += 0.4;
+                            if (yS.Contains(".5") || yS.Contains(".6") || yS.Contains(".7") || yS.Contains(".8") || yS.Contains(".9")) Y += 0.4;
                             string ID = File.ReadAllText(Path + "/id.txt");
 
-                            Sprite.Location = new Point(X, Y);
-                            Sprite.Size = Image.FromFile(project + "/images/" + ID).Size;
+                            Sprite.Location = new Point(Convert.ToInt32(X), Convert.ToInt32(Y));
+                            var spritex = Image.FromFile(project + "/images/" + ID).Size.Width;
+                            var spritey = Image.FromFile(project + "/images/" + ID).Size.Height;
+
+                            spritex = spritex * 2;
+                            spritey = spritey * 2;
+                            Sprite.Size = new Size(spritex, spritey);
                             Sprite.BackColor = Color.Transparent;
                             Sprite.BackgroundImageLayout = ImageLayout.None;
                             Sprite.BackgroundImage = Image.FromFile(project + "/images/" + ID);
