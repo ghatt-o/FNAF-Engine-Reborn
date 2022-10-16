@@ -74,9 +74,16 @@ namespace FNAF_Engine_Reborn
                 {
                     Size = Size,
                     Name = MenuName,
-                    BackgroundImageLayout = ImageLayout.Stretch,
-                    BackColor = Color.Black
+                    BackgroundImageLayout = ImageLayout.Stretch
                 };
+                try
+                {
+                    menu_panel.BackColor = Color.FromArgb(Convert.ToByte(File.ReadAllText(project + "/menus/settings.txt").Split(',')[0]), Convert.ToByte(File.ReadAllText(project + "/menus/settings.txt").Split(',')[1]), Convert.ToByte(File.ReadAllText(project + "/menus/settings.txt").Split(',')[2]));
+                }
+                catch (Exception)
+                {
+                    menu_panel.BackColor = Color.Black;
+                }
 
                 try
                 {

@@ -21,7 +21,7 @@ namespace FNAF_Engine_GameData
 
         public GameOptions Options { get; set; }
         public OfficeOptions OfficeSettings { get; set; }
-        public ulong MenuSettings { get; set; } //todo
+        public System.Drawing.Color MenuSettings { get; set; } //todo
 
         public List<Variable> DataValues { get; set; }
         public List<Variable> Variables { get; set; }
@@ -48,7 +48,9 @@ namespace FNAF_Engine_GameData
                 #region
                 Options.Write(Writer, true, null);
                 OfficeSettings.Write(Writer, true, null);
-                Writer.Write(MenuSettings); //todo menu settings
+                Writer.Write(MenuSettings.R);
+                Writer.Write(MenuSettings.G);
+                Writer.Write(MenuSettings.B);
                 #endregion
 
                 //data and vars
@@ -128,7 +130,10 @@ namespace FNAF_Engine_GameData
 
                 Options.Read(reader, true, "");
                 OfficeSettings.Read(reader, true, null);
-                MenuSettings = reader.ReadUInt64(); //todo menu settings
+                var r = reader.ReadByte();
+                var g = reader.ReadByte();
+                var b = reader.ReadByte();
+                MenuSettings = System.Drawing.Color.FromArgb(r, g, b);
 
                 var datavalc = reader.ReadInt32();
                 var VARc = reader.ReadInt32();
@@ -200,9 +205,7 @@ namespace FNAF_Engine_GameData
 
                 Options.Read(null, false, projectpath);
                 OfficeSettings.Read(null, false, projectpath);
-                MenuSettings = 0;
-
-
+                MenuSettings = System.Drawing.Color.FromArgb(0, 0, 0);
             }
         }
     }
