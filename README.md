@@ -8,4 +8,4 @@ Visual Studio 2019/2022
 
 # How to Build
 
-Go to the solution file in FNAF Engine Reborn folder and click "Build Solution". There shouldn't be any issues!
+Just click "Build Solution". There shouldn't be any issues!
