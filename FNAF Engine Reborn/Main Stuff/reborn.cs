@@ -2731,11 +2731,13 @@ namespace FNAF_Engine_Reborn
         {
             this.menu.Show();
             this.menu.BringToFront();
+            this.menu.BringToFront();
         }
 
         private void label71_Click(object sender, EventArgs e)
         {
             this.menu.Show();
+            this.menu.BringToFront();
             this.menu.BringToFront();
         }
 

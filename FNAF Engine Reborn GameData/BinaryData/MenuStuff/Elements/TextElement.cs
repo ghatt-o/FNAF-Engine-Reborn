@@ -1,7 +1,6 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 
 namespace MenuStuff.Elements
 {

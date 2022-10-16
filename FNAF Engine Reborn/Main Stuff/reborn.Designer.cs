@@ -614,7 +614,7 @@ namespace FNAF_Engine_Reborn
             this.label94.BackColor = System.Drawing.Color.Transparent;
             this.label94.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label94.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label94.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label94.Location = new System.Drawing.Point(94, -1);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(53, 63);
@@ -639,7 +639,7 @@ namespace FNAF_Engine_Reborn
             this.label119.BackColor = System.Drawing.Color.Transparent;
             this.label119.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label119.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label119.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label119.Location = new System.Drawing.Point(48, -2);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(67, 59);
@@ -666,7 +666,7 @@ namespace FNAF_Engine_Reborn
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label10.Location = new System.Drawing.Point(382, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 60);
@@ -687,7 +687,7 @@ namespace FNAF_Engine_Reborn
             this.label71.BackColor = System.Drawing.Color.Transparent;
             this.label71.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label71.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label71.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label71.Location = new System.Drawing.Point(195, -2);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(50, 60);
@@ -720,7 +720,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button75.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button75.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button75.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button75.ForeColor = System.Drawing.SystemColors.Control;
             this.button75.Location = new System.Drawing.Point(37, 160);
             this.button75.Name = "button75";
@@ -745,7 +745,7 @@ namespace FNAF_Engine_Reborn
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label21.Location = new System.Drawing.Point(146, -2);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(50, 60);
@@ -758,7 +758,7 @@ namespace FNAF_Engine_Reborn
             this.label165.BackColor = System.Drawing.Color.Transparent;
             this.label165.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label165.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label165.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label165.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label165.Location = new System.Drawing.Point(-1, -2);
             this.label165.Name = "label165";
             this.label165.Size = new System.Drawing.Size(67, 62);
@@ -790,7 +790,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label166.BackColor = System.Drawing.SystemColors.Control;
             this.label166.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label166.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label166.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label166.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label166.Location = new System.Drawing.Point(213, 6);
             this.label166.Name = "label166";
@@ -1688,11 +1688,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.Location = new System.Drawing.Point(801, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 25);
+            this.label9.Size = new System.Drawing.Size(104, 20);
             this.label9.TabIndex = 53;
             this.label9.Text = "Camera States";
             // 
@@ -1738,12 +1738,12 @@ namespace FNAF_Engine_Reborn
             // 
             this.comboBox4.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.comboBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(215, 8);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(140, 33);
+            this.comboBox4.Size = new System.Drawing.Size(140, 28);
             this.comboBox4.TabIndex = 1;
             this.comboBox4.Text = "Camera List";
             // 
@@ -3410,7 +3410,7 @@ namespace FNAF_Engine_Reborn
             this.X_Leave_MenuCodeEditor.BackColor = System.Drawing.Color.Gray;
             this.X_Leave_MenuCodeEditor.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.lovely1;
             this.X_Leave_MenuCodeEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.X_Leave_MenuCodeEditor.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.X_Leave_MenuCodeEditor.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.X_Leave_MenuCodeEditor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.X_Leave_MenuCodeEditor.Location = new System.Drawing.Point(692, -4);
             this.X_Leave_MenuCodeEditor.Name = "X_Leave_MenuCodeEditor";
@@ -3424,11 +3424,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label30.ForeColor = System.Drawing.Color.Black;
             this.label30.Location = new System.Drawing.Point(448, -1);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(134, 25);
+            this.label30.Size = new System.Drawing.Size(104, 20);
             this.label30.TabIndex = 89;
             this.label30.Text = "Animation List";
             // 
@@ -4057,7 +4057,7 @@ namespace FNAF_Engine_Reborn
             this.button113.BackColor = System.Drawing.SystemColors.Control;
             this.button113.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button113.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.button113.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F);
+            this.button113.Font = new System.Drawing.Font("Segoe UI", 13.5F);
             this.button113.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button113.Location = new System.Drawing.Point(6, 123);
             this.button113.Name = "button113";
@@ -4072,7 +4072,7 @@ namespace FNAF_Engine_Reborn
             this.button14.BackColor = System.Drawing.SystemColors.Control;
             this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button14.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button14.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button14.Location = new System.Drawing.Point(6, 163);
             this.button14.Name = "button14";
@@ -4980,7 +4980,7 @@ namespace FNAF_Engine_Reborn
             // button94
             // 
             this.button94.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button94.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button94.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button94.ForeColor = System.Drawing.SystemColors.Control;
             this.button94.Location = new System.Drawing.Point(753, 14);
             this.button94.Name = "button94";
@@ -5006,11 +5006,11 @@ namespace FNAF_Engine_Reborn
             // checkBox21
             // 
             this.checkBox21.AutoSize = true;
-            this.checkBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.checkBox21.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.checkBox21.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox21.Location = new System.Drawing.Point(6, 357);
             this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(204, 29);
+            this.checkBox21.Size = new System.Drawing.Size(157, 24);
             this.checkBox21.TabIndex = 59;
             this.checkBox21.Text = "Show all extensions";
             this.checkBox21.UseVisualStyleBackColor = true;
@@ -5019,11 +5019,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.checkBox20.AutoSize = true;
             this.checkBox20.BackColor = System.Drawing.SystemColors.Control;
-            this.checkBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.checkBox20.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.checkBox20.ForeColor = System.Drawing.SystemColors.WindowText;
             this.checkBox20.Location = new System.Drawing.Point(4, 316);
             this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(181, 29);
+            this.checkBox20.Size = new System.Drawing.Size(138, 24);
             this.checkBox20.TabIndex = 58;
             this.checkBox20.Text = "Other Extensions";
             this.checkBox20.UseVisualStyleBackColor = false;
@@ -5032,11 +5032,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.checkBox19.AutoSize = true;
             this.checkBox19.BackColor = System.Drawing.SystemColors.Control;
-            this.checkBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.checkBox19.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.checkBox19.ForeColor = System.Drawing.SystemColors.WindowText;
             this.checkBox19.Location = new System.Drawing.Point(4, 296);
             this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(159, 29);
+            this.checkBox19.Size = new System.Drawing.Size(121, 24);
             this.checkBox19.TabIndex = 57;
             this.checkBox19.Text = "My Extensions";
             this.checkBox19.UseVisualStyleBackColor = false;
@@ -5045,11 +5045,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label74.AutoSize = true;
             this.label74.BackColor = System.Drawing.SystemColors.Control;
-            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label74.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label74.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label74.Location = new System.Drawing.Point(268, 4);
             this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(387, 25);
+            this.label74.Size = new System.Drawing.Size(299, 20);
             this.label74.TabIndex = 56;
             this.label74.Text = "All your loaded extensions will appear here!";
             // 
@@ -5057,11 +5057,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label73.AutoSize = true;
             this.label73.BackColor = System.Drawing.SystemColors.Control;
-            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label73.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label73.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label73.Location = new System.Drawing.Point(6, 5);
             this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(201, 25);
+            this.label73.Size = new System.Drawing.Size(147, 20);
             this.label73.TabIndex = 55;
             this.label73.Text = "Loaded Extensions: 0";
             // 
@@ -5069,11 +5069,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label78.AutoSize = true;
             this.label78.BackColor = System.Drawing.Color.Transparent;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label78.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label78.ForeColor = System.Drawing.Color.Red;
             this.label78.Location = new System.Drawing.Point(14, 16);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(133, 25);
+            this.label78.Size = new System.Drawing.Size(98, 20);
             this.label78.TabIndex = 39;
             this.label78.Text = "Extension List";
             // 
@@ -5110,7 +5110,7 @@ namespace FNAF_Engine_Reborn
             // button54
             // 
             this.button54.BackColor = System.Drawing.SystemColors.Control;
-            this.button54.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button54.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button54.ForeColor = System.Drawing.Color.Black;
             this.button54.Location = new System.Drawing.Point(583, 35);
             this.button54.Name = "button54";
@@ -5142,7 +5142,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.CreateScript.BackColor = System.Drawing.Color.Gray;
             this.CreateScript.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.CreateScript.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.CreateScript.ForeColor = System.Drawing.SystemColors.Control;
             this.CreateScript.Location = new System.Drawing.Point(12, 53);
             this.CreateScript.Name = "CreateScript";
@@ -5170,7 +5170,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button26.BackColor = System.Drawing.Color.Gray;
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.button26.Font = new System.Drawing.Font("Segoe UI", 25F);
             this.button26.ForeColor = System.Drawing.SystemColors.Control;
             this.button26.Location = new System.Drawing.Point(66, 86);
             this.button26.Name = "button26";
@@ -5185,7 +5185,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button25.BackColor = System.Drawing.Color.Red;
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.button25.Font = new System.Drawing.Font("Segoe UI", 25F);
             this.button25.ForeColor = System.Drawing.SystemColors.Control;
             this.button25.Location = new System.Drawing.Point(7, 4);
             this.button25.Name = "button25";
@@ -5201,7 +5201,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button10.BackColor = System.Drawing.Color.Gray;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button10.ForeColor = System.Drawing.SystemColors.Control;
             this.button10.Location = new System.Drawing.Point(7, 6);
             this.button10.Name = "button10";
@@ -5242,7 +5242,7 @@ namespace FNAF_Engine_Reborn
             // button50
             // 
             this.button50.BackColor = System.Drawing.SystemColors.Control;
-            this.button50.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button50.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button50.ForeColor = System.Drawing.Color.Black;
             this.button50.Location = new System.Drawing.Point(583, 4);
             this.button50.Name = "button50";
@@ -5254,11 +5254,11 @@ namespace FNAF_Engine_Reborn
             // label77
             // 
             this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label77.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label77.ForeColor = System.Drawing.SystemColors.Control;
             this.label77.Location = new System.Drawing.Point(-237, 10);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(166, 25);
+            this.label77.Size = new System.Drawing.Size(122, 20);
             this.label77.TabIndex = 39;
             this.label77.Text = "Visual Scripts List";
             // 
@@ -5472,29 +5472,29 @@ namespace FNAF_Engine_Reborn
             // 
             this.label90.AutoSize = true;
             this.label90.BackColor = System.Drawing.Color.Silver;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label90.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label90.ForeColor = System.Drawing.SystemColors.Control;
             this.label90.Location = new System.Drawing.Point(538, 360);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(70, 25);
+            this.label90.Size = new System.Drawing.Size(51, 20);
             this.label90.TabIndex = 115;
             this.label90.Text = "Speed";
             // 
             // textBox18
             // 
             this.textBox18.BackColor = System.Drawing.Color.Gray;
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.textBox18.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.textBox18.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox18.Location = new System.Drawing.Point(595, 356);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(116, 30);
+            this.textBox18.Size = new System.Drawing.Size(116, 27);
             this.textBox18.TabIndex = 114;
             this.textBox18.Text = "1";
             // 
             // button99
             // 
             this.button99.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button99.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button99.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button99.ForeColor = System.Drawing.Color.Black;
             this.button99.Location = new System.Drawing.Point(840, 8);
             this.button99.Name = "button99";
@@ -5507,7 +5507,7 @@ namespace FNAF_Engine_Reborn
             // button65
             // 
             this.button65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button65.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button65.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button65.ForeColor = System.Drawing.Color.Black;
             this.button65.Location = new System.Drawing.Point(726, 415);
             this.button65.Name = "button65";
@@ -5519,7 +5519,7 @@ namespace FNAF_Engine_Reborn
             // button64
             // 
             this.button64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button64.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button64.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button64.ForeColor = System.Drawing.Color.Black;
             this.button64.Location = new System.Drawing.Point(726, 349);
             this.button64.Name = "button64";
@@ -5690,11 +5690,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label69.AutoSize = true;
             this.label69.BackColor = System.Drawing.SystemColors.Control;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.ForeColor = System.Drawing.Color.Black;
             this.label69.Location = new System.Drawing.Point(692, 25);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(25, 25);
+            this.label69.Size = new System.Drawing.Size(24, 30);
             this.label69.TabIndex = 31;
             this.label69.Text = ":)";
             // 
@@ -5702,18 +5702,18 @@ namespace FNAF_Engine_Reborn
             // 
             this.fermoment.AutoSize = true;
             this.fermoment.BackColor = System.Drawing.SystemColors.Control;
-            this.fermoment.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fermoment.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fermoment.ForeColor = System.Drawing.Color.Black;
             this.fermoment.Location = new System.Drawing.Point(478, 25);
             this.fermoment.Name = "fermoment";
-            this.fermoment.Size = new System.Drawing.Size(222, 25);
+            this.fermoment.Size = new System.Drawing.Size(209, 30);
             this.fermoment.TabIndex = 1;
             this.fermoment.Text = "FNAF Engine: Reborn";
             // 
             // label70
             // 
             this.label70.BackColor = System.Drawing.SystemColors.Control;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.ForeColor = System.Drawing.Color.Black;
             this.label70.Location = new System.Drawing.Point(209, 33);
             this.label70.Name = "label70";
@@ -5726,11 +5726,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label88.AutoSize = true;
             this.label88.BackColor = System.Drawing.SystemColors.Control;
-            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label88.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label88.ForeColor = System.Drawing.Color.Black;
             this.label88.Location = new System.Drawing.Point(476, 0);
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(237, 25);
+            this.label88.Size = new System.Drawing.Size(231, 30);
             this.label88.TabIndex = 0;
             this.label88.Text = "Thank you for choosing";
             // 
@@ -5738,7 +5738,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button93.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
             this.button93.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button93.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.button93.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button93.ForeColor = System.Drawing.SystemColors.Control;
             this.button93.Location = new System.Drawing.Point(876, 523);
             this.button93.Name = "button93";
@@ -5921,7 +5921,7 @@ namespace FNAF_Engine_Reborn
             this.button83.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button83.FlatAppearance.BorderSize = 0;
             this.button83.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button83.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button83.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button83.ForeColor = System.Drawing.Color.Black;
             this.button83.Location = new System.Drawing.Point(207, 482);
             this.button83.Name = "button83";
@@ -5936,7 +5936,7 @@ namespace FNAF_Engine_Reborn
             this.button82.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button82.FlatAppearance.BorderSize = 0;
             this.button82.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button82.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button82.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button82.ForeColor = System.Drawing.Color.Black;
             this.button82.Location = new System.Drawing.Point(207, 424);
             this.button82.Name = "button82";
@@ -5951,7 +5951,7 @@ namespace FNAF_Engine_Reborn
             this.button78.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button78.FlatAppearance.BorderSize = 0;
             this.button78.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button78.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button78.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button78.ForeColor = System.Drawing.Color.Black;
             this.button78.Location = new System.Drawing.Point(207, 392);
             this.button78.Name = "button78";
@@ -5997,7 +5997,7 @@ namespace FNAF_Engine_Reborn
             this.button81.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button81.FlatAppearance.BorderSize = 0;
             this.button81.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button81.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button81.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button81.ForeColor = System.Drawing.Color.Black;
             this.button81.Location = new System.Drawing.Point(404, 592);
             this.button81.Name = "button81";
@@ -6021,7 +6021,7 @@ namespace FNAF_Engine_Reborn
             this.button80.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button80.FlatAppearance.BorderSize = 0;
             this.button80.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button80.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button80.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button80.ForeColor = System.Drawing.Color.Black;
             this.button80.Location = new System.Drawing.Point(404, 560);
             this.button80.Name = "button80";
@@ -6045,7 +6045,7 @@ namespace FNAF_Engine_Reborn
             this.button76.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button76.FlatAppearance.BorderSize = 0;
             this.button76.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button76.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
+            this.button76.Font = new System.Drawing.Font("Segoe UI", 12.5F);
             this.button76.ForeColor = System.Drawing.Color.Black;
             this.button76.Location = new System.Drawing.Point(404, 528);
             this.button76.Name = "button76";
@@ -6069,7 +6069,7 @@ namespace FNAF_Engine_Reborn
             this.button79.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button79.FlatAppearance.BorderSize = 0;
             this.button79.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button79.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button79.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button79.ForeColor = System.Drawing.Color.Black;
             this.button79.Location = new System.Drawing.Point(404, 497);
             this.button79.Name = "button79";
@@ -6093,7 +6093,7 @@ namespace FNAF_Engine_Reborn
             this.button74.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button74.FlatAppearance.BorderSize = 0;
             this.button74.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button74.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button74.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button74.ForeColor = System.Drawing.Color.Black;
             this.button74.Location = new System.Drawing.Point(404, 465);
             this.button74.Name = "button74";
@@ -6128,7 +6128,7 @@ namespace FNAF_Engine_Reborn
             this.button77.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button77.FlatAppearance.BorderSize = 0;
             this.button77.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button77.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button77.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button77.ForeColor = System.Drawing.Color.Black;
             this.button77.Location = new System.Drawing.Point(404, 410);
             this.button77.Name = "button77";
@@ -6183,12 +6183,12 @@ namespace FNAF_Engine_Reborn
             // 
             this.comboBox44.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.comboBox44.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.comboBox44.ForeColor = System.Drawing.Color.Black;
             this.comboBox44.FormattingEnabled = true;
             this.comboBox44.Location = new System.Drawing.Point(380, 40);
             this.comboBox44.Name = "comboBox44";
-            this.comboBox44.Size = new System.Drawing.Size(193, 33);
+            this.comboBox44.Size = new System.Drawing.Size(193, 28);
             this.comboBox44.TabIndex = 92;
             this.comboBox44.Text = "Cutscenes";
             // 
@@ -6198,7 +6198,7 @@ namespace FNAF_Engine_Reborn
             this.button70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button70.FlatAppearance.BorderSize = 0;
             this.button70.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button70.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button70.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button70.ForeColor = System.Drawing.Color.Black;
             this.button70.Location = new System.Drawing.Point(404, 376);
             this.button70.Name = "button70";
@@ -6213,7 +6213,7 @@ namespace FNAF_Engine_Reborn
             this.button69.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button69.FlatAppearance.BorderSize = 0;
             this.button69.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button69.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button69.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button69.ForeColor = System.Drawing.Color.Black;
             this.button69.Location = new System.Drawing.Point(695, 423);
             this.button69.Name = "button69";
@@ -6228,7 +6228,7 @@ namespace FNAF_Engine_Reborn
             this.button68.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button68.FlatAppearance.BorderSize = 0;
             this.button68.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button68.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button68.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.button68.ForeColor = System.Drawing.Color.Black;
             this.button68.Location = new System.Drawing.Point(696, 391);
             this.button68.Name = "button68";
@@ -6251,7 +6251,7 @@ namespace FNAF_Engine_Reborn
             this.createProjectBTN.BackColor = System.Drawing.Color.Transparent;
             this.createProjectBTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.createProjectBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.createProjectBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.createProjectBTN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.createProjectBTN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.createProjectBTN.Location = new System.Drawing.Point(308, 9);
             this.createProjectBTN.Name = "createProjectBTN";
@@ -6266,7 +6266,7 @@ namespace FNAF_Engine_Reborn
             this.loadProjectBTN.BackColor = System.Drawing.Color.Transparent;
             this.loadProjectBTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.loadProjectBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.loadProjectBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.loadProjectBTN.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.loadProjectBTN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.loadProjectBTN.Location = new System.Drawing.Point(308, 73);
             this.loadProjectBTN.Name = "loadProjectBTN";
@@ -6281,7 +6281,7 @@ namespace FNAF_Engine_Reborn
             this.deleteProjectBTN.BackColor = System.Drawing.Color.Transparent;
             this.deleteProjectBTN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.deleteProjectBTN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.deleteProjectBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.deleteProjectBTN.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.deleteProjectBTN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deleteProjectBTN.Location = new System.Drawing.Point(308, 135);
             this.deleteProjectBTN.Name = "deleteProjectBTN";
@@ -6469,7 +6469,7 @@ namespace FNAF_Engine_Reborn
             this.DownloadFontBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.DownloadFontBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.DownloadFontBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DownloadFontBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F);
+            this.DownloadFontBtn.Font = new System.Drawing.Font("Segoe UI", 15.5F);
             this.DownloadFontBtn.ForeColor = System.Drawing.Color.Black;
             this.DownloadFontBtn.Location = new System.Drawing.Point(92, 5);
             this.DownloadFontBtn.Name = "DownloadFontBtn";
@@ -6820,22 +6820,22 @@ namespace FNAF_Engine_Reborn
             // FPS_Info_StaticEffectEditor
             // 
             this.FPS_Info_StaticEffectEditor.AutoSize = true;
-            this.FPS_Info_StaticEffectEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.FPS_Info_StaticEffectEditor.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FPS_Info_StaticEffectEditor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FPS_Info_StaticEffectEditor.Location = new System.Drawing.Point(220, 443);
             this.FPS_Info_StaticEffectEditor.Name = "FPS_Info_StaticEffectEditor";
-            this.FPS_Info_StaticEffectEditor.Size = new System.Drawing.Size(57, 25);
+            this.FPS_Info_StaticEffectEditor.Size = new System.Drawing.Size(35, 20);
             this.FPS_Info_StaticEffectEditor.TabIndex = 108;
             this.FPS_Info_StaticEffectEditor.Text = "FPS:";
             // 
             // FPS_StaticEffectEditor
             // 
             this.FPS_StaticEffectEditor.BackColor = System.Drawing.Color.White;
-            this.FPS_StaticEffectEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.FPS_StaticEffectEditor.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FPS_StaticEffectEditor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FPS_StaticEffectEditor.Location = new System.Drawing.Point(260, 442);
             this.FPS_StaticEffectEditor.Name = "FPS_StaticEffectEditor";
-            this.FPS_StaticEffectEditor.Size = new System.Drawing.Size(100, 30);
+            this.FPS_StaticEffectEditor.Size = new System.Drawing.Size(100, 27);
             this.FPS_StaticEffectEditor.TabIndex = 107;
             this.FPS_StaticEffectEditor.Text = "24";
             // 
@@ -7140,11 +7140,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.ImageEditorPanel);
-            this.Controls.Add(this.staticeffecteditor);
-            this.Controls.Add(this.cameraEditorPanel);
-            this.Controls.Add(this.animationEditorPanel);
-            this.Controls.Add(this.menu);
             this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
@@ -7158,6 +7153,11 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.template);
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
+            this.Controls.Add(this.ImageEditorPanel);
+            this.Controls.Add(this.staticeffecteditor);
+            this.Controls.Add(this.cameraEditorPanel);
+            this.Controls.Add(this.animationEditorPanel);
+            this.Controls.Add(this.menu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
