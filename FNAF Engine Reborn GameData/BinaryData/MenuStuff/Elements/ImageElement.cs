@@ -2,6 +2,6 @@
 {
     public class ImageElement : MenuElement
     {
-
+        //todo: image element
     }
 }

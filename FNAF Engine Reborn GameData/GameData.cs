@@ -104,7 +104,7 @@ namespace FNAF_Engine_GameData
                 #region
                 foreach (var m in Menus)
                 {
-                    m.Write(Writer, true, null);
+                    m.Write(Writer, true, null, null);
                 }
                 #endregion
 
@@ -183,7 +183,7 @@ namespace FNAF_Engine_GameData
                 for (int i = 0; i < menuCount; i++)
                 {
                     FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
-                    menu.Read(reader, true, null);
+                    menu.Read(reader, true, null, null);
                     Menus.Add(menu);
                 }
 

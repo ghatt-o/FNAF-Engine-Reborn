@@ -9,7 +9,6 @@ namespace FNAF_Engine_Reborn
         public templateCreator()
         {
             InitializeComponent();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
