@@ -18,5 +18,6 @@ namespace FNAF_Engine_Reborn.Object_Editors
         public string FunctionsUnhover { get; set; }
         public string FunctionsHold { get; set; }
         public Color Color { get; set; }
+        public byte style { get; set; } = 0;
     }
 }

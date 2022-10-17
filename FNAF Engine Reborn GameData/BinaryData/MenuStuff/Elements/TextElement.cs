@@ -10,6 +10,7 @@ namespace MenuStuff.Elements
         public string Fontname { get; set; }
         public string Fontsize { get; set; }
         public Color Rgb { get; set; }
+        public byte ButtonStyle { get; set; } = 0; //fnaf
 
         /*
         public string[] Funcs { get; set; }
@@ -31,6 +32,7 @@ namespace MenuStuff.Elements
                 int b = reader.ReadByte();
                 #endregion
                 Rgb = Color.FromArgb(r, g, b);
+                ButtonStyle = reader.ReadByte();
 
                 /*
                 int funcslen = reader.ReadInt32();

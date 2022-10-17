@@ -1589,7 +1589,7 @@ namespace FNAF_Engine_Reborn
                             string png = p.SafeFileName;
                             Import_Files.CreateSprite(filePath, png, projecto);
                             File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", png);
-                            //OfficePreviewBG.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
+                            officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
                         }
                     }
                     catch (Exception)
@@ -1610,20 +1610,20 @@ namespace FNAF_Engine_Reborn
                     var img = Image.FromFile(projecto + "/images/" + image);
                     if (img.Width <= 1280 && img.Height <= 720)
                     {
-                        //OfficePreviewBG.BackgroundImageLayout = ImageLayout.Stretch;
-                        //OfficePreviewBG.BackgroundImage = img;
+                        officePreview.BackgroundImageLayout = ImageLayout.Stretch;
+                        officePreview.BackgroundImage = img;
                     }
                     else
                     {
                         if (checkBox24.Checked == false)
                         {
-                            //OfficePreviewBG.BackgroundImageLayout = ImageLayout.Stretch;
-                            //OfficePreviewBG.BackgroundImage = img;
+                            officePreview.BackgroundImageLayout = ImageLayout.Stretch;
+                            officePreview.BackgroundImage = img;
                         }
                         else
                         {
-                            //OfficePreviewBG.BackgroundImage = img;
-                            //OfficePreviewBG.BackgroundImageLayout = ImageLayout.None;
+                            officePreview.BackgroundImage = img;
+                            officePreview.BackgroundImageLayout = ImageLayout.None;
                         }
                     }
                 }
@@ -3001,6 +3001,16 @@ namespace FNAF_Engine_Reborn
         private void ScrollRight_Office_MouseDown(object sender, MouseEventArgs e)
         {
             //OfficePreviewBG.Location = new Point(OfficePreviewBG.Location.X + 5, OfficePreviewBG.Location.Y);
+        }
+
+        private void AddFrame_StaticEffectEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteFrame_StaticEffectEditor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

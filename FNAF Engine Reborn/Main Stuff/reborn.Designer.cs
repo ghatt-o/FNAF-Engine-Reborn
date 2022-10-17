@@ -532,6 +532,9 @@ namespace FNAF_Engine_Reborn
             this.GoToEditor = new System.Windows.Forms.Label();
             this.button119 = new System.Windows.Forms.Button();
             this.AnimatronicPath_Images = new System.Windows.Forms.ImageList(this.components);
+            this.BtnStyle = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.StaticEffectEditor_Frame = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -2266,6 +2269,8 @@ namespace FNAF_Engine_Reborn
             // Menu_Elements_Create
             // 
             this.Menu_Elements_Create.BackColor = System.Drawing.Color.Transparent;
+            this.Menu_Elements_Create.Controls.Add(this.label14);
+            this.Menu_Elements_Create.Controls.Add(this.BtnStyle);
             this.Menu_Elements_Create.Controls.Add(this.unhover);
             this.Menu_Elements_Create.Controls.Add(this.MenuEditor_CodeEditorUnhover);
             this.Menu_Elements_Create.Controls.Add(this.MenuEditor_CodeEditorHold);
@@ -2554,12 +2559,11 @@ namespace FNAF_Engine_Reborn
             this.label210.BackColor = System.Drawing.Color.Transparent;
             this.label210.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label210.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label210.Location = new System.Drawing.Point(186, 153);
+            this.label210.Location = new System.Drawing.Point(184, 239);
             this.label210.Name = "label210";
             this.label210.Size = new System.Drawing.Size(44, 19);
             this.label210.TabIndex = 156;
             this.label210.Text = "Sprite";
-            this.label210.Visible = false;
             // 
             // Element_X_MenuEditor
             // 
@@ -2580,7 +2584,7 @@ namespace FNAF_Engine_Reborn
             this.Element_HiddenCheck_MenuEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Element_HiddenCheck_MenuEditor.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Element_HiddenCheck_MenuEditor.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Element_HiddenCheck_MenuEditor.Location = new System.Drawing.Point(237, 112);
+            this.Element_HiddenCheck_MenuEditor.Location = new System.Drawing.Point(235, 198);
             this.Element_HiddenCheck_MenuEditor.Name = "Element_HiddenCheck_MenuEditor";
             this.Element_HiddenCheck_MenuEditor.Size = new System.Drawing.Size(12, 11);
             this.Element_HiddenCheck_MenuEditor.TabIndex = 153;
@@ -2612,11 +2616,10 @@ namespace FNAF_Engine_Reborn
             this.Element_Image_MenuEditor.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Element_Image_MenuEditor.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Element_Image_MenuEditor.FormattingEnabled = true;
-            this.Element_Image_MenuEditor.Location = new System.Drawing.Point(230, 151);
+            this.Element_Image_MenuEditor.Location = new System.Drawing.Point(228, 237);
             this.Element_Image_MenuEditor.Name = "Element_Image_MenuEditor";
             this.Element_Image_MenuEditor.Size = new System.Drawing.Size(97, 25);
             this.Element_Image_MenuEditor.TabIndex = 150;
-            this.Element_Image_MenuEditor.Visible = false;
             // 
             // Element_Animatronic_MenuEditor
             // 
@@ -2624,7 +2627,7 @@ namespace FNAF_Engine_Reborn
             this.Element_Animatronic_MenuEditor.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Element_Animatronic_MenuEditor.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Element_Animatronic_MenuEditor.FormattingEnabled = true;
-            this.Element_Animatronic_MenuEditor.Location = new System.Drawing.Point(268, 126);
+            this.Element_Animatronic_MenuEditor.Location = new System.Drawing.Point(266, 212);
             this.Element_Animatronic_MenuEditor.Name = "Element_Animatronic_MenuEditor";
             this.Element_Animatronic_MenuEditor.Size = new System.Drawing.Size(97, 25);
             this.Element_Animatronic_MenuEditor.TabIndex = 149;
@@ -2635,7 +2638,7 @@ namespace FNAF_Engine_Reborn
             this.label212.BackColor = System.Drawing.Color.Transparent;
             this.label212.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label212.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label212.Location = new System.Drawing.Point(184, 129);
+            this.label212.Location = new System.Drawing.Point(182, 215);
             this.label212.Name = "label212";
             this.label212.Size = new System.Drawing.Size(83, 19);
             this.label212.TabIndex = 148;
@@ -2647,7 +2650,7 @@ namespace FNAF_Engine_Reborn
             this.label213.BackColor = System.Drawing.Color.Transparent;
             this.label213.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label213.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label213.Location = new System.Drawing.Point(185, 106);
+            this.label213.Location = new System.Drawing.Point(183, 192);
             this.label213.Name = "label213";
             this.label213.Size = new System.Drawing.Size(53, 19);
             this.label213.TabIndex = 147;
@@ -5692,7 +5695,7 @@ namespace FNAF_Engine_Reborn
             this.label69.BackColor = System.Drawing.SystemColors.Control;
             this.label69.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label69.ForeColor = System.Drawing.Color.Black;
-            this.label69.Location = new System.Drawing.Point(692, 25);
+            this.label69.Location = new System.Drawing.Point(679, 25);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(24, 30);
             this.label69.TabIndex = 31;
@@ -5728,7 +5731,7 @@ namespace FNAF_Engine_Reborn
             this.label88.BackColor = System.Drawing.SystemColors.Control;
             this.label88.Font = new System.Drawing.Font("Segoe UI", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label88.ForeColor = System.Drawing.Color.Black;
-            this.label88.Location = new System.Drawing.Point(476, 0);
+            this.label88.Location = new System.Drawing.Point(476, -4);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(231, 30);
             this.label88.TabIndex = 0;
@@ -6658,6 +6661,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.staticeffecteditor.BackColor = System.Drawing.Color.White;
             this.staticeffecteditor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.staticeffecteditor.Controls.Add(this.StaticEffectEditor_Frame);
             this.staticeffecteditor.Controls.Add(this.button115);
             this.staticeffecteditor.Controls.Add(this.StaticEffectEditor_FrameList);
             this.staticeffecteditor.Controls.Add(this.DeleteFrameInfo_StaticEffectEditor);
@@ -6874,6 +6878,7 @@ namespace FNAF_Engine_Reborn
             this.DeleteFrame_StaticEffectEditor.Size = new System.Drawing.Size(23, 12);
             this.DeleteFrame_StaticEffectEditor.TabIndex = 102;
             this.DeleteFrame_StaticEffectEditor.UseVisualStyleBackColor = true;
+            this.DeleteFrame_StaticEffectEditor.Click += new System.EventHandler(this.DeleteFrame_StaticEffectEditor_Click);
             // 
             // AddFrame_StaticEffectEditor
             // 
@@ -6886,6 +6891,7 @@ namespace FNAF_Engine_Reborn
             this.AddFrame_StaticEffectEditor.Size = new System.Drawing.Size(23, 24);
             this.AddFrame_StaticEffectEditor.TabIndex = 101;
             this.AddFrame_StaticEffectEditor.UseVisualStyleBackColor = true;
+            this.AddFrame_StaticEffectEditor.Click += new System.EventHandler(this.AddFrame_StaticEffectEditor_Click);
             // 
             // AnimationList_StaticEffectEditor
             // 
@@ -7128,6 +7134,42 @@ namespace FNAF_Engine_Reborn
             this.AnimatronicPath_Images.Images.SetKeyName(6, "altpath.png");
             this.AnimatronicPath_Images.Images.SetKeyName(7, "state.png");
             // 
+            // BtnStyle
+            // 
+            this.BtnStyle.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BtnStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.BtnStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnStyle.FormattingEnabled = true;
+            this.BtnStyle.Items.AddRange(new object[] {
+            "FNAF",
+            "System"});
+            this.BtnStyle.Location = new System.Drawing.Point(269, 110);
+            this.BtnStyle.Name = "BtnStyle";
+            this.BtnStyle.Size = new System.Drawing.Size(97, 25);
+            this.BtnStyle.TabIndex = 178;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label14.Location = new System.Drawing.Point(185, 110);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 19);
+            this.label14.TabIndex = 179;
+            this.label14.Text = "Button Style";
+            // 
+            // StaticEffectEditor_Frame
+            // 
+            this.StaticEffectEditor_Frame.Location = new System.Drawing.Point(462, 392);
+            this.StaticEffectEditor_Frame.Name = "StaticEffectEditor_Frame";
+            this.StaticEffectEditor_Frame.Size = new System.Drawing.Size(156, 23);
+            this.StaticEffectEditor_Frame.TabIndex = 129;
+            this.StaticEffectEditor_Frame.Text = "Frame Name";
+            this.StaticEffectEditor_Frame.UseVisualStyleBackColor = true;
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7140,6 +7182,14 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
+            this.Controls.Add(this.staticeffecteditor);
+            this.Controls.Add(this.cameraEditorPanel);
+            this.Controls.Add(this.animationEditorPanel);
+            this.Controls.Add(this.menu);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.AssetManagerPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.GameDebugMenu);
@@ -7150,14 +7200,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.ImageEditorPanel);
-            this.Controls.Add(this.staticeffecteditor);
-            this.Controls.Add(this.cameraEditorPanel);
-            this.Controls.Add(this.animationEditorPanel);
-            this.Controls.Add(this.menu);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.AssetManagerPanel);
-            this.Controls.Add(this.animatronicEditorPNL2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -7745,5 +7787,8 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Button gamesettings_menubgcolor;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.ComboBox BtnStyle;
+        private System.Windows.Forms.Button StaticEffectEditor_Frame;
     }
 }
