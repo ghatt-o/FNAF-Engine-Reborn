@@ -21,12 +21,14 @@ namespace FNAF_Engine_GameData
 
         public GameOptions Options { get; set; }
         public OfficeOptions OfficeSettings { get; set; }
-        public System.Drawing.Color MenuSettings { get; set; } //todo
+        public System.Drawing.Color MenuSettings { get; set; }
 
         public List<Variable> DataValues { get; set; }
+        public List<StringVariable> DataStrings { get; set; }
         public List<Variable> Variables { get; set; }
+        public List<StringVariable> StringVariables { get; set; }
 
-        public List<Image> ImageBank { get; set; } //general image bank lol
+        public List<Image> ImageBank { get; set; } //general image bank
         public List<Audio> AudioBank { get; set; } //general audio bank
 
         //misc

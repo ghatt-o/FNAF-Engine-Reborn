@@ -33,6 +33,10 @@ namespace MenuStuff.Elements
                 #endregion
                 Rgb = Color.FromArgb(r, g, b);
                 ButtonStyle = reader.ReadByte();
+                if (ButtonStyle == 1) //system
+                {
+                    Rgb = Color.FromArgb(0, 0, 0);
+                }
 
                 /*
                 int funcslen = reader.ReadInt32();

@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.label143 = new System.Windows.Forms.Label();
@@ -166,6 +166,8 @@ namespace FNAF_Engine_Reborn
             this.button53 = new System.Windows.Forms.Button();
             this.MenuEditor_ScriptEditor = new System.Windows.Forms.Label();
             this.Menu_Elements_Create = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.BtnStyle = new System.Windows.Forms.ComboBox();
             this.unhover = new System.Windows.Forms.Button();
             this.MenuEditor_CodeEditorUnhover = new System.Windows.Forms.RichTextBox();
             this.MenuEditor_CodeEditorHold = new System.Windows.Forms.RichTextBox();
@@ -497,6 +499,7 @@ namespace FNAF_Engine_Reborn
             this.button106 = new System.Windows.Forms.Button();
             this.comboBox61 = new System.Windows.Forms.ComboBox();
             this.staticeffecteditor = new System.Windows.Forms.Panel();
+            this.StaticEffectEditor_Frame = new System.Windows.Forms.Button();
             this.button115 = new System.Windows.Forms.Button();
             this.StaticEffectEditor_FrameList = new System.Windows.Forms.Button();
             this.DeleteFrameInfo_StaticEffectEditor = new System.Windows.Forms.Label();
@@ -532,9 +535,6 @@ namespace FNAF_Engine_Reborn
             this.GoToEditor = new System.Windows.Forms.Label();
             this.button119 = new System.Windows.Forms.Button();
             this.AnimatronicPath_Images = new System.Windows.Forms.ImageList(this.components);
-            this.BtnStyle = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.StaticEffectEditor_Frame = new System.Windows.Forms.Button();
             this.allEditorsPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.animatronicEditorPNL2.SuspendLayout();
@@ -2316,6 +2316,33 @@ namespace FNAF_Engine_Reborn
             this.Menu_Elements_Create.Visible = false;
             this.Menu_Elements_Create.VisibleChanged += new System.EventHandler(this.Menu_Elements_Create_VisibleChanged);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label14.Location = new System.Drawing.Point(185, 110);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 19);
+            this.label14.TabIndex = 179;
+            this.label14.Text = "Button Style";
+            // 
+            // BtnStyle
+            // 
+            this.BtnStyle.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BtnStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.BtnStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnStyle.FormattingEnabled = true;
+            this.BtnStyle.Items.AddRange(new object[] {
+            "FNAF",
+            "System"});
+            this.BtnStyle.Location = new System.Drawing.Point(269, 110);
+            this.BtnStyle.Name = "BtnStyle";
+            this.BtnStyle.Size = new System.Drawing.Size(97, 25);
+            this.BtnStyle.TabIndex = 178;
+            // 
             // unhover
             // 
             this.unhover.BackColor = System.Drawing.Color.Transparent;
@@ -3970,11 +3997,11 @@ namespace FNAF_Engine_Reborn
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode2.Name = "Data Values";
-            treeNode2.Tag = "Data_Values_List";
-            treeNode2.Text = "Data Values";
+            treeNode3.Name = "Data Values";
+            treeNode3.Tag = "Data_Values_List";
+            treeNode3.Text = "Data Values";
             this.GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode3});
             this.GameManager_Variables_View.Size = new System.Drawing.Size(232, 339);
             this.GameManager_Variables_View.TabIndex = 162;
             this.GameManager_Variables_View.VisibleChanged += new System.EventHandler(this.GameManager_Variables_View_VisibleChanged);
@@ -4062,9 +4089,9 @@ namespace FNAF_Engine_Reborn
             this.button113.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.button113.Font = new System.Drawing.Font("Segoe UI", 13.5F);
             this.button113.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button113.Location = new System.Drawing.Point(6, 123);
+            this.button113.Location = new System.Drawing.Point(6, 101);
             this.button113.Name = "button113";
-            this.button113.Size = new System.Drawing.Size(193, 37);
+            this.button113.Size = new System.Drawing.Size(193, 61);
             this.button113.TabIndex = 121;
             this.button113.Text = "Store project on cloud";
             this.button113.UseVisualStyleBackColor = false;
@@ -5592,7 +5619,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem3});
             this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -6685,6 +6712,15 @@ namespace FNAF_Engine_Reborn
             this.staticeffecteditor.Visible = false;
             this.staticeffecteditor.VisibleChanged += new System.EventHandler(this.staticeffecteditor_VisibleChanged);
             // 
+            // StaticEffectEditor_Frame
+            // 
+            this.StaticEffectEditor_Frame.Location = new System.Drawing.Point(462, 392);
+            this.StaticEffectEditor_Frame.Name = "StaticEffectEditor_Frame";
+            this.StaticEffectEditor_Frame.Size = new System.Drawing.Size(156, 23);
+            this.StaticEffectEditor_Frame.TabIndex = 129;
+            this.StaticEffectEditor_Frame.Text = "Frame Name";
+            this.StaticEffectEditor_Frame.UseVisualStyleBackColor = true;
+            // 
             // button115
             // 
             this.button115.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -7134,42 +7170,6 @@ namespace FNAF_Engine_Reborn
             this.AnimatronicPath_Images.Images.SetKeyName(6, "altpath.png");
             this.AnimatronicPath_Images.Images.SetKeyName(7, "state.png");
             // 
-            // BtnStyle
-            // 
-            this.BtnStyle.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BtnStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.BtnStyle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnStyle.FormattingEnabled = true;
-            this.BtnStyle.Items.AddRange(new object[] {
-            "FNAF",
-            "System"});
-            this.BtnStyle.Location = new System.Drawing.Point(269, 110);
-            this.BtnStyle.Name = "BtnStyle";
-            this.BtnStyle.Size = new System.Drawing.Size(97, 25);
-            this.BtnStyle.TabIndex = 178;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14.Location = new System.Drawing.Point(185, 110);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 19);
-            this.label14.TabIndex = 179;
-            this.label14.Text = "Button Style";
-            // 
-            // StaticEffectEditor_Frame
-            // 
-            this.StaticEffectEditor_Frame.Location = new System.Drawing.Point(462, 392);
-            this.StaticEffectEditor_Frame.Name = "StaticEffectEditor_Frame";
-            this.StaticEffectEditor_Frame.Size = new System.Drawing.Size(156, 23);
-            this.StaticEffectEditor_Frame.TabIndex = 129;
-            this.StaticEffectEditor_Frame.Text = "Frame Name";
-            this.StaticEffectEditor_Frame.UseVisualStyleBackColor = true;
-            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -7182,6 +7182,13 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
+            this.Controls.Add(this.Menu_CodeEditor);
+            this.Controls.Add(this.ScriptEditorPanel);
+            this.Controls.Add(this.ExtensionsPanel);
+            this.Controls.Add(this.template);
+            this.Controls.Add(this.officeEditorPanel);
+            this.Controls.Add(this.cutsceneMoment);
+            this.Controls.Add(this.ImageEditorPanel);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
@@ -7193,13 +7200,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.GameDebugMenu);
-            this.Controls.Add(this.Menu_CodeEditor);
-            this.Controls.Add(this.ScriptEditorPanel);
-            this.Controls.Add(this.ExtensionsPanel);
-            this.Controls.Add(this.template);
-            this.Controls.Add(this.officeEditorPanel);
-            this.Controls.Add(this.cutsceneMoment);
-            this.Controls.Add(this.ImageEditorPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);

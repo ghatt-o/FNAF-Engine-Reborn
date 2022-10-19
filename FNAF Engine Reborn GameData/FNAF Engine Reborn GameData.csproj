@@ -57,6 +57,7 @@
     <Compile Include="BinaryData\Stuff\Animated\Animations\AnimationFrame.cs" />
     <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffectFrame.cs" />
     <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffect.cs" />
+    <Compile Include="BinaryData\Stuff\Values\StringVariable.cs" />
     <Compile Include="BinaryData\Stuff\Values\Variable.cs" />
     <Compile Include="GameData.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
