@@ -50,8 +50,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
         {
             if (binary == false)
             {
-                string newFile = File.ReadAllText(project + "/options.txt");
-
+                string newFile = "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false"; //wtf, i used to read a options.txt? :skull: now ima reuse old code idc
 
                 if (Fullscreen == false) newFile.Replace("fullscreen=true", "fullscreen=false");
                 else if (Fullscreen == true) newFile.Replace("fullscreen=false", "fullscreen=true");

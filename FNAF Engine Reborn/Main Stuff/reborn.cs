@@ -1,4 +1,5 @@
-﻿using FNAF_Engine_Reborn.bin;
+﻿using FNAF_Engine_Reborn_GameData;
+using FNAF_Engine_Reborn.bin;
 using FNAF_Engine_Reborn.Main_Stuff;
 using FNAF_Engine_Reborn.Object_Editors;
 using System;
@@ -13,6 +14,8 @@ namespace FNAF_Engine_Reborn
 {
     public partial class reborn : Form
     {
+        public GameData game;
+
         public bool showProject;
         public string Version = "0.9.4";
         public string Build_Version = "b_o_w4r1";

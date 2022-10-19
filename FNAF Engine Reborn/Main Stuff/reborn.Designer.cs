@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.label143 = new System.Windows.Forms.Label();
@@ -3997,11 +3997,11 @@ namespace FNAF_Engine_Reborn
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode3.Name = "Data Values";
-            treeNode3.Tag = "Data_Values_List";
-            treeNode3.Text = "Data Values";
+            treeNode1.Name = "Data Values";
+            treeNode1.Tag = "Data_Values_List";
+            treeNode1.Text = "Data Values";
             this.GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode1});
             this.GameManager_Variables_View.Size = new System.Drawing.Size(232, 339);
             this.GameManager_Variables_View.TabIndex = 162;
             this.GameManager_Variables_View.VisibleChanged += new System.EventHandler(this.GameManager_Variables_View_VisibleChanged);
@@ -5619,7 +5619,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -7182,10 +7182,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.Menu_CodeEditor);
-            this.Controls.Add(this.ScriptEditorPanel);
-            this.Controls.Add(this.ExtensionsPanel);
-            this.Controls.Add(this.template);
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.ImageEditorPanel);
@@ -7200,6 +7196,10 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.GameDebugMenu);
+            this.Controls.Add(this.Menu_CodeEditor);
+            this.Controls.Add(this.ScriptEditorPanel);
+            this.Controls.Add(this.ExtensionsPanel);
+            this.Controls.Add(this.template);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);

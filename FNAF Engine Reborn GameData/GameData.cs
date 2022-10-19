@@ -4,10 +4,11 @@ using FNAF_Engine_GameData.BinaryData.Options;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace FNAF_Engine_GameData
+namespace FNAF_Engine_Reborn_GameData
 {
     public class GameData
     {
@@ -116,7 +117,18 @@ namespace FNAF_Engine_GameData
             }
             else
             {
-                //todo: project writing
+                File.WriteAllText(projectpath + "/name.txt", Name);
+
+                //File.WriteAllText(projectpath + "/gameid.txt", ID);
+                File.WriteAllText(projectpath + "/gameid.txt", "");
+                File.WriteAllText(projectpath + "/game.txt", GameName);
+
+                Options.Write(null, false, projectpath);
+                OfficeSettings.Write(null, false, projectpath);
+                //Menu settings VVVVVVVVVVVVVVV
+                File.WriteAllText(projectpath + "/menus/settings.txt", MenuSettings.R + "," + MenuSettings.G + "," + MenuSettings.B);
+                //Menu settings ^^^^^^^^^^^^^^^
+
             }
         }
         public void Read(BinaryReader reader, bool binary, string projectpath)
@@ -207,7 +219,11 @@ namespace FNAF_Engine_GameData
 
                 Options.Read(null, false, projectpath);
                 OfficeSettings.Read(null, false, projectpath);
-                MenuSettings = System.Drawing.Color.FromArgb(0, 0, 0);
+
+                string txt = File.ReadAllText(projectpath + "/menus/settings.txt");
+                MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));
+
+
             }
         }
     }

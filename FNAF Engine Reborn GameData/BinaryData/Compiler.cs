@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace FNAF_Engine_GameData.BinaryData
+namespace FNAF_Engine_Reborn_GameData.BinaryData
 {
     internal static class Compiler
     {

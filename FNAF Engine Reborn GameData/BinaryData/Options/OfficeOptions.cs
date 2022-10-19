@@ -91,8 +91,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else
             {
-                //power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6
-                FileClear(project + "/offices/default/office.txt");
+                File.WriteAllText(project + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,"); //what the fuck its still reading from existing file
 
 
                 foreach (PropertyInfo prop in TypeDescriptor.GetProperties(this))
@@ -107,7 +106,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                     else if (prop.Name == "UCNStyleEnabled") FileAppend(project + "/offices/default/office.txt", "ucnstyle=" + UCNStyleEnabled + ",");
                     else if (prop.Name == "AnimatronicToKill") FileAppend(project + "/offices/default/office.txt", "animatronic=" + AnimatronicToKill + ",");
                     else if (prop.Name == "Hours") FileAppend(project + "/offices/default/office.txt", "hours=" + Hours + ",");
-                    else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'! (At line 110, Office Settings Read()!)");
+                    else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'! (At line 109, Office Settings Read()!)");
                 }
                 void FileAppend(string path, string contents)
                 {

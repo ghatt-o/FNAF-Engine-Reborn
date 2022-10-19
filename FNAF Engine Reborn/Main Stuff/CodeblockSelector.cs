@@ -42,7 +42,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
                 }
                 else
                 {
-                    Console.WriteLine(Events.SelectedNode.ToString());
+                    //Console.WriteLine(Events.SelectedNode.ToString());
                     string[] separated = Events.SelectedNode.ToString().Split(' ');
                     separated.SetValue("", 0);
                     _ = separated.Length;
@@ -56,7 +56,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
                     string event_ = scripteditor.ToEvent(reborn.script);
                     reborn.button25.Show();
                     reborn.button25.Text = event_;
-                    Console.WriteLine("event isss: " + event_);
+                    //Console.WriteLine("event isss: " + event_);
                     reborn.button26.Show();
                     Hide();
                 }
