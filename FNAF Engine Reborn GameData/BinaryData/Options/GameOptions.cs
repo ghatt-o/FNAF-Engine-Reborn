@@ -5,10 +5,10 @@ namespace FNAF_Engine_GameData.BinaryData.Options
 {
     public class GameOptions
     {
-        public bool Fullscreen { get; set; }
-        public bool Minigames { get; set; }
-        public bool Watermarks { get; set; }
-        public bool SrcFileOnExport { get; set; }
+        public bool Fullscreen { get; set; } = false;
+        public bool Minigames { get; set; } = false;
+        public bool Watermarks { get; set; } = false;
+        public bool SrcFileOnExport { get; set; } = false;
 
         public void Read(BinaryReader reader, bool binary, string project)
         {

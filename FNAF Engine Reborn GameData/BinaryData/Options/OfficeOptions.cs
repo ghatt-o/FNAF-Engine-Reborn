@@ -7,16 +7,16 @@ namespace FNAF_Engine_GameData.BinaryData.Options
 {
     public class OfficeOptions
     {
-        public bool PowerEnabled { get; set; }
-        public bool ToxicEnabled { get; set; }
-        public bool MaskEnabled { get; set; }
-        public bool CameraEnabled { get; set; }
-        public bool FlashlightEnabled { get; set; }
-        public bool PanoramaEnabled { get; set; }
-        public bool PerspectiveEnabled { get; set; }
-        public bool UCNStyleEnabled { get; set; }
-        public string AnimatronicToKill { get; set; }
-        public int Hours { get; set; }
+        public bool PowerEnabled { get; set; } = false;
+        public bool ToxicEnabled { get; set; } = false;
+        public bool MaskEnabled { get; set; } = false;
+        public bool CameraEnabled { get; set; } = false;
+        public bool FlashlightEnabled { get; set; } = false;
+        public bool PanoramaEnabled { get; set; } = false;
+        public bool PerspectiveEnabled { get; set; } = false;
+        public bool UCNStyleEnabled { get; set; } = false;
+        public string AnimatronicToKill { get; set; } = "";
+        public int Hours { get; set; } = 6;
 
         public void Read(BinaryReader reader, bool binary, string project)
         {

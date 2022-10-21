@@ -4,8 +4,8 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
 {
     public class Image : BinaryImage
     {
-        public ulong Size { get; set; }
-        public byte[] Data { get; set; }
+        public ulong Size { get; set; } = 0;
+        public byte[] Data { get; set; } = new byte[0];
 
         public void Read(BinaryReader reader, bool binary, string project, string name)
         {

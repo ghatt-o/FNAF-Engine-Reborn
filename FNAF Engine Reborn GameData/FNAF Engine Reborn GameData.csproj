@@ -42,9 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryData\Binaries\Audio.cs" />
-    <Compile Include="BinaryData\Binaries\BinaryImage.cs" />
-    <Compile Include="BinaryData\Binaries\Image.cs" />
+    <Compile Include="BinaryData\Binaries\Image\Audio.cs" />
+    <Compile Include="BinaryData\Binaries\Image\BinaryImage.cs" />
+    <Compile Include="BinaryData\Binaries\Image\Image.cs" />
+    <Compile Include="BinaryData\Binaries\Stamp.cs" />
     <Compile Include="BinaryData\Compiler.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\ImageElement.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\MenuElement.cs" />

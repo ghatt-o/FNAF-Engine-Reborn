@@ -5,8 +5,8 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
 {
     public class StaticEffectFrame
     {
-        public Image Image { get; set; }
-        public ushort Speed { get; set; }
+        public Image Image { get; set; } = new Image();
+        public ushort Speed { get; set; } = 0;
 
         public void Read(BinaryReader reader, bool binary, string projectpath)
         {

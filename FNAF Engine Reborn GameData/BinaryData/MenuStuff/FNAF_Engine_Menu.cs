@@ -9,15 +9,15 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
     {
         public byte key;
 
-        public string Name { get; set; }
-        public Binaries.Image BackgroundImage { get; set; } = null;
-        public Binaries.Audio BackgroundAudio { get; set; } = null;
-        public StaticEffect StaticEffect { get; set; } = null;
+        public string Name { get; set; } = "";
+        public Binaries.Image BackgroundImage { get; set; } = new Binaries.Image();
+        public Binaries.Audio BackgroundAudio { get; set; } = new Binaries.Audio();
+        public StaticEffect StaticEffect { get; set; } = new StaticEffect();
 
-        public FNAF_Engine_Menu_Code OnMenuStart_Code { get; set; }
-        public FNAF_Engine_Menu_Code OnGameLoop_Code { get; set; }
+        public FNAF_Engine_Menu_Code OnMenuStart_Code { get; set; } = new FNAF_Engine_Menu_Code();
+        public FNAF_Engine_Menu_Code OnGameLoop_Code { get; set; } = new FNAF_Engine_Menu_Code();
 
-        public List<MenuElement> Elements { get; set; }
+        public List<MenuElement> Elements { get; set; } = new List<MenuElement>();
 
         public void Write(BinaryWriter Writer, bool binary, string menupath, string project)
         {

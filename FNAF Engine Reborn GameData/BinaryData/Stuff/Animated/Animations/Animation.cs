@@ -5,7 +5,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
 {
     public class Animation
     {
-        public List<AnimationFrame> Frames { get; set; }
+        public List<AnimationFrame> Frames { get; set; } = new List<AnimationFrame>();
 
         public void Read(BinaryReader reader, bool binary, string projectpath)
         {

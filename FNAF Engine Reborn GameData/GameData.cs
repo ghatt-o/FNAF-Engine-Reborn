@@ -1,6 +1,7 @@
 ﻿using FNAF_Engine_GameData.BinaryData.Binaries;
 using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_GameData.BinaryData.Options;
+using FNAF_Engine_Reborn_GameData.BinaryData.Binaries;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values;
@@ -12,31 +13,32 @@ namespace FNAF_Engine_Reborn_GameData
 {
     public class GameData
     {
-        public string _header { get; set; }
-        public byte _key { get; set; }
+        public string _header { get; set; } = "";
+        public byte _key { get; set; } = 0;
+        public Stamp _stamp { get; set; } = new Stamp();
 
-        public string Name { get; set; }
-        public string GameName { get; set; }
+        public string Name { get; set; } = "";
+        public string GameName { get; set; } = "";
 
-        public string ID { get; private set; } //unused for now lol
+        public string ID { get; private set; } = ""; //unused for now lol
 
-        public GameOptions Options { get; set; }
-        public OfficeOptions OfficeSettings { get; set; }
-        public System.Drawing.Color MenuSettings { get; set; }
+        public GameOptions Options { get; set; } = new GameOptions();
+        public OfficeOptions OfficeSettings { get; set; } = new OfficeOptions();
+        public System.Drawing.Color MenuSettings { get; set; } = new System.Drawing.Color();
 
-        public List<Variable> DataValues { get; set; }
-        public List<StringVariable> DataStrings { get; set; }
-        public List<Variable> Variables { get; set; }
-        public List<StringVariable> StringVariables { get; set; }
+        public List<Variable> DataValues { get; set; } = new List<Variable>(); 
+        public List<StringVariable> DataStrings { get; set; } = new List<StringVariable>();
+        public List<Variable> Variables { get; set; } = new List<Variable>();
+        public List<StringVariable> StringVariables { get; set; } = new List<StringVariable>();
 
-        public List<Image> ImageBank { get; set; } //general image bank
-        public List<Audio> AudioBank { get; set; } //general audio bank
+        public List<Image> ImageBank { get; set; } = new List<Image>(); //general image bank
+        public List<Audio> AudioBank { get; set; } = new List<Audio>(); //general audio bank
 
         //misc
-        public List<Animation> Animations { get; set; }
-        public List<StaticEffect> StaticEffects { get; set; }
+        public List<Animation> Animations { get; set; } = new List<Animation>();
+        public List<StaticEffect> StaticEffects { get; set; } = new List<StaticEffect>();
         //game
-        public List<FNAF_Engine_Menu> Menus { get; set; }
+        public List<FNAF_Engine_Menu> Menus { get; set; } = new List<FNAF_Engine_Menu>();
 
         public void Write(BinaryWriter Writer, bool binary, string projectpath)
         {
@@ -44,6 +46,7 @@ namespace FNAF_Engine_Reborn_GameData
             {
                 Writer.Write(_header);
                 Writer.Write(_key);
+                _stamp.Write(Writer);
 
                 Writer.Write(Name);
                 Writer.Write(GameName);
@@ -113,7 +116,8 @@ namespace FNAF_Engine_Reborn_GameData
                 }
                 #endregion
 
-
+                Writer.Flush();
+                Writer.Close();
             }
             else
             {
@@ -137,6 +141,8 @@ namespace FNAF_Engine_Reborn_GameData
             {
                 _header = reader.ReadString();
                 _key = reader.ReadByte();
+                reader.BaseStream.Position += 17;
+
                 if (_header != "FER_DAT") throw new InvalidDataException("Bad header!");
 
                 Name = reader.ReadString();

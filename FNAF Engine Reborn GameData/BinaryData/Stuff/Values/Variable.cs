@@ -4,8 +4,8 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
 {
     public class Variable
     {
-        public string Key { get; set; }
-        public long Value { get; set; }
+        public string Key { get; set; } = "";
+        public long Value { get; set; } = 0;
 
         public void Read(BinaryReader reader, bool binary, string projectpath)
         {

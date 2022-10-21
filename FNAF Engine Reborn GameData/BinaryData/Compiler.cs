@@ -29,7 +29,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData
             }
         }
 
-        public static async void Compile(string type, string project, GameData gameData)
+        public static void Compile(string type, string project, GameData gameData)
         {
             if (type == "fnaf" || type == "fnaf4")
             {
