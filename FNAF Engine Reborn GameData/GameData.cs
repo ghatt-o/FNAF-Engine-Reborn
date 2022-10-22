@@ -23,7 +23,6 @@ namespace FNAF_Engine_Reborn_GameData
         public string ID { get; private set; } = ""; //unused for now lol
 
         public GameOptions Options { get; set; } = new GameOptions();
-        public OfficeOptions OfficeSettings { get; set; } = new OfficeOptions();
         public System.Drawing.Color MenuSettings { get; set; } = new System.Drawing.Color();
 
         public List<Variable> DataValues { get; set; } = new List<Variable>(); 
@@ -53,7 +52,6 @@ namespace FNAF_Engine_Reborn_GameData
                 //options
                 #region
                 Options.Write(Writer, true, null);
-                OfficeSettings.Write(Writer, true, null);
                 Writer.Write(MenuSettings.R);
                 Writer.Write(MenuSettings.G);
                 Writer.Write(MenuSettings.B);
@@ -128,7 +126,6 @@ namespace FNAF_Engine_Reborn_GameData
                 File.WriteAllText(projectpath + "/game.txt", GameName);
 
                 Options.Write(null, false, projectpath);
-                OfficeSettings.Write(null, false, projectpath);
                 //Menu settings VVVVVVVVVVVVVVV
                 File.WriteAllText(projectpath + "/menus/settings.txt", MenuSettings.R + "," + MenuSettings.G + "," + MenuSettings.B);
                 //Menu settings ^^^^^^^^^^^^^^^
@@ -149,7 +146,6 @@ namespace FNAF_Engine_Reborn_GameData
                 GameName = reader.ReadString();
 
                 Options.Read(reader, true, "");
-                OfficeSettings.Read(reader, true, null);
                 var r = reader.ReadByte();
                 var g = reader.ReadByte();
                 var b = reader.ReadByte();
@@ -224,7 +220,6 @@ namespace FNAF_Engine_Reborn_GameData
 
 
                 Options.Read(null, false, projectpath);
-                OfficeSettings.Read(null, false, projectpath);
 
                 string txt = File.ReadAllText(projectpath + "/menus/settings.txt");
                 MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));

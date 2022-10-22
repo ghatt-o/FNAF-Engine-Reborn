@@ -3015,5 +3015,61 @@ namespace FNAF_Engine_Reborn
         {
 
         }
+
+        private void label29_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Game";
+            toolTip.Show("Manage your game", label29);
+        }
+
+        private void label124_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Debug";
+            toolTip.Show("Debug your game", label124);
+        }
+
+        private void label143_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Playtest";
+            toolTip.Show("Try out your game!", label143);
+        }
+
+        private void label83_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Build";
+            toolTip.Show("Build your game!", label83);
+        }
+
+        private void label92_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Close";
+            toolTip.Show("Close your project!", label92);
+        }
+
+        private void label19_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Help";
+            toolTip.Show("How to use", label19);
+        }
+
+        private void Settings_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Customize";
+            toolTip.Show("Customize your workspace!", Settings);
+        }
+
+        private void label108_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Discord Server";
+            toolTip.Show("Join our Discord!", label108);
+        }
     }
 }

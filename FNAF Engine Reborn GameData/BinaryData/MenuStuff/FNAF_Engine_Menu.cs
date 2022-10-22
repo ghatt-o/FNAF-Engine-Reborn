@@ -1,5 +1,6 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
+using MenuStuff.Elements;
 using System.Collections.Generic;
 using System.IO;
 
@@ -17,7 +18,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         public FNAF_Engine_Menu_Code OnMenuStart_Code { get; set; } = new FNAF_Engine_Menu_Code();
         public FNAF_Engine_Menu_Code OnGameLoop_Code { get; set; } = new FNAF_Engine_Menu_Code();
 
-        public List<MenuElement> Elements { get; set; } = new List<MenuElement>();
+        public List<TextElement> Elements { get; set; } = new List<TextElement>();
 
         public void Write(BinaryWriter Writer, bool binary, string menupath, string project)
         {
@@ -31,11 +32,8 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
                 StaticEffect.Write(Writer, true, null);
 
-                //OnMenuStart_Code.Write(Writer, true, null);
-                //OnGameLoop_Code.Write(Writer, true, null);
-                //for now 0
-                Writer.Write(0);
-                Writer.Write(0);
+                OnMenuStart_Code.Write(Writer, true, null);
+                OnGameLoop_Code.Write(Writer, true, null);
 
                 Writer.Write(Elements.Count);
                 foreach (var element in Elements)
@@ -69,15 +67,15 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
                 StaticEffect.Read(reader, true, null);
 
-                reader.ReadInt32();
-                reader.ReadInt32();
+                OnMenuStart_Code.Read(reader, false, null);
+                OnGameLoop_Code.Read(reader, false, null);
 
                 var ec = reader.ReadInt32();
                 for (int i = 0; i < ec; i++)
                 {
                     MenuElement ele = new MenuElement();
                     ele.Read(reader, true, null);
-                    Elements.Add(ele);
+                    //Elements.Add(ele);
                 }
             }
             else

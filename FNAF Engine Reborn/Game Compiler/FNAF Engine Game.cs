@@ -237,6 +237,7 @@ namespace FNAF_Engine_Reborn
                         if (args == "False")
                         {
                             var Text = new Control();
+                            var newText = new Button();
                             if (style == "0")
                             {
                                 Text = new Label();
@@ -244,6 +245,8 @@ namespace FNAF_Engine_Reborn
                             else
                             {
                                 Text = new Button();
+                                newText.FlatStyle = FlatStyle.System;
+                                Text = newText;
                             }
 
                             menu_panel.Controls.Add(Text);

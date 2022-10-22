@@ -332,6 +332,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FE.ico" />
+    <None Include="Resources\REBORNtitle.Image1.png" />
+    <None Include="Resources\REBORNtitle.Image.png" />
     <None Include="Resources\gaynessbucket.png" />
     <None Include="Resources\Cancel.png" />
     <None Include="Resources\Drag.png" />
