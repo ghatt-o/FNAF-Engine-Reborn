@@ -52,6 +52,8 @@
     <Compile Include="BinaryData\MenuStuff\Elements\TextElement.cs" />
     <Compile Include="BinaryData\MenuStuff\FNAF Engine Menu Code.cs" />
     <Compile Include="BinaryData\MenuStuff\FNAF_Engine_Menu.cs" />
+    <Compile Include="BinaryData\Office\Office.cs" />
+    <Compile Include="BinaryData\Office\OfficeState.cs" />
     <Compile Include="BinaryData\Options\GameOptions.cs" />
     <Compile Include="BinaryData\Options\OfficeOptions.cs" />
     <Compile Include="BinaryData\Stuff\Animated\Animations\Animation.cs" />

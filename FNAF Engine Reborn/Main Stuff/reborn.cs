@@ -81,10 +81,10 @@ namespace FNAF_Engine_Reborn
             {
                 label93.Location = new Point(850, 1);
             }
-            else
-            {
-                label93.Location = new Point(872, 1);
-            }
+           // else
+           // {
+           //     label93.Location = new Point(872, 1);
+           // }
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
             int randomNumber = random.Next(1, 38);
@@ -2732,16 +2732,8 @@ namespace FNAF_Engine_Reborn
 
         private void label92_Click(object sender, EventArgs e)
         {
-            this.menu.Show();
-            this.menu.BringToFront();
-            this.menu.BringToFront();
-        }
-
-        private void label71_Click(object sender, EventArgs e)
-        {
-            this.menu.Show();
-            this.menu.BringToFront();
-            this.menu.BringToFront();
+            this.Close();
+            this.Show();
         }
 
         private void label7_Click(object sender, EventArgs e)
