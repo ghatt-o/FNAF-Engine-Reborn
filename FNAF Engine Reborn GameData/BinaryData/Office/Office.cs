@@ -10,9 +10,6 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
     public class Office
     {
         public OfficeOptions Settings = new OfficeOptions();
-
         public List<OfficeState> States = new List<OfficeState>();
-        public List<Camera> Cameras = new List<Camera>();
-        public List<Animatronic> Animatronics = new List<Animatronic>();
     }
 }

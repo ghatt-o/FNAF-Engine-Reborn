@@ -2,6 +2,7 @@
 using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_GameData.BinaryData.Options;
 using FNAF_Engine_Reborn_GameData.BinaryData.Binaries;
+using FNAF_Engine_Reborn_GameData.BinaryData.Office;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values;
@@ -38,6 +39,10 @@ namespace FNAF_Engine_Reborn_GameData
         public List<StaticEffect> StaticEffects { get; set; } = new List<StaticEffect>();
         //game
         public List<FNAF_Engine_Menu> Menus { get; set; } = new List<FNAF_Engine_Menu>();
+        public Office Office { get; set; } = new Office();
+        public List<Camera> Cameras = new List<Camera>();
+        public List<Animatronic> Animatronics = new List<Animatronic>();
+        public List<Script> Scripts = new List<Script>();
 
         public void Write(BinaryWriter Writer, bool binary, string projectpath)
         {

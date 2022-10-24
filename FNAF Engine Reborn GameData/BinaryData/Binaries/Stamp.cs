@@ -15,7 +15,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
 
         public int BinariesCount { get; set; } = 0;
         public int MenuCount { get; set; } = 0;
-        public byte[] Chunks { get; set; } = new byte[0];
+        public byte[] Chunks { get; set; } = new byte[18];
 
         public void Write(BinaryWriter Writer)
         {
