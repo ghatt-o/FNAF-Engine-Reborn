@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,11 +12,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
     {
         public short Identifier = 9; //so it doesnt break
 
-        public void Write(BinaryWriter Writer, bool binary, string projectpath)
+        public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
             if (binary == true)
             {
-                Writer.Write("CND");
+                Writer.WriteAscii("CND");
                 Writer.Write(Identifier);
             }
             else

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.IO;
 
 namespace FNAF_Engine_GameData.BinaryData.MenuStuff.Elements
 {
@@ -11,32 +12,33 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff.Elements
         public bool Hidden { get; set; } = false;
         public bool args { get; set; } = false;
 
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
                 type = reader.ReadByte();
-                ID = reader.ReadString();
+                ID = reader.ReadAscii(reader.ReadInt32());
                 X = reader.ReadInt32();
                 Y = reader.ReadInt32();
-                Hidden = reader.ReadBoolean();
-                args = reader.ReadBoolean();
+                Hidden = reader.ReadBool();
+                args = reader.ReadBool();
             }
             else
             {
                 //todo
             }
         }
-        public void Write(BinaryWriter Writer, bool binary, string project)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == true)
             {
-                Writer.Write(type);
-                Writer.Write(ID);
-                Writer.Write(X);
-                Writer.Write(Y);
-                Writer.Write(Hidden);
-                Writer.Write(args);
+                Writer.WriteInt8(type);
+                Writer.WriteInt32(ID.Length);
+                Writer.WriteAscii(ID);
+                Writer.WriteInt32(X);
+                Writer.WriteInt32(Y);
+                Writer.WriteBool(Hidden);
+                Writer.WriteBool(args);
             }
             else
             {

@@ -47,6 +47,8 @@
     <Compile Include="BinaryData\Binaries\Image\Image.cs" />
     <Compile Include="BinaryData\Binaries\Stamp.cs" />
     <Compile Include="BinaryData\Compiler.cs" />
+    <Compile Include="BinaryData\Memory\ByteReader.cs" />
+    <Compile Include="BinaryData\Memory\ByteWriter.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\ImageElement.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\MenuElement.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\TextElement.cs" />

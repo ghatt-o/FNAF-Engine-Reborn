@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.Collections.Generic;
 using System.IO;
 
 namespace FNAF_Engine_GameData.BinaryData.Options
@@ -10,7 +11,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
         public bool Watermarks { get; set; } = false;
         public bool SrcFileOnExport { get; set; } = false;
 
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == false)
             {
@@ -43,10 +44,10 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else if (binary == true)
             {
-                Fullscreen = reader.ReadBoolean();
+                Fullscreen = reader.ReadBool();
             }
         }
-        public void Write(BinaryWriter Writer, bool binary, string project)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == false)
             {
@@ -69,7 +70,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else if (binary == true)
             {
-                Writer.Write(Fullscreen);
+                Writer.WriteBool(Fullscreen);
             }
         }
     }

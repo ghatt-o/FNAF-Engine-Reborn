@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_GameData.BinaryData.Binaries;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
@@ -8,7 +9,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
         public Image Image { get; set; } = new Image();
         public ushort Speed { get; set; } = 0;
 
-        public void Read(BinaryReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath)
         {
             if (binary == true)
             {
@@ -20,12 +21,12 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
                 //todo
             }
         }
-        public void Write(BinaryWriter Writer, bool binary, string projectpath)
+        public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
             if (binary == true)
             {
                 Image.Write(Writer);
-                Writer.Write((ushort)Speed);
+                Writer.WriteUInt16(Speed);
             }
             else
             {

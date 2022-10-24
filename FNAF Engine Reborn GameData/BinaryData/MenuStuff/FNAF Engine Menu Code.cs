@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.IO;
 
 namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 {
@@ -8,7 +9,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         public ulong Lines { get; set; }
         public string[] Code { get; set; }
 
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
@@ -20,7 +21,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             }
         }
 
-        public void Write(BinaryWriter Writer, bool binary, string project)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == true)
             {

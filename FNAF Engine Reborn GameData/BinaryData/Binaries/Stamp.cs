@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
         public int MenuCount { get; set; } = 0;
         public byte[] Chunks { get; set; } = new byte[18];
 
-        public void Write(BinaryWriter Writer)
+        public void Write(ByteWriter Writer)
         {
             Writer.Write((byte)1);
             Writer.Write((byte)2);
@@ -44,7 +45,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
             }
         }
 
-        public void Read(BinaryReader reader)
+        public void Read(ByteReader reader)
         {
             reader.ReadBytes(3);
 

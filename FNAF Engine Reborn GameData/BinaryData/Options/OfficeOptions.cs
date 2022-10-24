@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Reflection;
@@ -18,7 +19,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
         public string AnimatronicToKill { get; set; } = "";
         public int Hours { get; set; } = 6;
 
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
@@ -74,7 +75,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                 }
             }
         }
-        public void Write(BinaryWriter Writer, bool binary, string project)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == true)
             {

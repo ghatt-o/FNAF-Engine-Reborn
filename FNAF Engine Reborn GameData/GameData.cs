@@ -2,7 +2,9 @@
 using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_GameData.BinaryData.Options;
 using FNAF_Engine_Reborn_GameData.BinaryData.Binaries;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Office;
+using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values;
@@ -44,34 +46,46 @@ namespace FNAF_Engine_Reborn_GameData
         public List<Animatronic> Animatronics = new List<Animatronic>();
         public List<Script> Scripts = new List<Script>();
 
-        public void Write(BinaryWriter Writer, bool binary, string projectpath)
+        public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
             if (binary == true)
             {
-                Writer.Write(_header);
-                Writer.Write(_key);
+                Writer.WriteAscii(_header);
+                Writer.WriteInt8(_key);
                 _stamp.Write(Writer);
 
-                Writer.Write(Name);
-                Writer.Write(GameName);
+                Writer.AutoWriteUnicode(Name);
+                Writer.AutoWriteUnicode(GameName);
                 //options
                 #region
                 Options.Write(Writer, true, null);
-                Writer.Write(MenuSettings.R);
-                Writer.Write(MenuSettings.G);
-                Writer.Write(MenuSettings.B);
+                Writer.WriteInt8(MenuSettings.R);
+                Writer.WriteInt8(MenuSettings.G);
+                Writer.WriteInt8(MenuSettings.B);
                 #endregion
 
                 //data and vars
                 #region
-                Writer.Write((int)DataValues.Count);
-                Writer.Write((int)Variables.Count);
+                Writer.WriteInt32(DataValues.Count);
+                Writer.WriteInt32(Variables.Count);
+
+                Writer.WriteInt32(DataStrings.Count);
+                Writer.WriteInt32(StringVariables.Count);
 
                 foreach (var Data in DataValues)
                 {
                     Data.Write(Writer, true, "");
                 }
-                foreach (var var in DataValues)
+                foreach (var var in Variables)
+                {
+                    var.Write(Writer, true, "");
+                }
+
+                foreach (var Data in DataStrings)
+                {
+                    Data.Write(Writer, true, "");
+                }
+                foreach (var var in StringVariables)
                 {
                     var.Write(Writer, true, "");
                 }
@@ -111,7 +125,7 @@ namespace FNAF_Engine_Reborn_GameData
                 #endregion
 
                 //Menus
-                Writer.Write(Menus.Count);
+                Writer.WriteUInt16((ushort)Menus.Count);
                 #region
                 foreach (var m in Menus)
                 {
@@ -137,7 +151,7 @@ namespace FNAF_Engine_Reborn_GameData
 
             }
         }
-        public void Read(BinaryReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath)
         {
             if (binary == true)
             {
@@ -228,8 +242,6 @@ namespace FNAF_Engine_Reborn_GameData
 
                 string txt = File.ReadAllText(projectpath + "/menus/settings.txt");
                 MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));
-
-
             }
         }
     }

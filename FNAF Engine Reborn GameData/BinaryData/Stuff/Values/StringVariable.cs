@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
 {
@@ -7,12 +8,13 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
         public string Key { get; set; } = string.Empty;
         public string Value { get; set; } = string.Empty;
 
-        public void Read(BinaryReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath)
         {
             if (binary == true)
             {
-                Key = reader.ReadString();
-                Value = reader.ReadString();
+                var keyLen = reader.ReadInt32();
+                Key = reader.ReadAscii(keyLen);
+                Value = reader.AutoReadUnicode();
             }
             else
             {
@@ -20,12 +22,13 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
             }
         }
 
-        public void Write(BinaryWriter Writer, bool binary, string projectpath)
+        public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
             if (binary == true)
             {
-                Writer.Write(Key);
-                Writer.Write(Value);
+                Writer.WriteInt32(Key.Length);
+                Writer.WriteAscii(Key);
+                Writer.AutoWriteUnicode(Value);
             }
             else
             {

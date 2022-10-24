@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using MenuStuff.Elements;
 using System.Collections.Generic;
@@ -20,12 +21,12 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
         public List<TextElement> Elements { get; set; } = new List<TextElement>();
 
-        public void Write(BinaryWriter Writer, bool binary, string menupath, string project)
+        public void Write(ByteWriter Writer, bool binary, string menupath, string project)
         {
             if (binary == true)
             {
-                Writer.Write(Name);
-                Writer.Write(key);
+                Writer.AutoWriteUnicode(Name);
+                Writer.WriteInt8(key);
 
                 BackgroundImage.Write(Writer);
                 BackgroundAudio.Write(Writer);
@@ -55,11 +56,11 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 }
             }
         }
-        public void Read(BinaryReader reader, bool binary, string menupath, string project)
+        public void Read(ByteReader reader, bool binary, string menupath, string project)
         {
             if (binary == true)
             {
-                Name = reader.ReadString();
+                Name = reader.AutoReadUnicode();
                 key = reader.ReadByte();
 
                 BackgroundImage.Read(reader, true, null, null);

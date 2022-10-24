@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData
 {
@@ -33,7 +34,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData
         {
             if (type == "fnaf" || type == "fnaf4")
             {
-                BinaryWriter binWriter = new BinaryWriter(new FileStream($@"Exports/{gameData.Name}/data.ferdata", FileMode.Create));
+                ByteWriter binWriter = new ByteWriter(new FileStream($@"Exports/{gameData.Name}/data.ferdata", FileMode.Create));
                 gameData.Write(binWriter, true, "");
                 binWriter.Close();
             }
