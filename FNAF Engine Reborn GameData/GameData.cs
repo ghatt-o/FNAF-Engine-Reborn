@@ -133,8 +133,9 @@ namespace FNAF_Engine_Reborn_GameData
                 }
                 #endregion
 
-                Writer.Flush();
-                Writer.Close();
+                Writer.WriteAscii("OFFC");
+
+                Office.Write(Writer, true, null);
             }
             else
             {
@@ -227,7 +228,12 @@ namespace FNAF_Engine_Reborn_GameData
                     Menus.Add(menu);
                 }
 
+                if (reader.ReadAscii(4) != "OFFC")
+                {
+                    reader.ReadInt64();
+                }
 
+                Office.Read(reader, true, null);
 
             }
             else
