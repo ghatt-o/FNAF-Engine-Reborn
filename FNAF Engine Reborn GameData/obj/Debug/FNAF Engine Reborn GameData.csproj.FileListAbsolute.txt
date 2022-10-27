@@ -1,6 +1,0 @@
-C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Reborn GameData\bin\Debug\FNAF Engine Reborn GameData.dll
-C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Reborn GameData\bin\Debug\FNAF Engine Reborn GameData.pdb
-C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Reborn GameData\obj\Debug\FNAF Engine Reborn GameData.csproj.AssemblyReference.cache
-C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Reborn GameData\obj\Debug\FNAF Engine Reborn GameData.csproj.CoreCompileInputs.cache
-C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Reborn GameData\obj\Debug\FNAF Engine Reborn GameData.dll
-C:\Users\lily\Desktop\FNAF Engine Reborn\fer\FNAF Engine Reborn GameData\obj\Debug\FNAF Engine Reborn GameData.pdb
