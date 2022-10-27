@@ -42,21 +42,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryData\Binaries\Audio.cs" />
-    <Compile Include="BinaryData\Binaries\BinaryImage.cs" />
-    <Compile Include="BinaryData\Binaries\Image.cs" />
+    <Compile Include="BinaryData\Binaries\Image\Audio.cs" />
+    <Compile Include="BinaryData\Binaries\Image\BinaryImage.cs" />
+    <Compile Include="BinaryData\Binaries\Image\Image.cs" />
+    <Compile Include="BinaryData\Binaries\Stamp.cs" />
     <Compile Include="BinaryData\Compiler.cs" />
+    <Compile Include="BinaryData\Memory\ByteReader.cs" />
+    <Compile Include="BinaryData\Memory\ByteWriter.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\ImageElement.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\MenuElement.cs" />
     <Compile Include="BinaryData\MenuStuff\Elements\TextElement.cs" />
     <Compile Include="BinaryData\MenuStuff\FNAF Engine Menu Code.cs" />
     <Compile Include="BinaryData\MenuStuff\FNAF_Engine_Menu.cs" />
+    <Compile Include="BinaryData\Office\Animatronic.cs" />
+    <Compile Include="BinaryData\Office\Camera.cs" />
+    <Compile Include="BinaryData\Office\Office.cs" />
+    <Compile Include="BinaryData\Office\OfficeState.cs" />
+    <Compile Include="BinaryData\Scripts\Script.cs" />
     <Compile Include="BinaryData\Options\GameOptions.cs" />
     <Compile Include="BinaryData\Options\OfficeOptions.cs" />
+    <Compile Include="BinaryData\Scripts\ScriptAction.cs" />
+    <Compile Include="BinaryData\Scripts\ScriptCondition.cs" />
     <Compile Include="BinaryData\Stuff\Animated\Animations\Animation.cs" />
     <Compile Include="BinaryData\Stuff\Animated\Animations\AnimationFrame.cs" />
     <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffectFrame.cs" />
     <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffect.cs" />
+    <Compile Include="BinaryData\Stuff\Values\StringVariable.cs" />
     <Compile Include="BinaryData\Stuff\Values\Variable.cs" />
     <Compile Include="GameData.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />

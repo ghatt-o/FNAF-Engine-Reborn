@@ -1,6 +1,7 @@
-﻿using System.IO;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.IO;
 
-namespace FNAF_Engine_GameData.BinaryData
+namespace FNAF_Engine_Reborn_GameData.BinaryData
 {
     internal static class Compiler
     {
@@ -29,11 +30,11 @@ namespace FNAF_Engine_GameData.BinaryData
             }
         }
 
-        public static async void Compile(string type, string project, GameData gameData)
+        public static void Compile(string type, string project, GameData gameData)
         {
             if (type == "fnaf" || type == "fnaf4")
             {
-                BinaryWriter binWriter = new BinaryWriter(new FileStream($@"Exports/{gameData.Name}/data.ferdata", FileMode.Create));
+                ByteWriter binWriter = new ByteWriter(new FileStream($@"Exports/{gameData.Name}/data.ferdata", FileMode.Create));
                 gameData.Write(binWriter, true, "");
                 binWriter.Close();
             }

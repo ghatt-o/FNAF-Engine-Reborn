@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Reflection;
@@ -7,18 +8,18 @@ namespace FNAF_Engine_GameData.BinaryData.Options
 {
     public class OfficeOptions
     {
-        public bool PowerEnabled { get; set; }
-        public bool ToxicEnabled { get; set; }
-        public bool MaskEnabled { get; set; }
-        public bool CameraEnabled { get; set; }
-        public bool FlashlightEnabled { get; set; }
-        public bool PanoramaEnabled { get; set; }
-        public bool PerspectiveEnabled { get; set; }
-        public bool UCNStyleEnabled { get; set; }
-        public string AnimatronicToKill { get; set; }
-        public int Hours { get; set; }
+        public bool PowerEnabled { get; set; } = false;
+        public bool ToxicEnabled { get; set; } = false;
+        public bool MaskEnabled { get; set; } = false;
+        public bool CameraEnabled { get; set; } = false;
+        public bool FlashlightEnabled { get; set; } = false;
+        public bool PanoramaEnabled { get; set; } = false;
+        public bool PerspectiveEnabled { get; set; } = false;
+        public bool UCNStyleEnabled { get; set; } = false;
+        public string AnimatronicToKill { get; set; } = "";
+        public int Hours { get; set; } = 6;
 
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
@@ -74,7 +75,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                 }
             }
         }
-        public void Write(BinaryWriter Writer, bool binary, string project)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == true)
             {
@@ -91,8 +92,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else
             {
-                //power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6
-                FileClear(project + "/offices/default/office.txt");
+                File.WriteAllText(project + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,"); //what the fuck its still reading from existing file
 
 
                 foreach (PropertyInfo prop in TypeDescriptor.GetProperties(this))
@@ -107,7 +107,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                     else if (prop.Name == "UCNStyleEnabled") FileAppend(project + "/offices/default/office.txt", "ucnstyle=" + UCNStyleEnabled + ",");
                     else if (prop.Name == "AnimatronicToKill") FileAppend(project + "/offices/default/office.txt", "animatronic=" + AnimatronicToKill + ",");
                     else if (prop.Name == "Hours") FileAppend(project + "/offices/default/office.txt", "hours=" + Hours + ",");
-                    else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'! (At line 110, Office Settings Read()!)");
+                    else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'! (At line 109, Office Settings Read()!)");
                 }
                 void FileAppend(string path, string contents)
                 {

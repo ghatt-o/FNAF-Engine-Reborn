@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.Collections.Generic;
 using System.IO;
 
 namespace FNAF_Engine_GameData.BinaryData.Options
 {
     public class GameOptions
     {
-        public bool Fullscreen { get; set; }
-        public bool Minigames { get; set; }
-        public bool Watermarks { get; set; }
-        public bool SrcFileOnExport { get; set; }
+        public bool Fullscreen { get; set; } = false;
+        public bool Minigames { get; set; } = false;
+        public bool Watermarks { get; set; } = false;
+        public bool SrcFileOnExport { get; set; } = false;
 
-        public void Read(BinaryReader reader, bool binary, string project)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == false)
             {
@@ -43,15 +44,14 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else if (binary == true)
             {
-                Fullscreen = reader.ReadBoolean();
+                Fullscreen = reader.ReadBool();
             }
         }
-        public void Write(BinaryWriter Writer, bool binary, string project)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == false)
             {
-                string newFile = File.ReadAllText(project + "/options.txt");
-
+                string newFile = "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false"; //wtf, i used to read a options.txt? :skull: now ima reuse old code idc
 
                 if (Fullscreen == false) newFile.Replace("fullscreen=true", "fullscreen=false");
                 else if (Fullscreen == true) newFile.Replace("fullscreen=false", "fullscreen=true");
@@ -70,7 +70,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else if (binary == true)
             {
-                Writer.Write(Fullscreen);
+                Writer.WriteBool(Fullscreen);
             }
         }
     }

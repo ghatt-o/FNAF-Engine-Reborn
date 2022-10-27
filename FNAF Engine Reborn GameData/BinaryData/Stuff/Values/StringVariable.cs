@@ -3,10 +3,10 @@ using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
 {
-    public class Variable
+    public class StringVariable
     {
-        public string Key { get; set; } = "";
-        public long Value { get; set; } = 0;
+        public string Key { get; set; } = string.Empty;
+        public string Value { get; set; } = string.Empty;
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
@@ -14,7 +14,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
             {
                 var keyLen = reader.ReadInt32();
                 Key = reader.ReadAscii(keyLen);
-                Value = reader.ReadInt64();
+                Value = reader.AutoReadUnicode();
             }
             else
             {
@@ -28,7 +28,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
             {
                 Writer.WriteInt32(Key.Length);
                 Writer.WriteAscii(Key);
-                Writer.WriteInt64(Value);
+                Writer.AutoWriteUnicode(Value);
             }
             else
             {

@@ -1,4 +1,5 @@
-﻿using FNAF_Engine_Reborn.bin;
+﻿using FNAF_Engine_Reborn_GameData;
+using FNAF_Engine_Reborn.bin;
 using FNAF_Engine_Reborn.Main_Stuff;
 using FNAF_Engine_Reborn.Object_Editors;
 using System;
@@ -13,6 +14,8 @@ namespace FNAF_Engine_Reborn
 {
     public partial class reborn : Form
     {
+        public GameData game;
+
         public bool showProject;
         public string Version = "0.9.4";
         public string Build_Version = "b_o_w4r1";
@@ -78,10 +81,10 @@ namespace FNAF_Engine_Reborn
             {
                 label93.Location = new Point(850, 1);
             }
-            else
-            {
-                label93.Location = new Point(872, 1);
-            }
+           // else
+           // {
+           //     label93.Location = new Point(872, 1);
+           // }
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
             int randomNumber = random.Next(1, 38);
@@ -1589,7 +1592,7 @@ namespace FNAF_Engine_Reborn
                             string png = p.SafeFileName;
                             Import_Files.CreateSprite(filePath, png, projecto);
                             File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", png);
-                            //OfficePreviewBG.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
+                            officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
                         }
                     }
                     catch (Exception)
@@ -1610,20 +1613,20 @@ namespace FNAF_Engine_Reborn
                     var img = Image.FromFile(projecto + "/images/" + image);
                     if (img.Width <= 1280 && img.Height <= 720)
                     {
-                        //OfficePreviewBG.BackgroundImageLayout = ImageLayout.Stretch;
-                        //OfficePreviewBG.BackgroundImage = img;
+                        officePreview.BackgroundImageLayout = ImageLayout.Stretch;
+                        officePreview.BackgroundImage = img;
                     }
                     else
                     {
                         if (checkBox24.Checked == false)
                         {
-                            //OfficePreviewBG.BackgroundImageLayout = ImageLayout.Stretch;
-                            //OfficePreviewBG.BackgroundImage = img;
+                            officePreview.BackgroundImageLayout = ImageLayout.Stretch;
+                            officePreview.BackgroundImage = img;
                         }
                         else
                         {
-                            //OfficePreviewBG.BackgroundImage = img;
-                            //OfficePreviewBG.BackgroundImageLayout = ImageLayout.None;
+                            officePreview.BackgroundImage = img;
+                            officePreview.BackgroundImageLayout = ImageLayout.None;
                         }
                     }
                 }
@@ -2375,7 +2378,7 @@ namespace FNAF_Engine_Reborn
 
         private void Menu_CodeEditor_VisibleChanged(object sender, EventArgs e)
         {
-
+            //MenuCodeEditor_Code_Tree.Nodes.
         }
 
         private void DownloadFontBtn_Click(object sender, EventArgs e)
@@ -2729,16 +2732,8 @@ namespace FNAF_Engine_Reborn
 
         private void label92_Click(object sender, EventArgs e)
         {
-            this.menu.Show();
-            this.menu.BringToFront();
-            this.menu.BringToFront();
-        }
-
-        private void label71_Click(object sender, EventArgs e)
-        {
-            this.menu.Show();
-            this.menu.BringToFront();
-            this.menu.BringToFront();
+            this.Close();
+            this.Show();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -3001,6 +2996,72 @@ namespace FNAF_Engine_Reborn
         private void ScrollRight_Office_MouseDown(object sender, MouseEventArgs e)
         {
             //OfficePreviewBG.Location = new Point(OfficePreviewBG.Location.X + 5, OfficePreviewBG.Location.Y);
+        }
+
+        private void AddFrame_StaticEffectEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteFrame_StaticEffectEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Game";
+            toolTip.Show("Manage your game", label29);
+        }
+
+        private void label124_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Debug";
+            toolTip.Show("Debug your game", label124);
+        }
+
+        private void label143_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Playtest";
+            toolTip.Show("Try out your game!", label143);
+        }
+
+        private void label83_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Build";
+            toolTip.Show("Build your game!", label83);
+        }
+
+        private void label92_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Close";
+            toolTip.Show("Close your project!", label92);
+        }
+
+        private void label19_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Help";
+            toolTip.Show("How to use", label19);
+        }
+
+        private void Settings_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Customize";
+            toolTip.Show("Customize your workspace!", Settings);
+        }
+
+        private void label108_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "Discord Server";
+            toolTip.Show("Join our Discord!", label108);
         }
     }
 }

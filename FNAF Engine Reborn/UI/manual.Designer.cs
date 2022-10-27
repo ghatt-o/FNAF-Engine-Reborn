@@ -1115,8 +1115,8 @@ namespace FNAF_Engine_Reborn
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(638, 45);
             this.label4.TabIndex = 106;
-            this.label4.Text = "If you want to go back to the main menu, go to game manager and click on the clos" +
-    "e project button!";
+            this.label4.Text = "If you want to go back to the main menu, click on the close project button! (X in" +
+    " the menu bar.)";
             // 
             // label5
             // 

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>FNAF_Engine_Reborn</RootNamespace>
     <AssemblyName>FNAF_Engine_Reborn</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -137,6 +137,7 @@
     <Compile Include="Object Editors\Compiler.cs" />
     <Compile Include="Object Editors\DataValues.cs" />
     <Compile Include="Object Editors\Import_Files.cs" />
+    <Compile Include="Object Editors\MenuEvents.cs" />
     <Compile Include="Object Editors\Menu_Editor.cs" />
     <Compile Include="Object Editors\ScriptEditor.cs" />
     <Compile Include="Game Compiler\Compiler.cs">
@@ -331,6 +332,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FE.ico" />
+    <None Include="Resources\REBORNtitle.Image1.png" />
+    <None Include="Resources\REBORNtitle.Image.png" />
     <None Include="Resources\gaynessbucket.png" />
     <None Include="Resources\Cancel.png" />
     <None Include="Resources\Drag.png" />
@@ -376,6 +379,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FNAF Engine Reborn GameData\FNAF Engine Reborn GameData.csproj">
+      <Project>{784349ec-ecdc-4155-9490-5715d942da6b}</Project>
+      <Name>FNAF Engine Reborn GameData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.Collections.Generic;
 using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
 {
     public class Animation
     {
-        public List<AnimationFrame> Frames { get; set; }
+        public List<AnimationFrame> Frames { get; set; } = new List<AnimationFrame>();
 
-        public void Read(BinaryReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath)
         {
             if (binary == true)
             {
@@ -24,11 +25,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
                 //todo
             }
         }
-        public void Write(BinaryWriter Writer, bool binary, string projectpath)
+        public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
             if (binary == true)
             {
-                Writer.Write((uint)Frames.Count);
+                Writer.WriteUInt32((uint)Frames.Count);
                 foreach (var frame in Frames)
                 {
                     frame.Write(Writer, binary, projectpath);

@@ -74,9 +74,16 @@ namespace FNAF_Engine_Reborn
                 {
                     Size = Size,
                     Name = MenuName,
-                    BackgroundImageLayout = ImageLayout.Stretch,
-                    BackColor = Color.Black
+                    BackgroundImageLayout = ImageLayout.Stretch
                 };
+                try
+                {
+                    menu_panel.BackColor = Color.FromArgb(Convert.ToByte(File.ReadAllText(project + "/menus/settings.txt").Split(',')[0]), Convert.ToByte(File.ReadAllText(project + "/menus/settings.txt").Split(',')[1]), Convert.ToByte(File.ReadAllText(project + "/menus/settings.txt").Split(',')[2]));
+                }
+                catch (Exception)
+                {
+                    menu_panel.BackColor = Color.Black;
+                }
 
                 try
                 {
@@ -226,10 +233,21 @@ namespace FNAF_Engine_Reborn
                     foreach (string text in texts)
                     {
                         string args = File.ReadAllText(text + "/args.txt");
+                        string style = File.ReadAllText(text + "/style.txt");
                         if (args == "False")
                         {
-
-                            Label Text = new Label();
+                            var Text = new Control();
+                            var newText = new Button();
+                            if (style == "0")
+                            {
+                                Text = new Label();
+                            }
+                            else
+                            {
+                                Text = new Button();
+                                newText.FlatStyle = FlatStyle.System;
+                                Text = newText;
+                            }
 
                             menu_panel.Controls.Add(Text);
 
@@ -304,7 +322,7 @@ namespace FNAF_Engine_Reborn
                             Text.Location = new Point((int)X, (int)Y);
                             Text.AutoSize = true;
                             Text.BackColor = Color.Transparent;
-                            Text.FlatStyle = FlatStyle.Flat;
+                            //Text.FlatStyle = FlatStyle.Flat;
                             Text.ForeColor = Color.FromArgb(R, G, B);
                             Text.Font = new Font(font, FontStyle.Regular);
                             Text.Text = TXTText;
