@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNAF_Engine_Game-OTK", "FNAF_Engine_Game-OTK.csproj", "{4EAC7BCA-754D-4F17-B855-ADBDC340794B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EAC7BCA-754D-4F17-B855-ADBDC340794B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EAC7BCA-754D-4F17-B855-ADBDC340794B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EAC7BCA-754D-4F17-B855-ADBDC340794B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EAC7BCA-754D-4F17-B855-ADBDC340794B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF2E5224-32AF-4180-ACD0-F182F664630D}
+	EndGlobalSection
+EndGlobal

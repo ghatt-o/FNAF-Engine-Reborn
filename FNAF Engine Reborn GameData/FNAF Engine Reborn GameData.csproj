@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{784349EC-ECDC-4155-9490-5715D942DA6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FNAF_Engine_Reborn_GameData</RootNamespace>
+    <AssemblyName>FNAF Engine Reborn GameData</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BinaryData\Binaries\Image\Audio.cs" />
+    <Compile Include="BinaryData\Binaries\Image\BinaryImage.cs" />
+    <Compile Include="BinaryData\Binaries\Image\Image.cs" />
+    <Compile Include="BinaryData\Binaries\Stamp.cs" />
+    <Compile Include="BinaryData\Compiler.cs" />
+    <Compile Include="BinaryData\Memory\ByteReader.cs" />
+    <Compile Include="BinaryData\Memory\ByteWriter.cs" />
+    <Compile Include="BinaryData\MenuStuff\Elements\ImageElement.cs" />
+    <Compile Include="BinaryData\MenuStuff\Elements\MenuElement.cs" />
+    <Compile Include="BinaryData\MenuStuff\Elements\TextElement.cs" />
+    <Compile Include="BinaryData\MenuStuff\FNAF Engine Menu Code.cs" />
+    <Compile Include="BinaryData\MenuStuff\FNAF_Engine_Menu.cs" />
+    <Compile Include="BinaryData\Office\Animatronic.cs" />
+    <Compile Include="BinaryData\Office\Camera.cs" />
+    <Compile Include="BinaryData\Office\Office.cs" />
+    <Compile Include="BinaryData\Office\OfficeState.cs" />
+    <Compile Include="BinaryData\Scripts\Script.cs" />
+    <Compile Include="BinaryData\Options\GameOptions.cs" />
+    <Compile Include="BinaryData\Options\OfficeOptions.cs" />
+    <Compile Include="BinaryData\Scripts\ScriptAction.cs" />
+    <Compile Include="BinaryData\Scripts\ScriptCondition.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\Animations\Animation.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\Animations\AnimationFrame.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffectFrame.cs" />
+    <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffect.cs" />
+    <Compile Include="BinaryData\Stuff\Values\StringVariable.cs" />
+    <Compile Include="BinaryData\Stuff\Values\Variable.cs" />
+    <Compile Include="GameData.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\FNAF Engine Reborn GameData.csproj.AssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\FNAF Engine Reborn GameData.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
