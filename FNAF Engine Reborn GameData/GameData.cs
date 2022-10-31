@@ -67,27 +67,17 @@ namespace FNAF_Engine_Reborn_GameData
                 //data and vars
                 #region
                 Writer.WriteInt32(DataValues.Count);
-                Writer.WriteInt32(Variables.Count);
-
                 Writer.WriteInt32(DataStrings.Count);
-                Writer.WriteInt32(StringVariables.Count);
+                Writer.WriteInt32(0);
 
                 foreach (var Data in DataValues)
                 {
                     Data.Write(Writer, true, "");
                 }
-                foreach (var var in Variables)
-                {
-                    var.Write(Writer, true, "");
-                }
 
                 foreach (var Data in DataStrings)
                 {
                     Data.Write(Writer, true, "");
-                }
-                foreach (var var in StringVariables)
-                {
-                    var.Write(Writer, true, "");
                 }
                 #endregion
 
@@ -160,10 +150,10 @@ namespace FNAF_Engine_Reborn_GameData
                 _key = reader.ReadByte();
                 reader.BaseStream.Position += 17;
 
-                if (_header != "FER_DAT") throw new InvalidDataException("Bad header!");
+                if (_header != "FER_DAT") throw new InvalidDataException("Invalid header!");
 
-                Name = reader.ReadString();
-                GameName = reader.ReadString();
+                Name = reader.AutoReadUnicode();
+                GameName = reader.AutoReadUnicode();
 
                 Options.Read(reader, true, "");
                 var r = reader.ReadByte();
@@ -172,6 +162,7 @@ namespace FNAF_Engine_Reborn_GameData
                 MenuSettings = System.Drawing.Color.FromArgb(r, g, b);
 
                 var datavalc = reader.ReadInt32();
+                var datastrc = reader.ReadInt32();
                 var VARc = reader.ReadInt32();
 
                 for (int I = 0; I < datavalc; I++)
@@ -180,13 +171,12 @@ namespace FNAF_Engine_Reborn_GameData
                     dataval.Read(reader, true, "");
                     DataValues.Add(dataval);
                 }
-                for (int I = 0; I < VARc; I++)
+                for (int I = 0; I < datastrc; I++)
                 {
-                    Variable varval = new Variable();
-                    varval.Read(reader, true, "");
-                    Variables.Add(varval);
+                    StringVariable datastr = new StringVariable();
+                    datastr.Read(reader, true, "");
+                    DataStrings.Add(datastr);
                 }
-
                 var imgc = reader.ReadInt32();
                 var audc = reader.ReadInt32();
 
@@ -220,7 +210,7 @@ namespace FNAF_Engine_Reborn_GameData
                 }
 
 
-                var menuCount = reader.ReadInt32();
+                var menuCount = reader.ReadUInt16();
                 for (int i = 0; i < menuCount; i++)
                 {
                     FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
@@ -249,7 +239,7 @@ namespace FNAF_Engine_Reborn_GameData
                 string txt = File.ReadAllText(projectpath + "/menus/settings.txt");
                 MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));
 
-
+                var DataValueCount = File.ReadAllText(projectpath + "/data.txt").Split(',').Length;
             }
         }
     }
