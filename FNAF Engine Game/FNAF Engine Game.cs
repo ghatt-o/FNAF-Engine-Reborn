@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_Reborn_GameData;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System;
 using System.Drawing;
 using System.IO;
@@ -46,7 +47,7 @@ namespace FNAF_Engine_Game
         private void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
         {
             GameData newdata = new GameData();
-            newdata.Read(new BinaryReader(new FileStream("data.ferdata", FileMode.Open)), true, "");
+            newdata.Read(new ByteReader(new FileStream("data.ferdata", FileMode.Open)), true, "");
 
             data = newdata;
 

@@ -28,7 +28,7 @@ namespace FNAF_Engine_Reborn_GameData
         public GameOptions Options { get; set; } = new GameOptions();
         public System.Drawing.Color MenuSettings { get; set; } = new System.Drawing.Color();
 
-        public List<Variable> DataValues { get; set; } = new List<Variable>(); 
+        public List<Variable> DataValues { get; set; } = new List<Variable>();
         public List<StringVariable> DataStrings { get; set; } = new List<StringVariable>();
         public List<Variable> Variables { get; set; } = new List<Variable>();
         public List<StringVariable> StringVariables { get; set; } = new List<StringVariable>();
@@ -248,6 +248,8 @@ namespace FNAF_Engine_Reborn_GameData
 
                 string txt = File.ReadAllText(projectpath + "/menus/settings.txt");
                 MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));
+
+
             }
         }
     }

@@ -1,6 +1,5 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System.Collections.Generic;
-using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
 {

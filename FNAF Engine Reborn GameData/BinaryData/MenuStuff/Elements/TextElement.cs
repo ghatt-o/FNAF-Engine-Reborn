@@ -1,7 +1,6 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System.Drawing;
-using System.IO;
 
 namespace MenuStuff.Elements
 {

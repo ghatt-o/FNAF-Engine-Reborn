@@ -1,7 +1,7 @@
-﻿using FNAF_Engine_Reborn_GameData;
-using FNAF_Engine_Reborn.bin;
+﻿using FNAF_Engine_Reborn.bin;
 using FNAF_Engine_Reborn.Main_Stuff;
 using FNAF_Engine_Reborn.Object_Editors;
+using FNAF_Engine_Reborn_GameData;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -52,6 +52,8 @@ namespace FNAF_Engine_Reborn
         }
         private async void reborn_Load(object sender, EventArgs e)
         {
+            GameData g = new GameData();
+            g.Write(new FNAF_Engine_Reborn_GameData.BinaryData.Memory.ByteWriter(new FileStream("fuck", FileMode.Create)), true, null);
             DoubleBuffered = true;
             /*if (darkmode == true)
             {
@@ -81,10 +83,10 @@ namespace FNAF_Engine_Reborn
             {
                 label93.Location = new Point(850, 1);
             }
-           // else
-           // {
-           //     label93.Location = new Point(872, 1);
-           // }
+            // else
+            // {
+            //     label93.Location = new Point(872, 1);
+            // }
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
             string[] randomStrings = { "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "Check out Scriptic!", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love god?", "Check out FNAF Maker!", "Who's joe?", "Still beta!", "Yeah!", "Snow!" };

@@ -1,10 +1,6 @@
 ﻿using FNAF_Engine_GameData.BinaryData.Binaries;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 {
@@ -20,11 +16,18 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             }
         }
 
-        public void Read(ByteReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath, string statedir)
         {
             if (binary == true)
             {
-                Image.Read(reader, true, projectpath, null);
+                Image.Read(reader, true, null, null);
+            }
+            else
+            {
+                var imageName = File.ReadAllText(statedir + "/mainsprite.txt");
+                Image img = new Image();
+                img.Name = imageName;
+                img.Read(null, false, projectpath, imageName);
             }
         }
     }
