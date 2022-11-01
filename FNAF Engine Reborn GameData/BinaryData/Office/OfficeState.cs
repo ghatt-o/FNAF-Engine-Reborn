@@ -12,7 +12,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
         {
             if (binary == true)
             {
-                Image.Write(Writer);
+                Image.Write(Writer, true, null, null);
+            }
+            else
+            {
+                Image.Write(null, true, projectpath, null);
             }
         }
 

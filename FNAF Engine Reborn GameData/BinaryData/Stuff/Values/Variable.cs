@@ -2,7 +2,7 @@
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
 {
-    public class Variable
+    public class Variable : BinaryClass
     {
         public string Key { get; set; } = "";
         public long Value { get; set; } = 0;

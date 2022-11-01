@@ -3,7 +3,7 @@ using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
 {
-    public class AnimationFrame
+    public class AnimationFrame : BinaryClass
     {
         public Image Image { get; set; } = new Image();
         public ushort Speed { get; set; } = 0;
@@ -24,7 +24,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
         {
             if (binary == true)
             {
-                Image.Write(Writer);
+                Image.Write(Writer, true, null, null);
                 Writer.WriteUInt16(Speed);
             }
             else

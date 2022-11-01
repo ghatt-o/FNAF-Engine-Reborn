@@ -1,8 +1,9 @@
-﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 
 namespace FNAF_Engine_GameData.BinaryData.MenuStuff.Elements
 {
-    public class MenuElement
+    public class MenuElement : BinaryClass
     {
         public byte type { get; set; } = 0;
         public string ID { get; set; } = "";

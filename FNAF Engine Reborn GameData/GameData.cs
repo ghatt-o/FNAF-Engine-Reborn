@@ -1,6 +1,7 @@
 ﻿using FNAF_Engine_GameData.BinaryData.Binaries;
 using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_GameData.BinaryData.Options;
+using FNAF_Engine_Reborn_GameData.BinaryData;
 using FNAF_Engine_Reborn_GameData.BinaryData.Binaries;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Office;
@@ -14,7 +15,7 @@ using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData
 {
-    public class GameData
+    public class GameData : BinaryClass
     {
         public string _header { get; set; } = "";
         public byte _key { get; set; } = 0;
@@ -52,7 +53,7 @@ namespace FNAF_Engine_Reborn_GameData
             {
                 Writer.WriteAscii(_header);
                 Writer.WriteInt8(_key);
-                _stamp.Write(Writer);
+                _stamp.Write(Writer, true, null);
 
                 Writer.AutoWriteUnicode(Name);
                 Writer.AutoWriteUnicode(GameName);
@@ -84,25 +85,25 @@ namespace FNAF_Engine_Reborn_GameData
                 //Images and audio
                 #region
 
-                Writer.Write(ImageBank.Count);
-                Writer.Write(AudioBank.Count);
+                Writer.WriteInt32(ImageBank.Count);
+                Writer.WriteInt32(AudioBank.Count);
 
                 foreach (Image img in ImageBank)
                 {
-                    img.Write(Writer);
+                    img.Write(Writer, true, null, null);
                 }
 
                 foreach (Audio aud in AudioBank)
                 {
-                    aud.Write(Writer);
+                    aud.Write(Writer, true, null, null);
                 }
 
                 #endregion
 
                 //animations and stuff
                 #region
-                Writer.Write(Animations.Count);
-                Writer.Write(StaticEffects.Count);
+                Writer.WriteInt32(Animations.Count);
+                Writer.WriteInt32(StaticEffects.Count);
 
                 foreach (var an in Animations)
                 {

@@ -28,8 +28,8 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 Writer.AutoWriteUnicode(Name);
                 Writer.WriteInt8(key);
 
-                BackgroundImage.Write(Writer);
-                BackgroundAudio.Write(Writer);
+                BackgroundImage.Write(Writer, true, null, null);
+                BackgroundAudio.Write(Writer, true, null, null);
 
                 StaticEffect.Write(Writer, true, null);
 

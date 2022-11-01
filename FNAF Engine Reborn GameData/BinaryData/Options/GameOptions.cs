@@ -1,10 +1,11 @@
-﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System.Collections.Generic;
 using System.IO;
 
 namespace FNAF_Engine_GameData.BinaryData.Options
 {
-    public class GameOptions
+    public class GameOptions : BinaryClass
     {
         public bool Fullscreen { get; set; } = false;
         public bool Minigames { get; set; } = false;

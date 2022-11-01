@@ -1,4 +1,5 @@
-﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -6,7 +7,7 @@ using System.Reflection;
 
 namespace FNAF_Engine_GameData.BinaryData.Options
 {
-    public class OfficeOptions
+    public class OfficeOptions : BinaryClass
     {
         public bool PowerEnabled { get; set; } = false;
         public bool ToxicEnabled { get; set; } = false;

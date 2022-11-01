@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
 {
-    public class Animation
+    public class Animation : BinaryClass
     {
         public List<AnimationFrame> Frames { get; set; } = new List<AnimationFrame>();
 

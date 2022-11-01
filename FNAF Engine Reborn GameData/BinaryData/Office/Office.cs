@@ -6,7 +6,7 @@ using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 {
-    public class Office
+    public class Office : BinaryClass
     {
         public OfficeOptions Settings = new OfficeOptions();
         public List<OfficeState> States = new List<OfficeState>();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
 {
-    public class StaticEffect
+    public class StaticEffect : BinaryClass
     {
         public List<StaticEffectFrame> Frames { get; set; } = new List<StaticEffectFrame>();
 

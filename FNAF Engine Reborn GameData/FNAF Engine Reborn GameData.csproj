@@ -46,6 +46,7 @@
     <Compile Include="BinaryData\Binaries\Image\BinaryImage.cs" />
     <Compile Include="BinaryData\Binaries\Image\Image.cs" />
     <Compile Include="BinaryData\Binaries\Stamp.cs" />
+    <Compile Include="BinaryData\BinaryClass.cs" />
     <Compile Include="BinaryData\Compiler.cs" />
     <Compile Include="BinaryData\Memory\ByteReader.cs" />
     <Compile Include="BinaryData\Memory\ByteWriter.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="BinaryData\Options\OfficeOptions.cs" />
     <Compile Include="BinaryData\Scripts\ScriptAction.cs" />
     <Compile Include="BinaryData\Scripts\ScriptCondition.cs" />
+    <Compile Include="BinaryData\Scripts\ScriptParameter.cs" />
     <Compile Include="BinaryData\Stuff\Animated\Animations\Animation.cs" />
     <Compile Include="BinaryData\Stuff\Animated\Animations\AnimationFrame.cs" />
     <Compile Include="BinaryData\Stuff\Animated\StaticEffects\StaticEffectFrame.cs" />

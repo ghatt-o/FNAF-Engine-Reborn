@@ -5,6 +5,7 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
 {
     public class Image : BinaryImage
     {
+        public string Name { get; set; }
         public ulong Size { get; set; } = 0;
         public byte[] Data { get; set; } = new byte[0];
 
@@ -26,11 +27,18 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
             }
         }
 
-        public void Write(ByteWriter Writer) //TODO: non binary writing
+        public void Write(ByteWriter Writer, bool binary, string project, string name)
         {
-            Writer.AutoWriteUnicode(Name);
-            Writer.WriteUInt64(Size);
-            Writer.WriteBytes(Data);
+            if (binary == true)
+            {
+                Writer.AutoWriteUnicode(Name);
+                Writer.WriteUInt64(Size);
+                Writer.WriteBytes(Data);
+            }
+            else
+            {
+                File.WriteAllBytes($"{project}/images/{Name}", Data);
+            }
         }
     }
 }
