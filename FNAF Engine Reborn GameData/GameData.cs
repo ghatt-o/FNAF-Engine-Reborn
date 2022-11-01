@@ -209,7 +209,6 @@ namespace FNAF_Engine_Reborn_GameData
                     StaticEffects.Add(se);
                 }
 
-
                 var menuCount = reader.ReadUInt16();
                 for (int i = 0; i < menuCount; i++)
                 {
@@ -240,6 +239,10 @@ namespace FNAF_Engine_Reborn_GameData
                 MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));
 
                 var DataValueCount = File.ReadAllText(projectpath + "/data.txt").Split(',').Length;
+                for (int i = 0; i < DataValueCount; i++)
+                {
+                    //DataV
+                }
             }
         }
     }
