@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
+using FNAF_Engine_Reborn_GameData.BinaryData;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using MenuStuff.Elements;
@@ -7,7 +8,7 @@ using System.IO;
 
 namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 {
-    public class FNAF_Engine_Menu
+    public class FNAF_Engine_Menu : BinaryClass
     {
         public byte key;
 
@@ -21,15 +22,15 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
         public List<TextElement> Elements { get; set; } = new List<TextElement>();
 
-        public void Write(ByteWriter Writer, bool binary, string menupath, string project)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == true)
             {
                 Writer.AutoWriteUnicode(Name);
                 Writer.WriteInt8(key);
 
-                BackgroundImage.Write(Writer, true, null, null);
-                BackgroundAudio.Write(Writer, true, null, null);
+                BackgroundImage.Write(Writer, true, null);
+                BackgroundAudio.Write(Writer, true, null);
 
                 StaticEffect.Write(Writer, true, null);
 
@@ -45,26 +46,26 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             else
             {
                 //Start working on menu writing
-                File.WriteAllText(menupath + "/name.txt", Name);
+                File.WriteAllText(project + "/menus/" + Name + "/name.txt", Name);
                 if (BackgroundImage != null)
                 {
-                    File.WriteAllText(menupath + "/bg.txt", BackgroundImage.Name);
+                    File.WriteAllText(project + "/menus/" + Name + "/bg.txt", BackgroundImage.Name);
                 }
                 if (BackgroundAudio != null)
                 {
-                    File.WriteAllText(menupath + "/audio.txt", project + "/sounds/" + BackgroundAudio.Name);
+                    File.WriteAllText(project + "/menus/" + Name + "/audio.txt", project + "/sounds/" + BackgroundAudio.Name);
                 }
             }
         }
-        public void Read(ByteReader reader, bool binary, string menupath, string project)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
                 Name = reader.AutoReadUnicode();
                 key = reader.ReadByte();
 
-                BackgroundImage.Read(reader, true, null, null);
-                BackgroundAudio.Read(reader, true, null, null);
+                BackgroundImage.Read(reader, true, null);
+                BackgroundAudio.Read(reader, true, null);
 
                 StaticEffect.Read(reader, true, null);
 
@@ -81,8 +82,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             }
             else
             {
-                //Start working on menu reading
-                Name = File.ReadAllText(menupath + "/name.txt");
+                //Name is already pre-set on reading;
 
                 //TODO: Background Image and Audio
             }

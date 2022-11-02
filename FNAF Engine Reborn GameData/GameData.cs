@@ -12,6 +12,7 @@ using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace FNAF_Engine_Reborn_GameData
 {
@@ -90,12 +91,12 @@ namespace FNAF_Engine_Reborn_GameData
 
                 foreach (Image img in ImageBank)
                 {
-                    img.Write(Writer, true, null, null);
+                    img.Write(Writer, true, null);
                 }
 
                 foreach (Audio aud in AudioBank)
                 {
-                    aud.Write(Writer, true, null, null);
+                    aud.Write(Writer, true, null);
                 }
 
                 #endregion
@@ -120,7 +121,7 @@ namespace FNAF_Engine_Reborn_GameData
                 #region
                 foreach (var m in Menus)
                 {
-                    m.Write(Writer, true, null, null);
+                    m.Write(Writer, true, null);
                 }
                 #endregion
 
@@ -141,6 +142,44 @@ namespace FNAF_Engine_Reborn_GameData
                 File.WriteAllText(projectpath + "/menus/settings.txt", MenuSettings.R + "," + MenuSettings.G + "," + MenuSettings.B);
                 //Menu settings ^^^^^^^^^^^^^^^
 
+                File.WriteAllText(projectpath + "/datavalues.txt", "");
+                File.WriteAllText(projectpath + "/datastrings.txt", "");
+                foreach (var datathing in DataValues)
+                {
+                    string thing = datathing.Key + ":" + datathing.Value + ",";
+                    File.AppendAllText(projectpath + "/datavalues.txt", thing);
+                }
+                foreach (var datathing in DataStrings)
+                {
+                    string thing = datathing.Key + ":" + datathing.Value + ",";
+                    File.AppendAllText(projectpath + "/datastrings.txt", thing);
+                }
+                //TODO: Last check for data value/string(s)
+
+                foreach(var img in ImageBank)
+                {
+                    img.Write(null, false, projectpath);
+                }
+                foreach(var aud in AudioBank)
+                {
+                    aud.Write(null, false, projectpath);
+                }
+
+                foreach(var anim in Animations)
+                {
+                    anim.Write(null, false, projectpath);
+                }
+                foreach(var se in StaticEffects)
+                {
+                    se.Write(null, false, projectpath);
+                }
+
+                foreach(var m in Menus)
+                {
+                    m.Write(null, true, projectpath);
+                }
+
+                Office.Read(null, false, projectpath);
             }
         }
         public void Read(ByteReader reader, bool binary, string projectpath)
@@ -184,13 +223,13 @@ namespace FNAF_Engine_Reborn_GameData
                 for (int i = 0; i < imgc; i++)
                 {
                     Image img = new Image();
-                    img.Read(reader, true, "", "");
+                    img.Read(reader, true, "");
                     ImageBank.Add(img);
                 }
                 for (int i = 0; i < audc; i++)
                 {
                     Audio aud = new Audio();
-                    aud.Read(reader, true, "", "");
+                    aud.Read(reader, true, "");
                     AudioBank.Add(aud);
                 }
 

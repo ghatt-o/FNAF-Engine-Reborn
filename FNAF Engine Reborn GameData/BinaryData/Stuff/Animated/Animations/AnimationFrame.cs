@@ -12,7 +12,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
         {
             if (binary == true)
             {
-                Image.Read(reader, true, "", "");
+                Image.Read(reader, true, "");
                 Speed = reader.ReadUInt16();
             }
             else
@@ -24,7 +24,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
         {
             if (binary == true)
             {
-                Image.Write(Writer, true, null, null);
+                Image.Write(Writer, true, null);
                 Writer.WriteUInt16(Speed);
             }
             else

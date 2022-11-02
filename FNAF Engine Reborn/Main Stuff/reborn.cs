@@ -2577,11 +2577,10 @@ namespace FNAF_Engine_Reborn
 
         }
 
-        private void label92_Click(object sender, EventArgs e)
+        private void label92_Click(object sender, EventArgs e) //CLOSE BUTTON
         {
-            this.Close();
-            this.Show();
-        }
+            MessageBox.Show("TODO: fix this broken close button");
+        } //best solution probably
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -2590,7 +2589,7 @@ namespace FNAF_Engine_Reborn
 
         private void TheCutestCat_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("TODO: diamond cat");
         }
 
         private void Menus_KeyDown(object sender, KeyEventArgs e)

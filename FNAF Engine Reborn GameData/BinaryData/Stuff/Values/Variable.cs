@@ -5,7 +5,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
     public class Variable : BinaryClass
     {
         public string Key { get; set; } = "";
-        public long Value { get; set; } = 0;
+        public int Value { get; set; } = 0;
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
@@ -13,7 +13,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
             {
                 var keyLen = reader.ReadInt32();
                 Key = reader.ReadAscii(keyLen);
-                Value = reader.ReadInt64();
+                Value = reader.ReadInt32();
             }
             else
             {
@@ -27,7 +27,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
             {
                 Writer.WriteInt32(Key.Length);
                 Writer.WriteAscii(Key);
-                Writer.WriteInt64(Value);
+                Writer.WriteInt32(Value);
             }
             else
             {

@@ -12,11 +12,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
         {
             if (binary == true)
             {
-                Image.Write(Writer, true, null, null);
+                Image.Write(Writer, true, null);
             }
             else
             {
-                Image.Write(null, true, projectpath, null);
+                Image.Write(null, true, projectpath);
             }
         }
 
@@ -24,14 +24,14 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
         {
             if (binary == true)
             {
-                Image.Read(reader, true, null, null);
+                Image.Read(reader, true, null);
             }
             else
             {
                 var imageName = File.ReadAllText(statedir + "/mainsprite.txt");
                 Image img = new Image();
                 img.Name = imageName;
-                img.Read(null, false, projectpath, imageName);
+                img.Read(null, false, projectpath);
             }
         }
     }

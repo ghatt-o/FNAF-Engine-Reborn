@@ -9,11 +9,11 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
         public ulong Size { get; set; } = 0;
         public byte[] Data { get; set; } = new byte[0];
 
-        public void Read(ByteReader reader, bool binary, string project, string name)
+        public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == false)
             {
-                FileInfo audioInfo = new FileInfo(project + "/sounds/" + name);
+                FileInfo audioInfo = new FileInfo(project + "/sounds/" + Name);
 
                 Name = audioInfo.Name;
                 Size = (ulong)audioInfo.Length;
@@ -27,7 +27,7 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
             }
         }
 
-        public void Write(ByteWriter Writer, bool binary, string project, string name)
+        public void Write(ByteWriter Writer, bool binary, string project)
         {
             if (binary == true)
             {
@@ -37,7 +37,7 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
             }
             else
             {
-                //todo
+                File.WriteAllBytes(project + "/sounds/" + Name, Data);
             }
         }
     }
