@@ -179,7 +179,7 @@ namespace FNAF_Engine_Reborn_GameData
                     m.Write(null, true, projectpath);
                 }
 
-                Office.Read(null, false, projectpath);
+                Office.Write(null, false, projectpath);
             }
         }
         public void Read(ByteReader reader, bool binary, string projectpath)
@@ -253,7 +253,7 @@ namespace FNAF_Engine_Reborn_GameData
                 for (int i = 0; i < menuCount; i++)
                 {
                     FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
-                    menu.Read(reader, true, null, null);
+                    menu.Read(reader, true, null);
                     Menus.Add(menu);
                 }
 
