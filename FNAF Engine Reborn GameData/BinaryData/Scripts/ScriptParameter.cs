@@ -24,6 +24,10 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                     case 0: //integer
                         Writer.WriteInt64(Convert.ToInt64(Value));
                         break;
+                    case -128: //Nested script
+                        Writer.WriteAscii("NSFS");
+                        Writer.WriteBytes(new byte[0]); //todo
+                        break;
                     default:
                         //TODO: Parameters like animatronic, menu, sound etc.
                         break;
@@ -49,6 +53,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                         break;
                     case 0: //integer
                         Value = reader.ReadInt64();
+                        break;
+                    case -128: //nested script
+                        Script nestedscript = new Script();
+                        nestedscript.Read(reader, true, null);
+                        Value = nestedscript;
                         break;
                     default:
                         //TODO: Parameters like animatronic, menu, sound etc.

@@ -17,6 +17,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
 
                 Writer.AutoWriteUnicode(Block);
                 Writer.WriteUInt8((sbyte)Parameters.Count());
+
+                foreach (ScriptParameter param in Parameters)
+                {
+                    param.Write(Writer, true, null);
+                }
             }
             else
             {

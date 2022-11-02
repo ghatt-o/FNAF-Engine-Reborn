@@ -1,5 +1,4 @@
-﻿using FNAF_Engine_Reborn_GameData.BinaryData;
-using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 
 namespace FNAF_Engine_GameData.BinaryData.Binaries
 {
