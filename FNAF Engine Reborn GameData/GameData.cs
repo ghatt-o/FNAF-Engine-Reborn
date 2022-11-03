@@ -278,11 +278,28 @@ namespace FNAF_Engine_Reborn_GameData
                 string txt = File.ReadAllText(projectpath + "/menus/settings.txt");
                 MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));
 
-                var DataValueCount = File.ReadAllText(projectpath + "/data.txt").Split(',').Length;
-                for (int i = 0; i < DataValueCount; i++)
+                foreach(var encoded_data_value in File.ReadAllText(projectpath + "/datavalues.txt").Split(','))
                 {
-                    //DataV
+                    var name = encoded_data_value.Split(':')[0];
+                    var value = encoded_data_value.Split(':')[1];
+                    Variable variable = new Variable();
+                    variable.Key = name;
+                    variable.Value = Convert.ToInt32(value);
+                    DataValues.Add(variable);
                 }
+                foreach (var encoded_data_value in File.ReadAllText(projectpath + "/datastrings.txt").Split(','))
+                {
+                    var name = encoded_data_value.Split(':')[0];
+                    var value = encoded_data_value.Split(':')[1];
+                    StringVariable variable = new StringVariable();
+                    variable.Key = name;
+                    variable.Value = value;
+                    DataStrings.Add(variable);
+                }
+
+
+
+
             }
         }
     }
