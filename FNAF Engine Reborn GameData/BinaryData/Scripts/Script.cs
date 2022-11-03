@@ -7,8 +7,9 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
 {
     public class Script : BinaryClass
     {
-        public ScriptCondition[] Conditions;
-        public ScriptAction[] Actions;
+        public string Name { get; set; } = "Script";
+        public ScriptCondition[] Conditions { get; set; }
+        public ScriptAction[] Actions { get; set; }
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {

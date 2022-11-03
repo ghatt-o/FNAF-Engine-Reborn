@@ -52,7 +52,6 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             }
             else
             {
-                //Start working on menu writing
                 File.WriteAllText(project + "/menus/" + Name + "/name.txt", Name);
                 if (BackgroundImage != null)
                 {

@@ -26,7 +26,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                             if (File.ReadAllText(project + "/options.txt").Contains(str + "=true")) Fullscreen = true;
                             else Fullscreen = false;
                             break;
-                        case "minigames":
+                        case "minigamesenabled":
                             if (File.ReadAllText(project + "/options.txt").Contains(str + "=true")) Minigames = true;
                             else Minigames = false;
                             break;

@@ -6,7 +6,8 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 {
     public class OfficeState
     {
-        public Image Image = new Image();
+        public string Name { get; set; } = "Default";
+        public Image Image { get; set; } = new Image();
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
@@ -16,7 +17,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             }
             else
             {
-                Image.Write(null, true, projectpath);
+                File.WriteAllText(projectpath + "/offices/default/office_states/mainsprite.txt", Image.Name);
             }
         }
 

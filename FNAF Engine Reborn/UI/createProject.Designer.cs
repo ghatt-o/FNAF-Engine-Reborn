@@ -46,11 +46,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.projectNamelbl.AutoSize = true;
             this.projectNamelbl.BackColor = System.Drawing.Color.White;
-            this.projectNamelbl.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.projectNamelbl.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.projectNamelbl.ForeColor = System.Drawing.Color.Black;
-            this.projectNamelbl.Location = new System.Drawing.Point(12, 1);
+            this.projectNamelbl.Location = new System.Drawing.Point(12, -5);
             this.projectNamelbl.Name = "projectNamelbl";
-            this.projectNamelbl.Size = new System.Drawing.Size(114, 21);
+            this.projectNamelbl.Size = new System.Drawing.Size(130, 28);
             this.projectNamelbl.TabIndex = 0;
             this.projectNamelbl.Text = "Project Name";
             // 
@@ -66,7 +66,7 @@ namespace FNAF_Engine_Reborn
             // createProjectbtn
             // 
             this.createProjectbtn.BackColor = System.Drawing.Color.White;
-            this.createProjectbtn.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.createProjectbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.createProjectbtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.createProjectbtn.Location = new System.Drawing.Point(33, 137);
             this.createProjectbtn.Name = "createProjectbtn";
@@ -80,11 +80,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 41);
+            this.label1.Location = new System.Drawing.Point(12, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 21);
+            this.label1.Size = new System.Drawing.Size(157, 28);
             this.label1.TabIndex = 15;
             this.label1.Text = "Project Template";
             // 
@@ -100,7 +100,7 @@ namespace FNAF_Engine_Reborn
             "Premade Menus",
             "Required Empty Menus",
             "John\'s Template"});
-            this.comboBox1.Location = new System.Drawing.Point(15, 60);
+            this.comboBox1.Location = new System.Drawing.Point(15, 72);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 21);
             this.comboBox1.TabIndex = 16;
@@ -113,7 +113,7 @@ namespace FNAF_Engine_Reborn
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(-190, 137);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(510, 618);
+            this.pictureBox1.Size = new System.Drawing.Size(490, 618);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
@@ -121,11 +121,12 @@ namespace FNAF_Engine_Reborn
             // fnaf4style_CheckBox
             // 
             this.fnaf4style_CheckBox.BackColor = System.Drawing.Color.White;
-            this.fnaf4style_CheckBox.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.fnaf4style_CheckBox.Enabled = false;
+            this.fnaf4style_CheckBox.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.fnaf4style_CheckBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fnaf4style_CheckBox.Location = new System.Drawing.Point(212, 42);
+            this.fnaf4style_CheckBox.Location = new System.Drawing.Point(212, 65);
             this.fnaf4style_CheckBox.Name = "fnaf4style_CheckBox";
-            this.fnaf4style_CheckBox.Size = new System.Drawing.Size(141, 22);
+            this.fnaf4style_CheckBox.Size = new System.Drawing.Size(141, 27);
             this.fnaf4style_CheckBox.TabIndex = 20;
             this.fnaf4style_CheckBox.Text = "FNAF 4 Style";
             this.fnaf4style_CheckBox.UseVisualStyleBackColor = false;
@@ -138,7 +139,7 @@ namespace FNAF_Engine_Reborn
             this.gameStyleOptions.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gameStyleOptions.FormattingEnabled = true;
             this.gameStyleOptions.Items.AddRange(new object[] {
-            "Standard",
+            "???",
             "Five Nights at Freddy\'s (Beta)"});
             this.gameStyleOptions.Location = new System.Drawing.Point(210, 20);
             this.gameStyleOptions.Name = "gameStyleOptions";
@@ -150,11 +151,11 @@ namespace FNAF_Engine_Reborn
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Digital-7", 15F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(207, 1);
+            this.label2.Location = new System.Drawing.Point(207, -5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
+            this.label2.Size = new System.Drawing.Size(110, 28);
             this.label2.TabIndex = 21;
             this.label2.Text = "Game Style";
             // 

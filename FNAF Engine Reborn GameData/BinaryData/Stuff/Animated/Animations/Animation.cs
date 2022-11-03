@@ -5,12 +5,14 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
 {
     public class Animation : BinaryClass
     {
+        public string Name { get; set; } = "Animation";
         public List<AnimationFrame> Frames { get; set; } = new List<AnimationFrame>();
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
             if (binary == true)
             {
+                Name = reader.AutoReadUnicode();
                 uint frameCount = reader.ReadUInt32();
                 for (int i = 0; i < frameCount; i++)
                 {
@@ -28,6 +30,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
         {
             if (binary == true)
             {
+                Writer.AutoWriteUnicode(Name);
                 Writer.WriteUInt32((uint)Frames.Count);
                 foreach (var frame in Frames)
                 {

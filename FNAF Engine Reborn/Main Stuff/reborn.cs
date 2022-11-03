@@ -53,7 +53,8 @@ namespace FNAF_Engine_Reborn
         private async void reborn_Load(object sender, EventArgs e)
         {
             GameData g = new GameData();
-            g.Write(new FNAF_Engine_Reborn_GameData.BinaryData.Memory.ByteWriter(new FileStream("fuck", FileMode.Create)), true, null);
+            g.Read(null, false, "assets/custom_assets/projects/test");
+            g.Write(new FNAF_Engine_Reborn_GameData.BinaryData.Memory.ByteWriter(new FileStream("fuck.ferdata", FileMode.Create)), true, null);
             DoubleBuffered = true;
             /*if (darkmode == true)
             {

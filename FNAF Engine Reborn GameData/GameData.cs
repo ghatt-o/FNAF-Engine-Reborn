@@ -24,6 +24,7 @@ namespace FNAF_Engine_Reborn_GameData
 
         public string Name { get; set; } = "";
         public string GameName { get; set; } = "";
+        public string Template { get; set; } = "";
 
         public string ID { get; private set; } = ""; //unused for now lol
 
@@ -131,11 +132,14 @@ namespace FNAF_Engine_Reborn_GameData
             }
             else
             {
+                Directory.CreateDirectory(projectpath + "/menus");
+
                 File.WriteAllText(projectpath + "/name.txt", Name);
 
                 //File.WriteAllText(projectpath + "/gameid.txt", ID);
                 File.WriteAllText(projectpath + "/gameid.txt", "");
                 File.WriteAllText(projectpath + "/game.txt", GameName);
+                File.WriteAllText(projectpath + "/template.txt", Template);
 
                 Options.Write(null, false, projectpath);
                 //Menu settings VVVVVVVVVVVVVVV
@@ -176,7 +180,7 @@ namespace FNAF_Engine_Reborn_GameData
 
                 foreach(var m in Menus)
                 {
-                    m.Write(null, true, projectpath);
+                    m.Write(null, false, projectpath);
                 }
 
                 Office.Write(null, false, projectpath);
@@ -271,7 +275,7 @@ namespace FNAF_Engine_Reborn_GameData
 
                 //ID = File.ReadAllText(projectpath + "/gameid.txt");
                 GameName = File.ReadAllText(projectpath + "/game.txt");
-
+                Template = File.ReadAllText(projectpath + "/template.txt");
 
                 Options.Read(null, false, projectpath);
 

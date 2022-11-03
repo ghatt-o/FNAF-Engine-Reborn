@@ -1,12 +1,18 @@
-﻿using System;
+﻿using FNAF_Engine_GameData.BinaryData.MenuStuff;
+using FNAF_Engine_Reborn_GameData;
+using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
+using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
 namespace FNAF_Engine_Reborn
 {
     public partial class createProject : Form
-
     {
+
+        public GameData game;
+
         public static string projectPath
         {
             get;
@@ -24,7 +30,7 @@ namespace FNAF_Engine_Reborn
             }
             if (projectNamebox.Text == "")
             {
-                _ = MessageBox.Show("Put something in there!");
+                _ = MessageBox.Show("Input your project name in the first box!");
             }
             else
             {
@@ -32,68 +38,26 @@ namespace FNAF_Engine_Reborn
                 {
                     _ = MessageBox.Show("Creating your project! This may take a few seconds. (CLICK OK TO CONTINUE!)");
                     string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-                    _ = Directory.CreateDirectory(projectPath);
+                    Directory.CreateDirectory(projectPath);
+                    game = new GameData();
+                    game.Name = projectPath;
                     if (gameStyleOptions.SelectedIndex == 0) //standard game style
                     {
-                        _ = Directory.CreateDirectory(projectPath + "/statics/");
-                        _ = Directory.CreateDirectory(projectPath + "/images");
-                        _ = Directory.CreateDirectory(projectPath + "/animations");
-                        _ = Directory.CreateDirectory(projectPath + "/sounds");
-                        _ = Directory.CreateDirectory(projectPath + "/menus");
-                        CreateMenu(projectPath, "Main");
-                        _ = File.CreateText(projectPath + "/game.txt");
-                        _ = File.CreateText(projectPath + "/gameid.txt");
-
-                        File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
-                        File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
-                        File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
-
-                        File.WriteAllText(projectPath + "/style.txt", "standard");
-
-                        _ = MessageBox.Show("Project created succesfully!");
-                        Hide();
+                        FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+                        menu.Name = "Main";
+                        game.Menus.Add(menu);
                     }
                     else if (gameStyleOptions.SelectedIndex == 1) //fnaf game style
                     {
-                        _ = Directory.CreateDirectory(projectPath + "/offices/");
-                        _ = Directory.CreateDirectory(projectPath + "/offices/default/");
-                        _ = Directory.CreateDirectory(projectPath + "/offices/default/sprites");
-                        _ = Directory.CreateDirectory(projectPath + "/offices/default/office_states/");
-                        _ = Directory.CreateDirectory(projectPath + "/offices/default/office_states/Default/");
-                        _ = Directory.CreateDirectory(projectPath + "/statics/");
-                        _ = Directory.CreateDirectory(projectPath + "/images");
-                        _ = Directory.CreateDirectory(projectPath + "/animations");
-                        _ = Directory.CreateDirectory(projectPath + "/animatronics");
-                        _ = Directory.CreateDirectory(projectPath + "/animatronics/normal/");
-                        _ = Directory.CreateDirectory(projectPath + "/animatronics/phantom/");
-                        _ = Directory.CreateDirectory(projectPath + "/sounds");
-                        _ = Directory.CreateDirectory(projectPath + "/menus");
-                        CreateMenu(projectPath, "GameOver");
-                        CreateMenu(projectPath, "Main");
-                        CreateMenu(projectPath, "6AM");
-                        _ = Directory.CreateDirectory(projectPath + "/scripts");
-                        _ = Directory.CreateDirectory(projectPath + "/scripts/visual");
-                        _ = Directory.CreateDirectory(projectPath + "/scripts/csharp");
-                        _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic");
-                        _ = File.CreateText(projectPath + "/game.txt");
-                        _ = File.CreateText(projectPath + "/gameid.txt");
-                        if (fnaf4style_CheckBox.Checked == true)
-                        {
-                            File.WriteAllText(projectPath + "/style.txt", "fnaf4");
-                        }
-                        else
-                        {
-                            File.WriteAllText(projectPath + "/style.txt", "fnaf");
-                        }
-                        File.WriteAllText(projectPath + "/options.txt", "fullscreen=false,minigamesenabled=false,watermarks=false,sourcecode=false");
-                        File.WriteAllText(projectPath + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,");
-                        File.WriteAllText(projectPath + "/offices/default/misc.txt", "camera=,mask=,powerout=");
-                        File.WriteAllText(projectPath + "/offices/default/power_val.txt", "");
-                        File.WriteAllText(projectPath + "/data.txt", "night:1,6thnight:false");
-                        File.WriteAllText(projectPath + "/offices/default/sprites.txt", "");
-                        File.WriteAllText(projectPath + "/name.txt", projectNamebox.Text);
-                        _ = MessageBox.Show("Project created succesfully!");
-                        Hide();
+                        FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+                        menu.Name = "Main";
+                        FNAF_Engine_Menu menu2 = new FNAF_Engine_Menu();
+                        menu.Name = "Warning";
+                        FNAF_Engine_Menu menu3 = new FNAF_Engine_Menu();
+                        menu.Name = "6AM";
+                        game.Menus.Add(menu);
+                        game.Menus.Add(menu2);
+                        game.Menus.Add(menu3);
 
                         switch (comboBox1.SelectedIndex)
                         {
@@ -114,7 +78,7 @@ namespace FNAF_Engine_Reborn
                                 JamesTemplate();
                                 break;
                             default:
-                                File.WriteAllText(projectPath + "/template.txt", "None");
+                                game.Template = "None";
                                 break;
                         }
 
@@ -140,100 +104,158 @@ namespace FNAF_Engine_Reborn
                         }
                         else if (comboBox1.SelectedItem.Equals("None")) //0
                         {
-                            File.WriteAllText(projectPath + "/template.txt", "None");
+                            game.Template = "None";
                         }
-                        else if (comboBox1.SelectedItem == null) //
+                        else if (comboBox1.SelectedItem == null) //null???
                         {
-                            File.WriteAllText(projectPath + "/template.txt", "None");
+                            game.Template = "None";
                         }
                     }
+                    _ = MessageBox.Show("Project created succesfully!");
+                    game.Write(null, false, projectPath);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show("Failed to create project! Error: 11 or " + ex);
+                }
+                finally
+                {
+                    Hide();
                 }
             }
         }
         private void premadeAssets()
         {
-            string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            File.WriteAllText(projectPath + "/template.txt", "Premade Assets");
-            CreateMenu(projectPath, "CustomNight");
-            CreateMenu(projectPath, "News");
-            CreateMenu(projectPath, "Ending5");
-            CreateMenu(projectPath, "Ending6");
-            CreateMenu(projectPath, "Ending7");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Camera");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Mask");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/Endings");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/csharp/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic/placeholder");
-            Hide();
+            game.Template = "Premade Assets";
+
+            FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+            menu.Name = "CustomNight";
+            FNAF_Engine_Menu menu2 = new FNAF_Engine_Menu();
+            menu.Name = "News";
+            FNAF_Engine_Menu menu3 = new FNAF_Engine_Menu();
+            menu.Name = "Ending5";
+            FNAF_Engine_Menu menu4 = new FNAF_Engine_Menu();
+            menu.Name = "Ending6";
+            FNAF_Engine_Menu menu5 = new FNAF_Engine_Menu();
+            menu.Name = "Ending7";
+
+            Animation anim = new Animation();
+            anim.Name = "Camera";
+            Animation anim2 = new Animation();
+            anim.Name = "Mask";
+
+            Script script = new Script();
+            script.Name = "Endings";
+
+            game.Menus.Add(menu);
+            game.Menus.Add(menu2);
+            game.Menus.Add(menu3);
+            game.Menus.Add(menu4);
+            game.Menus.Add(menu5);
+
+            game.Animations.Add(anim);
+            game.Animations.Add(anim2);
+
+            game.Scripts.Add(script);
         }
         private void JamesTemplate()
         {
-            string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            File.WriteAllText(projectPath + "/template.txt", "James' Template");
-            CreateMenu(projectPath, "CustomNight");
-            CreateMenu(projectPath, "News");
-            CreateMenu(projectPath, "Ending5");
-            CreateMenu(projectPath, "Ending6");
-            CreateMenu(projectPath, "Ending7");
-            CreateMenu(projectPath, "My_Menu");
-            CreateMenu(projectPath, "My_Menu2");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Placeholder1");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/Endings");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/csharp/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/csharp/placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic/placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/statics/Static1");
-            _ = Directory.CreateDirectory(projectPath + "/statics/Static2");
-            Hide();
+            game.Template = "James' Template";
+
+            FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+            menu.Name = "CustomNight";
+            FNAF_Engine_Menu menu2 = new FNAF_Engine_Menu();
+            menu.Name = "News";
+            FNAF_Engine_Menu menu3 = new FNAF_Engine_Menu();
+            menu.Name = "Ending5";
+            FNAF_Engine_Menu menu4 = new FNAF_Engine_Menu();
+            menu.Name = "Ending6";
+            FNAF_Engine_Menu menu5 = new FNAF_Engine_Menu();
+            menu.Name = "Ending7";
+
+            FNAF_Engine_Menu menu6 = new FNAF_Engine_Menu();
+            menu.Name = "Secret";
+            FNAF_Engine_Menu menu7 = new FNAF_Engine_Menu();
+            menu.Name = "Extras";
+
+            Animation anim = new Animation();
+            anim.Name = "Camera";
+            Animation anim2 = new Animation();
+            anim.Name = "Mask";
+
+            Script script = new Script();
+            script.Name = "Endings";
+
+            game.Menus.Add(menu);
+            game.Menus.Add(menu2);
+            game.Menus.Add(menu3);
+            game.Menus.Add(menu4);
+            game.Menus.Add(menu5);
+            game.Menus.Add(menu6);
+            game.Menus.Add(menu7);
+
+            game.Animations.Add(anim);
+            game.Animations.Add(anim2);
+
+            game.Scripts.Add(script);
         }
         private void JohnsTemplate()
         {
-            string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            File.WriteAllText(projectPath + "/template.txt", "John's Template");
-            CreateMenu(projectPath, "CustomNight");
-            CreateMenu(projectPath, "News");
-            CreateMenu(projectPath, "Ending5");
-            CreateMenu(projectPath, "Ending6");
-            CreateMenu(projectPath, "Ending7");
-            CreateMenu(projectPath, "My_Menu");
-            CreateMenu(projectPath, "My_Menu2");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Camera");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Mask");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Placeholder1");
-            _ = Directory.CreateDirectory(projectPath + "/animations/" + "Placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/Endings");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/csharp/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic/placeholder");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/visual/placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/csharp/placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/scripts/scriptic/placeholder2");
-            _ = Directory.CreateDirectory(projectPath + "/statics/Static1");
-            _ = Directory.CreateDirectory(projectPath + "/statics/Static2");
-            Hide();
+            game.Template = "John's Template";
+
+            FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+            menu.Name = "CustomNight";
+            FNAF_Engine_Menu menu2 = new FNAF_Engine_Menu();
+            menu.Name = "News";
+            FNAF_Engine_Menu menu3 = new FNAF_Engine_Menu();
+            menu.Name = "Ending5";
+            FNAF_Engine_Menu menu4 = new FNAF_Engine_Menu();
+            menu.Name = "Ending6";
+            FNAF_Engine_Menu menu5 = new FNAF_Engine_Menu();
+            menu.Name = "Ending7";
+
+            FNAF_Engine_Menu menu6 = new FNAF_Engine_Menu();
+            menu.Name = "Secret";
+            FNAF_Engine_Menu menu7 = new FNAF_Engine_Menu();
+            menu.Name = "Extras";
+
+            Animation anim = new Animation();
+            anim.Name = "Camera";
+            Animation anim2 = new Animation();
+            anim.Name = "Mask";
+
+            Script script = new Script();
+            script.Name = "Endings";
+
+            game.Menus.Add(menu);
+            game.Menus.Add(menu2);
+            game.Menus.Add(menu3);
+            game.Menus.Add(menu4);
+            game.Menus.Add(menu5);
+            game.Menus.Add(menu6);
+            game.Menus.Add(menu7);
+
+            game.Animations.Add(anim);
+            game.Animations.Add(anim2);
+
+            game.Scripts.Add(script);
         }
         private void premadeMenus()
         {
-            string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            File.WriteAllText(projectPath + "/template.txt", "Premade Menus");
-            CreateMenu(projectPath, "CustomNight");
-            CreateMenu(projectPath, "News");
-            Hide();
+            game.Template = "Premade Menus";
+
+            FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+            menu.Name = "CustomNight";
+            FNAF_Engine_Menu menu2 = new FNAF_Engine_Menu();
+            menu.Name = "News";
+
+            game.Menus.Add(menu);
+            game.Menus.Add(menu2);
         }
         private void rMenus()
         {
-            string projectPath = @"assets/custom_assets/projects/" + projectNamebox.Text;
-            File.WriteAllText(projectPath + "/template.txt", "Required Menus");
-            Hide();
+            game.Template = "Required Menus";
+            //This is already here even if the user didn't set a template.
         }
 
         private void createProject_Load(object sender, EventArgs e)

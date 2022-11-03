@@ -10,6 +10,12 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
     {
         public OfficeOptions Settings = new OfficeOptions();
         public List<OfficeState> States = new List<OfficeState>();
+
+        public Office()
+        {
+            States.Add(new OfficeState());
+        }
+
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
             if (binary == true)
@@ -20,6 +26,14 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
                 foreach (var state in States)
                 {
                     state.Write(Writer, true, null);
+                }
+            }
+            else
+            {
+                Settings.Write(null, false, projectpath);
+                foreach(var state in States)
+                {
+                    state.Write(null, false, projectpath);
                 }
             }
         }
