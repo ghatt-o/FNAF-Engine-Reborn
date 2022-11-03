@@ -5,6 +5,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
 {
     public class StaticEffect : BinaryClass
     {
+        public string Name { get; set; } = "Static Effect";
         public List<StaticEffectFrame> Frames { get; set; } = new List<StaticEffectFrame>();
 
         public void Read(ByteReader reader, bool binary, string projectpath)

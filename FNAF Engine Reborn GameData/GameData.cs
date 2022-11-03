@@ -284,7 +284,14 @@ namespace FNAF_Engine_Reborn_GameData
                     var value = encoded_data_value.Split(':')[1];
                     Variable variable = new Variable();
                     variable.Key = name;
-                    variable.Value = Convert.ToInt32(value);
+                    try
+                    {
+                        variable.Value = Convert.ToInt32(value);
+                    }
+                    catch(Exception)
+                    {
+                        variable.Value = 0;
+                    }
                     DataValues.Add(variable);
                 }
                 foreach (var encoded_data_value in File.ReadAllText(projectpath + "/datastrings.txt").Split(','))
@@ -297,9 +304,42 @@ namespace FNAF_Engine_Reborn_GameData
                     DataStrings.Add(variable);
                 }
 
+                foreach(var d in Directory.GetFiles(projectpath + "/images"))
+                {
+                    FileInfo fileInfo = new FileInfo(d);
+                    Image img = new Image();
+                    img.Name = fileInfo.Name;
+                    img.Read(null, false, projectpath);
+                    ImageBank.Add(img);
+                }
+                foreach (var d in Directory.GetFiles(projectpath + "/sounds"))
+                {
+                    FileInfo fileInfo = new FileInfo(d);
+                    Audio img = new Audio();
+                    img.Name = fileInfo.Name;
+                    img.Read(null, false, projectpath);
+                    AudioBank.Add(img);
+                }
 
+                foreach(var anim in Directory.GetDirectories(projectpath + "/animations"))
+                {
+                    Animation animation = new Animation();
+                    animation.Read(null, false, projectpath); //read method not done yet
+                }
+                foreach(var se in Directory.GetDirectories(projectpath + "/statics"))
+                {
+                    StaticEffect staticeffect = new StaticEffect();
+                    staticeffect.Read(null, false, projectpath); //read method not done yet
+                }
 
+                foreach(var menu in Directory.GetDirectories(projectpath + "/menus"))
+                {
+                    FNAF_Engine_Menu newMenu = new FNAF_Engine_Menu();
+                    newMenu.Name = File.ReadAllText(menu + "/name.txt");
+                    newMenu.Read(null, false, projectpath);
+                }
 
+                Office.Read(null, false, projectpath);
             }
         }
     }

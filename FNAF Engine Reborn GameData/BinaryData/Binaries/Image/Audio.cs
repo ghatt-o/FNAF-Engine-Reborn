@@ -6,7 +6,7 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
     public class Audio : BinaryImage
     {
         public string Name { get; set; } = "";
-        public ulong Size { get; set; } = 0;
+        public long Size { get; set; } = 0;
         public byte[] Data { get; set; } = new byte[0];
 
         public void Read(ByteReader reader, bool binary, string project)
@@ -15,14 +15,13 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
             {
                 FileInfo audioInfo = new FileInfo(project + "/sounds/" + Name);
 
-                Name = audioInfo.Name;
-                Size = (ulong)audioInfo.Length;
+                Size = audioInfo.Length;
                 Data = File.ReadAllBytes(audioInfo.FullName);
             }
             else if (binary == true)
             {
                 Name = reader.AutoReadUnicode();
-                Size = reader.ReadUInt64();
+                Size = reader.ReadInt64();
                 Data = reader.ReadBytes((int)Size);
             }
         }
@@ -32,7 +31,7 @@ namespace FNAF_Engine_GameData.BinaryData.Binaries
             if (binary == true)
             {
                 Writer.AutoWriteUnicode(Name);
-                Writer.WriteUInt64(Size);
+                Writer.WriteInt64(Size);
                 Writer.WriteBytes(Data);
             }
             else
