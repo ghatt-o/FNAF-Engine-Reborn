@@ -1750,7 +1750,7 @@ namespace FNAF_Engine_Reborn
             this.button45.BackColor = System.Drawing.Color.Red;
             this.button45.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button45.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button45.Location = new System.Drawing.Point(-2, 59);
+            this.button45.Location = new System.Drawing.Point(158, -3);
             this.button45.Name = "button45";
             this.button45.Size = new System.Drawing.Size(35, 33);
             this.button45.TabIndex = 104;
@@ -1763,11 +1763,11 @@ namespace FNAF_Engine_Reborn
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(1, 2);
+            this.label15.Location = new System.Drawing.Point(54, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(188, 15);
+            this.label15.Size = new System.Drawing.Size(74, 15);
             this.label15.TabIndex = 155;
-            this.label15.Text = "Your text\'s ID (not the text) will be:";
+            this.label15.Text = "Insert Text ID";
             // 
             // create_text_menuEditorBTN
             // 
@@ -7083,8 +7083,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.animationEditorPanel);
-            this.Controls.Add(this.menu);
             this.Controls.Add(this.menuEditorPanel);
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
@@ -7101,6 +7099,8 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.ImageEditorPanel);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
+            this.Controls.Add(this.animationEditorPanel);
+            this.Controls.Add(this.menu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);

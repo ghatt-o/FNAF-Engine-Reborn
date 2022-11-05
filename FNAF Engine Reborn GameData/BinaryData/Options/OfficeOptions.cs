@@ -94,9 +94,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             else
             {
                 File.WriteAllText(project + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,"); //what the fuck its still reading from existing file
-
-
-                foreach (PropertyInfo prop in TypeDescriptor.GetProperties(this))
+                foreach (var prop in GetType().GetProperties())
                 {
                     if (prop.Name == "PowerEnabled") FileAppend(project + "/offices/default/office.txt", "power=" + PowerEnabled + ",");
                     else if (prop.Name == "ToxicEnabled") FileAppend(project + "/offices/default/office.txt", "toxic=" + ToxicEnabled + ",");

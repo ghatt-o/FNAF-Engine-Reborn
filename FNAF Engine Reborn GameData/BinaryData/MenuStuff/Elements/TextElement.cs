@@ -1,5 +1,7 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace MenuStuff.Elements
@@ -12,17 +14,14 @@ namespace MenuStuff.Elements
         public Color Rgb { get; set; }
         public byte ButtonStyle { get; set; } = 0; //fnaf
 
-        /*
-        public string[] Funcs { get; set; }
-        public string[] Funcshover { get; set; }
-        public string[] Funcsunhover { get; set; }
-        public string[] Funcshold { get; set; }
-        */ //fix everything commented
+        public List<ScriptAction> ClickFunctions { get; set; }
+
 
         public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
+                base.Read(reader, true, null);
                 Text = reader.ReadString();
                 Fontname = reader.ReadString();
                 Fontsize = reader.ReadString();
@@ -74,6 +73,10 @@ namespace MenuStuff.Elements
                     Funcshold.Append(reader.ReadString());
                 }
                 */
+            }
+            else
+            {
+
             }
         }
     }

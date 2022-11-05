@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn_GameData
 
         public List<Variable> DataValues { get; set; } = new List<Variable>();
         public List<StringVariable> DataStrings { get; set; } = new List<StringVariable>();
-        public List<Variable> Variables { get; set; } = new List<Variable>();
-        public List<StringVariable> StringVariables { get; set; } = new List<StringVariable>();
+        public List<Variable> Variables { get; set; } = new List<Variable>(); //unused for now
+        public List<StringVariable> StringVariables { get; set; } = new List<StringVariable>(); //unused aswell
 
         public List<Image> ImageBank { get; set; } = new List<Image>(); //general image bank
         public List<Audio> AudioBank { get; set; } = new List<Audio>(); //general audio bank
@@ -133,8 +133,16 @@ namespace FNAF_Engine_Reborn_GameData
             else
             {
                 Directory.CreateDirectory(projectpath + "/menus");
+                Directory.CreateDirectory(projectpath + "/offices/default");
+                Directory.CreateDirectory(projectpath + "/animations");
+                Directory.CreateDirectory(projectpath + "/animatronics");
+                Directory.CreateDirectory(projectpath + "/images");
+                Directory.CreateDirectory(projectpath + "/scripts");
+                Directory.CreateDirectory(projectpath + "/sounds");
+                Directory.CreateDirectory(projectpath + "/static");
 
                 File.WriteAllText(projectpath + "/name.txt", Name);
+                File.WriteAllText(projectpath + "/style.txt", "fnaf"); //...
 
                 //File.WriteAllText(projectpath + "/gameid.txt", ID);
                 File.WriteAllText(projectpath + "/gameid.txt", "");
@@ -267,7 +275,6 @@ namespace FNAF_Engine_Reborn_GameData
                 }
 
                 Office.Read(reader, true, null);
-
             }
             else
             {
