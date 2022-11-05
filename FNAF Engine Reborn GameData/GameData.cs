@@ -139,7 +139,7 @@ namespace FNAF_Engine_Reborn_GameData
                 Directory.CreateDirectory(projectpath + "/images");
                 Directory.CreateDirectory(projectpath + "/scripts");
                 Directory.CreateDirectory(projectpath + "/sounds");
-                Directory.CreateDirectory(projectpath + "/static");
+                Directory.CreateDirectory(projectpath + "/statics");
 
                 File.WriteAllText(projectpath + "/name.txt", Name);
                 File.WriteAllText(projectpath + "/style.txt", "fnaf"); //...

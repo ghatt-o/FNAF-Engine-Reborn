@@ -90,9 +90,9 @@ namespace FNAF_Engine_Reborn
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 255);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 208);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(537, 119);
+            this.pictureBox1.Size = new System.Drawing.Size(567, 125);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 

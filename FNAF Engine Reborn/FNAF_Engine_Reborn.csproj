@@ -135,7 +135,6 @@
     <Compile Include="Object Editors\AnimatronicEditorPath.cs" />
     <Compile Include="Object Editors\AnimElement.cs" />
     <Compile Include="Object Editors\Compiler.cs" />
-    <Compile Include="Object Editors\DataValues.cs" />
     <Compile Include="Object Editors\Import_Files.cs" />
     <Compile Include="Object Editors\MenuEvents.cs" />
     <Compile Include="Object Editors\Menu_Editor.cs" />

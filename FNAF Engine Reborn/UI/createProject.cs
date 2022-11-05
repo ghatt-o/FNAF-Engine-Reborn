@@ -62,6 +62,7 @@ namespace FNAF_Engine_Reborn
                         switch (comboBox1.SelectedIndex)
                         {
                             case 0: //none
+                                break;
                             case 1: //premade assets
                                 premadeAssets();
                                 break;

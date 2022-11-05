@@ -24,7 +24,7 @@ namespace DiscordRpcDemo
 
         internal static void Initialize(string v1, ref object handlers, bool v2, object p)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

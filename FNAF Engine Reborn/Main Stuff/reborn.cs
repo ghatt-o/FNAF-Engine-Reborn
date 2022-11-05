@@ -1,4 +1,5 @@
-﻿using FNAF_Engine_Reborn.bin;
+﻿using DiscordRpcDemo;
+using FNAF_Engine_Reborn.bin;
 using FNAF_Engine_Reborn.Main_Stuff;
 using FNAF_Engine_Reborn.Object_Editors;
 using FNAF_Engine_Reborn_GameData;
@@ -6,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq.Expressions;
 using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace FNAF_Engine_Reborn
     {
         public GameData game;
 
-        public bool showProject;
+        public bool showProject = true;
         public string Version = "0.9.5";
         public string Build_Version = "i_k_l5b";
         public bool isopen = false;
@@ -29,8 +31,10 @@ namespace FNAF_Engine_Reborn
         public bool editable;
 
         public string style;
-        //private DiscordRpc.EventHandlers handlers;
-        //private DiscordRpc.RichPresence presence;
+
+        private DiscordRpc.EventHandlers handlers = default(DiscordRpc.EventHandlers);
+        private DiscordRpc.RichPresence presence;
+
         internal static loadFERproject projectloader = new loadFERproject();
 
         public string projecto;
@@ -53,24 +57,7 @@ namespace FNAF_Engine_Reborn
         private async void reborn_Load(object sender, EventArgs e)
         {
             DoubleBuffered = true;
-            /*if (darkmode == true)
-            {
 
-            }
-            else
-            {
-                foreach (Control control in Controls)
-                {
-                    if (control.BackColor == Color.FromArgb(30, 30, 30) || control.BackColor == Color.FromArgb(34, 34, 34) || control.BackColor == Color.FromArgb(35, 35, 35) || control.BackColor == Color.FromArgb(37, 37, 37) || control.BackColor == Color.FromArgb(40, 40, 40) || control.BackColor == Color.FromArgb(45, 45, 45) || control.BackColor == Color.FromArgb(50, 50, 50))
-                    {
-                        control.BackColor = Color.FromArgb(224, 224, 224);
-                    }
-                    if (control.ForeColor == SystemColors.Control)
-                    {
-                        control.ForeColor = SystemColors.ControlText;
-                    }
-                }
-            }*/
             File.WriteAllText("DO_NOT_MODIFY.txt", "");
 #if DEBUG
             {
@@ -85,31 +72,20 @@ namespace FNAF_Engine_Reborn
             // {
             //     label93.Location = new Point(872, 1);
             // }
+
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
             string[] randomStrings = { "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "Check out Scriptic!", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love god?", "Check out FNAF Maker!", "Who's joe?", "Still beta!", "Yeah!", "Snow!" };
             label84.Text = randomStrings[random.Next(1, 38) - 1];
-            //this.handlers = default(DiscordRpc.EventHandlers);
-            //DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
-            //this.handlers = default(DiscordRpc.EventHandlers);
-            //DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
-            //this.presence.details = "Version: " + Version;
-            //this.presence.state = "No project loaded";
-            //this.presence.largeImageKey = "1";
-            //this.presence.largeImageText = "";
-            //this.presence.smallImageText = "";
-            //DiscordRpc.UpdatePresence(ref this.presence);
-            //if (File.Exists("DO_NOT_MODIFY.txt"))
-            //{
-            //    if (File.ReadAllText("DO_NOT_MODIFY.txt") == "2QVZ-V2Q5-CS6Z-S8AY-4YE9-SDAQ-5AR3-GUSJ-PQDQ-UMZP-E7JH-6JLU")
-            //    {
-            //        _0_2C = true;
-            //    }
-            //    else
-            //    {
-            //        _0_2C = false;
-            //    }
-            //}
+
+            DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
+            this.presence.details = "Version: " + Version;
+            this.presence.state = "No project loaded";
+            this.presence.largeImageKey = "1";
+            this.presence.largeImageText = "";
+            this.presence.smallImageText = "";
+            DiscordRpc.UpdatePresence(ref this.presence);
+
             label93.Text = "Version: " + Version;
             label72.Text = "FE:R Build Version: \"" + Build_Version + "\"";
 
@@ -314,8 +290,8 @@ namespace FNAF_Engine_Reborn
             this.projecto = projec;
             if (showProject == true)
             {
-                //this.presence.state = "Project: " + projecto;
-                //DiscordRpc.UpdatePresence(ref this.presence);
+                this.presence.state = "Project: " + File.ReadAllText(projecto + "/name.txt");
+                DiscordRpc.UpdatePresence(ref this.presence);
             }
             else
             {
@@ -2151,9 +2127,9 @@ namespace FNAF_Engine_Reborn
 
         private void GameManager_Variables_View_VisibleChanged(object sender, EventArgs e)
         {
-            DataValues.Project = projecto;
-            DataValues.Engine = this;
-            DataValues.RefreshDataValues();
+            //DataValues.Project = projecto;
+            //DataValues.Engine = this;
+            //DataValues.RefreshDataValues();
         }
 
         private void addDataValue_GameManager_Click(object sender, EventArgs e)
@@ -2165,8 +2141,8 @@ namespace FNAF_Engine_Reborn
             else
             {
                 DataValue_Name.Text = DataValue_Name.Text.Replace(":", "");
-                DataValues.CreateDataValue(DataValue_Name.Text);
-                DataValues.RefreshDataValues();
+                //DataValues.CreateDataValue(DataValue_Name.Text);
+                //DataValues.RefreshDataValues();
                 DataValue_Name.Hide();
             }
         }
@@ -2190,9 +2166,9 @@ namespace FNAF_Engine_Reborn
             {
                 string DataValue = GameManager_Variables_View.SelectedNode.Name;
                 string Value = reassign_Value_GameManager_Textbox.Text;
-                var old = DataValues.GetDataValue(DataValue);
-                DataValues.ReassignDataValue(DataValue, old, Value);
-                DataValues.RefreshDataValues();
+                //var old = DataValues.GetDataValue(DataValue);
+                //DataValues.ReassignDataValue(DataValue, old, Value);
+                //DataValues.RefreshDataValues();
                 reassign_Value_GameManager_Textbox.Hide();
             }
         }
@@ -2610,8 +2586,8 @@ namespace FNAF_Engine_Reborn
             }
             else
             {
-                DataValues.DeleteDataValue(GameManager_Variables_View.SelectedNode.Name, DataValues.GetDataValue(GameManager_Variables_View.SelectedNode.Name));
-                DataValues.RefreshDataValues();
+                //DataValues.DeleteDataValue(GameManager_Variables_View.SelectedNode.Name, DataValues.GetDataValue(GameManager_Variables_View.SelectedNode.Name));
+                //DataValues.RefreshDataValues();
             }
         }
 
@@ -2773,55 +2749,6 @@ namespace FNAF_Engine_Reborn
 
         private void GoToEditor_Click(object sender, EventArgs e)
         {
-            try
-            {
-                switch (EditorList.SelectedItem.ToString())
-                {
-                    case "Game Info":
-                        buildSettingsPanelMoment.BringToFront();
-                        break;
-                    case "Menu Editor":
-                        menuEditorPanel.BringToFront();
-                        break;
-                    case "Office Editor":
-                        officeEditorPanel.BringToFront();
-                        break;
-                    case "Camera Editor":
-                        cameraEditorPanel.BringToFront();
-                        break;
-                    case "Animatronic Editor":
-                        animatronicEditorPNL2.BringToFront();
-                        break;
-                    case "Animation Editor":
-                        animationEditorPanel.BringToFront();
-                        break;
-                    case "Sound Editor":
-                        SoundEditorPanel.BringToFront();
-                        break;
-                    case "Script Editor":
-                        ScriptEditorPanel.BringToFront();
-                        break;
-                    case "Extensions":
-                        ExtensionsPanel.BringToFront();
-                        break;
-
-                    //exclusive  to fer
-                    case "Minigame Editor":
-                        MinigameMaker m = new MinigameMaker();
-                        m.ShowDialog();
-                        break;
-                    case "Cutscene Editor":
-                        cutsceneEditorPanel.BringToFront();
-                        break;
-                    case "Static Effect Editor":
-                        staticeffecteditor.BringToFront();
-                        break;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Something went wrong!");
-            }
         }
 
         private void gamesettings_menubgcolor_Click(object sender, EventArgs e)
@@ -2906,6 +2833,59 @@ namespace FNAF_Engine_Reborn
             ToolTip toolTip = new ToolTip();
             toolTip.ToolTipTitle = "Discord Server";
             toolTip.Show("Join our Discord!", label108);
+        }
+
+        private void EditorList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (EditorList.SelectedItem.ToString())
+                {
+                    case "Game Info":
+                        buildSettingsPanelMoment.BringToFront();
+                        break;
+                    case "Menu Editor":
+                        menuEditorPanel.BringToFront();
+                        break;
+                    case "Office Editor":
+                        officeEditorPanel.BringToFront();
+                        break;
+                    case "Camera Editor":
+                        cameraEditorPanel.BringToFront();
+                        break;
+                    case "Animatronic Editor":
+                        animatronicEditorPNL2.BringToFront();
+                        break;
+                    case "Animation Editor":
+                        animationEditorPanel.BringToFront();
+                        break;
+                    case "Sound Editor":
+                        SoundEditorPanel.BringToFront();
+                        break;
+                    case "Script Editor":
+                        ScriptEditorPanel.BringToFront();
+                        break;
+                    case "Extensions":
+                        ExtensionsPanel.BringToFront();
+                        break;
+
+                    //exclusive  to fer
+                    case "Minigame Editor":
+                        MinigameMaker m = new MinigameMaker();
+                        m.ShowDialog();
+                        break;
+                    case "Cutscene Editor":
+                        cutsceneEditorPanel.BringToFront();
+                        break;
+                    case "Static Effect Editor":
+                        staticeffecteditor.BringToFront();
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went horribly wrong! If this keeps happening, please report on our discord server!");
+            }
         }
     }
 }
