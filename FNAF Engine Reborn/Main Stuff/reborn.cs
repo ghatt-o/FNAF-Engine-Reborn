@@ -82,8 +82,8 @@ namespace FNAF_Engine_Reborn
             this.presence.details = "Version: " + Version;
             this.presence.state = "No project loaded";
             this.presence.largeImageKey = "1";
-            this.presence.largeImageText = "";
-            this.presence.smallImageText = "";
+            this.presence.largeImageText = "Test";
+            this.presence.smallImageText = "Test2";
             DiscordRpc.UpdatePresence(ref this.presence);
 
             label93.Text = "Version: " + Version;
@@ -504,8 +504,6 @@ namespace FNAF_Engine_Reborn
                 {
                     try
                     {
-                        //this.presence.details = "Editing game...";
-                        //DiscordRpc.UpdatePresence(ref this.presence);
                         if (Directory.Exists(projecto + "/animations"))
                         {
                             //aight
@@ -723,41 +721,31 @@ namespace FNAF_Engine_Reborn
                 }
                 if (File.Exists(projecto + "/options.txt") == false)
                 {
-                    _ = MessageBox.Show("Something went wrong!, Fixing...");
+                    _ = MessageBox.Show("Options are null. Attempting to fix...");
                     _ = File.CreateText(projecto + "/options.txt");
-                    _ = MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Options are fixed!");
                 }
-                if (File.Exists(projecto + "/game.txt"))
+                if (File.Exists(projecto + "/game.txt") == true)
                 {
-                    await Task.Delay(1);
+                    await Task.Delay(100);
                     textBox6.Text = File.ReadAllText(projecto + "/game.txt");
                 }
-                if (File.Exists(projecto + "/game.txt") == false)
+                else
                 {
-                    _ = MessageBox.Show("Something went wrong!, Fixing...");
+                    _ = MessageBox.Show("Game name is null. Attempting to fix it...");
                     _ = File.CreateText(projecto + "/game.txt");
-                    _ = MessageBox.Show("Fixed!");
+                    _ = MessageBox.Show("Game name successfully fixed!");
                     textBox6.Text = File.ReadAllText(projecto + "/game.txt");
                 }
-                if (File.Exists(projecto + "/gameid.txt"))
-                {
-                    //textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
-                }
-                if (File.Exists(projecto + "/gameid.txt") == false)
-                {
-                    _ = MessageBox.Show("Something went wrong!, Fixing...");
-                    _ = File.CreateText(projecto + "/gameid.txt");
-                    _ = MessageBox.Show("Fixed!");
-                    //textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
-                }
-                try
+
+                /*try
                 {
                     label33.Image = Image.FromFile(projecto + "/images/icon.png");
                 }
                 catch (Exception)
                 {
                     //uhm so you dont have the icon there, thats sad! letting the default one rn :)
-                }
+                }*/
             }
         }
 
@@ -794,7 +782,7 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                if (File.Exists(projecto + "/gameid.txt"))
+                /*if (File.Exists(projecto + "/gameid.txt"))
                 {
                     File.WriteAllText(projecto + "/gameid.txt", "");
                 }
@@ -804,7 +792,7 @@ namespace FNAF_Engine_Reborn
                     _ = File.CreateText(project + "/gameid.txt");
                     _ = MessageBox.Show("Fixed!");
                     //textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
-                }
+                }*/
             }
         }
 
@@ -1286,8 +1274,8 @@ namespace FNAF_Engine_Reborn
                 {
                     Compiler compiler = new Compiler(this, style, projecto);
                     _ = compiler.ShowDialog();
-                    //this.presence.details = "Compiling game...";
-                    //DiscordRpc.UpdatePresence(ref this.presence);
+                    this.presence.details = "Compiling game...";
+                    DiscordRpc.UpdatePresence(ref this.presence);
                 }
             }
         }
@@ -1300,8 +1288,8 @@ namespace FNAF_Engine_Reborn
                 {
                     ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
                     _ = releaseordebug.ShowDialog();
-                    //this.presence.details = "Testing game...";
-                    //DiscordRpc.UpdatePresence(ref this.presence);
+                    this.presence.details = "Testing game...";
+                    DiscordRpc.UpdatePresence(ref this.presence);
                 }
             }
         }
@@ -1900,6 +1888,8 @@ namespace FNAF_Engine_Reborn
             else if (Menus.SelectedNode.Name == "Menu")
             {
                 this.curMenuTag = Menus.SelectedNode.Tag.ToString();
+                this.presence.details = "Menu Editor, Editing Menu: " + File.ReadAllText(curMenuTag + "/name.txt");
+                DiscordRpc.UpdatePresence(ref this.presence);
                 Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
                 Menu_Editor menu_Editor = new Menu_Editor(this);
                 MenuPreview.Controls.Clear();
@@ -2843,44 +2833,57 @@ namespace FNAF_Engine_Reborn
                 {
                     case "Game Info":
                         buildSettingsPanelMoment.BringToFront();
+                        this.presence.details = "Game Settings";
                         break;
                     case "Menu Editor":
                         menuEditorPanel.BringToFront();
+                        this.presence.details = "Menu Editor";
                         break;
                     case "Office Editor":
                         officeEditorPanel.BringToFront();
+                        this.presence.details = "Office Editor";
                         break;
                     case "Camera Editor":
                         cameraEditorPanel.BringToFront();
+                        this.presence.details = "Camera Editor";
                         break;
                     case "Animatronic Editor":
                         animatronicEditorPNL2.BringToFront();
+                        this.presence.details = "Animatronic Editor";
                         break;
                     case "Animation Editor":
                         animationEditorPanel.BringToFront();
+                        this.presence.details = "Animation Editor";
                         break;
                     case "Sound Editor":
                         SoundEditorPanel.BringToFront();
+                        this.presence.details = "Sound Editor";
                         break;
                     case "Script Editor":
                         ScriptEditorPanel.BringToFront();
+                        this.presence.details = "Script Editor";
                         break;
                     case "Extensions":
                         ExtensionsPanel.BringToFront();
+                        this.presence.details = "Extensions menu";
                         break;
 
                     //exclusive  to fer
                     case "Minigame Editor":
+                        this.presence.details = "Minigame Maker";
                         MinigameMaker m = new MinigameMaker();
                         m.ShowDialog();
                         break;
                     case "Cutscene Editor":
                         cutsceneEditorPanel.BringToFront();
+                        this.presence.details = "Cutscene Editor";
                         break;
                     case "Static Effect Editor":
                         staticeffecteditor.BringToFront();
+                        this.presence.details = "Static Effect Editor";
                         break;
                 }
+                DiscordRpc.UpdatePresence(ref this.presence);
             }
             catch (Exception)
             {
