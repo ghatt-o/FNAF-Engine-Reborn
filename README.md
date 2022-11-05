@@ -6,4 +6,4 @@ Visual Studio 2019/2022
 
 .NET Framework 4.7.2
 
-Open up the solution file in FNAF Engine Reborn directory and click on Build Solution!
+Open up the solution file in FNAF Engine Reborn directory and build it! (CTRL + Shift + B)
