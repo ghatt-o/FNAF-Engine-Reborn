@@ -17,8 +17,8 @@ namespace FNAF_Engine_Reborn
         public GameData game;
 
         public bool showProject;
-        public string Version = "0.9.4";
-        public string Build_Version = "b_o_w4r1";
+        public string Version = "0.9.5";
+        public string Build_Version = "i_k_l5b";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -52,10 +52,6 @@ namespace FNAF_Engine_Reborn
         }
         private async void reborn_Load(object sender, EventArgs e)
         {
-            GameData g = new GameData();
-            g.Read(null, false, "assets/custom_assets/projects/test");
-            g.Write(new FNAF_Engine_Reborn_GameData.BinaryData.Memory.ByteWriter(new FileStream("fuck.ferdata", FileMode.Create)), true, null);
-            g.Write(null, false, "testout");
             DoubleBuffered = true;
             /*if (darkmode == true)
             {
