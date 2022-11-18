@@ -118,8 +118,6 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 else StaticEffect = new StaticEffect();
                 if (sename != "") StaticEffect.Read(null, false, project); //Method not done yet
 
-                //Menu code also not done
-
                 //TODO: Element reading
             }
         }

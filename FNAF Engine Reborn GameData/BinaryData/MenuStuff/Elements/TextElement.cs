@@ -3,6 +3,7 @@ using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 
 namespace MenuStuff.Elements
 {
@@ -77,6 +78,31 @@ namespace MenuStuff.Elements
             else
             {
 
+            }
+        }
+        public void Write(ByteWriter Writer, bool binary, string menupath)
+        {
+            if (binary == true)
+            {
+
+            }
+            else
+            {
+                _ = Directory.CreateDirectory(menupath + "/text_elements/" + ID);
+                string NewPath = menupath + "/text_elements/" + ID;
+                File.WriteAllText(NewPath + "/id.txt", $"{ID}");
+                File.WriteAllText(NewPath + "/text.txt", $"{Text}");
+                File.WriteAllText(NewPath + "/font.txt", $"{X}");
+                File.WriteAllText(NewPath + "/fontsize.txt", $"{Fontsize}");
+                File.WriteAllText(NewPath + "/args.txt", $"{args}");
+                File.WriteAllText(NewPath + "/x.txt", $"{X}");
+                File.WriteAllText(NewPath + "/y.txt", $"{Y}");
+                File.WriteAllText(NewPath + "/functions.txt", "");
+                File.WriteAllText(NewPath + "/functionshover.txt", "");
+                File.WriteAllText(NewPath + "/functionsunhover.txt", "");
+                File.WriteAllText(NewPath + "/functionshold.txt", "");
+                File.WriteAllText(NewPath + "/color.txt", $"{Rgb.R},{Rgb.G},{Rgb.B}");
+                File.WriteAllText(NewPath + "/style.txt", $"{ButtonStyle}");
             }
         }
     }

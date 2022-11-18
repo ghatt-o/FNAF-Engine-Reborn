@@ -198,7 +198,7 @@ namespace FNAF_Engine_Reborn_GameData
         {
             if (binary == true)
             {
-                _header = reader.ReadString();
+                _header = reader.ReadAscii(4);
                 _key = reader.ReadByte();
                 reader.BaseStream.Position += 17;
 
@@ -271,7 +271,7 @@ namespace FNAF_Engine_Reborn_GameData
 
                 if (reader.ReadAscii(4) != "OFFC")
                 {
-                    reader.ReadInt64();
+                    reader.ReadAscii(4);
                 }
 
                 Office.Read(reader, true, null);
