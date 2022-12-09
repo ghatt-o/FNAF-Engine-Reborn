@@ -21,7 +21,7 @@ namespace FNAF_Engine_Reborn
         {
             if (comboBox1.SelectedItem == null)
             {
-                _ = MessageBox.Show("Please select an project!");
+                _ = MessageBox.Show("Please select a project!");
             }
             else
             {
