@@ -1,5 +1,13 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿/FNAF Engine Game/[Bb]in/
+/FNAF Engine Reborn/[Bb]in/
+/FNAF Engine Reborn GameData/[Bb]in/
 
-/FNAF Engine Game/bin/Debug/FNAF Engine Game.exe
+/FNAF Engine Game/bin/
+/FNAF Engine Reborn/[Bb]in/
+/FNAF Engine Reborn GameData/[Bb]in/
+
+/FNAF Engine Game/[Oo]bg/
+/FNAF Engine Reborn/[Oo]bj/
+/FNAF Engine Reborn GameData/[Oo]bj/
+
+/.vs/

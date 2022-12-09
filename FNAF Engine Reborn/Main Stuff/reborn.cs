@@ -35,6 +35,8 @@ namespace FNAF_Engine_Reborn
         private DiscordRpc.EventHandlers handlers = default(DiscordRpc.EventHandlers);
         private DiscordRpc.RichPresence presence;
 
+        public bool DiscordRPCEnabled = false; //help
+
         internal static loadFERproject projectloader = new loadFERproject();
 
         public string projecto;
@@ -78,13 +80,16 @@ namespace FNAF_Engine_Reborn
             string[] randomStrings = { "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "Check out Scriptic!", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love god?", "Check out FNAF Maker!", "Who's joe?", "Still beta!", "Yeah!", "Snow!" };
             label84.Text = randomStrings[random.Next(1, 38) - 1];
 
-            DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
-            this.presence.details = "Version: " + Version;
-            this.presence.state = "No project loaded";
-            this.presence.largeImageKey = "1";
-            this.presence.largeImageText = "Test";
-            this.presence.smallImageText = "Test2";
-            DiscordRpc.UpdatePresence(ref this.presence);
+            if (DiscordRPCEnabled)
+            {
+                DiscordRpc.Initialize("970030742241439774", ref this.handlers, true, null);
+                this.presence.details = "Version: " + Version;
+                this.presence.state = "No project loaded";
+                this.presence.largeImageKey = "1";
+                this.presence.largeImageText = "Test";
+                this.presence.smallImageText = "Test2";
+                DiscordRpc.UpdatePresence(ref this.presence);
+            }
 
             label93.Text = "Version: " + Version;
             label72.Text = "FE:R Build Version: \"" + Build_Version + "\"";
@@ -291,12 +296,12 @@ namespace FNAF_Engine_Reborn
             if (showProject == true)
             {
                 this.presence.state = "Project: " + File.ReadAllText(projecto + "/name.txt");
-                DiscordRpc.UpdatePresence(ref this.presence);
+                if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
             else
             {
                 //this.presence.state = "Version " + Version;
-                //DiscordRpc.UpdatePresence(ref this.presence);
+                //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
             style = File.ReadAllText(v + "/style.txt");
 
@@ -1275,7 +1280,7 @@ namespace FNAF_Engine_Reborn
                     Compiler compiler = new Compiler(this, style, projecto);
                     _ = compiler.ShowDialog();
                     this.presence.details = "Compiling game...";
-                    DiscordRpc.UpdatePresence(ref this.presence);
+                    if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 }
             }
         }
@@ -1289,7 +1294,7 @@ namespace FNAF_Engine_Reborn
                     ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
                     _ = releaseordebug.ShowDialog();
                     this.presence.details = "Testing game...";
-                    DiscordRpc.UpdatePresence(ref this.presence);
+                    if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 }
             }
         }
@@ -1889,7 +1894,7 @@ namespace FNAF_Engine_Reborn
             {
                 this.curMenuTag = Menus.SelectedNode.Tag.ToString();
                 this.presence.details = "Menu Editor, Editing Menu: " + File.ReadAllText(curMenuTag + "/name.txt");
-                DiscordRpc.UpdatePresence(ref this.presence);
+                if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
                 Menu_Editor menu_Editor = new Menu_Editor(this);
                 MenuPreview.Controls.Clear();
@@ -1927,7 +1932,7 @@ namespace FNAF_Engine_Reborn
             {
                 GameDebugMenu.BringToFront();
                 //this.presence.details = "Debugging game...";
-                //DiscordRpc.UpdatePresence(ref this.presence);
+                //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
         }
 
@@ -2216,7 +2221,7 @@ namespace FNAF_Engine_Reborn
                     try
                     {
                         //this.presence.details = "Editing game...";
-                        //DiscordRpc.UpdatePresence(ref this.presence);
+                        //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                         if (Directory.Exists(projecto + "/animations"))
                         {
                             //aight
@@ -2276,7 +2281,7 @@ namespace FNAF_Engine_Reborn
             {
                 GameDebugMenu.BringToFront();
                 //this.presence.details = "Debugging game...";
-                //DiscordRpc.UpdatePresence(ref this.presence);
+                //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
         }
 
@@ -2289,7 +2294,7 @@ namespace FNAF_Engine_Reborn
                     ReleaseOrDebug releaseordebug = new ReleaseOrDebug(this, style);
                     _ = releaseordebug.ShowDialog();
                     //this.presence.details = "Testing game...";
-                    //DiscordRpc.UpdatePresence(ref this.presence);
+                    //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 }
             }
         }
@@ -2303,7 +2308,7 @@ namespace FNAF_Engine_Reborn
                     Compiler compiler = new Compiler(this, style, projecto);
                     _ = compiler.ShowDialog();
                     //this.presence.details = "Compiling game...";
-                    //DiscordRpc.UpdatePresence(ref this.presence);
+                    //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 }
             }
         }
@@ -2873,7 +2878,7 @@ namespace FNAF_Engine_Reborn
                 }
                 if (!EditorList.SelectedItem.ToString().Contains("=")) this.presence.details = EditorList.SelectedItem.ToString();
                 if (this.presence.details == "Minigame Editor") this.presence.details = "Minigame Maker"; //huh
-                DiscordRpc.UpdatePresence(ref this.presence);
+                if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
             catch (Exception)
             {
