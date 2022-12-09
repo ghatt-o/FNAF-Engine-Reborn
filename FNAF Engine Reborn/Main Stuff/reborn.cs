@@ -19,8 +19,8 @@ namespace FNAF_Engine_Reborn
         public GameData game;
 
         public bool showProject = true;
-        public string Version = "0.9.5";
-        public string Build_Version = "i_k_l5b";
+        public string Version = "0.9.6";
+        public string Build_Version = "niwt_om_96_b";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -2833,62 +2833,57 @@ namespace FNAF_Engine_Reborn
                 {
                     case "Game Info":
                         buildSettingsPanelMoment.BringToFront();
-                        this.presence.details = "Game Settings";
                         break;
                     case "Menu Editor":
                         menuEditorPanel.BringToFront();
-                        this.presence.details = "Menu Editor";
                         break;
                     case "Office Editor":
                         officeEditorPanel.BringToFront();
-                        this.presence.details = "Office Editor";
                         break;
                     case "Camera Editor":
                         cameraEditorPanel.BringToFront();
-                        this.presence.details = "Camera Editor";
                         break;
                     case "Animatronic Editor":
                         animatronicEditorPNL2.BringToFront();
-                        this.presence.details = "Animatronic Editor";
                         break;
                     case "Animation Editor":
                         animationEditorPanel.BringToFront();
-                        this.presence.details = "Animation Editor";
                         break;
                     case "Sound Editor":
                         SoundEditorPanel.BringToFront();
-                        this.presence.details = "Sound Editor";
                         break;
                     case "Script Editor":
                         ScriptEditorPanel.BringToFront();
-                        this.presence.details = "Script Editor";
                         break;
                     case "Extensions":
                         ExtensionsPanel.BringToFront();
-                        this.presence.details = "Extensions menu";
                         break;
 
                     //exclusive  to fer
                     case "Minigame Editor":
-                        this.presence.details = "Minigame Maker";
                         MinigameMaker m = new MinigameMaker();
                         m.ShowDialog();
                         break;
                     case "Cutscene Editor":
                         cutsceneEditorPanel.BringToFront();
-                        this.presence.details = "Cutscene Editor";
                         break;
                     case "Static Effect Editor":
                         staticeffecteditor.BringToFront();
-                        this.presence.details = "Static Effect Editor";
                         break;
                 }
+                if (!EditorList.SelectedItem.ToString().Contains("=")) this.presence.details = EditorList.SelectedItem.ToString();
+                if (this.presence.details == "Minigame Editor") this.presence.details = "Minigame Maker"; //huh
                 DiscordRpc.UpdatePresence(ref this.presence);
             }
             catch (Exception)
             {
                 MessageBox.Show("Something went horribly wrong! If this keeps happening, please report on our discord server!");
             }
+        }
+
+        private async void MenuEditor_CodeEditorUnhover_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

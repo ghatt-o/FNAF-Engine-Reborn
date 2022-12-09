@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "frame1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F));
             this.allEditorsPNL = new System.Windows.Forms.Panel();
             this.label143 = new System.Windows.Forms.Label();
@@ -2295,6 +2295,7 @@ namespace FNAF_Engine_Reborn
             this.MenuEditor_CodeEditorUnhover.Size = new System.Drawing.Size(258, 196);
             this.MenuEditor_CodeEditorUnhover.TabIndex = 176;
             this.MenuEditor_CodeEditorUnhover.Text = "";
+            this.MenuEditor_CodeEditorUnhover.TextChanged += new System.EventHandler(this.MenuEditor_CodeEditorUnhover_TextChanged);
             // 
             // MenuEditor_CodeEditorHold
             // 
@@ -3339,7 +3340,7 @@ namespace FNAF_Engine_Reborn
             this.SoundEditorPanel.Controls.Add(this.label41);
             this.SoundEditorPanel.Location = new System.Drawing.Point(215, 61);
             this.SoundEditorPanel.Name = "SoundEditorPanel";
-            this.SoundEditorPanel.Size = new System.Drawing.Size(741, 535);
+            this.SoundEditorPanel.Size = new System.Drawing.Size(741, 635);
             this.SoundEditorPanel.TabIndex = 99;
             this.SoundEditorPanel.Visible = false;
             // 
@@ -3833,11 +3834,11 @@ namespace FNAF_Engine_Reborn
             this.GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.GameManager_Variables_View.Location = new System.Drawing.Point(705, 287);
             this.GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode6.Name = "Data Values";
-            treeNode6.Tag = "Data_Values_List";
-            treeNode6.Text = "Data Values";
+            treeNode1.Name = "Data Values";
+            treeNode1.Tag = "Data_Values_List";
+            treeNode1.Text = "Data Values";
             this.GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode1});
             this.GameManager_Variables_View.Size = new System.Drawing.Size(232, 339);
             this.GameManager_Variables_View.TabIndex = 162;
             this.GameManager_Variables_View.VisibleChanged += new System.EventHandler(this.GameManager_Variables_View_VisibleChanged);
@@ -4767,7 +4768,7 @@ namespace FNAF_Engine_Reborn
             this.button98.FlatAppearance.BorderSize = 0;
             this.button98.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button98.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button98.Location = new System.Drawing.Point(329, 22);
+            this.button98.Location = new System.Drawing.Point(296, 22);
             this.button98.Name = "button98";
             this.button98.Size = new System.Drawing.Size(23, 13);
             this.button98.TabIndex = 101;
@@ -4781,7 +4782,7 @@ namespace FNAF_Engine_Reborn
             this.button97.FlatAppearance.BorderSize = 0;
             this.button97.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button97.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button97.Location = new System.Drawing.Point(298, 14);
+            this.button97.Location = new System.Drawing.Point(266, 14);
             this.button97.Name = "button97";
             this.button97.Size = new System.Drawing.Size(23, 24);
             this.button97.TabIndex = 100;
@@ -4881,7 +4882,7 @@ namespace FNAF_Engine_Reborn
             this.label78.BackColor = System.Drawing.Color.Transparent;
             this.label78.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.label78.ForeColor = System.Drawing.Color.Red;
-            this.label78.Location = new System.Drawing.Point(14, 16);
+            this.label78.Location = new System.Drawing.Point(3, 17);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(98, 20);
             this.label78.TabIndex = 39;
@@ -4893,7 +4894,7 @@ namespace FNAF_Engine_Reborn
             this.comboBox41.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox41.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboBox41.FormattingEnabled = true;
-            this.comboBox41.Location = new System.Drawing.Point(134, 15);
+            this.comboBox41.Location = new System.Drawing.Point(103, 14);
             this.comboBox41.Name = "comboBox41";
             this.comboBox41.Size = new System.Drawing.Size(159, 23);
             this.comboBox41.TabIndex = 38;
@@ -5111,7 +5112,7 @@ namespace FNAF_Engine_Reborn
             this.buildSettingsPanelMoment.Controls.Add(this.checkBox7);
             this.buildSettingsPanelMoment.Location = new System.Drawing.Point(215, 60);
             this.buildSettingsPanelMoment.Name = "buildSettingsPanelMoment";
-            this.buildSettingsPanelMoment.Size = new System.Drawing.Size(741, 218);
+            this.buildSettingsPanelMoment.Size = new System.Drawing.Size(741, 636);
             this.buildSettingsPanelMoment.TabIndex = 101;
             this.buildSettingsPanelMoment.Visible = false;
             this.buildSettingsPanelMoment.VisibleChanged += new System.EventHandler(this.buildSettingsPanelMoment_VisibleChanged);
@@ -5410,7 +5411,7 @@ namespace FNAF_Engine_Reborn
             this.listView1.ForeColor = System.Drawing.SystemColors.Window;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6});
+            listViewItem1});
             this.listView1.Location = new System.Drawing.Point(240, 350);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(475, 148);
@@ -5784,7 +5785,7 @@ namespace FNAF_Engine_Reborn
             // label106
             // 
             this.label106.AutoSize = true;
-            this.label106.BackColor = System.Drawing.SystemColors.Control;
+            this.label106.BackColor = System.Drawing.Color.Gainsboro;
             this.label106.ForeColor = System.Drawing.Color.Black;
             this.label106.Location = new System.Drawing.Point(293, 372);
             this.label106.Name = "label106";
@@ -5795,7 +5796,7 @@ namespace FNAF_Engine_Reborn
             // label105
             // 
             this.label105.AutoSize = true;
-            this.label105.BackColor = System.Drawing.SystemColors.Control;
+            this.label105.BackColor = System.Drawing.Color.Gainsboro;
             this.label105.ForeColor = System.Drawing.Color.Black;
             this.label105.Location = new System.Drawing.Point(619, 374);
             this.label105.Name = "label105";
@@ -5926,7 +5927,7 @@ namespace FNAF_Engine_Reborn
             // label102
             // 
             this.label102.AutoSize = true;
-            this.label102.BackColor = System.Drawing.SystemColors.Control;
+            this.label102.BackColor = System.Drawing.Color.Gainsboro;
             this.label102.ForeColor = System.Drawing.Color.Black;
             this.label102.Location = new System.Drawing.Point(797, 373);
             this.label102.Name = "label102";
@@ -6685,9 +6686,9 @@ namespace FNAF_Engine_Reborn
             this.GameDebugMenu.Controls.Add(this.DataValuesFileLabel);
             this.GameDebugMenu.Controls.Add(this.label35);
             this.GameDebugMenu.Controls.Add(this.button17);
-            this.GameDebugMenu.Location = new System.Drawing.Point(219, 62);
+            this.GameDebugMenu.Location = new System.Drawing.Point(213, 62);
             this.GameDebugMenu.Name = "GameDebugMenu";
-            this.GameDebugMenu.Size = new System.Drawing.Size(737, 638);
+            this.GameDebugMenu.Size = new System.Drawing.Size(743, 638);
             this.GameDebugMenu.TabIndex = 123;
             this.GameDebugMenu.Visible = false;
             this.GameDebugMenu.VisibleChanged += new System.EventHandler(this.GameDebugMenu_VisibleChanged);
@@ -7068,10 +7069,6 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.REBORNtitle);
-            this.Controls.Add(this.menuEditorPanel);
-            this.Controls.Add(this.cutsceneEditorPanel);
-            this.Controls.Add(this.AssetManagerPanel);
-            this.Controls.Add(this.animatronicEditorPNL2);
             this.Controls.Add(this.buildSettingsPanelMoment);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.GameDebugMenu);
@@ -7086,6 +7083,10 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.cameraEditorPanel);
             this.Controls.Add(this.animationEditorPanel);
             this.Controls.Add(this.menu);
+            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.cutsceneEditorPanel);
+            this.Controls.Add(this.AssetManagerPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
