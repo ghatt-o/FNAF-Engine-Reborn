@@ -2295,7 +2295,6 @@ namespace FNAF_Engine_Reborn
             this.MenuEditor_CodeEditorUnhover.Size = new System.Drawing.Size(258, 196);
             this.MenuEditor_CodeEditorUnhover.TabIndex = 176;
             this.MenuEditor_CodeEditorUnhover.Text = "";
-            this.MenuEditor_CodeEditorUnhover.TextChanged += new System.EventHandler(this.MenuEditor_CodeEditorUnhover_TextChanged);
             // 
             // MenuEditor_CodeEditorHold
             // 

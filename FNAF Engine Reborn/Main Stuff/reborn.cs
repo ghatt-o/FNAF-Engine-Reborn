@@ -2880,10 +2880,5 @@ namespace FNAF_Engine_Reborn
                 MessageBox.Show("Something went horribly wrong! If this keeps happening, please report on our discord server!");
             }
         }
-
-        private async void MenuEditor_CodeEditorUnhover_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
