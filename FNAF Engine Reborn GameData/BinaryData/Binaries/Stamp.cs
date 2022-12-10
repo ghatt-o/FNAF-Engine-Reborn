@@ -1,5 +1,6 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
 {
@@ -7,11 +8,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
     {
         public byte FER_Version { get; set; } = 0;
         public byte FER_PatchVersion { get; set; } = 9;
-        public byte FER_MinorVersion { get; set; } = 4;
+        public byte FER_MinorVersion { get; set; } = 6;
 
         public int BinariesCount { get; set; } = 0;
         public ushort MenuCount { get; set; } = 0;
-        public byte[] Chunks { get; set; } = new byte[18];
+        public List<byte[]> Chunks { get; set; } = new();
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {

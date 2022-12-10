@@ -37,8 +37,6 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -65,22 +63,23 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // button26
             // 
+            this.button26.BackColor = System.Drawing.Color.Lime;
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.button26.ForeColor = System.Drawing.SystemColors.Control;
+            this.button26.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button26.Location = new System.Drawing.Point(537, 239);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(122, 146);
             this.button26.TabIndex = 3;
             this.button26.Text = "Download";
-            this.button26.UseVisualStyleBackColor = true;
+            this.button26.UseVisualStyleBackColor = false;
             this.button26.Visible = false;
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label1.Location = new System.Drawing.Point(253, 25);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(218, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 28);
             this.label1.TabIndex = 4;
@@ -89,7 +88,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(28, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 28);
@@ -99,7 +98,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(27, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(220, 28);
@@ -109,36 +108,18 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(28, 333);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(208, 28);
             this.label4.TabIndex = 7;
             this.label4.Text = "Project upload version";
             // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label5.Location = new System.Drawing.Point(452, -2);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(207, 472);
-            this.label5.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label6.Location = new System.Drawing.Point(250, -2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(207, 472);
-            this.label6.TabIndex = 9;
-            // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label8.Location = new System.Drawing.Point(284, 63);
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(254, 37);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(133, 28);
             this.label8.TabIndex = 11;
@@ -148,7 +129,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(657, 468);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
@@ -159,9 +140,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "cloudcenter";
             this.Text = "Cloud Center";
@@ -180,8 +159,6 @@ namespace FNAF_Engine_Reborn.Main_Stuff
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
     }
 }
