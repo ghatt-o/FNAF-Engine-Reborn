@@ -59,23 +59,22 @@
             this.Container = new System.Windows.Forms.Label();
             this.Container2 = new System.Windows.Forms.Label();
             this.Container3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Expression
             // 
-            this.Expression.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.Expression.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Expression.Location = new System.Drawing.Point(6, 6);
-            this.Expression.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Expression.Margin = new System.Windows.Forms.Padding(4);
             this.Expression.Name = "Expression";
-            this.Expression.Size = new System.Drawing.Size(741, 34);
+            this.Expression.Size = new System.Drawing.Size(540, 34);
             this.Expression.TabIndex = 0;
             // 
             // ClearBtn
             // 
             this.ClearBtn.Location = new System.Drawing.Point(6, 44);
-            this.ClearBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClearBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(145, 42);
             this.ClearBtn.TabIndex = 1;
@@ -84,13 +83,18 @@
             // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(570, 153);
-            this.OkBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OkBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(225)))), ((int)(((byte)(0)))));
+            this.OkBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(225)))), ((int)(((byte)(0)))));
+            this.OkBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(175)))), ((int)(((byte)(0)))));
+            this.OkBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.OkBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.OkBtn.Location = new System.Drawing.Point(459, 88);
+            this.OkBtn.Margin = new System.Windows.Forms.Padding(4);
             this.OkBtn.Name = "OkBtn";
-            this.OkBtn.Size = new System.Drawing.Size(87, 60);
+            this.OkBtn.Size = new System.Drawing.Size(87, 123);
             this.OkBtn.TabIndex = 2;
             this.OkBtn.Text = "OK";
-            this.OkBtn.UseVisualStyleBackColor = true;
+            this.OkBtn.UseVisualStyleBackColor = false;
             this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
             // 
             // PiBtn
@@ -276,7 +280,7 @@
             // 
             // Random
             // 
-            this.Random.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Random.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Random.Location = new System.Drawing.Point(161, 173);
             this.Random.Margin = new System.Windows.Forms.Padding(4);
             this.Random.Name = "Random";
@@ -296,7 +300,7 @@
             // 
             // VarVal
             // 
-            this.VarVal.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.VarVal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.VarVal.Location = new System.Drawing.Point(342, 93);
             this.VarVal.Name = "VarVal";
             this.VarVal.Size = new System.Drawing.Size(110, 43);
@@ -306,17 +310,17 @@
             // 
             // AnimAI
             // 
-            this.AnimAI.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.AnimAI.Location = new System.Drawing.Point(471, 93);
+            this.AnimAI.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AnimAI.Location = new System.Drawing.Point(250, 44);
             this.AnimAI.Name = "AnimAI";
-            this.AnimAI.Size = new System.Drawing.Size(86, 43);
+            this.AnimAI.Size = new System.Drawing.Size(202, 42);
             this.AnimAI.TabIndex = 24;
             this.AnimAI.Text = "Animatronic AI";
             this.AnimAI.UseVisualStyleBackColor = true;
             // 
             // ToStr
             // 
-            this.ToStr.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.ToStr.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ToStr.Location = new System.Drawing.Point(250, 146);
             this.ToStr.Name = "ToStr";
             this.ToStr.Size = new System.Drawing.Size(86, 64);
@@ -326,7 +330,7 @@
             // 
             // ToVal
             // 
-            this.ToVal.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.ToVal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ToVal.Location = new System.Drawing.Point(342, 146);
             this.ToVal.Name = "ToVal";
             this.ToVal.Size = new System.Drawing.Size(110, 64);
@@ -336,17 +340,17 @@
             // 
             // HelpBtn
             // 
-            this.HelpBtn.Location = new System.Drawing.Point(660, 153);
+            this.HelpBtn.Location = new System.Drawing.Point(459, 44);
             this.HelpBtn.Margin = new System.Windows.Forms.Padding(4);
             this.HelpBtn.Name = "HelpBtn";
-            this.HelpBtn.Size = new System.Drawing.Size(87, 60);
+            this.HelpBtn.Size = new System.Drawing.Size(87, 42);
             this.HelpBtn.TabIndex = 27;
             this.HelpBtn.Text = "Help";
             this.HelpBtn.UseVisualStyleBackColor = true;
             // 
             // Container
             // 
-            this.Container.BackColor = System.Drawing.Color.White;
+            this.Container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.Container.Location = new System.Drawing.Point(7, 90);
             this.Container.Name = "Container";
             this.Container.Size = new System.Drawing.Size(144, 123);
@@ -354,31 +358,23 @@
             // 
             // Container2
             // 
-            this.Container2.BackColor = System.Drawing.Color.White;
+            this.Container2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.Container2.Location = new System.Drawing.Point(246, 141);
             this.Container2.Name = "Container2";
-            this.Container2.Size = new System.Drawing.Size(213, 72);
+            this.Container2.Size = new System.Drawing.Size(210, 72);
             this.Container2.TabIndex = 29;
             // 
             // Container3
             // 
-            this.Container3.BackColor = System.Drawing.Color.White;
+            this.Container3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.Container3.Location = new System.Drawing.Point(246, 90);
             this.Container3.Name = "Container3";
-            this.Container3.Size = new System.Drawing.Size(213, 49);
+            this.Container3.Size = new System.Drawing.Size(210, 49);
             this.Container3.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(465, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 123);
-            this.label1.TabIndex = 31;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.label2.Location = new System.Drawing.Point(156, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 123);
@@ -388,8 +384,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FNAF_Engine_Reborn.Properties.Resources.lovely1;
-            this.ClientSize = new System.Drawing.Size(756, 221);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ClientSize = new System.Drawing.Size(555, 221);
             this.Controls.Add(this.HelpBtn);
             this.Controls.Add(this.ToVal);
             this.Controls.Add(this.ToStr);
@@ -421,10 +417,9 @@
             this.Controls.Add(this.Container);
             this.Controls.Add(this.Container2);
             this.Controls.Add(this.Container3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ExpressionEditor";
             this.Text = "Expression Editor";
             this.ResumeLayout(false);
@@ -465,7 +460,6 @@
         private System.Windows.Forms.Label Container;
         private System.Windows.Forms.Label Container2;
         private System.Windows.Forms.Label Container3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
 }
