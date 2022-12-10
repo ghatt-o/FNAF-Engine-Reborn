@@ -68,9 +68,9 @@ namespace FNAF_Engine_Reborn
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 23);
@@ -81,9 +81,9 @@ namespace FNAF_Engine_Reborn
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(165, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 23);
@@ -160,7 +160,7 @@ namespace FNAF_Engine_Reborn
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label32);
             this.panel1.Controls.Add(this.label33);
@@ -194,8 +194,8 @@ namespace FNAF_Engine_Reborn
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.SystemColors.Control;
-            this.label30.ForeColor = System.Drawing.Color.Black;
+            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label30.ForeColor = System.Drawing.Color.White;
             this.label30.Location = new System.Drawing.Point(166, 198);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(60, 15);
@@ -205,9 +205,9 @@ namespace FNAF_Engine_Reborn
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.SystemColors.Control;
-            this.label32.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label32.Font = new System.Drawing.Font("Digital-7", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label32.ForeColor = System.Drawing.Color.White;
             this.label32.Location = new System.Drawing.Point(164, 177);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(86, 21);
@@ -217,8 +217,8 @@ namespace FNAF_Engine_Reborn
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.SystemColors.Control;
-            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label33.ForeColor = System.Drawing.Color.White;
             this.label33.Location = new System.Drawing.Point(161, 152);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(133, 15);
@@ -228,8 +228,8 @@ namespace FNAF_Engine_Reborn
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.SystemColors.Control;
-            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label29.ForeColor = System.Drawing.Color.White;
             this.label29.Location = new System.Drawing.Point(164, 130);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(60, 15);
@@ -239,8 +239,8 @@ namespace FNAF_Engine_Reborn
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.SystemColors.Control;
-            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label28.ForeColor = System.Drawing.Color.White;
             this.label28.Location = new System.Drawing.Point(164, 115);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(114, 15);
@@ -250,8 +250,8 @@ namespace FNAF_Engine_Reborn
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.SystemColors.Control;
-            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(164, 100);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(69, 15);
@@ -261,8 +261,8 @@ namespace FNAF_Engine_Reborn
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.SystemColors.Control;
-            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label27.ForeColor = System.Drawing.Color.White;
             this.label27.Location = new System.Drawing.Point(161, 71);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(133, 15);
@@ -272,8 +272,8 @@ namespace FNAF_Engine_Reborn
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.SystemColors.Control;
-            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(164, 35);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(69, 15);
@@ -283,8 +283,8 @@ namespace FNAF_Engine_Reborn
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.SystemColors.Control;
-            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label25.ForeColor = System.Drawing.Color.White;
             this.label25.Location = new System.Drawing.Point(161, 6);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(133, 15);
@@ -294,8 +294,8 @@ namespace FNAF_Engine_Reborn
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.SystemColors.Control;
-            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(3, 416);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 15);
@@ -403,7 +403,7 @@ namespace FNAF_Engine_Reborn
             // 
             // releases
             // 
-            this.releases.BackColor = System.Drawing.SystemColors.Control;
+            this.releases.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.releases.Controls.Add(this.label7);
             this.releases.Controls.Add(this.label9);
             this.releases.ForeColor = System.Drawing.Color.Black;
@@ -416,8 +416,8 @@ namespace FNAF_Engine_Reborn
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(6, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 15);
@@ -427,8 +427,8 @@ namespace FNAF_Engine_Reborn
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.Control;
-            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(3, 3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 15);
@@ -437,9 +437,9 @@ namespace FNAF_Engine_Reborn
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(329, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(158, 23);
@@ -449,7 +449,7 @@ namespace FNAF_Engine_Reborn
             // 
             // changelogs
             // 
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(496, 488);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.releases);
@@ -457,7 +457,7 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,7 +16,7 @@ namespace FNAF_Engine_Reborn
             try
             {
                 comboBox1.Items.Clear();
-                comboBox1.Items.AddRange(System.IO.Directory.GetDirectories(@"assets/custom_assets/projects/"));
+                comboBox1.Items.AddRange(Directory.GetDirectories("assets/custom_assets/projects/"));
             }
             catch (Exception)
             {

@@ -27,19 +27,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cars3\\.nuget\\packages\\": {}
+    "C:\\Users\\ultma\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cars3\\OneDrive\\Desktop\\fnaf-engine-reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
+      "projectUniqueName": "G:\\actually repos\\fnaf-engine-reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
       "projectName": "FNAF Engine Game",
-      "projectPath": "C:\\Users\\cars3\\OneDrive\\Desktop\\fnaf-engine-reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
-      "packagesPath": "C:\\Users\\cars3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cars3\\OneDrive\\Desktop\\fnaf-engine-reborn\\FNAF Engine Game\\obj\\",
+      "projectPath": "G:\\actually repos\\fnaf-engine-reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
+      "packagesPath": "C:\\Users\\ultma\\.nuget\\packages\\",
+      "outputPath": "G:\\actually repos\\fnaf-engine-reborn\\FNAF Engine Game\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\cars3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ultma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -47,15 +54,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\cars3\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+        "C:\\Users\\ultma\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows7.0",
           "projectReferences": {
-            "C:\\Users\\cars3\\OneDrive\\Desktop\\fnaf-engine-reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
-              "projectPath": "C:\\Users\\cars3\\OneDrive\\Desktop\\fnaf-engine-reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj"
+            "G:\\actually repos\\fnaf-engine-reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
+              "projectPath": "G:\\actually repos\\fnaf-engine-reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj"
             }
           }
         }

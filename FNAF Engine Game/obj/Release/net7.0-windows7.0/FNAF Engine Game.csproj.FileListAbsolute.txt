@@ -1,0 +1,19 @@
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.AssemblyReference.cache
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF_Engine_Game.FNAF_Engine_Game.resources
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF_Engine_Game.Properties.Resources.resources
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.GenerateResource.cache
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.GeneratedMSBuildEditorConfig.editorconfig
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.CoreCompileInputs.cache
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.exe
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.deps.json
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.runtimeconfig.json
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.dll
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.pdb
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Reborn GameData.dll
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Reborn GameData.pdb
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.CopyComplete
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.dll
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\refint\FNAF Engine Game.dll
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.pdb
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.genruntimeconfig.cache
+G:\actually repos\fnaf-engine-reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\ref\FNAF Engine Game.dll

@@ -12,7 +12,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
 
         public int BinariesCount { get; set; } = 0;
         public ushort MenuCount { get; set; } = 0;
-        public List<byte[]> Chunks { get; set; } = new();
+        public List<byte> Chunks { get; set; } = new();
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {

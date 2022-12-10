@@ -201,7 +201,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // Events
             // 
             this.Events.BackColor = System.Drawing.SystemColors.Control;
-            this.Events.Font = new System.Drawing.Font("Segoe UI", 11.5F);
+            this.Events.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Events.ForeColor = System.Drawing.Color.Black;
             this.Events.ItemHeight = 35;
             this.Events.LineColor = System.Drawing.Color.Red;
@@ -322,9 +322,9 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // Actions
             // 
-            this.Actions.BackColor = System.Drawing.SystemColors.Control;
-            this.Actions.Font = new System.Drawing.Font("Segoe UI", 11.5F);
-            this.Actions.ForeColor = System.Drawing.Color.Black;
+            this.Actions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.Actions.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Actions.ForeColor = System.Drawing.Color.White;
             this.Actions.ItemHeight = 35;
             this.Actions.LineColor = System.Drawing.Color.Red;
             this.Actions.Location = new System.Drawing.Point(12, 10);
@@ -404,7 +404,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             treeNode84.Name = "Move animatronic [] to door []";
             treeNode84.Text = "Move animatronic [] to door []";
             treeNode85.Name = "Move animatronic [] to flashlight";
-            treeNode85.NodeFont = new System.Drawing.Font("Segoe UI", 9F);
+            treeNode85.NodeFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             treeNode85.Text = "Move animatronic [] to flashlight";
             treeNode86.Name = "Move animatronic [] to camera []";
             treeNode86.Text = "Move animatronic [] to camera []";
@@ -440,12 +440,15 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(275, 372);
+            this.button1.Location = new System.Drawing.Point(310, 436);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 104);
+            this.button1.Size = new System.Drawing.Size(140, 51);
             this.button1.TabIndex = 44;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
@@ -455,12 +458,12 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(485, 501);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Actions);
             this.Controls.Add(this.Events);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeblockSelector";

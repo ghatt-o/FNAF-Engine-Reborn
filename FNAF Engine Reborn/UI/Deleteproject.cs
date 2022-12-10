@@ -14,7 +14,7 @@ namespace FNAF_Engine_Reborn
         private void Deleteproject_VisibleChanged(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
-            comboBox1.Items.AddRange(System.IO.Directory.GetDirectories(@"assets/custom_assets/projects/"));
+            comboBox1.Items.AddRange(Directory.GetDirectories("assets/custom_assets/projects/"));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace FNAF_Engine_Reborn
                 Directory.Delete(CurrentProject, true);
                 _ = MessageBox.Show("Project deleted!");
                 comboBox1.Items.Clear();
-                comboBox1.Items.AddRange(System.IO.Directory.GetDirectories(@"assets/custom_assets/projects/"));
+                comboBox1.Items.AddRange(Directory.GetDirectories("assets/custom_assets/projects/"));
             }
         }
     }

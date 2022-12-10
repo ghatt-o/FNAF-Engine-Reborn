@@ -104,7 +104,7 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     comboBox3.Items.Clear();
-                    comboBox3.Items.AddRange(System.IO.Directory.GetDirectories("assets/custom_assets/templates/"));
+                    comboBox3.Items.AddRange(Directory.GetDirectories("assets/custom_assets/templates/"));
                 }
                 catch (Exception)
                 {
@@ -113,7 +113,7 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     comboBox2.Items.Clear();
-                    comboBox2.Items.AddRange(System.IO.Directory.GetDirectories("assets/custom_assets/templates/"));
+                    comboBox2.Items.AddRange(Directory.GetDirectories("assets/custom_assets/templates/"));
                 }
                 catch (Exception)
                 {

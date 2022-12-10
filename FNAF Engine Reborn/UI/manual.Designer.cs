@@ -115,9 +115,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label93
             // 
-            this.label93.BackColor = System.Drawing.SystemColors.Control;
-            this.label93.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label93.ForeColor = System.Drawing.Color.Black;
+            this.label93.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label93.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label93.ForeColor = System.Drawing.Color.White;
             this.label93.Location = new System.Drawing.Point(12, 9);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(538, 45);
@@ -126,9 +126,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(106, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 73);
@@ -137,9 +137,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(97, -2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(454, 21);
@@ -148,7 +148,7 @@ namespace FNAF_Engine_Reborn
             // 
             // UIDefinition
             // 
-            this.UIDefinition.BackColor = System.Drawing.SystemColors.Control;
+            this.UIDefinition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.UIDefinition.Controls.Add(this.funTools);
             this.UIDefinition.Controls.Add(this.button116);
             this.UIDefinition.Controls.Add(this.label11);
@@ -185,7 +185,7 @@ namespace FNAF_Engine_Reborn
             this.UIDefinition.Controls.Add(this.button21);
             this.UIDefinition.Controls.Add(this.label20);
             this.UIDefinition.Controls.Add(this.button25);
-            this.UIDefinition.ForeColor = System.Drawing.Color.Black;
+            this.UIDefinition.ForeColor = System.Drawing.Color.White;
             this.UIDefinition.Location = new System.Drawing.Point(681, 435);
             this.UIDefinition.Name = "UIDefinition";
             this.UIDefinition.Size = new System.Drawing.Size(256, 90);
@@ -194,7 +194,7 @@ namespace FNAF_Engine_Reborn
             // 
             // funTools
             // 
-            this.funTools.BackColor = System.Drawing.SystemColors.Control;
+            this.funTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.funTools.ForeColor = System.Drawing.Color.Black;
             this.funTools.Image = ((System.Drawing.Image)(resources.GetObject("funTools.Image")));
             this.funTools.Location = new System.Drawing.Point(226, 55);
@@ -1085,8 +1085,8 @@ namespace FNAF_Engine_Reborn
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel1.ForeColor = System.Drawing.Color.Black;
+            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.linkLabel1.ForeColor = System.Drawing.Color.White;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.linkLabel1.Location = new System.Drawing.Point(67, 10);
             this.linkLabel1.Name = "linkLabel1";
@@ -1098,7 +1098,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label85
             // 
-            this.label85.BackColor = System.Drawing.SystemColors.Control;
+            this.label85.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.label85.ForeColor = System.Drawing.Color.Black;
             this.label85.Image = ((System.Drawing.Image)(resources.GetObject("label85.Image")));
             this.label85.Location = new System.Drawing.Point(625, -12);
@@ -1108,9 +1108,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(12, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(638, 45);
@@ -1120,9 +1120,9 @@ namespace FNAF_Engine_Reborn
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(12, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(495, 45);
@@ -1133,8 +1133,8 @@ namespace FNAF_Engine_Reborn
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel2.ForeColor = System.Drawing.Color.Black;
+            this.linkLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.linkLabel2.ForeColor = System.Drawing.Color.White;
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.linkLabel2.Location = new System.Drawing.Point(392, 76);
             this.linkLabel2.Name = "linkLabel2";
@@ -1148,7 +1148,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label5);
@@ -1157,7 +1157,7 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.UIDefinition);
             this.Controls.Add(this.label93);
             this.Controls.Add(this.label85);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
