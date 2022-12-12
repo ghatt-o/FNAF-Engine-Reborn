@@ -114,7 +114,7 @@ namespace FNAF_Engine_Reborn
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(323, 154);
             this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "=";
+            this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label5

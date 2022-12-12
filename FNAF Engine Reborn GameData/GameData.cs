@@ -28,7 +28,7 @@ namespace FNAF_Engine_Reborn_GameData
 
         public string ID { get; private set; } = ""; //unused for now lol
 
-        public GameOptions Options { get; set; } = new GameOptions();
+        public GameOptions Options { get; set; } = new();
         public System.Drawing.Color MenuSettings { get; set; } = new System.Drawing.Color();
 
         public List<Variable> DataValues { get; set; } = new List<Variable>();
@@ -219,13 +219,13 @@ namespace FNAF_Engine_Reborn_GameData
 
                 for (int I = 0; I < datavalc; I++)
                 {
-                    Variable dataval = new Variable();
+                    Variable dataval = new();
                     dataval.Read(reader, true, "");
                     DataValues.Add(dataval);
                 }
                 for (int I = 0; I < datastrc; I++)
                 {
-                    StringVariable datastr = new StringVariable();
+                    StringVariable datastr = new();
                     datastr.Read(reader, true, "");
                     DataStrings.Add(datastr);
                 }
@@ -234,13 +234,13 @@ namespace FNAF_Engine_Reborn_GameData
 
                 for (int i = 0; i < imgc; i++)
                 {
-                    Image img = new Image();
+                    Image img = new();
                     img.Read(reader, true, "");
                     ImageBank.Add(img);
                 }
                 for (int i = 0; i < audc; i++)
                 {
-                    Audio aud = new Audio();
+                    Audio aud = new();
                     aud.Read(reader, true, "");
                     AudioBank.Add(aud);
                 }
@@ -250,13 +250,13 @@ namespace FNAF_Engine_Reborn_GameData
 
                 for (int i = 0; i < animc; i++)
                 {
-                    Animation anim = new Animation();
+                    Animation anim = new();
                     anim.Read(reader, true, "");
                     Animations.Add(anim);
                 }
                 for (int i = 0; i < sc; i++)
                 {
-                    StaticEffect se = new StaticEffect();
+                    StaticEffect se = new();
                     se.Read(reader, false, "");
                     StaticEffects.Add(se);
                 }
@@ -264,7 +264,7 @@ namespace FNAF_Engine_Reborn_GameData
                 var menuCount = reader.ReadUInt16();
                 for (int i = 0; i < menuCount; i++)
                 {
-                    FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
+                    FNAF_Engine_Menu menu = new();
                     menu.Read(reader, true, null);
                     Menus.Add(menu);
                 }
@@ -289,44 +289,41 @@ namespace FNAF_Engine_Reborn_GameData
                 string txt = File.ReadAllText(projectpath + "/menus/settings.txt");
                 MenuSettings = System.Drawing.Color.FromArgb(Convert.ToInt32(txt.Split(',')[0]), Convert.ToInt32(txt.Split(',')[1]), Convert.ToInt32(txt.Split(',')[2]));
 
-                foreach(var encoded_data_value in File.ReadAllText(projectpath + "/datavalues.txt").Split(','))
+                foreach (var encoded_data_value in File.ReadAllText(projectpath + "/datavalues.txt").Split(','))
                 {
                     var name = encoded_data_value.Split(':')[0];
                     var value = encoded_data_value.Split(':')[1];
-                    Variable variable = new Variable();
-                    variable.Key = name;
-                    try
+                    Variable variable = new()
                     {
-                        variable.Value = Convert.ToInt32(value);
-                    }
-                    catch(Exception)
-                    {
-                        variable.Value = 0;
-                    }
+                        Key = name,
+                        Value = Convert.ToInt32(value) //would this cause any errors?
+                    };
                     DataValues.Add(variable);
                 }
                 foreach (var encoded_data_value in File.ReadAllText(projectpath + "/datastrings.txt").Split(','))
                 {
                     var name = encoded_data_value.Split(':')[0];
                     var value = encoded_data_value.Split(':')[1];
-                    StringVariable variable = new StringVariable();
-                    variable.Key = name;
-                    variable.Value = value;
+                    StringVariable variable = new()
+                    {
+                        Key = name,
+                        Value = value
+                    };
                     DataStrings.Add(variable);
                 }
 
                 foreach(var d in Directory.GetFiles(projectpath + "/images"))
                 {
                     FileInfo fileInfo = new FileInfo(d);
-                    Image img = new Image();
+                    Image img = new();
                     img.Name = fileInfo.Name;
                     img.Read(null, false, projectpath);
                     ImageBank.Add(img);
                 }
                 foreach (var d in Directory.GetFiles(projectpath + "/sounds"))
                 {
-                    FileInfo fileInfo = new FileInfo(d);
-                    Audio img = new Audio();
+                    FileInfo fileInfo = new(d);
+                    Audio img = new();
                     img.Name = fileInfo.Name;
                     img.Read(null, false, projectpath);
                     AudioBank.Add(img);
@@ -334,18 +331,18 @@ namespace FNAF_Engine_Reborn_GameData
 
                 foreach(var anim in Directory.GetDirectories(projectpath + "/animations"))
                 {
-                    Animation animation = new Animation();
+                    Animation animation = new();
                     animation.Read(null, false, projectpath); //read method not done yet
                 }
                 foreach(var se in Directory.GetDirectories(projectpath + "/statics"))
                 {
-                    StaticEffect staticeffect = new StaticEffect();
+                    StaticEffect staticeffect = new();
                     staticeffect.Read(null, false, projectpath); //read method not done yet
                 }
 
                 foreach(var menu in Directory.GetDirectories(projectpath + "/menus"))
                 {
-                    FNAF_Engine_Menu newMenu = new FNAF_Engine_Menu();
+                    FNAF_Engine_Menu newMenu = new();
                     newMenu.Name = File.ReadAllText(menu + "/name.txt");
                     newMenu.Read(null, false, projectpath);
                 }

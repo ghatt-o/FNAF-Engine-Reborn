@@ -2324,22 +2324,6 @@ namespace FNAF_Engine_Reborn
                 File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
             }
         }
-
-        private void click_Click(object sender, EventArgs e)
-        {
-            MenuEditor_CodeEditorClick.BringToFront();
-        }
-
-        private void hover_Click(object sender, EventArgs e)
-        {
-            MenuEditor_CodeEditorHover.BringToFront();
-        }
-
-        private void mousebuttonheld_Click(object sender, EventArgs e)
-        {
-            MenuEditor_CodeEditorHold.BringToFront();
-        }
-
         private void AddImage_MenuEditor_Click(object sender, EventArgs e)
         {
             OpenFileDialog icon = new OpenFileDialog
@@ -2370,11 +2354,6 @@ namespace FNAF_Engine_Reborn
         private void text_ID_MenuEditor_Create_TextChanged(object sender, EventArgs e)
         {
             text_ID_MenuEditor_Create.Text = text_ID_MenuEditor_Create.Text.Replace(" ", "");
-        }
-
-        private void unhover_Click(object sender, EventArgs e)
-        {
-            MenuEditor_CodeEditorUnhover.BringToFront();
         }
 
         private void button16_Click(object sender, EventArgs e)

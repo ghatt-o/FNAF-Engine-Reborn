@@ -116,7 +116,11 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 string sename = File.ReadAllText(path + "/static.txt");
                 if (sename == "") Console.WriteLine("No static effect for menu");
                 else StaticEffect = new StaticEffect();
-                if (sename != "") StaticEffect.Read(null, false, project); //Method not done yet
+                if (sename != "")
+                {
+                    StaticEffect.Temp = sename;
+                    StaticEffect.Read(null, false, project);
+                }
 
                 //TODO: Element reading
             }

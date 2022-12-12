@@ -1,5 +1,6 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System.Collections.Generic;
+using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
 {
@@ -7,6 +8,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
     {
         public string Name { get; set; } = "Static Effect";
         public List<StaticEffectFrame> Frames { get; set; } = new List<StaticEffectFrame>();
+        public string Temp;
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
@@ -16,13 +18,19 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
                 for (int i = 0; i < frameCount; i++)
                 {
                     StaticEffectFrame frame = new StaticEffectFrame();
-                    frame.Read(reader, binary, projectpath);
+                    frame.Read(reader, true, null);
                     Frames.Add(frame);
                 }
             }
             else
             {
-                //todo
+                foreach (var file in Directory.GetFiles(projectpath + "/statics/" + Temp))
+                {
+                    if (file == projectpath + "/statics/" + Temp + "/name.txt") Name = File.ReadAllText(projectpath + "/statics/" + Temp + "/name.txt");
+                    StaticEffectFrame frame = new StaticEffectFrame();
+                    frame.Read(null, false, file);
+                    Frames.Add(frame);
+                }
             }
         }
         public void Write(ByteWriter Writer, bool binary, string projectpath)
@@ -37,7 +45,12 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
             }
             else
             {
-                //todo
+                //temp is file path
+                File.WriteAllText(Temp + "/name.txt", Name);
+                foreach (var frame in Frames)
+                {
+                    frame.Write(null, false, Temp);
+                }
             }
         }
     }
