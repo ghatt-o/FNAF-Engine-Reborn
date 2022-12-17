@@ -62,7 +62,7 @@ namespace FNAF_Engine_Reborn
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.Black;
             this.textBox1.Location = new System.Drawing.Point(12, 28);
@@ -84,7 +84,7 @@ namespace FNAF_Engine_Reborn
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.FormattingEnabled = true;
@@ -107,7 +107,7 @@ namespace FNAF_Engine_Reborn
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox1.ForeColor = System.Drawing.Color.Black;
             this.richTextBox1.Location = new System.Drawing.Point(12, 117);
@@ -144,7 +144,7 @@ namespace FNAF_Engine_Reborn
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(341, 57);
@@ -157,7 +157,7 @@ namespace FNAF_Engine_Reborn
             // 
             // comboBox2
             // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox2.BackColor = System.Drawing.Color.White;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox2.ForeColor = System.Drawing.Color.Black;
             this.comboBox2.FormattingEnabled = true;
@@ -168,7 +168,7 @@ namespace FNAF_Engine_Reborn
             // 
             // comboBox3
             // 
-            this.comboBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox3.BackColor = System.Drawing.Color.White;
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox3.ForeColor = System.Drawing.Color.Black;
             this.comboBox3.FormattingEnabled = true;
@@ -212,7 +212,7 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.SystemColors.Control;
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "templateCreator";

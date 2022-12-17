@@ -37,7 +37,7 @@ namespace FNAF_Engine_Reborn
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 14);
@@ -53,7 +53,7 @@ namespace FNAF_Engine_Reborn
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(12, 45);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(240, 46);

@@ -200,7 +200,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // Events
             // 
-            this.Events.BackColor = System.Drawing.SystemColors.Control;
+            this.Events.BackColor = System.Drawing.Color.White;
             this.Events.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Events.ForeColor = System.Drawing.Color.Black;
             this.Events.ItemHeight = 35;
@@ -322,7 +322,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             // 
             // Actions
             // 
-            this.Actions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.Actions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.Actions.Font = new System.Drawing.Font("Segoe UI", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Actions.ForeColor = System.Drawing.Color.White;
             this.Actions.ItemHeight = 35;
@@ -464,7 +464,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.Controls.Add(this.Actions);
             this.Controls.Add(this.Events);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.SystemColors.Control;
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CodeblockSelector";
             this.Text = "Script Codeblock Selector";
