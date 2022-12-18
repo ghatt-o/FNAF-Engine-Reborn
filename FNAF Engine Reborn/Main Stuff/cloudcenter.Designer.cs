@@ -66,7 +66,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.button26.BackColor = System.Drawing.Color.Lime;
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button26.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button26.ForeColor = System.Drawing.Color.Black;
             this.button26.Location = new System.Drawing.Point(323, 109);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(122, 146);
@@ -141,7 +141,7 @@ namespace FNAF_Engine_Reborn.Main_Stuff
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.SystemColors.Control;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "cloudcenter";
             this.Text = "Cloud Center";
             this.ResumeLayout(false);

@@ -2197,10 +2197,6 @@ namespace FNAF_Engine_Reborn
             //MenuCodeEditor_Code_Tree.Nodes.
         }
 
-        private void DownloadFontBtn_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://cdn.discordapp.com/attachments/966684909739601952/1001816335837315082/digital-7.ttf");
-        }
 
         private void button21_Click(object sender, EventArgs e)
         {
@@ -2863,6 +2859,46 @@ namespace FNAF_Engine_Reborn
             {
                 MessageBox.Show("Something went horribly wrong! If this keeps happening, please report on our discord server!");
             }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button127_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button68_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateLightButton_OfficeEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreatePanel_OfficeEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateDoorButton_OfficeEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateInput_OfficeEditor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,8 +44,8 @@ namespace FNAF_Engine_Reborn
             // 
             // projectNamebox
             // 
-            this.projectNamebox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.projectNamebox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.projectNamebox.BackColor = System.Drawing.Color.White;
+            this.projectNamebox.ForeColor = System.Drawing.Color.Black;
             this.projectNamebox.Location = new System.Drawing.Point(13, 43);
             this.projectNamebox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.projectNamebox.Name = "projectNamebox";
@@ -59,7 +59,7 @@ namespace FNAF_Engine_Reborn
             this.createProjectbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(0)))));
             this.createProjectbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
             this.createProjectbtn.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.createProjectbtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.createProjectbtn.ForeColor = System.Drawing.Color.Black;
             this.createProjectbtn.Location = new System.Drawing.Point(13, 222);
             this.createProjectbtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.createProjectbtn.Name = "createProjectbtn";
@@ -73,7 +73,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "None",
@@ -120,7 +120,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.gameStyleOptions.BackColor = System.Drawing.Color.White;
             this.gameStyleOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gameStyleOptions.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gameStyleOptions.ForeColor = System.Drawing.Color.Black;
             this.gameStyleOptions.FormattingEnabled = true;
             this.gameStyleOptions.Items.AddRange(new object[] {
             "???",

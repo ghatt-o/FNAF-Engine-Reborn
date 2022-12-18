@@ -65,6 +65,7 @@
             // Expression
             // 
             this.Expression.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Expression.ForeColor = System.Drawing.Color.Black;
             this.Expression.Location = new System.Drawing.Point(6, 6);
             this.Expression.Margin = new System.Windows.Forms.Padding(4);
             this.Expression.Name = "Expression";
@@ -73,6 +74,7 @@
             // 
             // ClearBtn
             // 
+            this.ClearBtn.ForeColor = System.Drawing.Color.Black;
             this.ClearBtn.Location = new System.Drawing.Point(6, 44);
             this.ClearBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ClearBtn.Name = "ClearBtn";
@@ -99,6 +101,7 @@
             // 
             // PiBtn
             // 
+            this.PiBtn.ForeColor = System.Drawing.Color.Black;
             this.PiBtn.Location = new System.Drawing.Point(156, 44);
             this.PiBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PiBtn.Name = "PiBtn";
@@ -110,6 +113,7 @@
             // 
             // button0
             // 
+            this.button0.ForeColor = System.Drawing.Color.Black;
             this.button0.Location = new System.Drawing.Point(11, 93);
             this.button0.Margin = new System.Windows.Forms.Padding(4);
             this.button0.Name = "button0";
@@ -120,6 +124,7 @@
             // 
             // button1
             // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(45, 93);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -130,6 +135,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(81, 93);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
@@ -140,6 +146,7 @@
             // 
             // button3
             // 
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(11, 127);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
@@ -150,6 +157,7 @@
             // 
             // button4
             // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(45, 127);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
@@ -160,6 +168,7 @@
             // 
             // button5
             // 
+            this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(81, 127);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
@@ -170,6 +179,7 @@
             // 
             // button6
             // 
+            this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Location = new System.Drawing.Point(11, 157);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
@@ -180,6 +190,7 @@
             // 
             // button7
             // 
+            this.button7.ForeColor = System.Drawing.Color.Black;
             this.button7.Location = new System.Drawing.Point(45, 157);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
@@ -190,6 +201,7 @@
             // 
             // button8
             // 
+            this.button8.ForeColor = System.Drawing.Color.Black;
             this.button8.Location = new System.Drawing.Point(81, 157);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
@@ -200,6 +212,7 @@
             // 
             // button9
             // 
+            this.button9.ForeColor = System.Drawing.Color.Black;
             this.button9.Location = new System.Drawing.Point(11, 184);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
@@ -210,6 +223,7 @@
             // 
             // LeftCurlyThing
             // 
+            this.LeftCurlyThing.ForeColor = System.Drawing.Color.Black;
             this.LeftCurlyThing.Location = new System.Drawing.Point(161, 127);
             this.LeftCurlyThing.Margin = new System.Windows.Forms.Padding(4);
             this.LeftCurlyThing.Name = "LeftCurlyThing";
@@ -220,6 +234,7 @@
             // 
             // RightCurlyThing
             // 
+            this.RightCurlyThing.ForeColor = System.Drawing.Color.Black;
             this.RightCurlyThing.Location = new System.Drawing.Point(197, 127);
             this.RightCurlyThing.Margin = new System.Windows.Forms.Padding(4);
             this.RightCurlyThing.Name = "RightCurlyThing";
@@ -230,6 +245,7 @@
             // 
             // PlusButton
             // 
+            this.PlusButton.ForeColor = System.Drawing.Color.Black;
             this.PlusButton.Location = new System.Drawing.Point(117, 93);
             this.PlusButton.Margin = new System.Windows.Forms.Padding(4);
             this.PlusButton.Name = "PlusButton";
@@ -240,6 +256,7 @@
             // 
             // MinusButton
             // 
+            this.MinusButton.ForeColor = System.Drawing.Color.Black;
             this.MinusButton.Location = new System.Drawing.Point(117, 127);
             this.MinusButton.Margin = new System.Windows.Forms.Padding(4);
             this.MinusButton.Name = "MinusButton";
@@ -250,6 +267,7 @@
             // 
             // TimesBtn
             // 
+            this.TimesBtn.ForeColor = System.Drawing.Color.Black;
             this.TimesBtn.Location = new System.Drawing.Point(117, 157);
             this.TimesBtn.Margin = new System.Windows.Forms.Padding(4);
             this.TimesBtn.Name = "TimesBtn";
@@ -260,6 +278,7 @@
             // 
             // DotBtn
             // 
+            this.DotBtn.ForeColor = System.Drawing.Color.Black;
             this.DotBtn.Location = new System.Drawing.Point(161, 96);
             this.DotBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DotBtn.Name = "DotBtn";
@@ -270,6 +289,7 @@
             // 
             // DivBtn
             // 
+            this.DivBtn.ForeColor = System.Drawing.Color.Black;
             this.DivBtn.Location = new System.Drawing.Point(117, 184);
             this.DivBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DivBtn.Name = "DivBtn";
@@ -281,6 +301,7 @@
             // Random
             // 
             this.Random.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Random.ForeColor = System.Drawing.Color.Black;
             this.Random.Location = new System.Drawing.Point(161, 173);
             this.Random.Margin = new System.Windows.Forms.Padding(4);
             this.Random.Name = "Random";
@@ -291,6 +312,7 @@
             // 
             // DataVal
             // 
+            this.DataVal.ForeColor = System.Drawing.Color.Black;
             this.DataVal.Location = new System.Drawing.Point(250, 93);
             this.DataVal.Name = "DataVal";
             this.DataVal.Size = new System.Drawing.Size(86, 43);
@@ -301,6 +323,7 @@
             // VarVal
             // 
             this.VarVal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VarVal.ForeColor = System.Drawing.Color.Black;
             this.VarVal.Location = new System.Drawing.Point(342, 93);
             this.VarVal.Name = "VarVal";
             this.VarVal.Size = new System.Drawing.Size(110, 43);
@@ -311,6 +334,7 @@
             // AnimAI
             // 
             this.AnimAI.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AnimAI.ForeColor = System.Drawing.Color.Black;
             this.AnimAI.Location = new System.Drawing.Point(250, 44);
             this.AnimAI.Name = "AnimAI";
             this.AnimAI.Size = new System.Drawing.Size(202, 42);
@@ -321,6 +345,7 @@
             // ToStr
             // 
             this.ToStr.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ToStr.ForeColor = System.Drawing.Color.Black;
             this.ToStr.Location = new System.Drawing.Point(250, 146);
             this.ToStr.Name = "ToStr";
             this.ToStr.Size = new System.Drawing.Size(86, 64);
@@ -331,6 +356,7 @@
             // ToVal
             // 
             this.ToVal.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ToVal.ForeColor = System.Drawing.Color.Black;
             this.ToVal.Location = new System.Drawing.Point(342, 146);
             this.ToVal.Name = "ToVal";
             this.ToVal.Size = new System.Drawing.Size(110, 64);
@@ -340,6 +366,7 @@
             // 
             // HelpBtn
             // 
+            this.HelpBtn.ForeColor = System.Drawing.Color.Black;
             this.HelpBtn.Location = new System.Drawing.Point(459, 44);
             this.HelpBtn.Margin = new System.Windows.Forms.Padding(4);
             this.HelpBtn.Name = "HelpBtn";
@@ -419,6 +446,7 @@
             this.Controls.Add(this.Container3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ExpressionEditor";
             this.Text = "Expression Editor";

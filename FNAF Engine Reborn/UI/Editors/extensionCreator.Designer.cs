@@ -73,7 +73,7 @@ namespace FNAF_Engine_Reborn
             // 
             // label1
             // 
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 44);
@@ -92,7 +92,7 @@ namespace FNAF_Engine_Reborn
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 54F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(384, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(316, 136);
@@ -126,7 +126,7 @@ namespace FNAF_Engine_Reborn
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.comboBox3);
@@ -339,7 +339,7 @@ namespace FNAF_Engine_Reborn
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel3.Controls.Add(this.button14);
             this.panel3.Controls.Add(this.button12);
             this.panel3.Controls.Add(this.button8);
@@ -458,6 +458,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Location = new System.Drawing.Point(215, 131);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(282, 49);
@@ -469,6 +470,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.button5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button5.Location = new System.Drawing.Point(170, 70);
             this.button5.Name = "button5";
@@ -482,7 +484,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(164, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 28);

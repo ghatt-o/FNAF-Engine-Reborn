@@ -76,7 +76,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.Description.AutoSize = true;
             this.Description.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.Description.ForeColor = System.Drawing.SystemColors.Control;
+            this.Description.ForeColor = System.Drawing.Color.White;
             this.Description.Location = new System.Drawing.Point(57, 108);
             this.Description.Name = "Description";
             this.Description.Size = new System.Drawing.Size(112, 28);
@@ -87,7 +87,7 @@ namespace FNAF_Engine_Reborn
             // 
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.Title.ForeColor = System.Drawing.SystemColors.Control;
+            this.Title.ForeColor = System.Drawing.Color.White;
             this.Title.Location = new System.Drawing.Point(54, 46);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(84, 46);
