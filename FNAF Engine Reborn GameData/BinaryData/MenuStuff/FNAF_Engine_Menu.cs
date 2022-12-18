@@ -62,6 +62,11 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 {
                     File.WriteAllText(project + "/menus/" + Name + "/audio.txt", project + "/sounds/" + BackgroundAudio.Name);
                 }
+                if (StaticEffect != null)
+                {
+                    StaticEffect.Temp = project + "/statics/" + StaticEffect.Name; //no idea
+                    StaticEffect.Write(null, false, null);
+                }
             }
         }
         public void Read(ByteReader reader, bool binary, string project)
