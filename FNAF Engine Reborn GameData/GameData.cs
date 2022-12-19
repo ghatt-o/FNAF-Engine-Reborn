@@ -129,6 +129,9 @@ namespace FNAF_Engine_Reborn_GameData
                 Writer.WriteAscii("OFFC");
 
                 Office.Write(Writer, true, null);
+
+                Writer.Flush();
+                Writer.Close();
             }
             else
             {
@@ -192,6 +195,7 @@ namespace FNAF_Engine_Reborn_GameData
                 }
 
                 Office.Write(null, false, projectpath);
+
             }
         }
         public void Read(ByteReader reader, bool binary, string projectpath)
@@ -349,6 +353,25 @@ namespace FNAF_Engine_Reborn_GameData
 
                 Office.Read(null, false, projectpath);
             }
+        }
+    }
+    public static class XorEncryption
+    {
+        public static byte[] Encrypt(byte[] input, byte[] key)
+        {
+            byte[] result = new byte[input.Length];
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                result[i] = (byte)(input[i] ^ key[i % key.Length]);
+            }
+
+            return result;
+        }
+
+        public static byte[] Decrypt(byte[] input, byte[] key)
+        {
+            return Encrypt(input, key);
         }
     }
 }

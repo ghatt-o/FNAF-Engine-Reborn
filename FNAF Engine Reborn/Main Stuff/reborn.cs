@@ -60,6 +60,13 @@ namespace FNAF_Engine_Reborn
         {
             DoubleBuffered = true;
 
+            GameData dat = new();
+            dat.Write(new FNAF_Engine_Reborn_GameData.BinaryData.Memory.ByteWriter(new FileStream("test.ferdata", FileMode.Create)), true, null);
+            byte[] key = new byte[2];
+            key[0] = 1;
+            byte[] neww = XorEncryption.Encrypt(File.ReadAllBytes("test.ferdata"), key);
+            File.WriteAllBytes("test.ferdata", neww);
+
             File.WriteAllText("DO_NOT_MODIFY.txt", "");
 #if DEBUG
             {
@@ -2216,6 +2223,7 @@ namespace FNAF_Engine_Reborn
                 {
                     try
                     {
+                        //Startup
                         //this.presence.details = "Editing game...";
                         //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                         if (Directory.Exists(projecto + "/animations"))
@@ -2258,7 +2266,7 @@ namespace FNAF_Engine_Reborn
                             animatronicEditorPNL2.Show();
                         }
                     }
-                    catch (Exception)
+                    catch (Exception) //It's okay
                     {
 
                     }

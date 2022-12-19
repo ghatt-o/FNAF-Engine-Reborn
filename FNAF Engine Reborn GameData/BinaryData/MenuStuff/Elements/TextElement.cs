@@ -9,23 +9,22 @@ namespace MenuStuff.Elements
 {
     public class TextElement : MenuElement
     {
-        public string Text { get; set; }
-        public string Fontname { get; set; }
-        public string Fontsize { get; set; }
+        public string Text { get; set; } = "Unknown-TextElement";
+        public string Fontname { get; set; } = "Consolas";
+        public string Fontsize { get; set; } = "9";
         public Color Rgb { get; set; }
         public byte ButtonStyle { get; set; } = 0; //fnaf
 
-        public List<ScriptAction> ClickFunctions { get; set; }
+        public List<Script> ClickFunctions { get; set; } = new();
 
-
-        public void Read(ByteReader reader, bool binary, string project)
+        public new void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
                 base.Read(reader, true, null);
-                Text = reader.ReadString();
-                Fontname = reader.ReadString();
-                Fontsize = reader.ReadString();
+                Text = reader.AutoReadUnicode();
+                Fontname = reader.AutoReadUnicode();
+                Fontsize = reader.AutoReadUnicode();
                 #region
                 int r = reader.ReadByte();
                 int g = reader.ReadByte();
@@ -77,10 +76,10 @@ namespace MenuStuff.Elements
             }
             else
             {
-
+                //Project is the textelement path
             }
         }
-        public void Write(ByteWriter Writer, bool binary, string menupath)
+        public new void Write(ByteWriter Writer, bool binary, string menupath)
         {
             if (binary == true)
             {

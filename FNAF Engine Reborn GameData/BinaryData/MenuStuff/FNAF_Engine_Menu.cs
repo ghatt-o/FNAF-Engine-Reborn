@@ -67,6 +67,10 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                     StaticEffect.Temp = project + "/statics/" + StaticEffect.Name; //no idea
                     StaticEffect.Write(null, false, null);
                 }
+                foreach (var ele in TextElements)
+                {
+                    ele.Write(null, false, project + "/menus/" + Name);
+                }
             }
         }
         public void Read(ByteReader reader, bool binary, string project)
