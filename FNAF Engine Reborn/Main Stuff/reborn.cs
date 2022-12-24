@@ -60,9 +60,7 @@ namespace FNAF_Engine_Reborn
         {
             DoubleBuffered = true;
 
-            Logger.Log();
-
-            File.WriteAllText("DO_NOT_MODIFY.txt", "");
+            File.WriteAllText("DO_NOT_MODIFY.txt", "uncompressed_key=none");
 #if DEBUG
             {
                 //button67.Visible = true; //load editors button gets visible lol so useless
@@ -183,12 +181,12 @@ namespace FNAF_Engine_Reborn
             {
                 if (comboBox43.SelectedItem == null)
                 {
-                    _ = MessageBox.Show("Select a animation!");
+                    Logger.Log("Please select an animation!");
                 }
                 else
                 {
-                    Directory.Delete(comboBox43.SelectedItem.ToString());
-                    _ = MessageBox.Show("Animation deleted!");
+                    Directory.Delete(comboBox43.SelectedItem?.ToString());
+                    Logger.Log("Animation deleted!");
                     comboBox43.Items.Clear();
                     comboBox43.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
                 }
@@ -211,7 +209,7 @@ namespace FNAF_Engine_Reborn
                 AnimAdd.Visible = false;
                 if (spriteName.Text == "")
                 {
-                    _ = MessageBox.Show("Please insert something in the name box!");
+                    Logger.Log("Please insert something in the name box!");
                 }
                 else
                 {
@@ -684,8 +682,8 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
-                    _ = MessageBox.Show("Something went wrong!, Fixing...");
-                    _ = MessageBox.Show("Fixed!");
+                    Logger.Log("An error occured! Attempting to solve it...", "Error");
+                    Logger.Log("Error solved!");
                     _ = System.Diagnostics.Process.Start("explorer.exe", Application.StartupPath + projecto);
                 }
                 try
@@ -712,6 +710,11 @@ namespace FNAF_Engine_Reborn
         {
         }
 
+        private void Corruption()
+        {
+            Logger.Log("Warning! With further examination, your project seems to be corrupted! Please join our Discord server and forward any issues you encounter!", "Fatal error");
+        }
+
         private async void buildSettingsPanelMoment_VisibleChanged(object sender, EventArgs e)
         {
             if (_0_2C == true)
@@ -728,9 +731,9 @@ namespace FNAF_Engine_Reborn
                 }
                 if (File.Exists(projecto + "/options.txt") == false)
                 {
-                    _ = MessageBox.Show("Options are null. Attempting to fix...");
+                    Logger.Log("Options are null. E729", "Fatal error");
                     _ = File.CreateText(projecto + "/options.txt");
-                    _ = MessageBox.Show("Options are fixed!");
+                    Corruption();
                 }
                 if (File.Exists(projecto + "/game.txt") == true)
                 {
@@ -739,9 +742,9 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
-                    _ = MessageBox.Show("Game name is null. Attempting to fix it...");
+                    Logger.Log("ID is null. E745", "Fatal error");
                     _ = File.CreateText(projecto + "/game.txt");
-                    _ = MessageBox.Show("Game name successfully fixed!");
+                    Corruption();
                     textBox6.Text = File.ReadAllText(projecto + "/game.txt");
                 }
 
@@ -811,7 +814,7 @@ namespace FNAF_Engine_Reborn
                 {
                     if (string.IsNullOrWhiteSpace(menuName.Text))
                     {
-                        _ = MessageBox.Show("Please insert something in the box!");
+                        Logger.Log("Please insert a name for your menu!", "Error");
                     }
                     else
                     {
@@ -832,7 +835,7 @@ namespace FNAF_Engine_Reborn
                 catch (Exception ex)
                 {
                     Console.WriteLine("Cringe exception: " + ex);
-                    _ = MessageBox.Show("Special characters aren't allowed!");
+                    Logger.Log("Special characters are not allowed!", "Error");
                 }
             }
         }
@@ -843,7 +846,7 @@ namespace FNAF_Engine_Reborn
             {
                 if (Menus.SelectedNode == null)
                 {
-                    _ = MessageBox.Show("Select an menu to delete!");
+                    Logger.Log("Select a menu to delete!");
                 }
                 else
                 {
@@ -870,9 +873,8 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
-                    _ = MessageBox.Show("Something went wrong! Fixing...");
+                    Logger.Log("Null cameras E876");
                     createFolder("/cameras");
-                    _ = MessageBox.Show("Fixed!");
                     panel6.Show();
                 }
             }
@@ -906,12 +908,11 @@ namespace FNAF_Engine_Reborn
             {
                 if (comboBox4.SelectedItem == null)
                 {
-                    _ = MessageBox.Show("Select an menu to delete!");
+                    Logger.Log("Select a camera to delete!");
                 }
                 else
                 {
                     Directory.Delete(comboBox4.SelectedItem.ToString());
-                    _ = MessageBox.Show("Deleted camera!");
                     comboBox4.Items.Clear();
                     comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
                 }
@@ -926,14 +927,14 @@ namespace FNAF_Engine_Reborn
         {
             comboBox43.Items.Clear();
             comboBox43.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
-            _ = MessageBox.Show("Updated!");
+            Logger.Log("Updated!");
         }
 
         private void button62_Click(object sender, EventArgs e)
         {
             if (_0_2C == true)
             {
-                _ = listView1.Items.Add("frame2");
+                //_ = listView1.Items.Add("frame2");
             }
             else
             {
@@ -1077,7 +1078,7 @@ namespace FNAF_Engine_Reborn
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Failed to create animatronic!");
+                    Logger.Log("Failed to create animatronic!", "Error");
                 }
                 finally
                 {
@@ -1115,7 +1116,7 @@ namespace FNAF_Engine_Reborn
                 }
                 catch (Exception)
                 {
-                    _ = MessageBox.Show("Error 3: Failed to delete static effect");
+                    Logger.Log("Failed to delete static effect", "Error 3");
                 }
             }
             else
@@ -1128,7 +1129,6 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-
                 if (checkBox7.Checked == true)
                 {
                     string optionstxt = File.ReadAllText(projecto + "/options.txt");
@@ -1198,18 +1198,6 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                OpenFileDialog icon = new OpenFileDialog
-                {
-                    Filter = "Images (*.png)|*.png"
-                };
-                _ = icon.ShowDialog();
-                if (icon.ShowDialog() == DialogResult.OK)
-                {
-                    string filePath = icon.FileName;
-                    _ = icon.OpenFile();
-                    System.IO.File.Copy(filePath, projecto + "/images/icon.png");
-                    label33.Image = Image.FromFile(projecto + "/images/icon.png");
-                }
             }
             else
             {
@@ -1321,7 +1309,7 @@ namespace FNAF_Engine_Reborn
                     catch (Exception ex)
                     {
                         Console.WriteLine("Cringe exception: " + ex);
-                        _ = MessageBox.Show("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
+                        Logger.Log("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
                     }
                 }
             }
@@ -1354,7 +1342,7 @@ namespace FNAF_Engine_Reborn
                 }
                 catch (Exception)
                 {
-                    _ = MessageBox.Show("Special characters are not allowed!");
+                    Logger.Log("Special characters are not allowed!");
                 }
             }
         }
@@ -1375,7 +1363,6 @@ namespace FNAF_Engine_Reborn
                         Directory.Delete(comboBox17.SelectedItem.ToString(), true);
                         comboBox17.Items.Clear();
                         comboBox17.Items.AddRange(Directory.GetDirectories(projecto + "/offices/default/office_states/"));
-                        _ = MessageBox.Show("Office state deleted!");
                     }
                 }
                 catch (Exception)
@@ -1918,7 +1905,7 @@ namespace FNAF_Engine_Reborn
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Unable to load menu background: Invalid Image", "Corrupted Image");
+                        Logger.Log("Unable to load menu background: Invalid Image", "Corrupted Image");
                     }
                 }
                 else
@@ -2152,7 +2139,7 @@ namespace FNAF_Engine_Reborn
                 object tag = "Data_Values_List";
                 if (GameManager_Variables_View.SelectedNode == null || GameManager_Variables_View.SelectedNode.Tag == tag || GameManager_Variables_View.SelectedNode.Name == "value")
                 {
-                    _ = MessageBox.Show("Please select a data value to change the value!");
+                    Logger.Log("Please select a data value to change the value!");
                 }
                 else
                 {
@@ -2336,7 +2323,7 @@ namespace FNAF_Engine_Reborn
                 Menu_Editor menu_Editor = new Menu_Editor(this);
                 if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
                 {
-                    _ = MessageBox.Show("Unable to create new image element: Error 1");
+                    Logger.Log("Unable to create new image element", "Error 1");
                 }
                 else
                 {
@@ -2376,7 +2363,7 @@ namespace FNAF_Engine_Reborn
                     catch (Exception ex)
                     {
                         Console.WriteLine("Cringe exception: " + ex);
-                        _ = MessageBox.Show("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
+                        Logger.Log("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
                     }
                 }
             }
@@ -2526,8 +2513,8 @@ namespace FNAF_Engine_Reborn
 
         private void label92_Click(object sender, EventArgs e) //CLOSE BUTTON
         {
-            MessageBox.Show("TODO: fix this broken close button");
-        } //best solution probably
+            
+        }
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -2536,7 +2523,7 @@ namespace FNAF_Engine_Reborn
 
         private void TheCutestCat_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TODO: diamond cat");
+            //TODO: diamond cat
         }
 
         private void Menus_KeyDown(object sender, KeyEventArgs e)
@@ -2555,7 +2542,7 @@ namespace FNAF_Engine_Reborn
             object tag = "Data_Values_List";
             if (GameManager_Variables_View.SelectedNode == null || GameManager_Variables_View.SelectedNode.Tag == tag || GameManager_Variables_View.SelectedNode.Name == "value")
             {
-                MessageBox.Show("Select an data value first!");
+                Logger.Log("Select an data value first!");
             }
             else
             {
