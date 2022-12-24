@@ -5369,7 +5369,7 @@ namespace FNAF_Engine_Reborn
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(3, 115);
+            this.label10.Location = new System.Drawing.Point(3, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(146, 19);
             this.label10.TabIndex = 34;
@@ -6880,9 +6880,7 @@ namespace FNAF_Engine_Reborn
             this.ClientSize = new System.Drawing.Size(955, 603);
             this.Controls.Add(this.allEditorsPNL);
             this.Controls.Add(this.button38);
-            this.Controls.Add(this.animationEditorPanel);
-            this.Controls.Add(this.animatronicEditorPNL2);
-            this.Controls.Add(this.buildSettingsPanelMoment);
+            this.Controls.Add(this.Sidebar);
             this.Controls.Add(this.SoundEditorPanel);
             this.Controls.Add(this.GameDebugMenu);
             this.Controls.Add(this.Menu_CodeEditor);
@@ -6896,9 +6894,11 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.officeEditorPanel);
             this.Controls.Add(this.cutsceneMoment);
             this.Controls.Add(this.ImageEditorPanel);
-            this.Controls.Add(this.Sidebar);
             this.Controls.Add(this.staticeffecteditor);
             this.Controls.Add(this.cameraEditorPanel);
+            this.Controls.Add(this.animationEditorPanel);
+            this.Controls.Add(this.animatronicEditorPNL2);
+            this.Controls.Add(this.buildSettingsPanelMoment);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;

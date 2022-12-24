@@ -19,8 +19,8 @@ namespace FNAF_Engine_Reborn
         public GameData game;
 
         public bool showProject = true;
-        public string Version = "0.9.6";
-        public string Build_Version = "niwt_om_96_b";
+        public string Version = "0.9.7";
+        public string Build_Version = "r97";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -60,12 +60,7 @@ namespace FNAF_Engine_Reborn
         {
             DoubleBuffered = true;
 
-            GameData dat = new();
-            dat.Write(new FNAF_Engine_Reborn_GameData.BinaryData.Memory.ByteWriter(new FileStream("test.ferdata", FileMode.Create)), true, null);
-            byte[] key = new byte[2];
-            key[0] = 1;
-            byte[] neww = XorEncryption.Encrypt(File.ReadAllBytes("test.ferdata"), key);
-            File.WriteAllBytes("test.ferdata", neww);
+            Logger.Log();
 
             File.WriteAllText("DO_NOT_MODIFY.txt", "");
 #if DEBUG

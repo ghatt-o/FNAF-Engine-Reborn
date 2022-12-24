@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\FNAF Engine Game\FNAF Engine Game.csproj" />
       <ProjectReference Include="..\FNAF Engine Reborn GameData\FNAF Engine Reborn GameData.csproj" />
     </ItemGroup>
 </Project>
