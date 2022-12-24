@@ -2542,7 +2542,7 @@ namespace FNAF_Engine_Reborn
             object tag = "Data_Values_List";
             if (GameManager_Variables_View.SelectedNode == null || GameManager_Variables_View.SelectedNode.Tag == tag || GameManager_Variables_View.SelectedNode.Name == "value")
             {
-                Logger.Log("Select an data value first!");
+                Logger.Log("Select a data value first!");
             }
             else
             {
@@ -2566,9 +2566,8 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
-                    _ = MessageBox.Show("Something went wrong!");
+                    Logger.Log("Animations is null. E2569");
                     _ = Directory.CreateDirectory(projecto + "/animatronics");
-                    _ = MessageBox.Show("Fixed!");
                 }
                 AnimatronicDropDown.Items.Clear();
                 AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
@@ -2689,7 +2688,7 @@ namespace FNAF_Engine_Reborn
 
         private void Paint_UIEditor_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Every element you click from now on will change its color to what you pick here.");
+            //Logger.Log("Every element you click from now on will change its color to what you pick here.");
         }
 
         private void MenuCodeEditor_Code_Tree_Click(object sender, EventArgs e)
@@ -2847,7 +2846,7 @@ namespace FNAF_Engine_Reborn
             }
             catch (Exception)
             {
-                MessageBox.Show("Something went horribly wrong! If this keeps happening, please report on our discord server!");
+                Logger.Log("Something went horribly wrong! If this keeps happening, please report it on our discord server!", "Fatal error");
             }
         }
 
