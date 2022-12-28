@@ -2840,7 +2840,7 @@ namespace FNAF_Engine_Reborn
                         staticeffecteditor.BringToFront();
                         break;
                 }
-                if (!EditorList.SelectedItem.ToString().Contains("=")) this.presence.details = EditorList.SelectedItem.ToString();
+                if (!EditorList.SelectedItem.ToString().Contains('=')) this.presence.details = EditorList.SelectedItem?.ToString();
                 if (this.presence.details == "Minigame Editor") this.presence.details = "Minigame Maker"; //huh
                 if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }

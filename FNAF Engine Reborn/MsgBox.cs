@@ -12,7 +12,7 @@ namespace FNAF_Engine_Reborn
 {
     public partial class MsgBox : Form
     {
-        public MsgBox(string txt = "", string nam = "")
+        public MsgBox(string txt = "Warning!", string nam = "Message")
         {
             InitializeComponent();
             this.Text = nam;
@@ -26,7 +26,7 @@ namespace FNAF_Engine_Reborn
     }
     public static class Logger
     {
-        public static void Log(string txt = "", string nam = "")
+        public static void Log(string txt = "Warning!", string nam = "Message")
         {
             MsgBox box = new(txt, nam);
             box.ShowDialog();
