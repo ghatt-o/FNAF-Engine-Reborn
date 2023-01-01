@@ -34,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lily\\Desktop\\Stuffs\\FNAF Engine Reborn\\fer\\FNAF Engine Game\\FNAF Engine Game.csproj",
+      "projectUniqueName": "C:\\Users\\lily\\Desktop\\FNAF Engine Reborn\\fer\\FNAF Engine Game\\FNAF Engine Game.csproj",
       "projectName": "FNAF Engine Game",
-      "projectPath": "C:\\Users\\lily\\Desktop\\Stuffs\\FNAF Engine Reborn\\fer\\FNAF Engine Game\\FNAF Engine Game.csproj",
+      "projectPath": "C:\\Users\\lily\\Desktop\\FNAF Engine Reborn\\fer\\FNAF Engine Game\\FNAF Engine Game.csproj",
       "packagesPath": "C:\\Users\\lily\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lily\\Desktop\\Stuffs\\FNAF Engine Reborn\\fer\\FNAF Engine Game\\obj\\",
+      "outputPath": "C:\\Users\\lily\\Desktop\\FNAF Engine Reborn\\fer\\FNAF Engine Game\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -61,8 +61,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows7.0",
           "projectReferences": {
-            "C:\\Users\\lily\\Desktop\\Stuffs\\FNAF Engine Reborn\\fer\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
-              "projectPath": "C:\\Users\\lily\\Desktop\\Stuffs\\FNAF Engine Reborn\\fer\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj"
+            "C:\\Users\\lily\\Desktop\\FNAF Engine Reborn\\fer\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
+              "projectPath": "C:\\Users\\lily\\Desktop\\FNAF Engine Reborn\\fer\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj"
             }
           }
         }

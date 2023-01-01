@@ -64,7 +64,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 }
                 if (StaticEffect != null)
                 {
-                    StaticEffect.Temp = project + "/statics/" + StaticEffect.Name; //no idea
+                    StaticEffect.Temp = project + "/statics/" + StaticEffect.Name; //n
                     StaticEffect.Write(null, false, null);
                 }
                 foreach (var ele in TextElements)

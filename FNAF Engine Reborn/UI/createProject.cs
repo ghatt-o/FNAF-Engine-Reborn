@@ -112,8 +112,8 @@ namespace FNAF_Engine_Reborn
                             game.Template = "None";
                         }
                     }
-                    _ = MessageBox.Show("Project created succesfully!");
                     game.Write(null, false, projectPath);
+                    _ = MessageBox.Show("Project created succesfully!");
                 }
                 catch (Exception ex)
                 {
@@ -283,7 +283,7 @@ namespace FNAF_Engine_Reborn
                 pictureBox1.Hide();
             }
         }
-        private void CreateMenu(string projectPath, string Name)
+        private void CreateMenu(string projectPath, string Name) //PRE-REWRITE DONT USE DONT USE
         {
             _ = Directory.CreateDirectory(projectPath + "/menus/" + Name);
             _ = Directory.CreateDirectory(projectPath + "/menus/" + Name + "/text_elements");

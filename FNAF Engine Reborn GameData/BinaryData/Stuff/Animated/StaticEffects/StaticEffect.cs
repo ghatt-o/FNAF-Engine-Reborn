@@ -8,7 +8,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
     {
         public string Name { get; set; } = "Static Effect";
         public List<StaticEffectFrame> Frames { get; set; } = new List<StaticEffectFrame>();
-        public string Temp;
+        public string Temp = "Static Effect"; //I hope this works
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
