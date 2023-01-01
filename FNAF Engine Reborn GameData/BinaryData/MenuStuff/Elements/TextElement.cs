@@ -4,7 +4,6 @@ using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Reflection.PortableExecutable;
 
 namespace MenuStuff.Elements
 {
@@ -26,17 +25,13 @@ namespace MenuStuff.Elements
                 Text = reader.AutoReadUnicode();
                 Fontname = reader.AutoReadUnicode();
                 Fontsize = reader.AutoReadUnicode();
-                #region
+                #region Reading RGB Values
                 int r = reader.ReadByte();
                 int g = reader.ReadByte();
                 int b = reader.ReadByte();
                 #endregion
                 Rgb = Color.FromArgb(r, g, b);
                 ButtonStyle = reader.ReadByte();
-                if (ButtonStyle == 1) //system
-                {
-                    Rgb = Color.FromArgb(0, 0, 0);
-                }
 
                 /*
                 int funcslen = reader.ReadInt32();
@@ -78,6 +73,20 @@ namespace MenuStuff.Elements
             else
             {
                 //Project is the textelement path
+                ID = File.ReadAllText(project + "/id.txt");
+                Text = File.ReadAllText(project + "/text.txt");
+                Fontname = File.ReadAllText(project + "/font.txt");
+                Fontsize = File.ReadAllText(project + "/fontsize.txt");
+                string args = File.ReadAllText(project + "/args.txt"); //HELP
+                File.WriteAllText(NewPath + "/x.txt", $"{X}");
+                File.WriteAllText(NewPath + "/y.txt", $"{Y}");
+                File.WriteAllText(NewPath + "/functions.txt", "");
+                File.WriteAllText(NewPath + "/functionshover.txt", "");
+                File.WriteAllText(NewPath + "/functionsunhover.txt", "");
+                File.WriteAllText(NewPath + "/functionshold.txt", "");
+                if (ButtonStyle != 1) File.WriteAllText(NewPath + "/color.txt", $"{Rgb.R},{Rgb.G},{Rgb.B}");
+                else File.WriteAllText(NewPath + "/color.txt", $"0,0,0");
+                File.WriteAllText(NewPath + "/style.txt", $"{ButtonStyle}");
             }
         }
         public new void Write(ByteWriter Writer, bool binary, string menupath)
@@ -88,15 +97,22 @@ namespace MenuStuff.Elements
                 Writer.AutoWriteUnicode(Text);
                 Writer.AutoWriteUnicode(Fontname);
                 Writer.AutoWriteUnicode(Fontsize);
-                #region
-                Writer.Write(Rgb.R);
-                Writer.Write(Rgb.R);
-                #endregion
-                ButtonStyle = reader.ReadByte();
-                if (ButtonStyle == 1) //system
+                #region Writing Colors
+                if (ButtonStyle != 1) //FNAF Styled Button
                 {
-                    Rgb = Color.FromArgb(0, 0, 0);
+                    Writer.Write(Rgb.R);
+                    Writer.Write(Rgb.G);
+                    Writer.Write(Rgb.B);
                 }
+                else //It's a system button
+                {
+                    //Text must be black
+                    Writer.Write(0);
+                    Writer.Write(0);
+                    Writer.Write(0);
+                }
+                #endregion
+                Writer.Write(ButtonStyle);
             }
             else
             {
@@ -104,7 +120,7 @@ namespace MenuStuff.Elements
                 string NewPath = menupath + "/text_elements/" + ID;
                 File.WriteAllText(NewPath + "/id.txt", $"{ID}");
                 File.WriteAllText(NewPath + "/text.txt", $"{Text}");
-                File.WriteAllText(NewPath + "/font.txt", $"{X}");
+                File.WriteAllText(NewPath + "/font.txt", $"{Fontname}");
                 File.WriteAllText(NewPath + "/fontsize.txt", $"{Fontsize}");
                 File.WriteAllText(NewPath + "/args.txt", $"{args}");
                 File.WriteAllText(NewPath + "/x.txt", $"{X}");
@@ -113,7 +129,8 @@ namespace MenuStuff.Elements
                 File.WriteAllText(NewPath + "/functionshover.txt", "");
                 File.WriteAllText(NewPath + "/functionsunhover.txt", "");
                 File.WriteAllText(NewPath + "/functionshold.txt", "");
-                File.WriteAllText(NewPath + "/color.txt", $"{Rgb.R},{Rgb.G},{Rgb.B}");
+                if (ButtonStyle != 1) File.WriteAllText(NewPath + "/color.txt", $"{Rgb.R},{Rgb.G},{Rgb.B}");
+                else File.WriteAllText(NewPath + "/color.txt", $"0,0,0");
                 File.WriteAllText(NewPath + "/style.txt", $"{ButtonStyle}");
             }
         }

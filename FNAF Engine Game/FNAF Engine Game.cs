@@ -34,7 +34,7 @@ namespace FNAF_Engine_Game
             while (true)
             {
                 await Task.Delay(1);
-                foreach (var val in data.DataValues)
+                foreach (var val in Data.DataValues)
                 {
                     if (val.Key == "night")
                     {
@@ -49,7 +49,7 @@ namespace FNAF_Engine_Game
             GameData newdata = new GameData();
             newdata.Read(new ByteReader(new FileStream("data.ferdata", FileMode.Open)), true, "");
 
-            data = newdata;
+            Data = newdata;
 
             this.DoubleBuffered = true;
             this.Refresh();
@@ -72,8 +72,8 @@ namespace FNAF_Engine_Game
         }
         private void Load_Game()
         {
-            this.Text = data.GameName;
-            if (data.Options.Fullscreen == true)
+            this.Text = Data.GameName;
+            if (Data.Options.Fullscreen == true)
             {
                 this.MaximizeBox = true;
                 this.Size = new Size(1280, 720);
@@ -86,7 +86,7 @@ namespace FNAF_Engine_Game
 
         private void Load_Menus()
         {
-            foreach (var Menu in data.Menus)
+            foreach (var Menu in Data.Menus)
             {
                 Panel menu_panel = new Panel
                 {
