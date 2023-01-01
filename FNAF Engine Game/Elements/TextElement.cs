@@ -5,7 +5,18 @@ namespace FNAF_Engine_Game.Elements
 {
     public class TextElement : Label
     {
-        public short type;
+        public short type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                if (type == 1) this.FlatStyle = FlatStyle.System;
+                else this.FlatStyle = FlatStyle.Flat;
+            }
+        }
 
         public string FontName
         {
@@ -15,7 +26,6 @@ namespace FNAF_Engine_Game.Elements
             }
             set
             {
-                FontName = value;
                 Font = new System.Drawing.Font(FontName, FontSize);
             }
         }
@@ -27,7 +37,6 @@ namespace FNAF_Engine_Game.Elements
             }
             set
             {
-                FontSize = value;
                 Font = new System.Drawing.Font(FontName, FontSize);
             }
         }
@@ -42,12 +51,10 @@ namespace FNAF_Engine_Game.Elements
                 if (value == true)
                 {
                     Visible = false;
-                    args = true;
                 }
                 else
                 {
                     Visible = true;
-                    args = false;
                 }
             }
         }
@@ -59,7 +66,6 @@ namespace FNAF_Engine_Game.Elements
             }
             set
             {
-                Color = value;
                 ForeColor = Color;
             }
         }

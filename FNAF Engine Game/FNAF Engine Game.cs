@@ -11,7 +11,7 @@ namespace FNAF_Engine_Game
     public partial class FNAF_Engine_Game : Form
     {
         //private readonly reborn reborn;
-        public GameData data { get; private set; }
+        public GameData Data { get; private set; }
 
         private string project;
         string curMenu;
@@ -57,7 +57,13 @@ namespace FNAF_Engine_Game
             Load_Game();
             try
             {
-                this.Controls["Main"].BringToFront();
+                foreach (var ctrl in this.Controls)
+                {
+                    if (ctrl is Panel panel)
+                    {
+                        if (panel.Name == "Main") this.Controls["Main"]?.BringToFront();
+                    }
+                }
             }
             catch (Exception)
             {
