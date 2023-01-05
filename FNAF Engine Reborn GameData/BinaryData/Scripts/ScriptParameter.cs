@@ -18,11 +18,21 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 Writer.WriteInt32(Type);
                 switch (Type)
                 {
+                    case -5: //math expression
+                        break;
+                    case -98: //data value
+                        break;
+                    case -99: //data string
+                        break;
+                    case 98: //variable value
+                        break;
+                    case 99: //variable string
+                        break;
                     case -1: //string
                         Writer.WriteInt32(Value.ToString().Length);
                         Writer.WriteAscii(Value.ToString());
                         break;
-                    case 0: //integer
+                    case 0: //number
                         Writer.WriteInt64(Convert.ToInt64(Value));
                         break;
                     case -128: //Nested script
@@ -48,11 +58,13 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 Type = reader.ReadInt32();
                 switch (Type)
                 {
+                    case -5: //math expression
+                        break;
                     case -1: //string
                         var len = reader.ReadInt32();
                         Value = reader.ReadAscii(len);
                         break;
-                    case 0: //integer
+                    case 0: //number
                         Value = reader.ReadInt64();
                         break;
                     case -128: //nested script

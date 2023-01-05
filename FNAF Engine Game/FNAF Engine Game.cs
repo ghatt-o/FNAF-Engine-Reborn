@@ -11,7 +11,7 @@ namespace FNAF_Engine_Game
     public partial class FNAF_Engine_Game : Form
     {
         //private readonly reborn reborn;
-        public GameData Data { get; private set; }
+        public GameData Data { get;  private set; } = null;
 
         private string project;
         string curMenu;
@@ -21,9 +21,10 @@ namespace FNAF_Engine_Game
         int curNight;
         int time = 0;
 
-        public FNAF_Engine_Game(object key/*reborn reborn*/)
+        public FNAF_Engine_Game(object key/*reborn reborn*/, GameData testdata = null)
         {
             this.Dock = DockStyle.Fill;
+            if (testdata != null) this.Data = testdata;
             //this.reborn = reborn;
             //project = reborn.projecto;
             InitializeComponent();
@@ -34,11 +35,14 @@ namespace FNAF_Engine_Game
             while (true)
             {
                 await Task.Delay(1);
-                foreach (var val in Data.DataValues)
+                if (this.Data != null)
                 {
-                    if (val.Key == "night")
+                    foreach (var val in Data.DataValues)
                     {
-                        curNight = (int)val.Value;
+                        if (val.Key == "night")
+                        {
+                            curNight = (int)val.Value;
+                        }
                     }
                 }
             }
@@ -46,10 +50,11 @@ namespace FNAF_Engine_Game
 
         private void FNAF_Engine_Game_Load_1(object sender, EventArgs e)
         {
-            GameData newdata = new GameData();
-            newdata.Read(new ByteReader(new FileStream("data.ferdata", FileMode.Open)), true, "");
-
-            Data = newdata;
+            if (this.Data == null)
+            {
+                this.Data = new GameData();
+                this.Data.Read(new ByteReader(new FileStream("data.ferdata", FileMode.Open)), true, "");
+            }
 
             this.DoubleBuffered = true;
             this.Refresh();

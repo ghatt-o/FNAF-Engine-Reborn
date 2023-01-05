@@ -148,7 +148,7 @@ namespace FNAF_Engine_Reborn
 
         private void button43_Click(object sender, EventArgs e)
         {
-            FNAF_Engine_Game theGameTest = new FNAF_Engine_Game(this);
+            var theGameTest = new FNAF_Engine_Game.FNAF_Engine_Game(null, game);
             theGameTest.Show();
             Text = "FNAF Engine: Reborn - Testing Game";
         }
@@ -164,15 +164,6 @@ namespace FNAF_Engine_Reborn
             {
 
             }
-        }
-
-        private void button57_Click(object sender, EventArgs e)
-        {
-            _ = new FNAF_Engine_Game(this)
-            {
-                Text = textBox6.Text
-            };
-            textBox6.Text = textBox6.Text;
         }
 
         private void button60_Click(object sender, EventArgs e)
@@ -1946,11 +1937,6 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 string Name = ScriptEditor_TextBoxname.Text;
-                ScriptEditor scriptEditor = new ScriptEditor
-                {
-                    Project = projecto
-                };
-                scriptEditor.CreateScript(Name);
                 ScriptEditor_Scripts_ComboBox.Items.Clear();
                 ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
                 PanelCreatingNewScript.Hide();
@@ -1973,23 +1959,10 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
-                    ScriptEditor scripteditor = new ScriptEditor();
                     panel4.Show();
                     if (File.Exists(script + "/event.txt"))
                     {
-                        if (scripteditor.HasEvent(script))
-                        {
-                            string event_ = scripteditor.ToEvent(script);
-                            button25.Show();
-                            button25.Text = event_;
-                            button26.Show();
-                        }
-                        else
-                        {
-                            button25.Hide();
-                            button26.Hide();
-                            button10.Show();
-                        }
+                        
                     }
                     else
                     {
