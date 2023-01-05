@@ -160,10 +160,6 @@ namespace FNAF_Engine_Reborn
                 await Task.Delay(100);
                 File.WriteAllText(projecto + "/game.txt", textBox6.Text);
             }
-            else
-            {
-
-            }
         }
 
         private void button60_Click(object sender, EventArgs e)
@@ -181,10 +177,6 @@ namespace FNAF_Engine_Reborn
                     comboBox43.Items.Clear();
                     comboBox43.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
                 }
-            }
-            else
-            {
-
             }
         }
 
@@ -209,10 +201,6 @@ namespace FNAF_Engine_Reborn
                     comboBox43.Items.Clear();
                     comboBox43.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations/"));
                 }
-            }
-            else
-            {
-
             }
         }
 
@@ -251,7 +239,7 @@ namespace FNAF_Engine_Reborn
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Failed to play music! Music: " + musicS + ". Exception:" + e.Message);
             }
         }
 
@@ -346,10 +334,6 @@ namespace FNAF_Engine_Reborn
                     _ = MessageBox.Show("Fixed!");
                 }
             }
-            else
-            {
-
-            }
         }
 
         public void UpdateMenuElements()
@@ -425,10 +409,6 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 createShit.Show();
-            }
-            else
-            {
-
             }
         }
 
@@ -575,10 +555,6 @@ namespace FNAF_Engine_Reborn
                     cameraEditorPanel.BringToFront();
                 }
             }
-            else
-            {
-
-            }
         }
 
         private void label164_Click(object sender, EventArgs e)
@@ -657,10 +633,6 @@ namespace FNAF_Engine_Reborn
             {
                 _ = System.Diagnostics.Process.Start(projecto);
             }
-            else
-            {
-
-            }
         }
 
         private void button96_Click(object sender, EventArgs e)
@@ -690,10 +662,6 @@ namespace FNAF_Engine_Reborn
                 {
                     Console.WriteLine("cringe exception: " + oh);
                 }
-            }
-            else
-            {
-
             }
         }
 
@@ -869,10 +837,6 @@ namespace FNAF_Engine_Reborn
                     panel6.Show();
                 }
             }
-            else
-            {
-
-            }
         }
 
         private void button57_Click_1(object sender, EventArgs e)
@@ -886,10 +850,6 @@ namespace FNAF_Engine_Reborn
                 comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
                 _ = Directory.CreateDirectory(projecto + "/cameras/" + cameraName + "/animations");
                 //_ = File.CreateText("settings.txt");
-            }
-            else
-            {
-
             }
         }
 
@@ -908,10 +868,6 @@ namespace FNAF_Engine_Reborn
                     comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
                 }
             }
-            else
-            {
-
-            }
         }
 
         private void button99_Click(object sender, EventArgs e)
@@ -926,10 +882,6 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 //_ = listView1.Items.Add("frame2");
-            }
-            else
-            {
-
             }
         }
 
@@ -964,10 +916,6 @@ namespace FNAF_Engine_Reborn
             {
                 panel7.Show();
             }
-            else
-            {
-
-            }
         }
 
         private void button112_Click(object sender, EventArgs e)
@@ -979,10 +927,6 @@ namespace FNAF_Engine_Reborn
                 comboBox57.Items.Clear();
                 comboBox57.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/statics"));
                 panel7.Hide();
-            }
-            else
-            {
-
             }
         }
 
@@ -1030,10 +974,6 @@ namespace FNAF_Engine_Reborn
             {
                 panel8.Show();
             }
-            else
-            {
-
-            }
         }
 
         private void button114_Click(object sender, EventArgs e)
@@ -1076,10 +1016,6 @@ namespace FNAF_Engine_Reborn
                     panel8.Hide();
                 }
             }
-            else
-            {
-
-            }
         }
 
         private void button115_Click(object sender, EventArgs e)
@@ -1088,10 +1024,6 @@ namespace FNAF_Engine_Reborn
             {
                 comboBox57.Items.Clear();
                 comboBox57.Items.AddRange(Directory.GetDirectories(projecto + "/statics"));
-            }
-            else
-            {
-
             }
         }
 
@@ -1109,10 +1041,6 @@ namespace FNAF_Engine_Reborn
                 {
                     Logger.Log("Failed to delete static effect", "Error 3");
                 }
-            }
-            else
-            {
-
             }
         }
 
@@ -1185,17 +1113,6 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private void button18_Click(object sender, EventArgs e)
-        {
-            if (_0_2C == true)
-            {
-            }
-            else
-            {
-
-            }
-        }
-
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             if (_0_2C == true)
@@ -1227,13 +1144,9 @@ namespace FNAF_Engine_Reborn
                 AnimatronicDropDown.Items.Clear();
                 AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
             }
-            else
-            {
-
-            }
         }
 
-        private void s() //function to enter the manual, i couldn't find a good name lol
+        private void EnterManual()
         {
             if (isopen == false)//checks if the manual is already open, theres a bool up in the code for determining that. if manual is closed, open, if manual is open, do nothing since i only want it to open 1 time
             {
@@ -1241,15 +1154,11 @@ namespace FNAF_Engine_Reborn
                 isopen = true; //it now tells the engine that manual is open
                 form.Show(); //show manual
             }
-            else
-            {
-                //uh it's open so do nothing
-            }
         }
 
         private void label19_Click(object sender, EventArgs e)
         {
-            s(); // call function above ^^^^!
+            EnterManual();
         }
 
         private void label21_Click(object sender, EventArgs e)
@@ -1303,10 +1212,6 @@ namespace FNAF_Engine_Reborn
                         Logger.Log("File already exists! If you want to overwrite it, select your image, delete it and insert again!");
                     }
                 }
-            }
-            else
-            {
-
             }
         }
 
@@ -2130,10 +2035,6 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private void menu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void GameDebugMenu_VisibleChanged(object sender, EventArgs e)
         {
             DataValuesFileLabel.Draggable(true);
@@ -2152,22 +2053,6 @@ namespace FNAF_Engine_Reborn
         private void X_Leave_MenuCodeEditor_Click(object sender, EventArgs e)
         {
             Menu_CodeEditor.Hide();
-        }
-
-        private void Menu_CodeEditor_VisibleChanged(object sender, EventArgs e)
-        {
-            //MenuCodeEditor_Code_Tree.Nodes.
-        }
-
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-
         }
 
         private async void label29_Click(object sender, EventArgs e)
@@ -2340,10 +2225,6 @@ namespace FNAF_Engine_Reborn
                     }
                 }
             }
-            else
-            {
-
-            }
         }
 
         private void Menu_Elements_Create_VisibleChanged(object sender, EventArgs e)
@@ -2366,12 +2247,9 @@ namespace FNAF_Engine_Reborn
             }
             else
             {
-                //yoo its a menu
-                //or is it
+                //Check if it's a menu by the name of the SelectedNode.
                 if (Menus.SelectedNode.Name == "Menu")
                 {
-                    //it is!
-                    //lets set the audio
                     File.WriteAllText(Menus.SelectedNode.Tag + "/audio.txt", projecto + "/sounds/" + BackgroundAudio_MenuEditor.SelectedItem.ToString());
                 }
             }
@@ -2479,21 +2357,6 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private void Menu_CodeEditor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-
-        }
-
-        private void label92_Click(object sender, EventArgs e) //CLOSE BUTTON
-        {
-            
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TheCutestCat_Click(object sender, EventArgs e)
         {
             //TODO: diamond cat
@@ -2544,10 +2407,6 @@ namespace FNAF_Engine_Reborn
                 }
                 AnimatronicDropDown.Items.Clear();
                 AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
-            }
-            else
-            {
-
             }
         }
 
@@ -2823,21 +2682,6 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private void button20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button127_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button68_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CreateLightButton_OfficeEditor_Click(object sender, EventArgs e)
         {
 
@@ -2849,11 +2693,6 @@ namespace FNAF_Engine_Reborn
         }
 
         private void CreateDoorButton_OfficeEditor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button30_Click(object sender, EventArgs e)
         {
 
         }
