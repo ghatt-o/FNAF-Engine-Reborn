@@ -62,6 +62,7 @@ namespace FNAF_Engine_Game
                     if (ctrl is Panel panel)
                     {
                         if (panel.Name == "Main") this.Controls["Main"]?.BringToFront();
+                        else if (panel.Name == "Warning") this.Controls["Warning"]?.BringToFront();
                     }
                 }
             }

@@ -1,5 +1,6 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System;
+using System.Diagnostics;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
 {
@@ -25,7 +26,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                         Writer.WriteInt64(Convert.ToInt64(Value));
                         break;
                     case -128: //Nested script
-                        Writer.WriteAscii("NSFS");
+                        Writer.WriteAscii("NFRS");
                         Writer.WriteBytes(new byte[0]); //todo
                         break;
                     default:
@@ -55,6 +56,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                         Value = reader.ReadInt64();
                         break;
                     case -128: //nested script
+                        Debug.Assert(reader.ReadAscii(4) == "NFRS");
                         Script nestedscript = new Script();
                         nestedscript.Read(reader, true, null);
                         Value = nestedscript;

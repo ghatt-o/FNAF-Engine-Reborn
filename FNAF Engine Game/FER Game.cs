@@ -22,7 +22,7 @@ namespace FNAF_Engine_Game
 
         public void DrawMenu(FNAF_Engine_Menu Menu)
         {
-            Panel menu_panel = new Panel
+            Panel menu_panel = new()
             {
                 Size = ferg.Size,
                 Name = Menu.Name,
@@ -76,6 +76,26 @@ namespace FNAF_Engine_Game
                 catch (Exception)
                 {
                     Console.WriteLine("Could not play " + Menu.Name + "'s background audio.");
+                }
+
+                foreach (var text in Menu.TextElements)
+                {
+                    if (text.args == false)
+                    {
+                        Elements.TextElement Text = new();
+                        double X = text.X;
+                        double Y = text.Y;
+                        X *= 2.13333333;
+                        Y *= 2.13649852;
+                        string xS = X.ToString();
+                        string yS = Y.ToString();
+                        if (xS.Contains(".5") || xS.Contains(".6") || xS.Contains(".7") || xS.Contains(".8") || xS.Contains(".9")) X += 0.4;
+                        if (yS.Contains(".5") || yS.Contains(".6") || yS.Contains(".7") || yS.Contains(".8") || yS.Contains(".9")) Y += 0.4;
+                        int nX = Convert.ToInt32(X);
+                        int nY = Convert.ToInt32(Y);
+                        Text.Location = new(nX, nY);
+                        Text.TFont = new(text.Fontname, Convert.ToSingle(text.Fontsize));
+                    }
                 }
             }
         }

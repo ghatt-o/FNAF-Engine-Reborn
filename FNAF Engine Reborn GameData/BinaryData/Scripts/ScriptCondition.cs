@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -7,7 +8,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
     public class ScriptCondition : BinaryClass
     {
         public string Block = "";
-        public ScriptParameter[] Parameters;
+        public List<ScriptParameter> Parameters = new();
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
@@ -16,7 +17,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 Writer.WriteAscii("SCND");
 
                 Writer.AutoWriteUnicode(Block);
-                Writer.WriteUInt8((sbyte)Parameters.Count());
+                Writer.WriteUInt8((sbyte)Parameters.Count);
 
                 foreach (ScriptParameter param in Parameters)
                 {
@@ -42,7 +43,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 {
                     ScriptParameter param = new ScriptParameter();
                     param.Read(reader, true, null);
-                    Parameters.Append(param);
+                    Parameters.Add(param);
                 }
             }
             else

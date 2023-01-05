@@ -1,4 +1,5 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -7,7 +8,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
     public class ScriptAction : BinaryClass
     {
         public string Block = "";
-        public ScriptParameter[] Parameters;
+        public List<ScriptParameter> Parameters = new();
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
@@ -22,7 +23,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 {
                     ScriptParameter parameter = new ScriptParameter();
                     parameter.Read(reader, true, null);
-                    Parameters.Append(parameter);
+                    Parameters.Add(parameter);
                 }
             }
             else
@@ -38,7 +39,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 Writer.WriteAscii("SACT");
 
                 Writer.AutoWriteUnicode(Block);
-                Writer.WriteUInt8((sbyte)Parameters.Count());
+                Writer.WriteUInt8((sbyte)Parameters.Count);
                 foreach (ScriptParameter parameter in Parameters)
                 {
                     parameter.Write(Writer, true, null);

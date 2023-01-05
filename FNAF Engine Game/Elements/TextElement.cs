@@ -18,34 +18,13 @@ namespace FNAF_Engine_Game.Elements
             }
         }
 
-        public string FontName
+        public TextFont TFont
         {
-            get
-            {
-                return FontName;
-            }
-            set
-            {
-                Font = new System.Drawing.Font(FontName, FontSize);
-            }
+            set { Font = new(value.FontName, value.FontSize); }
         }
-        public float FontSize
-        {
-            get
-            {
-                return FontSize;
-            }
-            set
-            {
-                Font = new System.Drawing.Font(FontName, FontSize);
-            }
-        }
+
         public bool args
         {
-            get
-            {
-                return args;
-            }
             set
             {
                 if (value == true)
@@ -60,14 +39,22 @@ namespace FNAF_Engine_Game.Elements
         }
         public Color Color
         {
-            get
-            {
-                return Color;
-            }
             set
             {
-                ForeColor = Color;
+                ForeColor = value;
             }
+        }
+    }
+
+    public class TextFont
+    {
+        public string FontName = "Consolas";
+        public float FontSize = 9f;
+
+        public TextFont(string FontName, float FontSize)
+        {
+            this.FontName = FontName;
+            this.FontSize = FontSize;
         }
     }
 }
