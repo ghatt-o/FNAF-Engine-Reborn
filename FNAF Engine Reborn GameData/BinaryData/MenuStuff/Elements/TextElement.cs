@@ -1,6 +1,7 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -77,16 +78,15 @@ namespace MenuStuff.Elements
                 Text = File.ReadAllText(project + "/text.txt");
                 Fontname = File.ReadAllText(project + "/font.txt");
                 Fontsize = File.ReadAllText(project + "/fontsize.txt");
-                string args = File.ReadAllText(project + "/args.txt"); //HELP
-                File.WriteAllText(NewPath + "/x.txt", $"{X}");
-                File.WriteAllText(NewPath + "/y.txt", $"{Y}");
-                File.WriteAllText(NewPath + "/functions.txt", "");
-                File.WriteAllText(NewPath + "/functionshover.txt", "");
-                File.WriteAllText(NewPath + "/functionsunhover.txt", "");
-                File.WriteAllText(NewPath + "/functionshold.txt", "");
-                if (ButtonStyle != 1) File.WriteAllText(NewPath + "/color.txt", $"{Rgb.R},{Rgb.G},{Rgb.B}");
-                else File.WriteAllText(NewPath + "/color.txt", $"0,0,0");
-                File.WriteAllText(NewPath + "/style.txt", $"{ButtonStyle}");
+                string args = File.ReadAllText(project + "/args.txt");
+                if (args == "False") this.args = false;
+                else this.args = true;
+                X = Convert.ToInt32(File.ReadAllText(project + "/x.txt"));
+                Y = Convert.ToInt32(File.ReadAllText(project + "/y.txt"));
+                //TODO: Element code
+                ButtonStyle = Convert.ToByte(File.ReadAllText(project + "/style.txt"));
+                if (ButtonStyle != 1) this.Rgb = Color.FromArgb(Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[0], Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[1], Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[2]))));
+                else this.Rgb = Color.FromArgb(0, 0, 0);
             }
         }
         public new void Write(ByteWriter Writer, bool binary, string menupath)
