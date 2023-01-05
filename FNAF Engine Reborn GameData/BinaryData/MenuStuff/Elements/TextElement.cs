@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Reflection.PortableExecutable;
 
 namespace MenuStuff.Elements
 {
@@ -16,7 +18,12 @@ namespace MenuStuff.Elements
         public Color Rgb { get; set; }
         public byte ButtonStyle { get; set; } = 0; //fnaf
 
-        public List<Script> ClickFunctions { get; set; } = new();
+        public Script ClickFunctions { get; set; } = new();
+        public Script RightClickFunctions { get; set; } = new();
+        public Script HoverFunctions { get; set; } = new();
+        public Script UnhoverFunctions { get; set; } = new();
+        public Script HeldDownLeftFunctions { get; set; } = new();
+        public Script HeldDownRightFunctions { get; set; } = new();
 
         public new void Read(ByteReader reader, bool binary, string project)
         {
@@ -34,42 +41,12 @@ namespace MenuStuff.Elements
                 Rgb = Color.FromArgb(r, g, b);
                 ButtonStyle = reader.ReadByte();
 
-                /*
-                int funcslen = reader.ReadInt32();
-                int funcshoverlen = reader.ReadInt32();
-                int funcsunhoverlen = reader.ReadInt32();
-                int funcsholdlen = reader.ReadInt32();
-                */
-
-                /*
-                for (int i = 0; i < funcslen; i++)
-                {
-                    string[] strings = { };
-                    Funcs = strings;
-                    Funcs.Append(reader.ReadString());
-                }
-
-                for (int i = 0; i < funcshoverlen; i++)
-                {
-                    string[] strings = { };
-                    Funcshover = strings;
-                    Funcshover.Append(reader.ReadString());
-                }
-
-                for (int i = 0; i < funcsunhoverlen; i++)
-                {
-                    string[] strings = { };
-                    Funcsunhover = strings;
-                    Funcsunhover.Append(reader.ReadString());
-                }
-
-                for (int i = 0; i < funcsholdlen; i++)
-                {
-                    string[] strings = { };
-                    Funcshold = strings;
-                    Funcshold.Append(reader.ReadString());
-                }
-                */
+                ClickFunctions.Read(reader, true, null);
+                RightClickFunctions.Read(reader, true, null);
+                HoverFunctions.Read(reader, true, null);
+                UnhoverFunctions.Read(reader, true, null);
+                HeldDownLeftFunctions.Read(reader, true, null);
+                HeldDownRightFunctions.Read(reader, true, null);
             }
             else
             {
@@ -87,6 +64,13 @@ namespace MenuStuff.Elements
                 ButtonStyle = Convert.ToByte(File.ReadAllText(project + "/style.txt"));
                 if (ButtonStyle != 1) this.Rgb = Color.FromArgb(Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[0], Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[1], Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[2]))));
                 else this.Rgb = Color.FromArgb(0, 0, 0);
+
+                ClickFunctions.Read(null, false, project);
+                RightClickFunctions.Read(null, false, project);
+                HoverFunctions.Read(null, false, project);
+                UnhoverFunctions.Read(null, false, project);
+                HeldDownLeftFunctions.Read(null, false, project);
+                HeldDownRightFunctions.Read(null, false, project);
             }
         }
         public new void Write(ByteWriter Writer, bool binary, string menupath)
@@ -113,6 +97,13 @@ namespace MenuStuff.Elements
                 }
                 #endregion
                 Writer.Write(ButtonStyle);
+
+                ClickFunctions.Write(Writer, true, null);
+                RightClickFunctions.Write(Writer, true, null);
+                HoverFunctions.Write(Writer, true, null);
+                UnhoverFunctions.Write(Writer, true, null);
+                HeldDownLeftFunctions.Write(Writer, true, null);
+                HeldDownRightFunctions.Write(Writer, true, null);
             }
             else
             {
@@ -132,6 +123,13 @@ namespace MenuStuff.Elements
                 if (ButtonStyle != 1) File.WriteAllText(NewPath + "/color.txt", $"{Rgb.R},{Rgb.G},{Rgb.B}");
                 else File.WriteAllText(NewPath + "/color.txt", $"0,0,0");
                 File.WriteAllText(NewPath + "/style.txt", $"{ButtonStyle}");
+
+                ClickFunctions.Write(null, false, NewPath);
+                RightClickFunctions.Write(null, false, NewPath);
+                HoverFunctions.Write(null, false, NewPath);
+                UnhoverFunctions.Write(null, false, NewPath);
+                HeldDownLeftFunctions.Write(null, false, NewPath);
+                HeldDownRightFunctions.Write(null, false, NewPath);
             }
         }
     }
