@@ -629,7 +629,6 @@ namespace FNAF_Engine_Reborn
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(50, 58);
             this.label92.TabIndex = 109;
-            this.label92.Click += new System.EventHandler(this.label92_Click);
             this.label92.MouseHover += new System.EventHandler(this.label92_MouseHover);
             // 
             // label29
@@ -1737,7 +1736,6 @@ namespace FNAF_Engine_Reborn
             this.button20.TabIndex = 180;
             this.button20.Text = "Edit Element Code";
             this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // label14
             // 
@@ -2086,7 +2084,6 @@ namespace FNAF_Engine_Reborn
             this.button127.TabIndex = 139;
             this.button127.Text = "Add Custom Night Icon";
             this.button127.UseVisualStyleBackColor = false;
-            this.button127.Click += new System.EventHandler(this.button127_Click);
             // 
             // BackgroundAudio_MenuEditor
             // 
@@ -4323,7 +4320,6 @@ namespace FNAF_Engine_Reborn
             this.button30.TabIndex = 96;
             this.button30.Text = "Door";
             this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // CreateDoorButton_OfficeEditor
             // 
@@ -5077,8 +5073,6 @@ namespace FNAF_Engine_Reborn
             this.button18.Size = new System.Drawing.Size(117, 28);
             this.button18.TabIndex = 29;
             this.button18.Text = "Change Icon";
-            this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // label33
             // 
@@ -5901,7 +5895,6 @@ namespace FNAF_Engine_Reborn
             this.button68.TabIndex = 76;
             this.button68.Text = "Add Animation";
             this.button68.UseVisualStyleBackColor = false;
-            this.button68.Click += new System.EventHandler(this.button68_Click);
             // 
             // createProjectBTN
             // 
@@ -6037,7 +6030,6 @@ namespace FNAF_Engine_Reborn
             this.menu.Size = new System.Drawing.Size(957, 635);
             this.menu.TabIndex = 104;
             this.menu.Click += new System.EventHandler(this.menu_Click);
-            this.menu.Paint += new System.Windows.Forms.PaintEventHandler(this.menu_Paint);
             // 
             // label85
             // 
@@ -6573,7 +6565,7 @@ namespace FNAF_Engine_Reborn
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(98, 24);
             this.button28.TabIndex = 105;
-            this.button28.Text = "Joe mama";
+            this.button28.Text = "test";
             this.button28.UseVisualStyleBackColor = true;
             // 
             // label38
@@ -6796,8 +6788,6 @@ namespace FNAF_Engine_Reborn
             this.Menu_CodeEditor.Size = new System.Drawing.Size(741, 637);
             this.Menu_CodeEditor.TabIndex = 102;
             this.Menu_CodeEditor.Visible = false;
-            this.Menu_CodeEditor.VisibleChanged += new System.EventHandler(this.Menu_CodeEditor_VisibleChanged);
-            this.Menu_CodeEditor.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Menu_CodeEditor_PreviewKeyDown);
             // 
             // MenuCodeEditor_Code_Tree
             // 
