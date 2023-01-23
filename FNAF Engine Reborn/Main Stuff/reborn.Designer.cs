@@ -510,6 +510,7 @@ namespace FNAF_Engine_Reborn
             this.TheCutestCat = new System.Windows.Forms.PictureBox();
             this.Menu_Name_MenuCodeEditor_InfoLBL = new System.Windows.Forms.Label();
             this.X_Leave_MenuCodeEditor = new System.Windows.Forms.Button();
+            this.Bar = new System.Windows.Forms.Label();
             this.allEditorsPNL.SuspendLayout();
             this.animatronicEditorPNL2.SuspendLayout();
             this.ChooseAnimatronicPath.SuspendLayout();
@@ -5073,6 +5074,7 @@ namespace FNAF_Engine_Reborn
             this.button18.Size = new System.Drawing.Size(117, 28);
             this.button18.TabIndex = 29;
             this.button18.Text = "Change Icon";
+            this.button18.UseVisualStyleBackColor = false;
             // 
             // label33
             // 
@@ -6862,6 +6864,14 @@ namespace FNAF_Engine_Reborn
             this.X_Leave_MenuCodeEditor.UseVisualStyleBackColor = false;
             this.X_Leave_MenuCodeEditor.Click += new System.EventHandler(this.X_Leave_MenuCodeEditor_Click);
             // 
+            // Bar
+            // 
+            this.Bar.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Bar.Location = new System.Drawing.Point(-5, 484);
+            this.Bar.Name = "Bar";
+            this.Bar.Size = new System.Drawing.Size(958, 57);
+            this.Bar.TabIndex = 90;
+            // 
             // reborn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -6878,7 +6888,7 @@ namespace FNAF_Engine_Reborn
             this.Controls.Add(this.ExtensionsPanel);
             this.Controls.Add(this.template);
             this.Controls.Add(this.menu);
-            this.Controls.Add(this.menuEditorPanel);
+            this.Controls.Add(this.Bar);
             this.Controls.Add(this.cutsceneEditorPanel);
             this.Controls.Add(this.AssetManagerPanel);
             this.Controls.Add(this.officeEditorPanel);
@@ -7453,5 +7463,6 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Label label108;
         public System.Windows.Forms.Button button20;
         public System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label Bar;
     }
 }
