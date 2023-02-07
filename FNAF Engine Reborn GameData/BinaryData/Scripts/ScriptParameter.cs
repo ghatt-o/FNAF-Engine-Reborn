@@ -29,15 +29,13 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                     case 99: //variable string
                         break;
                     case -1: //string
-                        Writer.WriteInt32(Value.ToString().Length);
-                        Writer.WriteAscii(Value.ToString());
+                        WriteStringParameter(Writer);
                         break;
                     case 0: //number
-                        Writer.WriteInt64(Convert.ToInt64(Value));
+                        WriteIntParameter(Writer);
                         break;
                     case -128: //Nested script
-                        Writer.WriteAscii("NFRS");
-                        Writer.WriteBytes(new byte[0]); //todo
+                        WriteScriptParameter(Writer);
                         break;
                     default:
                         //TODO: Parameters like animatronic, menu, sound etc.
@@ -48,6 +46,23 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
             {
                 //todo
             }
+        }
+
+        public void WriteIntParameter(ByteWriter Writer)
+        {
+            Writer.WriteInt32(Convert.ToInt32(Value));
+        }
+
+        public void WriteStringParameter(ByteWriter Writer)
+        {
+            Writer.WriteInt32(Value.ToString().Length);
+            Writer.WriteAscii(Value.ToString());
+        }
+
+        public void WriteScriptParameter(ByteWriter Writer) //not done
+        {
+            Writer.WriteAscii("NFRS");
+            Writer.WriteBytes(new byte[0]); //todo
         }
 
         public void Read(ByteReader reader, bool binary, string projectpath)

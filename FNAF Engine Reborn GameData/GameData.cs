@@ -130,6 +130,8 @@ namespace FNAF_Engine_Reborn_GameData
 
                 Office.Write(Writer, true, null);
 
+                //probably todo the rest of things
+
                 Writer.Flush();
                 Writer.Close();
             }
