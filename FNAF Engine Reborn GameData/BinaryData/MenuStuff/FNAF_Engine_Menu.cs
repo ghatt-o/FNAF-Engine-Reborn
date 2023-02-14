@@ -1,6 +1,7 @@
 ﻿using FNAF_Engine_GameData.BinaryData.MenuStuff.Elements;
 using FNAF_Engine_Reborn_GameData.BinaryData;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using MenuStuff.Elements;
 using System;
@@ -18,8 +19,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         public Binaries.Audio BackgroundAudio { get; set; } = new Binaries.Audio();
         public StaticEffect StaticEffect { get; set; } = new StaticEffect();
 
-        public FNAF_Engine_Menu_Code OnMenuStart_Code { get; set; } = new FNAF_Engine_Menu_Code();
-        public FNAF_Engine_Menu_Code OnGameLoop_Code { get; set; } = new FNAF_Engine_Menu_Code();
+        public Script MenuScript { get; set; } = new Script();
 
         public List<TextElement> TextElements { get; set; } = new List<TextElement>();
         public List<ImageElement> ImageElements { get; set; } = new List<ImageElement>();
@@ -36,8 +36,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
                 StaticEffect.Write(Writer, true, null);
 
-                OnMenuStart_Code.Write(Writer, true, null);
-                OnGameLoop_Code.Write(Writer, true, null);
+                MenuScript.Write(Writer, true, null)
 
                 Writer.WriteInt32(TextElements.Count);
                 Writer.WriteInt32(ImageElements.Count);
@@ -85,8 +84,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
                 StaticEffect.Read(reader, true, null);
 
-                OnMenuStart_Code.Read(reader, false, null);
-                OnGameLoop_Code.Read(reader, false, null);
+                MenuScript.Read(reader, true, null);
 
                 var textelementcount = reader.ReadInt32();
                 var imageelementcount = reader.ReadInt32();

@@ -62,7 +62,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
         public void WriteScriptParameter(ByteWriter Writer) //not done
         {
             Writer.WriteAscii("NFRS");
-            Writer.WriteBytes(new byte[0]); //todo
+            //NOT DONE VVVVVVVVVVV
+            Writer.WriteInt32(0);
+            Writer.WriteInt32(0);
+
+            Writer.WriteInt8(0x80);
         }
 
         public void Read(ByteReader reader, bool binary, string projectpath)
