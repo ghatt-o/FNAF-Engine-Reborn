@@ -36,7 +36,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
                 StaticEffect.Write(Writer, true, null);
 
-                MenuScript.Write(Writer, true, null)
+                MenuScript.Write(Writer, true, null);
 
                 Writer.WriteInt32(TextElements.Count);
                 Writer.WriteInt32(ImageElements.Count);
@@ -52,7 +52,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             else
             {
                 Directory.CreateDirectory(project + "/menus/" + Name);
-                File.WriteAllText(project + "/menus/" + Name + "/name.txt", Name);
+                File.WriteAllText(project + /menus/" + Name + "/name.txt", Name);
                 if (BackgroundImage != null)
                 {
                     File.WriteAllText(project + "/menus/" + Name + "/bg.txt", BackgroundImage.Name);
