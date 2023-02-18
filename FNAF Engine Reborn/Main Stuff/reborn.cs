@@ -20,7 +20,7 @@ namespace FNAF_Engine_Reborn
 
         public bool showProject = true;
         public string Version = "0.9.7";
-        public string Build_Version = "r97";
+        public string Build_Version = "simple97";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -153,16 +153,16 @@ namespace FNAF_Engine_Reborn
             Text = "FNAF Engine: Reborn - Testing Game";
         }
 
-        private async void textBox6_TextChanged(object sender, EventArgs e)
+        private async void textBox6_TextChanged(object sender, EventArgs e) //GameName TextBox
         {
             if (_0_2C == true)
             {
                 await Task.Delay(100);
-                File.WriteAllText(projecto + "/game.txt", textBox6.Text);
+                game.GameName = textBox6.Text;
             }
         }
 
-        private void button60_Click(object sender, EventArgs e)
+        private void button60_Click(object sender, EventArgs e) //Delete anim
         {
             if (_0_2C == true)
             {
