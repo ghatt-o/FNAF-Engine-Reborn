@@ -2641,5 +2641,13 @@ namespace FNAF_Engine_Reborn
         {
 
         }
+
+        private void reborn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (game != null)
+            {
+                game.Write(null, false, projecto);
+            }
+        }
     }
 }

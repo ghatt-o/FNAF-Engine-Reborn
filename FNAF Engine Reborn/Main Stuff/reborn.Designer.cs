@@ -1752,7 +1752,7 @@ namespace FNAF_Engine_Reborn
             "System"});
             this.BtnStyle.Location = new System.Drawing.Point(12, 120);
             this.BtnStyle.Name = "BtnStyle";
-            this.BtnStyle.Size = new System.Drawing.Size(88, 25);
+            this.BtnStyle.Size = new System.Drawing.Size(88, 27);
             this.BtnStyle.TabIndex = 178;
             // 
             // label218
@@ -1939,7 +1939,7 @@ namespace FNAF_Engine_Reborn
             this.Element_Image_MenuEditor.FormattingEnabled = true;
             this.Element_Image_MenuEditor.Location = new System.Drawing.Point(12, 169);
             this.Element_Image_MenuEditor.Name = "Element_Image_MenuEditor";
-            this.Element_Image_MenuEditor.Size = new System.Drawing.Size(88, 25);
+            this.Element_Image_MenuEditor.Size = new System.Drawing.Size(88, 27);
             this.Element_Image_MenuEditor.TabIndex = 150;
             // 
             // Element_Animatronic_MenuEditor
@@ -1950,7 +1950,7 @@ namespace FNAF_Engine_Reborn
             this.Element_Animatronic_MenuEditor.FormattingEnabled = true;
             this.Element_Animatronic_MenuEditor.Location = new System.Drawing.Point(102, 169);
             this.Element_Animatronic_MenuEditor.Name = "Element_Animatronic_MenuEditor";
-            this.Element_Animatronic_MenuEditor.Size = new System.Drawing.Size(89, 25);
+            this.Element_Animatronic_MenuEditor.Size = new System.Drawing.Size(89, 27);
             this.Element_Animatronic_MenuEditor.TabIndex = 149;
             // 
             // label212
@@ -2085,7 +2085,7 @@ namespace FNAF_Engine_Reborn
             this.BackgroundAudio_MenuEditor.FormattingEnabled = true;
             this.BackgroundAudio_MenuEditor.Location = new System.Drawing.Point(579, 126);
             this.BackgroundAudio_MenuEditor.Name = "BackgroundAudio_MenuEditor";
-            this.BackgroundAudio_MenuEditor.Size = new System.Drawing.Size(87, 25);
+            this.BackgroundAudio_MenuEditor.Size = new System.Drawing.Size(87, 27);
             this.BackgroundAudio_MenuEditor.TabIndex = 136;
             this.BackgroundAudio_MenuEditor.Text = "Audio List";
             this.BackgroundAudio_MenuEditor.SelectedIndexChanged += new System.EventHandler(this.BackgroundAudio_MenuEditor_SelectedIndexChanged);
@@ -2101,7 +2101,7 @@ namespace FNAF_Engine_Reborn
             "Default"});
             this.comboBox73.Location = new System.Drawing.Point(579, 152);
             this.comboBox73.Name = "comboBox73";
-            this.comboBox73.Size = new System.Drawing.Size(87, 25);
+            this.comboBox73.Size = new System.Drawing.Size(87, 27);
             this.comboBox73.TabIndex = 133;
             this.comboBox73.Text = "Statics";
             // 
@@ -3121,6 +3121,7 @@ namespace FNAF_Engine_Reborn
             this.Menus.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Menus.ImageIndex = 1;
             this.Menus.ImageList = this.MenuImages_MenuEditor;
+            this.Menus.LineColor = System.Drawing.Color.Empty;
             this.Menus.Location = new System.Drawing.Point(213, 37);
             this.Menus.Name = "Menus";
             this.Menus.SelectedImageIndex = 0;
@@ -6776,6 +6777,7 @@ namespace FNAF_Engine_Reborn
             this.Name = "reborn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FNAF Engine: Reborn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.reborn_FormClosing);
             this.Load += new System.EventHandler(this.reborn_Load);
             this.Click += new System.EventHandler(this.reborn_Click);
             this.allEditorsPNL.ResumeLayout(false);
