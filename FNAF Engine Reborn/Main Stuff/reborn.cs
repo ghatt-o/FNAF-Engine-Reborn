@@ -273,10 +273,13 @@ namespace FNAF_Engine_Reborn
             Text = "FNAF Engine: Reborn";
             button38.Visible = true;
             //_ = projectloader.label3.Text;
-            this.projecto = projec;
+            projecto = projec;
+            Logger.Log("Reading Game Data. This may take a while!");
+            game.Read(null, false, projecto);
+            Logger.Log("Successfully loaded Game.");
             if (showProject == true)
             {
-                this.presence.state = "Project: " + File.ReadAllText(projecto + "/name.txt");
+                this.presence.state = "Project: " + game.Name;
                 if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
             else
@@ -288,7 +291,7 @@ namespace FNAF_Engine_Reborn
 
         }
 
-        public void j() //testing purposes
+        public void test() //testing purposes
         {
             Console.WriteLine("testing purposes!");
         }
