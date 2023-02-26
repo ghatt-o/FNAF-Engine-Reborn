@@ -284,7 +284,7 @@ namespace FNAF_Engine_Reborn
                 //this.presence.state = "Version " + Version;
                 //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
-            style = "";
+            style = game.Style;
 
         }
 
