@@ -18,33 +18,34 @@ namespace FNAF_Engine_Reborn_GameData
 {
     public class GameData : BinaryClass
     {
-        public string _header { get; set; } = "";
-        public byte _key { get; set; } = 0;
-        public Stamp _stamp { get; set; } = new Stamp();
+        public string _header = "";
+        public byte _key = 0;
+        public Stamp _stamp = new Stamp();
 
-        public string Name { get; set; } = "";
-        public string GameName { get; set; } = "";
-        public string Template { get; set; } = "";
+        public string Name = "";
+        public string Style = "";
+        public string GameName = "";
+        public string Template = "";
 
         public string ID { get; private set; } = ""; //unused for now lol
 
-        public GameOptions Options { get; set; } = new();
-        public System.Drawing.Color MenuSettings { get; set; } = new System.Drawing.Color();
+        public GameOptions Options = new();
+        public System.Drawing.Color MenuSettings = new System.Drawing.Color();
 
-        public List<Variable> DataValues { get; set; } = new List<Variable>();
-        public List<StringVariable> DataStrings { get; set; } = new List<StringVariable>();
-        public List<Variable> Variables { get; set; } = new List<Variable>(); //unused for now
-        public List<StringVariable> StringVariables { get; set; } = new List<StringVariable>(); //unused aswell
+        public List<Variable> DataValues = new List<Variable>();
+        public List<StringVariable> DataStrings = new List<StringVariable>();
+        public List<Variable> Variables = new List<Variable>(); //unused for now
+        public List<StringVariable> StringVariables = new List<StringVariable>(); //unused aswell
 
-        public List<Image> ImageBank { get; set; } = new List<Image>(); //general image bank
-        public List<Audio> AudioBank { get; set; } = new List<Audio>(); //general audio bank
+        public List<Image> ImageBank = new List<Image>(); //general image bank
+        public List<Audio> AudioBank  = new List<Audio>(); //general audio bank
 
         //misc
-        public List<Animation> Animations { get; set; } = new List<Animation>();
-        public List<StaticEffect> StaticEffects { get; set; } = new List<StaticEffect>();
+        public List<Animation> Animations = new List<Animation>();
+        public List<StaticEffect> StaticEffects = new List<StaticEffect>();
         //game
-        public List<FNAF_Engine_Menu> Menus { get; set; } = new List<FNAF_Engine_Menu>();
-        public Office Office { get; set; } = new Office();
+        public List<FNAF_Engine_Menu> Menus = new List<FNAF_Engine_Menu>();
+        public Office Office = new Office();
         public List<Camera> Cameras = new List<Camera>();
         public List<Animatronic> Animatronics = new List<Animatronic>();
         public List<Script> Scripts = new List<Script>();
@@ -59,6 +60,7 @@ namespace FNAF_Engine_Reborn_GameData
 
                 Writer.AutoWriteUnicode(Name);
                 Writer.AutoWriteUnicode(GameName);
+                Writer.AutoWriteUnicode(Style);
                 //options
                 #region
                 Options.Write(Writer, true, null);
@@ -147,7 +149,7 @@ namespace FNAF_Engine_Reborn_GameData
                 Directory.CreateDirectory(projectpath + "/statics");
 
                 File.WriteAllText(projectpath + "/name.txt", Name);
-                File.WriteAllText(projectpath + "/style.txt", "fnaf"); //...
+                File.WriteAllText(projectpath + "/style.txt", Style);
 
                 //File.WriteAllText(projectpath + "/gameid.txt", ID);
                 File.WriteAllText(projectpath + "/gameid.txt", "");
@@ -212,6 +214,7 @@ namespace FNAF_Engine_Reborn_GameData
 
                 Name = reader.AutoReadUnicode();
                 GameName = reader.AutoReadUnicode();
+                Style = reader.AutoReadUnicode();
 
                 Options.Read(reader, true, "");
                 var r = reader.ReadByte();
@@ -289,6 +292,7 @@ namespace FNAF_Engine_Reborn_GameData
                 //ID = File.ReadAllText(projectpath + "/gameid.txt");
                 GameName = File.ReadAllText(projectpath + "/game.txt");
                 Template = File.ReadAllText(projectpath + "/template.txt");
+                Style = File.ReadAllText(projectpath + "/style.txt");
 
                 Options.Read(null, false, projectpath);
 

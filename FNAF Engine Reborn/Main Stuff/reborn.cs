@@ -166,6 +166,7 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
+                //comboBox43 == the combobox for the animations
                 if (comboBox43.SelectedItem == null)
                 {
                     Logger.Log("Please select an animation!");
@@ -175,12 +176,12 @@ namespace FNAF_Engine_Reborn
                     Directory.Delete(comboBox43.SelectedItem?.ToString());
                     Logger.Log("Animation deleted!");
                     comboBox43.Items.Clear();
-                    comboBox43.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
+                    foreach (var anim in game.Animations) comboBox43.Items.Add(anim.Name);
                 }
             }
         }
 
-        private void button61_Click(object sender, EventArgs e)
+        private void button61_Click(object sender, EventArgs e) //Add animation button
         {
             AnimAdd.Visible = true;
         }
@@ -189,6 +190,7 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
+                //comboBox43 == the combobox for the animations
                 AnimAdd.Visible = false;
                 if (spriteName.Text == "")
                 {
@@ -199,7 +201,7 @@ namespace FNAF_Engine_Reborn
                     string animName = spriteName.Text;
                     _ = Directory.CreateDirectory(projecto + "/animations/" + animName);
                     comboBox43.Items.Clear();
-                    comboBox43.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations/"));
+                    foreach (var anim in game.Animations) comboBox43.Items.Add(anim.Name);
                 }
             }
         }
@@ -282,7 +284,7 @@ namespace FNAF_Engine_Reborn
                 //this.presence.state = "Version " + Version;
                 //if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
             }
-            style = File.ReadAllText(v + "/style.txt");
+            style = "";
 
         }
 
