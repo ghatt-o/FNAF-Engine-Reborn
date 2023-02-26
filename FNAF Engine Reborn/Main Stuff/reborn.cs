@@ -1,8 +1,11 @@
 ﻿using DiscordRpcDemo;
+using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_Reborn.bin;
 using FNAF_Engine_Reborn.Main_Stuff;
 using FNAF_Engine_Reborn.Object_Editors;
 using FNAF_Engine_Reborn_GameData;
+using FNAF_Engine_Reborn_GameData.BinaryData.Office;
+using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -63,7 +66,7 @@ namespace FNAF_Engine_Reborn
             File.WriteAllText("DO_NOT_MODIFY.txt", "uncompressed_key=none");
 #if DEBUG
             {
-                //button67.Visible = true; //load editors button gets visible lol so useless
+                //button67.Visible = true; //load editors button is now visible
             }
 #endif
             if (Version == "pre-1.0.0")
@@ -74,6 +77,17 @@ namespace FNAF_Engine_Reborn
             // {
             //     label93.Location = new Point(872, 1);
             // }
+
+            if (game != null)
+            {
+                while (true)
+                {
+                    await Task.Delay(30000);
+                    {
+                        game.Write(null, false, projecto);
+                    }
+                }
+            }
 
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
@@ -260,6 +274,7 @@ namespace FNAF_Engine_Reborn
 
         private void button67_Click(object sender, EventArgs e)
         {
+            game = new();
             load_editors(projecto); //calls function below
         }
 
@@ -332,51 +347,38 @@ namespace FNAF_Engine_Reborn
                     //comboBox9.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/menus"));
                     UpdateMenuElements();
                 }
-                else
-                {
-                    _ = MessageBox.Show("Something went wrong! Fixing...");
-                    createFolder(projecto + "/menus");
-                    _ = MessageBox.Show("Fixed!");
-                }
             }
         }
 
         public void UpdateMenuElements()
         {
             Menus.Nodes.Clear();
-            string[] dirs = Directory.GetDirectories(projecto + "/menus");
-            foreach (string node in dirs)
+            foreach (var menu in game.Menus)
             {
-                string Name = File.ReadAllText(node + "/name.txt");
-                TreeNode menu = new TreeNode
+                TreeNode menunode = new TreeNode
                 {
                     Name = "Menu",
                     Text = Name,
                     ImageIndex = 0,
-                    Tag = node
+                    Tag = menu.Name
                 };
-                _ = Menus.Nodes.Add(menu);
+                _ = Menus.Nodes.Add(menunode);
 
-                string[] texts = Directory.GetDirectories(projecto + "/menus/" + Name + "/text_elements");
-
-                string[] images = Directory.GetDirectories(projecto + "/menus/" + Name + "/image_elements");
-
-                foreach (string text in texts)
+                foreach (var text in menu.TextElements)
                 {
-                    string element_name = File.ReadAllText(text + "/id.txt");
-                    if (File.ReadAllText(text + "/args.txt") == "False")
+                    if (text.args == false)
                     {
                         TreeNode element = new TreeNode
                         {
                             Name = "Text",
-                            Text = element_name,
+                            Text = text.ID,
                             ImageIndex = 1,
                             SelectedImageIndex = 1
                         };
                         TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
-                        foreach (TreeNode Frame in Menus)
+                        foreach (TreeNode Frame in Menus) //there is probably a better way to do this, but it works
                         {
-                            if (Frame.Tag.ToString() == node)
+                            if (Frame.Tag.ToString() == menu.Name)
                             {
                                 Frame.Nodes.Add(element);
                             }
@@ -384,28 +386,27 @@ namespace FNAF_Engine_Reborn
                     }
                 }
 
-                foreach (string image in images)
+                foreach (var img in menu.ImageElements)
                 {
-                    string element_name = File.ReadAllText(image + "/id.txt");
-                    if (File.ReadAllText(image + "/args.txt") == "False")
+                    if (img.args == false)
                     {
                         TreeNode element = new TreeNode
                         {
                             Name = "Image",
-                            Text = element_name,
+                            Text = img.ID,
                             ImageIndex = 2,
                             SelectedImageIndex = 2
                         };
                         TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
                         foreach (TreeNode Frame in Menus)
                         {
-                            if (Frame.Tag.ToString() == node)
+                            if (Frame.Tag.ToString() == menu.Name)
                             {
                                 Frame.Nodes.Add(element);
                             }
                         }
-                    }
-                }
+                   
+                    }}
             }
         }
 
@@ -469,7 +470,14 @@ namespace FNAF_Engine_Reborn
 
         private void button38_Click(object sender, EventArgs e)
         {
-            button38.Image = Image.FromFile(@"assets/images/johnBruh.png");
+            try
+            {
+                button38.Image = Image.FromFile(@"assets/images/johnBruh.png");
+            }
+            catch
+            {
+                test();
+            }
         }
 
         private void label166_Click(object sender, EventArgs e)
@@ -485,16 +493,6 @@ namespace FNAF_Engine_Reborn
                 {
                     try
                     {
-                        if (Directory.Exists(projecto + "/animations"))
-                        {
-                            //aight
-                        }
-                        else
-                        {
-                            //_ = MessageBox.Show("Something went wrong!");
-                            //_ = Directory.CreateDirectory(projecto + "/animations");
-                            //_ = MessageBox.Show("Fixed!");
-                        }
                         Sidebar.Show();
                         AssetManagerPanel.Show();
                         AssetManagerPanel.BringToFront();
@@ -527,7 +525,7 @@ namespace FNAF_Engine_Reborn
                     }
                     catch (Exception)
                     {
-
+                        test();
                     }
                 }
             }
@@ -547,18 +545,7 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                if (Directory.Exists(projecto + "/cameras"))
-                {
-                    comboBox4.Items.Clear();
-                    comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras/"));
-                    cameraEditorPanel.BringToFront();
-                }
-                else
-                {
-                    createFolder("/cameras");
-                    comboBox4.Items.Clear();
-                    cameraEditorPanel.BringToFront();
-                }
+                cameraEditorPanel.BringToFront();
             }
         }
 
@@ -615,21 +602,9 @@ namespace FNAF_Engine_Reborn
         private void AssetManagerPanel_VisibleChanged(object sender, EventArgs e)
         {
             plocation.Text = "Project Location: " + projecto;
-            pname.Text = "Project Name: " + File.ReadAllText(projecto + "/name.txt");
-            try
-            {
-                ptemplate.Text = "Project Template: " + File.ReadAllText(projecto + "/template.txt");
-            }
-            catch (Exception)
-            {
-                File.WriteAllText(projecto + "/template.txt", "None");
-                ptemplate.Text = "Project Template: " + File.ReadAllText(projecto + "/template.txt");
-            }
-
-            if (style == "standard")
-            {
-
-            }
+            pname.Text = "Project Name: " + game.Name;
+            if (game.Template == null || game.Template == "") game.Template = "Unknown";
+            ptemplate.Text = game.Template;
         }
 
         private void button95_Click(object sender, EventArgs e)
@@ -665,7 +640,7 @@ namespace FNAF_Engine_Reborn
                 }
                 catch (Exception oh)
                 {
-                    Console.WriteLine("cringe exception: " + oh);
+                    Console.WriteLine("exception: " + oh);
                 }
             }
         }
@@ -676,41 +651,24 @@ namespace FNAF_Engine_Reborn
 
         private void Corruption()
         {
-            Logger.Log("Warning! With further examination, your project seems to be corrupted! Please join our Discord server and forward any issues you encounter!", "Fatal error");
+            Logger.Log("Warning: With further examination, your project seems to be corrupted! Please join our Discord server and forward any issues you encounter!", "Fatal error");
         }
 
         private async void buildSettingsPanelMoment_VisibleChanged(object sender, EventArgs e)
         {
             if (_0_2C == true)
             {
-                string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                string[] options = optionstxt.Split(',');
-                _ = string.Join(",", options);
-                if (File.Exists(projecto + "/options.txt"))
-                {
-                    checkBox8.Checked = options[0] == "fullscreen=true";
-                    checkBox7.Checked = options[1] == "minigamesenabled=true";
-                    checkBox10.Checked = options[2] == "watermarks=true";
-                    checkBox9.Checked = options[3] == "sourcecode=true";
-                }
+                checkBox8.Checked = game.Options.Fullscreen;
+                checkBox7.Checked = game.Options.Minigames;
+                checkBox10.Checked = game.Options.Watermarks;
+                checkBox9.Checked = game.Options.SrcFileOnExport;
                 if (File.Exists(projecto + "/options.txt") == false)
                 {
                     Logger.Log("Options are null. E729", "Fatal error");
                     _ = File.CreateText(projecto + "/options.txt");
                     Corruption();
                 }
-                if (File.Exists(projecto + "/game.txt") == true)
-                {
-                    await Task.Delay(100);
-                    textBox6.Text = File.ReadAllText(projecto + "/game.txt");
-                }
-                else
-                {
-                    Logger.Log("ID is null. E745", "Fatal error");
-                    _ = File.CreateText(projecto + "/game.txt");
-                    Corruption();
-                    textBox6.Text = File.ReadAllText(projecto + "/game.txt");
-                }
+                textBox6.Text = game.GameName;
 
                 /*try
                 {
@@ -729,19 +687,11 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox8.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[0] = "fullscreen=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.Fullscreen = true;
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[0] = "fullscreen=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.Fullscreen = false;
                 }
             }
         }
@@ -758,14 +708,14 @@ namespace FNAF_Engine_Reborn
             {
                 /*if (File.Exists(projecto + "/gameid.txt"))
                 {
-                    File.WriteAllText(projecto + "/gameid.txt", "");
+                    game.ID = textBox5.Text;
                 }
                 else
                 {
                     _ = MessageBox.Show("Something went wrong!, Fixing...");
                     _ = File.CreateText(project + "/gameid.txt");
                     _ = MessageBox.Show("Fixed!");
-                    //textBox5.Text = File.ReadAllText(projecto + "/gameid.txt");
+                    //textBox5.Text = game.ID;
                 }*/
             }
         }
@@ -783,13 +733,8 @@ namespace FNAF_Engine_Reborn
                     else
                     {
                         string menuNam = menuName.Text;
-                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam);
-                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/text_elements");
-                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/image_elements");
-                        _ = Directory.CreateDirectory(projecto + "/menus/" + menuNam + "/variables");
-                        File.WriteAllText(projecto + "/menus/" + menuNam + "/name.txt", menuNam);
-                        File.WriteAllText(projecto + "/menus/" + menuNam + "/ongameloop.txt", "");
-                        File.WriteAllText(projecto + "/menus/" + menuNam + "/onmenustart.txt", "");
+                        FNAF_Engine_Menu menu = new();
+                        game.Menus.Add(menu);
                         Menus.Nodes.Clear();
                         createShit.Hide();
                         menuEditorPanel.Hide();
@@ -798,7 +743,7 @@ namespace FNAF_Engine_Reborn
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Cringe exception: " + ex);
+                    Console.WriteLine("exception: " + ex);
                     Logger.Log("Special characters are not allowed!", "Error");
                 }
             }
@@ -818,7 +763,9 @@ namespace FNAF_Engine_Reborn
 
                     if (Confirmation == DialogResult.Yes)
                     {
+                        game.Write(null, false, projecto);
                         Directory.Delete(curMenuTag, true);
+                        game.Read(null, false, projecto);
                         Menus.Refresh();
                         menuEditorPanel.Hide();
                         menuEditorPanel.Show();
@@ -831,16 +778,7 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 comboBox4.Items.Clear();
-                if (Directory.Exists(projecto + "/cameras"))
-                {
-                    panel6.Show();
-                }
-                else
-                {
-                    Logger.Log("Null cameras E876");
-                    createFolder("/cameras");
-                    panel6.Show();
-                }
+                panel6.Show();
             }
         }
 
@@ -849,11 +787,12 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 string cameraName = textBox17.Text;
-                _ = Directory.CreateDirectory(projecto + "/cameras/" + cameraName);
+                Camera cam = new();
+                cam.Name = cameraName;
+                game.Cameras.Add(cam);
                 panel6.Hide();
                 comboBox4.Items.Clear();
-                comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
-                _ = Directory.CreateDirectory(projecto + "/cameras/" + cameraName + "/animations");
+                foreach (var camera in game.Cameras) comboBox4.Items.Add(camera.Name);
                 //_ = File.CreateText("settings.txt");
             }
         }
@@ -868,9 +807,11 @@ namespace FNAF_Engine_Reborn
                 }
                 else
                 {
+                    game.Write(null, false, projecto);
                     Directory.Delete(comboBox4.SelectedItem.ToString());
+                    game.Read(null, false, projecto);
                     comboBox4.Items.Clear();
-                    comboBox4.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/cameras"));
+                    foreach (var camera in game.Cameras) comboBox4.Items.Add(camera.Name);
                 }
             }
         }
@@ -878,7 +819,7 @@ namespace FNAF_Engine_Reborn
         private void button99_Click(object sender, EventArgs e)
         {
             comboBox43.Items.Clear();
-            comboBox43.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
+            foreach (var anim in game.Animations) comboBox43.Items.Add(anim.Name);
             Logger.Log("Updated!");
         }
 
@@ -897,20 +838,12 @@ namespace FNAF_Engine_Reborn
                 if (checkBox13.Checked == true)
                 {
                     CameraInput.Show();
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[3] = "camera=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.CameraEnabled = true;
                 }
                 else
                 {
                     CameraInput.Hide();
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[3] = "camera=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.CameraEnabled = false;
                 }
             }
         }
@@ -928,9 +861,11 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 string staticname = textBox20.Text;
-                _ = Directory.CreateDirectory(projecto + "/statics/" + staticname);
+                StaticEffect st = new();
+                st.Name = staticname;
+                game.StaticEffects.Add(st);
                 comboBox57.Items.Clear();
-                comboBox57.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/statics"));
+                foreach (var staticeffect in game.StaticEffects) comboBox57.Items.Add(staticeffect.Name);
                 panel7.Hide();
             }
         }

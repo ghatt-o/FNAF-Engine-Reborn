@@ -4,14 +4,30 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 {
     public class Camera : BinaryClass
     {
+        public string Name = "";
+
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
-            throw new System.NotImplementedException();
+            if (binary == true)
+            {
+                //todo
+            }
+            else
+            {
+                //todo
+            }
         }
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
-            throw new System.NotImplementedException();
+            if (binary == true)
+            {
+                //todo
+            }
+            else
+            {
+                //todo
+            }
         }
     }
 }
