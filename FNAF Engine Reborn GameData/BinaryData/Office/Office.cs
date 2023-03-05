@@ -31,7 +31,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             else
             {
                 Settings.Write(null, false, projectpath);
-                foreach(var state in States)
+                foreach (var state in States)
                 {
                     state.Write(null, false, projectpath);
                 }

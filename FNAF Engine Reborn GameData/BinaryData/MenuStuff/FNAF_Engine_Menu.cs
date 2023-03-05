@@ -40,11 +40,11 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
                 Writer.WriteInt32(TextElements.Count);
                 Writer.WriteInt32(ImageElements.Count);
-                foreach(var e in TextElements)
+                foreach (var e in TextElements)
                 {
                     e.Write(Writer, true, null);
                 }
-                foreach(var e in ImageElements)
+                foreach (var e in ImageElements)
                 {
                     e.Write(Writer, true, null);
                 }
@@ -106,7 +106,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 //Name is already pre-set on reading.
                 string path = project + "/menus/" + Name;
                 key = 96; //why did i make this?
-                
+
                 BackgroundImage = new Binaries.Image();
                 string bgName = File.ReadAllText(path + "/bg.txt");
                 if (bgName == "") Console.WriteLine("No background image for menu");

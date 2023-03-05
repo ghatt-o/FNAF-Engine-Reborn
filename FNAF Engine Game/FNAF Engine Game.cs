@@ -11,7 +11,7 @@ namespace FNAF_Engine_Game
     public partial class FNAF_Engine_Game : Form
     {
         //private readonly reborn reborn;
-        public GameData Data { get;  private set; } = null;
+        public GameData Data { get; private set; } = null;
 
         private string project;
         string curMenu;

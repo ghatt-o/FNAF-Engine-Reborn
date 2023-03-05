@@ -7,10 +7,8 @@ using FNAF_Engine_Reborn_GameData;
 using FNAF_Engine_Reborn_GameData.BinaryData.Office;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq.Expressions;
 using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,8 +20,8 @@ namespace FNAF_Engine_Reborn
         public GameData game;
 
         public bool showProject = true;
-        public string Version = "0.9.7";
-        public string Build_Version = "simple97";
+        public string Version = "0.2.0-beta.1";
+        public string Build_Version = "release1";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -69,7 +67,7 @@ namespace FNAF_Engine_Reborn
                 //button67.Visible = true; //load editors button is now visible
             }
 #endif
-            if (Version == "pre-1.0.0")
+            if (Version.Length == 10)
             {
                 label93.Location = new Point(850, 1);
             }
@@ -401,8 +399,9 @@ namespace FNAF_Engine_Reborn
                                 Frame.Nodes.Add(element);
                             }
                         }
-                   
-                    }}
+
+                    }
+                }
             }
         }
 
@@ -890,10 +889,7 @@ namespace FNAF_Engine_Reborn
 
         private void button113_Click_1(object sender, EventArgs e)
         {
-            if (Directory.Exists("assets/custom_assets/projects_cloud"))
-            {
-
-            }
+            Logger.Log("Not available on this limited demo! (0.2.0-beta.1)", "Limits reached");
         }
 
         private void exception(string ex)
@@ -914,40 +910,29 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 string animatronicName = textBox21.Text;
-                try
-                {
-                    _ = Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/jsound.fersound", "");
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/janimation.feranimation", "");
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/im.im", "false");
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/al.al", "false");
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/lbb.lbb", "false");
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", "");
-                    BinaryWriter binWriter = new BinaryWriter(new FileStream(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", FileMode.Open));
-                    binWriter.Write(0);
-                    binWriter.Flush();
-                    binWriter.Dispose();
-                    binWriter.Close();
+                _ = Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
+                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/jsound.fersound", "");
+                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/janimation.feranimation", "");
+                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/im.im", "false");
+                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/al.al", "false");
+                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/lbb.lbb", "false");
+                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", "");
+                BinaryWriter binWriter = new BinaryWriter(new FileStream(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", FileMode.Open));
+                binWriter.Write(0);
+                binWriter.Flush();
+                binWriter.Dispose();
+                binWriter.Close();
 
-                    if (checkBox2.Checked == true)
-                    {
-                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "true");
-                    }
-                    else
-                    {
-                        File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "false");
-                    }
-                    AnimatronicDropDown.Items.Clear();
-                    AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
-                }
-                catch (Exception)
+                if (checkBox2.Checked == true)
                 {
-                    Logger.Log("Failed to create animatronic!", "Error");
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "true");
                 }
-                finally
+                else
                 {
-                    panel8.Hide();
+                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "false");
                 }
+                AnimatronicDropDown.Items.Clear();
+                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
             }
         }
 
@@ -1712,7 +1697,7 @@ namespace FNAF_Engine_Reborn
             {
                 this.curMenuTag = Menus.SelectedNode.Tag.ToString();
                 foreach (var menu in game.Menus) if (menu.Name)
-                this.presence.details = "Menu Editor, Editing Menu: " + File.ReadAllText(curMenuTag + "/name.txt");
+                        this.presence.details = "Menu Editor, Editing Menu: " + File.ReadAllText(curMenuTag + "/name.txt");
                 if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
                 Menu_Editor menu_Editor = new Menu_Editor(this);
@@ -2636,7 +2621,7 @@ namespace FNAF_Engine_Reborn
         {
             if (game != null)
             {
-                game.Write(null, false, projecto);      
+                game.Write(null, false, projecto);
             }
         }
     }

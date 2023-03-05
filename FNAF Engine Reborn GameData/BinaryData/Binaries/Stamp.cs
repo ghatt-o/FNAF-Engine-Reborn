@@ -1,6 +1,6 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
 {

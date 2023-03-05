@@ -22,7 +22,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 Writer.WriteInt32(Actions.Count());
 
                 Writer.WriteInt8(0x80);
-                foreach(var C in Conditions)
+                foreach (var C in Conditions)
                 {
                     C.Write(Writer, true, null);
                 }

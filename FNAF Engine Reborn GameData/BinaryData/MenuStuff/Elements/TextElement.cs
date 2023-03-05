@@ -2,11 +2,8 @@
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Scripts;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Reflection.PortableExecutable;
 
 namespace MenuStuff.Elements
 {

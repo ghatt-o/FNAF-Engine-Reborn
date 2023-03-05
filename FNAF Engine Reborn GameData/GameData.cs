@@ -12,7 +12,6 @@ using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace FNAF_Engine_Reborn_GameData
 {
@@ -38,7 +37,7 @@ namespace FNAF_Engine_Reborn_GameData
         public List<StringVariable> StringVariables = new List<StringVariable>(); //unused aswell
 
         public List<Image> ImageBank = new List<Image>(); //general image bank
-        public List<Audio> AudioBank  = new List<Audio>(); //general audio bank
+        public List<Audio> AudioBank = new List<Audio>(); //general audio bank
 
         //misc
         public List<Animation> Animations = new List<Animation>();
@@ -175,25 +174,25 @@ namespace FNAF_Engine_Reborn_GameData
                 }
                 //TODO: Last check for data value/string(s)
 
-                foreach(var img in ImageBank)
+                foreach (var img in ImageBank)
                 {
                     img.Write(null, false, projectpath);
                 }
-                foreach(var aud in AudioBank)
+                foreach (var aud in AudioBank)
                 {
                     aud.Write(null, false, projectpath);
                 }
 
-                foreach(var anim in Animations)
+                foreach (var anim in Animations)
                 {
                     anim.Write(null, false, projectpath);
                 }
-                foreach(var se in StaticEffects)
+                foreach (var se in StaticEffects)
                 {
                     se.Write(null, false, projectpath);
                 }
 
-                foreach(var m in Menus)
+                foreach (var m in Menus)
                 {
                     m.Write(null, false, projectpath);
                 }
@@ -322,7 +321,7 @@ namespace FNAF_Engine_Reborn_GameData
                     DataStrings.Add(variable);
                 }
 
-                foreach(var d in Directory.GetFiles(projectpath + "/images"))
+                foreach (var d in Directory.GetFiles(projectpath + "/images"))
                 {
                     FileInfo fileInfo = new FileInfo(d);
                     Image img = new();
@@ -339,18 +338,18 @@ namespace FNAF_Engine_Reborn_GameData
                     AudioBank.Add(img);
                 }
 
-                foreach(var anim in Directory.GetDirectories(projectpath + "/animations"))
+                foreach (var anim in Directory.GetDirectories(projectpath + "/animations"))
                 {
                     Animation animation = new();
                     animation.Read(null, false, projectpath); //read method not done yet
                 }
-                foreach(var se in Directory.GetDirectories(projectpath + "/statics"))
+                foreach (var se in Directory.GetDirectories(projectpath + "/statics"))
                 {
                     StaticEffect staticeffect = new();
                     staticeffect.Read(null, false, projectpath); //read method not done yet
                 }
 
-                foreach(var menu in Directory.GetDirectories(projectpath + "/menus"))
+                foreach (var menu in Directory.GetDirectories(projectpath + "/menus"))
                 {
                     FNAF_Engine_Menu newMenu = new();
                     newMenu.Name = File.ReadAllText(menu + "/name.txt");
