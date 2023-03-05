@@ -342,11 +342,7 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 //comboBox9.Items.Clear();
-                if (Directory.Exists(projecto + "/menus"))
-                {
-                    //comboBox9.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/menus"));
-                    UpdateMenuElements();
-                }
+                UpdateMenuElements();
             }
         }
 
@@ -662,12 +658,6 @@ namespace FNAF_Engine_Reborn
                 checkBox7.Checked = game.Options.Minigames;
                 checkBox10.Checked = game.Options.Watermarks;
                 checkBox9.Checked = game.Options.SrcFileOnExport;
-                if (File.Exists(projecto + "/options.txt") == false)
-                {
-                    Logger.Log("Options are null. E729", "Fatal error");
-                    _ = File.CreateText(projecto + "/options.txt");
-                    Corruption();
-                }
                 textBox6.Text = game.GameName;
 
                 /*try
@@ -764,7 +754,10 @@ namespace FNAF_Engine_Reborn
                     if (Confirmation == DialogResult.Yes)
                     {
                         game.Write(null, false, projecto);
-                        Directory.Delete(curMenuTag, true);
+                        foreach (var m in game.Menus)
+                        {
+                            if (m.Name == curMenuTag) game.Menus.Remove(m);
+                        }
                         game.Read(null, false, projecto);
                         Menus.Refresh();
                         menuEditorPanel.Hide();
@@ -1718,6 +1711,7 @@ namespace FNAF_Engine_Reborn
             else if (Menus.SelectedNode.Name == "Menu")
             {
                 this.curMenuTag = Menus.SelectedNode.Tag.ToString();
+                foreach (var menu in game.Menus) if (menu.Name)
                 this.presence.details = "Menu Editor, Editing Menu: " + File.ReadAllText(curMenuTag + "/name.txt");
                 if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
@@ -1764,7 +1758,7 @@ namespace FNAF_Engine_Reborn
         private void staticeffecteditor_VisibleChanged(object sender, EventArgs e)
         {
             AnimationList_StaticEffectEditor.Items.Clear();
-            AnimationList_StaticEffectEditor.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations"));
+            foreach (var staticeffect in game.StaticEffects) AnimationList_StaticEffectEditor.Items.Add(staticeffect.Name);
         }
 
         private void panel4_VisibleChanged(object sender, EventArgs e)
@@ -1783,7 +1777,7 @@ namespace FNAF_Engine_Reborn
             {
                 string Name = ScriptEditor_TextBoxname.Text;
                 ScriptEditor_Scripts_ComboBox.Items.Clear();
-                ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
+                foreach (var script in game.Scripts) ScriptEditor_Scripts_ComboBox.Items.Add(script.Name);
                 PanelCreatingNewScript.Hide();
             }
         }
@@ -1791,7 +1785,7 @@ namespace FNAF_Engine_Reborn
         private void ScriptEditorPanel_VisibleChanged(object sender, EventArgs e)
         {
             ScriptEditor_Scripts_ComboBox.Items.Clear();
-            ScriptEditor_Scripts_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/scripts/visual/"));
+            foreach (var script in game.Scripts) ScriptEditor_Scripts_ComboBox.Items.Add(script.Name);
         }
         private void GetEvent()
         {
@@ -1805,7 +1799,7 @@ namespace FNAF_Engine_Reborn
                 {
                     string script = ScriptEditor_Scripts_ComboBox.SelectedItem.ToString();
                     panel4.Show();
-                    if (File.Exists(script + "/event.txt"))
+                    /*if (File.Exists(script + "/event.txt"))
                     {
                         
                     }
@@ -1814,7 +1808,7 @@ namespace FNAF_Engine_Reborn
                         button25.Hide();
                         button26.Hide();
                         button10.Show();
-                    }
+                    }*/
                 }
                 catch (Exception)
                 {
@@ -1924,7 +1918,7 @@ namespace FNAF_Engine_Reborn
         private void animationEditorPanel_VisibleChanged(object sender, EventArgs e)
         {
             comboBox43.Items.Clear();
-            comboBox43.Items.AddRange(System.IO.Directory.GetDirectories(projecto + "/animations/"));
+            foreach (var anim in game.Animations) comboBox43.Items.Add(anim.Name);
         }
 
         private void GameManager_Variables_View_VisibleChanged(object sender, EventArgs e)
@@ -2101,11 +2095,7 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                string[] options = optionstxt.Split(',');
-                options[9] = "hours=" + gamehourstextbox.Text;
-                string newoptions = string.Join(",", options);
-                File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                game.Office.Settings.Hours = 9;
             }
         }
         private void AddImage_MenuEditor_Click(object sender, EventArgs e)
