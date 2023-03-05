@@ -207,7 +207,8 @@ namespace FNAF_Engine_Reborn_GameData
             {
                 _header = reader.ReadAscii(4);
                 _key = reader.ReadByte();
-                reader.BaseStream.Position += 17;
+                _stamp = new();
+                _stamp.Read(reader, true, null);
 
                 if (_header != "FER_DAT") throw new InvalidDataException("Invalid header!");
 

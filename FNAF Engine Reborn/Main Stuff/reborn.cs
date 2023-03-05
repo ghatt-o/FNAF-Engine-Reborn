@@ -60,8 +60,6 @@ namespace FNAF_Engine_Reborn
         private async void reborn_Load(object sender, EventArgs e)
         {
             DoubleBuffered = true;
-
-            File.WriteAllText("DO_NOT_MODIFY.txt", "uncompressed_key=none");
 #if DEBUG
             {
                 //button67.Visible = true; //load editors button is now visible
@@ -910,7 +908,8 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 string animatronicName = textBox21.Text;
-                _ = Directory.CreateDirectory(projecto + "/animatronics/" + animatronicName);
+                Animatronic anim = new Animatronic();
+                anim.Name
                 File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/jsound.fersound", "");
                 File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/janimation.feranimation", "");
                 File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/im.im", "false");

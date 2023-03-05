@@ -7,8 +7,8 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
     public class Stamp : BinaryClass
     {
         public byte FER_Version { get; set; } = 0;
-        public byte FER_PatchVersion { get; set; } = 9;
-        public byte FER_MinorVersion { get; set; } = 6;
+        public byte FER_PatchVersion { get; set; } = 2;
+        public byte FER_MinorVersion { get; set; } = 0;
 
         public int BinariesCount { get; set; } = 0;
         public ushort MenuCount { get; set; } = 0;
@@ -73,7 +73,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Binaries
                 for (int i = 0; i < ChunkCount; i++)
                 {
                     var Chunk = reader.ReadByte();
-                    Chunks.Append(Chunk);
+                    Chunks.Add(Chunk);
                 }
             }
             else
