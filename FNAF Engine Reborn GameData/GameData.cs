@@ -49,6 +49,8 @@ namespace FNAF_Engine_Reborn_GameData
         public List<Animatronic> Animatronics = new List<Animatronic>();
         public List<Script> Scripts = new List<Script>();
 
+        public bool ConcludedReading = false;
+
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
             if (binary == true)
@@ -203,6 +205,7 @@ namespace FNAF_Engine_Reborn_GameData
         }
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
+            ConcludedReading = false;
             if (binary == true)
             {
                 _header = reader.ReadAscii(4);
@@ -359,6 +362,7 @@ namespace FNAF_Engine_Reborn_GameData
 
                 Office.Read(null, false, projectpath);
             }
+            ConcludedReading = true;
         }
     }
     public static class XorEncryption

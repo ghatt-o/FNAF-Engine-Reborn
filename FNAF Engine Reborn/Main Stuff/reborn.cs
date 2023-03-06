@@ -909,29 +909,14 @@ namespace FNAF_Engine_Reborn
             {
                 string animatronicName = textBox21.Text;
                 Animatronic anim = new Animatronic();
-                anim.Name
-                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/jsound.fersound", "");
-                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/janimation.feranimation", "");
-                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/im.im", "false");
-                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/al.al", "false");
-                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/lbb.lbb", "false");
-                File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", "");
-                BinaryWriter binWriter = new BinaryWriter(new FileStream(projecto + "/animatronics/" + animatronicName + "/path.feranimpath", FileMode.Open));
-                binWriter.Write(0);
-                binWriter.Flush();
-                binWriter.Dispose();
-                binWriter.Close();
+                anim.Name = animatronicName;
 
-                if (checkBox2.Checked == true)
-                {
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "true");
-                }
-                else
-                {
-                    File.WriteAllText(projecto + "/animatronics/" + animatronicName + "/phantom.feranimext", "false");
-                }
+                anim.IsPhantom = checkBox2.Checked;
+
+                game.Animatronics.Add(anim);
+
                 AnimatronicDropDown.Items.Clear();
-                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics/"));
+                foreach (var animatronic in game.Animatronics) AnimatronicDropDown.Items.Add(animatronic.Name);
             }
         }
 
@@ -940,7 +925,7 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 comboBox57.Items.Clear();
-                comboBox57.Items.AddRange(Directory.GetDirectories(projecto + "/statics"));
+                foreach (var se in game.StaticEffects) AnimatronicDropDown.Items.Add(se.Name);
             }
         }
 
@@ -951,35 +936,14 @@ namespace FNAF_Engine_Reborn
                 try
                 {
                     Directory.Delete(projecto + "/statics/" + comboBox57.SelectedItem.ToString());
+                    game = new();
+                    game.Read(null, false, projecto);
                     comboBox57.Items.Clear();
-                    comboBox57.Items.AddRange(Directory.GetDirectories(projecto + "/statics"));
+                    foreach (var se in game.StaticEffects) AnimatronicDropDown.Items.Add(se.Name);
                 }
                 catch (Exception)
                 {
                     Logger.Log("Failed to delete static effect", "Error 3");
-                }
-            }
-        }
-
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
-        {
-            if (_0_2C == true)
-            {
-                if (checkBox7.Checked == true)
-                {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[1] = "minigamesenabled=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
-                }
-                else
-                {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[1] = "minigamesenabled=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
                 }
             }
         }
@@ -990,19 +954,11 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox9.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[3] = "sourcecode=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.SrcFileOnExport = true;
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[3] = "sourcecode=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.SrcFileOnExport = false;
                 }
             }
         }
@@ -1013,19 +969,11 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox10.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[2] = "watermarks=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.Watermarks = true;
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[2] = "watermarks=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.Watermarks = false;
                 }
             }
         }
@@ -1034,21 +982,13 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                if (checkBox4.Checked == true)
+                if (checkBox9.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[3] = "sourcecode=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.SrcFileOnExport = true;
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/options.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[3] = "sourcecode=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/options.txt", newoptions);
+                    game.Options.SrcFileOnExport = false;
                 }
             }
         }
@@ -1057,7 +997,9 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
-                Directory.Delete(AnimatronicDropDown.SelectedItem.ToString());
+                Directory.Delete(projecto + "/animatronics/" + AnimatronicDropDown.SelectedItem.ToString());
+                game = new();
+                game.Read(null, false, projecto);
                 AnimatronicDropDown.Items.Clear();
                 AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
             }
