@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reborn));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Data Values");
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] { "frame1" }, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point));
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Data Values");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] { "frame1" }, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point));
             allEditorsPNL = new System.Windows.Forms.Panel();
             label143 = new System.Windows.Forms.Label();
             label124 = new System.Windows.Forms.Label();
@@ -3657,10 +3657,10 @@ namespace FNAF_Engine_Reborn
             GameManager_Variables_View.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             GameManager_Variables_View.Location = new System.Drawing.Point(712, 277);
             GameManager_Variables_View.Name = "GameManager_Variables_View";
-            treeNode1.Name = "Data Values";
-            treeNode1.Tag = "Data_Values_List";
-            treeNode1.Text = "Data Values";
-            GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] { treeNode1 });
+            treeNode2.Name = "Data Values";
+            treeNode2.Tag = "Data_Values_List";
+            treeNode2.Text = "Data Values";
+            GameManager_Variables_View.Nodes.AddRange(new System.Windows.Forms.TreeNode[] { treeNode2 });
             GameManager_Variables_View.Size = new System.Drawing.Size(232, 256);
             GameManager_Variables_View.TabIndex = 162;
             GameManager_Variables_View.VisibleChanged += GameManager_Variables_View_VisibleChanged;
@@ -4974,10 +4974,11 @@ namespace FNAF_Engine_Reborn
             // 
             label8.AutoSize = true;
             label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label8.ForeColor = System.Drawing.Color.White;
             label8.Location = new System.Drawing.Point(-2, 2);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(146, 15);
+            label8.Size = new System.Drawing.Size(209, 21);
             label8.TabIndex = 38;
             label8.Text = "GENERAL GAME SETTINGS";
             // 
@@ -4985,10 +4986,11 @@ namespace FNAF_Engine_Reborn
             // 
             label7.AutoSize = true;
             label7.BackColor = System.Drawing.Color.Transparent;
+            label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label7.ForeColor = System.Drawing.Color.White;
-            label7.Location = new System.Drawing.Point(246, 4);
+            label7.Location = new System.Drawing.Point(241, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(94, 15);
+            label7.Size = new System.Drawing.Size(137, 21);
             label7.TabIndex = 37;
             label7.Text = "MENU SETTINGS";
             // 
@@ -5246,7 +5248,7 @@ namespace FNAF_Engine_Reborn
             // 
             listView1.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
             listView1.ForeColor = System.Drawing.Color.White;
-            listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] { listViewItem1 });
+            listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] { listViewItem2 });
             listView1.Location = new System.Drawing.Point(240, 350);
             listView1.Name = "listView1";
             listView1.Size = new System.Drawing.Size(475, 148);
