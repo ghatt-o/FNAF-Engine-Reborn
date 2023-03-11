@@ -1,0 +1,38 @@
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+
+namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values
+{
+    public class Variable : BinaryClass
+    {
+        public string Key { get; set; } = "";
+        public int Value { get; set; } = 0;
+
+        public void Read(ByteReader reader, bool binary, string projectpath)
+        {
+            if (binary == true)
+            {
+                var keyLen = reader.ReadInt32();
+                Key = reader.ReadAscii(keyLen);
+                Value = reader.ReadInt32();
+            }
+            else
+            {
+
+            }
+        }
+
+        public void Write(ByteWriter Writer, bool binary, string projectpath)
+        {
+            if (binary == true)
+            {
+                Writer.WriteInt32(Key.Length);
+                Writer.WriteAscii(Key);
+                Writer.WriteInt32(Value);
+            }
+            else
+            {
+
+            }
+        }
+    }
+}
