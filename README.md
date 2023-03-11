@@ -2,7 +2,7 @@
 The new FNAF Engine!
 
 # Requirements
-Visual Studio 2019/2022
+Visual Studio 2022 > 17.4+
 
 .NET 7 Desktop
 
