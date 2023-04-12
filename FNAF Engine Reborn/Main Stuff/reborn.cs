@@ -26,6 +26,7 @@ namespace FNAF_Engine_Reborn
         public bool draggable_ui = false;
         public bool animatronicselected = false;
         internal bool _0_2C = true;
+        //deprecated variables(?), making sure to remove and switch to rewrite later
         public bool inScriptEditor;
         string curMenuTag;
         public string script;
@@ -33,6 +34,7 @@ namespace FNAF_Engine_Reborn
 
         public string style;
 
+        //disabled for compatibility sakes for now
         private DiscordRpc.EventHandlers handlers = default(DiscordRpc.EventHandlers);
         private DiscordRpc.RichPresence presence;
 
@@ -40,9 +42,9 @@ namespace FNAF_Engine_Reborn
 
         internal static loadFERproject projectloader = new loadFERproject();
 
-        public string projecto;
+        public string projecto; //path of the project, used ALOT
 
-        private string v;
+        private string funcs; //probably used for script editor fetching
 
         public reborn()
         {
@@ -53,26 +55,18 @@ namespace FNAF_Engine_Reborn
         {
             _ = Directory.CreateDirectory(projecto + folder);
         }
-        public void GetFunctions(string v)
+        public void GetFunctions(string funcs)
         {
-            this.v = v;
+            this.funcs = funcs;
         }
         private async void reborn_Load(object sender, EventArgs e)
         {
-            DoubleBuffered = true;
-#if DEBUG
+            DoubleBuffered = true; //optimizates it, maybe?
+
+            if (Version.Length > 8)
             {
-                //button67.Visible = true; //load editors button is now visible
+                label93.Location = new Point(850, 1); //modifies the version label's position to fit the text
             }
-#endif
-            if (Version.Length == 10)
-            {
-                label93.Location = new Point(850, 1);
-            }
-            // else
-            // {
-            //     label93.Location = new Point(872, 1);
-            // }
 
             if (game != null)
             {
@@ -80,15 +74,18 @@ namespace FNAF_Engine_Reborn
                 {
                     await Task.Delay(30000);
                     {
-                        game.Write(null, false, projecto);
+                        game.Write(null, false, projecto); //Auto-Save!
+                        //TODO: Make sure it's not saving while it's already being written for different purposes. game.
                     }
                 }
             }
 
+            //Hello engine of the sea what's your wisdom?
+            //Random texts to cheer people up :)
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
-            string[] randomStrings = { "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "According to Youtube's statistics, only a small percentage of people who watch my videos are actually subscribed,", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love God?", "Check out FNAF Maker!", "Who's joe?", "Still beta!", "Yeah!", "Snow!" };
-            label84.Text = randomStrings[random.Next(1, 38) - 1];
+            string[] randomStrings = { "FANF Egnien: Rebonr", "2023 already?", "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "According to Youtube's statistics, only a small percentage of people who watch my videos are actually subscribed,", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love God?", "Check out FNAF Maker!", "Who's joe?", "Still beta!", "Yeah!", "Snow!" };
+            label84.Text = randomStrings[random.Next(1, 39) - 1];
 
             if (DiscordRPCEnabled)
             {
@@ -159,7 +156,7 @@ namespace FNAF_Engine_Reborn
         private void button43_Click(object sender, EventArgs e)
         {
             var theGameTest = new FNAF_Engine_Game.FNAF_Engine_Game(null, game);
-            theGameTest.Show();
+            theGameTest.ShowDialog();
             Text = "FNAF Engine: Reborn - Testing Game";
         }
 
@@ -235,9 +232,9 @@ namespace FNAF_Engine_Reborn
             Text = "FNAF Engine: Reborn";
         }
 
-        private void button66_Click(object sender, EventArgs e)
+        private void button66_Click(object sender, EventArgs e) //Credits button
         {
-            cutsceneMoment.Visible = true;
+            cutsceneMoment.Visible = true; //There was supposed to be a cutscene, although, the idea got scrapped and doesn't seem to be returning.
             menu.Hide();
         }
 
@@ -285,7 +282,7 @@ namespace FNAF_Engine_Reborn
             button38.Visible = true;
             //_ = projectloader.label3.Text;
             projecto = projec;
-            Logger.Log("Reading Game Data. This may take a while!");
+            Logger.Log("Reading Game Data. This may take a while! (Proceed to continue)");
             game.Read(null, false, projecto);
             Logger.Log("Successfully loaded Game.");
             if (showProject == true)
@@ -356,7 +353,7 @@ namespace FNAF_Engine_Reborn
                 };
                 _ = Menus.Nodes.Add(menunode);
 
-                foreach (var text in menu.TextElements)
+                foreach (var text in menu.TextElements) //Loading the text treenodes on the menu as a display
                 {
                     if (text.args == false)
                     {
@@ -368,7 +365,7 @@ namespace FNAF_Engine_Reborn
                             SelectedImageIndex = 1
                         };
                         TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
-                        foreach (TreeNode Frame in Menus) //there is probably a better way to do this, but it works
+                        foreach (TreeNode Frame in Menus) //There is probably a better way to do this, but it works
                         {
                             if (Frame.Tag.ToString() == menu.Name)
                             {
@@ -378,7 +375,7 @@ namespace FNAF_Engine_Reborn
                     }
                 }
 
-                foreach (var img in menu.ImageElements)
+                foreach (var img in menu.ImageElements) //Loading image treenodes on the menu as a display
                 {
                     if (img.args == false)
                     {
@@ -390,7 +387,7 @@ namespace FNAF_Engine_Reborn
                             SelectedImageIndex = 2
                         };
                         TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
-                        foreach (TreeNode Frame in Menus)
+                        foreach (TreeNode Frame in Menus) //Again definitely a better way to do this.jjiç
                         {
                             if (Frame.Tag.ToString() == menu.Name)
                             {
