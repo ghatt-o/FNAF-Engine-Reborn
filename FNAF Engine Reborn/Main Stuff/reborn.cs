@@ -85,7 +85,7 @@ namespace FNAF_Engine_Reborn
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
             string[] randomStrings = { "FANF Egnien: Rebonr", "2023 already?", "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "According to Youtube's statistics, only a small percentage of people who watch my videos are actually subscribed,", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love God?", "Check out FNAF Maker!", "Who's joe?", "Still beta!", "Yeah!", "Snow!" };
-            label84.Text = randomStrings[random.Next(1, 39) - 1];
+            label84.Text = randomStrings[random.Next(1, 40) - 1];
 
             if (DiscordRPCEnabled)
             {
