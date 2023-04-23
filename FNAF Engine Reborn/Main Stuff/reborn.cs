@@ -44,7 +44,7 @@ namespace FNAF_Engine_Reborn
 
         public string projecto; //path of the project, used ALOT
 
-        private string funcs; //probably used for script editor fetching
+        private string funcs; //probably used for script editor fetching, also might switch to rewrite later
 
         public reborn()
         {
@@ -131,8 +131,7 @@ namespace FNAF_Engine_Reborn
             _ = createNew.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
+        private void button5_Click(object sender, EventArgs e) //template creator button        {
             templateCreator templateMaker = new templateCreator();
             _ = templateMaker.ShowDialog();
         }
