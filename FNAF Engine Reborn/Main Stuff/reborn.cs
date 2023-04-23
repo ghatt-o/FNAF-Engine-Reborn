@@ -233,7 +233,7 @@ namespace FNAF_Engine_Reborn
 
         private void button66_Click(object sender, EventArgs e) //Credits button
         {
-            cutsceneMoment.Visible = true; //There was supposed to be a cutscene, although, the idea got scrapped and doesn't seem to be returning.
+            cutsceneMoment.Visible = true; //There was supposed to be a cutscene, although, the idea got scrapped and doesn't seem to be returning any time soon.
             menu.Hide();
         }
 
@@ -386,7 +386,7 @@ namespace FNAF_Engine_Reborn
                             SelectedImageIndex = 2
                         };
                         TreeNode[] Menus = this.Menus.Nodes.Find("Menu", true);
-                        foreach (TreeNode Frame in Menus) //Again definitely a better way to do this.jjiç
+                        foreach (TreeNode Frame in Menus) //Again definitely a better way to do this.
                         {
                             if (Frame.Tag.ToString() == menu.Name)
                             {
