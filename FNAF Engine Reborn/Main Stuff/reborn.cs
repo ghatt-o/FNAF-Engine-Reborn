@@ -20,7 +20,7 @@ namespace FNAF_Engine_Reborn
         public GameData game;
 
         public bool showProject = true;
-        public string Version = "0.2.0-beta.1";
+        public string Version = "0.1.0-beta.1";
         public string Build_Version = "release1";
         public bool isopen = false;
         public bool draggable_ui = false;
