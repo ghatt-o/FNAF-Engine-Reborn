@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FNAF_Engine_Game;
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,12 +43,12 @@ namespace FNAF_Engine_Reborn
             await Task.Delay(1000);
             if (style == "standard")
             {
-                Sunset_Creator_Game sunset = new Sunset_Creator_Game(reborn);
+                FNAF_Engine_Game.FNAF_Engine_Game sunset = new FNAF_Engine_Game.FNAF_Engine_Game(reborn);
                 sunset.ShowDialog();
             }
             else
             {
-                FNAF_Engine_Game fnaf_Engine_Game = new FNAF_Engine_Game(reborn);
+                FNAF_Engine_Game.FNAF_Engine_Game fnaf_Engine_Game = new FNAF_Engine_Game.FNAF_Engine_Game(reborn);
                 fnaf_Engine_Game.ShowDialog();
             }
         }

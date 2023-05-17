@@ -18,13 +18,7 @@
     <Compile Update="Game Compiler\Compiler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Game Compiler\FNAF Engine Game.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Game Compiler\ReleaseOrDebug.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Game Compiler\Sunset Creator Game.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Main Stuff\cloudcenter.cs">

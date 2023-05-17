@@ -84,7 +84,7 @@ namespace FNAF_Engine_Reborn
             //Random texts to cheer people up :)
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
-            string[] randomStrings = { "FANF Egnien: Rebonr", "2023 already?", "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "According to Youtube's statistics, only a small percentage of people who watch my videos are actually subscribed,", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love God?", "Check out FNAF Maker!", "Who's joe?", "Still beta!", "Yeah!", "Snow!" };
+            string[] randomStrings = { "FANF Egnien: Rebonr", "2023 already?", "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "According to Youtube's statistics, only a small percentage of people who watch my videos are actually subscribed,", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love God?", "Check out FNAF Maker!", "Who's Joe?", "Still beta!", "Yeah!", "Snow!" };
             label84.Text = randomStrings[random.Next(1, 40) - 1];
 
             if (DiscordRPCEnabled)
@@ -131,7 +131,8 @@ namespace FNAF_Engine_Reborn
             _ = createNew.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e) //template creator button        {
+        private void button5_Click(object sender, EventArgs e)
+        { //template creator button
             templateCreator templateMaker = new templateCreator();
             _ = templateMaker.ShowDialog();
         }
@@ -282,6 +283,7 @@ namespace FNAF_Engine_Reborn
             //_ = projectloader.label3.Text;
             projecto = projec;
             Logger.Log("Reading Game Data. This may take a while! (Proceed to continue)");
+            game = new();
             game.Read(null, false, projecto);
             Logger.Log("Successfully loaded Game.");
             if (showProject == true)
@@ -1633,7 +1635,7 @@ namespace FNAF_Engine_Reborn
             else if (Menus.SelectedNode.Name == "Menu")
             {
                 this.curMenuTag = Menus.SelectedNode.Tag.ToString();
-                foreach (var menu in game.Menus) if (menu.Name)
+                foreach (var menu in game.Menus) if (menu.Name == curMenuTag)
                         this.presence.details = "Menu Editor, Editing Menu: " + File.ReadAllText(curMenuTag + "/name.txt");
                 if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
@@ -2560,6 +2562,11 @@ namespace FNAF_Engine_Reborn
             {
                 game.Write(null, false, projecto);
             }
+        }
+
+        private void createProjectBTN_MouseCaptureChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

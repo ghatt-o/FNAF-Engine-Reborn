@@ -10,9 +10,6 @@ namespace FNAF_Engine_Reborn
         public loadFERproject()
         {
             InitializeComponent();
-        }
-        private void loadFERproject_Load(object sender, EventArgs e)
-        {
             try
             {
                 comboBox1.Items.Clear();
@@ -20,9 +17,10 @@ namespace FNAF_Engine_Reborn
             }
             catch (Exception)
             {
-                //nice
+
             }
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null)

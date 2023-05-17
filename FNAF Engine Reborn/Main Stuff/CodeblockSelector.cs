@@ -50,12 +50,12 @@ namespace FNAF_Engine_Reborn.Main_Stuff
                     {
                         all = all + " " + text;
                     }
-                    ScriptEditor scripteditor = new ScriptEditor();
-                    scripteditor.AddEvent(reborn.script, all);
+                    //ScriptEditor scripteditor = new ScriptEditor();
+                    //scripteditor.AddEvent(reborn.script, all);
                     reborn.button10.Hide();
-                    string event_ = scripteditor.ToEvent(reborn.script);
+                    //string event_ = scripteditor.ToEvent(reborn.script);
                     reborn.button25.Show();
-                    reborn.button25.Text = event_;
+                    //reborn.button25.Text = event_;
                     //Console.WriteLine("event isss: " + event_);
                     reborn.button26.Show();
                     Hide();

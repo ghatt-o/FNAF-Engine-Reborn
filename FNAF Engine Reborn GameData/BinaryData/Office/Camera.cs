@@ -8,7 +8,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
-            if (binary == true)
+            if (binary)
             {
                 //todo
             }
@@ -20,7 +20,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
-            if (binary == true)
+            if (binary)
             {
                 //todo
             }

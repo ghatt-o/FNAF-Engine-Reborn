@@ -35,7 +35,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
         }
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
-            if (binary == true)
+            if (binary)
             {
                 Writer.WriteUInt32((uint)Frames.Count);
                 foreach (var frame in Frames)
@@ -46,7 +46,9 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
             else
             {
                 //temp is file path
+                Directory.CreateDirectory(Temp);
                 File.WriteAllText(Temp + "/name.txt", Name);
+                
                 foreach (var frame in Frames)
                 {
                     frame.Write(null, false, Temp);

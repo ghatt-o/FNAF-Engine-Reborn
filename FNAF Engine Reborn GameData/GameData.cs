@@ -53,7 +53,7 @@ namespace FNAF_Engine_Reborn_GameData
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
-            if (binary == true)
+            if (binary)
             {
                 Writer.WriteAscii(_header);
                 Writer.WriteInt8(_key);
@@ -206,7 +206,7 @@ namespace FNAF_Engine_Reborn_GameData
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
             ConcludedReading = false;
-            if (binary == true)
+            if (binary)
             {
                 _header = reader.ReadAscii(4);
                 _key = reader.ReadByte();
@@ -304,25 +304,34 @@ namespace FNAF_Engine_Reborn_GameData
 
                 foreach (var encoded_data_value in File.ReadAllText(projectpath + "/datavalues.txt").Split(','))
                 {
-                    var name = encoded_data_value.Split(':')[0];
-                    var value = encoded_data_value.Split(':')[1];
-                    Variable variable = new()
+                    var splitData = encoded_data_value.Split(':');
+                    if (splitData.Length >= 2)
                     {
-                        Key = name,
-                        Value = Convert.ToInt32(value) //would this cause any errors?
-                    };
-                    DataValues.Add(variable);
+                        var name = splitData[0];
+                        var value = splitData[1];
+                        Variable variable = new Variable
+                        {
+                            Key = name,
+                            Value = Convert.ToInt32(value)
+                        };
+                        DataValues.Add(variable);
+                    }
                 }
+
                 foreach (var encoded_data_value in File.ReadAllText(projectpath + "/datastrings.txt").Split(','))
                 {
-                    var name = encoded_data_value.Split(':')[0];
-                    var value = encoded_data_value.Split(':')[1];
-                    StringVariable variable = new()
+                    var splitData = encoded_data_value.Split(':');
+                    if (splitData.Length >= 2)
                     {
-                        Key = name,
-                        Value = value
-                    };
-                    DataStrings.Add(variable);
+                        var name = splitData[0];
+                        var value = splitData[1];
+                        StringVariable variable = new StringVariable
+                        {
+                            Key = name,
+                            Value = value
+                        };
+                        DataStrings.Add(variable);
+                    }
                 }
 
                 foreach (var d in Directory.GetFiles(projectpath + "/images"))
@@ -333,6 +342,7 @@ namespace FNAF_Engine_Reborn_GameData
                     img.Read(null, false, projectpath);
                     ImageBank.Add(img);
                 }
+
                 foreach (var d in Directory.GetFiles(projectpath + "/sounds"))
                 {
                     FileInfo fileInfo = new(d);
@@ -346,12 +356,13 @@ namespace FNAF_Engine_Reborn_GameData
                 {
                     Animation animation = new();
                     animation.Read(null, false, projectpath); //read method not done yet
-                }
-                foreach (var se in Directory.GetDirectories(projectpath + "/statics"))
+                } // not finished
+
+                /*/foreach (var se in Directory.GetDirectories(projectpath + "/statics"))
                 {
                     StaticEffect staticeffect = new();
                     staticeffect.Read(null, false, projectpath); //read method not done yet
-                }
+                }/*/ // not finished
 
                 foreach (var menu in Directory.GetDirectories(projectpath + "/menus"))
                 {
@@ -362,6 +373,7 @@ namespace FNAF_Engine_Reborn_GameData
 
                 Office.Read(null, false, projectpath);
             }
+
             ConcludedReading = true;
         }
     }

@@ -26,7 +26,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
 
         public void Write(ByteWriter Writer, bool binary, string project)
         {
-            if (binary == true)
+            if (binary)
             {
                 Writer.AutoWriteUnicode(Name);
                 Writer.WriteInt8(key);
@@ -59,7 +59,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 }
                 if (BackgroundAudio != null)
                 {
-                    File.WriteAllText(project + "/menus/" + Name + "/audio.txt", project + "/sounds/" + BackgroundAudio.Name);
+                    File.WriteAllText(project + "/menus/" + Name + "/audio.txt", BackgroundAudio.Name);
                 }
                 if (StaticEffect != null)
                 {
@@ -74,7 +74,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         }
         public void Read(ByteReader reader, bool binary, string project)
         {
-            if (binary == true)
+            if (binary)
             {
                 Name = reader.AutoReadUnicode();
                 key = reader.ReadByte();
@@ -120,14 +120,14 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 if (bgaudio != "")
                     BackgroundAudio.Read(null, false, project);
 
-                string sename = File.ReadAllText(path + "/static.txt");
+                /*/string sename = File.ReadAllText(path + "/static.txt");
                 if (sename == "") Console.WriteLine("No static effect for menu");
                 else StaticEffect = new StaticEffect();
                 if (sename != "")
                 {
                     StaticEffect.Temp = sename;
                     StaticEffect.Read(null, false, project);
-                }
+                }/*/
 
                 //TODO: Element reading
             }

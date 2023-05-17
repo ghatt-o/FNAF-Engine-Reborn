@@ -44,7 +44,6 @@ namespace FNAF_Engine_Reborn
                     if (gameStyleOptions.SelectedIndex == 0) //standard game style
                     {
                         FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
-                        menu.Name = "Main";
                         game.Menus.Add(menu);
                     }
                     else if (gameStyleOptions.SelectedIndex == 1) //fnaf game style
@@ -61,8 +60,6 @@ namespace FNAF_Engine_Reborn
 
                         switch (comboBox1.SelectedIndex)
                         {
-                            case 0: //none
-                                break;
                             case 1: //premade assets
                                 premadeAssets();
                                 break;
@@ -117,7 +114,7 @@ namespace FNAF_Engine_Reborn
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to create project! Error: 11 or " + ex);
+                    Logger.Log("Failed to create project! Error: 11 or " + ex);
                 }
                 finally
                 {
