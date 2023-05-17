@@ -84,6 +84,7 @@ namespace FNAF_Engine_Game
                         Elements.TextElement Text = new();
                         double X = text.X;
                         double Y = text.Y;
+                        //sTUPID USE THE ROUND() FUNCTION TODO
                         X *= 2.13333333;
                         Y *= 2.13649852;
                         string xS = X.ToString();
