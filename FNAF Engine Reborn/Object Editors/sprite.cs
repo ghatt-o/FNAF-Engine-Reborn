@@ -53,20 +53,10 @@ namespace FNAF_Engine_Reborn
         }
         public void Intiate()
         {
-            Control control = reborn.Toxic;
-            Control control2 = reborn.CameraInput;
-            Control control3 = reborn.MaskInput;
-            Control control4 = reborn.OfficeEditor_PowerThings;
-            Control control5 = reborn.Lives;
-            Control control6 = reborn.LivesMan;
-            reborn.officePreview.Controls.Clear();
-
-            reborn.officePreview.Controls.Add(control);
-            reborn.officePreview.Controls.Add(control2);
-            reborn.officePreview.Controls.Add(control3);
-            reborn.officePreview.Controls.Add(control4);
-            reborn.officePreview.Controls.Add(control5);
-            reborn.officePreview.Controls.Add(control6);
+            foreach (Control ctrl in reborn.officePreview.Controls)
+            {
+                if (ctrl.Tag == "Sprite") reborn.officePreview.Controls.Remove(ctrl);
+            }
             string[] AllSprites = Directory.GetDirectories(project + "/offices/default/sprites/");
             foreach (string Sprite in AllSprites) // for each sprite found
             {
@@ -105,6 +95,7 @@ namespace FNAF_Engine_Reborn
 
                     PictureBox sprite = new PictureBox
                     {
+                        Tag = "Sprite",
                         Name = NewSprite.Name,
                         MinimumSize = new Size(0, 0),
                         MaximumSize = new Size(581, 342),
