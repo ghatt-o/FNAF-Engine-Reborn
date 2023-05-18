@@ -15,9 +15,9 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
         public byte key = 96;
 
         public string Name { get; set; } = "";
-        public Binaries.Image BackgroundImage { get; set; } = new Binaries.Image();
-        public Binaries.Audio BackgroundAudio { get; set; } = new Binaries.Audio();
-        public StaticEffect StaticEffect { get; set; } = new StaticEffect();
+        public Binaries.Image BackgroundImage { get; set; }
+        public Binaries.Audio BackgroundAudio { get; set; }
+        public StaticEffect StaticEffect { get; set; }
 
         public Script MenuScript { get; set; } = new Script();
 
@@ -31,10 +31,17 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 Writer.AutoWriteUnicode(Name);
                 Writer.WriteInt8(key);
 
-                BackgroundImage.Write(Writer, true, null);
-                BackgroundAudio.Write(Writer, true, null);
+                if (BackgroundAudio == null) Writer.WriteInt8(0);
+                else Writer.WriteInt8(1);
+                if (BackgroundImage == null) Writer.WriteInt8(0);
+                else Writer.WriteInt8(1);
+                if (StaticEffect == null) Writer.WriteInt8(0);
+                else Writer.WriteInt8(1);
 
-                StaticEffect.Write(Writer, true, null);
+                if (BackgroundAudio != null) BackgroundAudio.Write(Writer, true, null);
+                if (BackgroundImage != null) BackgroundImage.Write(Writer, true, null);
+
+                if (StaticEffect != null) StaticEffect.Write(Writer, true, null);
 
                 MenuScript.Write(Writer, true, null);
 
@@ -53,6 +60,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             {
                 Directory.CreateDirectory(project + "/menus/" + Name);
                 File.WriteAllText(project + "/menus/" + Name + "/name.txt", Name);
+                
                 if (BackgroundImage != null)
                 {
                     File.WriteAllText(project + "/menus/" + Name + "/bg.txt", BackgroundImage.Name);
@@ -79,9 +87,11 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 Name = reader.AutoReadUnicode();
                 key = reader.ReadByte();
 
+                var hasaudio = reader.ReadByte();
+                var hasimg = reader.ReadByte();
+                var hasstatic = reader.ReadByte();
                 BackgroundImage.Read(reader, true, null);
                 BackgroundAudio.Read(reader, true, null);
-
                 StaticEffect.Read(reader, true, null);
 
                 MenuScript.Read(reader, true, null);

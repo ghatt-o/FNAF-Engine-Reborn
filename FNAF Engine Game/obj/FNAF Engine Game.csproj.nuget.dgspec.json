@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj": {}
+    "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj": {
+    "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
+        "projectUniqueName": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
         "projectName": "FNAF Engine Game",
-        "projectPath": "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
-        "packagesPath": "C:\\Users\\jacks\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Game\\obj\\",
+        "projectPath": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
+        "packagesPath": "C:\\Users\\55159\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Game\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jacks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\55159\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,16 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jacks\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows7.0",
             "projectReferences": {
-              "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
-                "projectPath": "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj"
+              "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
+                "projectPath": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj"
               }
             }
           }
@@ -68,24 +66,24 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
+    "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj",
+        "projectUniqueName": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj",
         "projectName": "FNAF Engine Reborn GameData",
-        "projectPath": "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj",
-        "packagesPath": "C:\\Users\\jacks\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jacks\\OneDrive\\Documents\\GitHub\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\obj\\",
+        "projectPath": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\FNAF Engine Reborn GameData.csproj",
+        "packagesPath": "C:\\Users\\55159\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Reborn GameData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jacks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\55159\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -94,8 +92,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jacks\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -129,7 +125,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

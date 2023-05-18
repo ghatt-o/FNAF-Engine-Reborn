@@ -55,3 +55,22 @@ C:\Users\jacks\OneDrive\Documents\GitHub\FNAF-Engine-Reborn\FNAF Engine Game\obj
 C:\Users\jacks\OneDrive\Documents\GitHub\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.pdb
 C:\Users\jacks\OneDrive\Documents\GitHub\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.genruntimeconfig.cache
 C:\Users\jacks\OneDrive\Documents\GitHub\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\ref\FNAF Engine Game.dll
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.exe
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.deps.json
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.runtimeconfig.json
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.dll
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Game.pdb
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Reborn GameData.dll
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\bin\Release\net7.0-windows7.0\FNAF Engine Reborn GameData.pdb
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.AssemblyReference.cache
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF_Engine_Game.FNAF_Engine_Game.resources
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF_Engine_Game.Properties.Resources.resources
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.GenerateResource.cache
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.CoreCompileInputs.cache
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.csproj.CopyComplete
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.dll
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\refint\FNAF Engine Game.dll
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.pdb
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\FNAF Engine Game.genruntimeconfig.cache
+C:\Users\55159\source\repos\FNAF-Engine-Reborn\FNAF Engine Game\obj\Release\net7.0-windows7.0\ref\FNAF Engine Game.dll

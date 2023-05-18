@@ -6,8 +6,8 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 {
     public class OfficeState
     {
-        public string Name { get; set; } //lets null these out so we can identify errors easily
-        public Image Image { get; set; }
+        public string Name { get; set; } = "Default";
+        public Image Image { get; set; } = new Image();
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
