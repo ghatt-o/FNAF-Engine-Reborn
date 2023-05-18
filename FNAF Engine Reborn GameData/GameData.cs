@@ -1,4 +1,4 @@
-﻿using FNAF_Engine_GameData.BinaryData.Binaries;
+using FNAF_Engine_GameData.BinaryData.Binaries;
 using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_GameData.BinaryData.Options;
 using FNAF_Engine_Reborn_GameData.BinaryData;
@@ -33,8 +33,8 @@ namespace FNAF_Engine_Reborn_GameData
 
         public List<Variable> DataValues = new List<Variable>();
         public List<StringVariable> DataStrings = new List<StringVariable>();
-        public List<Variable> Variables = new List<Variable>(); //unused for now
-        public List<StringVariable> StringVariables = new List<StringVariable>(); //unused aswell
+        public List<Variable> Variables = new List<Variable>();
+        public List<StringVariable> StringVariables = new List<StringVariable>();
 
         public List<Image> ImageBank = new List<Image>(); //general image bank
         public List<Audio> AudioBank = new List<Audio>(); //general audio bank
@@ -44,7 +44,7 @@ namespace FNAF_Engine_Reborn_GameData
         public List<StaticEffect> StaticEffects = new List<StaticEffect>();
         //game
         public List<FNAF_Engine_Menu> Menus = new List<FNAF_Engine_Menu>();
-        public Office Office = new Office();
+        public Office Office = new Office(); //This
         public List<Camera> Cameras = new List<Camera>();
         public List<Animatronic> Animatronics = new List<Animatronic>();
         public List<Script> Scripts = new List<Script>();
@@ -129,11 +129,9 @@ namespace FNAF_Engine_Reborn_GameData
                 }
                 #endregion
 
-                Writer.WriteAscii("OFFC");
+                Writer.WriteAscii("OFFC"); //header
 
                 Office.Write(Writer, true, null);
-
-                //probably todo the rest of things
 
                 Writer.Flush();
                 Writer.Close();
@@ -281,10 +279,7 @@ namespace FNAF_Engine_Reborn_GameData
                     Menus.Add(menu);
                 }
 
-                if (reader.ReadAscii(4) != "OFFC")
-                {
-                    reader.ReadAscii(4);
-                }
+                Debug.Assert(reader.ReadAscii(4) == "OFFC")
 
                 Office.Read(reader, true, null);
             }
@@ -362,7 +357,7 @@ namespace FNAF_Engine_Reborn_GameData
                 {
                     StaticEffect staticeffect = new();
                     staticeffect.Read(null, false, projectpath); //read method not done yet
-                }/*/ // not finished
+                }
 
                 foreach (var menu in Directory.GetDirectories(projectpath + "/menus"))
                 {
@@ -396,4 +391,5 @@ namespace FNAF_Engine_Reborn_GameData
             return Encrypt(input, key);
         }
     }
+    //TODO: compression and encryption
 }
