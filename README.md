@@ -11,3 +11,10 @@ Open up the solution file in FNAF Engine Reborn directory and build it! (CTRL + 
 # Libraries used
 
 - 
+
+# TODO
+
+- Fix the editors
+- Rename elements properly
+- Rewrite the script editor
+- Finish GameData Office Port
