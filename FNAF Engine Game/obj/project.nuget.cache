@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+jPdXYGV1D2mk5khPjUeSy15COUtEWYmlD4GSf24CI9sJrFvklfT+YPUOvSv94ilc+PnoS1qkfwATgtyfZ61sA==",
+  "dgSpecHash": "jytqhBXK9dF8uxhFpJhpgr3GkfZbP36yuJZkJmT5TdAkJi7JGqN8JW8Y+1+f1C0kJq8So1ZTJCv5QXv8SYb9NQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\55159\\source\\repos\\FNAF-Engine-Reborn\\FNAF Engine Game\\FNAF Engine Game.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\55159\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\55159\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
