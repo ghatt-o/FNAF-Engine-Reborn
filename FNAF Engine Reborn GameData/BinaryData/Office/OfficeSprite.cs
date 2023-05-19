@@ -28,7 +28,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             {
                 Directory.CreateDirectory(projectpath + "/offices/default/sprites");
                 Directory.CreateDirectory(projectpath + "/offices/default/sprites/" + Name);
-                File.WriteAllText(project + "/offices/default/sprites/" + Name + "/data.txt", SortData());
+                File.WriteAllText(projectpath + "/offices/default/sprites/" + Name + "/data.txt", SortData());
             }
         }
 
