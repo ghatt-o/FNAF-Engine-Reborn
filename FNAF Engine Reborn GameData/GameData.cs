@@ -11,6 +11,7 @@ using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Values;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData
@@ -279,7 +280,7 @@ namespace FNAF_Engine_Reborn_GameData
                     Menus.Add(menu);
                 }
 
-                Debug.Assert(reader.ReadAscii(4) == "OFFC")
+                Debug.Assert(reader.ReadAscii(4) == "OFFC");
 
                 Office.Read(reader, true, null);
             }
@@ -353,7 +354,7 @@ namespace FNAF_Engine_Reborn_GameData
                     animation.Read(null, false, projectpath); //read method not done yet
                 } // not finished
 
-                /*/foreach (var se in Directory.GetDirectories(projectpath + "/statics"))
+                foreach (var se in Directory.GetDirectories(projectpath + "/statics"))
                 {
                     StaticEffect staticeffect = new();
                     staticeffect.Read(null, false, projectpath); //read method not done yet

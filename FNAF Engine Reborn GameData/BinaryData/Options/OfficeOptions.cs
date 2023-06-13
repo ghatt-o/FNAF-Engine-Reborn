@@ -1,5 +1,6 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using FNAF_Engine_Reborn_GameData.BinaryData.Office;
 using System;
 using System.IO;
 
@@ -7,21 +8,23 @@ namespace FNAF_Engine_GameData.BinaryData.Options
 {
     public class OfficeOptions : BinaryClass
     {
-        public bool PowerEnabled { get; set; } = false;
-        public bool ToxicEnabled { get; set; } = false;
-        public bool MaskEnabled { get; set; } = false;
-        public bool CameraEnabled { get; set; } = false;
-        public bool FlashlightEnabled { get; set; } = false;
-        public bool PanoramaEnabled { get; set; } = false;
-        public bool PerspectiveEnabled { get; set; } = false;
-        public bool UCNStyleEnabled { get; set; } = false;
+        public bool PowerEnabled { get; set; }
+        public bool ToxicEnabled { get; set; }
+        public bool MaskEnabled { get; set; }
+        public bool CameraEnabled { get; set; }
+        public bool FlashlightEnabled { get; set; }
+        public bool PanoramaEnabled { get; set; }
+        public bool PerspectiveEnabled { get; set; }
+        public bool UCNStyleEnabled { get; set; }
         public string AnimatronicToKill { get; set; } = "";
         public int Hours { get; set; } = 6;
+        public int PowerPercentage { get; set; } = 100;
 
         public void Read(ByteReader reader, bool binary, string project)
         {
             if (binary == true)
             {
+                //holy shit this code is outdated
                 PowerEnabled = reader.ReadBoolean();
                 ToxicEnabled = reader.ReadBoolean();
                 MaskEnabled = reader.ReadBoolean();
@@ -30,7 +33,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                 PanoramaEnabled = reader.ReadBoolean();
                 PerspectiveEnabled = reader.ReadBoolean();
                 UCNStyleEnabled = reader.ReadBoolean();
-                AnimatronicToKill = reader.ReadString();
+                AnimatronicToKill = reader.AutoReadUnicode();
                 Hours = reader.ReadInt32();
             }
             else
@@ -86,7 +89,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                 Writer.Write(PanoramaEnabled);
                 Writer.Write(PerspectiveEnabled);
                 Writer.Write(UCNStyleEnabled);
-                Writer.Write(AnimatronicToKill);
+                Writer.AutoWriteUnicode(AnimatronicToKill);
                 Writer.Write(Hours);
             }
             else
@@ -104,7 +107,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                     else if (prop.Name == "UCNStyleEnabled") FileAppend(project + "/offices/default/office.txt", "ucnstyle=" + UCNStyleEnabled + ",");
                     else if (prop.Name == "AnimatronicToKill") FileAppend(project + "/offices/default/office.txt", "animatronic=" + AnimatronicToKill + ",");
                     else if (prop.Name == "Hours") FileAppend(project + "/offices/default/office.txt", "hours=" + Hours + ",");
-                    else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'! (At line 109, Office Settings Read()!)");
+                    else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'!");
                 }
                 void FileAppend(string path, string contents)
                 {

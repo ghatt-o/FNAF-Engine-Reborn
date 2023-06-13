@@ -9,7 +9,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
     {
         public string Name { get; set; }
         public Image Image { get; set; }
-        public string Layer { get; set; }
+        public int Layer { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
         public bool Deleted { get; set; } //Also referred to as "args".
@@ -22,7 +22,12 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
         {
             if (binary == true)
             {
-                //Todo
+                Writer.AutoWriteUnicode(Name);
+                Image.Write(Writer, true, null);
+                Writer.WriteInt32(Layer);
+                Writer.WriteInt32(X);
+                Writer.WriteInt32(Y);
+                Writer.WriteBool(Deleted);
             }
             else
             {
@@ -37,7 +42,15 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             Name = null;
             if (binary == true)
             {
-                //Todo
+                Name = reader.AutoReadUnicode();
+                Image.Read(reader, true, null);
+                Layer = reader.ReadInt32();
+                X = reader.ReadInt32();
+                Y = reader.ReadInt32();
+                var int8bool = reader.ReadInt8();
+                if (int8bool == 0) Deleted = false;
+                else Deleted = true;
+                //this should work
             }
             else
             {
@@ -56,7 +69,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
                     Image.Size = Convert.ToInt64(img.Size);
                     Image.Data = File.ReadAllBytes(ImagePath);
                     Image.Name = Path.GetFileNameWithoutExtension(ImagePath);
-                    Layer = SpriteProperties[5];
+                    Layer = Convert.ToInt32(SpriteProperties[5]);
                     X = Convert.ToInt32(SpriteProperties[7]);
                     Y = Convert.ToInt32(SpriteProperties[9]);
                 }

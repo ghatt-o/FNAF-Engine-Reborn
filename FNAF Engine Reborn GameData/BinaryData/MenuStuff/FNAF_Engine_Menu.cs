@@ -60,7 +60,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
             {
                 Directory.CreateDirectory(project + "/menus/" + Name);
                 File.WriteAllText(project + "/menus/" + Name + "/name.txt", Name);
-                
+
                 if (BackgroundImage != null)
                 {
                     File.WriteAllText(project + "/menus/" + Name + "/bg.txt", BackgroundImage.Name);

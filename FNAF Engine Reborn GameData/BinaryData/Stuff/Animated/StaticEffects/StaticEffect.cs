@@ -48,7 +48,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
                 //temp is file path
                 Directory.CreateDirectory(Temp);
                 File.WriteAllText(Temp + "/name.txt", Name);
-                
+
                 foreach (var frame in Frames)
                 {
                     frame.Write(null, false, Temp);

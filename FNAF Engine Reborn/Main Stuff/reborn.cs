@@ -1,10 +1,11 @@
 ﻿using DiscordRpcDemo;
+using FNAF_Engine_GameData.BinaryData;
 using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_Reborn.bin;
 using FNAF_Engine_Reborn.Main_Stuff;
-using FNAF_Engine_Reborn.Object_Editors;
 using FNAF_Engine_Reborn_GameData;
 using FNAF_Engine_Reborn_GameData.BinaryData.Office;
+using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects;
 using System;
 using System.Drawing;
@@ -62,6 +63,9 @@ namespace FNAF_Engine_Reborn
         private async void reborn_Load(object sender, EventArgs e)
         {
             DoubleBuffered = true; //optimizates it, maybe?
+
+            this.Size = new Size(960, 540);
+            this.ClientSize = new Size(960, 540);
 
             if (Version.Length > 8)
             {
@@ -885,7 +889,7 @@ namespace FNAF_Engine_Reborn
 
         private void button113_Click_1(object sender, EventArgs e)
         {
-            Logger.Log("Not available on this limited demo! (0.2.0-beta.1)", "Limits reached");
+            //Logger.Log("Not available on this limited demo! (0.2.0-beta.1)", "Limits reached");
         }
 
         private void exception(string ex)
@@ -1061,7 +1065,7 @@ namespace FNAF_Engine_Reborn
                     {
                         string filePath = Path.GetFullPath(p.FileName);
                         string fileName = p.SafeFileName;
-                        Import_Files.CreateSprite(filePath, fileName, projecto);
+                        Object_Editors.Import_Files.CreateSprite(filePath, fileName, projecto);
                     }
                     catch (Exception ex)
                     {
@@ -1146,7 +1150,7 @@ namespace FNAF_Engine_Reborn
                         {
                             string filePath = Path.GetFullPath(p.FileName);
                             string png = p.SafeFileName;
-                            Import_Files.CreateSprite(filePath, png, projecto);
+                            Object_Editors.Import_Files.CreateSprite(filePath, png, projecto);
                             File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", png);
                             officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
                         }
@@ -1171,6 +1175,12 @@ namespace FNAF_Engine_Reborn
                     {
                         officePreview.BackgroundImageLayout = ImageLayout.Stretch;
                         officePreview.BackgroundImage = img;
+                        /*
+                        essentially if the image is smaller
+                        than what it should be,
+                        it stretches to the whole office.
+                        if the resolution is above 1280px wide it wont stretch
+                        */
                     }
                     else
                     {
@@ -1193,80 +1203,157 @@ namespace FNAF_Engine_Reborn
             }
         }
 
-        private async void officeEditorPanel_VisibleChanged(object sender, EventArgs e)
+        private void RefreshOfficeSprites()
         {
-            if (_0_2C == true)
+            foreach (OfficeSprite sprite in game.Office.Sprites)
             {
-                Sprite amagos = new Sprite(this)
+                foreach (Control ctrl in officePreview.Controls)
                 {
-                    project = projecto
-                };
-                amagos.Intiate();
-                CameraAnim_ComboBox.Items.Clear();
-                CameraAnim_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
-                MaskAnim_ComboBox.Items.Clear();
-                MaskAnim_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
-                PowerOutAnim_ComboBox.Items.Clear();
-                PowerOutAnim_ComboBox.Items.AddRange(Directory.GetDirectories(projecto + "/animations/"));
-                comboBox14.Items.Clear();
-                comboBox14.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
-                comboBox17.Items.Clear();
-                comboBox17.Items.AddRange(Directory.GetDirectories(projecto + "/offices/default/office_states/"));
-                comboBox14.Items.Clear();
-                comboBox14.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
-                string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                string[] options = optionstxt.Split(',');
-                if (File.Exists(projecto + "/offices/default/office.txt"))
-                {
-                    checkBox16.Checked = options[0] == "power=true";
-                    OfficeEditor_PowerThings.Visible = options[0] == "power=true";
-                    checkBox12.Checked = options[1] == "toxic=true";
-                    Toxic.Visible = options[1] == "toxic=true";
-                    checkBox11.Checked = options[2] == "mask=true";
-                    MaskInput.Visible = options[2] == "mask=true";
-                    checkBox13.Checked = options[3] == "camera=true";
-                    CameraInput.Visible = options[3] == "camera=true";
-                    checkBox14.Checked = options[4] == "flashlight=true";
-                    checkBox15.Checked = options[5] == "panorama=true";
-                    //TODO PANORAMA
-                    checkBox24.Checked = options[6] == "perspective=true";
-                    if (checkBox24.Checked == false)
+                    if (ctrl.Tag == "Sprite") officePreview.Controls.Remove(ctrl);
+                    foreach (var Sprite in game.Office.Sprites)
                     {
-                        officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                    }
-                    else
-                    {
-                        officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-                    }
-                    checkBox17.Checked = options[7] == "ucnstyle=true";
-                    gamehourstextbox.Text = options[9].Split('=')[1];
-                    if (options[8] == "animatronic=")
-                    {
+                        if (Sprite.Deleted != true)
+                        {
+                            PictureBox sprite = new PictureBox
+                            {
+                                Tag = "Sprite",
+                                Name = Sprite.Name,
+                                MinimumSize = new Size(0, 0),
+                                MaximumSize = new Size(581, 342),
+                                BackgroundImageLayout = ImageLayout.Stretch,
+                                Size = img.Size,
+                                BackColor = Color.Transparent
+                            };
+                            Console.WriteLine();
+                            sprite.BackgroundImage = System.Drawing.Image.FromFile(projecto + "/images/" + Sprite.Name);
+                            Console.WriteLine();
+                            sprite.Location = new Point(PicBoxX, PicBoxY);
+                            sprite.Move += Sprite_Move;
+                            sprite.Draggable(true);
+                            sprite.MouseEnter += Sprite_MouseEnter;
+                            sprite.MouseLeave += Sprite_MouseLeave;
+                            sprite.MouseClick += Sprite_MouseClick;
+                            sprite.MouseDoubleClick += Sprite_Delete;
+                            void Sprite_MouseLeave(object sender, EventArgs e)
+                            {
+                                sprite.BorderStyle = BorderStyle.None;
+                            }
+                            void Sprite_MouseClick(object sender, MouseEventArgs e)
+                            {
+                                if (e.Button == MouseButtons.Middle)
+                                {
+                                    if (NewSprite.Layer == "1")
+                                    {
+                                        Sprite.Layer = 0;
+                                        sprite.SendToBack();
+                                    }
+                                    else
+                                    {
+                                        Sprite.Layer = 1;
+                                        sprite.BringToFront();
+                                    }
+                                }
+                            }
+                            void Sprite_MouseEnter(object sender, EventArgs e)
+                            {
+                                ToolTip tooltip = new ToolTip();
+                                tooltip.SetToolTip(sprite, "Left Click to drag, Middle Click to layer, Double Right Click to delete");
 
+                                sprite.BorderStyle = BorderStyle.FixedSingle;
+                            }
+                            void Sprite_Delete(object sender, MouseEventArgs e)
+                            {
+                                if (e.Button == MouseButtons.Right)
+                                {
+                                    Sprite.Deleted = true;
+                                    sprite.Visible = false;
+                                }
+                            }
+                            void Sprite_Move(object sender, EventArgs e)
+                            {
+                                sprite.BorderStyle = BorderStyle.Fixed3D;
+                                NewSprite.X = Convert.ToString(sprite.Location.X);
+                                NewSprite.Y = Convert.ToString(sprite.Location.Y);
+                            }
+                            if (SpritePropertiesText.Contains("[ptp]"))
+                            {
+                                sprite.Visible = false;
+                            }
+                            officePreview.Controls.Add(sprite);
+                            if (NewSprite.Layer == "1")
+                            {
+                                sprite.BringToFront();
+                                //there were 2 more bringtofronts, i hope removing them does not break anything
+                            }
+                            else
+                            {
+                                sprite.SendToBack();
+                                //there were 2 more sendtobacks, i hope removing them does not break anything
+                            }
+                        }
                     }
-                    else
-                    {
-                        _ = comboBox14.Controls.IndexOfKey(options[9]);
-                    }
-                }
-                textBox7.Text = File.ReadAllText(projecto + "/offices/default/power_val.txt");
-                try
-                {
-                    //GetPreviewSprites(p.SafeFileName);
-                }
-                catch (Exception)
-                {
-
-                }
-                while (true)
-                {
-                    await Task.Delay(1);
-                    OfficeEditor_PowerPercentage.Text = File.ReadAllText(projecto + "/offices/default/power_val.txt") + "%";
                 }
             }
         }
 
-        private void button33_Click(object sender, EventArgs e)
+        private async void officeEditorPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            if (_0_2C == true)
+            {
+                RefreshOfficeSprites();
+                //pls work
+                CameraAnim_ComboBox.Items.Clear();
+                foreach (Animation anim in game.Animations) CameraAnim_ComboBox.Items.Add(anim.Name);
+                MaskAnim_ComboBox.Items.Clear();
+                foreach (Animation anim in game.Animations) MaskAnim_ComboBox.Items.Add(anim.Name);
+                PowerOutAnim_ComboBox.Items.Clear();
+                foreach (Animation anim in game.Animations) PowerOutAnim_ComboBox.Items.Add(anim.Name);
+                comboBox14.Items.Clear();
+                foreach (Animatronic anim in game.Animatronics) comboBox14.Items.Add(anim.Name);
+                comboBox17.Items.Clear();
+                foreach (OfficeState state in game.Office.States) comboBox17.Items.Add(state.Name);
+                comboBox14.Items.Clear();
+                foreach (Animatronic anim in game.Animatronics) comboBox14.Items.Add(anim.Name);
+
+                checkBox16.Checked = game.Office.Settings.PowerEnabled;
+                OfficeEditor_PowerThings.Visible = game.Office.Settings.PowerEnabled;
+                checkBox12.Checked = game.Office.Settings.ToxicEnabled;
+                Toxic.Visible = game.Office.Settings.ToxicEnabled;
+                checkBox11.Checked = game.Office.Settings.MaskEnabled;
+                MaskInput.Visible = game.Office.Settings.MaskEnabled;
+                checkBox13.Checked = game.Office.Settings.CameraEnabled;
+                CameraInput.Visible = game.Office.Settings.CameraEnabled;
+                checkBox14.Checked = game.Office.Settings.FlashlightEnabled;
+                checkBox15.Checked = game.Office.Settings.FlashlightEnabled;
+                //TODO PANORAMA
+                //TODO PANORAMA
+                checkBox24.Checked = game.Office.Settings.PerspectiveEnabled;
+                if (checkBox24.Checked == false)
+                {
+                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                }
+                else
+                {
+                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                }
+                checkBox17.Checked = game.Office.Settings.UCNStyleEnabled;
+                gamehourstextbox.Text = Convert.ToString(game.Office.Settings.Hours);
+                if (game.Office.Settings.AnimatronicToKill != "")
+                {
+                    _ = comboBox14.Controls.IndexOfKey(game.Office.Settings.AnimatronicToKill);
+                }
+
+                textBox7.Text = game.Office.Settings.AnimatronicToKill;
+                //GetPreviewSprites(p.SafeFileName);
+                while (true)
+                {
+                    await Task.Delay(1);
+                    OfficeEditor_PowerPercentage.Text = Convert.ToString(game.Office.Settings.PowerPercentage);
+                }
+            }
+        }
+
+        private void button33_Click(object sender, EventArgs e) //add office sprite
         {
             if (_0_2C == true)
             {
@@ -1277,12 +1364,19 @@ namespace FNAF_Engine_Reborn
                 _ = p.ShowDialog();
                 if (p.ShowDialog() == DialogResult.OK)
                 {
-                    Sprite s = new Sprite(this)
-                    {
-                        project = projecto
-                    };
-                    s.Add(p.SafeFileName, p.FileName);
-                    s.Intiate();
+                    OfficeSprite newsprite = new OfficeSprite();
+                    newsprite.Name = p.SafeFileName;
+
+                    FNAF_Engine_GameData.BinaryData.Binaries.Image spriteimg = new();
+                    spriteimg.Name = p.SafeFileName;
+                    spriteimg.Size = Convert.ToInt64(System.Drawing.Image.FromFile(p.FileName).Size);
+                    spriteimg.Data = File.ReadAllBytes(p.FileName);
+
+                    newsprite.Image = spriteimg;
+
+                    game.Office.Sprites.Add(newsprite);
+
+                    RefreshOfficeSprites();
                 }
             }
         }
@@ -1639,7 +1733,7 @@ namespace FNAF_Engine_Reborn
                         this.presence.details = "Menu Editor, Editing Menu: " + File.ReadAllText(curMenuTag + "/name.txt");
                 if (DiscordRPCEnabled) DiscordRpc.UpdatePresence(ref this.presence);
                 Menu_Name_MenuCodeEditor_InfoLBL.Text = curMenuTag;
-                Menu_Editor menu_Editor = new Menu_Editor(this);
+                Object_Editors.Menu_Editor menu_Editor = new Object_Editors.Menu_Editor(this);
                 MenuPreview.Controls.Clear();
                 Menu_Elements_Create.Hide();
                 Menu_Elements_Create.Show();
@@ -1769,7 +1863,7 @@ namespace FNAF_Engine_Reborn
 
         private void create_text_menuEditorBTN_Click(object sender, EventArgs e)
         {
-            Menu_Editor menu_Editor = new Menu_Editor(this);
+            Object_Editors.Menu_Editor menu_Editor = new Object_Editors.Menu_Editor(this);
             if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
             {
                 _ = MessageBox.Show("Unable to create new text element: Error 1");
@@ -1812,7 +1906,7 @@ namespace FNAF_Engine_Reborn
                 if (p.ShowDialog() == DialogResult.OK)
                 {
                     string FileName = p.SafeFileName;
-                    Import_Files.CreateSprite(p.FileName, FileName, projecto);
+                    Object_Editors.Import_Files.CreateSprite(p.FileName, FileName, projecto);
                     File.WriteAllText(curMenuTag + "/bg.txt", FileName);
                     MenuPreview.BackgroundImage = Image.FromFile(projecto + "/images/" + File.ReadAllText(curMenuTag + "/bg.txt"));
                 }
@@ -2032,7 +2126,7 @@ namespace FNAF_Engine_Reborn
             if (icon.ShowDialog() == DialogResult.OK)
             {
                 string filePath = icon.FileName;
-                Menu_Editor menu_Editor = new Menu_Editor(this);
+                Object_Editors.Menu_Editor menu_Editor = new Object_Editors.Menu_Editor(this);
                 if (Directory.Exists(projecto + "/menus/" + text_ID_MenuEditor_Create))
                 {
                     Logger.Log("Unable to create new image element", "Error 1");
@@ -2069,7 +2163,7 @@ namespace FNAF_Engine_Reborn
                     {
                         string filePath = Path.GetFullPath(p.FileName);
                         string fileName = p.SafeFileName;
-                        Import_Files.CreateAudio(filePath, projecto);
+                        Object_Editors.Import_Files.CreateAudio(filePath, projecto);
                         Menu_Elements_Create.Show();
                     }
                     catch (Exception ex)
@@ -2567,6 +2661,30 @@ namespace FNAF_Engine_Reborn
         private void createProjectBTN_MouseCaptureChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void reborn_Resize(object sender, EventArgs e)
+        {
+            ReadjustSize();
+        }
+
+        private void ReadjustSize()
+        {
+            float ratioWidth = (float)Width / this.Width;
+            float ratioHeight = (float)Height / this.Height;
+
+            foreach (Control control in Controls)
+            {
+                control.Left = (int)(control.Left * ratioWidth);
+                control.Top = (int)(control.Top * ratioHeight);
+                control.Width = (int)(control.Width * ratioWidth);
+                control.Height = (int)(control.Height * ratioHeight);
+            }
+            Refresh();
+        }
+        private void controlresize(Control control)
+        {
+            if (control is Panel) control.Anchor = AnchorStyles.Left | AnchorStyles.Right;
         }
     }
 }
