@@ -1,5 +1,4 @@
 ﻿using DiscordRpcDemo;
-using FNAF_Engine_GameData.BinaryData;
 using FNAF_Engine_GameData.BinaryData.MenuStuff;
 using FNAF_Engine_Reborn.bin;
 using FNAF_Engine_Reborn.Main_Stuff;
@@ -21,8 +20,8 @@ namespace FNAF_Engine_Reborn
         public GameData game;
 
         public bool showProject = true;
-        public string Version = "0.1.0-beta.1";
-        public string Build_Version = "release1";
+        public string Version = "0.2.0 FNAF World Demo";
+        public string Build_Version = "release1fnafworld";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -64,12 +63,12 @@ namespace FNAF_Engine_Reborn
         {
             DoubleBuffered = true; //optimizates it, maybe?
 
-            this.Size = new Size(960, 540);
-            this.ClientSize = new Size(960, 540);
+            //this.Size = new Size(960, 540);
+            //this.ClientSize = new Size(960, 540);
 
             if (Version.Length > 8)
             {
-                label93.Location = new Point(850, 1); //modifies the version label's position to fit the text
+                //label93.Location = new Point(850, 1); //modifies the version label's position to fit the text
             }
 
             if (game != null)
@@ -88,8 +87,8 @@ namespace FNAF_Engine_Reborn
             //Random texts to cheer people up :)
             this.Text = "FNAF Engine: Reborn";
             Random random = new Random();
-            string[] randomStrings = { "FANF Egnien: Rebonr", "2023 already?", "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "According to Youtube's statistics, only a small percentage of people who watch my videos are actually subscribed,", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love God?", "Check out FNAF Maker!", "Who's Joe?", "Still beta!", "Yeah!", "Snow!" };
-            label84.Text = randomStrings[random.Next(1, 40) - 1];
+            string[] randomStrings = { "FANF Egnien: Rebonr", "FNAF Engine: Reborn!", "2023 already?", "Good Morning!", "You're Amazing!", "Reborn!", "Do you like cheese?", "Better late than never!", "Made by lily!", "I'm John!", "What's your name?", "Funny!", "Hmm hold on I'm thinking...", "Do you read these?", "Tons of effort!", "There's no limit!", "Was that an jojo reference?", "FE Was a blessing.", "How are you?", "Beatiful day outside!", "Feb 27 is an special day!", "Wow!", "Pigs :)", "69", "420", "Jokes!", "April Fools!", "Perhaps.", "According to Youtube's statistics, only a small percentage of people who watch my videos are actually subscribed,", "I won!", "FNF Engine?", "Wait what?", "For real!?", "For real?", "Did you do your homework yet?", "Do you love God?", "Check out FNAF Maker!", "Who's Joe?", "Still beta!", "Yeah!", "Snow!" };
+            label84.Text = randomStrings[random.Next(1, 41) - 1];
 
             if (DiscordRPCEnabled)
             {
@@ -1205,91 +1204,89 @@ namespace FNAF_Engine_Reborn
 
         private void RefreshOfficeSprites()
         {
-            foreach (OfficeSprite sprite in game.Office.Sprites)
+            foreach (Control ctrl in officePreview.Controls)
             {
-                foreach (Control ctrl in officePreview.Controls)
+                if (ctrl.Tag == "Sprite") officePreview.Controls.Remove(ctrl);
+                foreach (var Sprite in game.Office.Sprites)
                 {
-                    if (ctrl.Tag == "Sprite") officePreview.Controls.Remove(ctrl);
-                    foreach (var Sprite in game.Office.Sprites)
+                    if (Sprite.Deleted != true)
                     {
-                        if (Sprite.Deleted != true)
+                        var PicBoxImg = Image.FromFile(projecto + "/images/" + Sprite.Image.Name);
+                        PictureBox sprite = new PictureBox
                         {
-                            PictureBox sprite = new PictureBox
+                            Tag = "Sprite",
+                            Name = Sprite.Name,
+                            MinimumSize = new Size(0, 0),
+                            MaximumSize = new Size(357, 212),
+                            BackgroundImageLayout = ImageLayout.Stretch,
+                            Size = new Size(Convert.ToInt32(PicBoxImg.Width / 3.58543418), Convert.ToInt32(PicBoxImg.Height / 3.58543418)),
+                            BackColor = Color.Transparent
+                        };
+                        Console.WriteLine();
+                        sprite.BackgroundImage = System.Drawing.Image.FromFile(projecto + "/images/" + Sprite.Name);
+                        Console.WriteLine();
+                        sprite.Location = new Point(Sprite.X, Sprite.Y);
+                        sprite.Move += Sprite_Move;
+                        sprite.Draggable(true);
+                        sprite.MouseEnter += Sprite_MouseEnter;
+                        sprite.MouseLeave += Sprite_MouseLeave;
+                        sprite.MouseClick += Sprite_MouseClick;
+                        sprite.MouseDoubleClick += Sprite_Delete;
+                        void Sprite_MouseLeave(object sender, EventArgs e)
+                        {
+                            sprite.BorderStyle = BorderStyle.None;
+                        }
+                        void Sprite_MouseClick(object sender, MouseEventArgs e)
+                        {
+                            if (e.Button == MouseButtons.Middle)
                             {
-                                Tag = "Sprite",
-                                Name = Sprite.Name,
-                                MinimumSize = new Size(0, 0),
-                                MaximumSize = new Size(581, 342),
-                                BackgroundImageLayout = ImageLayout.Stretch,
-                                Size = img.Size,
-                                BackColor = Color.Transparent
-                            };
-                            Console.WriteLine();
-                            sprite.BackgroundImage = System.Drawing.Image.FromFile(projecto + "/images/" + Sprite.Name);
-                            Console.WriteLine();
-                            sprite.Location = new Point(PicBoxX, PicBoxY);
-                            sprite.Move += Sprite_Move;
-                            sprite.Draggable(true);
-                            sprite.MouseEnter += Sprite_MouseEnter;
-                            sprite.MouseLeave += Sprite_MouseLeave;
-                            sprite.MouseClick += Sprite_MouseClick;
-                            sprite.MouseDoubleClick += Sprite_Delete;
-                            void Sprite_MouseLeave(object sender, EventArgs e)
-                            {
-                                sprite.BorderStyle = BorderStyle.None;
-                            }
-                            void Sprite_MouseClick(object sender, MouseEventArgs e)
-                            {
-                                if (e.Button == MouseButtons.Middle)
+                                if (Sprite.Layer == 1)
                                 {
-                                    if (NewSprite.Layer == "1")
-                                    {
-                                        Sprite.Layer = 0;
-                                        sprite.SendToBack();
-                                    }
-                                    else
-                                    {
-                                        Sprite.Layer = 1;
-                                        sprite.BringToFront();
-                                    }
+                                    Sprite.Layer = 0;
+                                    sprite.SendToBack();
+                                }
+                                else
+                                {
+                                    Sprite.Layer = 1;
+                                    sprite.BringToFront();
                                 }
                             }
-                            void Sprite_MouseEnter(object sender, EventArgs e)
-                            {
-                                ToolTip tooltip = new ToolTip();
-                                tooltip.SetToolTip(sprite, "Left Click to drag, Middle Click to layer, Double Right Click to delete");
+                        }
+                        void Sprite_MouseEnter(object sender, EventArgs e)
+                        {
+                            ToolTip tooltip = new ToolTip();
+                            tooltip.SetToolTip(sprite, "Left Click to drag, Middle Click to layer, Double Right Click to delete");
 
-                                sprite.BorderStyle = BorderStyle.FixedSingle;
-                            }
-                            void Sprite_Delete(object sender, MouseEventArgs e)
+                            sprite.BorderStyle = BorderStyle.FixedSingle;
+                        }
+                        void Sprite_Delete(object sender, MouseEventArgs e)
+                        {
+                            if (e.Button == MouseButtons.Right)
                             {
-                                if (e.Button == MouseButtons.Right)
-                                {
-                                    Sprite.Deleted = true;
-                                    sprite.Visible = false;
-                                }
-                            }
-                            void Sprite_Move(object sender, EventArgs e)
-                            {
-                                sprite.BorderStyle = BorderStyle.Fixed3D;
-                                NewSprite.X = Convert.ToString(sprite.Location.X);
-                                NewSprite.Y = Convert.ToString(sprite.Location.Y);
-                            }
-                            if (SpritePropertiesText.Contains("[ptp]"))
-                            {
+                                Sprite.Deleted = true;
                                 sprite.Visible = false;
                             }
-                            officePreview.Controls.Add(sprite);
-                            if (NewSprite.Layer == "1")
-                            {
-                                sprite.BringToFront();
-                                //there were 2 more bringtofronts, i hope removing them does not break anything
-                            }
-                            else
-                            {
-                                sprite.SendToBack();
-                                //there were 2 more sendtobacks, i hope removing them does not break anything
-                            }
+                        }
+                        void Sprite_Move(object sender, EventArgs e)
+                        {
+                            sprite.BorderStyle = BorderStyle.Fixed3D;
+                            Sprite.X = (sprite.Location.X);
+                            Sprite.Y = (sprite.Location.Y);
+                        }
+                        if (Sprite.Deleted == true)
+                        {
+                            sprite.Visible = false;
+                        }
+                        officePreview.Controls.Add(sprite);
+                        if (Sprite.Layer == 1)
+                        {
+                            sprite.BringToFront();
+                            //there were 2 more bringtofronts, i hope removing them does not break anything
+                        }
+                        else
+                        {
+                            sprite.SendToBack();
+                            //there were 2 more sendtobacks, i hope removing them does not break anything
                         }
                     }
                 }
@@ -1375,6 +1372,8 @@ namespace FNAF_Engine_Reborn
                     newsprite.Image = spriteimg;
 
                     game.Office.Sprites.Add(newsprite);
+
+                    game.Write()
 
                     RefreshOfficeSprites();
                 }
@@ -2177,14 +2176,7 @@ namespace FNAF_Engine_Reborn
 
         private void Menu_Elements_Create_VisibleChanged(object sender, EventArgs e)
         {
-            var audios = Directory.GetFiles(projecto + "/sounds/");
-            string fileName;
-            foreach (string audio in audios)
-            {
-                FileInfo fileInfo = new FileInfo(audio);
-                fileName = fileInfo.Name;
-                BackgroundAudio_MenuEditor.Items.Add(fileName);
-            }
+            foreach (var sound in game.AudioBank) BackgroundAudio_MenuEditor.Items.Add(sound.Name);
         }
 
         private void BackgroundAudio_MenuEditor_SelectedIndexChanged(object sender, EventArgs e)
@@ -2410,7 +2402,7 @@ namespace FNAF_Engine_Reborn
 
         private void AlternatePath_AnimEditor_Click(object sender, EventArgs e)
         {
-            ThrowNotImplementedError("Alternate Path");
+            
         }
 
         private void StateIcon_AnimEditor_Click(object sender, EventArgs e)
@@ -2670,7 +2662,7 @@ namespace FNAF_Engine_Reborn
 
         private void ReadjustSize()
         {
-            float ratioWidth = (float)Width / this.Width;
+            /*float ratioWidth = (float)Width / this.Width;
             float ratioHeight = (float)Height / this.Height;
 
             foreach (Control control in Controls)
@@ -2680,11 +2672,16 @@ namespace FNAF_Engine_Reborn
                 control.Width = (int)(control.Width * ratioWidth);
                 control.Height = (int)(control.Height * ratioHeight);
             }
-            Refresh();
+            Refresh();*/
         }
         private void controlresize(Control control)
         {
             if (control is Panel) control.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+        }
+
+        private void officeEditorPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

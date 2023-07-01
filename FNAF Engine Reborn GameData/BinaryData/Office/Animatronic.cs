@@ -10,6 +10,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
         public Animation Jumpscare_Animation = new();
         public string Name = "";
         public bool IsPhantom = false;
+        public AnimPathNode[] Path;
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {

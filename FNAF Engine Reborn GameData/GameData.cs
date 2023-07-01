@@ -23,7 +23,7 @@ namespace FNAF_Engine_Reborn_GameData
         public Stamp _stamp = new Stamp();
 
         public string Name = "";
-        public string Style = "";
+        public string Style = ""; //fnaf 1-3, fnaf4, fnaf5, fnaf6 and fnafworld
         public string GameName = "";
         public string Template = "";
 

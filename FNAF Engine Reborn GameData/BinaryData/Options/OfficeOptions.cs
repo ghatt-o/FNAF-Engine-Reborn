@@ -1,6 +1,5 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
-using FNAF_Engine_Reborn_GameData.BinaryData.Office;
 using System;
 using System.IO;
 
@@ -97,6 +96,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                 File.WriteAllText(project + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,"); //what the fuck its still reading from existing file
                 foreach (var prop in GetType().GetProperties())
                 {
+                    //todo: clean up
                     if (prop.Name == "PowerEnabled") FileAppend(project + "/offices/default/office.txt", "power=" + PowerEnabled + ",");
                     else if (prop.Name == "ToxicEnabled") FileAppend(project + "/offices/default/office.txt", "toxic=" + ToxicEnabled + ",");
                     else if (prop.Name == "MaskEnabled") FileAppend(project + "/offices/default/office.txt", "mask=" + MaskEnabled + ",");
@@ -107,6 +107,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                     else if (prop.Name == "UCNStyleEnabled") FileAppend(project + "/offices/default/office.txt", "ucnstyle=" + UCNStyleEnabled + ",");
                     else if (prop.Name == "AnimatronicToKill") FileAppend(project + "/offices/default/office.txt", "animatronic=" + AnimatronicToKill + ",");
                     else if (prop.Name == "Hours") FileAppend(project + "/offices/default/office.txt", "hours=" + Hours + ",");
+                    else if (prop.Name == "PowerPercentage")
                     else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'!");
                 }
                 void FileAppend(string path, string contents)

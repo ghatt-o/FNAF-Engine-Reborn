@@ -48,6 +48,7 @@ namespace FNAF_Engine_Reborn
                     }
                     else if (gameStyleOptions.SelectedIndex == 1) //fnaf game style
                     {
+                        game.Style = "fmaf1";
                         FNAF_Engine_Menu menu = new FNAF_Engine_Menu();
                         menu.Name = "Main";
                         FNAF_Engine_Menu menu2 = new FNAF_Engine_Menu();
@@ -107,6 +108,30 @@ namespace FNAF_Engine_Reborn
                         else if (comboBox1.SelectedItem == null) //null???
                         {
                             game.Template = "None";
+                        }
+                    }
+                    else if (gameStyleOptions.SelectedIndex == 2) //fnaf 4 game style
+                    {
+                        game.Style = "fmaf4";
+                    }
+                    else if (gameStyleOptions.SelectedIndex == 3) //fnaf 5 game style
+                    {
+                        game.Style = "fmaf5";
+                    }
+                    else if (gameStyleOptions.SelectedIndex == 4) //fnaf 6 game style
+                    {
+                        game.Style = "fmaf6";
+                    }
+                    else if (gameStyleOptions.SelectedIndex == 5) //fnaf world game style
+                    {
+                        if (comboBox1.SelectedItem.Equals("Premade Assets")) //1
+                        {
+                            var Fishing = new FNAF_Engine_Menu();
+                            Fishing.Name = "Fishing";
+                            var ShoppingUpgrade = new FNAF_Engine_Menu();
+                            Fishing.Name = "Shopping Upgrade";
+                            game.Menus.Add(Fishing);
+                            game.Menus.Add(ShoppingUpgrade);
                         }
                     }
                     game.Write(null, false, projectPath);

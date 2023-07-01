@@ -1,4 +1,6 @@
-﻿namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
+﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+
+namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 {
     public class AnimPathNode
     {
@@ -12,5 +14,29 @@
         //Alternate path = 6
         //Office state = 7 (?)
         //Office (end of path) = 8
+
+        public void Read(ByteReader reader, bool binary, string projectpath)
+        {
+            if (binary == true) 
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        public void Write(ByteWriter Writer, bool binary, string projectpath)
+        {
+            if (binary == true)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

@@ -30,173 +30,148 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(createProject));
-            this.projectNamebox = new System.Windows.Forms.TextBox();
-            this.createProjectbtn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.fnaf4style_CheckBox = new System.Windows.Forms.CheckBox();
-            this.gameStyleOptions = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            projectNamebox = new System.Windows.Forms.TextBox();
+            createProjectbtn = new System.Windows.Forms.Button();
+            comboBox1 = new System.Windows.Forms.ComboBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            gameStyleOptions = new System.Windows.Forms.ComboBox();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // projectNamebox
             // 
-            this.projectNamebox.BackColor = System.Drawing.Color.White;
-            this.projectNamebox.ForeColor = System.Drawing.Color.Black;
-            this.projectNamebox.Location = new System.Drawing.Point(13, 43);
-            this.projectNamebox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.projectNamebox.Name = "projectNamebox";
-            this.projectNamebox.Size = new System.Drawing.Size(219, 23);
-            this.projectNamebox.TabIndex = 1;
+            projectNamebox.BackColor = System.Drawing.Color.White;
+            projectNamebox.ForeColor = System.Drawing.Color.Black;
+            projectNamebox.Location = new System.Drawing.Point(13, 43);
+            projectNamebox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            projectNamebox.Name = "projectNamebox";
+            projectNamebox.Size = new System.Drawing.Size(219, 23);
+            projectNamebox.TabIndex = 1;
             // 
             // createProjectbtn
             // 
-            this.createProjectbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(225)))), ((int)(((byte)(0)))));
-            this.createProjectbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(225)))), ((int)(((byte)(0)))));
-            this.createProjectbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(0)))));
-            this.createProjectbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.createProjectbtn.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.createProjectbtn.ForeColor = System.Drawing.Color.Black;
-            this.createProjectbtn.Location = new System.Drawing.Point(13, 222);
-            this.createProjectbtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.createProjectbtn.Name = "createProjectbtn";
-            this.createProjectbtn.Size = new System.Drawing.Size(219, 50);
-            this.createProjectbtn.TabIndex = 14;
-            this.createProjectbtn.Text = "Create";
-            this.createProjectbtn.UseVisualStyleBackColor = false;
-            this.createProjectbtn.Click += new System.EventHandler(this.createProjectbtn_Click);
+            createProjectbtn.BackColor = System.Drawing.Color.FromArgb(0, 225, 0);
+            createProjectbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 225, 0);
+            createProjectbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(0, 155, 0);
+            createProjectbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(0, 195, 0);
+            createProjectbtn.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            createProjectbtn.ForeColor = System.Drawing.Color.Black;
+            createProjectbtn.Location = new System.Drawing.Point(13, 222);
+            createProjectbtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            createProjectbtn.Name = "createProjectbtn";
+            createProjectbtn.Size = new System.Drawing.Size(219, 50);
+            createProjectbtn.TabIndex = 14;
+            createProjectbtn.Text = "Create";
+            createProjectbtn.UseVisualStyleBackColor = false;
+            createProjectbtn.Click += createProjectbtn_Click;
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.Color.Black;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "None",
-            "Premade Assets",
-            "Premade Menus",
-            "Required Empty Menus",
-            "John\'s Template"});
-            this.comboBox1.Location = new System.Drawing.Point(13, 99);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 23);
-            this.comboBox1.TabIndex = 16;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboBox1.BackColor = System.Drawing.Color.White;
+            comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBox1.ForeColor = System.Drawing.Color.Black;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "None", "Premade Assets", "Premade Menus", "Required Empty Menus", "John's Template" });
+            comboBox1.Location = new System.Drawing.Point(13, 99);
+            comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new System.Drawing.Size(219, 23);
+            comboBox1.TabIndex = 16;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(409, 317);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(572, 713);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
-            // fnaf4style_CheckBox
-            // 
-            this.fnaf4style_CheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.fnaf4style_CheckBox.Enabled = false;
-            this.fnaf4style_CheckBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fnaf4style_CheckBox.ForeColor = System.Drawing.Color.White;
-            this.fnaf4style_CheckBox.Location = new System.Drawing.Point(13, 185);
-            this.fnaf4style_CheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.fnaf4style_CheckBox.Name = "fnaf4style_CheckBox";
-            this.fnaf4style_CheckBox.Size = new System.Drawing.Size(164, 31);
-            this.fnaf4style_CheckBox.TabIndex = 20;
-            this.fnaf4style_CheckBox.Text = "FNAF 4 Style";
-            this.fnaf4style_CheckBox.UseVisualStyleBackColor = false;
-            this.fnaf4style_CheckBox.Visible = false;
+            pictureBox1.BackColor = System.Drawing.Color.White;
+            pictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Location = new System.Drawing.Point(409, 317);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(572, 713);
+            pictureBox1.TabIndex = 18;
+            pictureBox1.TabStop = false;
+            pictureBox1.Visible = false;
             // 
             // gameStyleOptions
             // 
-            this.gameStyleOptions.BackColor = System.Drawing.Color.White;
-            this.gameStyleOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gameStyleOptions.ForeColor = System.Drawing.Color.Black;
-            this.gameStyleOptions.FormattingEnabled = true;
-            this.gameStyleOptions.Items.AddRange(new object[] {
-            "???",
-            "Five Nights at Freddy\'s (Beta)"});
-            this.gameStyleOptions.Location = new System.Drawing.Point(13, 156);
-            this.gameStyleOptions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gameStyleOptions.Name = "gameStyleOptions";
-            this.gameStyleOptions.Size = new System.Drawing.Size(219, 23);
-            this.gameStyleOptions.TabIndex = 22;
-            this.gameStyleOptions.SelectedIndexChanged += new System.EventHandler(this.gameStyleOptions_SelectedIndexChanged);
+            gameStyleOptions.BackColor = System.Drawing.Color.White;
+            gameStyleOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            gameStyleOptions.ForeColor = System.Drawing.Color.Black;
+            gameStyleOptions.FormattingEnabled = true;
+            gameStyleOptions.Items.AddRange(new object[] { "Standard", "Five Nights at Freddy's 1-3", "Five Nights at Freddy's 4", "Five Nights at Freddy's 5 (Beta)", "Five Nights at Freddy's 6 (Beta)", "FNAF World (Beta)" });
+            gameStyleOptions.Location = new System.Drawing.Point(13, 156);
+            gameStyleOptions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gameStyleOptions.Name = "gameStyleOptions";
+            gameStyleOptions.Size = new System.Drawing.Size(219, 23);
+            gameStyleOptions.TabIndex = 22;
+            gameStyleOptions.SelectedIndexChanged += gameStyleOptions_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 125);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 28);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Game Style";
+            label2.AutoSize = true;
+            label2.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.ForeColor = System.Drawing.Color.White;
+            label2.Location = new System.Drawing.Point(9, 125);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(110, 28);
+            label2.TabIndex = 21;
+            label2.Text = "Game Style";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 69);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 28);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Project Template";
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(9, 69);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(157, 28);
+            label1.TabIndex = 23;
+            label1.Text = "Project Template";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 12);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 28);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Project Name";
+            label3.AutoSize = true;
+            label3.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.ForeColor = System.Drawing.Color.White;
+            label3.Location = new System.Drawing.Point(9, 12);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(130, 28);
+            label3.TabIndex = 24;
+            label3.Text = "Project Name";
             // 
             // createProject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(245, 291);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.gameStyleOptions);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.fnaf4style_CheckBox);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.createProjectbtn);
-            this.Controls.Add(this.projectNamebox);
-            this.Controls.Add(this.pictureBox1);
-            this.ForeColor = System.Drawing.SystemColors.Window;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximizeBox = false;
-            this.Name = "createProject";
-            this.Text = "Project Creator";
-            this.Load += new System.EventHandler(this.createProject_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            ClientSize = new System.Drawing.Size(245, 291);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(gameStyleOptions);
+            Controls.Add(label2);
+            Controls.Add(comboBox1);
+            Controls.Add(createProjectbtn);
+            Controls.Add(projectNamebox);
+            Controls.Add(pictureBox1);
+            ForeColor = System.Drawing.SystemColors.Window;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            Name = "createProject";
+            Text = "Project Creator";
+            Load += createProject_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -204,7 +179,6 @@ namespace FNAF_Engine_Reborn
         private System.Windows.Forms.Button createProjectbtn;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox fnaf4style_CheckBox;
         public System.Windows.Forms.ComboBox gameStyleOptions;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
