@@ -317,14 +317,14 @@ namespace FNAF_Engine_Reborn
 
         private void gameStyleOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (gameStyleOptions.SelectedIndex == 1)
+            /*if (gameStyleOptions.SelectedIndex == 1)
             {
                 fnaf4style_CheckBox.Show();
             }
             else
             {
                 fnaf4style_CheckBox.Hide();
-            }
+            }*/
         }
     }
 }
