@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
 {
-    public class Script : BinaryClass
+    public class Script
     {
-        public string Name { get; set; } = "Script";
+        public string Name { get; set; } = null;
         public List<ScriptCondition> Conditions { get; set; } = new();
         public List<ScriptAction> Actions { get; set; } = new();
 
@@ -33,11 +33,23 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
             }
             else
             {
-
+                Directory.CreateDirectory(projectpath + "/scripts/" + Name);
+                File.WriteAllText(projectpath + "/scripts/" + Name + "/name.txt", Name);
+                ByteWriter writer = new(new FileStream($@"{projectpath}/scripts/{Name}/conditions.bin", FileMode.Create));
+                writer.WriteInt32(Conditions.Count);
+                foreach (var C in Conditions)
+                {
+                    C.Write(Writer, true, null);
+                }
+                writer.WriteInt32(Actions.Count);
+                foreach (var A in Actions)
+                {
+                    A.Write(Writer, true, null);
+                }
             }
         }
 
-        public void Read(ByteReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath, string path)
         {
             if (binary == true)
             {
@@ -63,7 +75,23 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
             }
             else
             {
-
+                //path is set beforehand
+                Name = File.ReadAllText(path + "/name.txt");
+                ByteReader writer = new(new FileStream($@"{path}/conditions.bin", FileMode.Open));
+                int condcount = writer.ReadInt32();
+                for (int i = 0; i < condcount; i++)
+                {
+                    var Condition = new ScriptCondition();
+                    Condition.Read(reader, true, null);
+                    Conditions.Add(Condition);
+                }
+                int account = writer.ReadInt32();
+                for (int i = 0; i < account; i++)
+                {
+                    var Action = new ScriptAction();
+                    Action.Read(reader, true, null);
+                    Actions.Add(Action);
+                }
             }
         }
     }

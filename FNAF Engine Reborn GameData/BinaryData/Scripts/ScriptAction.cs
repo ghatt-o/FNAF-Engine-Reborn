@@ -7,7 +7,8 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
     public class ScriptAction : BinaryClass
     {
         public string Block = "";
-        public List<ScriptParameter> Parameters = new();
+        public ScriptParameter[] Parameters = null;
+        public int Order = 0;
 
         public void Read(ByteReader reader, bool binary, string projectpath)
         {
@@ -17,12 +18,13 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 if (magic != "SACT") throw new InvalidDataException("Invalid magic: " + magic + "!");
 
                 Block = reader.AutoReadUnicode();
-                var paramCount = reader.ReadSByte();
-                for (int i = 0; i < paramCount; i++)
+                Order = reader.ReadInt32();
+                var ParamCount = reader.ReadInt32();
+                for (int i = -1; i < ParamCount; i++)
                 {
-                    ScriptParameter parameter = new ScriptParameter();
-                    parameter.Read(reader, true, null);
-                    Parameters.Add(parameter);
+                    ScriptParameter param = new ScriptParameter();
+                    param.Read(reader, true, null);
+                    Parameters[i] = param;
                 }
             }
             else
@@ -38,10 +40,21 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 Writer.WriteAscii("SACT");
 
                 Writer.AutoWriteUnicode(Block);
-                Writer.WriteUInt8((sbyte)Parameters.Count);
-                foreach (ScriptParameter parameter in Parameters)
+                Writer.WriteInt32(Order);
+                if (Parameters == null) Writer.WriteInt32(0);
+                else
                 {
-                    parameter.Write(Writer, true, null);
+                    int i = 0;
+                    foreach (ScriptParameter param in Parameters)
+                    {
+                        i++;
+                    }
+                    Writer.WriteInt32(i);
+                    foreach (ScriptParameter param in Parameters)
+                    {
+                        param.Write(Writer, true, null);
+                    }
+                    //there's a better way to do this. cba atm
                 }
             }
             else

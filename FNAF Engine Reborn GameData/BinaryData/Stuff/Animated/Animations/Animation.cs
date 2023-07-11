@@ -1,14 +1,15 @@
 ﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System.Collections.Generic;
+using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
 {
-    public class Animation : BinaryClass
+    public class Animation
     {
         public string Name { get; set; } = "Animation";
         public List<AnimationFrame> Frames { get; set; } = new List<AnimationFrame>();
 
-        public void Read(ByteReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath, string path)
         {
             if (binary == true)
             {
@@ -23,7 +24,12 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
             }
             else
             {
-                //todo
+                Name = File.ReadAllText(path + "/name.txt");
+                foreach (var dir in Directory.GetDirectories(path + "/animation"))
+                {
+                    AnimationFrame frame = new();
+                    frame.Read(null, false, dir);
+                }
             }
         }
         public void Write(ByteWriter Writer, bool binary, string projectpath)
@@ -39,7 +45,13 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations
             }
             else
             {
-                //todo
+                File.WriteAllText(projectpath + "/animations/" + Name + "/name.txt", Name);
+                Directory.CreateDirectory(projectpath + "/animations/" + Name + "/animation");
+                foreach (var frame in Frames)
+                {
+                    Directory.CreateDirectory(projectpath + "/animations/" + Name + "/animation/" + frame.Order); ;
+                    frame.Write(null, false, projectpath + "/animations/" + Name + "/animation/" + frame.Order);
+                }
             }
         }
     }

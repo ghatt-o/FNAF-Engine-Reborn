@@ -7,7 +7,8 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
     public class ScriptCondition : BinaryClass
     {
         public string Block = "";
-        public List<ScriptParameter> Parameters = new();
+        public ScriptParameter[] Parameters = null;
+        public int Order = 0;
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
@@ -16,16 +17,26 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 Writer.WriteAscii("SCND");
 
                 Writer.AutoWriteUnicode(Block);
-                Writer.WriteUInt8((sbyte)Parameters.Count);
-
-                foreach (ScriptParameter param in Parameters)
+                Writer.WriteInt32(Order);
+                if (Parameters == null) Writer.WriteInt32(0);
+                else
                 {
-                    param.Write(Writer, true, null);
+                    int i = 0;
+                    foreach (ScriptParameter param in Parameters)
+                    {
+                        i++;
+                    }
+                    Writer.WriteInt32(i);
+                    foreach (ScriptParameter param in Parameters)
+                    {
+                        param.Write(Writer, true, null);
+                    }
+                    //there's a better way to do this. cba atm
                 }
             }
             else
             {
-                //todo
+                //there isn't
             }
         }
 
@@ -37,17 +48,18 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                 if (magic != "SCND") throw new InvalidDataException("Unknown magic: " + magic + "!");
 
                 Block = reader.AutoReadUnicode();
-                var ParamCount = reader.ReadSByte();
-                for (int i = 0; i < ParamCount; i++)
+                Order = reader.ReadInt32();
+                var ParamCount = reader.ReadInt32();
+                for (int i = -1; i < ParamCount; i++)
                 {
                     ScriptParameter param = new ScriptParameter();
                     param.Read(reader, true, null);
-                    Parameters.Add(param);
+                    Parameters[i] = param;
                 }
             }
             else
             {
-                //todo
+                //there isn't
             }
         }
     }

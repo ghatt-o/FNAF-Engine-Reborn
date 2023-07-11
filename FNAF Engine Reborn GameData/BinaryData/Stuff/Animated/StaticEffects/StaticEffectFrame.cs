@@ -1,26 +1,30 @@
-﻿using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+﻿using FNAF_Engine_GameData.BinaryData.Binaries;
+using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using System;
 using System.IO;
 
 namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
 {
-    public class StaticEffectFrame : BinaryClass
+    public class StaticEffectFrame
     {
-        public int ImageHandle = 0;
-        public ushort Speed { get; set; } = 0;
+        public Image Image = new();
+        public uint Speed { get; set; } = 1;
+        public int FrameOrder = 0;
 
-        public void Read(ByteReader reader, bool binary, string projectpath)
+        public void Read(ByteReader reader, bool binary, string projectpath, string actualproject)
         {
             if (binary == true)
             {
-                ImageHandle = reader.ReadInt32();
-                Speed = reader.ReadUInt16();
+                Image.Read(reader, true, null);
+                Speed = reader.ReadUInt32();
             }
             else
             {
                 //projectpath is the file path here
                 var stuff = File.ReadAllText(projectpath).Split(',');
-                ImageHandle = Convert.ToInt32(stuff[0]);
+                Image = new();
+                Image.Name = stuff[0];
+                Image.Read(null, false, projectpath);
                 Speed = Convert.ToUInt16(stuff[1]);
             }
         }
@@ -28,13 +32,13 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
         {
             if (binary == true)
             {
-                Writer.WriteInt32(ImageHandle);
-                Writer.WriteUInt16(Speed);
+                Image.Write(Writer, true, null);
+                Writer.WriteUInt32(Speed);
             }
             else
             {
                 //projectpath is file path
-                File.WriteAllText(projectpath, ImageHandle + "," + Speed);
+                File.WriteAllText(projectpath, Image.Name + "," + Speed);
             }
         }
     }

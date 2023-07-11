@@ -30,46 +30,45 @@ namespace FNAF_Engine_Reborn
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Compiler));
-            this.label2 = new System.Windows.Forms.Label();
-            this.Compiling_Progress = new System.Windows.Forms.ProgressBar();
-            this.SuspendLayout();
+            label2 = new System.Windows.Forms.Label();
+            Compiling_Progress = new System.Windows.Forms.ProgressBar();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Digital-7", 15F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(54, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Compiling your FE:R Game";
+            label2.AutoSize = true;
+            label2.BackColor = System.Drawing.Color.White;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.ForeColor = System.Drawing.Color.Black;
+            label2.Location = new System.Drawing.Point(21, 5);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(249, 25);
+            label2.TabIndex = 3;
+            label2.Text = "Compiling your FE:R Game";
             // 
             // Compiling_Progress
             // 
-            this.Compiling_Progress.Location = new System.Drawing.Point(21, 31);
-            this.Compiling_Progress.Name = "Compiling_Progress";
-            this.Compiling_Progress.Size = new System.Drawing.Size(249, 23);
-            this.Compiling_Progress.TabIndex = 5;
+            Compiling_Progress.Location = new System.Drawing.Point(21, 31);
+            Compiling_Progress.Name = "Compiling_Progress";
+            Compiling_Progress.Size = new System.Drawing.Size(249, 23);
+            Compiling_Progress.TabIndex = 5;
             // 
             // Compiler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(291, 63);
-            this.Controls.Add(this.Compiling_Progress);
-            this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Compiler";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Compiler";
-            this.Load += new System.EventHandler(this.Compiler_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(291, 63);
+            Controls.Add(Compiling_Progress);
+            Controls.Add(label2);
+            Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "Compiler";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Compiler";
+            Load += Compiler_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

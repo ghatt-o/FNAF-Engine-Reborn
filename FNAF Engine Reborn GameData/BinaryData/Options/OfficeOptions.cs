@@ -73,6 +73,11 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                     {
                         Hours = Convert.ToInt32(flag.Split('=')[1]);
                     }
+
+                    if (flag.Contains("powerpercentage="))
+                    {
+                        PowerPercentage = Convert.ToInt32(flag.Split('=')[1]);
+                    }
                 }
             }
         }
@@ -93,7 +98,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else
             {
-                File.WriteAllText(project + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,"); //what the fuck its still reading from existing file
+                File.WriteAllText(project + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,powerpercentage=100"); //what the fuck its still reading from existing file
                 foreach (var prop in GetType().GetProperties())
                 {
                     //todo: clean up
@@ -107,7 +112,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                     else if (prop.Name == "UCNStyleEnabled") FileAppend(project + "/offices/default/office.txt", "ucnstyle=" + UCNStyleEnabled + ",");
                     else if (prop.Name == "AnimatronicToKill") FileAppend(project + "/offices/default/office.txt", "animatronic=" + AnimatronicToKill + ",");
                     else if (prop.Name == "Hours") FileAppend(project + "/offices/default/office.txt", "hours=" + Hours + ",");
-                    else if (prop.Name == "PowerPercentage")
+                    else if (prop.Name == "PowerPercentage") FileAppend(project + "/offices/default/office.txt", "powerpercentage=" + PowerPercentage);
                     else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'!");
                 }
                 void FileAppend(string path, string contents)

@@ -55,7 +55,7 @@ namespace FNAF_Engine_Reborn
         private async void Compiler_Load(object sender, EventArgs e)
         {
             Compiling_Progress.Value += 15;
-            if (style == "fnaf" || style == "fnaf4")
+            if (style == "fnaf")
             {
                 Compiling_Progress.Value += 15;
                 Compile();
@@ -78,6 +78,7 @@ namespace FNAF_Engine_Reborn
                     }
                 }
             }
+            /*
             else if (style == "standard")
             {
                 try
@@ -121,6 +122,7 @@ namespace FNAF_Engine_Reborn
                 {
                     Hide();
                 }
+            */
             }
         }
     }

@@ -44,7 +44,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
             }
             else
             {
-                //todo
+                
             }
         }
 

@@ -24,13 +24,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
             }
             else
             {
-                foreach (var file in Directory.GetFiles(projectpath + "/statics/" + Temp))
-                {
-                    if (file == projectpath + "/statics/" + Temp + "/name.txt") Name = File.ReadAllText(projectpath + "/statics/" + Temp + "/name.txt");
-                    StaticEffectFrame frame = new StaticEffectFrame();
-                    frame.Read(null, false, file);
-                    Frames.Add(frame);
-                }
+                Name = File.ReadAllText(Temp + "/name.txt");
+                
+                StaticEffectFrame frame = new StaticEffectFrame();
+                frame.Read(null, false, Temp);
+                Frames.Add(frame);
             }
         }
         public void Write(ByteWriter Writer, bool binary, string projectpath)
@@ -45,13 +43,12 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
             }
             else
             {
-                //temp is file path
-                Directory.CreateDirectory(Temp);
-                File.WriteAllText(Temp + "/name.txt", Name);
-
+                File.WriteAllText(projectpath + "/statics/" + Name + "/name.txt", Name);
+                Directory.CreateDirectory(projectpath + "/statics/" + Name + "/frames");
                 foreach (var frame in Frames)
                 {
-                    frame.Write(null, false, Temp);
+                    Directory.CreateDirectory(projectpath + "/statics/" + Name + "/frames/" + frame.FrameOrder);
+                    frame.Write(null, false, projectpath + "/statics/" + Name + "/frames/"+ frame.FrameOrder);
                 }
             }
         }

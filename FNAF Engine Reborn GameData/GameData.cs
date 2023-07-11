@@ -133,6 +133,12 @@ namespace FNAF_Engine_Reborn_GameData
                 Writer.WriteAscii("OFFC"); //header
 
                 Office.Write(Writer, true, null);
+                Writer.WriteInt32(Cameras.Count);
+                foreach (var cam in Cameras) cam.Write(Writer, true, null);
+                Writer.WriteInt32(Animatronics.Count);
+                foreach (var anim in Animatronics) anim.Write(Writer, true, null);
+                Writer.WriteInt32(Scripts.Count);
+                foreach (var script in Scripts) script.Write(Writer, true, null);
 
                 Writer.Flush();
                 Writer.Close();
@@ -199,6 +205,18 @@ namespace FNAF_Engine_Reborn_GameData
                 }
 
                 Office.Write(null, false, projectpath);
+                foreach (var c in Cameras)
+                {
+                    c.Write(null, false, projectpath);
+                }
+                foreach (var a in Animatronics)
+                {
+                    a.Write(null, false, projectpath);
+                }
+                foreach (var s in Scripts)
+                {
+                    s.Write(null, false, projectpath);
+                }
 
             }
         }
@@ -262,13 +280,13 @@ namespace FNAF_Engine_Reborn_GameData
                 for (int i = 0; i < animc; i++)
                 {
                     Animation anim = new();
-                    anim.Read(reader, true, "");
+                    anim.Read(reader, true, null, null);
                     Animations.Add(anim);
                 }
                 for (int i = 0; i < sc; i++)
                 {
                     StaticEffect se = new();
-                    se.Read(reader, false, "");
+                    se.Read(reader, false, null);
                     StaticEffects.Add(se);
                 }
 
@@ -283,6 +301,27 @@ namespace FNAF_Engine_Reborn_GameData
                 Debug.Assert(reader.ReadAscii(4) == "OFFC");
 
                 Office.Read(reader, true, null);
+                int cameracount = reader.ReadInt32();
+                for (int i = 0; i < cameracount; i++)
+                {
+                    Camera camera = new Camera();
+                    camera.Read(reader, true, null);
+                    Cameras.Add(camera);
+                }
+                int animatroniccount = reader.ReadInt32();
+                for (int i = 0; i < animatroniccount; i++)
+                {
+                    Animatronic anim = new Animatronic();
+                    anim.Read(reader, true, null);
+                    Animatronics.Add(anim);
+                }
+                int scriptcount = reader.ReadInt32();
+                for (int i = 0; i < scriptcount; i++)
+                {
+                    Script script = new Script();
+                    script.Read(reader, true, null);
+                    Scripts.Add(script);
+                }
             }
             else
             {
@@ -351,13 +390,13 @@ namespace FNAF_Engine_Reborn_GameData
                 foreach (var anim in Directory.GetDirectories(projectpath + "/animations"))
                 {
                     Animation animation = new();
-                    animation.Read(null, false, projectpath); //read method not done yet
-                } // not finished
+                    animation.Read(null, false, projectpath, anim);
+                }
 
                 foreach (var se in Directory.GetDirectories(projectpath + "/statics"))
                 {
                     StaticEffect staticeffect = new();
-                    staticeffect.Read(null, false, projectpath); //read method not done yet
+                    staticeffect.Read(null, false, projectpath);
                 }
 
                 foreach (var menu in Directory.GetDirectories(projectpath + "/menus"))
@@ -368,8 +407,13 @@ namespace FNAF_Engine_Reborn_GameData
                 }
 
                 Office.Read(null, false, projectpath);
+                foreach (var anim in Directory.GetDirectories(projectpath + "/animatronics"))
+                {
+                    Animatronic animatronic = new();
+                    animatronic.Name = File.ReadAllText(anim + "/name.txt");
+                    animatronic.Read(null, false, projectpath);
+                }
             }
-
             ConcludedReading = true;
         }
     }

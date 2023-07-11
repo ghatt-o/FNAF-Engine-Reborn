@@ -20,8 +20,8 @@ namespace FNAF_Engine_Reborn
         public GameData game;
 
         public bool showProject = true;
-        public string Version = "0.2.0 FNAF World Demo";
-        public string Build_Version = "release1fnafworld";
+        public string Version = "0.2.0b";
+        public string Build_Version = "release1fnafworlddemo";
         public bool isopen = false;
         public bool draggable_ui = false;
         public bool animatronicselected = false;
@@ -46,6 +46,10 @@ namespace FNAF_Engine_Reborn
 
         private string funcs; //probably used for script editor fetching, also might switch to rewrite later
 
+        public int AnimatronicAINightSetting = 1;
+
+        public bool NewAnimPathNodeAdded = false;
+
         public reborn()
         {
             InitializeComponent();
@@ -61,7 +65,7 @@ namespace FNAF_Engine_Reborn
         }
         private async void reborn_Load(object sender, EventArgs e)
         {
-            DoubleBuffered = true; //optimizates it, maybe?
+            DoubleBuffered = true; //optimizes it, maybe?
 
             //this.Size = new Size(960, 540);
             //this.ClientSize = new Size(960, 540);
@@ -78,7 +82,7 @@ namespace FNAF_Engine_Reborn
                     await Task.Delay(30000);
                     {
                         game.Write(null, false, projecto); //Auto-Save!
-                        //TODO: Make sure it's not saving while it's already being written for different purposes. game.
+                        //TODO: Make sure it's not saving while it's already being written for different purposes.
                     }
                 }
             }
@@ -148,12 +152,12 @@ namespace FNAF_Engine_Reborn
 
         private void createProjectBTN_MouseHover(object sender, EventArgs e)
         {
-            bigProjectICON.BackColor = Color.FromArgb(39, 39, 39);
+
         }
 
         private void createProjectBTN_MouseLeave(object sender, EventArgs e)
         {
-            bigProjectICON.BackColor = Color.FromArgb(34, 34, 34);
+
         }
 
         private void button43_Click(object sender, EventArgs e)
@@ -322,11 +326,6 @@ namespace FNAF_Engine_Reborn
         {
             Application.Restart();
             Show();
-        }
-
-        private void label108_Click(object sender, EventArgs e)
-        {
-            _ = System.Diagnostics.Process.Start("https://discord.gg/gGCdUpKDrW");
         }
 
         private void reborn_Click(object sender, EventArgs e)
@@ -1373,7 +1372,7 @@ namespace FNAF_Engine_Reborn
 
                     game.Office.Sprites.Add(newsprite);
 
-                    game.Write()
+                    game.Write(null, false, projecto);
 
                     RefreshOfficeSprites();
                 }
@@ -2199,13 +2198,12 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
-                if (animatronicEditorIgnoresMask_Check.Checked == true)
+                int i = -1;
+                foreach (var Animatronic in game.Animatronics)
                 {
-                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/im.im", "true");
-                }
-                else
-                {
-                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/im.im", "false");
+                    i++;
+                    if (Animatronic.Name == AnimatronicDropDown.SelectedItem.ToString()) game.Animatronics[i].IgnoresMask = animatronicEditorIgnoresMask_Check.Checked;
+                    break;
                 }
             }
         }
@@ -2214,14 +2212,14 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
-                if (animatronicEditorAudioLured_Check.Checked == true)
+                /*int i = -1;
+                foreach (var Animatronic in game.Animatronics)
                 {
-                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/al.al", "true");
-                }
-                else
-                {
-                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/al.al", "false");
-                }
+                    i++;
+                    if (Animatronic.Name == AnimatronicDropDown.SelectedItem.ToString()) game.Animatronics[i].AudioLured = animatronicEditorAudioLured_Check.Checked;
+                    break;
+                }*/
+                animatronicEditorAudioLured_Check.Checked = false;
             }
         }
 
@@ -2229,25 +2227,28 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
-                if (animatronicEditorLikeBB_Check.Checked == true)
+                int i = -1;
+                /*foreach (var Animatronic in game.Animatronics)
                 {
-                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/lbb.lbb", "true");
-                }
-                else
-                {
-                    File.WriteAllText(AnimatronicDropDown.SelectedItem.ToString() + "/lbb.lbb", "false");
-                }
+                    i++;
+                    if (Animatronic.Name == AnimatronicDropDown.SelectedItem.ToString()) game.Animatronics[i].LikeBalloonBoy = animatronicEditorLikeBB_Check.Checked;
+                    break;
+                }*/
+                animatronicEditorAudioLured_Check.Checked = false;
             }
         }
 
+        //TODO: rewrite all the animatronic functions to make them faster and better to read :skull:
+
         private void AnimatronicDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var seletedAnimatronicIndex = -1;
+            foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
             animatronicselected = true;
-            bool phantom = Convert.ToBoolean(File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/phantom.feranimext"));
 
             //properties
 
-            if (phantom == true)
+            if (game.Animatronics[seletedAnimatronicIndex].IsPhantom == true)
             {
                 isphantom_animatronicEditor.Hide();
             }
@@ -2258,7 +2259,7 @@ namespace FNAF_Engine_Reborn
 
             //settings
 
-            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/im.im") == "true")
+            if (game.Animatronics[seletedAnimatronicIndex].IgnoresMask == true)
             {
                 animatronicEditorIgnoresMask_Check.Checked = true;
             }
@@ -2267,33 +2268,35 @@ namespace FNAF_Engine_Reborn
                 animatronicEditorIgnoresMask_Check.Checked = false;
             }
 
-            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/al.al") == "true")
-            {
-                animatronicEditorAudioLured_Check.Checked = true;
-            }
-            else
+            if (game.Animatronics[seletedAnimatronicIndex].AudioLured)
             {
                 animatronicEditorAudioLured_Check.Checked = false;
-            }
-
-            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/lbb.lbb") == "true")
-            {
-                animatronicEditorLikeBB_Check.Checked = true;
+                //animatronicEditorAudioLured_Check.Checked = true;
             }
             else
             {
+                //animatronicEditorAudioLured_Check.Checked = false;
+            }
+
+            if (game.Animatronics[seletedAnimatronicIndex].LikeBalloonBoy)
+            {
                 animatronicEditorLikeBB_Check.Checked = false;
+                //animatronicEditorLikeBB_Check.Checked = true;
+            }
+            else
+            {
+                //animatronicEditorLikeBB_Check.Checked = false;
             }
 
             //path
 
-            if (File.ReadAllText(AnimatronicDropDown.SelectedItem.ToString() + "/path.feranimpath") == "")
+            if (game.Animatronics[seletedAnimatronicIndex].Path == null)
             {
 
             }
             else
             {
-                //RefreshAnimPathView(AnimatronicDropDown.SelectedItem.ToString());
+
             }
         }
 
@@ -2332,21 +2335,12 @@ namespace FNAF_Engine_Reborn
             if (_0_2C == true)
             {
                 comboBox2.Items.Clear();
-                comboBox2.Items.AddRange(Directory.GetDirectories(projecto + "/sounds"));
+                foreach (var audio in game.AudioBank) comboBox2.Items.Add(audio.Name);
                 comboBox3.Items.Clear();
-                comboBox3.Items.AddRange(Directory.GetDirectories(projecto + "/animations"));
+                foreach (var animation in game.Animations) comboBox2.Items.Add(animation.Name);
                 animatronicselected = false;
-                if (Directory.Exists(projecto + "/animatronics"))
-                {
-                    //aight
-                }
-                else
-                {
-                    Logger.Log("Animations is null. E2569");
-                    _ = Directory.CreateDirectory(projecto + "/animatronics");
-                }
                 AnimatronicDropDown.Items.Clear();
-                AnimatronicDropDown.Items.AddRange(Directory.GetDirectories(projecto + "/animatronics"));
+                foreach (var animatronic in game.Animatronics) comboBox2.Items.Add(animatronic.Name);
             }
         }
 
@@ -2360,6 +2354,7 @@ namespace FNAF_Engine_Reborn
 
         private void AddPath_Click(object sender, EventArgs e)
         {
+            //refreshanimpath()
             ChooseAnimatronicPath.Show();
         }
 
@@ -2370,44 +2365,213 @@ namespace FNAF_Engine_Reborn
 
         //ANIM EDITOR PATH SELECTION
 
-        private void CamIcon_AnimEditor_Click(object sender, EventArgs e)
+        private async void CamIcon_AnimEditor_Click(object sender, EventArgs e)
         {
+            if (animatronicselected == true)
+            {
+                var seletedAnimatronicIndex = -1;
+                foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
+                AnimPathNode NewAnimPathNode = new();
+                NewAnimPathNode.Type = 0;
+                NewAnimPathNodeAdded = false;
+                NewAnimPathNodeText.Text = "Camera Name";
+                AddAnimPathNodeArgs.Show();
+                while (true)
+                {
+                    await Task.Delay(1);
+                    if (NewAnimPathNodeAdded == true) break;
+                }
+                NewAnimPathNode.Argument = InsertArgumentForNewAnimPathNode.Text;
+                game.Animatronics[seletedAnimatronicIndex].Path.Add(NewAnimPathNode);
+                RefreshAnimPathNodes();
+            }
         }
 
-        private void DoorIcon_AnimEditor_Click(object sender, EventArgs e)
+        private async void DoorIcon_AnimEditor_Click(object sender, EventArgs e)
         {
+            if (animatronicselected == true)
+            {
+                var seletedAnimatronicIndex = -1;
+                foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
+                AnimPathNode NewAnimPathNode = new();
+                NewAnimPathNode.Type = 1;
+                NewAnimPathNodeAdded = false;
+                NewAnimPathNodeText.Text = "Door ID";
+                AddAnimPathNodeArgs.Show();
+                while (true)
+                {
+                    await Task.Delay(1);
+                    if (NewAnimPathNodeAdded == true) break;
+                }
+                NewAnimPathNode.Argument = InsertArgumentForNewAnimPathNode.Text;
+                game.Animatronics[seletedAnimatronicIndex].Path.Add(NewAnimPathNode);
+                RefreshAnimPathNodes();
+            }
         }
 
-        private void FlashlightIcon_AnimEditor_Click(object sender, EventArgs e)
+        private async void FlashlightIcon_AnimEditor_Click(object sender, EventArgs e)
         {
+            if (animatronicselected == true)
+            {
+                var seletedAnimatronicIndex = -1;
+                foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
+                AnimPathNode NewAnimPathNode = new();
+                NewAnimPathNode.Type = 3;
+                AddAnimPathNodeArgs.Hide();
+                game.Animatronics[seletedAnimatronicIndex].Path.Add(NewAnimPathNode);
+                RefreshAnimPathNodes();
+            }
         }
 
-        private void LightIcon_AnimEditor_Click(object sender, EventArgs e)
+        private async void LightIcon_AnimEditor_Click(object sender, EventArgs e)
         {
+            if (animatronicselected == true)
+            {
+                var seletedAnimatronicIndex = -1;
+                foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
+                AnimPathNode NewAnimPathNode = new();
+                NewAnimPathNode.Type = 4;
+                NewAnimPathNodeAdded = false;
+                NewAnimPathNodeText.Text = "Light ID";
+                AddAnimPathNodeArgs.Show();
+                while (true)
+                {
+                    await Task.Delay(1);
+                    if (NewAnimPathNodeAdded == true) break;
+                }
+                NewAnimPathNode.Argument = InsertArgumentForNewAnimPathNode.Text;
+                game.Animatronics[seletedAnimatronicIndex].Path.Add(NewAnimPathNode);
+                RefreshAnimPathNodes();
+            }
         }
 
-        private void MusicBox_AnimEditor_Click(object sender, EventArgs e)
+        private async void MusicBox_AnimEditor_Click(object sender, EventArgs e)
         {
+            if (animatronicselected == true)
+            {
+                var seletedAnimatronicIndex = -1;
+                foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
+                AnimPathNode NewAnimPathNode = new();
+                NewAnimPathNode.Type = 5;
+                NewAnimPathNodeAdded = false;
+                NewAnimPathNodeText.Text = "Camera Name";
+                AddAnimPathNodeArgs.Show();
+                while (true)
+                {
+                    await Task.Delay(1);
+                    if (NewAnimPathNodeAdded == true) break;
+                }
+                NewAnimPathNode.Argument = InsertArgumentForNewAnimPathNode.Text;
+                game.Animatronics[seletedAnimatronicIndex].Path.Add(NewAnimPathNode);
+                RefreshAnimPathNodes();
+            }
         }
 
-        private void OfficeIcon_AnimEditor_Click(object sender, EventArgs e)
+        private async void OfficeIcon_AnimEditor_Click(object sender, EventArgs e)
         {
+            if (animatronicselected == true)
+            {
+                var seletedAnimatronicIndex = -1;
+                foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
+                AnimPathNode NewAnimPathNode = new();
+                NewAnimPathNode.Type = 8;
+                AddAnimPathNodeArgs.Hide();
+                game.Animatronics[seletedAnimatronicIndex].Path.Add(NewAnimPathNode);
+                RefreshAnimPathNodes();
+
+            }
         }
 
-        private void AlternatePath_AnimEditor_Click(object sender, EventArgs e)
+        private async void AlternatePath_AnimEditor_Click(object sender, EventArgs e)
         {
-            
+            Logger.Log("Not in demo!");
+            AddAnimPathNodeArgs.Hide();
         }
 
-        private void StateIcon_AnimEditor_Click(object sender, EventArgs e)
+        private async void StateIcon_AnimEditor_Click(object sender, EventArgs e)
         {
+            if (animatronicselected == true)
+            {
+                var seletedAnimatronicIndex = -1;
+                foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
+                AnimPathNode NewAnimPathNode = new();
+                NewAnimPathNode.Type = 7;
+                NewAnimPathNodeAdded = false;
+                NewAnimPathNodeText.Text = "Camera State Name";
+                AddAnimPathNodeArgs.Show();
+                while (true)
+                {
+                    await Task.Delay(1);
+                    if (NewAnimPathNodeAdded == true) break;
+                }
+                NewAnimPathNode.Argument = InsertArgumentForNewAnimPathNode.Text;
+                game.Animatronics[seletedAnimatronicIndex].Path.Add(NewAnimPathNode);
+                RefreshAnimPathNodes();
+            }
+        }
+
+        private void RefreshAnimPathNodes()
+        {
+            //The one line solution to figuring out current animatronic LMAO
+            //(theres 100% a better way of doing this tho-
+            var seletedAnimatronicIndex = -1;
+            foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
+
+            foreach (var pathnode in game.Animatronics[seletedAnimatronicIndex].Path)
+            {
+                TreeNode treenode = new();
+                switch (pathnode.Type)
+                {
+                    case 0:
+                        treenode.Text = pathnode.Argument;
+                        treenode.ImageIndex = 0;
+                        break;
+                    case 1:
+                        treenode.Text = pathnode.Argument;
+                        treenode.ImageIndex = 1;
+                        break;
+                    //No case 2!
+                    case 3:
+                        treenode.ImageIndex = 2;
+                        break;
+                    case 4:
+                        treenode.Text = pathnode.Argument;
+                        treenode.ImageIndex = 3;
+                        break;
+                    case 5:
+                        treenode.Text = pathnode.Argument;
+                        treenode.ImageIndex = 4;
+                        break;
+                    case 6:
+                        //treenode.Text = "Alternate Path";
+                        treenode.Text = "";
+                        //treenode.ImageIndex = 5;
+                        break;
+                    case 7:
+                        treenode.Text = game.Animatronics[seletedAnimatronicIndex].Name + ":" + pathnode.Argument;
+                        treenode.ImageIndex = 6;
+                        break;
+                    case 8:
+                        treenode.Text = "Office (End of path)";
+                        treenode.ImageIndex = 7;
+                        break;
+                    case -1:
+                        treenode.Text = "";
+                        break;
+                    default:
+                        treenode.Text = "ERROR";
+                        break;
+                }
+
+                animatronicEditor_AnimPath.Nodes.Add(treenode);
+            }
         }
 
         private void Settings_Click(object sender, EventArgs e)
@@ -2679,7 +2843,89 @@ namespace FNAF_Engine_Reborn
             if (control is Panel) control.Anchor = AnchorStyles.Left | AnchorStyles.Right;
         }
 
-        private void officeEditorPanel_Paint(object sender, PaintEventArgs e)
+        private void AI_Insert_TextBox_AnimatronicEditor_TextChanged(object sender, EventArgs e)
+        {
+            if (animatronicselected == true)
+            {
+                int i = -1;
+                foreach (var Animatronic in game.Animatronics)
+                {
+                    i++;
+                    if (Animatronic.Name == AnimatronicDropDown.SelectedItem.ToString())
+                    {
+                        game.Animatronics[i].AILevels[AnimatronicAINightSetting - 1] = Convert.ToInt32(AI_Insert_TextBox_AnimatronicEditor.Text);
+                    }
+                    break;
+                }
+            }
+        }
+
+        private void funnyScrollForward_Click(object sender, EventArgs e)
+        {
+            if (animatronicselected == true)
+            {
+                if (AnimatronicAINightSetting < 6)
+                {
+                    int i = -1;
+                    AnimatronicAINightSetting++;
+                    Display_NightSetting_ForAI.Text = "Night " + AnimatronicAINightSetting;
+                    foreach (var Animatronic in game.Animatronics)
+                    {
+                        i++;
+                        if (Animatronic.Name == AnimatronicDropDown.SelectedItem.ToString())
+                        {
+                            AI_Insert_TextBox_AnimatronicEditor.Text = Convert.ToString(game.Animatronics[i].AILevels[AnimatronicAINightSetting - 1]);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void funnyScrollBack_Click(object sender, EventArgs e)
+        {
+            if (animatronicselected == true)
+            {
+                if (AnimatronicAINightSetting > 1)
+                {
+                    int i = -1;
+                    AnimatronicAINightSetting--;
+                    Display_NightSetting_ForAI.Text = "Night " + AnimatronicAINightSetting;
+                    foreach (var Animatronic in game.Animatronics)
+                    {
+                        i++;
+                        if (Animatronic.Name == AnimatronicDropDown.SelectedItem.ToString())
+                        {
+                            AI_Insert_TextBox_AnimatronicEditor.Text = Convert.ToString(game.Animatronics[i].AILevels[AnimatronicAINightSetting - 1]);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            NewAnimPathNodeAdded = true;
+            AddAnimPathNodeArgs.Hide();
+        }
+
+        private void Sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void allEditorsPNL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DiscordBtn_Click(object sender, EventArgs e)
+        {
+            _ = System.Diagnostics.Process.Start("https://discord.gg/gGCdUpKDrW");
+        }
+
+        private void button54_Click(object sender, EventArgs e)
         {
 
         }
