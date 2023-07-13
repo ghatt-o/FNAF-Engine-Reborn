@@ -32,5 +32,11 @@ namespace FNAF_Engine_Reborn
                 comboBox1.Items.AddRange(Directory.GetDirectories("assets/custom_assets/projects/"));
             }
         }
+
+        private void Deleteproject_Load(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(Directory.GetDirectories("assets/custom_assets/projects/"));
+        }
     }
 }

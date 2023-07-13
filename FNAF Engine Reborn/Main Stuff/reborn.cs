@@ -84,6 +84,13 @@ namespace FNAF_Engine_Reborn
                         game.Write(null, false, projecto); //Auto-Save!
                         //TODO: Make sure it's not saving while it's already being written for different purposes.
                     }
+                    await Task.Delay(1);
+                    {
+                        foreach (var img in game.ImageBank)
+                            ImageList.Items.Add(img.Name);
+                        foreach (var aud in game.AudioBank)
+                            SoundList.Items.Add(aud.Name);
+                    }
                 }
             }
 
@@ -289,10 +296,8 @@ namespace FNAF_Engine_Reborn
             button38.Visible = true;
             //_ = projectloader.label3.Text;
             projecto = projec;
-            Logger.Log("Reading Game Data. This may take a while! (Proceed to continue)");
             game = new();
             game.Read(null, false, projecto);
-            Logger.Log("Successfully loaded Game.");
             if (showProject == true)
             {
                 this.presence.state = "Project: " + game.Name;
@@ -1064,6 +1069,7 @@ namespace FNAF_Engine_Reborn
                         string filePath = Path.GetFullPath(p.FileName);
                         string fileName = p.SafeFileName;
                         Object_Editors.Import_Files.CreateSprite(filePath, fileName, projecto);
+                        game.Read(null, false, projecto);
                     }
                     catch (Exception ex)
                     {
@@ -1076,13 +1082,14 @@ namespace FNAF_Engine_Reborn
 
         private void button39_Click(object sender, EventArgs e) // delete image
         {
+            File.Delete(projecto + "/images/" + ImageList.SelectedItem.ToString());
+            game.Read(null, false, projecto);
         }
 
         private void button27_Click(object sender, EventArgs e) // add office state
         {
             panel9.Show();
         }
-
         private void button31_Click(object sender, EventArgs e)
         {
             if (_0_2C == true)
@@ -1090,10 +1097,14 @@ namespace FNAF_Engine_Reborn
                 string officename = textBox25.Text;
                 try
                 {
-                    _ = System.IO.Directory.CreateDirectory(projecto + "/offices/default/office_states/" + officename);
+                    var newstate = new OfficeState();
+                    newstate.Name = officename;
+                    game.Office.States.Add(newstate);
+                    game.Write(null, false, projecto);
                     panel9.Hide();
                     comboBox17.Items.Clear();
-                    comboBox17.Items.AddRange(Directory.GetDirectories(projecto + "/offices/default/office_states/"));
+                    foreach (var state in game.Office.States)
+                        comboBox17.Items.Add(state.Name);
                 }
                 catch (Exception)
                 {
@@ -1108,16 +1119,17 @@ namespace FNAF_Engine_Reborn
             {
                 try
                 {
-                    if (comboBox17.SelectedItem.Equals(projecto + "/offices/default/office_states/Default")) // if default office state selected, can't delete!
-                                                                                                             // this is meant to avoid errors.
+                    if (comboBox17.SelectedItem.Equals(projecto + "/offices/default/office_states/Default")) // if default office state selected, can't delete!                                                                                        // this is meant to avoid errors.
                     {
                         //yeah do nothing
                     }
                     else
                     {
-                        Directory.Delete(comboBox17.SelectedItem.ToString(), true);
+                        Directory.Delete(projecto + "/offices/default/office_states/" + comboBox17.SelectedItem.ToString(), true);
+                        game.Read(null, false, projecto);
                         comboBox17.Items.Clear();
-                        comboBox17.Items.AddRange(Directory.GetDirectories(projecto + "/offices/default/office_states/"));
+                        foreach (var state in game.Office.States)
+                            comboBox17.Items.Add(state.Name);
                     }
                 }
                 catch (Exception)
@@ -1149,8 +1161,21 @@ namespace FNAF_Engine_Reborn
                             string filePath = Path.GetFullPath(p.FileName);
                             string png = p.SafeFileName;
                             Object_Editors.Import_Files.CreateSprite(filePath, png, projecto);
-                            File.WriteAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt", png);
-                            officePreview.BackgroundImage = Image.FromFile(projecto + "/images/" + png);
+                            var officestate = comboBox17.SelectedItem.ToString();
+                            int i = -1;
+                            foreach (var state in game.Office.States)
+                            {
+                                i++;
+                                if (state.Name == officestate) break;
+                            }
+                            FileInfo imageInfo = new FileInfo(p.FileName);
+                            game.Office.States[i].Image = new FNAF_Engine_GameData.BinaryData.Binaries.Image
+                            {
+                                Name = p.SafeFileName,
+                                Size = imageInfo.Length,
+                                Data = File.ReadAllBytes(p.FileName)
+                            };
+                            officePreview.BackgroundImage = Image.FromFile(p.FileName);
                         }
                     }
                     catch (Exception)
@@ -1167,30 +1192,38 @@ namespace FNAF_Engine_Reborn
             {
                 try
                 {
-                    string image = File.ReadAllText(comboBox17.SelectedItem.ToString() + "/mainsprite.txt");
-                    var img = Image.FromFile(projecto + "/images/" + image);
-                    if (img.Width <= 1280 && img.Height <= 720)
+                    var mainstate = new OfficeState();
+                    foreach (var state in game.Office.States) if (state.Name == comboBox17.SelectedItem.ToString()) mainstate = state;
+                    foreach (var img in game.ImageBank)
                     {
-                        officePreview.BackgroundImageLayout = ImageLayout.Stretch;
-                        officePreview.BackgroundImage = img;
-                        /*
-                        essentially if the image is smaller
-                        than what it should be,
-                        it stretches to the whole office.
-                        if the resolution is above 1280px wide it wont stretch
-                        */
-                    }
-                    else
-                    {
-                        if (checkBox24.Checked == false)
+                        if (img.Name == mainstate.Image.Name)
                         {
-                            officePreview.BackgroundImageLayout = ImageLayout.Stretch;
-                            officePreview.BackgroundImage = img;
-                        }
-                        else
-                        {
-                            officePreview.BackgroundImage = img;
-                            officePreview.BackgroundImageLayout = ImageLayout.None;
+                            var image = Image.FromFile(projecto + "/images/" + img.Name);
+                            if (image.Width <= 1280 && image.Height <= 720)
+                            {
+                                officePreview.BackgroundImageLayout = ImageLayout.Stretch;
+                                officePreview.BackgroundImage = image;
+                                /*
+                                essentially if the image is smaller
+                                than what it should be,
+                                it stretches to the whole office.
+                                if the resolution is above 1280px wide it wont stretch
+                                */
+                            }
+                            else
+                            {
+                                if (game.Office.Settings.PerspectiveEnabled == false)
+                                {
+                                    officePreview.BackgroundImageLayout = ImageLayout.Stretch;
+                                    officePreview.BackgroundImage = image;
+                                }
+                                else
+                                {
+                                    if (image.Height > 720) Logger.Log("Your office state image is above 720! If you can't see your office properly, please make the height 720.");
+                                    officePreview.BackgroundImage = image;
+                                    officePreview.BackgroundImageLayout = ImageLayout.None;
+                                }
+                            }
                         }
                     }
                 }
@@ -1307,9 +1340,8 @@ namespace FNAF_Engine_Reborn
                 comboBox14.Items.Clear();
                 foreach (Animatronic anim in game.Animatronics) comboBox14.Items.Add(anim.Name);
                 comboBox17.Items.Clear();
-                foreach (OfficeState state in game.Office.States) comboBox17.Items.Add(state.Name);
-                comboBox14.Items.Clear();
-                foreach (Animatronic anim in game.Animatronics) comboBox14.Items.Add(anim.Name);
+                foreach (OfficeState state in game.Office.States)
+                    comboBox17.Items.Add(state.Name);
 
                 checkBox16.Checked = game.Office.Settings.PowerEnabled;
                 OfficeEditor_PowerThings.Visible = game.Office.Settings.PowerEnabled;
@@ -1344,7 +1376,7 @@ namespace FNAF_Engine_Reborn
                 while (true)
                 {
                     await Task.Delay(1);
-                    OfficeEditor_PowerPercentage.Text = Convert.ToString(game.Office.Settings.PowerPercentage);
+                    OfficeEditor_PowerPercentage.Text = Convert.ToString(game.Office.Settings.PowerPercentage) + "%";
                 }
             }
         }
@@ -1460,22 +1492,14 @@ namespace FNAF_Engine_Reborn
                     powerPercentage_label.Show();
                     OfficeEditor_PowerThings.Show();
                     OfficeEditor_PowerThings.BringToFront();
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[0] = "power=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.PowerEnabled = true;
                 }
                 else
                 {
                     textBox7.Hide();
                     powerPercentage_label.Hide();
                     OfficeEditor_PowerThings.Hide();
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[0] = "power=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.PowerEnabled = false;
                 }
             }
         }
@@ -1517,21 +1541,13 @@ namespace FNAF_Engine_Reborn
                 {
                     displayOfficeEditorInfoAnimatronicKill.Hide();
                     comboBox14.Hide();
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[7] = "ucnstyle=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.UCNStyleEnabled = true;
                 }
                 else
                 {
                     displayOfficeEditorInfoAnimatronicKill.Show();
                     comboBox14.Show();
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[7] = "ucnstyle=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.UCNStyleEnabled = false;
                 }
             }
         }
@@ -1542,20 +1558,12 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox12.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[1] = "toxic=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.ToxicEnabled = true;
                     Toxic.Show();
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[1] = "toxic=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.ToxicEnabled = false;
                     Toxic.Hide();
                 }
             }
@@ -1567,20 +1575,12 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox11.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[2] = "mask=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.MaskEnabled = true;
                     MaskInput.Show();
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[2] = "mask=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.MaskEnabled = false;
                     MaskInput.Hide();
                 }
             }
@@ -1592,19 +1592,11 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox14.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[4] = "flashlight=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.FlashlightEnabled = true;
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[4] = "flashlight=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.FlashlightEnabled = false;
                 }
             }
         }
@@ -1615,20 +1607,12 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox15.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[5] = "panorama=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.PanoramaEnabled = true;
                     //TODO PANORAMA
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[5] = "panorama=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.PanoramaEnabled = false;
                 }
             }
         }
@@ -1639,21 +1623,13 @@ namespace FNAF_Engine_Reborn
             {
                 if (checkBox24.Checked == true)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[6] = "perspective=true";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
-                    //OfficePreviewBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                    game.Office.Settings.PerspectiveEnabled = true;
+                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[6] = "perspective=false";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
-                    //OfficePreviewBG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    game.Office.Settings.PerspectiveEnabled = false;
+                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
                 }
             }
         }
@@ -1663,8 +1639,9 @@ namespace FNAF_Engine_Reborn
             if (string.IsNullOrWhiteSpace(textBox7.Text) || textBox7.Text.Contains(" "))
             {
                 textBox7.Text = "0";
+                game.Office.Settings.PowerPercentage = Convert.ToInt32(textBox7.Text);
             }
-            File.WriteAllText(projecto + "/offices/default/power_val.txt", textBox7.Text);
+            game.Office.Settings.PowerPercentage = Convert.ToInt32(textBox7.Text);
         }
 
         private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
@@ -1673,19 +1650,11 @@ namespace FNAF_Engine_Reborn
             {
                 if (comboBox14.SelectedItem == null)
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[8] = "animatronic=,";
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.AnimatronicToKill = "null";
                 }
                 else
                 {
-                    string optionstxt = File.ReadAllText(projecto + "/offices/default/office.txt");
-                    string[] options = optionstxt.Split(',');
-                    options[8] = "animatronic=," + comboBox14.Text;
-                    string newoptions = string.Join(",", options);
-                    File.WriteAllText(projecto + "/offices/default/office.txt", newoptions);
+                    game.Office.Settings.AnimatronicToKill = comboBox14.SelectedItem.ToString();
                 }
             }
         }
@@ -2162,7 +2131,7 @@ namespace FNAF_Engine_Reborn
                         string filePath = Path.GetFullPath(p.FileName);
                         string fileName = p.SafeFileName;
                         Object_Editors.Import_Files.CreateAudio(filePath, projecto);
-                        Menu_Elements_Create.Show();
+                        game.Read(null, false, projecto);
                     }
                     catch (Exception ex)
                     {
@@ -2744,6 +2713,7 @@ namespace FNAF_Engine_Reborn
                         break;
                     case "Office Editor":
                         officeEditorPanel.BringToFront();
+                        officeEditorPanel.Visible = true;
                         break;
                     case "Camera Editor":
                         cameraEditorPanel.BringToFront();
@@ -2928,6 +2898,79 @@ namespace FNAF_Engine_Reborn
         private void button54_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button97_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaskAnim_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MaskAnim_ComboBox.SelectedItem == null)
+            {
+                game.Office.MaskAnimation = null;
+            }
+            else
+            {
+                foreach (var anim in game.Animations)
+                {
+                    if (anim.Name == MaskAnim_ComboBox.SelectedItem.ToString())
+                    {
+                        game.Office.MaskAnimation = anim;
+                    }
+                }
+            }
+        }
+
+        private void PowerOutAnim_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (PowerOutAnim_ComboBox.SelectedItem == null)
+            {
+                game.Office.PoweroutAnimation = null;
+            }
+            else
+            {
+                foreach (var anim in game.Animations)
+                {
+                    if (anim.Name == PowerOutAnim_ComboBox.SelectedItem.ToString())
+                    {
+                        game.Office.PoweroutAnimation = anim;
+                    }
+                }
+            }
+        }
+
+        private void CameraAnim_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CameraAnim_ComboBox.SelectedItem == null)
+            {
+                game.Office.CameraAnimation = null;
+            }
+            else
+            {
+                foreach (var anim in game.Animations)
+                {
+                    if (anim.Name == CameraAnim_ComboBox.SelectedItem.ToString())
+                    {
+                        game.Office.CameraAnimation = anim;
+                    }
+                }
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            File.Delete(projecto + "/sounds/" + SoundList.SelectedItem.ToString());
+            game.Read(null, false, projecto);
+        }
+
+        private void button48_Click(object sender, EventArgs e)
+        {
+            if (game != null)
+            {
+                game.Write(null, false, projecto);
+            }
         }
     }
 }

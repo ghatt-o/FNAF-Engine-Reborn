@@ -123,7 +123,7 @@ namespace FNAF_Engine_Reborn
                     Hide();
                 }
             */
-            }
         }
     }
 }
+

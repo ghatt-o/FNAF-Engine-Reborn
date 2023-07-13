@@ -1,6 +1,7 @@
 ﻿using FNAF_Engine_GameData.BinaryData.Binaries;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
 using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -38,11 +39,17 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             {
                 //name has to be set before
                 Name = File.ReadAllText(projectpath + "/animatronics/" + Name + "/name.txt");
-                File.ReadAllText(projectpath + "/animatronics/" + Name + "/phantom.txt", IsPhantom + "");
-                File.ReadAllText(projectpath + "/animatronics/" + Name + "/ignoresmask.txt", IgnoresMask + "");
-                File.ReadAllText(projectpath + "/animatronics/" + Name + "/audiolured.txt", AudioLured + "");
-                File.ReadAllText(projectpath + "/animatronics/" + Name + "/bb.txt", LikeBalloonBoy + "");
-                File.ReadAllText(projectpath + "/animatronics/" + Name + "/ai.txt", AILevels[0] + "," + AILevels[1] + "," + AILevels[2] + "," + AILevels[3] + "," + AILevels[4] + "," + AILevels[5]);
+                IsPhantom = Convert.ToBoolean(File.ReadAllText(projectpath + "/animatronics/" + Name + "/phantom.txt"));
+                IgnoresMask = Convert.ToBoolean(File.ReadAllText(projectpath + "/animatronics/" + Name + "/ignoresmask.txt"));
+                AudioLured = Convert.ToBoolean(File.ReadAllText(projectpath + "/animatronics/" + Name + "/audiolured.txt"));
+                LikeBalloonBoy = Convert.ToBoolean(File.ReadAllText(projectpath + "/animatronics/" + Name + "/bb.txt"));
+                var ailevels = File.ReadAllText(projectpath + "/animatronics/" + Name + "/ai.txt").Split(',');
+                AILevels[0] = Convert.ToInt32(ailevels[0]);
+                AILevels[1] = Convert.ToInt32(ailevels[1]);
+                AILevels[2] = Convert.ToInt32(ailevels[2]);
+                AILevels[3] = Convert.ToInt32(ailevels[3]);
+                AILevels[4] = Convert.ToInt32(ailevels[4]);
+                AILevels[5] = Convert.ToInt32(ailevels[5]);
                 Jumpscare_Animation.Write(null, false, projectpath);
                 Jumpscare_Sound.Write(null, false, projectpath);
                 Directory.CreateDirectory(projectpath + "/animatronics/path");

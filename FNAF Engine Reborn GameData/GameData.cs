@@ -146,7 +146,9 @@ namespace FNAF_Engine_Reborn_GameData
             else
             {
                 Directory.CreateDirectory(projectpath + "/menus");
-                Directory.CreateDirectory(projectpath + "/offices/default");
+                Directory.CreateDirectory(projectpath + "/offices/default/office_states");
+                Directory.CreateDirectory(projectpath + "/offices/default/sprites");
+                Directory.CreateDirectory(projectpath + "/cameras");
                 Directory.CreateDirectory(projectpath + "/animations");
                 Directory.CreateDirectory(projectpath + "/animatronics");
                 Directory.CreateDirectory(projectpath + "/images");
@@ -305,7 +307,7 @@ namespace FNAF_Engine_Reborn_GameData
                 for (int i = 0; i < cameracount; i++)
                 {
                     Camera camera = new Camera();
-                    camera.Read(reader, true, null);
+                    camera.Read(reader, true, null, null);
                     Cameras.Add(camera);
                 }
                 int animatroniccount = reader.ReadInt32();
@@ -319,7 +321,7 @@ namespace FNAF_Engine_Reborn_GameData
                 for (int i = 0; i < scriptcount; i++)
                 {
                     Script script = new Script();
-                    script.Read(reader, true, null);
+                    script.Read(reader, true, null, null);
                     Scripts.Add(script);
                 }
             }
@@ -412,6 +414,16 @@ namespace FNAF_Engine_Reborn_GameData
                     Animatronic animatronic = new();
                     animatronic.Name = File.ReadAllText(anim + "/name.txt");
                     animatronic.Read(null, false, projectpath);
+                }
+                foreach (var cam in Directory.GetDirectories(projectpath + "/cameras"))
+                {
+                    Camera camera = new();
+                    camera.Read(null, false, projectpath, cam);
+                }
+                foreach (var dir in Directory.GetDirectories(projectpath + "/scripts"))
+                {
+                    Script script = new();
+                    script.Read(null, false, projectpath, dir);
                 }
             }
             ConcludedReading = true;

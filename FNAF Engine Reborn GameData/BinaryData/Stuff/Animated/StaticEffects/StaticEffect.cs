@@ -18,16 +18,16 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
                 for (int i = 0; i < frameCount; i++)
                 {
                     StaticEffectFrame frame = new StaticEffectFrame();
-                    frame.Read(reader, true, null);
+                    frame.Read(reader, true, null, null);
                     Frames.Add(frame);
                 }
             }
             else
             {
                 Name = File.ReadAllText(Temp + "/name.txt");
-                
+
                 StaticEffectFrame frame = new StaticEffectFrame();
-                frame.Read(null, false, Temp);
+                frame.Read(null, false, Temp, projectpath);
                 Frames.Add(frame);
             }
         }
@@ -48,7 +48,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Stuff.StaticEffects
                 foreach (var frame in Frames)
                 {
                     Directory.CreateDirectory(projectpath + "/statics/" + Name + "/frames/" + frame.FrameOrder);
-                    frame.Write(null, false, projectpath + "/statics/" + Name + "/frames/"+ frame.FrameOrder);
+                    frame.Write(null, false, projectpath + "/statics/" + Name + "/frames/" + frame.FrameOrder);
                 }
             }
         }

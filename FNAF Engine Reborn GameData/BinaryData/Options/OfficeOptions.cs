@@ -40,43 +40,46 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                 //power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,
                 foreach (var flag in File.ReadAllText(project + "/offices/default/office.txt").Split(','))
                 {
-                    if (flag == "power=false") PowerEnabled = false;
-                    if (flag == "power=true") PowerEnabled = true;
+                    if (flag == "power=False") PowerEnabled = false;
+                    if (flag == "power=True") PowerEnabled = true;
 
-                    if (flag == "toxic=false") ToxicEnabled = false;
-                    if (flag == "toxic=true") ToxicEnabled = true;
+                    if (flag == "toxic=False") ToxicEnabled = false;
+                    if (flag == "toxic=True") ToxicEnabled = true;
 
-                    if (flag == "mask=false") MaskEnabled = false;
-                    if (flag == "mask=true") MaskEnabled = true;
+                    if (flag == "mask=False") MaskEnabled = false;
+                    if (flag == "mask=True") MaskEnabled = true;
 
-                    if (flag == "camera=false") CameraEnabled = false;
-                    if (flag == "camera=true") CameraEnabled = true;
+                    if (flag == "camera=False") CameraEnabled = false;
+                    if (flag == "camera=True") CameraEnabled = true;
 
-                    if (flag == "flashlight=false") FlashlightEnabled = false;
-                    if (flag == "flashlight=true") FlashlightEnabled = true;
+                    if (flag == "flashlight=False") FlashlightEnabled = false;
+                    if (flag == "flashlight=True") FlashlightEnabled = true;
 
-                    if (flag == "panorama=false") PanoramaEnabled = false;
-                    if (flag == "panorama=true") PanoramaEnabled = true;
+                    if (flag == "panorama=False") PanoramaEnabled = false;
+                    if (flag == "panorama=True") PanoramaEnabled = true;
 
-                    if (flag == "perspective=false") PerspectiveEnabled = false;
-                    if (flag == "perspective=true") PerspectiveEnabled = true;
+                    if (flag == "perspective=False") PerspectiveEnabled = false;
+                    if (flag == "perspective=True") PerspectiveEnabled = true;
 
-                    if (flag == "ucnstyle=false") UCNStyleEnabled = false;
-                    if (flag == "ucnstyle=true") UCNStyleEnabled = true;
+                    if (flag == "ucnstyle=False") UCNStyleEnabled = false;
+                    if (flag == "ucnstyle=True") UCNStyleEnabled = true;
 
                     if (flag.Contains("animatronic="))
                     {
                         AnimatronicToKill = flag.Split('=')[1];
+                        Console.WriteLine(flag.Split('=')[1]);
                     }
 
                     if (flag.Contains("hours="))
                     {
                         Hours = Convert.ToInt32(flag.Split('=')[1]);
+                        Console.WriteLine(flag.Split('=')[1]);
                     }
 
                     if (flag.Contains("powerpercentage="))
                     {
                         PowerPercentage = Convert.ToInt32(flag.Split('=')[1]);
+                        Console.WriteLine(flag.Split('=')[1]);
                     }
                 }
             }
@@ -98,7 +101,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
             }
             else
             {
-                File.WriteAllText(project + "/offices/default/office.txt", "power=false,toxic=false,mask=false,camera=true,flashlight=false,panorama=false,perspective=false,ucnstyle=false,animatronic=,hours=6,powerpercentage=100"); //what the fuck its still reading from existing file
+                File.WriteAllText(project + "/offices/default/office.txt", "");
                 foreach (var prop in GetType().GetProperties())
                 {
                     //todo: clean up
@@ -112,7 +115,7 @@ namespace FNAF_Engine_GameData.BinaryData.Options
                     else if (prop.Name == "UCNStyleEnabled") FileAppend(project + "/offices/default/office.txt", "ucnstyle=" + UCNStyleEnabled + ",");
                     else if (prop.Name == "AnimatronicToKill") FileAppend(project + "/offices/default/office.txt", "animatronic=" + AnimatronicToKill + ",");
                     else if (prop.Name == "Hours") FileAppend(project + "/offices/default/office.txt", "hours=" + Hours + ",");
-                    else if (prop.Name == "PowerPercentage") FileAppend(project + "/offices/default/office.txt", "powerpercentage=" + PowerPercentage);
+                    else if (prop.Name == "PowerPercentage") FileAppend(project + "/offices/default/office.txt", "powerpercentage=" + PowerPercentage + ",");
                     else throw new InvalidDataException("Couldn't find property '" + prop.Name + "'!");
                 }
                 void FileAppend(string path, string contents)

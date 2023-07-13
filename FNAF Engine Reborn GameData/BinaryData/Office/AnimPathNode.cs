@@ -54,7 +54,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
                 {
                     Type = Convert.ToInt32(File.ReadAllText(path + "/type.txt"));
                 }
-                
+
             }
         }
 

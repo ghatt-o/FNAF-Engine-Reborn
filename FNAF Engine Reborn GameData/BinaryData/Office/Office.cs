@@ -1,5 +1,6 @@
 ﻿using FNAF_Engine_GameData.BinaryData.Options;
 using FNAF_Engine_Reborn_GameData.BinaryData.Memory;
+using FNAF_Engine_Reborn_GameData.BinaryData.Stuff.Animations;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +12,9 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
         public OfficeOptions Settings = new OfficeOptions();
         public List<OfficeState> States = new List<OfficeState>();
         public List<OfficeSprite> Sprites = new List<OfficeSprite>();
+        public Animation MaskAnimation = new Animation();
+        public Animation PoweroutAnimation = new Animation();
+        public Animation CameraAnimation = new Animation();
 
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
@@ -64,9 +68,9 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
                 }
                 foreach (var spritedir in Directory.GetDirectories(projectpath + "/offices/default/sprites/"))
                 {
-                    var state = new OfficeState();
+                    var state = new OfficeSprite();
                     state.Read(null, false, projectpath, spritedir);
-                    States.Add(state);
+                    Sprites.Add(state);
                 }
             }
         }

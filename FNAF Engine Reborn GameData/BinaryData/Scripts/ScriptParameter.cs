@@ -44,7 +44,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
             }
             else
             {
-                
+
             }
         }
 
@@ -89,7 +89,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Scripts
                     case -128: //nested script
                         Debug.Assert(reader.ReadAscii(4) == "NFRS");
                         Script nestedscript = new Script();
-                        nestedscript.Read(reader, true, null);
+                        nestedscript.Read(reader, true, null, null);
                         Value = nestedscript;
                         break;
                     default:

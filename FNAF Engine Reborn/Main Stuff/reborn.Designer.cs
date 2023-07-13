@@ -498,6 +498,7 @@ namespace FNAF_Engine_Reborn
             label8 = new System.Windows.Forms.Label();
             gamesettings_menubgcolor = new System.Windows.Forms.Button();
             buildSettingsPanelMoment = new System.Windows.Forms.Panel();
+            button48 = new System.Windows.Forms.Button();
             allEditorsPNL.SuspendLayout();
             animatronicEditorPNL2.SuspendLayout();
             ChooseAnimatronicPath.SuspendLayout();
@@ -543,6 +544,7 @@ namespace FNAF_Engine_Reborn
             // allEditorsPNL
             // 
             allEditorsPNL.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            allEditorsPNL.Controls.Add(button48);
             allEditorsPNL.Controls.Add(DiscordBtn);
             allEditorsPNL.Controls.Add(label143);
             allEditorsPNL.Controls.Add(label124);
@@ -3863,7 +3865,7 @@ namespace FNAF_Engine_Reborn
             // 
             gamehourstextbox.BackColor = System.Drawing.Color.White;
             gamehourstextbox.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            gamehourstextbox.ForeColor = System.Drawing.Color.White;
+            gamehourstextbox.ForeColor = System.Drawing.Color.Black;
             gamehourstextbox.Location = new System.Drawing.Point(386, 308);
             gamehourstextbox.MaxLength = 242345;
             gamehourstextbox.Name = "gamehourstextbox";
@@ -3918,7 +3920,7 @@ namespace FNAF_Engine_Reborn
             // textBox25
             // 
             textBox25.BackColor = System.Drawing.Color.White;
-            textBox25.ForeColor = System.Drawing.Color.White;
+            textBox25.ForeColor = System.Drawing.Color.Black;
             textBox25.Location = new System.Drawing.Point(2, 4);
             textBox25.Name = "textBox25";
             textBox25.Size = new System.Drawing.Size(248, 23);
@@ -4090,20 +4092,21 @@ namespace FNAF_Engine_Reborn
             PowerOutAnim_ComboBox.BackColor = System.Drawing.Color.White;
             PowerOutAnim_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             PowerOutAnim_ComboBox.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            PowerOutAnim_ComboBox.ForeColor = System.Drawing.Color.White;
+            PowerOutAnim_ComboBox.ForeColor = System.Drawing.Color.Black;
             PowerOutAnim_ComboBox.FormattingEnabled = true;
             PowerOutAnim_ComboBox.Location = new System.Drawing.Point(334, 308);
             PowerOutAnim_ComboBox.Name = "PowerOutAnim_ComboBox";
             PowerOutAnim_ComboBox.Size = new System.Drawing.Size(47, 19);
             PowerOutAnim_ComboBox.TabIndex = 86;
             PowerOutAnim_ComboBox.Text = "Animations";
+            PowerOutAnim_ComboBox.SelectedIndexChanged += PowerOutAnim_ComboBox_SelectedIndexChanged;
             // 
             // Offices_ComboBox
             // 
             Offices_ComboBox.BackColor = System.Drawing.Color.White;
             Offices_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             Offices_ComboBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            Offices_ComboBox.ForeColor = System.Drawing.Color.White;
+            Offices_ComboBox.ForeColor = System.Drawing.Color.Black;
             Offices_ComboBox.FormattingEnabled = true;
             Offices_ComboBox.Items.AddRange(new object[] { "Default" });
             Offices_ComboBox.Location = new System.Drawing.Point(163, 4);
@@ -4272,26 +4275,28 @@ namespace FNAF_Engine_Reborn
             MaskAnim_ComboBox.BackColor = System.Drawing.Color.White;
             MaskAnim_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             MaskAnim_ComboBox.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            MaskAnim_ComboBox.ForeColor = System.Drawing.Color.White;
+            MaskAnim_ComboBox.ForeColor = System.Drawing.Color.Black;
             MaskAnim_ComboBox.FormattingEnabled = true;
             MaskAnim_ComboBox.Location = new System.Drawing.Point(335, 273);
             MaskAnim_ComboBox.Name = "MaskAnim_ComboBox";
             MaskAnim_ComboBox.Size = new System.Drawing.Size(46, 19);
             MaskAnim_ComboBox.TabIndex = 85;
             MaskAnim_ComboBox.Text = "Animations";
+            MaskAnim_ComboBox.SelectedIndexChanged += MaskAnim_ComboBox_SelectedIndexChanged;
             // 
             // CameraAnim_ComboBox
             // 
             CameraAnim_ComboBox.BackColor = System.Drawing.Color.White;
             CameraAnim_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             CameraAnim_ComboBox.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            CameraAnim_ComboBox.ForeColor = System.Drawing.Color.White;
+            CameraAnim_ComboBox.ForeColor = System.Drawing.Color.Black;
             CameraAnim_ComboBox.FormattingEnabled = true;
             CameraAnim_ComboBox.Location = new System.Drawing.Point(387, 273);
             CameraAnim_ComboBox.Name = "CameraAnim_ComboBox";
             CameraAnim_ComboBox.Size = new System.Drawing.Size(51, 19);
             CameraAnim_ComboBox.TabIndex = 84;
             CameraAnim_ComboBox.Text = "Animations";
+            CameraAnim_ComboBox.SelectedIndexChanged += CameraAnim_ComboBox_SelectedIndexChanged;
             // 
             // powerOut_label
             // 
@@ -4334,7 +4339,7 @@ namespace FNAF_Engine_Reborn
             comboBox14.BackColor = System.Drawing.Color.White;
             comboBox14.FlatStyle = System.Windows.Forms.FlatStyle.System;
             comboBox14.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            comboBox14.ForeColor = System.Drawing.Color.White;
+            comboBox14.ForeColor = System.Drawing.Color.Black;
             comboBox14.FormattingEnabled = true;
             comboBox14.Location = new System.Drawing.Point(334, 343);
             comboBox14.Name = "comboBox14";
@@ -4359,7 +4364,7 @@ namespace FNAF_Engine_Reborn
             // 
             textBox7.BackColor = System.Drawing.Color.White;
             textBox7.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox7.ForeColor = System.Drawing.Color.White;
+            textBox7.ForeColor = System.Drawing.Color.Black;
             textBox7.Location = new System.Drawing.Point(163, 255);
             textBox7.Name = "textBox7";
             textBox7.Size = new System.Drawing.Size(39, 18);
@@ -4442,7 +4447,7 @@ namespace FNAF_Engine_Reborn
             // 
             comboBox17.BackColor = System.Drawing.Color.White;
             comboBox17.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            comboBox17.ForeColor = System.Drawing.Color.White;
+            comboBox17.ForeColor = System.Drawing.Color.Black;
             comboBox17.FormattingEnabled = true;
             comboBox17.Location = new System.Drawing.Point(523, 33);
             comboBox17.Name = "comboBox17";
@@ -4512,7 +4517,7 @@ namespace FNAF_Engine_Reborn
             AnimationsOfficeEditor_CreateBox.BackColor = System.Drawing.Color.White;
             AnimationsOfficeEditor_CreateBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             AnimationsOfficeEditor_CreateBox.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            AnimationsOfficeEditor_CreateBox.ForeColor = System.Drawing.Color.White;
+            AnimationsOfficeEditor_CreateBox.ForeColor = System.Drawing.Color.Black;
             AnimationsOfficeEditor_CreateBox.FormattingEnabled = true;
             AnimationsOfficeEditor_CreateBox.Location = new System.Drawing.Point(197, 348);
             AnimationsOfficeEditor_CreateBox.Name = "AnimationsOfficeEditor_CreateBox";
@@ -4631,6 +4636,7 @@ namespace FNAF_Engine_Reborn
             button97.Size = new System.Drawing.Size(23, 24);
             button97.TabIndex = 100;
             button97.UseVisualStyleBackColor = false;
+            button97.Click += button97_Click;
             // 
             // button94
             // 
@@ -5412,9 +5418,9 @@ namespace FNAF_Engine_Reborn
             cutsceneEditorPanel.Controls.Add(button70);
             cutsceneEditorPanel.Controls.Add(button69);
             cutsceneEditorPanel.Controls.Add(button68);
-            cutsceneEditorPanel.Location = new System.Drawing.Point(9, 62);
+            cutsceneEditorPanel.Location = new System.Drawing.Point(163, 60);
             cutsceneEditorPanel.Name = "cutsceneEditorPanel";
-            cutsceneEditorPanel.Size = new System.Drawing.Size(947, 541);
+            cutsceneEditorPanel.Size = new System.Drawing.Size(1747, 1000);
             cutsceneEditorPanel.TabIndex = 104;
             cutsceneEditorPanel.Visible = false;
             // 
@@ -5441,7 +5447,7 @@ namespace FNAF_Engine_Reborn
             button82.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             button82.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             button82.ForeColor = System.Drawing.Color.White;
-            button82.Location = new System.Drawing.Point(268, 356);
+            button82.Location = new System.Drawing.Point(475, 356);
             button82.Name = "button82";
             button82.Size = new System.Drawing.Size(114, 60);
             button82.TabIndex = 117;
@@ -5615,7 +5621,7 @@ namespace FNAF_Engine_Reborn
             button71.FlatAppearance.BorderSize = 0;
             button71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button71.ForeColor = System.Drawing.Color.White;
-            button71.Location = new System.Drawing.Point(298, 36);
+            button71.Location = new System.Drawing.Point(505, 36);
             button71.Name = "button71";
             button71.Size = new System.Drawing.Size(535, 298);
             button71.TabIndex = 79;
@@ -5643,7 +5649,7 @@ namespace FNAF_Engine_Reborn
             button72.FlatAppearance.BorderSize = 0;
             button72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button72.ForeColor = System.Drawing.Color.White;
-            button72.Location = new System.Drawing.Point(420, 7);
+            button72.Location = new System.Drawing.Point(627, 7);
             button72.Name = "button72";
             button72.Size = new System.Drawing.Size(23, 24);
             button72.TabIndex = 93;
@@ -5656,7 +5662,7 @@ namespace FNAF_Engine_Reborn
             comboBox44.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             comboBox44.ForeColor = System.Drawing.Color.White;
             comboBox44.FormattingEnabled = true;
-            comboBox44.Location = new System.Drawing.Point(458, 6);
+            comboBox44.Location = new System.Drawing.Point(665, 6);
             comboBox44.Name = "comboBox44";
             comboBox44.Size = new System.Drawing.Size(193, 28);
             comboBox44.TabIndex = 92;
@@ -5670,7 +5676,7 @@ namespace FNAF_Engine_Reborn
             button70.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             button70.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             button70.ForeColor = System.Drawing.Color.White;
-            button70.Location = new System.Drawing.Point(387, 356);
+            button70.Location = new System.Drawing.Point(594, 356);
             button70.Name = "button70";
             button70.Size = new System.Drawing.Size(114, 29);
             button70.TabIndex = 78;
@@ -6354,6 +6360,7 @@ namespace FNAF_Engine_Reborn
             button15.Size = new System.Drawing.Size(23, 12);
             button15.TabIndex = 170;
             button15.UseVisualStyleBackColor = false;
+            button15.Click += button15_Click;
             // 
             // button119
             // 
@@ -6684,6 +6691,23 @@ namespace FNAF_Engine_Reborn
             buildSettingsPanelMoment.Visible = false;
             buildSettingsPanelMoment.VisibleChanged += buildSettingsPanelMoment_VisibleChanged;
             // 
+            // button48
+            // 
+            button48.BackColor = System.Drawing.Color.FromArgb(0, 225, 0);
+            button48.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            button48.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(0, 225, 0);
+            button48.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(0, 175, 0);
+            button48.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(0, 195, 0);
+            button48.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button48.ForeColor = System.Drawing.Color.Black;
+            button48.Location = new System.Drawing.Point(238, 12);
+            button48.Name = "button48";
+            button48.Size = new System.Drawing.Size(66, 44);
+            button48.TabIndex = 117;
+            button48.Text = "Save";
+            button48.UseVisualStyleBackColor = false;
+            button48.Click += button48_Click;
+            // 
             // reborn
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -6694,9 +6718,6 @@ namespace FNAF_Engine_Reborn
             Controls.Add(Sidebar);
             Controls.Add(allEditorsPNL);
             Controls.Add(button38);
-            Controls.Add(ExtensionsPanel);
-            Controls.Add(cutsceneEditorPanel);
-            Controls.Add(AssetManagerPanel);
             Controls.Add(officeEditorPanel);
             Controls.Add(cutsceneMoment);
             Controls.Add(ImageEditorPanel);
@@ -6710,6 +6731,9 @@ namespace FNAF_Engine_Reborn
             Controls.Add(GameDebugMenu);
             Controls.Add(Menu_CodeEditor);
             Controls.Add(ScriptEditorPanel);
+            Controls.Add(ExtensionsPanel);
+            Controls.Add(cutsceneEditorPanel);
+            Controls.Add(AssetManagerPanel);
             DoubleBuffered = true;
             Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             ForeColor = System.Drawing.Color.White;
@@ -7264,5 +7288,6 @@ namespace FNAF_Engine_Reborn
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label label18;
         public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Button button48;
     }
 }

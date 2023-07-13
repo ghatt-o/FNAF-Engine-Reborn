@@ -135,7 +135,6 @@ namespace FNAF_Engine_Reborn
                         }
                     }
                     game.Write(null, false, projectPath);
-                    _ = MessageBox.Show("Project created succesfully!");
                 }
                 catch (Exception ex)
                 {

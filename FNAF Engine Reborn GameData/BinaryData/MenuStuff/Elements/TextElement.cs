@@ -38,12 +38,12 @@ namespace MenuStuff.Elements
                 Rgb = Color.FromArgb(r, g, b);
                 ButtonStyle = reader.ReadByte();
 
-                ClickFunctions.Read(reader, true, null);
-                RightClickFunctions.Read(reader, true, null);
-                HoverFunctions.Read(reader, true, null);
-                UnhoverFunctions.Read(reader, true, null);
-                HeldDownLeftFunctions.Read(reader, true, null);
-                HeldDownRightFunctions.Read(reader, true, null);
+                ClickFunctions.Read(reader, true, null, null); ;
+                RightClickFunctions.Read(reader, true, null, null);
+                HoverFunctions.Read(reader, true, null, null);
+                UnhoverFunctions.Read(reader, true, null, null);
+                HeldDownLeftFunctions.Read(reader, true, null, null);
+                HeldDownRightFunctions.Read(reader, true, null, null);
             }
             else
             {
@@ -62,12 +62,12 @@ namespace MenuStuff.Elements
                 if (ButtonStyle != 1) this.Rgb = Color.FromArgb(Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[0], Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[1], Convert.ToInt32(File.ReadAllText(project + "/color.txt").Split(',')[2]))));
                 else this.Rgb = Color.FromArgb(0, 0, 0);
 
-                ClickFunctions.Read(null, false, project);
-                RightClickFunctions.Read(null, false, project);
-                HoverFunctions.Read(null, false, project);
-                UnhoverFunctions.Read(null, false, project);
-                HeldDownLeftFunctions.Read(null, false, project);
-                HeldDownRightFunctions.Read(null, false, project);
+                ClickFunctions.Read(null, false, project, project + "/scripts");
+                RightClickFunctions.Read(null, false, project, project + "/scripts");
+                HoverFunctions.Read(null, false, project, project + "/scripts");
+                UnhoverFunctions.Read(null, false, project, project + "/scripts");
+                HeldDownLeftFunctions.Read(null, false, project, project + "/scripts");
+                HeldDownRightFunctions.Read(null, false, project, project + "/scripts");
             }
         }
         public new void Write(ByteWriter Writer, bool binary, string menupath)

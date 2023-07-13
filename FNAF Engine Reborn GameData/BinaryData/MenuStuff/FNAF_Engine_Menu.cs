@@ -65,14 +65,27 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 {
                     File.WriteAllText(project + "/menus/" + Name + "/bg.txt", BackgroundImage.Name);
                 }
+                else
+                {
+                    File.WriteAllText(project + "/menus/" + Name + "/bg.txt", "");
+                }
                 if (BackgroundAudio != null)
                 {
                     File.WriteAllText(project + "/menus/" + Name + "/audio.txt", BackgroundAudio.Name);
+                }
+                else
+                {
+                    File.WriteAllText(project + "/menus/" + Name + "/audio.txt", "");
                 }
                 if (StaticEffect != null)
                 {
                     StaticEffect.Temp = project + "/statics/" + StaticEffect.Name; //n
                     StaticEffect.Write(null, false, null);
+                    File.WriteAllText(project + "/menus/" + Name + "/static.txt", StaticEffect.Name);
+                }
+                else
+                {
+                    File.WriteAllText(project + "/menus/" + Name + "/static.txt", "");
                 }
                 foreach (var ele in TextElements)
                 {
@@ -94,7 +107,7 @@ namespace FNAF_Engine_GameData.BinaryData.MenuStuff
                 BackgroundAudio.Read(reader, true, null);
                 StaticEffect.Read(reader, true, null);
 
-                MenuScript.Read(reader, true, null);
+                MenuScript.Read(reader, true, null, null);
 
                 var textelementcount = reader.ReadInt32();
                 var imageelementcount = reader.ReadInt32();

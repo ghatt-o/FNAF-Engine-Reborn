@@ -18,7 +18,12 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             else
             {
                 Directory.CreateDirectory(projectpath + "/offices/default/office_states/" + Name);
-                File.WriteAllText(projectpath + "/offices/default/office_states/" + Name + "/mainsprite.txt", Image.Name);
+                File.WriteAllText(projectpath + "/offices/default/office_states/" + Name + "/name.txt", Name);
+                Directory.CreateDirectory(projectpath + "/offices/default/office_states/" + Name);
+                if (Image != null)
+                    File.WriteAllText(projectpath + "/offices/default/office_states/" + Name + "/mainsprite.txt", Image.Name);
+                else
+                    File.WriteAllText(projectpath + "/offices/default/office_states/" + Name + "/mainsprite.txt", "");
             }
         }
 
@@ -30,6 +35,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             }
             else
             {
+                Name = File.ReadAllText(statedir + "/name.txt");
                 var imageName = File.ReadAllText(statedir + "/mainsprite.txt");
                 Image = new Image();
                 if (imageName != "")
