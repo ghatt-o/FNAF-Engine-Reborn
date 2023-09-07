@@ -12,6 +12,7 @@ using System.IO;
 using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace FNAF_Engine_Reborn
 {
@@ -912,6 +913,7 @@ namespace FNAF_Engine_Reborn
         {
             if (_0_2C == true)
             {
+                panel8.Hide();
                 string animatronicName = textBox21.Text;
                 Animatronic anim = new Animatronic();
                 anim.Name = animatronicName;
@@ -1343,6 +1345,16 @@ namespace FNAF_Engine_Reborn
                 foreach (OfficeState state in game.Office.States)
                     comboBox17.Items.Add(state.Name);
 
+                bool maskImageExists = false;
+                bool cameraImageExists = false;
+                foreach (var img in game.ImageBank)
+                    if (img.Name == "camera.png") cameraImageExists = true;
+                foreach (var img in game.ImageBank)
+                    if (img.Name == "mask.png") maskImageExists = true;
+                if (cameraImageExists) CameraInput.BackgroundImage = Image.FromFile(projecto + "/images/camera.png");
+                else CameraInput.BackgroundImage = null; //todo: sort of warning, copy default cam image
+                if (maskImageExists) MaskInput.BackgroundImage = Image.FromFile(projecto + "/images/mask.png");
+                else MaskInput.BackgroundImage = null;
                 checkBox16.Checked = game.Office.Settings.PowerEnabled;
                 OfficeEditor_PowerThings.Visible = game.Office.Settings.PowerEnabled;
                 checkBox12.Checked = game.Office.Settings.ToxicEnabled;
@@ -1392,12 +1404,13 @@ namespace FNAF_Engine_Reborn
                 _ = p.ShowDialog();
                 if (p.ShowDialog() == DialogResult.OK)
                 {
+                    File.Copy(p.FileName, projecto + "/images/" + p.SafeFileName, true);
                     OfficeSprite newsprite = new OfficeSprite();
                     newsprite.Name = p.SafeFileName;
 
                     FNAF_Engine_GameData.BinaryData.Binaries.Image spriteimg = new();
                     spriteimg.Name = p.SafeFileName;
-                    spriteimg.Size = Convert.ToInt64(System.Drawing.Image.FromFile(p.FileName).Size);
+                    spriteimg.Size = File.ReadAllBytes(p.FileName).LongLength;
                     spriteimg.Data = File.ReadAllBytes(p.FileName);
 
                     newsprite.Image = spriteimg;
@@ -1629,7 +1642,7 @@ namespace FNAF_Engine_Reborn
                 else
                 {
                     game.Office.Settings.PerspectiveEnabled = false;
-                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+                    officePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 }
             }
         }
@@ -2338,6 +2351,7 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
+                ChooseAnimatronicPath.Hide();
                 var seletedAnimatronicIndex = -1;
                 foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
@@ -2361,6 +2375,7 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
+                ChooseAnimatronicPath.Hide();
                 var seletedAnimatronicIndex = -1;
                 foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
@@ -2384,6 +2399,7 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
+                ChooseAnimatronicPath.Hide();
                 var seletedAnimatronicIndex = -1;
                 foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
@@ -2399,6 +2415,7 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
+                ChooseAnimatronicPath.Hide();
                 var seletedAnimatronicIndex = -1;
                 foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
@@ -2422,6 +2439,7 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
+                ChooseAnimatronicPath.Hide();
                 var seletedAnimatronicIndex = -1;
                 foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
@@ -2445,6 +2463,7 @@ namespace FNAF_Engine_Reborn
         {
             if (animatronicselected == true)
             {
+                ChooseAnimatronicPath.Hide();
                 var seletedAnimatronicIndex = -1;
                 foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
@@ -2459,14 +2478,18 @@ namespace FNAF_Engine_Reborn
 
         private async void AlternatePath_AnimEditor_Click(object sender, EventArgs e)
         {
+            ChooseAnimatronicPath.Hide();
             Logger.Log("Not in demo!");
+            NewAnimPathNodeAdded = false; //just incase
             AddAnimPathNodeArgs.Hide();
+
         }
 
         private async void StateIcon_AnimEditor_Click(object sender, EventArgs e)
         {
             if (animatronicselected == true)
             {
+                ChooseAnimatronicPath.Hide();
                 var seletedAnimatronicIndex = -1;
                 foreach (var anim in game.Animatronics) { seletedAnimatronicIndex++; if (anim.Name == AnimatronicDropDown.SelectedItem.ToString()) break; }
 
@@ -2488,6 +2511,7 @@ namespace FNAF_Engine_Reborn
 
         private void RefreshAnimPathNodes()
         {
+            animatronicEditor_AnimPath.Nodes.Clear();
             //The one line solution to figuring out current animatronic LMAO
             //(theres 100% a better way of doing this tho-
             var seletedAnimatronicIndex = -1;
@@ -2620,7 +2644,7 @@ namespace FNAF_Engine_Reborn
             ColorDialog colorDialog = new ColorDialog();
             colorDialog.ShowDialog();
 
-            File.WriteAllText(projecto + "/menus/settings.txt", colorDialog.Color.R + "," + colorDialog.Color.G + "," + colorDialog.Color.B);
+            game.MenuSettings = colorDialog.Color;
         }
 
         private void ScrollLeft_Office_MouseDown(object sender, MouseEventArgs e)
@@ -2707,9 +2731,11 @@ namespace FNAF_Engine_Reborn
                 {
                     case "Game Info":
                         buildSettingsPanelMoment.BringToFront();
+                        buildSettingsPanelMoment.Visible = true;
                         break;
                     case "Menu Editor":
                         menuEditorPanel.BringToFront();
+                        menuEditorPanel.Visible = true;
                         break;
                     case "Office Editor":
                         officeEditorPanel.BringToFront();
@@ -2717,20 +2743,26 @@ namespace FNAF_Engine_Reborn
                         break;
                     case "Camera Editor":
                         cameraEditorPanel.BringToFront();
+                        cameraEditorPanel.Visible = true;
                         break;
                     case "Animatronic Editor":
                         animatronicEditorPNL2.BringToFront();
+                        animatronicEditorPNL2.Visible = true;
                         break;
                     case "Animation Editor":
+                        animationEditorPanel.Show();
                         animationEditorPanel.BringToFront();
                         break;
                     case "Sound Editor":
+                        SoundEditorPanel.Show();
                         SoundEditorPanel.BringToFront();
                         break;
                     case "Script Editor":
+                        ScriptEditorPanel.Show();
                         ScriptEditorPanel.BringToFront();
                         break;
                     case "Extensions":
+                        ExtensionsPanel.Show();
                         ExtensionsPanel.BringToFront();
                         break;
 
@@ -2740,10 +2772,16 @@ namespace FNAF_Engine_Reborn
                         m.ShowDialog();
                         break;
                     case "Cutscene Editor":
+                        cutsceneEditorPanel.Show();
                         cutsceneEditorPanel.BringToFront();
                         break;
                     case "Static Effect Editor":
+                        staticeffecteditor.Show();
                         staticeffecteditor.BringToFront();
+                        break;
+                    case "Game Images":
+                        ImageEditorPanel.Show();
+                        ImageEditorPanel.BringToFront();
                         break;
                 }
                 if (!EditorList.SelectedItem.ToString().Contains('=')) this.presence.details = EditorList.SelectedItem?.ToString();
@@ -2971,6 +3009,11 @@ namespace FNAF_Engine_Reborn
             {
                 game.Write(null, false, projecto);
             }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Logger.Log("Not in demo!");
         }
     }
 }

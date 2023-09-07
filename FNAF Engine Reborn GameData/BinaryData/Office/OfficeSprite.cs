@@ -16,7 +16,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
 
         public string SortData()
         {
-            return $"name=~{Name}~,image=~{Image}~,layer=~{Layer}~,X=~{X}~,Y=~{Y}~";
+            return $"name=~{Name}~,image=~{Image.Name}~,layer=~{Layer}~,X=~{X}~,Y=~{Y}~";
         }
         public void Write(ByteWriter Writer, bool binary, string projectpath)
         {
@@ -64,11 +64,11 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
                 {
                     Name = SpriteProperties[1];
                     var ImagePath = SpriteProperties[3];
-                    var img = System.Drawing.Image.FromFile(ImagePath);
+                    var img = System.Drawing.Image.FromFile(projectpath + "/images/" + ImagePath + "");
                     Image = new();
-                    Image.Size = Convert.ToInt64(img.Size);
-                    Image.Data = File.ReadAllBytes(ImagePath);
-                    Image.Name = Path.GetFileNameWithoutExtension(ImagePath);
+                    Image.Size = File.ReadAllBytes(projectpath + "/images/" + ImagePath + "").LongLength;
+                    Image.Data = File.ReadAllBytes(projectpath + "/images/" + ImagePath + "");
+                    Image.Name = Path.GetFileNameWithoutExtension(projectpath + "/images/" + ImagePath + "");
                     Layer = Convert.ToInt32(SpriteProperties[5]);
                     X = Convert.ToInt32(SpriteProperties[7]);
                     Y = Convert.ToInt32(SpriteProperties[9]);

@@ -80,6 +80,7 @@ namespace FNAF_Engine_Reborn_GameData.BinaryData.Office
             }
             else
             {
+                Directory.CreateDirectory(projectpath + "/animatronics/" + Name); //we stull need to do this?
                 File.WriteAllText(projectpath + "/animatronics/" + Name + "/name.txt", Name);
                 File.WriteAllText(projectpath + "/animatronics/" + Name + "/phantom.txt", IsPhantom + "");
                 File.WriteAllText(projectpath + "/animatronics/" + Name + "/ignoresmask.txt", IgnoresMask + "");

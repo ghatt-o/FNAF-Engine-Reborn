@@ -185,7 +185,14 @@ namespace FNAF_Engine_Reborn_GameData
 
                 foreach (var img in ImageBank)
                 {
-                    img.Write(null, false, projectpath);
+                    try
+                    {
+                        img.Write(null, false, projectpath);
+                    }
+                    catch (Exception e)
+                    {
+                        //probably in use
+                    }
                 }
                 foreach (var aud in AudioBank)
                 {
